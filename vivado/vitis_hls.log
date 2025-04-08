@@ -1,0 +1,388 @@
+INFO: [HLS 200-10] Running 'Z:/Vitis/2020.1/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'Baron' on host 'desktop-d2nna1u' (Windows NT_amd64 version 6.2) on Mon Apr 07 00:42:10 -0700 2025
+INFO: [HLS 200-10] In directory 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado'
+Sourcing Tcl script 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/csynth.tcl'
+INFO: [HLS 200-10] Opening project 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj'.
+INFO: [HLS 200-10] Adding design file '../ML_PATH_EE297/EE297_env/projects/weights/conv1_biases.h' to the project
+INFO: [HLS 200-10] Adding design file '../ML_PATH_EE297/EE297_env/projects/weights/conv1_weights.h' to the project
+INFO: [HLS 200-10] Adding design file '../ML_PATH_EE297/EE297_env/projects/weights/conv2_biases.h' to the project
+INFO: [HLS 200-10] Adding design file '../ML_PATH_EE297/EE297_env/projects/weights/conv2_weights.h' to the project
+INFO: [HLS 200-10] Adding design file 'lenet_proj/img_5.txt' to the project
+INFO: [HLS 200-10] Adding design file 'lenet_proj/lenet_support.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'lenet_proj/lenet_top.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'lenet_proj/lenet_top.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'lenet_proj/lenet_top_tb.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12.6ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-1505.html
+WARNING: [HLS 200-40] Skipped source file 'img_5.txt'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx.
+INFO: [HLS 200-10] Analyzing design file 'lenet_proj/lenet_top.cpp' ... 
+WARNING: [HLS 207-1600] unexpected pragma argument '', expect '=': C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:68:24
+INFO: [HLS 200-10] Analyzing design file 'lenet_proj/lenet_support.cpp' ... 
+WARNING: [HLS 207-1600] unexpected pragma argument '', expect '=': lenet_proj/lenet_top.h:68:24
+WARNING: [HLS 207-1535] 'Resource' is deprecated, and it will be removed in future release: lenet_proj/lenet_support.cpp:18:9
+WARNING: [HLS 207-1600] unexpected pragma argument '', expect '=': lenet_proj/lenet_support.cpp:86:24
+WARNING: [HLS 207-1600] unexpected pragma argument '', expect '=': lenet_proj/lenet_support.cpp:141:24
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' target.
+INFO: [HLS 214-115] Burst read of length 784 and bit width 32 has been inferred on port 'gmem' (lenet_proj/lenet_support.cpp:21:19)
+INFO: [HLS 214-115] Burst read of length 400 and bit width 32 has been inferred on port 'gmem' (lenet_proj/lenet_support.cpp:138:23)
+INFO: [HLS 214-115] Burst write of length 400 and bit width 32 has been inferred on port 'gmem' (lenet_proj/lenet_support.cpp:138:23)
+INFO: [HLS 214-115] Burst write of length 120 and bit width 32 has been inferred on port 'gmem' (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:67:19)
+INFO: [HLS 214-115] Burst read of length 400 and bit width 32 has been inferred on port 'gmem' (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:70:30)
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:04 ; elapsed = 00:00:23 . Memory (MB): peak = 997.707 ; gain = 899.988
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:04 ; elapsed = 00:00:23 . Memory (MB): peak = 997.707 ; gain = 899.988
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:24 . Memory (MB): peak = 997.707 ; gain = 899.988
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 997.707 ; gain = 899.988
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_91_6' (lenet_proj/lenet_support.cpp:87) in function 'conv2d_6to16_layer' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'conv2d_layer' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_22_2' (lenet_proj/lenet_support.cpp:22) in function 'conv2d_layer' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_70_2' (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:69) in function 'fc_layer<400, 120>' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_140_3' (lenet_proj/lenet_support.cpp:140) in function 'flatten_layer' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_30_5' (lenet_proj/lenet_support.cpp:32) in function 'conv2d_layer' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_33_6' (lenet_proj/lenet_support.cpp:32) in function 'conv2d_layer' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_34_7' (lenet_proj/lenet_support.cpp:32) in function 'conv2d_layer' completely with a factor of 5.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.0.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.0.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.0.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.0.4' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.1.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.1.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.1.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.1.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.1.4' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.2.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.2.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.2.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.2.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.2.4' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.3.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.3.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.3.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.3.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.3.4' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.4' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.4.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.4.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.4.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.4.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.4.4' in dimension 1 automatically.
+INFO: [XFORM 203-101] Partitioning array 'padded' (lenet_proj/lenet_support.cpp:13) in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'padded' (lenet_proj/lenet_support.cpp:13) in dimension 2 with a block factor 4.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[0][0]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[0][1]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[0][2]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[0][3]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[1][0]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[1][1]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[1][2]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[1][3]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[2][0]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[2][1]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[2][2]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[2][3]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[3][0]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[3][1]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[3][2]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[3][3]' in function 'conv2d_layer'.
+INFO: [XFORM 203-11] Balancing expressions in function 'maxpool_layer' (lenet_proj/lenet_support.cpp:50)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'maxpool2_layer' (lenet_proj/lenet_support.cpp:107)...4 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv2d_layer' (lenet_proj/lenet_support.cpp:13:51)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv2d_6to16_layer' (lenet_proj/lenet_support.cpp:83:69)...7 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:27 . Memory (MB): peak = 997.707 ; gain = 899.988
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_56_2' (lenet_proj/lenet_support.cpp:56:35) in function 'maxpool_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_55_1' (lenet_proj/lenet_support.cpp:55:28) in function 'maxpool_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_113_2' (lenet_proj/lenet_support.cpp:113:36) in function 'maxpool2_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_112_1' (lenet_proj/lenet_support.cpp:112:29) in function 'maxpool2_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_139_2' (lenet_proj/lenet_support.cpp:139:36) in function 'flatten_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_138_1' (lenet_proj/lenet_support.cpp:138:32) in function 'flatten_layer'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_67_1' (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:69:9) in function 'fc_layer<400, 120>' the outer loop is not a perfect loop.
+Resolution: For help on HLS 200-960 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-960.html
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_21_1' (lenet_proj/lenet_support.cpp:21:28) in function 'conv2d_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_29_4' (lenet_proj/lenet_support.cpp:29:35) in function 'conv2d_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_28_3' (lenet_proj/lenet_support.cpp:28:31) in function 'conv2d_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_90_5' (lenet_proj/lenet_support.cpp:87:9) in function 'conv2d_6to16_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_89_4' (lenet_proj/lenet_support.cpp:87:9) in function 'conv2d_6to16_layer'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_85_3' (lenet_proj/lenet_support.cpp:87:9) in function 'conv2d_6to16_layer' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+Resolution: For help on HLS 200-960 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-960.html
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_84_2' (lenet_proj/lenet_support.cpp:84:35) in function 'conv2d_6to16_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_83_1' (lenet_proj/lenet_support.cpp:83:28) in function 'conv2d_6to16_layer'.
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[0][0]' (lenet_proj/lenet_support.cpp:23:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[0][0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[0][1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[0][2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[0][3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[1][0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[1][1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[1][2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[1][3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[2][0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[2][1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[2][2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[2][3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[3][0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[3][1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[3][2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[3][3]' 
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:10 ; elapsed = 00:00:30 . Memory (MB): peak = 997.707 ; gain = 899.988
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'lenet_top' ...
+WARNING: [SYN 201-103] Legalizing function name 'fc_layer<400, 120>' to 'fc_layer_400_120_s'.
+WARNING: [SYN 201-107] Renaming port name 'lenet_top/image' to 'lenet_top/image_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2d_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln42_1) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_21_1_VITIS_LOOP_22_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_28_3_VITIS_LOOP_29_4_VITIS_LOOP_30_5'.
+WARNING: [HLS 200-885] Unable to schedule 'load' operation ('padded_0_0_load_1', lenet_proj/lenet_support.cpp:36) on array 'padded[0][0]', lenet_proj/lenet_support.cpp:13 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'padded_0_0'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 25, Depth = 146.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 37.245 seconds; current allocated memory: 225.692 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_0_0' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_0_1' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_0_2' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_0_3' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_1_0' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_1_1' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_1_2' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_1_3' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_2_0' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_2_1' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_2_2' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_2_3' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_3_0' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_3_1' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_3_2' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_3_3' will be ignored if a simpler one can be used.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.481 seconds; current allocated memory: 231.384 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'maxpool_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln61) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln59) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln61_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln59_1) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_55_1_VITIS_LOOP_56_2_VITIS_LOOP_57_3'.
+WARNING: [HLS 200-885] Unable to schedule bus request on port 'gmem' (lenet_proj/lenet_support.cpp:60) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 28.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.274 seconds; current allocated memory: 232.217 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.257 seconds; current allocated memory: 232.985 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2d_6to16_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln90) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_89_4_VITIS_LOOP_90_5_VITIS_LOOP_91_6'.
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 1) between 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94) and 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94).
+Resolution: For help on HLS 200-881 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-881.html
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 2) between 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94) and 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94).
+Resolution: For help on HLS 200-881 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-881.html
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 3) between 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94) and 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94).
+Resolution: For help on HLS 200-881 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-881.html
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 4) between 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94) and 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94).
+Resolution: For help on HLS 200-881 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-881.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 5, Depth = 21.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.468 seconds; current allocated memory: 233.558 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.255 seconds; current allocated memory: 234.208 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'maxpool2_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_112_1_VITIS_LOOP_113_2_VITIS_LOOP_114_3'.
+WARNING: [HLS 200-885] Unable to schedule bus request on port 'gmem' (lenet_proj/lenet_support.cpp:117) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 25.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.434 seconds; current allocated memory: 234.792 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.245 seconds; current allocated memory: 235.562 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'flatten_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_138_1_VITIS_LOOP_139_2_VITIS_LOOP_140_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.314 seconds; current allocated memory: 235.733 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.167 seconds; current allocated memory: 235.923 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fc_layer_400_120_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_70_2'.
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 1) between 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71) and 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71).
+Resolution: For help on HLS 200-881 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-881.html
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 2) between 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71) and 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71).
+Resolution: For help on HLS 200-881 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-881.html
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 3) between 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71) and 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71).
+Resolution: For help on HLS 200-881 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-881.html
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 4) between 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71) and 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71).
+Resolution: For help on HLS 200-881 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-881.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 5, Depth = 20.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.276 seconds; current allocated memory: 236.170 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.221 seconds; current allocated memory: 236.520 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lenet_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.205 seconds; current allocated memory: 236.689 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.905 seconds; current allocated memory: 237.632 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2d_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_11ns_5ns_15_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_165_32_1_1': 25 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2d_layer'.
+INFO: [HLS 200-111]  Elapsed time: 1.153 seconds; current allocated memory: 245.708 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'maxpool_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10ns_4ns_13_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_4ns_10ns_13_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_11ns_5ns_15_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_5ns_11ns_15_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'maxpool_layer'.
+INFO: [HLS 200-111]  Elapsed time: 4.762 seconds; current allocated memory: 263.089 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2d_6to16_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_10ns_4ns_10s_14_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2d_6to16_layer'.
+INFO: [HLS 200-111]  Elapsed time: 1.062 seconds; current allocated memory: 266.897 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'maxpool2_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'maxpool2_layer'.
+INFO: [HLS 200-111]  Elapsed time: 0.896 seconds; current allocated memory: 270.450 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'flatten_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'flatten_layer'.
+INFO: [HLS 200-111]  Elapsed time: 0.929 seconds; current allocated memory: 273.335 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fc_layer_400_120_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fc_layer_400_120_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.551 seconds; current allocated memory: 274.597 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lenet_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/image_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/conv1_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/pool1_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/conv2_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/pool2_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/flat_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/fc1_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'lenet_top' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'image_r', 'conv1_out', 'pool1_out', 'conv2_out', 'pool2_out', 'flat_out', 'fc1_out' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lenet_top'.
+INFO: [HLS 200-111]  Elapsed time: 0.826 seconds; current allocated memory: 277.390 MB.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_biases_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_0_0_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_0_1_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_0_2_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_0_3_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_0_4_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_1_0_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_1_1_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_1_2_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_1_3_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_1_4_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_2_0_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_2_1_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_2_2_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_2_3_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_2_4_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_3_0_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_3_1_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_3_2_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_3_3_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_3_4_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_4_0_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_4_1_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_4_2_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_4_3_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_4_4_0_rom' using distributed ROMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_top_conv2d_layer_padded_0_0_ram (RAM_1P_LUTRAM)' using distributed RAMs.
+INFO: [RTMG 210-282] Generating pipelined core: 'lenet_top_mul_4ns_10ns_13_1_1_Multiplier_0'
+INFO: [RTMG 210-282] Generating pipelined core: 'lenet_top_mul_10ns_4ns_13_1_1_Multiplier_1'
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_6to16_layer_conv2_weights_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_6to16_layer_conv2_biases_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_fc_layer_400_120_s_fc1_biases_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_fc_layer_400_120_s_fc1_weights_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:39 ; elapsed = 00:01:11 . Memory (MB): peak = 997.707 ; gain = 899.988
+INFO: [VHDL 208-304] Generating VHDL RTL for lenet_top.
+INFO: [VLOG 209-307] Generating Verilog RTL for lenet_top.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 108.72 MHz
+INFO: [HLS 200-112] Total elapsed time: 71.352 seconds; peak allocated memory: 277.390 MB.

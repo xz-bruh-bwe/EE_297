@@ -1,0 +1,1581 @@
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet opened at Mon Apr 07 00:42:11 -0700 2025
+Execute     ap_set_clock -name default -period 12.6 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12.6ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib Z:/Vitis/2020.1/common/technology/xilinx/zynq/zynq 
+Execute       source Z:/Vitis/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute       source Z:/Vitis/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source Z:/Vitis/2020.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute     source Z:/Vitis/2020.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source Z:/Vitis/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.109 sec.
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.157 sec.
+Command     ap_source done; 0.158 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib Z:/Vitis/2020.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source Z:/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source Z:/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source Z:/Vitis/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source Z:/Vitis/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source Z:/Vitis/2020.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source Z:/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=Z:/Vivado/2020.1
+INFO-FLOW: DBG:set_part: RDI_DATADIR=Z:/Vivado/2020.1/data;Z:/Vitis/2020.1/data
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+DBG:HLSDevice: Trying to load device library: Z:/Vitis/2020.1\lib\win64.o\librdi_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Vivado/2020.1/data/parts/arch.xml
+Command       ap_part_info done; 1.183 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       ap_family_info -name zynq -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         config_chip_info -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.412 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     config_chip_info -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -speed slow 
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute     get_config_interface -m_axi_latency 
+Execute     get_config_interface -m_axi_alignment_byte_size 
+Execute     get_config_interface -m_axi_max_widen_bitwidth 
+Execute     get_config_interface -default_interface 
+Execute     get_config_interface -default_slave_interface 
+Execute     get_config_rtl -register_reset_num 
+Command   open_solution done; 1.685 sec.
+Execute   set_part xc7z020-clg400-1 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=Z:/Vivado/2020.1
+INFO-FLOW: DBG:set_part: RDI_DATADIR=Z:/Vivado/2020.1/data;Z:/Vitis/2020.1/data
+Execute     ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_family_info -name zynq -data info 
+Execute     add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute       get_default_platform 
+Execute       ap_part_info -data single -name xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute       config_chip_info -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP 220} {BRAM 280} {URAM 0} 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_chip_info -speed slow 
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     get_default_platform 
+Command   set_part done; 0.162 sec.
+Execute   create_clock -period 12.6 -name default 
+Execute   source ./lenet_proj/lenet/directives.tcl 
+Execute     set_directive_top -name lenet_top lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+Execute   csynth_design 
+Execute     get_config_compile -dump_cfg 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+WARNING: [HLS 200-40] Skipped source file 'img_5.txt'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx.
+INFO: [HLS 200-10] Analyzing design file 'lenet_proj/lenet_top.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling lenet_proj/lenet_top.cpp as C++
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute       ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.lenet_top.cpp.diag.yml -fno-limit-debug-info --sysroot Z:/Vitis/2020.1/tps/mingw/6.2.0/win64.o/nt -fhls -fno-exceptions -E lenet_proj/lenet_top.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -I Z:/Vitis/2020.1/common/technology/autopilot/39 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I Z:/Vitis/2020.1/common/technology/autopilot -I Z:/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.lenet_top.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.lenet_top.cpp.err.log 
+Command       ap_eval done; 0.16 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.2 seconds per iteration
+Execute       set_directive_top lenet_top -name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+Execute       source Z:/Vitis/2020.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source Z:/Vitis/2020.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute         source Z:/Vitis/2020.1/tps/tcl/tcllib1.11.1/try/try.tcl 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+Execute       list_core -type functional_unit 
+Execute       clang_tidy xilinx-systemc-detector C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/.systemc_flag -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.934 sec.
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/all.directive.json 
+INFO-FLOW: exec Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/all.directive.json -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 1.317 sec.
+Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: exec Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 1.409 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 2.7 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+Execute       clang_tidy -errorcheck xilinx-label-all-loops C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_top.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_top.pp.0.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_top.pp.0.cpp.err.log 
+Command         ap_eval done; 1.536 sec.
+Execute         source Z:/Vitis/2020.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Execute           source Z:/Vitis/2020.1/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
+Command       clang_tidy done; 1.57 sec.
+Execute       clang_tidy -errorcheck xilinx-top-parameters C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_top.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_top.pp.0.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_top.pp.0.cpp.err.log 
+Command         ap_eval done; 0.889 sec.
+Command       clang_tidy done; 0.892 sec.
+Execute       clang_tidy -errorcheck xilinx-array-stream-check C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_top.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_top.pp.0.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_top.pp.0.cpp.err.log 
+Command         ap_eval done; 0.831 sec.
+Command       clang_tidy done; 0.834 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/xilinx-dataflow-lawyer.lenet_top.pp.0.cpp.diag.yml C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/xilinx-dataflow-lawyer.lenet_top.pp.0.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/xilinx-dataflow-lawyer.lenet_top.pp.0.cpp.err.log 
+Command       ap_eval done; 0.768 sec.
+Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_top.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_top.pp.0.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_top.pp.0.cpp.err.log 
+Command         ap_eval done; 0.977 sec.
+Command       clang_tidy done; 0.98 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute       ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.lenet_top.pragma.2.cpp.diag.yml -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.pragma.2.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I Z:/Vitis/2020.1/common/technology/autopilot -I Z:/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.bc > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.lenet_top.pragma.2.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.lenet_top.pragma.2.cpp.err.log 
+Command       ap_eval done; 0.907 sec.
+WARNING: [HLS 207-1600] unexpected pragma argument '', expect '=': C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:68:24
+INFO: [HLS 200-10] Analyzing design file 'lenet_proj/lenet_support.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling lenet_proj/lenet_support.cpp as C++
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute       ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.lenet_support.cpp.diag.yml -fno-limit-debug-info --sysroot Z:/Vitis/2020.1/tps/mingw/6.2.0/win64.o/nt -fhls -fno-exceptions -E lenet_proj/lenet_support.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -I Z:/Vitis/2020.1/common/technology/autopilot/39 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I Z:/Vitis/2020.1/common/technology/autopilot -I Z:/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.lenet_support.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.lenet_support.cpp.err.log 
+Command       ap_eval done; 0.123 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
+Execute       set_directive_top lenet_top -name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+INFO-FLOW: Setting directive 'TOP' name=lenet_top 
+Execute       list_core -type functional_unit 
+Execute       clang_tidy xilinx-systemc-detector C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/.systemc_flag -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.584 sec.
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/all.directive.json 
+INFO-FLOW: exec Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/all.directive.json -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.53 sec.
+Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: exec Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.589 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 1.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+Execute       clang_tidy -errorcheck xilinx-label-all-loops C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_support.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_support.pp.0.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_support.pp.0.cpp.err.log 
+Command         ap_eval done; 1.015 sec.
+Command       clang_tidy done; 1.11 sec.
+Execute       clang_tidy -errorcheck xilinx-top-parameters C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_support.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_support.pp.0.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_support.pp.0.cpp.err.log 
+Command         ap_eval done; 0.543 sec.
+Command       clang_tidy done; 0.546 sec.
+Execute       clang_tidy -errorcheck xilinx-array-stream-check C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_support.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_support.pp.0.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_support.pp.0.cpp.err.log 
+Command         ap_eval done; 0.556 sec.
+Command       clang_tidy done; 0.559 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/xilinx-dataflow-lawyer.lenet_support.pp.0.cpp.diag.yml C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/xilinx-dataflow-lawyer.lenet_support.pp.0.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/xilinx-dataflow-lawyer.lenet_support.pp.0.cpp.err.log 
+Command       ap_eval done; 0.504 sec.
+Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_support.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_support.pp.0.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang-tidy.lenet_support.pp.0.cpp.err.log 
+Command         ap_eval done; 0.614 sec.
+Command       clang_tidy done; 0.617 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute       ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.lenet_support.pragma.2.cpp.diag.yml -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.pragma.2.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I Z:/Vitis/2020.1/common/technology/autopilot -I Z:/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.bc > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.lenet_support.pragma.2.cpp.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.lenet_support.pragma.2.cpp.err.log 
+Command       ap_eval done; 0.557 sec.
+WARNING: [HLS 207-1600] unexpected pragma argument '', expect '=': lenet_proj/lenet_top.h:68:24
+WARNING: [HLS 207-1535] 'Resource' is deprecated, and it will be removed in future release: lenet_proj/lenet_support.cpp:18:9
+WARNING: [HLS 207-1600] unexpected pragma argument '', expect '=': lenet_proj/lenet_support.cpp:86:24
+WARNING: [HLS 207-1600] unexpected pragma argument '', expect '=': lenet_proj/lenet_support.cpp:141:24
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.0.bc -args  "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.g.bc" "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.g.bc"  
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.g.bc C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_support.g.bc -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.0.bc > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/llvm-link.a.g.ld.0.bc.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/llvm-link.a.g.ld.0.bc.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.1.lower.bc -args C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=.* -pass-remarks-output=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/opt.a.g.ld.1.lower.bc.diag.yml C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.1.lower.bc > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/opt.a.g.ld.1.lower.bc.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/opt.a.g.ld.1.lower.bc.err.log 
+INFO-FLOW: 
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.2.m1.bc -args C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.1.lower.bc -only-needed Z:/Vitis/2020.1/win64/lib/libhlsm_39.bc Z:/Vitis/2020.1/win64/lib/libhlsmc++_39.bc 
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.1.lower.bc -only-needed Z:/Vitis/2020.1/win64/lib/libhlsm_39.bc Z:/Vitis/2020.1/win64/lib/libhlsmc++_39.bc -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.2.m1.bc > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.err.log 
+Command         ap_eval done; 2.709 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 2.712 sec.
+Execute       run_link_or_opt -opt -out C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.3.fpc.bc -args C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=lenet_top -reflow-float-conversion 
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=.* -pass-remarks-output=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/opt.a.g.ld.3.fpc.bc.diag.yml C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=lenet_top -reflow-float-conversion -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.3.fpc.bc > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/opt.a.g.ld.3.fpc.bc.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/opt.a.g.ld.3.fpc.bc.err.log 
+Command         ap_eval done; 1.091 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 1.095 sec.
+Execute       run_link_or_opt -out C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.4.m2.bc -args C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.3.fpc.bc -only-needed Z:/Vitis/2020.1/win64/lib/libfloatconversion_39.bc 
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.3.fpc.bc -only-needed Z:/Vitis/2020.1/win64/lib/libfloatconversion_39.bc -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.4.m2.bc > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.5.gdce.bc -args C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=lenet_top 
+Execute         ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=.* -pass-remarks-output=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/opt.a.g.ld.5.gdce.bc.diag.yml C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=lenet_top -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.5.gdce.bc > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/opt.a.g.ld.5.gdce.bc.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/opt.a.g.ld.5.gdce.bc.err.log 
+INFO-FLOW: 
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_interface -default_interface 
+Execute       send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' target.
+Execute       get_config_interface -default_slave_interface 
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       get_config_interface -m_axi_offset 
+Execute       get_config_interface -m_axi_latency 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -m_axi_num_read_outstanding 
+Execute       get_config_interface -m_axi_num_write_outstanding 
+Execute       get_config_interface -m_axi_max_read_burst_length 
+Execute       get_config_interface -m_axi_max_write_burst_length 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_latency 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -m_axi_auto_max_ports 
+Execute       get_config_interface -m_axi_num_read_outstanding 
+Execute       get_config_interface -m_axi_num_write_outstanding 
+Execute       get_config_interface -m_axi_max_read_burst_length 
+Execute       get_config_interface -m_axi_max_write_burst_length 
+Execute       get_config_interface -s_axilite_data64 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_compile -pragma_strict_mode 
+INFO-FLOW: Doing LTO.
+Execute       ap_eval exec -ignorestderr Z:/Vitis/2020.1/win64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.a.g.ld.0.bc.diag.yml -fhls -mllvm -hls-top-function-name=lenet_top -mllvm -hls-db-dir -mllvm C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db -emit-llvm -c -mllvm -hls-bitcode-version=3.1 -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/top-io-fe.xml -mllvm -pass-remarks=supported-subset -mllvm -reflow-enable-interface-default-setting=false -mllvm -reflow-enable-slave-interface-default-setting=false -mllvm -gen-kernel-xml=false -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -x ir C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.ld.5.gdce.bc -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.lto.bc > C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.a.g.ld.0.bc.out.log 2> C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/clang.a.g.ld.0.bc.err.log 
+Command       ap_eval done; 0.247 sec.
+INFO: [HLS 214-115] Burst read of length 784 and bit width 32 has been inferred on port 'gmem' (lenet_proj/lenet_support.cpp:21:19)
+INFO: [HLS 214-115] Burst read of length 400 and bit width 32 has been inferred on port 'gmem' (lenet_proj/lenet_support.cpp:138:23)
+INFO: [HLS 214-115] Burst write of length 400 and bit width 32 has been inferred on port 'gmem' (lenet_proj/lenet_support.cpp:138:23)
+INFO: [HLS 214-115] Burst write of length 120 and bit width 32 has been inferred on port 'gmem' (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:67:19)
+INFO: [HLS 214-115] Burst read of length 400 and bit width 32 has been inferred on port 'gmem' (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:70:30)
+INFO-FLOW: DBG:CMD: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:04 ; elapsed = 00:00:23 . Memory (MB): peak = 997.707 ; gain = 899.988
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:04 ; elapsed = 00:00:23 . Memory (MB): peak = 997.707 ; gain = 899.988
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top lenet_top -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.0.bc -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 0.224 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:24 . Memory (MB): peak = 997.707 ; gain = 899.988
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.1.bc -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.2.prechk.bc -f 
+Command         transform done; 0.191 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.2.prechk.bc -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 997.707 ; gain = 899.988
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.g.1.bc to C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -directive-preproc -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.o.1.bc -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_91_6' (lenet_proj/lenet_support.cpp:87) in function 'conv2d_6to16_layer' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'conv2d_layer' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_22_2' (lenet_proj/lenet_support.cpp:22) in function 'conv2d_layer' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_70_2' (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:69) in function 'fc_layer<400, 120>' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_140_3' (lenet_proj/lenet_support.cpp:140) in function 'flatten_layer' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_30_5' (lenet_proj/lenet_support.cpp:32) in function 'conv2d_layer' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_33_6' (lenet_proj/lenet_support.cpp:32) in function 'conv2d_layer' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_34_7' (lenet_proj/lenet_support.cpp:32) in function 'conv2d_layer' completely with a factor of 5.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.0.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.0.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.0.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.0.4' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.1.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.1.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.1.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.1.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.1.4' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.2.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.2.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.2.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.2.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.2.4' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.3.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.3.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.3.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.3.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.3.4' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.4' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.4.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.4.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.4.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.4.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_weights.4.4' in dimension 1 automatically.
+INFO: [XFORM 203-101] Partitioning array 'padded' (lenet_proj/lenet_support.cpp:13) in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'padded' (lenet_proj/lenet_support.cpp:13) in dimension 2 with a block factor 4.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[0][0]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[0][1]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[0][2]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[0][3]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[1][0]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[1][1]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[1][2]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[1][3]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[2][0]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[2][1]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[2][2]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[2][3]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[3][0]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[3][1]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[3][2]' in function 'conv2d_layer'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'padded[3][3]' in function 'conv2d_layer'.
+Command         transform done; 1.968 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.o.1.tmp.bc -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-11] Balancing expressions in function 'maxpool_layer' (lenet_proj/lenet_support.cpp:50)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'maxpool2_layer' (lenet_proj/lenet_support.cpp:107)...4 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv2d_layer' (lenet_proj/lenet_support.cpp:13:51)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv2d_6to16_layer' (lenet_proj/lenet_support.cpp:83:69)...7 expression(s) balanced.
+Command         transform done; 0.773 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:27 . Memory (MB): peak = 997.707 ; gain = 899.988
+Execute         get_config_compile -enable_loop_extract 
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin2 -bitwidthmin2 -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.o.2.bc -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_56_2' (lenet_proj/lenet_support.cpp:56:35) in function 'maxpool_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_55_1' (lenet_proj/lenet_support.cpp:55:28) in function 'maxpool_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_113_2' (lenet_proj/lenet_support.cpp:113:36) in function 'maxpool2_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_112_1' (lenet_proj/lenet_support.cpp:112:29) in function 'maxpool2_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_139_2' (lenet_proj/lenet_support.cpp:139:36) in function 'flatten_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_138_1' (lenet_proj/lenet_support.cpp:138:32) in function 'flatten_layer'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_67_1' (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:69:9) in function 'fc_layer<400, 120>' the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_21_1' (lenet_proj/lenet_support.cpp:21:28) in function 'conv2d_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_29_4' (lenet_proj/lenet_support.cpp:29:35) in function 'conv2d_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_28_3' (lenet_proj/lenet_support.cpp:28:31) in function 'conv2d_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_90_5' (lenet_proj/lenet_support.cpp:87:9) in function 'conv2d_6to16_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_89_4' (lenet_proj/lenet_support.cpp:87:9) in function 'conv2d_6to16_layer'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_85_3' (lenet_proj/lenet_support.cpp:87:9) in function 'conv2d_6to16_layer' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_84_2' (lenet_proj/lenet_support.cpp:84:35) in function 'conv2d_6to16_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_83_1' (lenet_proj/lenet_support.cpp:83:28) in function 'conv2d_6to16_layer'.
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[0][0]' (lenet_proj/lenet_support.cpp:23:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[0][0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[0][1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[0][2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[0][3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[1][0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[1][1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[1][2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[1][3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[2][0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[2][1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[2][2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[2][3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[3][0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[3][1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[3][2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'padded[3][3]' 
+Command         transform done; 3.822 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:10 ; elapsed = 00:00:30 . Memory (MB): peak = 997.707 ; gain = 899.988
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 7.067 sec.
+Command     elaborate done; 28.08 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'lenet_top' ...
+Execute       ap_set_top_model lenet_top 
+WARNING: [SYN 201-103] Legalizing function name 'fc_layer<400, 120>' to 'fc_layer_400_120_s'.
+Execute       get_model_list lenet_top -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model lenet_top 
+Execute       preproc_iomode -model fc_layer<400, 120> 
+Execute       preproc_iomode -model flatten_layer 
+Execute       preproc_iomode -model maxpool2_layer 
+Execute       preproc_iomode -model conv2d_6to16_layer 
+Execute       preproc_iomode -model maxpool_layer 
+Execute       preproc_iomode -model conv2d_layer 
+Execute       get_model_list lenet_top -filter all-wo-channel 
+INFO-FLOW: Model list for configure: conv2d_layer maxpool_layer conv2d_6to16_layer maxpool2_layer flatten_layer {fc_layer<400, 120>} lenet_top
+INFO-FLOW: Configuring Module : conv2d_layer ...
+Execute       set_default_model conv2d_layer 
+Execute       apply_spec_resource_limit conv2d_layer 
+INFO-FLOW: Configuring Module : maxpool_layer ...
+Execute       set_default_model maxpool_layer 
+Execute       apply_spec_resource_limit maxpool_layer 
+INFO-FLOW: Configuring Module : conv2d_6to16_layer ...
+Execute       set_default_model conv2d_6to16_layer 
+Execute       apply_spec_resource_limit conv2d_6to16_layer 
+INFO-FLOW: Configuring Module : maxpool2_layer ...
+Execute       set_default_model maxpool2_layer 
+Execute       apply_spec_resource_limit maxpool2_layer 
+INFO-FLOW: Configuring Module : flatten_layer ...
+Execute       set_default_model flatten_layer 
+Execute       apply_spec_resource_limit flatten_layer 
+INFO-FLOW: Configuring Module : fc_layer<400, 120> ...
+Execute       set_default_model fc_layer<400, 120> 
+Execute       apply_spec_resource_limit fc_layer<400, 120> 
+INFO-FLOW: Configuring Module : lenet_top ...
+Execute       set_default_model lenet_top 
+Execute       apply_spec_resource_limit lenet_top 
+INFO-FLOW: Model list for preprocess: conv2d_layer maxpool_layer conv2d_6to16_layer maxpool2_layer flatten_layer {fc_layer<400, 120>} lenet_top
+INFO-FLOW: Preprocessing Module: conv2d_layer ...
+Execute       set_default_model conv2d_layer 
+Execute       cdfg_preprocess -model conv2d_layer 
+Execute       rtl_gen_preprocess conv2d_layer 
+INFO-FLOW: Preprocessing Module: maxpool_layer ...
+Execute       set_default_model maxpool_layer 
+Execute       cdfg_preprocess -model maxpool_layer 
+Execute       rtl_gen_preprocess maxpool_layer 
+INFO-FLOW: Preprocessing Module: conv2d_6to16_layer ...
+Execute       set_default_model conv2d_6to16_layer 
+Execute       cdfg_preprocess -model conv2d_6to16_layer 
+Execute       rtl_gen_preprocess conv2d_6to16_layer 
+INFO-FLOW: Preprocessing Module: maxpool2_layer ...
+Execute       set_default_model maxpool2_layer 
+Execute       cdfg_preprocess -model maxpool2_layer 
+Execute       rtl_gen_preprocess maxpool2_layer 
+INFO-FLOW: Preprocessing Module: flatten_layer ...
+Execute       set_default_model flatten_layer 
+Execute       cdfg_preprocess -model flatten_layer 
+Execute       rtl_gen_preprocess flatten_layer 
+INFO-FLOW: Preprocessing Module: fc_layer<400, 120> ...
+Execute       set_default_model fc_layer<400, 120> 
+Execute       cdfg_preprocess -model fc_layer<400, 120> 
+Execute       rtl_gen_preprocess fc_layer<400, 120> 
+INFO-FLOW: Preprocessing Module: lenet_top ...
+Execute       set_default_model lenet_top 
+Execute       cdfg_preprocess -model lenet_top 
+Execute       rtl_gen_preprocess lenet_top 
+WARNING: [SYN 201-107] Renaming port name 'lenet_top/image' to 'lenet_top/image_r' to avoid the conflict with HDL keywords or other object names.
+INFO-FLOW: Model list for synthesis: conv2d_layer maxpool_layer conv2d_6to16_layer maxpool2_layer flatten_layer {fc_layer<400, 120>} lenet_top
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2d_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model conv2d_layer 
+Execute       schedule -model conv2d_layer 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln42_1) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_21_1_VITIS_LOOP_22_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_28_3_VITIS_LOOP_29_4_VITIS_LOOP_30_5'.
+WARNING: [HLS 200-885] Unable to schedule 'load' operation ('padded_0_0_load_1', lenet_proj/lenet_support.cpp:36) on array 'padded[0][0]', lenet_proj/lenet_support.cpp:13 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'padded_0_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 25, Depth = 146.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 6.536 sec.
+INFO: [HLS 200-111]  Elapsed time: 37.245 seconds; current allocated memory: 225.692 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.546 sec.
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.sched.adb -f 
+Command       db_write done; 0.227 sec.
+INFO-FLOW: Finish scheduling conv2d_layer.
+Execute       set_default_model conv2d_layer 
+Execute       bind -model conv2d_layer 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_0_0' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_0_1' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_0_2' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_0_3' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_1_0' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_1_1' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_1_2' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_1_3' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_2_0' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_2_1' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_2_2' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_2_3' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_3_0' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_3_1' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_3_2' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'padded_3_3' will be ignored if a simpler one can be used.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.637 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.481 seconds; current allocated memory: 231.384 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.633 sec.
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.bind.adb -f 
+Command       db_write done; 0.284 sec.
+INFO-FLOW: Finish binding conv2d_layer.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'maxpool_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model maxpool_layer 
+Execute       schedule -model maxpool_layer 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln61) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln59) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln61_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln59_1) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_55_1_VITIS_LOOP_56_2_VITIS_LOOP_57_3'.
+WARNING: [HLS 200-885] Unable to schedule bus request on port 'gmem' (lenet_proj/lenet_support.cpp:60) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 28.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.248 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.274 seconds; current allocated memory: 232.217 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.sched.adb -f 
+INFO-FLOW: Finish scheduling maxpool_layer.
+Execute       set_default_model maxpool_layer 
+Execute       bind -model maxpool_layer 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.257 seconds; current allocated memory: 232.985 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.102 sec.
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.bind.adb -f 
+INFO-FLOW: Finish binding maxpool_layer.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2d_6to16_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model conv2d_6to16_layer 
+Execute       schedule -model conv2d_6to16_layer 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln90) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_89_4_VITIS_LOOP_90_5_VITIS_LOOP_91_6'.
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 1) between 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94) and 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94).
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 2) between 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94) and 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94).
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 3) between 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94) and 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94).
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 4) between 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94) and 'fadd' operation ('sum_3', lenet_proj/lenet_support.cpp:94).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 5, Depth = 21.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.216 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.468 seconds; current allocated memory: 233.558 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.sched.adb -f 
+INFO-FLOW: Finish scheduling conv2d_6to16_layer.
+Execute       set_default_model conv2d_6to16_layer 
+Execute       bind -model conv2d_6to16_layer 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.255 seconds; current allocated memory: 234.208 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.bind.adb -f 
+INFO-FLOW: Finish binding conv2d_6to16_layer.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'maxpool2_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model maxpool2_layer 
+Execute       schedule -model maxpool2_layer 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_112_1_VITIS_LOOP_113_2_VITIS_LOOP_114_3'.
+WARNING: [HLS 200-885] Unable to schedule bus request on port 'gmem' (lenet_proj/lenet_support.cpp:117) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 25.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.194 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.434 seconds; current allocated memory: 234.792 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.sched.adb -f 
+INFO-FLOW: Finish scheduling maxpool2_layer.
+Execute       set_default_model maxpool2_layer 
+Execute       bind -model maxpool2_layer 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.245 seconds; current allocated memory: 235.562 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.bind.adb -f 
+INFO-FLOW: Finish binding maxpool2_layer.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'flatten_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model flatten_layer 
+Execute       schedule -model flatten_layer 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_138_1_VITIS_LOOP_139_2_VITIS_LOOP_140_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.314 seconds; current allocated memory: 235.733 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.sched.adb -f 
+INFO-FLOW: Finish scheduling flatten_layer.
+Execute       set_default_model flatten_layer 
+Execute       bind -model flatten_layer 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.167 seconds; current allocated memory: 235.923 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.bind.adb -f 
+INFO-FLOW: Finish binding flatten_layer.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fc_layer_400_120_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model fc_layer<400, 120> 
+Execute       schedule -model fc_layer<400, 120> 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_70_2'.
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 1) between 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71) and 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71).
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 2) between 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71) and 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71).
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 3) between 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71) and 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71).
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 4) between 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71) and 'fadd' operation ('sum', C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h:71).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 5, Depth = 20.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.147 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.276 seconds; current allocated memory: 236.170 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.sched.adb -f 
+INFO-FLOW: Finish scheduling fc_layer<400, 120>.
+Execute       set_default_model fc_layer<400, 120> 
+Execute       bind -model fc_layer<400, 120> 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.221 seconds; current allocated memory: 236.520 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.bind.adb -f 
+INFO-FLOW: Finish binding fc_layer<400, 120>.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lenet_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model lenet_top 
+Execute       schedule -model lenet_top 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.205 seconds; current allocated memory: 236.689 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.sched.adb -f 
+INFO-FLOW: Finish scheduling lenet_top.
+Execute       set_default_model lenet_top 
+Execute       bind -model lenet_top 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.809 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.905 seconds; current allocated memory: 237.632 MB.
+Execute       syn_report -verbosereport -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.397 sec.
+Execute       db_write -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.bind.adb -f 
+INFO-FLOW: Finish binding lenet_top.
+Execute       get_model_list lenet_top -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess conv2d_layer 
+Execute       rtl_gen_preprocess maxpool_layer 
+Execute       rtl_gen_preprocess conv2d_6to16_layer 
+Execute       rtl_gen_preprocess maxpool2_layer 
+Execute       rtl_gen_preprocess flatten_layer 
+Execute       rtl_gen_preprocess fc_layer<400, 120> 
+Execute       rtl_gen_preprocess lenet_top 
+INFO-FLOW: Model list for RTL generation: conv2d_layer maxpool_layer conv2d_6to16_layer maxpool2_layer flatten_layer {fc_layer<400, 120>} lenet_top
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2d_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model conv2d_layer -top_prefix lenet_top_ -sub_prefix lenet_top_ -mg_file C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_11ns_5ns_15_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_165_32_1_1': 25 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2d_layer'.
+Command       create_rtl_model done; 0.607 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.153 seconds; current allocated memory: 245.708 MB.
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl conv2d_layer -style xilinx -f -lang vhdl -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/vhdl/lenet_top_conv2d_layer 
+Execute       gen_rtl conv2d_layer -style xilinx -f -lang vlog -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/verilog/lenet_top_conv2d_layer 
+Execute       syn_report -csynth -model conv2d_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/conv2d_layer_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.171 sec.
+Execute       syn_report -rtlxml -model conv2d_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/conv2d_layer_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model conv2d_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.716 sec.
+Execute       db_write -model conv2d_layer -f -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.adb 
+Command       db_write done; 0.454 sec.
+Execute       gen_tb_info conv2d_layer -p C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'maxpool_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model maxpool_layer -top_prefix lenet_top_ -sub_prefix lenet_top_ -mg_file C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10ns_4ns_13_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_4ns_10ns_13_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_11ns_5ns_15_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_5ns_11ns_15_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'maxpool_layer'.
+Command       create_rtl_model done; 0.145 sec.
+INFO: [HLS 200-111]  Elapsed time: 4.762 seconds; current allocated memory: 263.089 MB.
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl maxpool_layer -style xilinx -f -lang vhdl -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/vhdl/lenet_top_maxpool_layer 
+Execute       gen_rtl maxpool_layer -style xilinx -f -lang vlog -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/verilog/lenet_top_maxpool_layer 
+Execute       syn_report -csynth -model maxpool_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/maxpool_layer_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model maxpool_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/maxpool_layer_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model maxpool_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.136 sec.
+Execute       db_write -model maxpool_layer -f -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.adb 
+Command       db_write done; 0.141 sec.
+Execute       gen_tb_info maxpool_layer -p C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2d_6to16_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model conv2d_6to16_layer -top_prefix lenet_top_ -sub_prefix lenet_top_ -mg_file C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_10ns_4ns_10s_14_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2d_6to16_layer'.
+Command       create_rtl_model done; 0.139 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.062 seconds; current allocated memory: 266.897 MB.
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl conv2d_6to16_layer -style xilinx -f -lang vhdl -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/vhdl/lenet_top_conv2d_6to16_layer 
+Execute       gen_rtl conv2d_6to16_layer -style xilinx -f -lang vlog -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/verilog/lenet_top_conv2d_6to16_layer 
+Execute       syn_report -csynth -model conv2d_6to16_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/conv2d_6to16_layer_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model conv2d_6to16_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/conv2d_6to16_layer_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model conv2d_6to16_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.12 sec.
+Execute       db_write -model conv2d_6to16_layer -f -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.adb 
+Command       db_write done; 0.145 sec.
+Execute       gen_tb_info conv2d_6to16_layer -p C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'maxpool2_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model maxpool2_layer -top_prefix lenet_top_ -sub_prefix lenet_top_ -mg_file C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'maxpool2_layer'.
+INFO: [HLS 200-111]  Elapsed time: 0.896 seconds; current allocated memory: 270.450 MB.
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl maxpool2_layer -style xilinx -f -lang vhdl -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/vhdl/lenet_top_maxpool2_layer 
+Execute       gen_rtl maxpool2_layer -style xilinx -f -lang vlog -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/verilog/lenet_top_maxpool2_layer 
+Execute       syn_report -csynth -model maxpool2_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/maxpool2_layer_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model maxpool2_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/maxpool2_layer_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model maxpool2_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.116 sec.
+Execute       db_write -model maxpool2_layer -f -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.adb 
+Command       db_write done; 0.174 sec.
+Execute       gen_tb_info maxpool2_layer -p C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'flatten_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model flatten_layer -top_prefix lenet_top_ -sub_prefix lenet_top_ -mg_file C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'flatten_layer'.
+INFO: [HLS 200-111]  Elapsed time: 0.929 seconds; current allocated memory: 273.335 MB.
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl flatten_layer -style xilinx -f -lang vhdl -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/vhdl/lenet_top_flatten_layer 
+Execute       gen_rtl flatten_layer -style xilinx -f -lang vlog -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/verilog/lenet_top_flatten_layer 
+Execute       syn_report -csynth -model flatten_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/flatten_layer_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model flatten_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/flatten_layer_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model flatten_layer -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -model flatten_layer -f -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.adb 
+Command       db_write done; 0.121 sec.
+Execute       gen_tb_info flatten_layer -p C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fc_layer_400_120_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model fc_layer<400, 120> -top_prefix lenet_top_ -sub_prefix lenet_top_ -mg_file C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fc_layer_400_120_s'.
+Command       create_rtl_model done; 0.176 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.551 seconds; current allocated memory: 274.597 MB.
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl fc_layer<400, 120> -style xilinx -f -lang vhdl -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/vhdl/lenet_top_fc_layer_400_120_s 
+Execute       gen_rtl fc_layer<400, 120> -style xilinx -f -lang vlog -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/verilog/lenet_top_fc_layer_400_120_s 
+Execute       syn_report -csynth -model fc_layer<400, 120> -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/fc_layer_400_120_s_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model fc_layer<400, 120> -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/fc_layer_400_120_s_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model fc_layer<400, 120> -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -model fc_layer<400, 120> -f -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.adb 
+Command       db_write done; 0.139 sec.
+Execute       gen_tb_info fc_layer<400, 120> -p C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lenet_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model lenet_top -top_prefix  -sub_prefix lenet_top_ -mg_file C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.compgen.tcl 
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/image_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/conv1_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/pool1_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/conv2_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/pool2_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/flat_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_top/fc1_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'lenet_top' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'image_r', 'conv1_out', 'pool1_out', 'conv2_out', 'pool2_out', 'flat_out', 'fc1_out' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lenet_top'.
+Command       create_rtl_model done; 0.272 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.826 seconds; current allocated memory: 277.390 MB.
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl lenet_top -istop -style xilinx -f -lang vhdl -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/vhdl/lenet_top 
+Execute       gen_rtl lenet_top -istop -style xilinx -f -lang vlog -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/verilog/lenet_top 
+Execute       syn_report -csynth -model lenet_top -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/lenet_top_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model lenet_top -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/syn/report/lenet_top_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model lenet_top -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.429 sec.
+Execute       db_write -model lenet_top -f -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.adb 
+Command       db_write done; 0.132 sec.
+Execute       gen_tb_info lenet_top -p C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top 
+Execute       export_constraint_db -f -tool general -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.constraint.tcl 
+Execute       syn_report -designview -model lenet_top -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.design.xml 
+Command       syn_report done; 0.368 sec.
+Execute       get_config_rtl -disable_wave_debug 
+Execute       syn_report -wcfg -model lenet_top -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model lenet_top -o C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.protoinst 
+Execute       get_config_debug -directory 
+Execute       sc_get_clocks lenet_top 
+Execute       get_config_export -vivado_clock 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       sc_get_portdomain lenet_top 
+INFO-FLOW: Model list for RTL component generation: conv2d_layer maxpool_layer conv2d_6to16_layer maxpool2_layer flatten_layer {fc_layer<400, 120>} lenet_top
+INFO-FLOW: Handling components in module [conv2d_layer] ... 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.compgen.tcl 
+INFO-FLOW: Found component lenet_top_fadd_32ns_32ns_32_5_full_dsp_1.
+INFO-FLOW: Append model lenet_top_fadd_32ns_32ns_32_5_full_dsp_1
+INFO-FLOW: Found component lenet_top_fmul_32ns_32ns_32_4_max_dsp_1.
+INFO-FLOW: Append model lenet_top_fmul_32ns_32ns_32_4_max_dsp_1
+INFO-FLOW: Found component lenet_top_fcmp_32ns_32ns_1_2_no_dsp_1.
+INFO-FLOW: Append model lenet_top_fcmp_32ns_32ns_1_2_no_dsp_1
+INFO-FLOW: Found component lenet_top_mux_165_32_1_1.
+INFO-FLOW: Append model lenet_top_mux_165_32_1_1
+INFO-FLOW: Found component lenet_top_mul_mul_11ns_5ns_15_4_1.
+INFO-FLOW: Append model lenet_top_mul_mul_11ns_5ns_15_4_1
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_biases.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_biases
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_0_0_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_0_0_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_0_1_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_0_1_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_0_2_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_0_2_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_0_3_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_0_3_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_0_4_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_0_4_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_1_0_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_1_0_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_1_1_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_1_1_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_1_2_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_1_2_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_1_3_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_1_3_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_1_4_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_1_4_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_2_0_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_2_0_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_2_1_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_2_1_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_2_2_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_2_2_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_2_3_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_2_3_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_2_4_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_2_4_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_3_0_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_3_0_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_3_1_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_3_1_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_3_2_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_3_2_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_3_3_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_3_3_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_3_4_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_3_4_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_4_0_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_4_0_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_4_1_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_4_1_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_4_2_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_4_2_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_4_3_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_4_3_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_conv1_weights_4_4_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_conv1_weights_4_4_0
+INFO-FLOW: Found component lenet_top_conv2d_layer_padded_0_0.
+INFO-FLOW: Append model lenet_top_conv2d_layer_padded_0_0
+INFO-FLOW: Handling components in module [maxpool_layer] ... 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.compgen.tcl 
+INFO-FLOW: Found component lenet_top_mul_4ns_10ns_13_1_1.
+INFO-FLOW: Append model lenet_top_mul_4ns_10ns_13_1_1
+INFO-FLOW: Found component lenet_top_mul_10ns_4ns_13_1_1.
+INFO-FLOW: Append model lenet_top_mul_10ns_4ns_13_1_1
+INFO-FLOW: Found component lenet_top_mul_mul_5ns_11ns_15_4_1.
+INFO-FLOW: Append model lenet_top_mul_mul_5ns_11ns_15_4_1
+INFO-FLOW: Handling components in module [conv2d_6to16_layer] ... 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.compgen.tcl 
+INFO-FLOW: Found component lenet_top_mac_muladd_10ns_4ns_10s_14_4_1.
+INFO-FLOW: Append model lenet_top_mac_muladd_10ns_4ns_10s_14_4_1
+INFO-FLOW: Found component lenet_top_conv2d_6to16_layer_conv2_weights.
+INFO-FLOW: Append model lenet_top_conv2d_6to16_layer_conv2_weights
+INFO-FLOW: Found component lenet_top_conv2d_6to16_layer_conv2_biases.
+INFO-FLOW: Append model lenet_top_conv2d_6to16_layer_conv2_biases
+INFO-FLOW: Handling components in module [maxpool2_layer] ... 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.compgen.tcl 
+INFO-FLOW: Handling components in module [flatten_layer] ... 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.compgen.tcl 
+INFO-FLOW: Handling components in module [fc_layer_400_120_s] ... 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.compgen.tcl 
+INFO-FLOW: Found component lenet_top_fc_layer_400_120_s_fc1_biases.
+INFO-FLOW: Append model lenet_top_fc_layer_400_120_s_fc1_biases
+INFO-FLOW: Found component lenet_top_fc_layer_400_120_s_fc1_weights.
+INFO-FLOW: Append model lenet_top_fc_layer_400_120_s_fc1_weights
+INFO-FLOW: Handling components in module [lenet_top] ... 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.compgen.tcl 
+INFO-FLOW: Found component lenet_top_control_s_axi.
+INFO-FLOW: Append model lenet_top_control_s_axi
+INFO-FLOW: Found component lenet_top_gmem_m_axi.
+INFO-FLOW: Append model lenet_top_gmem_m_axi
+INFO-FLOW: Append model conv2d_layer
+INFO-FLOW: Append model maxpool_layer
+INFO-FLOW: Append model conv2d_6to16_layer
+INFO-FLOW: Append model maxpool2_layer
+INFO-FLOW: Append model flatten_layer
+INFO-FLOW: Append model fc_layer_400_120_s
+INFO-FLOW: Append model lenet_top
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: lenet_top_fadd_32ns_32ns_32_5_full_dsp_1 lenet_top_fmul_32ns_32ns_32_4_max_dsp_1 lenet_top_fcmp_32ns_32ns_1_2_no_dsp_1 lenet_top_mux_165_32_1_1 lenet_top_mul_mul_11ns_5ns_15_4_1 lenet_top_conv2d_layer_conv1_biases lenet_top_conv2d_layer_conv1_weights_0_0_0 lenet_top_conv2d_layer_conv1_weights_0_1_0 lenet_top_conv2d_layer_conv1_weights_0_2_0 lenet_top_conv2d_layer_conv1_weights_0_3_0 lenet_top_conv2d_layer_conv1_weights_0_4_0 lenet_top_conv2d_layer_conv1_weights_1_0_0 lenet_top_conv2d_layer_conv1_weights_1_1_0 lenet_top_conv2d_layer_conv1_weights_1_2_0 lenet_top_conv2d_layer_conv1_weights_1_3_0 lenet_top_conv2d_layer_conv1_weights_1_4_0 lenet_top_conv2d_layer_conv1_weights_2_0_0 lenet_top_conv2d_layer_conv1_weights_2_1_0 lenet_top_conv2d_layer_conv1_weights_2_2_0 lenet_top_conv2d_layer_conv1_weights_2_3_0 lenet_top_conv2d_layer_conv1_weights_2_4_0 lenet_top_conv2d_layer_conv1_weights_3_0_0 lenet_top_conv2d_layer_conv1_weights_3_1_0 lenet_top_conv2d_layer_conv1_weights_3_2_0 lenet_top_conv2d_layer_conv1_weights_3_3_0 lenet_top_conv2d_layer_conv1_weights_3_4_0 lenet_top_conv2d_layer_conv1_weights_4_0_0 lenet_top_conv2d_layer_conv1_weights_4_1_0 lenet_top_conv2d_layer_conv1_weights_4_2_0 lenet_top_conv2d_layer_conv1_weights_4_3_0 lenet_top_conv2d_layer_conv1_weights_4_4_0 lenet_top_conv2d_layer_padded_0_0 lenet_top_mul_4ns_10ns_13_1_1 lenet_top_mul_10ns_4ns_13_1_1 lenet_top_mul_mul_5ns_11ns_15_4_1 lenet_top_mac_muladd_10ns_4ns_10s_14_4_1 lenet_top_conv2d_6to16_layer_conv2_weights lenet_top_conv2d_6to16_layer_conv2_biases lenet_top_fc_layer_400_120_s_fc1_biases lenet_top_fc_layer_400_120_s_fc1_weights lenet_top_control_s_axi lenet_top_gmem_m_axi conv2d_layer maxpool_layer conv2d_6to16_layer maxpool2_layer flatten_layer fc_layer_400_120_s lenet_top
+INFO-FLOW: To file: write model lenet_top_fadd_32ns_32ns_32_5_full_dsp_1
+INFO-FLOW: To file: write model lenet_top_fmul_32ns_32ns_32_4_max_dsp_1
+INFO-FLOW: To file: write model lenet_top_fcmp_32ns_32ns_1_2_no_dsp_1
+INFO-FLOW: To file: write model lenet_top_mux_165_32_1_1
+INFO-FLOW: To file: write model lenet_top_mul_mul_11ns_5ns_15_4_1
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_biases
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_0_0_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_0_1_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_0_2_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_0_3_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_0_4_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_1_0_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_1_1_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_1_2_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_1_3_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_1_4_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_2_0_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_2_1_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_2_2_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_2_3_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_2_4_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_3_0_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_3_1_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_3_2_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_3_3_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_3_4_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_4_0_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_4_1_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_4_2_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_4_3_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_conv1_weights_4_4_0
+INFO-FLOW: To file: write model lenet_top_conv2d_layer_padded_0_0
+INFO-FLOW: To file: write model lenet_top_mul_4ns_10ns_13_1_1
+INFO-FLOW: To file: write model lenet_top_mul_10ns_4ns_13_1_1
+INFO-FLOW: To file: write model lenet_top_mul_mul_5ns_11ns_15_4_1
+INFO-FLOW: To file: write model lenet_top_mac_muladd_10ns_4ns_10s_14_4_1
+INFO-FLOW: To file: write model lenet_top_conv2d_6to16_layer_conv2_weights
+INFO-FLOW: To file: write model lenet_top_conv2d_6to16_layer_conv2_biases
+INFO-FLOW: To file: write model lenet_top_fc_layer_400_120_s_fc1_biases
+INFO-FLOW: To file: write model lenet_top_fc_layer_400_120_s_fc1_weights
+INFO-FLOW: To file: write model lenet_top_control_s_axi
+INFO-FLOW: To file: write model lenet_top_gmem_m_axi
+INFO-FLOW: To file: write model conv2d_layer
+INFO-FLOW: To file: write model maxpool_layer
+INFO-FLOW: To file: write model conv2d_6to16_layer
+INFO-FLOW: To file: write model maxpool2_layer
+INFO-FLOW: To file: write model flatten_layer
+INFO-FLOW: To file: write model fc_layer_400_120_s
+INFO-FLOW: To file: write model lenet_top
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute       get_top 
+Execute       get_config_export -ipname 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       get_config_rtl -module_auto_prefix 
+INFO-FLOW: DBG:CMD:   auto_impl: set ipname to top (module_auto_prefix): lenet_top
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl
+Execute       source Z:/Vitis/2020.1/common/technology/generic/autopilot/common.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source Z:/Vitis/2020.1/common/technology/generic/autopilot/op.gen 
+Execute       source Z:/Vitis/2020.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source Z:/Vitis/2020.1/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       source Z:/Vitis/2020.1/common/technology/xilinx/zynq/zynq.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source Z:/Vitis/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute             source Z:/Vitis/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/ip/util.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/ip/xfft.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.139 sec.
+Command       ap_source done; 0.139 sec.
+Execute       source Z:/Vitis/2020.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=12.600 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_biases_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_0_0_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_0_1_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_0_2_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_0_3_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_0_4_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_1_0_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_1_1_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_1_2_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_1_3_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_1_4_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_2_0_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_2_1_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_2_2_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_2_3_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_2_4_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_3_0_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_3_1_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_3_2_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_3_3_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_3_4_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_4_0_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_4_1_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_4_2_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_4_3_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_layer_conv1_weights_4_4_0_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'lenet_top_conv2d_layer_padded_0_0_ram (RAM_1P_LUTRAM)' using distributed RAMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 4.66 sec.
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'lenet_top_mul_4ns_10ns_13_1_1_Multiplier_0'
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'lenet_top_mul_10ns_4ns_13_1_1_Multiplier_1'
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 0.4 sec.
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_6to16_layer_conv2_weights_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_conv2d_6to16_layer_conv2_biases_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 0.627 sec.
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_fc_layer_400_120_s_fc1_biases_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'lenet_top_fc_layer_400_120_s_fc1_weights_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 4.042 sec.
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.compgen.tcl 
+Execute         source ./control.slave.tcl 
+Execute         is_m_axi_addr64 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 0.156 sec.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl
+Execute       source Z:/Vitis/2020.1/common/technology/generic/autopilot/common.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source Z:/Vitis/2020.1/common/technology/generic/autopilot/op.gen 
+Execute       source Z:/Vitis/2020.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source Z:/Vitis/2020.1/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       source Z:/Vitis/2020.1/common/technology/xilinx/zynq/zynq.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source Z:/Vitis/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute             source Z:/Vitis/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/ip/util.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/ip/xfft.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute           source Z:/Vitis/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.148 sec.
+Command       ap_source done; 0.149 sec.
+Execute       source Z:/Vitis/2020.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source Z:/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=lenet_top xml_exists=0
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.tbgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 0.27 sec.
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 0.306 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.compgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.compgen.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.constraint.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=0
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=8
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=49 #gSsdmPorts=0
+Execute       source Z:/Vitis/2020.1/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/top-io-be.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.tbgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.compgen.dataonly.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.compgen.dataonly.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.tbgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.compgen.dataonly.tcl 
+Execute       get_config_export -format 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_layer.tbgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool_layer.tbgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/conv2d_6to16_layer.tbgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/maxpool2_layer.tbgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/flatten_layer.tbgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/fc_layer_400_120_s.tbgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.tbgen.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       get_solution -flow_target 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -stall_sig_gen 
+Execute       get_config_rtl -profile 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/lenet_top.constraint.tcl 
+Execute       sc_get_clocks lenet_top 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/.autopilot/db/global.setting.tcl 
+Execute       get_config_debug -directory 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/impl/misc/lenet_top_ap_fadd_3_full_dsp_32_ip.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/impl/misc/lenet_top_ap_fcmp_0_no_dsp_32_ip.tcl 
+Execute       source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/lenet/impl/misc/lenet_top_ap_fmul_2_max_dsp_32_ip.tcl 
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:39 ; elapsed = 00:01:11 . Memory (MB): peak = 997.707 ; gain = 899.988
+INFO: [VHDL 208-304] Generating VHDL RTL for lenet_top.
+INFO: [VLOG 209-307] Generating Verilog RTL for lenet_top.
+Execute       syn_report -model lenet_top -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 108.72 MHz
+Command     autosyn done; 40.731 sec.
+Command   csynth_design done; 68.826 sec.
+Command ap_source done; 70.753 sec.
+Execute cleanup_all 

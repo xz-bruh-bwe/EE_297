@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1744011783359">
+  <ports id="1" name="gmem" type="PortType" bitwidth="32" direction="DirInOut" iftype="IfTypeFifo">
+    <dataInputObjs>getelementptr</dataInputObjs>
+    <dataInputObjs>getelementptr</dataInputObjs>
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="2" name="input_r" type="PortType" originalName="input" bitwidth="64">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="output_r" type="PortType" originalName="output" bitwidth="64">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <edges id="38" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="40" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="43" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="48" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="49" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="50" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="53" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="57" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="60" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="61" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="62" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="65" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="67" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.10"/>
+  <edges id="70" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="71" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="72" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="73" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="76" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="79" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="80" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="81" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="84" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="87" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="88" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="91" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="94" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="160" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="161" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="162" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="163" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="164" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="165" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="166" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="-49" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@ports.0"/>
+  <edges id="-61" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@ports.0"/>
+  <blocks id="16" name="block_16" type="BlockType">
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>bb</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="output_read" lineNumber="132" originalName="output" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="64" opcode="read" nodeLabel="6.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="132" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+      <dataInputObjs>output_r</dataInputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="6" name="input_read" lineNumber="132" originalName="input" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="132" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+      <dataInputObjs>input_r</dataInputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="trunc_ln" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." rtlName="trunc_ln_fu_115_p4" contextFuncName="flatten_layer" bitwidth="62" opcode="partselect" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>sext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="sext_ln138" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." rtlName="sext_ln138_fu_125_p1" contextFuncName="flatten_layer" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="gmem_addr" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="32" opcode="getelementptr" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+      <dataInputObjs>gmem</dataInputObjs>
+      <dataInputObjs>sext</dataInputObjs>
+      <dataOutputObjs>readreq</dataOutputObjs>
+      <dataOutputObjs>read</dataOutputObjs>
+      <dataOutputObjs>gmem</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="empty" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="1" opcode="readreq" nodeLatency="6" m_display="0" m_delay="9.19" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="trunc_ln138_1" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." rtlName="trunc_ln138_1_fu_136_p4" contextFuncName="flatten_layer" bitwidth="62" opcode="partselect" nodeLabel="6.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>sext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="sext_ln138_1" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." rtlName="sext_ln138_1_fu_146_p1" contextFuncName="flatten_layer" bitwidth="64" opcode="sext" nodeLabel="6.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="gmem_addr_9" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="32" opcode="getelementptr" nodeLabel="6.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+      <dataInputObjs>gmem</dataInputObjs>
+      <dataInputObjs>sext</dataInputObjs>
+      <dataOutputObjs>writereq</dataOutputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+      <dataOutputObjs>writeresp</dataOutputObjs>
+      <dataOutputObjs>gmem</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="empty_37" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="1" opcode="writereq" nodeLabel="6.0" m_display="0" m_delay="9.19" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="br_ln138" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" opcode="br" nodeLabel="6.0" m_display="0" m_delay="1.76" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+      <controlInputObjs>bb</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="lenet_proj/lenet_support.cpp">
+      <validLinenumbers>132</validLinenumbers>
+      <validLinenumbers>138</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="35" name="block_35" type="BlockType">
+    <controlInputObjs>bb</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="empty_39" lineNumber="146" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="1" opcode="writeresp" nodeLabel="10.0" nodeLatency="4" m_display="0" m_delay="9.19" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="146" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="_ln146" lineNumber="146" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" opcode="ret" nodeLabel="14.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="146" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="lenet_proj/lenet_support.cpp">
+      <validLinenumbers>146</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="152" pipe_depth="3" RegionName="VITIS_LOOP_138_1_VITIS_LOOP_139_2_VITIS_LOOP_140_3">
+    <basic_blocks id="22" name="bb" type="BlockType">
+      <controlInputObjs>block_16</controlInputObjs>
+      <controlInputObjs>.split3</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>block_35</controlOutputObjs>
+      <controlOutputObjs>.split3</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="indvar_flatten17" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="9" opcode="phi" nodeLabel="7.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <controlInputObjs>block_16</controlInputObjs>
+        <controlInputObjs>.split3</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="icmp_ln138" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." rtlName="icmp_ln138_fu_157_p2" contextFuncName="flatten_layer" bitwidth="1" opcode="icmp" nodeLabel="7.0" m_display="0" m_delay="1.66" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="add_ln138" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." rtlName="add_ln138_fu_163_p2" contextFuncName="flatten_layer" bitwidth="9" opcode="add" nodeLabel="7.0" m_display="0" m_delay="1.82" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="br_ln138" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" opcode="br" nodeLabel="7.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>.split3</controlInputObjs>
+        <controlInputObjs>block_35</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="lenet_proj/lenet_support.cpp">
+        <validLinenumbers>138</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="32" name=".split3" type="BlockType">
+      <controlInputObjs>bb</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>bb</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="gmem_addr_read" lineNumber="142" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="32" opcode="read" nodeLabel="8.0" m_display="0" m_delay="9.19" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="142" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="gmem_addr_9_write_ln142" lineNumber="142" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" opcode="write" nodeLabel="9.0" m_display="0" m_delay="9.19" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="142" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="br_ln0" opcode="br" nodeLabel="9.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <controlInputObjs>bb</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="lenet_proj/lenet_support.cpp">
+        <validLinenumbers>142</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <ScheduleInfo time="9"/>
+  <ScheduleInfo time="10"/>
+  <ScheduleInfo time="11"/>
+  <ScheduleInfo time="12"/>
+  <ScheduleInfo time="13"/>
+  <ScheduleInfo time="14"/>
+  <regnodes realName="gmem_addr_read_reg_190">
+    <nodeIds>29</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln138_reg_181">
+    <nodeIds>19</nodeIds>
+  </regnodes>
+  <regnodes realName="gmem_addr_reg_169">
+    <nodeIds>9</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln138_reg_185">
+    <nodeIds>20</nodeIds>
+  </regnodes>
+  <regnodes realName="indvar_flatten17_reg_104">
+    <nodeIds>17</nodeIds>
+  </regnodes>
+  <regnodes realName="gmem_addr_9_reg_175">
+    <nodeIds>13</nodeIds>
+  </regnodes>
+  <expressionNodes realName="gmem_addr_fu_129">
+    <nodeIds>9</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="indvar_flatten17_phi_fu_108">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln138_fu_163">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sext_ln138_fu_125">
+    <nodeIds>8</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sext_ln138_1_fu_146">
+    <nodeIds>12</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln_fu_115">
+    <nodeIds>7</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="gmem_addr_9_fu_150">
+    <nodeIds>13</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln138_fu_157">
+    <nodeIds>19</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln138_1_fu_136">
+    <nodeIds>11</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="input_read_read_fu_64">
+    <nodeIds>6</nodeIds>
+  </ioNodes>
+  <ioNodes realName="grp_writeresp_fu_83">
+    <nodeIds>14</nodeIds>
+    <nodeIds>33</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln142_write_fu_95">
+    <nodeIds>30</nodeIds>
+  </ioNodes>
+  <ioNodes realName="grp_readreq_fu_70">
+    <nodeIds>10</nodeIds>
+  </ioNodes>
+  <ioNodes realName="output_read_read_fu_77">
+    <nodeIds>5</nodeIds>
+  </ioNodes>
+  <ioNodes realName="gmem_addr_read_read_fu_90">
+    <nodeIds>29</nodeIds>
+  </ioNodes>
+  <ioPorts name="gmem"/>
+  <ioPorts name="input_r">
+    <contents name="read">
+      <nodeIds>6</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="output_r">
+    <contents name="read">
+      <nodeIds>5</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="7" latency="7"/>
+    </states>
+    <states id="2">
+      <operations id="10" stage="6" latency="7"/>
+    </states>
+    <states id="3">
+      <operations id="10" stage="5" latency="7"/>
+    </states>
+    <states id="4">
+      <operations id="10" stage="4" latency="7"/>
+    </states>
+    <states id="5">
+      <operations id="10" stage="3" latency="7"/>
+    </states>
+    <states id="6">
+      <operations id="10" stage="2" latency="7"/>
+    </states>
+    <states id="7">
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="7"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+    </states>
+    <states id="8">
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+    </states>
+    <states id="9">
+      <operations id="29" stage="1" latency="1"/>
+    </states>
+    <states id="10">
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+    </states>
+    <states id="11">
+      <operations id="33" stage="5" latency="5"/>
+    </states>
+    <states id="12">
+      <operations id="33" stage="4" latency="5"/>
+    </states>
+    <states id="13">
+      <operations id="33" stage="3" latency="5"/>
+    </states>
+    <states id="14">
+      <operations id="33" stage="2" latency="5"/>
+    </states>
+    <states id="15">
+      <operations id="33" stage="1" latency="5"/>
+      <operations id="34" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="11" outState="12">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="12" outState="13">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="13" outState="14">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="14" outState="15">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="10">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="10" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="11">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="flatten_layer" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="413" mMaxLatency="413">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="6" mMaxLatency="6">
+      <basicBlocks>16</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_138_1_VITIS_LOOP_139_2_VITIS_LOOP_140_3" mII="1" mDepth="3" mMinTripCount="400" mMaxTripCount="400" mMinLatency="401" mMaxLatency="401" mType="1">
+      <basicBlocks>22</basicBlocks>
+      <basicBlocks>32</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="4" mMaxLatency="4">
+      <basicBlocks>35</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>
