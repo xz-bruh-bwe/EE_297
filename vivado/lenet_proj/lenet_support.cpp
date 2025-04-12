@@ -112,7 +112,7 @@ void maxpool2_layer(
     for (int c = 0; c < 16; c++) {
         for (int i = 0; i < 10; i += 2) {
             for (int j = 0; j < 10; j += 2) {
-#pragma HLS PIPELINE II=1
+#pragma HLS PIPELINE II
                 data_t v0 = input[i][j][c];
                 data_t v1 = input[i][j + 1][c];
                 data_t v2 = input[i + 1][j][c];
@@ -166,4 +166,42 @@ void flatten_layer(
 //    }
 //}
 
+//
+#include <hls_math.h>
+
+void fc3_layer(float fc3_input[FC3_IN_SIZE],
+               float fc3_weights[FC3_IN_SIZE][FC3_OUT_SIZE], // CHANGED: [IN][OUT]
+               float fc3_bias[FC3_OUT_SIZE],
+               int* predicted_class) {
+#pragma HLS INLINE off                
+
+    float logits[FC3_OUT_SIZE];
+// ──────────── Partitioning & Memory Resource Optimization ─────────────
+#pragma HLS ARRAY_PARTITION variable=fc3_input block dim=4
+#pragma HLS ARRAY_PARTITION variable=fc3_weights block factor=4 dim=2
+#pragma HLS RESOURCE variable=fc3_weights core=RAM_1P_LUTRAM
+#pragma HLS ARRAY_PARTITION variable=fc3_bias block dim=4
+#pragma HLS ARRAY_PARTITION variable=logits block dim=4
+
+    // Compute logits
+    for (int i = 0; i < FC3_OUT_SIZE; i++) {
+#pragma HLS PIPELINE II = 2
+        logits[i] = fc3_bias[i];
+        for (int j = 0; j < FC3_IN_SIZE; j++) {
+            logits[i] += fc3_input[j] * fc3_weights[j][i]; // CHANGED: [j][i]
+        }
+    }
+    // Argmax
+    int argmax = 0;
+    float max_val = logits[0];
+    for (int i = 1; i < FC3_OUT_SIZE; i++) {
+    #pragma HLS PIPELINE II = 2
+        if (logits[i] > max_val) {
+            max_val = logits[i];
+            argmax = i;
+        }
+    }
+
+    *predicted_class = argmax;
+}
 

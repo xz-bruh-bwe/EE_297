@@ -58,6 +58,22 @@ fc1_out {
 	offset 88
 	offset_end 99
 }
+fc2_out { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 100
+	offset_end 111
+}
+prediction { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 112
+	offset_end 123
+}
 ap_start { }
 ap_done { }
 ap_ready { }

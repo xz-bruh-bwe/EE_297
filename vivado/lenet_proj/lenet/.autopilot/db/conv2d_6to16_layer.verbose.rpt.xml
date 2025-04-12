@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'conv2d_6to16_layer'" level="0">
-<item name = "Date">Mon Apr  7 00:43:01 2025
+<item name = "Date">Mon Apr  7 23:45:04 2025
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">lenet_proj</item>
@@ -174,7 +174,7 @@
 <column name="ki_reg_308">9, 2, 3, 6</column>
 <column name="kj_reg_319">9, 2, 3, 6</column>
 <column name="oc_reg_227">9, 2, 5, 10</column>
-<column name="sum_4_reg_331">9, 2, 32, 64</column>
+<column name="sum_6_reg_331">9, 2, 32, 64</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -195,8 +195,8 @@
 <column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter4">1, 0, 1, 0</column>
 <column name="conv2_biases_load_reg_1008">32, 0, 32, 0</column>
-<column name="gmem_addr_12_read_reg_1131">32, 0, 32, 0</column>
-<column name="gmem_addr_12_reg_1105">64, 0, 64, 0</column>
+<column name="gmem_addr_14_read_reg_1131">32, 0, 32, 0</column>
+<column name="gmem_addr_14_reg_1105">64, 0, 64, 0</column>
 <column name="gmem_addr_reg_1151">64, 0, 64, 0</column>
 <column name="i_reg_250">4, 0, 4, 0</column>
 <column name="ic_reg_285">3, 0, 3, 0</column>
@@ -223,7 +223,7 @@
 <column name="select_ln90_1_reg_1082">3, 0, 3, 0</column>
 <column name="select_ln90_3_reg_1116">6, 0, 6, 0</column>
 <column name="select_ln90_reg_1075">3, 0, 3, 0</column>
-<column name="sum_4_reg_331">32, 0, 32, 0</column>
+<column name="sum_6_reg_331">32, 0, 32, 0</column>
 <column name="sum_reg_1167">32, 0, 32, 0</column>
 <column name="trunc_ln83_reg_998">4, 0, 4, 0</column>
 <column name="weight_reg_1126">32, 0, 32, 0</column>

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'lenet_top'
 ================================================================
-* Date:           Mon Apr  7 00:43:04 2025
+* Date:           Mon Apr  7 23:45:15 2025
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        lenet_proj
@@ -20,7 +20,7 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  | 12.60 ns | 9.198 ns |   3.40 ns  |
+    |ap_clk  | 12.60 ns | 9.603 ns |   3.40 ns  |
     +--------+----------+----------+------------+
 
 + Latency: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |   Latency (absolute)  |      Interval     | Pipeline|
     |   min   |   max   |    min    |    max    |   min   |   max   |   Type  |
     +---------+---------+-----------+-----------+---------+---------+---------+
-    |  1618811|  1618811| 20.397 ms | 20.397 ms |  1618812|  1618812|   none  |
+    |  1672456|  1672456| 21.073 ms | 21.073 ms |  1672457|  1672457|   none  |
     +---------+---------+-----------+-----------+---------+---------+---------+
 
     + Detail: 
@@ -38,12 +38,14 @@
         |                               |                    |  Latency (cycles) |   Latency (absolute)  |      Interval     | Pipeline|
         |            Instance           |       Module       |   min   |   max   |    min    |    max    |   min   |   max   |   Type  |
         +-------------------------------+--------------------+---------+---------+-----------+-----------+---------+---------+---------+
-        |grp_conv2d_layer_fu_170        |conv2d_layer        |   119549|   119549|  1.506 ms |  1.506 ms |   119549|   119549|   none  |
-        |grp_maxpool_layer_fu_232       |maxpool_layer       |     4729|     4729| 59.585 us | 59.585 us |     4729|     4729|   none  |
-        |grp_maxpool2_layer_fu_240      |maxpool2_layer      |     1622|     1622| 20.437 us | 20.437 us |     1622|     1622|   none  |
-        |grp_conv2d_6to16_layer_fu_248  |conv2d_6to16_layer  |  1249601|  1249601| 15.745 ms | 15.745 ms |  1249601|  1249601|   none  |
-        |grp_fc_layer_400_120_s_fu_260  |fc_layer_400_120_s  |   242886|   242886|  3.060 ms |  3.060 ms |   242886|   242886|   none  |
-        |grp_flatten_layer_fu_272       |flatten_layer       |      413|      413|  5.204 us |  5.204 us |      413|      413|   none  |
+        |grp_fc3_layer_fu_206           |fc3_layer           |     1219|     1219| 15.359 us | 15.359 us |     1219|     1219|   none  |
+        |grp_conv2d_layer_fu_222        |conv2d_layer        |   119549|   119549|  1.506 ms |  1.506 ms |   119549|   119549|   none  |
+        |grp_maxpool_layer_fu_284       |maxpool_layer       |     4729|     4729| 59.585 us | 59.585 us |     4729|     4729|   none  |
+        |grp_maxpool2_layer_fu_292      |maxpool2_layer      |     1622|     1622| 20.437 us | 20.437 us |     1622|     1622|   none  |
+        |grp_conv2d_6to16_layer_fu_300  |conv2d_6to16_layer  |  1249601|  1249601| 15.745 ms | 15.745 ms |  1249601|  1249601|   none  |
+        |grp_fc_layer_120_84_s_fu_312   |fc_layer_120_84_s   |    52422|    52422|  0.661 ms |  0.661 ms |    52422|    52422|   none  |
+        |grp_fc_layer_400_120_s_fu_324  |fc_layer_400_120_s  |   242886|   242886|  3.060 ms |  3.060 ms |   242886|   242886|   none  |
+        |grp_flatten_layer_fu_336       |flatten_layer       |      413|      413|  5.204 us |  5.204 us |      413|      413|   none  |
         +-------------------------------+--------------------+---------+---------+-----------+-----------+---------+---------+---------+
 
         * Loop: 
@@ -61,34 +63,36 @@
 |DSP              |        -|    -|       -|      -|    -|
 |Expression       |        -|    -|       -|      -|    -|
 |FIFO             |        -|    -|       -|      -|    -|
-|Instance         |      139|   24|   12696|  17760|    -|
+|Instance         |      175|   34|   26154|  27590|    -|
 |Memory           |        -|    -|       -|      -|    -|
-|Multiplexer      |        -|    -|       -|   1272|    -|
-|Register         |        -|    -|     466|      -|    -|
+|Multiplexer      |        -|    -|       -|   1493|    -|
+|Register         |        -|    -|     600|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |      139|   24|   13162|  19032|    0|
+|Total            |      175|   34|   26754|  29083|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |       49|   10|      12|     35|    0|
+|Utilization (%)  |       62|   15|      25|     54|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
     * Instance: 
-    +-------------------------------+--------------------+---------+----+------+------+-----+
-    |            Instance           |       Module       | BRAM_18K| DSP|  FF  |  LUT | URAM|
-    +-------------------------------+--------------------+---------+----+------+------+-----+
-    |control_s_axi_U                |control_s_axi       |        0|   0|   526|   936|    0|
-    |grp_conv2d_6to16_layer_fu_248  |conv2d_6to16_layer  |        8|   6|   984|  2012|    0|
-    |grp_conv2d_layer_fu_170        |conv2d_layer        |        0|   9|  6408|  8104|    0|
-    |grp_fc_layer_400_120_s_fu_260  |fc_layer_400_120_s  |      129|   5|   861|  1188|    0|
-    |grp_flatten_layer_fu_272       |flatten_layer       |        0|   0|    59|   171|    0|
-    |gmem_m_axi_U                   |gmem_m_axi          |        2|   0|   512|   580|    0|
-    |grp_maxpool2_layer_fu_240      |maxpool2_layer      |        0|   0|  1382|  2365|    0|
-    |grp_maxpool_layer_fu_232       |maxpool_layer       |        0|   4|  1964|  2404|    0|
-    +-------------------------------+--------------------+---------+----+------+------+-----+
-    |Total                          |                    |      139|  24| 12696| 17760|    0|
-    +-------------------------------+--------------------+---------+----+------+------+-----+
+    +-------------------------------+--------------------+---------+----+-------+------+-----+
+    |            Instance           |       Module       | BRAM_18K| DSP|   FF  |  LUT | URAM|
+    +-------------------------------+--------------------+---------+----+-------+------+-----+
+    |control_s_axi_U                |control_s_axi       |        0|   0|    666|  1192|    0|
+    |grp_conv2d_6to16_layer_fu_300  |conv2d_6to16_layer  |        8|   6|    984|  2012|    0|
+    |grp_conv2d_layer_fu_222        |conv2d_layer        |        0|   9|   6408|  8104|    0|
+    |grp_fc3_layer_fu_206           |fc3_layer           |        3|   5|  12554|  8430|    0|
+    |grp_fc_layer_120_84_s_fu_312   |fc_layer_120_84_s   |       33|   5|    885|  1208|    0|
+    |grp_fc_layer_400_120_s_fu_324  |fc_layer_400_120_s  |      129|   5|    861|  1188|    0|
+    |grp_flatten_layer_fu_336       |flatten_layer       |        0|   0|     59|   171|    0|
+    |gmem_m_axi_U                   |gmem_m_axi          |        2|   0|    512|   580|    0|
+    |grp_maxpool2_layer_fu_292      |maxpool2_layer      |        0|   0|   1261|  2301|    0|
+    |grp_maxpool_layer_fu_284       |maxpool_layer       |        0|   4|   1964|  2404|    0|
+    +-------------------------------+--------------------+---------+----+-------+------+-----+
+    |Total                          |                    |      175|  34|  26154| 27590|    0|
+    +-------------------------------+--------------------+---------+----+-------+------+-----+
 
     * DSP: 
     N/A
@@ -106,63 +110,67 @@
     +---------------+----+-----------+-----+-----------+
     |      Name     | LUT| Input Size| Bits| Total Bits|
     +---------------+----+-----------+-----+-----------+
-    |ap_NS_fsm      |  56|         13|    1|         13|
-    |gmem_ARADDR    |  38|          7|   64|        448|
-    |gmem_ARBURST   |  38|          7|    2|         14|
-    |gmem_ARCACHE   |  38|          7|    4|         28|
-    |gmem_ARID      |  38|          7|    1|          7|
-    |gmem_ARLEN     |  38|          7|   32|        224|
-    |gmem_ARLOCK    |  38|          7|    2|         14|
-    |gmem_ARPROT    |  38|          7|    3|         21|
-    |gmem_ARQOS     |  38|          7|    4|         28|
-    |gmem_ARREGION  |  38|          7|    4|         28|
-    |gmem_ARSIZE    |  38|          7|    3|         21|
-    |gmem_ARUSER    |  38|          7|    1|          7|
-    |gmem_ARVALID   |  38|          7|    1|          7|
-    |gmem_AWADDR    |  38|          7|   64|        448|
-    |gmem_AWBURST   |  38|          7|    2|         14|
-    |gmem_AWCACHE   |  38|          7|    4|         28|
-    |gmem_AWID      |  38|          7|    1|          7|
-    |gmem_AWLEN     |  38|          7|   32|        224|
-    |gmem_AWLOCK    |  38|          7|    2|         14|
-    |gmem_AWPROT    |  38|          7|    3|         21|
-    |gmem_AWQOS     |  38|          7|    4|         28|
-    |gmem_AWREGION  |  38|          7|    4|         28|
-    |gmem_AWSIZE    |  38|          7|    3|         21|
-    |gmem_AWUSER    |  38|          7|    1|          7|
-    |gmem_AWVALID   |  38|          7|    1|          7|
-    |gmem_BREADY    |  38|          7|    1|          7|
-    |gmem_RREADY    |  38|          7|    1|          7|
-    |gmem_WDATA     |  38|          7|   32|        224|
-    |gmem_WID       |  38|          7|    1|          7|
-    |gmem_WLAST     |  38|          7|    1|          7|
-    |gmem_WSTRB     |  38|          7|    4|         28|
-    |gmem_WUSER     |  38|          7|    1|          7|
-    |gmem_WVALID    |  38|          7|    1|          7|
+    |ap_NS_fsm      |  85|         17|    1|         17|
+    |gmem_ARADDR    |  44|          9|   64|        576|
+    |gmem_ARBURST   |  44|          9|    2|         18|
+    |gmem_ARCACHE   |  44|          9|    4|         36|
+    |gmem_ARID      |  44|          9|    1|          9|
+    |gmem_ARLEN     |  44|          9|   32|        288|
+    |gmem_ARLOCK    |  44|          9|    2|         18|
+    |gmem_ARPROT    |  44|          9|    3|         27|
+    |gmem_ARQOS     |  44|          9|    4|         36|
+    |gmem_ARREGION  |  44|          9|    4|         36|
+    |gmem_ARSIZE    |  44|          9|    3|         27|
+    |gmem_ARUSER    |  44|          9|    1|          9|
+    |gmem_ARVALID   |  44|          9|    1|          9|
+    |gmem_AWADDR    |  44|          9|   64|        576|
+    |gmem_AWBURST   |  44|          9|    2|         18|
+    |gmem_AWCACHE   |  44|          9|    4|         36|
+    |gmem_AWID      |  44|          9|    1|          9|
+    |gmem_AWLEN     |  44|          9|   32|        288|
+    |gmem_AWLOCK    |  44|          9|    2|         18|
+    |gmem_AWPROT    |  44|          9|    3|         27|
+    |gmem_AWQOS     |  44|          9|    4|         36|
+    |gmem_AWREGION  |  44|          9|    4|         36|
+    |gmem_AWSIZE    |  44|          9|    3|         27|
+    |gmem_AWUSER    |  44|          9|    1|          9|
+    |gmem_AWVALID   |  44|          9|    1|          9|
+    |gmem_BREADY    |  44|          9|    1|          9|
+    |gmem_RREADY    |  44|          9|    1|          9|
+    |gmem_WDATA     |  44|          9|   32|        288|
+    |gmem_WID       |  44|          9|    1|          9|
+    |gmem_WLAST     |  44|          9|    1|          9|
+    |gmem_WSTRB     |  44|          9|    4|         36|
+    |gmem_WUSER     |  44|          9|    1|          9|
+    |gmem_WVALID    |  44|          9|    1|          9|
     +---------------+----+-----------+-----+-----------+
-    |Total          |1272|        237|  285|       2001|
+    |Total          |1493|        305|  285|       2573|
     +---------------+----+-----------+-----+-----------+
 
     * Register: 
     +--------------------------------------------+----+----+-----+-----------+
     |                    Name                    | FF | LUT| Bits| Const Bits|
     +--------------------------------------------+----+----+-----+-----------+
-    |ap_CS_fsm                                   |  12|   0|   12|          0|
-    |conv1_out_read_reg_309                      |  64|   0|   64|          0|
-    |conv2_out_read_reg_297                      |  64|   0|   64|          0|
-    |fc1_out_read_reg_280                        |  64|   0|   64|          0|
-    |flat_out_read_reg_285                       |  64|   0|   64|          0|
-    |grp_conv2d_6to16_layer_fu_248_ap_start_reg  |   1|   0|    1|          0|
-    |grp_conv2d_layer_fu_170_ap_start_reg        |   1|   0|    1|          0|
-    |grp_fc_layer_400_120_s_fu_260_ap_start_reg  |   1|   0|    1|          0|
-    |grp_flatten_layer_fu_272_ap_start_reg       |   1|   0|    1|          0|
-    |grp_maxpool2_layer_fu_240_ap_start_reg      |   1|   0|    1|          0|
-    |grp_maxpool_layer_fu_232_ap_start_reg       |   1|   0|    1|          0|
-    |image_read_reg_315                          |  64|   0|   64|          0|
-    |pool1_out_read_reg_303                      |  64|   0|   64|          0|
-    |pool2_out_read_reg_291                      |  64|   0|   64|          0|
+    |ap_CS_fsm                                   |  16|   0|   16|          0|
+    |conv1_out_read_reg_385                      |  64|   0|   64|          0|
+    |conv2_out_read_reg_373                      |  64|   0|   64|          0|
+    |fc1_out_read_reg_355                        |  64|   0|   64|          0|
+    |fc2_out_read_reg_349                        |  64|   0|   64|          0|
+    |flat_out_read_reg_361                       |  64|   0|   64|          0|
+    |grp_conv2d_6to16_layer_fu_300_ap_start_reg  |   1|   0|    1|          0|
+    |grp_conv2d_layer_fu_222_ap_start_reg        |   1|   0|    1|          0|
+    |grp_fc3_layer_fu_206_ap_start_reg           |   1|   0|    1|          0|
+    |grp_fc_layer_120_84_s_fu_312_ap_start_reg   |   1|   0|    1|          0|
+    |grp_fc_layer_400_120_s_fu_324_ap_start_reg  |   1|   0|    1|          0|
+    |grp_flatten_layer_fu_336_ap_start_reg       |   1|   0|    1|          0|
+    |grp_maxpool2_layer_fu_292_ap_start_reg      |   1|   0|    1|          0|
+    |grp_maxpool_layer_fu_284_ap_start_reg       |   1|   0|    1|          0|
+    |image_read_reg_391                          |  64|   0|   64|          0|
+    |pool1_out_read_reg_379                      |  64|   0|   64|          0|
+    |pool2_out_read_reg_367                      |  64|   0|   64|          0|
+    |prediction_read_reg_344                     |  64|   0|   64|          0|
     +--------------------------------------------+----+----+-----+-----------+
-    |Total                                       | 466|   0|  466|          0|
+    |Total                                       | 600|   0|  600|          0|
     +--------------------------------------------+----+----+-----+-----------+
 
 

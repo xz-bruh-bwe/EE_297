@@ -2329,7 +2329,7 @@
 					<Obj>
 						<type>0</type>
 						<id>60</id>
-						<name>sum_4</name>
+						<name>sum_6</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -4366,7 +4366,7 @@
 					<Obj>
 						<type>0</type>
 						<id>108</id>
-						<name>tmp_130_cast</name>
+						<name>tmp_148_cast</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>93</lineNumber>
@@ -5114,7 +5114,7 @@
 					<Obj>
 						<type>0</type>
 						<id>124</id>
-						<name>trunc_ln5</name>
+						<name>trunc_ln8</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>92</lineNumber>
@@ -5215,7 +5215,7 @@
 					<Obj>
 						<type>0</type>
 						<id>126</id>
-						<name>gmem_addr_12</name>
+						<name>gmem_addr_14</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>92</lineNumber>
@@ -5316,7 +5316,7 @@
 					<Obj>
 						<type>0</type>
 						<id>128</id>
-						<name>gmem_addr_12_read</name>
+						<name>gmem_addr_14_read</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>92</lineNumber>
@@ -5515,7 +5515,7 @@
 					<Obj>
 						<type>0</type>
 						<id>132</id>
-						<name>sum_3</name>
+						<name>sum_5</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>94</lineNumber>
@@ -6101,7 +6101,7 @@
 					<Obj>
 						<type>0</type>
 						<id>145</id>
-						<name>tmp_46</name>
+						<name>tmp_48</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>100</lineNumber>
@@ -14450,7 +14450,7 @@
 			</second>
 		</item>
 		<item>
-			<first>gmem_addr_12_fu_799</first>
+			<first>gmem_addr_14_fu_799</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -14898,7 +14898,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sum_4_phi_fu_335</first>
+			<first>sum_6_phi_fu_335</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -14914,7 +14914,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_130_cast_fu_816</first>
+			<first>tmp_148_cast_fu_816</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -14946,19 +14946,19 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln5_fu_785</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>124</item>
-			</second>
-		</item>
-		<item>
 			<first>trunc_ln83_fu_420</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
 				<item>36</item>
+			</second>
+		</item>
+		<item>
+			<first>trunc_ln8_fu_785</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>124</item>
 			</second>
 		</item>
 		<item>
@@ -15196,7 +15196,7 @@
 		<count>6</count>
 		<item_version>0</item_version>
 		<item>
-			<first>gmem_addr_12_read_read_fu_169</first>
+			<first>gmem_addr_14_read_read_fu_169</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -15799,7 +15799,7 @@
 			</second>
 		</item>
 		<item>
-			<first>gmem_addr_12_read_reg_1131</first>
+			<first>gmem_addr_14_read_reg_1131</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -15807,7 +15807,7 @@
 			</second>
 		</item>
 		<item>
-			<first>gmem_addr_12_reg_1105</first>
+			<first>gmem_addr_14_reg_1105</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -16055,7 +16055,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sum_3_reg_1146</first>
+			<first>sum_5_reg_1146</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -16063,7 +16063,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sum_4_reg_331</first>
+			<first>sum_6_reg_331</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -16287,7 +16287,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sum_4_reg_331</first>
+			<first>sum_6_reg_331</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

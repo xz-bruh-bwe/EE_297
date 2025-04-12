@@ -2329,7 +2329,7 @@
 					<Obj>
 						<type>0</type>
 						<id>60</id>
-						<name>sum_4</name>
+						<name>sum_6</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -4366,7 +4366,7 @@
 					<Obj>
 						<type>0</type>
 						<id>108</id>
-						<name>tmp_130_cast</name>
+						<name>tmp_148_cast</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>93</lineNumber>
@@ -5114,7 +5114,7 @@
 					<Obj>
 						<type>0</type>
 						<id>124</id>
-						<name>trunc_ln5</name>
+						<name>trunc_ln8</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>92</lineNumber>
@@ -5215,7 +5215,7 @@
 					<Obj>
 						<type>0</type>
 						<id>126</id>
-						<name>gmem_addr_12</name>
+						<name>gmem_addr_14</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>92</lineNumber>
@@ -5316,7 +5316,7 @@
 					<Obj>
 						<type>0</type>
 						<id>128</id>
-						<name>gmem_addr_12_read</name>
+						<name>gmem_addr_14_read</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>92</lineNumber>
@@ -5515,7 +5515,7 @@
 					<Obj>
 						<type>0</type>
 						<id>132</id>
-						<name>sum_3</name>
+						<name>sum_5</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>94</lineNumber>
@@ -6101,7 +6101,7 @@
 					<Obj>
 						<type>0</type>
 						<id>145</id>
-						<name>tmp_46</name>
+						<name>tmp_48</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>100</lineNumber>

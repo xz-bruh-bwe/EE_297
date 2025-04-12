@@ -1085,7 +1085,7 @@
 					<Obj>
 						<type>0</type>
 						<id>81</id>
-						<name>empty_45</name>
+						<name>empty_57</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1272,7 +1272,7 @@
 					<Obj>
 						<type>0</type>
 						<id>87</id>
-						<name>empty_46</name>
+						<name>empty_58</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1307,7 +1307,7 @@
 					<Obj>
 						<type>0</type>
 						<id>88</id>
-						<name>tmp_5</name>
+						<name>tmp_48</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1344,7 +1344,7 @@
 					<Obj>
 						<type>0</type>
 						<id>89</id>
-						<name>tmp_5_cast</name>
+						<name>tmp_50_cast</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -3643,7 +3643,7 @@
 					<Obj>
 						<type>0</type>
 						<id>178</id>
-						<name>empty_47</name>
+						<name>empty_59</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>21</lineNumber>
@@ -4555,7 +4555,7 @@
 					<Obj>
 						<type>0</type>
 						<id>203</id>
-						<name>trunc_ln23</name>
+						<name>trunc_ln23_1</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>23</lineNumber>
@@ -4756,7 +4756,7 @@
 					<Obj>
 						<type>0</type>
 						<id>207</id>
-						<name>tmp_6</name>
+						<name>tmp_49</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>23</lineNumber>
@@ -8022,7 +8022,7 @@
 					<Obj>
 						<type>0</type>
 						<id>299</id>
-						<name>i_1</name>
+						<name>i_3</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>29</lineNumber>
@@ -8274,7 +8274,7 @@
 					<Obj>
 						<type>0</type>
 						<id>304</id>
-						<name>tmp_7</name>
+						<name>tmp_50</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -8377,7 +8377,7 @@
 					<Obj>
 						<type>0</type>
 						<id>306</id>
-						<name>empty_49</name>
+						<name>empty_61</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>29</lineNumber>
@@ -8477,7 +8477,7 @@
 					<Obj>
 						<type>0</type>
 						<id>308</id>
-						<name>tmp_8</name>
+						<name>tmp_51</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -8580,7 +8580,7 @@
 					<Obj>
 						<type>0</type>
 						<id>310</id>
-						<name>empty_50</name>
+						<name>empty_62</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>29</lineNumber>
@@ -8680,7 +8680,7 @@
 					<Obj>
 						<type>0</type>
 						<id>312</id>
-						<name>tmp_9</name>
+						<name>tmp_52</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -8783,7 +8783,7 @@
 					<Obj>
 						<type>0</type>
 						<id>314</id>
-						<name>empty_51</name>
+						<name>empty_63</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>29</lineNumber>
@@ -8883,7 +8883,7 @@
 					<Obj>
 						<type>0</type>
 						<id>316</id>
-						<name>tmp_2</name>
+						<name>tmp_53</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -8986,7 +8986,7 @@
 					<Obj>
 						<type>0</type>
 						<id>318</id>
-						<name>empty_52</name>
+						<name>empty_64</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>29</lineNumber>
@@ -9086,7 +9086,7 @@
 					<Obj>
 						<type>0</type>
 						<id>320</id>
-						<name>tmp_3</name>
+						<name>tmp_54</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -13298,7 +13298,7 @@
 					<Obj>
 						<type>0</type>
 						<id>408</id>
-						<name>tmp_4</name>
+						<name>tmp_55</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -13654,7 +13654,7 @@
 					<Obj>
 						<type>0</type>
 						<id>415</id>
-						<name>tmp_10</name>
+						<name>tmp_56</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -14010,7 +14010,7 @@
 					<Obj>
 						<type>0</type>
 						<id>422</id>
-						<name>tmp_11</name>
+						<name>tmp_57</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -14366,7 +14366,7 @@
 					<Obj>
 						<type>0</type>
 						<id>429</id>
-						<name>tmp_12</name>
+						<name>tmp_58</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -14722,7 +14722,7 @@
 					<Obj>
 						<type>0</type>
 						<id>436</id>
-						<name>tmp_13</name>
+						<name>tmp_59</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -15127,7 +15127,7 @@
 					<Obj>
 						<type>0</type>
 						<id>446</id>
-						<name>tmp_14</name>
+						<name>tmp_2</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -15278,7 +15278,7 @@
 					<Obj>
 						<type>0</type>
 						<id>449</id>
-						<name>tmp_15</name>
+						<name>tmp_3</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -15429,7 +15429,7 @@
 					<Obj>
 						<type>0</type>
 						<id>452</id>
-						<name>tmp_16</name>
+						<name>tmp_4</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -15580,7 +15580,7 @@
 					<Obj>
 						<type>0</type>
 						<id>455</id>
-						<name>tmp_17</name>
+						<name>tmp_5</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -19556,7 +19556,7 @@
 					<Obj>
 						<type>0</type>
 						<id>533</id>
-						<name>tmp_18</name>
+						<name>tmp_60</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -19707,7 +19707,7 @@
 					<Obj>
 						<type>0</type>
 						<id>536</id>
-						<name>tmp_19</name>
+						<name>tmp_61</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -20760,7 +20760,7 @@
 					<Obj>
 						<type>0</type>
 						<id>557</id>
-						<name>sum_4</name>
+						<name>sum_6</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -20910,7 +20910,7 @@
 					<Obj>
 						<type>0</type>
 						<id>560</id>
-						<name>tmp_46</name>
+						<name>tmp_6</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -21061,7 +21061,7 @@
 					<Obj>
 						<type>0</type>
 						<id>563</id>
-						<name>tmp_47</name>
+						<name>tmp_7</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -21212,7 +21212,7 @@
 					<Obj>
 						<type>0</type>
 						<id>566</id>
-						<name>tmp_48</name>
+						<name>tmp_8</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -21363,7 +21363,7 @@
 					<Obj>
 						<type>0</type>
 						<id>569</id>
-						<name>tmp_49</name>
+						<name>tmp_9</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -21514,7 +21514,7 @@
 					<Obj>
 						<type>0</type>
 						<id>572</id>
-						<name>tmp_50</name>
+						<name>tmp_10</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -25490,7 +25490,7 @@
 					<Obj>
 						<type>0</type>
 						<id>650</id>
-						<name>tmp_51</name>
+						<name>tmp_62</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -26428,7 +26428,7 @@
 					<Obj>
 						<type>0</type>
 						<id>669</id>
-						<name>tmp_20</name>
+						<name>tmp_22</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -26593,7 +26593,7 @@
 					<Obj>
 						<type>0</type>
 						<id>672</id>
-						<name>sum_4_0_1</name>
+						<name>sum_6_0_1</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -26743,7 +26743,7 @@
 					<Obj>
 						<type>0</type>
 						<id>675</id>
-						<name>tmp_52</name>
+						<name>tmp_11</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -26894,7 +26894,7 @@
 					<Obj>
 						<type>0</type>
 						<id>678</id>
-						<name>tmp_53</name>
+						<name>tmp_12</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -27045,7 +27045,7 @@
 					<Obj>
 						<type>0</type>
 						<id>681</id>
-						<name>tmp_54</name>
+						<name>tmp_13</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -27196,7 +27196,7 @@
 					<Obj>
 						<type>0</type>
 						<id>684</id>
-						<name>tmp_55</name>
+						<name>tmp_14</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -27347,7 +27347,7 @@
 					<Obj>
 						<type>0</type>
 						<id>687</id>
-						<name>tmp_56</name>
+						<name>tmp_15</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -31323,7 +31323,7 @@
 					<Obj>
 						<type>0</type>
 						<id>765</id>
-						<name>tmp_57</name>
+						<name>tmp_63</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -32261,7 +32261,7 @@
 					<Obj>
 						<type>0</type>
 						<id>784</id>
-						<name>tmp_21</name>
+						<name>tmp_23</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -32426,7 +32426,7 @@
 					<Obj>
 						<type>0</type>
 						<id>787</id>
-						<name>sum_4_0_2</name>
+						<name>sum_6_0_2</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -32576,7 +32576,7 @@
 					<Obj>
 						<type>0</type>
 						<id>790</id>
-						<name>tmp_58</name>
+						<name>tmp_16</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -32727,7 +32727,7 @@
 					<Obj>
 						<type>0</type>
 						<id>793</id>
-						<name>tmp_59</name>
+						<name>tmp_17</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -32878,7 +32878,7 @@
 					<Obj>
 						<type>0</type>
 						<id>796</id>
-						<name>tmp_60</name>
+						<name>tmp_18</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -33029,7 +33029,7 @@
 					<Obj>
 						<type>0</type>
 						<id>799</id>
-						<name>tmp_61</name>
+						<name>tmp_19</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -33180,7 +33180,7 @@
 					<Obj>
 						<type>0</type>
 						<id>802</id>
-						<name>tmp_62</name>
+						<name>tmp_20</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -37156,7 +37156,7 @@
 					<Obj>
 						<type>0</type>
 						<id>880</id>
-						<name>tmp_63</name>
+						<name>tmp_64</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -38094,7 +38094,7 @@
 					<Obj>
 						<type>0</type>
 						<id>899</id>
-						<name>tmp_22</name>
+						<name>tmp_24</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -38259,7 +38259,7 @@
 					<Obj>
 						<type>0</type>
 						<id>902</id>
-						<name>sum_4_0_3</name>
+						<name>sum_6_0_3</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -38409,7 +38409,7 @@
 					<Obj>
 						<type>0</type>
 						<id>905</id>
-						<name>tmp_64</name>
+						<name>tmp_21</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -43927,7 +43927,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1014</id>
-						<name>tmp_23</name>
+						<name>tmp_25</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -44092,7 +44092,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1017</id>
-						<name>sum_4_0_4</name>
+						<name>sum_6_0_4</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -45129,7 +45129,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1038</id>
-						<name>tmp_24</name>
+						<name>tmp_26</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -45294,7 +45294,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1041</id>
-						<name>sum_4_1</name>
+						<name>sum_6_1</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -46230,7 +46230,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1060</id>
-						<name>tmp_25</name>
+						<name>tmp_27</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -46395,7 +46395,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1063</id>
-						<name>sum_4_1_1</name>
+						<name>sum_6_1_1</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -47331,7 +47331,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1082</id>
-						<name>tmp_26</name>
+						<name>tmp_28</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -47496,7 +47496,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1085</id>
-						<name>sum_4_1_2</name>
+						<name>sum_6_1_2</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -48432,7 +48432,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1104</id>
-						<name>tmp_27</name>
+						<name>tmp_29</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -48597,7 +48597,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1107</id>
-						<name>sum_4_1_3</name>
+						<name>sum_6_1_3</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -49533,7 +49533,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1126</id>
-						<name>tmp_28</name>
+						<name>tmp_30</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -49698,7 +49698,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1129</id>
-						<name>sum_4_1_4</name>
+						<name>sum_6_1_4</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -50735,7 +50735,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1150</id>
-						<name>tmp_29</name>
+						<name>tmp_31</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -50900,7 +50900,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1153</id>
-						<name>sum_4_2</name>
+						<name>sum_6_2</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -51836,7 +51836,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1172</id>
-						<name>tmp_30</name>
+						<name>tmp_32</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -52001,7 +52001,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1175</id>
-						<name>sum_4_2_1</name>
+						<name>sum_6_2_1</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -52937,7 +52937,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1194</id>
-						<name>tmp_31</name>
+						<name>tmp_33</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -53102,7 +53102,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1197</id>
-						<name>sum_4_2_2</name>
+						<name>sum_6_2_2</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -54038,7 +54038,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1216</id>
-						<name>tmp_32</name>
+						<name>tmp_34</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -54203,7 +54203,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1219</id>
-						<name>sum_4_2_3</name>
+						<name>sum_6_2_3</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -55139,7 +55139,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1238</id>
-						<name>tmp_33</name>
+						<name>tmp_35</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -55304,7 +55304,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1241</id>
-						<name>sum_4_2_4</name>
+						<name>sum_6_2_4</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -56341,7 +56341,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1262</id>
-						<name>tmp_34</name>
+						<name>tmp_36</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -56506,7 +56506,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1265</id>
-						<name>sum_4_3</name>
+						<name>sum_6_3</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -57442,7 +57442,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1284</id>
-						<name>tmp_35</name>
+						<name>tmp_37</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -57607,7 +57607,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1287</id>
-						<name>sum_4_3_1</name>
+						<name>sum_6_3_1</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -58543,7 +58543,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1306</id>
-						<name>tmp_36</name>
+						<name>tmp_38</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -58708,7 +58708,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1309</id>
-						<name>sum_4_3_2</name>
+						<name>sum_6_3_2</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -59644,7 +59644,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1328</id>
-						<name>tmp_37</name>
+						<name>tmp_39</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -59809,7 +59809,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1331</id>
-						<name>sum_4_3_3</name>
+						<name>sum_6_3_3</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -60745,7 +60745,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1350</id>
-						<name>tmp_38</name>
+						<name>tmp_40</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -60910,7 +60910,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1353</id>
-						<name>sum_4_3_4</name>
+						<name>sum_6_3_4</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -61947,7 +61947,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1374</id>
-						<name>tmp_39</name>
+						<name>tmp_41</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -62112,7 +62112,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1377</id>
-						<name>sum_4_4</name>
+						<name>sum_6_4</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -63048,7 +63048,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1396</id>
-						<name>tmp_40</name>
+						<name>tmp_42</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -63213,7 +63213,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1399</id>
-						<name>sum_4_4_1</name>
+						<name>sum_6_4_1</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -64149,7 +64149,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1418</id>
-						<name>tmp_41</name>
+						<name>tmp_43</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -64314,7 +64314,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1421</id>
-						<name>sum_4_4_2</name>
+						<name>sum_6_4_2</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -65250,7 +65250,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1440</id>
-						<name>tmp_42</name>
+						<name>tmp_44</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -65415,7 +65415,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1443</id>
-						<name>sum_4_4_3</name>
+						<name>sum_6_4_3</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -66351,7 +66351,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1462</id>
-						<name>tmp_43</name>
+						<name>tmp_45</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>36</lineNumber>
@@ -66516,7 +66516,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1465</id>
-						<name>sum_4_4_4</name>
+						<name>sum_6_4_4</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>38</lineNumber>
@@ -66665,7 +66665,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1468</id>
-						<name>tmp_44</name>
+						<name>tmp_46</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>42</lineNumber>
@@ -66916,7 +66916,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1473</id>
-						<name>tmp_45</name>
+						<name>tmp_47</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>42</lineNumber>
@@ -67515,7 +67515,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1485</id>
-						<name>trunc_ln4</name>
+						<name>trunc_ln7</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>42</lineNumber>
@@ -67616,7 +67616,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1487</id>
-						<name>gmem_addr_11</name>
+						<name>gmem_addr_13</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>42</lineNumber>
@@ -67666,7 +67666,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1488</id>
-						<name>gmem_addr_11_req</name>
+						<name>gmem_addr_13_req</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>42</lineNumber>
@@ -67717,7 +67717,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1489</id>
-						<name>gmem_addr_11_write_ln42</name>
+						<name>gmem_addr_13_write_ln42</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>42</lineNumber>
@@ -67771,7 +67771,7 @@
 					<Obj>
 						<type>0</type>
 						<id>1490</id>
-						<name>gmem_addr_11_resp</name>
+						<name>gmem_addr_13_resp</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>42</lineNumber>

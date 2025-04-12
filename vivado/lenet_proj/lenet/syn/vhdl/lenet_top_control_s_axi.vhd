@@ -39,6 +39,8 @@ port (
     pool2_out             :out  STD_LOGIC_VECTOR(63 downto 0);
     flat_out              :out  STD_LOGIC_VECTOR(63 downto 0);
     fc1_out               :out  STD_LOGIC_VECTOR(63 downto 0);
+    fc2_out               :out  STD_LOGIC_VECTOR(63 downto 0);
+    prediction            :out  STD_LOGIC_VECTOR(63 downto 0);
     ap_start              :out  STD_LOGIC;
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
@@ -100,6 +102,16 @@ end entity lenet_top_control_s_axi;
 -- 0x5c : Data signal of fc1_out
 --        bit 31~0 - fc1_out[63:32] (Read/Write)
 -- 0x60 : reserved
+-- 0x64 : Data signal of fc2_out
+--        bit 31~0 - fc2_out[31:0] (Read/Write)
+-- 0x68 : Data signal of fc2_out
+--        bit 31~0 - fc2_out[63:32] (Read/Write)
+-- 0x6c : reserved
+-- 0x70 : Data signal of prediction
+--        bit 31~0 - prediction[31:0] (Read/Write)
+-- 0x74 : Data signal of prediction
+--        bit 31~0 - prediction[63:32] (Read/Write)
+-- 0x78 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of lenet_top_control_s_axi is
@@ -107,31 +119,37 @@ architecture behave of lenet_top_control_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_AP_CTRL          : INTEGER := 16#00#;
-    constant ADDR_GIE              : INTEGER := 16#04#;
-    constant ADDR_IER              : INTEGER := 16#08#;
-    constant ADDR_ISR              : INTEGER := 16#0c#;
-    constant ADDR_IMAGE_R_DATA_0   : INTEGER := 16#10#;
-    constant ADDR_IMAGE_R_DATA_1   : INTEGER := 16#14#;
-    constant ADDR_IMAGE_R_CTRL     : INTEGER := 16#18#;
-    constant ADDR_CONV1_OUT_DATA_0 : INTEGER := 16#1c#;
-    constant ADDR_CONV1_OUT_DATA_1 : INTEGER := 16#20#;
-    constant ADDR_CONV1_OUT_CTRL   : INTEGER := 16#24#;
-    constant ADDR_POOL1_OUT_DATA_0 : INTEGER := 16#28#;
-    constant ADDR_POOL1_OUT_DATA_1 : INTEGER := 16#2c#;
-    constant ADDR_POOL1_OUT_CTRL   : INTEGER := 16#30#;
-    constant ADDR_CONV2_OUT_DATA_0 : INTEGER := 16#34#;
-    constant ADDR_CONV2_OUT_DATA_1 : INTEGER := 16#38#;
-    constant ADDR_CONV2_OUT_CTRL   : INTEGER := 16#3c#;
-    constant ADDR_POOL2_OUT_DATA_0 : INTEGER := 16#40#;
-    constant ADDR_POOL2_OUT_DATA_1 : INTEGER := 16#44#;
-    constant ADDR_POOL2_OUT_CTRL   : INTEGER := 16#48#;
-    constant ADDR_FLAT_OUT_DATA_0  : INTEGER := 16#4c#;
-    constant ADDR_FLAT_OUT_DATA_1  : INTEGER := 16#50#;
-    constant ADDR_FLAT_OUT_CTRL    : INTEGER := 16#54#;
-    constant ADDR_FC1_OUT_DATA_0   : INTEGER := 16#58#;
-    constant ADDR_FC1_OUT_DATA_1   : INTEGER := 16#5c#;
-    constant ADDR_FC1_OUT_CTRL     : INTEGER := 16#60#;
+    constant ADDR_AP_CTRL           : INTEGER := 16#00#;
+    constant ADDR_GIE               : INTEGER := 16#04#;
+    constant ADDR_IER               : INTEGER := 16#08#;
+    constant ADDR_ISR               : INTEGER := 16#0c#;
+    constant ADDR_IMAGE_R_DATA_0    : INTEGER := 16#10#;
+    constant ADDR_IMAGE_R_DATA_1    : INTEGER := 16#14#;
+    constant ADDR_IMAGE_R_CTRL      : INTEGER := 16#18#;
+    constant ADDR_CONV1_OUT_DATA_0  : INTEGER := 16#1c#;
+    constant ADDR_CONV1_OUT_DATA_1  : INTEGER := 16#20#;
+    constant ADDR_CONV1_OUT_CTRL    : INTEGER := 16#24#;
+    constant ADDR_POOL1_OUT_DATA_0  : INTEGER := 16#28#;
+    constant ADDR_POOL1_OUT_DATA_1  : INTEGER := 16#2c#;
+    constant ADDR_POOL1_OUT_CTRL    : INTEGER := 16#30#;
+    constant ADDR_CONV2_OUT_DATA_0  : INTEGER := 16#34#;
+    constant ADDR_CONV2_OUT_DATA_1  : INTEGER := 16#38#;
+    constant ADDR_CONV2_OUT_CTRL    : INTEGER := 16#3c#;
+    constant ADDR_POOL2_OUT_DATA_0  : INTEGER := 16#40#;
+    constant ADDR_POOL2_OUT_DATA_1  : INTEGER := 16#44#;
+    constant ADDR_POOL2_OUT_CTRL    : INTEGER := 16#48#;
+    constant ADDR_FLAT_OUT_DATA_0   : INTEGER := 16#4c#;
+    constant ADDR_FLAT_OUT_DATA_1   : INTEGER := 16#50#;
+    constant ADDR_FLAT_OUT_CTRL     : INTEGER := 16#54#;
+    constant ADDR_FC1_OUT_DATA_0    : INTEGER := 16#58#;
+    constant ADDR_FC1_OUT_DATA_1    : INTEGER := 16#5c#;
+    constant ADDR_FC1_OUT_CTRL      : INTEGER := 16#60#;
+    constant ADDR_FC2_OUT_DATA_0    : INTEGER := 16#64#;
+    constant ADDR_FC2_OUT_DATA_1    : INTEGER := 16#68#;
+    constant ADDR_FC2_OUT_CTRL      : INTEGER := 16#6c#;
+    constant ADDR_PREDICTION_DATA_0 : INTEGER := 16#70#;
+    constant ADDR_PREDICTION_DATA_1 : INTEGER := 16#74#;
+    constant ADDR_PREDICTION_CTRL   : INTEGER := 16#78#;
     constant ADDR_BITS         : INTEGER := 7;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -161,6 +179,8 @@ architecture behave of lenet_top_control_s_axi is
     signal int_pool2_out       : UNSIGNED(63 downto 0) := (others => '0');
     signal int_flat_out        : UNSIGNED(63 downto 0) := (others => '0');
     signal int_fc1_out         : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_fc2_out         : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_prediction      : UNSIGNED(63 downto 0) := (others => '0');
 
 
 begin
@@ -316,6 +336,14 @@ begin
                         rdata_data <= RESIZE(int_fc1_out(31 downto 0), 32);
                     when ADDR_FC1_OUT_DATA_1 =>
                         rdata_data <= RESIZE(int_fc1_out(63 downto 32), 32);
+                    when ADDR_FC2_OUT_DATA_0 =>
+                        rdata_data <= RESIZE(int_fc2_out(31 downto 0), 32);
+                    when ADDR_FC2_OUT_DATA_1 =>
+                        rdata_data <= RESIZE(int_fc2_out(63 downto 32), 32);
+                    when ADDR_PREDICTION_DATA_0 =>
+                        rdata_data <= RESIZE(int_prediction(31 downto 0), 32);
+                    when ADDR_PREDICTION_DATA_1 =>
+                        rdata_data <= RESIZE(int_prediction(63 downto 32), 32);
                     when others =>
                         NULL;
                     end case;
@@ -334,6 +362,8 @@ begin
     pool2_out            <= STD_LOGIC_VECTOR(int_pool2_out);
     flat_out             <= STD_LOGIC_VECTOR(int_flat_out);
     fc1_out              <= STD_LOGIC_VECTOR(int_fc1_out);
+    fc2_out              <= STD_LOGIC_VECTOR(int_fc2_out);
+    prediction           <= STD_LOGIC_VECTOR(int_prediction);
 
     process (ACLK)
     begin
@@ -609,6 +639,50 @@ begin
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_FC1_OUT_DATA_1) then
                     int_fc1_out(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_fc1_out(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_FC2_OUT_DATA_0) then
+                    int_fc2_out(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_fc2_out(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_FC2_OUT_DATA_1) then
+                    int_fc2_out(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_fc2_out(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_PREDICTION_DATA_0) then
+                    int_prediction(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_prediction(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_PREDICTION_DATA_1) then
+                    int_prediction(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_prediction(63 downto 32));
                 end if;
             end if;
         end if;

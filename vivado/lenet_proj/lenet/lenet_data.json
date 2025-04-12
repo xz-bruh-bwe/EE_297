@@ -217,10 +217,73 @@
           "direction": "in"
         }
       ]
+    },
+    "fc2_out": {
+      "index": "7",
+      "direction": "inout",
+      "srcType": "float*",
+      "srcSize": "32",
+      "hwRefs": [
+        {
+          "type": "interface",
+          "interface": "m_axi_gmem",
+          "name": "",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "register",
+          "interface": "s_axi_control",
+          "name": "fc2_out_1",
+          "usage": "address",
+          "direction": "in"
+        },
+        {
+          "type": "register",
+          "interface": "s_axi_control",
+          "name": "fc2_out_2",
+          "usage": "address",
+          "direction": "in"
+        }
+      ]
+    },
+    "prediction": {
+      "index": "8",
+      "direction": "inout",
+      "srcType": "int*",
+      "srcSize": "32",
+      "hwRefs": [
+        {
+          "type": "interface",
+          "interface": "m_axi_gmem",
+          "name": "",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "register",
+          "interface": "s_axi_control",
+          "name": "prediction_1",
+          "usage": "address",
+          "direction": "in"
+        },
+        {
+          "type": "register",
+          "interface": "s_axi_control",
+          "name": "prediction_2",
+          "usage": "address",
+          "direction": "in"
+        }
+      ]
     }
   },
   "HlsSolution": {
     "FlowTarget": "vivado",
+    "ConfigTcl": [
+      "config_export -format=ip_catalog",
+      "config_export -output=Z:\/export\/lenet_top.zip",
+      "config_export -rtl=verilog"
+    ],
     "DirectiveTcl": [
       "set_directive_top lenet_top -name lenet_top",
       "set_directive_top lenet_top -name lenet_top",
@@ -236,7 +299,7 @@
     "Uncertainty": "3.402",
     "IsCombinational": "0",
     "II": "x",
-    "Latency": "1618811"
+    "Latency": "1672456"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 12.600 [get_ports ap_clk]"]},
   "Ipx": {
@@ -290,6 +353,15 @@
       "impl\/vhdl\/lenet_top_conv2d_layer_conv1_weights_4_4_0.vhd",
       "impl\/vhdl\/lenet_top_conv2d_layer_padded_0_0.vhd",
       "impl\/vhdl\/lenet_top_fadd_32ns_32ns_32_5_full_dsp_1.vhd",
+      "impl\/vhdl\/lenet_top_fc3_layer.vhd",
+      "impl\/vhdl\/lenet_top_fc3_layer_fc3_biases.vhd",
+      "impl\/vhdl\/lenet_top_fc3_layer_fc3_weights_0.vhd",
+      "impl\/vhdl\/lenet_top_fc3_layer_fc3_weights_1.vhd",
+      "impl\/vhdl\/lenet_top_fc3_layer_fc3_weights_2.vhd",
+      "impl\/vhdl\/lenet_top_fc3_layer_logits.vhd",
+      "impl\/vhdl\/lenet_top_fc_layer_120_84_s.vhd",
+      "impl\/vhdl\/lenet_top_fc_layer_120_84_s_fc2_biases.vhd",
+      "impl\/vhdl\/lenet_top_fc_layer_120_84_s_fc2_weights.vhd",
       "impl\/vhdl\/lenet_top_fc_layer_400_120_s.vhd",
       "impl\/vhdl\/lenet_top_fc_layer_400_120_s_fc1_biases.vhd",
       "impl\/vhdl\/lenet_top_fc_layer_400_120_s_fc1_weights.vhd",
@@ -369,6 +441,21 @@
       "impl\/verilog\/lenet_top_conv2d_layer_conv1_weights_4_4_0_rom.dat",
       "impl\/verilog\/lenet_top_conv2d_layer_padded_0_0.v",
       "impl\/verilog\/lenet_top_fadd_32ns_32ns_32_5_full_dsp_1.v",
+      "impl\/verilog\/lenet_top_fc3_layer.v",
+      "impl\/verilog\/lenet_top_fc3_layer_fc3_biases.v",
+      "impl\/verilog\/lenet_top_fc3_layer_fc3_biases_rom.dat",
+      "impl\/verilog\/lenet_top_fc3_layer_fc3_weights_0.v",
+      "impl\/verilog\/lenet_top_fc3_layer_fc3_weights_0_rom.dat",
+      "impl\/verilog\/lenet_top_fc3_layer_fc3_weights_1.v",
+      "impl\/verilog\/lenet_top_fc3_layer_fc3_weights_1_rom.dat",
+      "impl\/verilog\/lenet_top_fc3_layer_fc3_weights_2.v",
+      "impl\/verilog\/lenet_top_fc3_layer_fc3_weights_2_rom.dat",
+      "impl\/verilog\/lenet_top_fc3_layer_logits.v",
+      "impl\/verilog\/lenet_top_fc_layer_120_84_s.v",
+      "impl\/verilog\/lenet_top_fc_layer_120_84_s_fc2_biases.v",
+      "impl\/verilog\/lenet_top_fc_layer_120_84_s_fc2_biases_rom.dat",
+      "impl\/verilog\/lenet_top_fc_layer_120_84_s_fc2_weights.v",
+      "impl\/verilog\/lenet_top_fc_layer_120_84_s_fc2_weights_rom.dat",
       "impl\/verilog\/lenet_top_fc_layer_400_120_s.v",
       "impl\/verilog\/lenet_top_fc_layer_400_120_s_fc1_biases.v",
       "impl\/verilog\/lenet_top_fc_layer_400_120_s_fc1_biases_rom.dat",
@@ -937,6 +1024,70 @@
               "resetValue": "0",
               "description": "Bit 63 to 32 of fc1_out"
             }]
+        },
+        {
+          "offset": "0x64",
+          "name": "fc2_out_1",
+          "access": "W",
+          "resetValue": "0x0",
+          "description": "Data signal of fc2_out",
+          "range": "32",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "fc2_out",
+              "access": "W",
+              "resetValue": "0",
+              "description": "Bit 31 to 0 of fc2_out"
+            }]
+        },
+        {
+          "offset": "0x68",
+          "name": "fc2_out_2",
+          "access": "W",
+          "resetValue": "0x0",
+          "description": "Data signal of fc2_out",
+          "range": "32",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "fc2_out",
+              "access": "W",
+              "resetValue": "0",
+              "description": "Bit 63 to 32 of fc2_out"
+            }]
+        },
+        {
+          "offset": "0x70",
+          "name": "prediction_1",
+          "access": "W",
+          "resetValue": "0x0",
+          "description": "Data signal of prediction",
+          "range": "32",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "prediction",
+              "access": "W",
+              "resetValue": "0",
+              "description": "Bit 31 to 0 of prediction"
+            }]
+        },
+        {
+          "offset": "0x74",
+          "name": "prediction_2",
+          "access": "W",
+          "resetValue": "0x0",
+          "description": "Data signal of prediction",
+          "range": "32",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "prediction",
+              "access": "W",
+              "resetValue": "0",
+              "description": "Bit 63 to 32 of prediction"
+            }]
         }
       ]
     }
@@ -1218,28 +1369,36 @@
       "ModuleName": "lenet_top",
       "Instances": [
         {
+          "ModuleName": "fc3_layer",
+          "InstanceName": "grp_fc3_layer_fu_206"
+        },
+        {
           "ModuleName": "conv2d_layer",
-          "InstanceName": "grp_conv2d_layer_fu_170"
+          "InstanceName": "grp_conv2d_layer_fu_222"
         },
         {
           "ModuleName": "maxpool_layer",
-          "InstanceName": "grp_maxpool_layer_fu_232"
+          "InstanceName": "grp_maxpool_layer_fu_284"
         },
         {
           "ModuleName": "maxpool2_layer",
-          "InstanceName": "grp_maxpool2_layer_fu_240"
+          "InstanceName": "grp_maxpool2_layer_fu_292"
         },
         {
           "ModuleName": "conv2d_6to16_layer",
-          "InstanceName": "grp_conv2d_6to16_layer_fu_248"
+          "InstanceName": "grp_conv2d_6to16_layer_fu_300"
+        },
+        {
+          "ModuleName": "fc_layer_120_84_s",
+          "InstanceName": "grp_fc_layer_120_84_s_fu_312"
         },
         {
           "ModuleName": "fc_layer_400_120_s",
-          "InstanceName": "grp_fc_layer_400_120_s_fu_260"
+          "InstanceName": "grp_fc_layer_400_120_s_fu_324"
         },
         {
           "ModuleName": "flatten_layer",
-          "InstanceName": "grp_flatten_layer_fu_272"
+          "InstanceName": "grp_flatten_layer_fu_336"
         }
       ]
     },
@@ -1280,6 +1439,20 @@
         "isOneStateSeq": "0"
       },
       "fc_layer_400_120_s": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "fc_layer_120_84_s": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "fc3_layer": {
         "FunctionProtocol": "ap_ctrl_hs",
         "isTaskLevelControl": "0",
         "isPipelined": "0",
@@ -1457,10 +1630,10 @@
             "PipelineDepth": "25"
           }],
         "Area": {
-          "FF": "1382",
+          "FF": "1261",
           "AVAIL_FF": "106400",
           "UTIL_FF": "1",
-          "LUT": "2365",
+          "LUT": "2301",
           "AVAIL_LUT": "53200",
           "UTIL_LUT": "4",
           "BRAM_18K": "0",
@@ -1528,13 +1701,13 @@
           "Estimate": "9.198"
         },
         "Loops": [{
-            "Name": "VITIS_LOOP_67_1",
+            "Name": "VITIS_LOOP_79_1",
             "TripCount": "120",
             "Latency": "242880",
             "PipelineII": "",
             "PipelineDepth": "2024",
             "Loops": [{
-                "Name": "VITIS_LOOP_70_2",
+                "Name": "VITIS_LOOP_82_2",
                 "TripCount": "400",
                 "Latency": "2014",
                 "PipelineII": "5",
@@ -1559,12 +1732,12 @@
           "UTIL_URAM": "0"
         }
       },
-      "lenet_top": {
+      "fc_layer_120_84_s": {
         "Latency": {
-          "LatencyBest": "1618811",
-          "LatencyAvg": "1618811",
-          "LatencyWorst": "1618811",
-          "PipelineII": "1618812",
+          "LatencyBest": "52422",
+          "LatencyAvg": "52422",
+          "LatencyWorst": "52422",
+          "PipelineII": "52422",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1573,19 +1746,113 @@
           "Uncertainty": "3.40",
           "Estimate": "9.198"
         },
+        "Loops": [{
+            "Name": "VITIS_LOOP_79_1",
+            "TripCount": "84",
+            "Latency": "52416",
+            "PipelineII": "",
+            "PipelineDepth": "624",
+            "Loops": [{
+                "Name": "VITIS_LOOP_82_2",
+                "TripCount": "120",
+                "Latency": "614",
+                "PipelineII": "5",
+                "PipelineDepth": "20"
+              }]
+          }],
         "Area": {
-          "BRAM_18K": "139",
+          "BRAM_18K": "33",
           "AVAIL_BRAM": "280",
-          "UTIL_BRAM": "49",
-          "DSP": "24",
+          "UTIL_BRAM": "11",
+          "DSP": "5",
           "AVAIL_DSP": "220",
-          "UTIL_DSP": "10",
-          "FF": "13162",
+          "UTIL_DSP": "2",
+          "FF": "885",
           "AVAIL_FF": "106400",
-          "UTIL_FF": "12",
-          "LUT": "19032",
+          "UTIL_FF": "~0",
+          "LUT": "1208",
           "AVAIL_LUT": "53200",
-          "UTIL_LUT": "35",
+          "UTIL_LUT": "2",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "fc3_layer": {
+        "Latency": {
+          "LatencyBest": "1219",
+          "LatencyAvg": "1219",
+          "LatencyWorst": "1219",
+          "PipelineII": "1219",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "12.60",
+          "Uncertainty": "3.40",
+          "Estimate": "9.603"
+        },
+        "Loops": [
+          {
+            "Name": "VITIS_LOOP_187_1",
+            "TripCount": "10",
+            "Latency": "1189",
+            "PipelineII": "84",
+            "PipelineDepth": "434"
+          },
+          {
+            "Name": "VITIS_LOOP_197_3",
+            "TripCount": "9",
+            "Latency": "19",
+            "PipelineII": "2",
+            "PipelineDepth": "3"
+          }
+        ],
+        "Area": {
+          "BRAM_18K": "3",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "1",
+          "DSP": "5",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "2",
+          "FF": "12554",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "11",
+          "LUT": "8430",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "15",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "lenet_top": {
+        "Latency": {
+          "LatencyBest": "1672456",
+          "LatencyAvg": "1672456",
+          "LatencyWorst": "1672456",
+          "PipelineII": "1672457",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "12.60",
+          "Uncertainty": "3.40",
+          "Estimate": "9.603"
+        },
+        "Area": {
+          "BRAM_18K": "175",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "62",
+          "DSP": "34",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "15",
+          "FF": "26754",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "25",
+          "LUT": "29083",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "54",
           "URAM": "0",
           "AVAIL_URAM": "0",
           "UTIL_URAM": "0"
@@ -1596,7 +1863,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2025-04-07 00:43:21 -0700",
+    "Time": "2025-04-07 23:45:34 -0700",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.1"
   }

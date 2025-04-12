@@ -36,6 +36,8 @@ module lenet_top_control_s_axi
     output wire [63:0]                   pool2_out,
     output wire [63:0]                   flat_out,
     output wire [63:0]                   fc1_out,
+    output wire [63:0]                   fc2_out,
+    output wire [63:0]                   prediction,
     output wire                          ap_start,
     input  wire                          ap_done,
     input  wire                          ap_ready,
@@ -95,42 +97,58 @@ module lenet_top_control_s_axi
 // 0x5c : Data signal of fc1_out
 //        bit 31~0 - fc1_out[63:32] (Read/Write)
 // 0x60 : reserved
+// 0x64 : Data signal of fc2_out
+//        bit 31~0 - fc2_out[31:0] (Read/Write)
+// 0x68 : Data signal of fc2_out
+//        bit 31~0 - fc2_out[63:32] (Read/Write)
+// 0x6c : reserved
+// 0x70 : Data signal of prediction
+//        bit 31~0 - prediction[31:0] (Read/Write)
+// 0x74 : Data signal of prediction
+//        bit 31~0 - prediction[63:32] (Read/Write)
+// 0x78 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL          = 7'h00,
-    ADDR_GIE              = 7'h04,
-    ADDR_IER              = 7'h08,
-    ADDR_ISR              = 7'h0c,
-    ADDR_IMAGE_R_DATA_0   = 7'h10,
-    ADDR_IMAGE_R_DATA_1   = 7'h14,
-    ADDR_IMAGE_R_CTRL     = 7'h18,
-    ADDR_CONV1_OUT_DATA_0 = 7'h1c,
-    ADDR_CONV1_OUT_DATA_1 = 7'h20,
-    ADDR_CONV1_OUT_CTRL   = 7'h24,
-    ADDR_POOL1_OUT_DATA_0 = 7'h28,
-    ADDR_POOL1_OUT_DATA_1 = 7'h2c,
-    ADDR_POOL1_OUT_CTRL   = 7'h30,
-    ADDR_CONV2_OUT_DATA_0 = 7'h34,
-    ADDR_CONV2_OUT_DATA_1 = 7'h38,
-    ADDR_CONV2_OUT_CTRL   = 7'h3c,
-    ADDR_POOL2_OUT_DATA_0 = 7'h40,
-    ADDR_POOL2_OUT_DATA_1 = 7'h44,
-    ADDR_POOL2_OUT_CTRL   = 7'h48,
-    ADDR_FLAT_OUT_DATA_0  = 7'h4c,
-    ADDR_FLAT_OUT_DATA_1  = 7'h50,
-    ADDR_FLAT_OUT_CTRL    = 7'h54,
-    ADDR_FC1_OUT_DATA_0   = 7'h58,
-    ADDR_FC1_OUT_DATA_1   = 7'h5c,
-    ADDR_FC1_OUT_CTRL     = 7'h60,
-    WRIDLE                = 2'd0,
-    WRDATA                = 2'd1,
-    WRRESP                = 2'd2,
-    WRRESET               = 2'd3,
-    RDIDLE                = 2'd0,
-    RDDATA                = 2'd1,
-    RDRESET               = 2'd2,
+    ADDR_AP_CTRL           = 7'h00,
+    ADDR_GIE               = 7'h04,
+    ADDR_IER               = 7'h08,
+    ADDR_ISR               = 7'h0c,
+    ADDR_IMAGE_R_DATA_0    = 7'h10,
+    ADDR_IMAGE_R_DATA_1    = 7'h14,
+    ADDR_IMAGE_R_CTRL      = 7'h18,
+    ADDR_CONV1_OUT_DATA_0  = 7'h1c,
+    ADDR_CONV1_OUT_DATA_1  = 7'h20,
+    ADDR_CONV1_OUT_CTRL    = 7'h24,
+    ADDR_POOL1_OUT_DATA_0  = 7'h28,
+    ADDR_POOL1_OUT_DATA_1  = 7'h2c,
+    ADDR_POOL1_OUT_CTRL    = 7'h30,
+    ADDR_CONV2_OUT_DATA_0  = 7'h34,
+    ADDR_CONV2_OUT_DATA_1  = 7'h38,
+    ADDR_CONV2_OUT_CTRL    = 7'h3c,
+    ADDR_POOL2_OUT_DATA_0  = 7'h40,
+    ADDR_POOL2_OUT_DATA_1  = 7'h44,
+    ADDR_POOL2_OUT_CTRL    = 7'h48,
+    ADDR_FLAT_OUT_DATA_0   = 7'h4c,
+    ADDR_FLAT_OUT_DATA_1   = 7'h50,
+    ADDR_FLAT_OUT_CTRL     = 7'h54,
+    ADDR_FC1_OUT_DATA_0    = 7'h58,
+    ADDR_FC1_OUT_DATA_1    = 7'h5c,
+    ADDR_FC1_OUT_CTRL      = 7'h60,
+    ADDR_FC2_OUT_DATA_0    = 7'h64,
+    ADDR_FC2_OUT_DATA_1    = 7'h68,
+    ADDR_FC2_OUT_CTRL      = 7'h6c,
+    ADDR_PREDICTION_DATA_0 = 7'h70,
+    ADDR_PREDICTION_DATA_1 = 7'h74,
+    ADDR_PREDICTION_CTRL   = 7'h78,
+    WRIDLE                 = 2'd0,
+    WRDATA                 = 2'd1,
+    WRRESP                 = 2'd2,
+    WRRESET                = 2'd3,
+    RDIDLE                 = 2'd0,
+    RDDATA                 = 2'd1,
+    RDRESET                = 2'd2,
     ADDR_BITS                = 7;
 
 //------------------------Local signal-------------------
@@ -161,6 +179,8 @@ localparam
     reg  [63:0]                   int_pool2_out = 'b0;
     reg  [63:0]                   int_flat_out = 'b0;
     reg  [63:0]                   int_fc1_out = 'b0;
+    reg  [63:0]                   int_fc2_out = 'b0;
+    reg  [63:0]                   int_prediction = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -311,6 +331,18 @@ always @(posedge ACLK) begin
                 ADDR_FC1_OUT_DATA_1: begin
                     rdata <= int_fc1_out[63:32];
                 end
+                ADDR_FC2_OUT_DATA_0: begin
+                    rdata <= int_fc2_out[31:0];
+                end
+                ADDR_FC2_OUT_DATA_1: begin
+                    rdata <= int_fc2_out[63:32];
+                end
+                ADDR_PREDICTION_DATA_0: begin
+                    rdata <= int_prediction[31:0];
+                end
+                ADDR_PREDICTION_DATA_1: begin
+                    rdata <= int_prediction[63:32];
+                end
             endcase
         end
     end
@@ -318,15 +350,17 @@ end
 
 
 //------------------------Register logic-----------------
-assign interrupt = int_gie & (|int_isr);
-assign ap_start  = int_ap_start;
-assign image_r   = int_image_r;
-assign conv1_out = int_conv1_out;
-assign pool1_out = int_pool1_out;
-assign conv2_out = int_conv2_out;
-assign pool2_out = int_pool2_out;
-assign flat_out  = int_flat_out;
-assign fc1_out   = int_fc1_out;
+assign interrupt  = int_gie & (|int_isr);
+assign ap_start   = int_ap_start;
+assign image_r    = int_image_r;
+assign conv1_out  = int_conv1_out;
+assign pool1_out  = int_pool1_out;
+assign conv2_out  = int_conv2_out;
+assign pool2_out  = int_pool2_out;
+assign flat_out   = int_flat_out;
+assign fc1_out    = int_fc1_out;
+assign fc2_out    = int_fc2_out;
+assign prediction = int_prediction;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -560,6 +594,46 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_FC1_OUT_DATA_1)
             int_fc1_out[63:32] <= (WDATA[31:0] & wmask) | (int_fc1_out[63:32] & ~wmask);
+    end
+end
+
+// int_fc2_out[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_fc2_out[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_FC2_OUT_DATA_0)
+            int_fc2_out[31:0] <= (WDATA[31:0] & wmask) | (int_fc2_out[31:0] & ~wmask);
+    end
+end
+
+// int_fc2_out[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_fc2_out[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_FC2_OUT_DATA_1)
+            int_fc2_out[63:32] <= (WDATA[31:0] & wmask) | (int_fc2_out[63:32] & ~wmask);
+    end
+end
+
+// int_prediction[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_prediction[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_PREDICTION_DATA_0)
+            int_prediction[31:0] <= (WDATA[31:0] & wmask) | (int_prediction[31:0] & ~wmask);
+    end
+end
+
+// int_prediction[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_prediction[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_PREDICTION_DATA_1)
+            int_prediction[63:32] <= (WDATA[31:0] & wmask) | (int_prediction[63:32] & ~wmask);
     end
 end
 

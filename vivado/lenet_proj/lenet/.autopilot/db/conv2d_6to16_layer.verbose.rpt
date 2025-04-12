@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'conv2d_6to16_layer'
 ================================================================
-* Date:           Mon Apr  7 00:43:01 2025
+* Date:           Mon Apr  7 23:45:04 2025
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        lenet_proj
@@ -198,7 +198,7 @@
     |ki_reg_308                                 |    9|          2|    3|          6|
     |kj_reg_319                                 |    9|          2|    3|          6|
     |oc_reg_227                                 |    9|          2|    5|         10|
-    |sum_4_reg_331                              |    9|          2|   32|         64|
+    |sum_6_reg_331                              |    9|          2|   32|         64|
     +-------------------------------------------+-----+-----------+-----+-----------+
     |Total                                      |  333|         72|  181|        446|
     +-------------------------------------------+-----+-----------+-----+-----------+
@@ -223,8 +223,8 @@
     |ap_enable_reg_pp0_iter3        |   1|   0|    1|          0|
     |ap_enable_reg_pp0_iter4        |   1|   0|    1|          0|
     |conv2_biases_load_reg_1008     |  32|   0|   32|          0|
-    |gmem_addr_12_read_reg_1131     |  32|   0|   32|          0|
-    |gmem_addr_12_reg_1105          |  64|   0|   64|          0|
+    |gmem_addr_14_read_reg_1131     |  32|   0|   32|          0|
+    |gmem_addr_14_reg_1105          |  64|   0|   64|          0|
     |gmem_addr_reg_1151             |  64|   0|   64|          0|
     |i_reg_250                      |   4|   0|    4|          0|
     |ic_reg_285                     |   3|   0|    3|          0|
@@ -251,7 +251,7 @@
     |select_ln90_1_reg_1082         |   3|   0|    3|          0|
     |select_ln90_3_reg_1116         |   6|   0|    6|          0|
     |select_ln90_reg_1075           |   3|   0|    3|          0|
-    |sum_4_reg_331                  |  32|   0|   32|          0|
+    |sum_6_reg_331                  |  32|   0|   32|          0|
     |sum_reg_1167                   |  32|   0|   32|          0|
     |trunc_ln83_reg_998             |   4|   0|    4|          0|
     |weight_reg_1126                |  32|   0|   32|          0|
@@ -401,7 +401,7 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 1.76>
-ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty, i32, i32, void @empty_21, i32, i32, void @empty_21, void @empty_21, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_21"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty_5, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_24"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%output_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %output_r" [lenet_proj/lenet_support.cpp:83]   --->   Operation 39 'read' 'output_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%input_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %input_r" [lenet_proj/lenet_support.cpp:83]   --->   Operation 40 'read' 'input_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 41 [1/1] (1.76ns)   --->   "%br_ln83 = br void" [lenet_proj/lenet_support.cpp:83]   --->   Operation 41 'br' 'br_ln83' <Predicate = true> <Delay = 1.76>
@@ -430,7 +430,7 @@ ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%ret_ln104 = ret" [lenet_proj/lenet
 
 State 3 <SV = 2> <Delay = 5.13>
 ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_83_1_VITIS_LOOP_84_2_VITIS_LOOP_85_3_str"   --->   Operation 62 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%empty_55 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64, i64, i64"   --->   Operation 63 'speclooptripcount' 'empty_55' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%empty_67 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64, i64, i64"   --->   Operation 63 'speclooptripcount' 'empty_67' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 64 [1/1] (1.02ns)   --->   "%select_ln83 = select i1 %icmp_ln84, i4, i4 %i" [lenet_proj/lenet_support.cpp:83]   --->   Operation 64 'select' 'select_ln83' <Predicate = true> <Delay = 1.02> <CoreInst = "Sel">   --->   Core 11 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 ST_3 : Operation 65 [1/1] (0.00ns)   --->   "%select_ln83_1_v_cast = zext i5 %select_ln83_2" [lenet_proj/lenet_support.cpp:83]   --->   Operation 65 'zext' 'select_ln83_1_v_cast' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 66 [1/2] (2.32ns)   --->   "%conv2_biases_load = load i4 %conv2_biases_addr" [lenet_proj/lenet_support.cpp:83]   --->   Operation 66 'load' 'conv2_biases_load' <Predicate = true> <Delay = 2.32> <CoreInst = "ROM">   --->   Core 41 'ROM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 16> <ROM>
@@ -449,7 +449,7 @@ ST_3 : Operation 78 [1/1] (1.67ns)   --->   "%add_ln100_3 = add i13 %shl_ln100_1
 ST_3 : Operation 79 [1/1] (0.69ns) (out node of the LUT)   --->   "%select_ln84_1 = select i1 %and_ln83, i13 %add_ln100_3, i13 %select_ln83_3" [lenet_proj/lenet_support.cpp:84]   --->   Operation 79 'select' 'select_ln84_1' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 11 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%zext_ln84 = zext i13 %select_ln84_1" [lenet_proj/lenet_support.cpp:84]   --->   Operation 80 'zext' 'zext_ln84' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 81 [1/1] (1.02ns)   --->   "%select_ln84_2 = select i1 %and_ln83, i4 %add_ln84, i4 %select_ln83" [lenet_proj/lenet_support.cpp:84]   --->   Operation 81 'select' 'select_ln84_2' <Predicate = true> <Delay = 1.02> <CoreInst = "Sel">   --->   Core 11 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_3 : Operation 82 [1/1] (0.00ns)   --->   "%specloopname_ln87 = specloopname void @_ssdm_op_SpecLoopName, void @empty_9" [lenet_proj/lenet_support.cpp:87]   --->   Operation 82 'specloopname' 'specloopname_ln87' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "%specloopname_ln87 = specloopname void @_ssdm_op_SpecLoopName, void @empty_22" [lenet_proj/lenet_support.cpp:87]   --->   Operation 82 'specloopname' 'specloopname_ln87' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 83 [1/1] (1.76ns)   --->   "%br_ln89 = br void %bb" [lenet_proj/lenet_support.cpp:89]   --->   Operation 83 'br' 'br_ln89' <Predicate = true> <Delay = 1.76>
 
 State 4 <SV = 3> <Delay = 7.86>
@@ -458,7 +458,7 @@ ST_4 : Operation 85 [1/1] (0.00ns)   --->   "%ic = phi i3, void %bb36, i3 %selec
 ST_4 : Operation 86 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i6, void %bb36, i6 %select_ln90_3, void %.split3" [lenet_proj/lenet_support.cpp:90]   --->   Operation 86 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 87 [1/1] (0.00ns)   --->   "%ki = phi i3, void %bb36, i3 %select_ln90_1, void %.split3" [lenet_proj/lenet_support.cpp:90]   --->   Operation 87 'phi' 'ki' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 88 [1/1] (0.00ns)   --->   "%kj = phi i3, void %bb36, i3 %add_ln91, void %.split3" [lenet_proj/lenet_support.cpp:91]   --->   Operation 88 'phi' 'kj' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 89 [1/1] (0.00ns)   --->   "%sum_4 = phi i32, void %bb36, i32 %sum_3, void %.split3"   --->   Operation 89 'phi' 'sum_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 89 [1/1] (0.00ns)   --->   "%sum_6 = phi i32, void %bb36, i32 %sum_5, void %.split3"   --->   Operation 89 'phi' 'sum_6' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 90 [1/1] (0.00ns)   --->   "%zext_ln90 = zext i3 %ki" [lenet_proj/lenet_support.cpp:90]   --->   Operation 90 'zext' 'zext_ln90' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 91 [1/1] (1.73ns)   --->   "%empty = add i4 %zext_ln90, i4 %select_ln84_2" [lenet_proj/lenet_support.cpp:90]   --->   Operation 91 'add' 'empty' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_4 : Operation 92 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32, i32, i32, i32, void @p_str"   --->   Operation 92 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
@@ -521,44 +521,44 @@ ST_7 : Operation 142 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_l
 ST_7 : Operation 143 [1/2] (2.10ns) (root node of the DSP)   --->   "%add_ln92_1 = add i14 %zext_ln90_3, i14 %sext_ln92_1" [lenet_proj/lenet_support.cpp:92]   --->   Operation 143 'add' 'add_ln92_1' <Predicate = (!icmp_ln89)> <Delay = 2.10> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
 ST_7 : Operation 144 [1/1] (0.00ns)   --->   "%sext_ln92_2 = sext i14 %add_ln92_1" [lenet_proj/lenet_support.cpp:92]   --->   Operation 144 'sext' 'sext_ln92_2' <Predicate = (!icmp_ln89)> <Delay = 0.00>
 ST_7 : Operation 145 [1/1] (5.30ns) (root node of TernaryAdder)   --->   "%add_ln92_2 = add i64 %sext_ln92_2, i64 %add_ln89_1" [lenet_proj/lenet_support.cpp:92]   --->   Operation 145 'add' 'add_ln92_2' <Predicate = (!icmp_ln89)> <Delay = 5.30> <CoreInst = "TAddSub">   --->   Core 3 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.65> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync>
-ST_7 : Operation 146 [1/1] (0.00ns)   --->   "%trunc_ln5 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %add_ln92_2, i32, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 146 'partselect' 'trunc_ln5' <Predicate = (!icmp_ln89)> <Delay = 0.00>
-ST_7 : Operation 147 [1/1] (0.00ns)   --->   "%sext_ln92 = sext i62 %trunc_ln5" [lenet_proj/lenet_support.cpp:92]   --->   Operation 147 'sext' 'sext_ln92' <Predicate = (!icmp_ln89)> <Delay = 0.00>
-ST_7 : Operation 148 [1/1] (0.00ns)   --->   "%gmem_addr_12 = getelementptr i32 %gmem, i64 %sext_ln92" [lenet_proj/lenet_support.cpp:92]   --->   Operation 148 'getelementptr' 'gmem_addr_12' <Predicate = (!icmp_ln89)> <Delay = 0.00>
+ST_7 : Operation 146 [1/1] (0.00ns)   --->   "%trunc_ln8 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %add_ln92_2, i32, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 146 'partselect' 'trunc_ln8' <Predicate = (!icmp_ln89)> <Delay = 0.00>
+ST_7 : Operation 147 [1/1] (0.00ns)   --->   "%sext_ln92 = sext i62 %trunc_ln8" [lenet_proj/lenet_support.cpp:92]   --->   Operation 147 'sext' 'sext_ln92' <Predicate = (!icmp_ln89)> <Delay = 0.00>
+ST_7 : Operation 148 [1/1] (0.00ns)   --->   "%gmem_addr_14 = getelementptr i32 %gmem, i64 %sext_ln92" [lenet_proj/lenet_support.cpp:92]   --->   Operation 148 'getelementptr' 'gmem_addr_14' <Predicate = (!icmp_ln89)> <Delay = 0.00>
 
 State 8 <SV = 7> <Delay = 9.19>
-ST_8 : Operation 149 [7/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_12, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 149 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 149 [7/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_14, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 149 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_8 : Operation 150 [1/1] (1.65ns)   --->   "%add_ln91 = add i3, i3 %select_ln90" [lenet_proj/lenet_support.cpp:91]   --->   Operation 150 'add' 'add_ln91' <Predicate = (!icmp_ln89)> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_8 : Operation 151 [1/1] (1.18ns)   --->   "%select_ln90_3 = select i1 %icmp_ln90, i6, i6 %add_ln90_1" [lenet_proj/lenet_support.cpp:90]   --->   Operation 151 'select' 'select_ln90_3' <Predicate = (!icmp_ln89)> <Delay = 1.18> <CoreInst = "Sel">   --->   Core 11 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 
 State 9 <SV = 8> <Delay = 9.19>
-ST_9 : Operation 152 [6/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_12, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 152 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 152 [6/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_14, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 152 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 10 <SV = 9> <Delay = 9.19>
-ST_10 : Operation 153 [5/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_12, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 153 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 153 [5/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_14, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 153 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 11 <SV = 10> <Delay = 9.19>
-ST_11 : Operation 154 [1/1] (0.00ns)   --->   "%tmp_130_cast = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i8.i4, i8 %add_ln93_2, i4" [lenet_proj/lenet_support.cpp:93]   --->   Operation 154 'bitconcatenate' 'tmp_130_cast' <Predicate = (!icmp_ln89)> <Delay = 0.00>
-ST_11 : Operation 155 [1/1] (1.54ns)   --->   "%add_ln93_3 = add i12 %select_ln83_1_v_cast, i12 %tmp_130_cast" [lenet_proj/lenet_support.cpp:93]   --->   Operation 155 'add' 'add_ln93_3' <Predicate = (!icmp_ln89)> <Delay = 1.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 154 [1/1] (0.00ns)   --->   "%tmp_148_cast = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i8.i4, i8 %add_ln93_2, i4" [lenet_proj/lenet_support.cpp:93]   --->   Operation 154 'bitconcatenate' 'tmp_148_cast' <Predicate = (!icmp_ln89)> <Delay = 0.00>
+ST_11 : Operation 155 [1/1] (1.54ns)   --->   "%add_ln93_3 = add i12 %select_ln83_1_v_cast, i12 %tmp_148_cast" [lenet_proj/lenet_support.cpp:93]   --->   Operation 155 'add' 'add_ln93_3' <Predicate = (!icmp_ln89)> <Delay = 1.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_11 : Operation 156 [1/1] (0.00ns)   --->   "%zext_ln93_4 = zext i12 %add_ln93_3" [lenet_proj/lenet_support.cpp:93]   --->   Operation 156 'zext' 'zext_ln93_4' <Predicate = (!icmp_ln89)> <Delay = 0.00>
 ST_11 : Operation 157 [1/1] (0.00ns)   --->   "%conv2_weights_addr = getelementptr i32 %conv2_weights, i64, i64 %zext_ln93_4" [lenet_proj/lenet_support.cpp:93]   --->   Operation 157 'getelementptr' 'conv2_weights_addr' <Predicate = (!icmp_ln89)> <Delay = 0.00>
-ST_11 : Operation 158 [4/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_12, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 158 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 158 [4/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_14, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 158 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_11 : Operation 159 [2/2] (3.25ns)   --->   "%weight = load i12 %conv2_weights_addr" [lenet_proj/lenet_support.cpp:93]   --->   Operation 159 'load' 'weight' <Predicate = (!icmp_ln89)> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 41 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 2400> <ROM>
 
 State 12 <SV = 11> <Delay = 9.19>
-ST_12 : Operation 160 [3/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_12, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 160 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 160 [3/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_14, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 160 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_12 : Operation 161 [1/2] (3.25ns)   --->   "%weight = load i12 %conv2_weights_addr" [lenet_proj/lenet_support.cpp:93]   --->   Operation 161 'load' 'weight' <Predicate = (!icmp_ln89)> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 41 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 2400> <ROM>
 
 State 13 <SV = 12> <Delay = 9.19>
-ST_13 : Operation 162 [2/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_12, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 162 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 162 [2/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_14, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 162 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 14 <SV = 13> <Delay = 9.19>
-ST_14 : Operation 163 [1/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_12, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 163 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 163 [1/7] (9.19ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P, i64 %gmem_addr_14, i32" [lenet_proj/lenet_support.cpp:92]   --->   Operation 163 'readreq' 'gmem_load_req' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 15 <SV = 14> <Delay = 9.19>
-ST_15 : Operation 164 [1/1] (9.19ns)   --->   "%gmem_addr_12_read = read i32 @_ssdm_op_Read.m_axi.i32P, i64 %gmem_addr_12, i1 %gmem_load_req" [lenet_proj/lenet_support.cpp:92]   --->   Operation 164 'read' 'gmem_addr_12_read' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 164 [1/1] (9.19ns)   --->   "%gmem_addr_14_read = read i32 @_ssdm_op_Read.m_axi.i32P, i64 %gmem_addr_14, i1 %gmem_load_req" [lenet_proj/lenet_support.cpp:92]   --->   Operation 164 'read' 'gmem_addr_14_read' <Predicate = (!icmp_ln89)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 16 <SV = 15> <Delay = 5.70>
-ST_16 : Operation 165 [1/1] (0.00ns)   --->   "%pixel = bitcast i32 %gmem_addr_12_read" [lenet_proj/lenet_support.cpp:92]   --->   Operation 165 'bitcast' 'pixel' <Predicate = (!icmp_ln89)> <Delay = 0.00>
+ST_16 : Operation 165 [1/1] (0.00ns)   --->   "%pixel = bitcast i32 %gmem_addr_14_read" [lenet_proj/lenet_support.cpp:92]   --->   Operation 165 'bitcast' 'pixel' <Predicate = (!icmp_ln89)> <Delay = 0.00>
 ST_16 : Operation 166 [4/4] (5.70ns)   --->   "%mul = fmul i32 %pixel, i32 %weight" [lenet_proj/lenet_support.cpp:94]   --->   Operation 166 'fmul' 'mul' <Predicate = (!icmp_ln89)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 86 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 17 <SV = 16> <Delay = 5.70>
@@ -571,29 +571,29 @@ State 19 <SV = 18> <Delay = 5.70>
 ST_19 : Operation 169 [1/4] (5.70ns)   --->   "%mul = fmul i32 %pixel, i32 %weight" [lenet_proj/lenet_support.cpp:94]   --->   Operation 169 'fmul' 'mul' <Predicate = (!icmp_ln89)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 86 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 20 <SV = 19> <Delay = 7.25>
-ST_20 : Operation 170 [5/5] (7.25ns)   --->   "%sum_3 = fadd i32 %sum_4, i32 %mul" [lenet_proj/lenet_support.cpp:94]   --->   Operation 170 'fadd' 'sum_3' <Predicate = (!icmp_ln89)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 170 [5/5] (7.25ns)   --->   "%sum_5 = fadd i32 %sum_6, i32 %mul" [lenet_proj/lenet_support.cpp:94]   --->   Operation 170 'fadd' 'sum_5' <Predicate = (!icmp_ln89)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 21 <SV = 20> <Delay = 7.25>
-ST_21 : Operation 171 [4/5] (7.25ns)   --->   "%sum_3 = fadd i32 %sum_4, i32 %mul" [lenet_proj/lenet_support.cpp:94]   --->   Operation 171 'fadd' 'sum_3' <Predicate = (!icmp_ln89)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 171 [4/5] (7.25ns)   --->   "%sum_5 = fadd i32 %sum_6, i32 %mul" [lenet_proj/lenet_support.cpp:94]   --->   Operation 171 'fadd' 'sum_5' <Predicate = (!icmp_ln89)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 22 <SV = 21> <Delay = 7.25>
-ST_22 : Operation 172 [3/5] (7.25ns)   --->   "%sum_3 = fadd i32 %sum_4, i32 %mul" [lenet_proj/lenet_support.cpp:94]   --->   Operation 172 'fadd' 'sum_3' <Predicate = (!icmp_ln89)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 172 [3/5] (7.25ns)   --->   "%sum_5 = fadd i32 %sum_6, i32 %mul" [lenet_proj/lenet_support.cpp:94]   --->   Operation 172 'fadd' 'sum_5' <Predicate = (!icmp_ln89)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 23 <SV = 22> <Delay = 7.25>
-ST_23 : Operation 173 [2/5] (7.25ns)   --->   "%sum_3 = fadd i32 %sum_4, i32 %mul" [lenet_proj/lenet_support.cpp:94]   --->   Operation 173 'fadd' 'sum_3' <Predicate = (!icmp_ln89)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 173 [2/5] (7.25ns)   --->   "%sum_5 = fadd i32 %sum_6, i32 %mul" [lenet_proj/lenet_support.cpp:94]   --->   Operation 173 'fadd' 'sum_5' <Predicate = (!icmp_ln89)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 24 <SV = 23> <Delay = 7.25>
 ST_24 : Operation 174 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_89_4_VITIS_LOOP_90_5_VITIS_LOOP_91_6_str"   --->   Operation 174 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln89)> <Delay = 0.00>
-ST_24 : Operation 175 [1/1] (0.00ns)   --->   "%empty_54 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64, i64, i64"   --->   Operation 175 'speclooptripcount' 'empty_54' <Predicate = (!icmp_ln89)> <Delay = 0.00>
+ST_24 : Operation 175 [1/1] (0.00ns)   --->   "%empty_66 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64, i64, i64"   --->   Operation 175 'speclooptripcount' 'empty_66' <Predicate = (!icmp_ln89)> <Delay = 0.00>
 ST_24 : Operation 176 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32, i32, i32, i32, void @p_str"   --->   Operation 176 'specpipeline' 'specpipeline_ln0' <Predicate = (!icmp_ln89)> <Delay = 0.00>
 ST_24 : Operation 177 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_90_5_VITIS_LOOP_91_6_str"   --->   Operation 177 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln89)> <Delay = 0.00>
 ST_24 : Operation 178 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32, i32, i32, i32, void @p_str"   --->   Operation 178 'specpipeline' 'specpipeline_ln0' <Predicate = (!icmp_ln89)> <Delay = 0.00>
-ST_24 : Operation 179 [1/1] (0.00ns)   --->   "%specloopname_ln87 = specloopname void @_ssdm_op_SpecLoopName, void @empty_19" [lenet_proj/lenet_support.cpp:87]   --->   Operation 179 'specloopname' 'specloopname_ln87' <Predicate = (!icmp_ln89)> <Delay = 0.00>
-ST_24 : Operation 180 [1/5] (7.25ns)   --->   "%sum_3 = fadd i32 %sum_4, i32 %mul" [lenet_proj/lenet_support.cpp:94]   --->   Operation 180 'fadd' 'sum_3' <Predicate = (!icmp_ln89)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 179 [1/1] (0.00ns)   --->   "%specloopname_ln87 = specloopname void @_ssdm_op_SpecLoopName, void @empty_21" [lenet_proj/lenet_support.cpp:87]   --->   Operation 179 'specloopname' 'specloopname_ln87' <Predicate = (!icmp_ln89)> <Delay = 0.00>
+ST_24 : Operation 180 [1/5] (7.25ns)   --->   "%sum_5 = fadd i32 %sum_6, i32 %mul" [lenet_proj/lenet_support.cpp:94]   --->   Operation 180 'fadd' 'sum_5' <Predicate = (!icmp_ln89)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 ST_24 : Operation 181 [1/1] (0.00ns)   --->   "%br_ln0 = br void %bb"   --->   Operation 181 'br' 'br_ln0' <Predicate = (!icmp_ln89)> <Delay = 0.00>
 
 State 25 <SV = 4> <Delay = 7.25>
-ST_25 : Operation 182 [5/5] (7.25ns)   --->   "%sum = fadd i32 %sum_4, i32 %conv2_biases_load" [lenet_proj/lenet_support.cpp:99]   --->   Operation 182 'fadd' 'sum' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 182 [5/5] (7.25ns)   --->   "%sum = fadd i32 %sum_6, i32 %conv2_biases_load" [lenet_proj/lenet_support.cpp:99]   --->   Operation 182 'fadd' 'sum' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 ST_25 : Operation 183 [1/1] (0.00ns)   --->   "%tmp4 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i4.i4.i2, i4 %select_ln84, i4 %trunc_ln83, i2" [lenet_proj/lenet_support.cpp:100]   --->   Operation 183 'bitconcatenate' 'tmp4' <Predicate = true> <Delay = 0.00>
 ST_25 : Operation 184 [1/1] (0.00ns)   --->   "%zext_ln100 = zext i10 %tmp4" [lenet_proj/lenet_support.cpp:100]   --->   Operation 184 'zext' 'zext_ln100' <Predicate = true> <Delay = 0.00>
 ST_25 : Operation 185 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln100_1 = add i64 %output_read, i64 %zext_ln100" [lenet_proj/lenet_support.cpp:100]   --->   Operation 185 'add' 'add_ln100_1' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 3 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.65> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync>
@@ -606,20 +606,20 @@ ST_25 : Operation 191 [1/1] (1.91ns)   --->   "%add_ln84_1 = add i8, i8 %indvar_
 ST_25 : Operation 192 [1/1] (1.24ns)   --->   "%select_ln84_3 = select i1 %icmp_ln84, i8, i8 %add_ln84_1" [lenet_proj/lenet_support.cpp:84]   --->   Operation 192 'select' 'select_ln84_3' <Predicate = true> <Delay = 1.24> <CoreInst = "Sel">   --->   Core 11 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 
 State 26 <SV = 5> <Delay = 9.19>
-ST_26 : Operation 193 [4/5] (7.25ns)   --->   "%sum = fadd i32 %sum_4, i32 %conv2_biases_load" [lenet_proj/lenet_support.cpp:99]   --->   Operation 193 'fadd' 'sum' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 193 [4/5] (7.25ns)   --->   "%sum = fadd i32 %sum_6, i32 %conv2_biases_load" [lenet_proj/lenet_support.cpp:99]   --->   Operation 193 'fadd' 'sum' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 ST_26 : Operation 194 [1/1] (9.19ns)   --->   "%gmem_addr_req = writereq i1 @_ssdm_op_WriteReq.m_axi.i32P, i64 %gmem_addr, i32" [lenet_proj/lenet_support.cpp:100]   --->   Operation 194 'writereq' 'gmem_addr_req' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 27 <SV = 6> <Delay = 7.25>
-ST_27 : Operation 195 [3/5] (7.25ns)   --->   "%sum = fadd i32 %sum_4, i32 %conv2_biases_load" [lenet_proj/lenet_support.cpp:99]   --->   Operation 195 'fadd' 'sum' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 195 [3/5] (7.25ns)   --->   "%sum = fadd i32 %sum_6, i32 %conv2_biases_load" [lenet_proj/lenet_support.cpp:99]   --->   Operation 195 'fadd' 'sum' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 28 <SV = 7> <Delay = 7.25>
-ST_28 : Operation 196 [2/5] (7.25ns)   --->   "%sum = fadd i32 %sum_4, i32 %conv2_biases_load" [lenet_proj/lenet_support.cpp:99]   --->   Operation 196 'fadd' 'sum' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 196 [2/5] (7.25ns)   --->   "%sum = fadd i32 %sum_6, i32 %conv2_biases_load" [lenet_proj/lenet_support.cpp:99]   --->   Operation 196 'fadd' 'sum' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 29 <SV = 8> <Delay = 7.25>
-ST_29 : Operation 197 [1/5] (7.25ns)   --->   "%sum = fadd i32 %sum_4, i32 %conv2_biases_load" [lenet_proj/lenet_support.cpp:99]   --->   Operation 197 'fadd' 'sum' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 197 [1/5] (7.25ns)   --->   "%sum = fadd i32 %sum_6, i32 %conv2_biases_load" [lenet_proj/lenet_support.cpp:99]   --->   Operation 197 'fadd' 'sum' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 74 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 30 <SV = 9> <Delay = 5.43>
-ST_30 : Operation 198 [2/2] (5.43ns)   --->   "%tmp_46 = fcmp_ogt  i32 %sum, i32" [lenet_proj/lenet_support.cpp:100]   --->   Operation 198 'fcmp' 'tmp_46' <Predicate = true> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 75 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 198 [2/2] (5.43ns)   --->   "%tmp_48 = fcmp_ogt  i32 %sum, i32" [lenet_proj/lenet_support.cpp:100]   --->   Operation 198 'fcmp' 'tmp_48' <Predicate = true> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 75 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
 
 State 31 <SV = 10> <Delay = 6.40>
 ST_31 : Operation 199 [1/1] (0.00ns)   --->   "%bitcast_ln100 = bitcast i32 %sum" [lenet_proj/lenet_support.cpp:100]   --->   Operation 199 'bitcast' 'bitcast_ln100' <Predicate = true> <Delay = 0.00>
@@ -628,8 +628,8 @@ ST_31 : Operation 201 [1/1] (0.00ns)   --->   "%trunc_ln100 = trunc i32 %bitcast
 ST_31 : Operation 202 [1/1] (1.55ns)   --->   "%icmp_ln100 = icmp_ne  i8 %tmp_s, i8" [lenet_proj/lenet_support.cpp:100]   --->   Operation 202 'icmp' 'icmp_ln100' <Predicate = true> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 10 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_31 : Operation 203 [1/1] (2.44ns)   --->   "%icmp_ln100_1 = icmp_eq  i23 %trunc_ln100, i23" [lenet_proj/lenet_support.cpp:100]   --->   Operation 203 'icmp' 'icmp_ln100_1' <Predicate = true> <Delay = 2.44> <CoreInst = "Cmp">   --->   Core 10 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_31 : Operation 204 [1/1] (0.00ns) (grouped into LUT with out node select_ln100)   --->   "%or_ln100 = or i1 %icmp_ln100_1, i1 %icmp_ln100" [lenet_proj/lenet_support.cpp:100]   --->   Operation 204 'or' 'or_ln100' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 12 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_31 : Operation 205 [1/2] (5.43ns)   --->   "%tmp_46 = fcmp_ogt  i32 %sum, i32" [lenet_proj/lenet_support.cpp:100]   --->   Operation 205 'fcmp' 'tmp_46' <Predicate = true> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 75 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
-ST_31 : Operation 206 [1/1] (0.00ns) (grouped into LUT with out node select_ln100)   --->   "%and_ln100 = and i1 %or_ln100, i1 %tmp_46" [lenet_proj/lenet_support.cpp:100]   --->   Operation 206 'and' 'and_ln100' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 12 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 205 [1/2] (5.43ns)   --->   "%tmp_48 = fcmp_ogt  i32 %sum, i32" [lenet_proj/lenet_support.cpp:100]   --->   Operation 205 'fcmp' 'tmp_48' <Predicate = true> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 75 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 206 [1/1] (0.00ns) (grouped into LUT with out node select_ln100)   --->   "%and_ln100 = and i1 %or_ln100, i1 %tmp_48" [lenet_proj/lenet_support.cpp:100]   --->   Operation 206 'and' 'and_ln100' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 12 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_31 : Operation 207 [1/1] (0.97ns) (out node of the LUT)   --->   "%select_ln100 = select i1 %and_ln100, i32 %bitcast_ln100, i32" [lenet_proj/lenet_support.cpp:100]   --->   Operation 207 'select' 'select_ln100' <Predicate = true> <Delay = 0.97> <CoreInst = "Sel">   --->   Core 11 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 
 State 32 <SV = 11> <Delay = 9.19>
@@ -698,7 +698,7 @@ conv2_biases_addr    (getelementptr    ) [ 0001000000000000000000000000000000000
 trunc_ln83           (trunc            ) [ 00011111111111111111111111000000000000]
 ret_ln104            (ret              ) [ 00000000000000000000000000000000000000]
 specloopname_ln0     (specloopname     ) [ 00000000000000000000000000000000000000]
-empty_55             (speclooptripcount) [ 00000000000000000000000000000000000000]
+empty_67             (speclooptripcount) [ 00000000000000000000000000000000000000]
 select_ln83          (select           ) [ 00000000000000000000000000000000000000]
 select_ln83_1_v_cast (zext             ) [ 00001111111111111111111110000000000000]
 conv2_biases_load    (load             ) [ 00001111111111111111111111111100000000]
@@ -724,7 +724,7 @@ ic                   (phi              ) [ 0000111000000000000000000000000000000
 indvar_flatten       (phi              ) [ 00001000000000000000000000000000000000]
 ki                   (phi              ) [ 00001000000000000000000000000000000000]
 kj                   (phi              ) [ 00001100000000000000000000000000000000]
-sum_4                (phi              ) [ 00001111111111111111111111111100000000]
+sum_6                (phi              ) [ 00001111111111111111111111111100000000]
 zext_ln90            (zext             ) [ 00000000000000000000000000000000000000]
 empty                (add              ) [ 00000000000000000000000000000000000000]
 specpipeline_ln0     (specpipeline     ) [ 00000000000000000000000000000000000000]
@@ -778,27 +778,27 @@ add_ln89_1           (add              ) [ 0000000000000000000000000000000000000
 add_ln92_1           (add              ) [ 00000000000000000000000000000000000000]
 sext_ln92_2          (sext             ) [ 00000000000000000000000000000000000000]
 add_ln92_2           (add              ) [ 00000000000000000000000000000000000000]
-trunc_ln5            (partselect       ) [ 00000000000000000000000000000000000000]
+trunc_ln8            (partselect       ) [ 00000000000000000000000000000000000000]
 sext_ln92            (sext             ) [ 00000000000000000000000000000000000000]
-gmem_addr_12         (getelementptr    ) [ 00001111111111110000000000000000000000]
+gmem_addr_14         (getelementptr    ) [ 00001111111111110000000000000000000000]
 add_ln91             (add              ) [ 00111111111111111111111111111111111111]
 select_ln90_3        (select           ) [ 00111111111111111111111111111111111111]
-tmp_130_cast         (bitconcatenate   ) [ 00000000000000000000000000000000000000]
+tmp_148_cast         (bitconcatenate   ) [ 00000000000000000000000000000000000000]
 add_ln93_3           (add              ) [ 00000000000000000000000000000000000000]
 zext_ln93_4          (zext             ) [ 00000000000000000000000000000000000000]
 conv2_weights_addr   (getelementptr    ) [ 00000001000010000000000000000000000000]
 weight               (load             ) [ 00001111100001111111000000000000000000]
 gmem_load_req        (readreq          ) [ 00000000000000000000000000000000000000]
-gmem_addr_12_read    (read             ) [ 00000010000000001000000000000000000000]
+gmem_addr_14_read    (read             ) [ 00000010000000001000000000000000000000]
 pixel                (bitcast          ) [ 00001001100000000111000000000000000000]
 mul                  (fmul             ) [ 00001111100000000000111110000000000000]
 specloopname_ln0     (specloopname     ) [ 00000000000000000000000000000000000000]
-empty_54             (speclooptripcount) [ 00000000000000000000000000000000000000]
+empty_66             (speclooptripcount) [ 00000000000000000000000000000000000000]
 specpipeline_ln0     (specpipeline     ) [ 00000000000000000000000000000000000000]
 specloopname_ln0     (specloopname     ) [ 00000000000000000000000000000000000000]
 specpipeline_ln0     (specpipeline     ) [ 00000000000000000000000000000000000000]
 specloopname_ln87    (specloopname     ) [ 00000000000000000000000000000000000000]
-sum_3                (fadd             ) [ 00111111111111111111111111111111111111]
+sum_5                (fadd             ) [ 00111111111111111111111111111111111111]
 br_ln0               (br               ) [ 00111111111111111111111111111111111111]
 tmp4                 (bitconcatenate   ) [ 00000000000000000000000000000000000000]
 zext_ln100           (zext             ) [ 00000000000000000000000000000000000000]
@@ -818,7 +818,7 @@ trunc_ln100          (trunc            ) [ 0000000000000000000000000000000000000
 icmp_ln100           (icmp             ) [ 00000000000000000000000000000000000000]
 icmp_ln100_1         (icmp             ) [ 00000000000000000000000000000000000000]
 or_ln100             (or               ) [ 00000000000000000000000000000000000000]
-tmp_46               (fcmp             ) [ 00000000000000000000000000000000000000]
+tmp_48               (fcmp             ) [ 00000000000000000000000000000000000000]
 and_ln100            (and              ) [ 00000000000000000000000000000000000000]
 select_ln100         (select           ) [ 00000000000000000000000000000000100000]
 write_ln100          (write            ) [ 00000000000000000000000000000000000000]
@@ -890,7 +890,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 <pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty"/></StgValue>
+<StgValue><ssdm name="empty_5"/></StgValue>
 </bind>
 </comp>
 
@@ -908,7 +908,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 <pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_21"/></StgValue>
+<StgValue><ssdm name="empty_24"/></StgValue>
 </bind>
 </comp>
 
@@ -1133,7 +1133,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 <pin id="67" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_9"/></StgValue>
+<StgValue><ssdm name="empty_22"/></StgValue>
 </bind>
 </comp>
 
@@ -1412,7 +1412,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 <pin id="129" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_19"/></StgValue>
+<StgValue><ssdm name="empty_21"/></StgValue>
 </bind>
 </comp>
 
@@ -1543,7 +1543,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </bind>
 </comp>
 
-<comp id="169" class="1004" name="gmem_addr_12_read_read_fu_169">
+<comp id="169" class="1004" name="gmem_addr_14_read_read_fu_169">
 <pin_list>
 <pin id="170" dir="0" index="0" bw="32" slack="0"/>
 <pin id="171" dir="0" index="1" bw="32" slack="8"/>
@@ -1551,7 +1551,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="gmem_addr_12_read/15 "/>
+<opset="gmem_addr_14_read/15 "/>
 </bind>
 </comp>
 
@@ -1874,17 +1874,17 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </bind>
 </comp>
 
-<comp id="331" class="1005" name="sum_4_reg_331">
+<comp id="331" class="1005" name="sum_6_reg_331">
 <pin_list>
 <pin id="332" dir="0" index="0" bw="32" slack="1"/>
 <pin id="333" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="sum_4 (phireg) "/>
+<opset="sum_6 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="335" class="1004" name="sum_4_phi_fu_335">
+<comp id="335" class="1004" name="sum_6_phi_fu_335">
 <pin_list>
 <pin id="336" dir="0" index="0" bw="32" slack="1"/>
 <pin id="337" dir="0" index="1" bw="0" slack="2147483647"/>
@@ -1894,7 +1894,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
-<opset="sum_4/4 "/>
+<opset="sum_6/4 "/>
 </bind>
 </comp>
 
@@ -1906,7 +1906,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </pin_list>
 <bind>
 <opcode="fadd(9) " fcode="fadd"/>
-<opset="sum_3/20 sum/25 "/>
+<opset="sum_5/20 sum/25 "/>
 </bind>
 </comp>
 
@@ -1930,7 +1930,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </pin_list>
 <bind>
 <opcode="fcmp(46) " fcode="fcmp"/>
-<opset="tmp_46/30 "/>
+<opset="tmp_48/30 "/>
 </bind>
 </comp>
 
@@ -2834,7 +2834,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </bind>
 </comp>
 
-<comp id="785" class="1004" name="trunc_ln5_fu_785">
+<comp id="785" class="1004" name="trunc_ln8_fu_785">
 <pin_list>
 <pin id="786" dir="0" index="0" bw="62" slack="0"/>
 <pin id="787" dir="0" index="1" bw="64" slack="0"/>
@@ -2844,7 +2844,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="trunc_ln5/7 "/>
+<opset="trunc_ln8/7 "/>
 </bind>
 </comp>
 
@@ -2859,7 +2859,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </bind>
 </comp>
 
-<comp id="799" class="1004" name="gmem_addr_12_fu_799">
+<comp id="799" class="1004" name="gmem_addr_14_fu_799">
 <pin_list>
 <pin id="800" dir="0" index="0" bw="64" slack="0"/>
 <pin id="801" dir="0" index="1" bw="64" slack="0"/>
@@ -2867,7 +2867,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </pin_list>
 <bind>
 <opcode="getelementptr(29) " fcode="getelementptr"/>
-<opset="gmem_addr_12/7 "/>
+<opset="gmem_addr_14/7 "/>
 </bind>
 </comp>
 
@@ -2896,7 +2896,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </bind>
 </comp>
 
-<comp id="816" class="1004" name="tmp_130_cast_fu_816">
+<comp id="816" class="1004" name="tmp_148_cast_fu_816">
 <pin_list>
 <pin id="817" dir="0" index="0" bw="12" slack="0"/>
 <pin id="818" dir="0" index="1" bw="8" slack="5"/>
@@ -2905,7 +2905,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </pin_list>
 <bind>
 <opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
-<opset="tmp_130_cast/11 "/>
+<opset="tmp_148_cast/11 "/>
 </bind>
 </comp>
 
@@ -3436,13 +3436,13 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </bind>
 </comp>
 
-<comp id="1105" class="1005" name="gmem_addr_12_reg_1105">
+<comp id="1105" class="1005" name="gmem_addr_14_reg_1105">
 <pin_list>
 <pin id="1106" dir="0" index="0" bw="32" slack="1"/>
 <pin id="1107" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="gmem_addr_12 "/>
+<opset="gmem_addr_14 "/>
 </bind>
 </comp>
 
@@ -3486,13 +3486,13 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </bind>
 </comp>
 
-<comp id="1131" class="1005" name="gmem_addr_12_read_reg_1131">
+<comp id="1131" class="1005" name="gmem_addr_14_read_reg_1131">
 <pin_list>
 <pin id="1132" dir="0" index="0" bw="32" slack="1"/>
 <pin id="1133" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="gmem_addr_12_read "/>
+<opset="gmem_addr_14_read "/>
 </bind>
 </comp>
 
@@ -3516,13 +3516,13 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 </bind>
 </comp>
 
-<comp id="1146" class="1005" name="sum_3_reg_1146">
+<comp id="1146" class="1005" name="sum_5_reg_1146">
 <pin_list>
 <pin id="1147" dir="0" index="0" bw="32" slack="1"/>
 <pin id="1148" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="sum_3 "/>
+<opset="sum_5 "/>
 </bind>
 </comp>
 
@@ -4327,9 +4327,9 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 		add_ln89_1 : 2
 		sext_ln92_2 : 1
 		add_ln92_2 : 3
-		trunc_ln5 : 4
+		trunc_ln8 : 4
 		sext_ln92 : 5
-		gmem_addr_12 : 6
+		gmem_addr_14 : 6
 	State 8
 	State 9
 	State 10
@@ -4460,7 +4460,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 |----------|-------------------------------|---------|---------|---------|
 |          |    output_read_read_fu_150    |    0    |    0    |    0    |
 |   read   |     input_read_read_fu_156    |    0    |    0    |    0    |
-|          | gmem_addr_12_read_read_fu_169 |    0    |    0    |    0    |
+|          | gmem_addr_14_read_read_fu_169 |    0    |    0    |    0    |
 |----------|-------------------------------|---------|---------|---------|
 |  readreq |       grp_readreq_fu_162      |    0    |    0    |    0    |
 |----------|-------------------------------|---------|---------|---------|
@@ -4480,7 +4480,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 |          |       shl_ln92_1_fu_726       |    0    |    0    |    0    |
 |          |       shl_ln92_2_fu_738       |    0    |    0    |    0    |
 |          |   add_ln92_1_mid2_v_v_fu_760  |    0    |    0    |    0    |
-|          |      tmp_130_cast_fu_816      |    0    |    0    |    0    |
+|          |      tmp_148_cast_fu_816      |    0    |    0    |    0    |
 |          |          tmp4_fu_837          |    0    |    0    |    0    |
 |----------|-------------------------------|---------|---------|---------|
 |          |        zext_ln85_fu_373       |    0    |    0    |    0    |
@@ -4513,7 +4513,7 @@ br_ln0               (br               ) [ 0111111111111111111111111111111111111
 |          |        sext_ln92_fu_795       |    0    |    0    |    0    |
 |          |       sext_ln100_fu_869       |    0    |    0    |    0    |
 |----------|-------------------------------|---------|---------|---------|
-|          |        trunc_ln5_fu_785       |    0    |    0    |    0    |
+|          |        trunc_ln8_fu_785       |    0    |    0    |    0    |
 |partselect|        trunc_ln_fu_859        |    0    |    0    |    0    |
 |          |          tmp_s_fu_900         |    0    |    0    |    0    |
 |----------|-------------------------------|---------|---------|---------|
@@ -4539,8 +4539,8 @@ N/A
 |  conv2_biases_addr_reg_993  |    4   |
 |  conv2_biases_load_reg_1008 |   32   |
 | conv2_weights_addr_reg_1121 |   12   |
-|  gmem_addr_12_read_reg_1131 |   32   |
-|    gmem_addr_12_reg_1105    |   32   |
+|  gmem_addr_14_read_reg_1131 |   32   |
+|    gmem_addr_14_reg_1105    |   32   |
 |      gmem_addr_reg_1151     |   32   |
 |          i_reg_250          |    4   |
 |          ic_reg_285         |    3   |
@@ -4571,8 +4571,8 @@ N/A
 |    select_ln90_3_reg_1116   |    6   |
 |     select_ln90_reg_1075    |    3   |
 |     sext_ln92_1_reg_1100    |   14   |
-|        sum_3_reg_1146       |   32   |
-|        sum_4_reg_331        |   32   |
+|        sum_5_reg_1146       |   32   |
+|        sum_6_reg_331        |   32   |
 |         sum_reg_1167        |   32   |
 |      trunc_ln83_reg_998     |    4   |
 |       weight_reg_1126       |   32   |
@@ -4594,7 +4594,7 @@ N/A
 |         j_reg_262        |  p0  |   2  |   4  |    8   ||    9    |
 |        ic_reg_285        |  p0  |   2  |   3  |    6   ||    9    |
 |        kj_reg_319        |  p0  |   2  |   3  |    6   ||    9    |
-|       sum_4_reg_331      |  p0  |   2  |  32  |   64   ||    9    |
+|       sum_6_reg_331      |  p0  |   2  |  32  |   64   ||    9    |
 |        grp_fu_343        |  p1  |   2  |  32  |   64   ||    9    |
 |        grp_fu_348        |  p0  |   2  |  32  |   64   ||    9    |
 |        grp_fu_946        |  p1  |   3  |   4  |   12   ||    15   |

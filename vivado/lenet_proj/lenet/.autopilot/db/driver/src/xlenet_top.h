@@ -101,6 +101,10 @@ void XLenet_top_Set_flat_out(XLenet_top *InstancePtr, u64 Data);
 u64 XLenet_top_Get_flat_out(XLenet_top *InstancePtr);
 void XLenet_top_Set_fc1_out(XLenet_top *InstancePtr, u64 Data);
 u64 XLenet_top_Get_fc1_out(XLenet_top *InstancePtr);
+void XLenet_top_Set_fc2_out(XLenet_top *InstancePtr, u64 Data);
+u64 XLenet_top_Get_fc2_out(XLenet_top *InstancePtr);
+void XLenet_top_Set_prediction(XLenet_top *InstancePtr, u64 Data);
+u64 XLenet_top_Get_prediction(XLenet_top *InstancePtr);
 
 void XLenet_top_InterruptGlobalEnable(XLenet_top *InstancePtr);
 void XLenet_top_InterruptGlobalDisable(XLenet_top *InstancePtr);

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'maxpool2_layer'" level="0">
-<item name = "Date">Mon Apr  7 00:42:51 2025
+<item name = "Date">Mon Apr  7 23:44:40 2025
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">lenet_proj</item>

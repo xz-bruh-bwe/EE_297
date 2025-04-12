@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="lenet_top.h" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h"/>
-    <originFiles name="lenet_top.cpp" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.cpp"/>
-    <originFiles name="img_5.txt" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\img_5.txt"/>
-    <originFiles name="conv1_weights.h" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\projects\weights\conv1_weights.h"/>
-    <originFiles name="conv1_biases.h" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\projects\weights\conv1_biases.h"/>
     <originFiles name="lenet_support.cpp" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_support.cpp"/>
-    <originFiles name="conv2_biases.h" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\projects\weights\conv2_biases.h"/>
-    <originFiles name="conv2_weights.h" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\projects\weights\conv2_weights.h"/>
+    <originFiles name="lenet_top.cpp" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.cpp"/>
+    <originFiles name="lenet_top.h" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h"/>
   </source>
   <testbench>
     <originFiles name="lenet_top_tb.cpp" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top_tb.cpp"/>

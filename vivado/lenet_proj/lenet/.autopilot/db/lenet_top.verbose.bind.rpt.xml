@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'lenet_top'" level="0">
-<item name = "Date">Mon Apr  7 00:42:54 2025
+<item name = "Date">Mon Apr  7 23:44:56 2025
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">lenet_proj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">12.60 ns, 9.198 ns, 3.40 ns</column>
+<column name="ap_clk">12.60 ns, 9.603 ns, 3.40 ns</column>
 </table>
 </item>
 </section>
@@ -24,19 +24,21 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1618811, 1618811, 20.397 ms, 20.397 ms, 1618812, 1618812, none</column>
+<column name="">1672456, 1672456, 21.073 ms, 21.073 ms, 1672457, 1672457, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_conv2d_layer_fu_170">conv2d_layer, 119549, 119549, 1.506 ms, 1.506 ms, 119549, 119549, none</column>
-<column name="grp_maxpool_layer_fu_232">maxpool_layer, 4729, 4729, 59.585 us, 59.585 us, 4729, 4729, none</column>
-<column name="grp_maxpool2_layer_fu_240">maxpool2_layer, 1622, 1622, 20.437 us, 20.437 us, 1622, 1622, none</column>
-<column name="grp_conv2d_6to16_layer_fu_248">conv2d_6to16_layer, 1249601, 1249601, 15.745 ms, 15.745 ms, 1249601, 1249601, none</column>
-<column name="grp_fc_layer_400_120_s_fu_260">fc_layer_400_120_s, 242886, 242886, 3.060 ms, 3.060 ms, 242886, 242886, none</column>
-<column name="grp_flatten_layer_fu_272">flatten_layer, 413, 413, 5.204 us, 5.204 us, 413, 413, none</column>
+<column name="grp_fc3_layer_fu_206">fc3_layer, 1219, 1219, 15.359 us, 15.359 us, 1219, 1219, none</column>
+<column name="grp_conv2d_layer_fu_222">conv2d_layer, 119549, 119549, 1.506 ms, 1.506 ms, 119549, 119549, none</column>
+<column name="grp_maxpool_layer_fu_284">maxpool_layer, 4729, 4729, 59.585 us, 59.585 us, 4729, 4729, none</column>
+<column name="grp_maxpool2_layer_fu_292">maxpool2_layer, 1622, 1622, 20.437 us, 20.437 us, 1622, 1622, none</column>
+<column name="grp_conv2d_6to16_layer_fu_300">conv2d_6to16_layer, 1249601, 1249601, 15.745 ms, 15.745 ms, 1249601, 1249601, none</column>
+<column name="grp_fc_layer_120_84_s_fu_312">fc_layer_120_84_s, 52422, 52422, 0.661 ms, 0.661 ms, 52422, 52422, none</column>
+<column name="grp_fc_layer_400_120_s_fu_324">fc_layer_400_120_s, 242886, 242886, 3.060 ms, 3.060 ms, 242886, 242886, none</column>
+<column name="grp_flatten_layer_fu_336">flatten_layer, 413, 413, 5.204 us, 5.204 us, 413, 413, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

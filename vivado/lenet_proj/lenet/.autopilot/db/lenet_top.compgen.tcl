@@ -65,6 +65,22 @@ fc1_out {
 	offset 88
 	offset_end 99
 }
+fc2_out { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 100
+	offset_end 111
+}
+prediction { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 112
+	offset_end 123
+}
 ap_start { }
 ap_done { }
 ap_ready { }
@@ -77,7 +93,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 105 \
+			id 124 \
 			corename lenet_top_control_axilite \
 			name lenet_top_control_s_axi \
 			ports {$port_control} \
@@ -98,7 +114,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 106 \
+    id 125 \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1744011783359">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1744094706564">
   <ports id="1" name="gmem" type="PortType" bitwidth="32" direction="DirInOut" iftype="IfTypeFifo">
     <dataInputObjs>getelementptr</dataInputObjs>
     <dataInputObjs>getelementptr</dataInputObjs>
@@ -104,7 +104,7 @@
       <dataOutputObjs>writeresp</dataOutputObjs>
       <dataOutputObjs>gmem</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="empty_37" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="1" opcode="writereq" nodeLabel="6.0" m_display="0" m_delay="9.19" m_topoIndex="10" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="empty_43" lineNumber="138" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="1" opcode="writereq" nodeLabel="6.0" m_display="0" m_delay="9.19" m_topoIndex="10" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="138" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
       <dataInputObjs>getelementptr</dataInputObjs>
       <constName>empty</constName>
@@ -121,7 +121,7 @@
   <blocks id="35" name="block_35" type="BlockType">
     <controlInputObjs>bb</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="empty_39" lineNumber="146" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="1" opcode="writeresp" nodeLabel="10.0" nodeLatency="4" m_display="0" m_delay="9.19" m_topoIndex="19" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="empty_45" lineNumber="146" fileName="lenet_proj/lenet_support.cpp" fileDirectory=".." contextFuncName="flatten_layer" bitwidth="1" opcode="writeresp" nodeLabel="10.0" nodeLatency="4" m_display="0" m_delay="9.19" m_topoIndex="19" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="lenet_proj/lenet_support.cpp" linenumber="146" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado" functionName="flatten_layer"/>
       <dataInputObjs>getelementptr</dataInputObjs>
     </node_objs>

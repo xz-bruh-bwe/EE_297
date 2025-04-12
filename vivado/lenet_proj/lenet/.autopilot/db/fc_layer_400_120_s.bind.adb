@@ -109,7 +109,7 @@
 						<name>output_read</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>67</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -125,7 +125,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>67</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -159,7 +159,7 @@
 						<name>input_read</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>67</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -175,7 +175,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>67</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -209,7 +209,7 @@
 						<name>trunc_ln</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>67</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -225,7 +225,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>67</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -258,10 +258,10 @@
 					<Obj>
 						<type>0</type>
 						<id>12</id>
-						<name>sext_ln67</name>
+						<name>sext_ln79</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>67</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -277,7 +277,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>67</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -310,7 +310,7 @@
 						<name>gmem_addr</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>67</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -326,7 +326,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>67</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -360,7 +360,7 @@
 						<name>empty</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>67</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -376,7 +376,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>67</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -411,7 +411,7 @@
 						<name>trunc_ln3</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>82</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -427,7 +427,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>70</second>
+										<second>82</second>
 									</item>
 								</second>
 							</item>
@@ -460,10 +460,10 @@
 					<Obj>
 						<type>0</type>
 						<id>16</id>
-						<name>sext_ln70</name>
+						<name>sext_ln82</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>82</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -479,7 +479,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>70</second>
+										<second>82</second>
 									</item>
 								</second>
 							</item>
@@ -512,7 +512,7 @@
 						<name>gmem_addr_10</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>82</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -528,7 +528,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>70</second>
+										<second>82</second>
 									</item>
 								</second>
 							</item>
@@ -559,10 +559,10 @@
 					<Obj>
 						<type>0</type>
 						<id>18</id>
-						<name>br_ln67</name>
+						<name>br_ln79</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>67</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -578,7 +578,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>67</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -611,7 +611,7 @@
 						<name>i</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>67</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -627,7 +627,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>67</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -660,10 +660,10 @@
 					<Obj>
 						<type>0</type>
 						<id>21</id>
-						<name>icmp_ln67</name>
+						<name>icmp_ln79</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>67</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -679,7 +679,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>67</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -710,10 +710,10 @@
 					<Obj>
 						<type>0</type>
 						<id>23</id>
-						<name>add_ln67</name>
+						<name>add_ln79</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>67</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -729,7 +729,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>67</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -760,10 +760,10 @@
 					<Obj>
 						<type>0</type>
 						<id>24</id>
-						<name>br_ln67</name>
+						<name>br_ln79</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>67</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -779,7 +779,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>67</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -811,10 +811,10 @@
 					<Obj>
 						<type>0</type>
 						<id>26</id>
-						<name>zext_ln67</name>
+						<name>zext_ln79</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>67</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -830,7 +830,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>67</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -860,10 +860,10 @@
 					<Obj>
 						<type>0</type>
 						<id>27</id>
-						<name>zext_ln69</name>
+						<name>zext_ln81</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>69</lineNumber>
+						<lineNumber>81</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -879,7 +879,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>69</second>
+										<second>81</second>
 									</item>
 								</second>
 							</item>
@@ -909,10 +909,10 @@
 					<Obj>
 						<type>0</type>
 						<id>29</id>
-						<name>empty_41</name>
+						<name>empty_47</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>82</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -928,7 +928,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>70</second>
+										<second>82</second>
 									</item>
 								</second>
 							</item>
@@ -963,7 +963,7 @@
 						<name>fc1_biases_addr</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>73</lineNumber>
+						<lineNumber>85</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -979,7 +979,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>73</second>
+										<second>85</second>
 									</item>
 								</second>
 							</item>
@@ -1014,7 +1014,7 @@
 						<name>fc1_biases_load</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>73</lineNumber>
+						<lineNumber>85</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1030,7 +1030,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>73</second>
+										<second>85</second>
 									</item>
 								</second>
 							</item>
@@ -1060,10 +1060,10 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>br_ln70</name>
+						<name>br_ln82</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>82</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1079,7 +1079,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>70</second>
+										<second>82</second>
 									</item>
 								</second>
 							</item>
@@ -1112,7 +1112,7 @@
 						<name>j</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>82</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1128,7 +1128,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>70</second>
+										<second>82</second>
 									</item>
 								</second>
 							</item>
@@ -1199,10 +1199,10 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>icmp_ln70</name>
+						<name>icmp_ln82</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>82</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1218,7 +1218,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>70</second>
+										<second>82</second>
 									</item>
 								</second>
 							</item>
@@ -1249,10 +1249,10 @@
 					<Obj>
 						<type>0</type>
 						<id>39</id>
-						<name>add_ln70</name>
+						<name>add_ln82</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>82</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1268,7 +1268,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>70</second>
+										<second>82</second>
 									</item>
 								</second>
 							</item>
@@ -1299,10 +1299,10 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>br_ln70</name>
+						<name>br_ln82</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>82</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1318,7 +1318,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>70</second>
+										<second>82</second>
 									</item>
 								</second>
 							</item>
@@ -1353,7 +1353,7 @@
 						<name>tmp_3</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>71</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1369,7 +1369,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>71</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -1404,7 +1404,7 @@
 						<name>tmp_4</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>71</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1420,7 +1420,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>71</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -1452,10 +1452,10 @@
 					<Obj>
 						<type>0</type>
 						<id>44</id>
-						<name>zext_ln71</name>
+						<name>zext_ln83</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>71</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1471,7 +1471,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>71</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -1501,10 +1501,10 @@
 					<Obj>
 						<type>0</type>
 						<id>45</id>
-						<name>sub_ln71</name>
+						<name>sub_ln83</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>71</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1520,7 +1520,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>71</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -1551,10 +1551,10 @@
 					<Obj>
 						<type>0</type>
 						<id>46</id>
-						<name>add_ln71</name>
+						<name>add_ln83</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>71</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1570,7 +1570,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>71</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -1601,10 +1601,10 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>zext_ln71_1</name>
+						<name>zext_ln83_1</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>71</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1620,7 +1620,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>71</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -1653,7 +1653,7 @@
 						<name>fc1_weights_addr</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>71</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1669,7 +1669,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>71</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -1704,7 +1704,7 @@
 						<name>gmem_addr_10_read</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>71</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1720,7 +1720,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>71</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -1752,10 +1752,10 @@
 					<Obj>
 						<type>0</type>
 						<id>51</id>
-						<name>bitcast_ln71</name>
+						<name>bitcast_ln83</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>71</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1771,7 +1771,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>71</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -1804,7 +1804,7 @@
 						<name>fc1_weights_load</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>71</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1820,7 +1820,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>71</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -1853,7 +1853,7 @@
 						<name>mul</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>71</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1869,7 +1869,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>71</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -1903,7 +1903,7 @@
 						<name>sum_2</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>71</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1919,7 +1919,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>71</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -1953,7 +1953,7 @@
 						<name>ifzero</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>82</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -1969,7 +1969,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>70</second>
+										<second>82</second>
 									</item>
 								</second>
 							</item>
@@ -2000,10 +2000,10 @@
 					<Obj>
 						<type>0</type>
 						<id>56</id>
-						<name>br_ln70</name>
+						<name>br_ln82</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>70</lineNumber>
+						<lineNumber>82</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2019,7 +2019,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>70</second>
+										<second>82</second>
 									</item>
 								</second>
 							</item>
@@ -2054,7 +2054,7 @@
 						<name>sum</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>73</lineNumber>
+						<lineNumber>85</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2070,7 +2070,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>73</second>
+										<second>85</second>
 									</item>
 								</second>
 							</item>
@@ -2101,10 +2101,10 @@
 					<Obj>
 						<type>0</type>
 						<id>59</id>
-						<name>bitcast_ln74</name>
+						<name>bitcast_ln86</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>86</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2120,7 +2120,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>74</second>
+										<second>86</second>
 									</item>
 								</second>
 							</item>
@@ -2153,7 +2153,7 @@
 						<name>tmp</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>86</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2169,7 +2169,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>74</second>
+										<second>86</second>
 									</item>
 								</second>
 							</item>
@@ -2202,10 +2202,10 @@
 					<Obj>
 						<type>0</type>
 						<id>61</id>
-						<name>trunc_ln74</name>
+						<name>trunc_ln86</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>86</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2221,7 +2221,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>74</second>
+										<second>86</second>
 									</item>
 								</second>
 							</item>
@@ -2251,10 +2251,10 @@
 					<Obj>
 						<type>0</type>
 						<id>62</id>
-						<name>icmp_ln74</name>
+						<name>icmp_ln86</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>86</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2270,7 +2270,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>74</second>
+										<second>86</second>
 									</item>
 								</second>
 							</item>
@@ -2301,10 +2301,10 @@
 					<Obj>
 						<type>0</type>
 						<id>63</id>
-						<name>icmp_ln74_1</name>
+						<name>icmp_ln86_1</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>86</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2320,7 +2320,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>74</second>
+										<second>86</second>
 									</item>
 								</second>
 							</item>
@@ -2351,10 +2351,10 @@
 					<Obj>
 						<type>0</type>
 						<id>64</id>
-						<name>or_ln74</name>
+						<name>or_ln86</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>86</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2370,7 +2370,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>74</second>
+										<second>86</second>
 									</item>
 								</second>
 							</item>
@@ -2404,7 +2404,7 @@
 						<name>tmp_s</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>86</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2420,7 +2420,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>74</second>
+										<second>86</second>
 									</item>
 								</second>
 							</item>
@@ -2451,10 +2451,10 @@
 					<Obj>
 						<type>0</type>
 						<id>66</id>
-						<name>and_ln74</name>
+						<name>and_ln86</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>86</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2470,7 +2470,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>74</second>
+										<second>86</second>
 									</item>
 								</second>
 							</item>
@@ -2501,10 +2501,10 @@
 					<Obj>
 						<type>0</type>
 						<id>67</id>
-						<name>select_ln74</name>
+						<name>select_ln86</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>86</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2520,7 +2520,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>74</second>
+										<second>86</second>
 									</item>
 								</second>
 							</item>
@@ -2552,10 +2552,10 @@
 					<Obj>
 						<type>0</type>
 						<id>68</id>
-						<name>gmem_addr_write_ln74</name>
+						<name>gmem_addr_write_ln86</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>86</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2571,7 +2571,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>74</second>
+										<second>86</second>
 									</item>
 								</second>
 							</item>
@@ -2711,10 +2711,10 @@
 					<Obj>
 						<type>0</type>
 						<id>75</id>
-						<name>empty_43</name>
+						<name>empty_49</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>76</lineNumber>
+						<lineNumber>88</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2730,7 +2730,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>76</second>
+										<second>88</second>
 									</item>
 								</second>
 							</item>
@@ -2761,10 +2761,10 @@
 					<Obj>
 						<type>0</type>
 						<id>76</id>
-						<name>_ln76</name>
+						<name>_ln88</name>
 						<fileName>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
-						<lineNumber>76</lineNumber>
+						<lineNumber>88</lineNumber>
 						<contextFuncName>fc_layer&amp;lt;400, 120&amp;gt;</contextFuncName>
 						<contextNormFuncName>fc_layer_400_120_s</contextNormFuncName>
 						<inlineStackInfo>
@@ -2780,7 +2780,7 @@
 											<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h</first>
 											<second>fc_layer&amp;lt;400, 120&amp;gt;</second>
 										</first>
-										<second>76</second>
+										<second>88</second>
 									</item>
 								</second>
 							</item>
@@ -4415,8 +4415,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_207">
 			<mId>3</mId>
-			<mTag>VITIS_LOOP_67_1</mTag>
-			<mNormTag>VITIS_LOOP_67_1</mNormTag>
+			<mTag>VITIS_LOOP_79_1</mTag>
+			<mNormTag>VITIS_LOOP_79_1</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>3</count>
@@ -4464,8 +4464,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_209">
 			<mId>5</mId>
-			<mTag>VITIS_LOOP_70_2</mTag>
-			<mNormTag>VITIS_LOOP_70_2</mNormTag>
+			<mTag>VITIS_LOOP_82_2</mTag>
+			<mNormTag>VITIS_LOOP_82_2</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>0</count>
@@ -6244,7 +6244,7 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item class_id="44" tracking_level="1" version="0" object_id="_369">
-			<region_name>VITIS_LOOP_70_2</region_name>
+			<region_name>VITIS_LOOP_82_2</region_name>
 			<basic_blocks>
 				<count>4</count>
 				<item_version>0</item_version>
@@ -6649,7 +6649,7 @@
 		<count>33</count>
 		<item_version>0</item_version>
 		<item class_id="49" tracking_level="0" version="0">
-			<first>add_ln67_fu_259</first>
+			<first>add_ln79_fu_259</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6657,7 +6657,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln70_fu_320</first>
+			<first>add_ln82_fu_320</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6665,7 +6665,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln71_fu_306</first>
+			<first>add_ln83_fu_306</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6673,7 +6673,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln74_fu_367</first>
+			<first>and_ln86_fu_367</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6681,7 +6681,7 @@
 			</second>
 		</item>
 		<item>
-			<first>bitcast_ln71_fu_316</first>
+			<first>bitcast_ln83_fu_316</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6689,7 +6689,7 @@
 			</second>
 		</item>
 		<item>
-			<first>bitcast_ln74_fu_332</first>
+			<first>bitcast_ln86_fu_332</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6737,7 +6737,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln67_fu_253</first>
+			<first>icmp_ln79_fu_253</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6745,7 +6745,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln70_fu_274</first>
+			<first>icmp_ln82_fu_274</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6753,7 +6753,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln74_1_fu_355</first>
+			<first>icmp_ln86_1_fu_355</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6761,7 +6761,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln74_fu_349</first>
+			<first>icmp_ln86_fu_349</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6785,7 +6785,7 @@
 			</second>
 		</item>
 		<item>
-			<first>or_ln74_fu_361</first>
+			<first>or_ln86_fu_361</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6793,7 +6793,7 @@
 			</second>
 		</item>
 		<item>
-			<first>select_ln74_fu_373</first>
+			<first>select_ln86_fu_373</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6801,7 +6801,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln67_fu_222</first>
+			<first>sext_ln79_fu_222</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6809,7 +6809,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln70_fu_243</first>
+			<first>sext_ln82_fu_243</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6817,7 +6817,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sub_ln71_fu_300</first>
+			<first>sub_ln83_fu_300</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6865,7 +6865,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln74_fu_345</first>
+			<first>trunc_ln86_fu_345</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6881,7 +6881,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln67_fu_265</first>
+			<first>zext_ln79_fu_265</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6889,7 +6889,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln69_fu_270</first>
+			<first>zext_ln81_fu_270</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6897,7 +6897,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln71_1_fu_311</first>
+			<first>zext_ln83_1_fu_311</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6905,7 +6905,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln71_fu_296</first>
+			<first>zext_ln83_fu_296</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -7009,7 +7009,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln74_write_fu_127</first>
+			<first>write_ln86_write_fu_127</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -7217,7 +7217,7 @@
 		<count>20</count>
 		<item_version>0</item_version>
 		<item>
-			<first>add_ln67_reg_396</first>
+			<first>add_ln79_reg_396</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -7225,7 +7225,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln70_reg_440</first>
+			<first>add_ln82_reg_440</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -7233,7 +7233,7 @@
 			</second>
 		</item>
 		<item>
-			<first>bitcast_ln71_reg_435</first>
+			<first>bitcast_ln83_reg_435</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -7305,7 +7305,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln70_reg_416</first>
+			<first>icmp_ln82_reg_416</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -7337,7 +7337,7 @@
 			</second>
 		</item>
 		<item>
-			<first>select_ln74_reg_466</first>
+			<first>select_ln86_reg_466</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -7369,7 +7369,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln69_reg_406</first>
+			<first>zext_ln81_reg_406</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

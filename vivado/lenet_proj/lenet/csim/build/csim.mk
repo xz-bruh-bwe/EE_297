@@ -16,7 +16,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../lenet_top_tb.cpp ../../../lenet_top.cpp ../../../lenet_support.cpp
+HLS_SOURCES = ../../../lenet_top_tb.cpp ../../../lenet_support.cpp ../../../lenet_top.cpp
 
 override TARGET := csim.exe
 
@@ -72,14 +72,14 @@ $(ObjDir)/lenet_top_tb.o: ../../../lenet_top_tb.cpp $(ObjDir)/.dir
 
 -include $(ObjDir)/lenet_top_tb.d
 
-$(ObjDir)/lenet_top.o: ../../../lenet_top.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../lenet_top.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/lenet_top.d
-
 $(ObjDir)/lenet_support.o: ../../../lenet_support.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../lenet_support.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/lenet_support.d
+
+$(ObjDir)/lenet_top.o: ../../../lenet_top.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../lenet_top.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/lenet_top.d

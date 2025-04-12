@@ -98,6 +98,7 @@ void save_pool2_out(float pool2_out[5][5][16], const char* filename) {
     printf("MaxPool2 output written to: %s\n", filename);
 }
 
+// Fletten out Layer
 void save_flatten_out(float flatten_out[400], const char* filename) {
     FILE* f = fopen(filename, "w");
     if (!f) {
@@ -113,6 +114,39 @@ void save_flatten_out(float flatten_out[400], const char* filename) {
     printf("Flatten output written to: %s\n", filename);
 }
 
+//fc1
+#define FC1_OUT_SIZE 120
+void save_fc1_out(float fc1_out[FC1_OUT_SIZE], const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int i = 0; i < FC1_OUT_SIZE; i++) {
+        fprintf(f, "%.6f\n", fc1_out[i]);
+    }
+
+    fclose(f);
+    printf("FC1 output written to: %s\n", filename);
+}
+
+//fc2
+#define FC2_OUT_SIZE 84
+void save_fc2_out(float fc2_out[FC2_OUT_SIZE], const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int i = 0; i < FC2_OUT_SIZE; i++) {
+        fprintf(f, "%.6f\n", fc2_out[i]);
+    }
+
+    fclose(f);
+    printf("FC2 output written to: %s\n", filename);
+}
 
 
 // ──────────────────────────────────────────────
@@ -125,9 +159,11 @@ int main() {
     data_t pool2_out[5][5][16];
     data_t flat_out[400];
     data_t fc1_out[120];
+    data_t fc2_out[84];
+    int prediction = -1;
 
     // 1. Load image from .txt file
-    FILE *fp = fopen("img_5.txt", "r");
+    FILE *fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/test_files/img_9.txt", "r");
     if (!fp) {
         printf("Error: Could not open image file.\n");
         return 1;
@@ -139,20 +175,10 @@ int main() {
             fscanf(fp, "%f", &image[i][j]);
         }
     }
-
     fclose(fp);
 
-    //for (int i = 0; i < IMG_HEIGHT; i++) {
-    //        for (int j = 0; j < IMG_WIDTH; j++) {
-    //            float temp;
-    //            fscanf(fp, "%f", &temp);         // Read as float
-    //            image[i][j] = (data_t)temp;      // Cast to ap_fixed
-    //        }
-    //    }
-
-
     // 2. Run the top-level HLS function
-    lenet_top(image, conv1_out, pool1_out, conv2_out, pool2_out, flat_out, fc1_out);
+    lenet_top(image, conv1_out, pool1_out, conv2_out, pool2_out, flat_out, fc1_out, fc2_out, &prediction);
 
     // 3. Save Conv1 output
     save_conv1_out(conv1_out, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/output_tests/conv1_out_c.txt");
@@ -166,8 +192,18 @@ int main() {
     // Save Pool2
     save_pool2_out(pool2_out, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/output_tests/pool2_out_c.txt"); 
 
-    // Save 
+    // Save flatted out
     save_flatten_out(flat_out, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/output_tests/flat_out_c.txt"); 
+
+    // Save fc1_out 
+    save_fc1_out(fc1_out, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/output_tests/fc1_out_c.txt");
+
+    // Save fc2_out
+    save_fc2_out(fc2_out, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/vivado/lenet_proj/output_tests/fc2_out_c.txt");
+
+    // Print result
+    printf("Predicted digit class: %d\n", prediction);
+
 
     return 0;
     

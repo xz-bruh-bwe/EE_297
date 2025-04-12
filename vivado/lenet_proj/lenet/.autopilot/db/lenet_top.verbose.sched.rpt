@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'lenet_top'
 ================================================================
-* Date:           Mon Apr  7 00:42:53 2025
+* Date:           Mon Apr  7 23:44:55 2025
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        lenet_proj
@@ -20,7 +20,7 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  | 12.60 ns | 9.198 ns |   3.40 ns  |
+    |ap_clk  | 12.60 ns | 9.603 ns |   3.40 ns  |
     +--------+----------+----------+------------+
 
 + Latency: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |   Latency (absolute)  |      Interval     | Pipeline|
     |   min   |   max   |    min    |    max    |   min   |   max   |   Type  |
     +---------+---------+-----------+-----------+---------+---------+---------+
-    |  1618811|  1618811| 20.397 ms | 20.397 ms |  1618812|  1618812|   none  |
+    |  1672456|  1672456| 21.073 ms | 21.073 ms |  1672457|  1672457|   none  |
     +---------+---------+-----------+-----------+---------+---------+---------+
 
     + Detail: 
@@ -65,7 +65,7 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 12
+* Number of FSM states : 16
 * Pipeline : 0
 * Dataflow Pipeline: 0
 
@@ -81,71 +81,93 @@ IsGatedGlobalClock: 0
 9 --> 10 
 10 --> 11 
 11 --> 12 
-12 --> 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 
 
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 1.00>
-ST_1 : Operation 13 [1/1] (1.00ns)   --->   "%fc1_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %fc1_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 13 'read' 'fc1_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 14 [1/1] (1.00ns)   --->   "%flat_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %flat_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 14 'read' 'flat_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 15 [1/1] (1.00ns)   --->   "%pool2_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %pool2_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 15 'read' 'pool2_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 16 [1/1] (1.00ns)   --->   "%conv2_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %conv2_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 16 'read' 'conv2_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 17 [1/1] (1.00ns)   --->   "%pool1_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %pool1_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 17 'read' 'pool1_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 18 [1/1] (1.00ns)   --->   "%conv1_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %conv1_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 18 'read' 'conv1_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 19 [1/1] (1.00ns)   --->   "%image_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %image_r" [lenet_proj/lenet_top.cpp:32]   --->   Operation 19 'read' 'image_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 20 [2/2] (0.00ns)   --->   "%call_ln62 = call void @conv2d_layer, i32 %gmem, i64 %image_read, i64 %conv1_out_read, i32 %conv1_biases, i32 %conv1_weights_0_0_0, i32 %conv1_weights_0_1_0, i32 %conv1_weights_0_2_0, i32 %conv1_weights_0_3_0, i32 %conv1_weights_0_4_0, i32 %conv1_weights_1_0_0, i32 %conv1_weights_1_1_0, i32 %conv1_weights_1_2_0, i32 %conv1_weights_1_3_0, i32 %conv1_weights_1_4_0, i32 %conv1_weights_2_0_0, i32 %conv1_weights_2_1_0, i32 %conv1_weights_2_2_0, i32 %conv1_weights_2_3_0, i32 %conv1_weights_2_4_0, i32 %conv1_weights_3_0_0, i32 %conv1_weights_3_1_0, i32 %conv1_weights_3_2_0, i32 %conv1_weights_3_3_0, i32 %conv1_weights_3_4_0, i32 %conv1_weights_4_0_0, i32 %conv1_weights_4_1_0, i32 %conv1_weights_4_2_0, i32 %conv1_weights_4_3_0, i32 %conv1_weights_4_4_0" [lenet_proj/lenet_top.cpp:62]   --->   Operation 20 'call' 'call_ln62' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 17 [1/1] (1.00ns)   --->   "%prediction_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %prediction" [lenet_proj/lenet_top.cpp:32]   --->   Operation 17 'read' 'prediction_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 18 [1/1] (1.00ns)   --->   "%fc2_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %fc2_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 18 'read' 'fc2_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 19 [1/1] (1.00ns)   --->   "%fc1_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %fc1_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 19 'read' 'fc1_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 20 [1/1] (1.00ns)   --->   "%flat_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %flat_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 20 'read' 'flat_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 21 [1/1] (1.00ns)   --->   "%pool2_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %pool2_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 21 'read' 'pool2_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 22 [1/1] (1.00ns)   --->   "%conv2_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %conv2_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 22 'read' 'conv2_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 23 [1/1] (1.00ns)   --->   "%pool1_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %pool1_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 23 'read' 'pool1_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 24 [1/1] (1.00ns)   --->   "%conv1_out_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %conv1_out" [lenet_proj/lenet_top.cpp:32]   --->   Operation 24 'read' 'conv1_out_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 25 [1/1] (1.00ns)   --->   "%image_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %image_r" [lenet_proj/lenet_top.cpp:32]   --->   Operation 25 'read' 'image_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 56 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 26 [2/2] (0.00ns)   --->   "%call_ln67 = call void @conv2d_layer, i32 %gmem, i64 %image_read, i64 %conv1_out_read, i32 %conv1_biases, i32 %conv1_weights_0_0_0, i32 %conv1_weights_0_1_0, i32 %conv1_weights_0_2_0, i32 %conv1_weights_0_3_0, i32 %conv1_weights_0_4_0, i32 %conv1_weights_1_0_0, i32 %conv1_weights_1_1_0, i32 %conv1_weights_1_2_0, i32 %conv1_weights_1_3_0, i32 %conv1_weights_1_4_0, i32 %conv1_weights_2_0_0, i32 %conv1_weights_2_1_0, i32 %conv1_weights_2_2_0, i32 %conv1_weights_2_3_0, i32 %conv1_weights_2_4_0, i32 %conv1_weights_3_0_0, i32 %conv1_weights_3_1_0, i32 %conv1_weights_3_2_0, i32 %conv1_weights_3_3_0, i32 %conv1_weights_3_4_0, i32 %conv1_weights_4_0_0, i32 %conv1_weights_4_1_0, i32 %conv1_weights_4_2_0, i32 %conv1_weights_4_3_0, i32 %conv1_weights_4_4_0" [lenet_proj/lenet_top.cpp:67]   --->   Operation 26 'call' 'call_ln67' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 2 <SV = 1> <Delay = 0.00>
-ST_2 : Operation 21 [1/2] (0.00ns)   --->   "%call_ln62 = call void @conv2d_layer, i32 %gmem, i64 %image_read, i64 %conv1_out_read, i32 %conv1_biases, i32 %conv1_weights_0_0_0, i32 %conv1_weights_0_1_0, i32 %conv1_weights_0_2_0, i32 %conv1_weights_0_3_0, i32 %conv1_weights_0_4_0, i32 %conv1_weights_1_0_0, i32 %conv1_weights_1_1_0, i32 %conv1_weights_1_2_0, i32 %conv1_weights_1_3_0, i32 %conv1_weights_1_4_0, i32 %conv1_weights_2_0_0, i32 %conv1_weights_2_1_0, i32 %conv1_weights_2_2_0, i32 %conv1_weights_2_3_0, i32 %conv1_weights_2_4_0, i32 %conv1_weights_3_0_0, i32 %conv1_weights_3_1_0, i32 %conv1_weights_3_2_0, i32 %conv1_weights_3_3_0, i32 %conv1_weights_3_4_0, i32 %conv1_weights_4_0_0, i32 %conv1_weights_4_1_0, i32 %conv1_weights_4_2_0, i32 %conv1_weights_4_3_0, i32 %conv1_weights_4_4_0" [lenet_proj/lenet_top.cpp:62]   --->   Operation 21 'call' 'call_ln62' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 27 [1/2] (0.00ns)   --->   "%call_ln67 = call void @conv2d_layer, i32 %gmem, i64 %image_read, i64 %conv1_out_read, i32 %conv1_biases, i32 %conv1_weights_0_0_0, i32 %conv1_weights_0_1_0, i32 %conv1_weights_0_2_0, i32 %conv1_weights_0_3_0, i32 %conv1_weights_0_4_0, i32 %conv1_weights_1_0_0, i32 %conv1_weights_1_1_0, i32 %conv1_weights_1_2_0, i32 %conv1_weights_1_3_0, i32 %conv1_weights_1_4_0, i32 %conv1_weights_2_0_0, i32 %conv1_weights_2_1_0, i32 %conv1_weights_2_2_0, i32 %conv1_weights_2_3_0, i32 %conv1_weights_2_4_0, i32 %conv1_weights_3_0_0, i32 %conv1_weights_3_1_0, i32 %conv1_weights_3_2_0, i32 %conv1_weights_3_3_0, i32 %conv1_weights_3_4_0, i32 %conv1_weights_4_0_0, i32 %conv1_weights_4_1_0, i32 %conv1_weights_4_2_0, i32 %conv1_weights_4_3_0, i32 %conv1_weights_4_4_0" [lenet_proj/lenet_top.cpp:67]   --->   Operation 27 'call' 'call_ln67' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 3 <SV = 2> <Delay = 0.00>
-ST_3 : Operation 22 [2/2] (0.00ns)   --->   "%call_ln65 = call void @maxpool_layer, i32 %gmem, i64 %conv1_out_read, i64 %pool1_out_read, void %call_ln62, void %call_ln62" [lenet_proj/lenet_top.cpp:65]   --->   Operation 22 'call' 'call_ln65' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 28 [2/2] (0.00ns)   --->   "%call_ln70 = call void @maxpool_layer, i32 %gmem, i64 %conv1_out_read, i64 %pool1_out_read, void %call_ln67, void %call_ln67" [lenet_proj/lenet_top.cpp:70]   --->   Operation 28 'call' 'call_ln70' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 4 <SV = 3> <Delay = 0.00>
-ST_4 : Operation 23 [1/2] (0.00ns)   --->   "%call_ln65 = call void @maxpool_layer, i32 %gmem, i64 %conv1_out_read, i64 %pool1_out_read, void %call_ln62, void %call_ln62" [lenet_proj/lenet_top.cpp:65]   --->   Operation 23 'call' 'call_ln65' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 29 [1/2] (0.00ns)   --->   "%call_ln70 = call void @maxpool_layer, i32 %gmem, i64 %conv1_out_read, i64 %pool1_out_read, void %call_ln67, void %call_ln67" [lenet_proj/lenet_top.cpp:70]   --->   Operation 29 'call' 'call_ln70' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 5 <SV = 4> <Delay = 0.00>
-ST_5 : Operation 24 [2/2] (0.00ns)   --->   "%call_ln68 = call void @conv2d_6to16_layer, i32 %gmem, i64 %pool1_out_read, i64 %conv2_out_read, i32 %conv2_weights, i32 %conv2_biases, void %call_ln65, void %call_ln65" [lenet_proj/lenet_top.cpp:68]   --->   Operation 24 'call' 'call_ln68' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 30 [2/2] (0.00ns)   --->   "%call_ln73 = call void @conv2d_6to16_layer, i32 %gmem, i64 %pool1_out_read, i64 %conv2_out_read, i32 %conv2_weights, i32 %conv2_biases, void %call_ln70, void %call_ln70" [lenet_proj/lenet_top.cpp:73]   --->   Operation 30 'call' 'call_ln73' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 6 <SV = 5> <Delay = 0.00>
-ST_6 : Operation 25 [1/2] (0.00ns)   --->   "%call_ln68 = call void @conv2d_6to16_layer, i32 %gmem, i64 %pool1_out_read, i64 %conv2_out_read, i32 %conv2_weights, i32 %conv2_biases, void %call_ln65, void %call_ln65" [lenet_proj/lenet_top.cpp:68]   --->   Operation 25 'call' 'call_ln68' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 31 [1/2] (0.00ns)   --->   "%call_ln73 = call void @conv2d_6to16_layer, i32 %gmem, i64 %pool1_out_read, i64 %conv2_out_read, i32 %conv2_weights, i32 %conv2_biases, void %call_ln70, void %call_ln70" [lenet_proj/lenet_top.cpp:73]   --->   Operation 31 'call' 'call_ln73' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 7 <SV = 6> <Delay = 0.00>
-ST_7 : Operation 26 [2/2] (0.00ns)   --->   "%call_ln71 = call void @maxpool2_layer, i32 %gmem, i64 %conv2_out_read, i64 %pool2_out_read, void %call_ln68, void %call_ln68" [lenet_proj/lenet_top.cpp:71]   --->   Operation 26 'call' 'call_ln71' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 32 [2/2] (0.00ns)   --->   "%call_ln76 = call void @maxpool2_layer, i32 %gmem, i64 %conv2_out_read, i64 %pool2_out_read, void %call_ln73, void %call_ln73" [lenet_proj/lenet_top.cpp:76]   --->   Operation 32 'call' 'call_ln76' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 8 <SV = 7> <Delay = 0.00>
-ST_8 : Operation 27 [1/2] (0.00ns)   --->   "%call_ln71 = call void @maxpool2_layer, i32 %gmem, i64 %conv2_out_read, i64 %pool2_out_read, void %call_ln68, void %call_ln68" [lenet_proj/lenet_top.cpp:71]   --->   Operation 27 'call' 'call_ln71' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 33 [1/2] (0.00ns)   --->   "%call_ln76 = call void @maxpool2_layer, i32 %gmem, i64 %conv2_out_read, i64 %pool2_out_read, void %call_ln73, void %call_ln73" [lenet_proj/lenet_top.cpp:76]   --->   Operation 33 'call' 'call_ln76' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 9 <SV = 8> <Delay = 9.19>
-ST_9 : Operation 28 [2/2] (9.19ns)   --->   "%call_ln74 = call void @flatten_layer, i32 %gmem, i64 %pool2_out_read, i64 %flat_out_read, void %call_ln71, void %call_ln71" [lenet_proj/lenet_top.cpp:74]   --->   Operation 28 'call' 'call_ln74' <Predicate = true> <Delay = 9.19> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 34 [2/2] (9.19ns)   --->   "%call_ln79 = call void @flatten_layer, i32 %gmem, i64 %pool2_out_read, i64 %flat_out_read, void %call_ln76, void %call_ln76" [lenet_proj/lenet_top.cpp:79]   --->   Operation 34 'call' 'call_ln79' <Predicate = true> <Delay = 9.19> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 10 <SV = 9> <Delay = 0.00>
-ST_10 : Operation 29 [1/2] (0.00ns)   --->   "%call_ln74 = call void @flatten_layer, i32 %gmem, i64 %pool2_out_read, i64 %flat_out_read, void %call_ln71, void %call_ln71" [lenet_proj/lenet_top.cpp:74]   --->   Operation 29 'call' 'call_ln74' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 35 [1/2] (0.00ns)   --->   "%call_ln79 = call void @flatten_layer, i32 %gmem, i64 %pool2_out_read, i64 %flat_out_read, void %call_ln76, void %call_ln76" [lenet_proj/lenet_top.cpp:79]   --->   Operation 35 'call' 'call_ln79' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 11 <SV = 10> <Delay = 9.19>
-ST_11 : Operation 30 [2/2] (9.19ns)   --->   "%call_ln77 = call void @fc_layer<400, 120>, i32 %gmem, i64 %flat_out_read, i64 %fc1_out_read, i32 %fc1_biases, i32 %fc1_weights, void %call_ln74, void %call_ln74" [lenet_proj/lenet_top.cpp:77]   --->   Operation 30 'call' 'call_ln77' <Predicate = true> <Delay = 9.19> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 36 [2/2] (9.19ns)   --->   "%call_ln82 = call void @fc_layer<400, 120>, i32 %gmem, i64 %flat_out_read, i64 %fc1_out_read, i32 %fc1_biases, i32 %fc1_weights, void %call_ln79, void %call_ln79" [lenet_proj/lenet_top.cpp:82]   --->   Operation 36 'call' 'call_ln82' <Predicate = true> <Delay = 9.19> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 12 <SV = 11> <Delay = 0.00>
-ST_12 : Operation 31 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_4"   --->   Operation 31 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty, i32, i32, void @empty_21, i32, i32, void @empty_21, void @empty_21, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_21"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 33 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem"   --->   Operation 33 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %image_r, void @empty_5, i32, i32, void @empty_21, i32, i32, void @empty_6, void @empty_20, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 34 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %image_r, void @empty_15, i32, i32, void @empty_21, i32, i32, void @empty_21, void @empty_21, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %conv1_out, void @empty_5, i32, i32, void @empty_21, i32, i32, void @empty_6, void @empty_13, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %conv1_out, void @empty_15, i32, i32, void @empty_21, i32, i32, void @empty_21, void @empty_21, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %pool1_out, void @empty_5, i32, i32, void @empty_21, i32, i32, void @empty_6, void @empty_17, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %pool1_out, void @empty_15, i32, i32, void @empty_21, i32, i32, void @empty_21, void @empty_21, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 40 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %conv2_out, void @empty_5, i32, i32, void @empty_21, i32, i32, void @empty_6, void @empty_2, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 40 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %conv2_out, void @empty_15, i32, i32, void @empty_21, i32, i32, void @empty_21, void @empty_21, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %pool2_out, void @empty_5, i32, i32, void @empty_21, i32, i32, void @empty_6, void @empty_12, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %pool2_out, void @empty_15, i32, i32, void @empty_21, i32, i32, void @empty_21, void @empty_21, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %flat_out, void @empty_5, i32, i32, void @empty_21, i32, i32, void @empty_6, void @empty_11, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %flat_out, void @empty_15, i32, i32, void @empty_21, i32, i32, void @empty_21, void @empty_21, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 46 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %fc1_out, void @empty_5, i32, i32, void @empty_21, i32, i32, void @empty_6, void @empty_10, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 46 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 47 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %fc1_out, void @empty_15, i32, i32, void @empty_21, i32, i32, void @empty_21, void @empty_21, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_8"   --->   Operation 47 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 48 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32, void @empty_5, i32, i32, void @empty_21, i32, i32, void @empty_6, void @empty_21, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_21"   --->   Operation 48 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 49 [1/2] (0.00ns)   --->   "%call_ln77 = call void @fc_layer<400, 120>, i32 %gmem, i64 %flat_out_read, i64 %fc1_out_read, i32 %fc1_biases, i32 %fc1_weights, void %call_ln74, void %call_ln74" [lenet_proj/lenet_top.cpp:77]   --->   Operation 49 'call' 'call_ln77' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_12 : Operation 50 [1/1] (0.00ns)   --->   "%ret_ln82 = ret" [lenet_proj/lenet_top.cpp:82]   --->   Operation 50 'ret' 'ret_ln82' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 37 [1/2] (0.00ns)   --->   "%call_ln82 = call void @fc_layer<400, 120>, i32 %gmem, i64 %flat_out_read, i64 %fc1_out_read, i32 %fc1_biases, i32 %fc1_weights, void %call_ln79, void %call_ln79" [lenet_proj/lenet_top.cpp:82]   --->   Operation 37 'call' 'call_ln82' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 9.19>
+ST_13 : Operation 38 [2/2] (9.19ns)   --->   "%call_ln85 = call void @fc_layer<120, 84>, i32 %gmem, i64 %fc1_out_read, i64 %fc2_out_read, i32 %fc2_biases, i32 %fc2_weights, void %call_ln82, void %call_ln82" [lenet_proj/lenet_top.cpp:85]   --->   Operation 38 'call' 'call_ln85' <Predicate = true> <Delay = 9.19> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 0.00>
+ST_14 : Operation 39 [1/2] (0.00ns)   --->   "%call_ln85 = call void @fc_layer<120, 84>, i32 %gmem, i64 %fc1_out_read, i64 %fc2_out_read, i32 %fc2_biases, i32 %fc2_weights, void %call_ln82, void %call_ln82" [lenet_proj/lenet_top.cpp:85]   --->   Operation 39 'call' 'call_ln85' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 0.00>
+ST_15 : Operation 40 [2/2] (0.00ns)   --->   "%call_ln88 = call void @fc3_layer, i32 %gmem, i64 %fc2_out_read, i64 %prediction_read, i32 %fc3_biases, i32 %fc3_weights_0, i32 %fc3_weights_1, i32 %fc3_weights_2, void %call_ln85, void %call_ln85" [lenet_proj/lenet_top.cpp:88]   --->   Operation 40 'call' 'call_ln88' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 0.00>
+ST_16 : Operation 41 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_2"   --->   Operation 41 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty_5, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_24"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 43 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem"   --->   Operation 43 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %image_r, void @empty, i32, i32, void @empty_24, i32, i32, void @empty_7, void @empty_0, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %image_r, void @empty_10, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 46 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %conv1_out, void @empty, i32, i32, void @empty_24, i32, i32, void @empty_7, void @empty_11, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 46 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 47 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %conv1_out, void @empty_10, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 47 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 48 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %pool1_out, void @empty, i32, i32, void @empty_24, i32, i32, void @empty_7, void @empty_12, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 48 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 49 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %pool1_out, void @empty_10, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 49 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 50 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %conv2_out, void @empty, i32, i32, void @empty_24, i32, i32, void @empty_7, void @empty_4, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 50 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 51 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %conv2_out, void @empty_10, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 51 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 52 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %pool2_out, void @empty, i32, i32, void @empty_24, i32, i32, void @empty_7, void @empty_23, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 52 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 53 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %pool2_out, void @empty_10, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 53 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 54 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %flat_out, void @empty, i32, i32, void @empty_24, i32, i32, void @empty_7, void @empty_15, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 54 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 55 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %flat_out, void @empty_10, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 55 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 56 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %fc1_out, void @empty, i32, i32, void @empty_24, i32, i32, void @empty_7, void @empty_18, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 56 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 57 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %fc1_out, void @empty_10, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 57 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %fc2_out, void @empty, i32, i32, void @empty_24, i32, i32, void @empty_7, void @empty_17, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 58 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 59 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %fc2_out, void @empty_10, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 59 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 60 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %prediction, void @empty, i32, i32, void @empty_24, i32, i32, void @empty_7, void @empty_16, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 60 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 61 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %prediction, void @empty_10, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_9"   --->   Operation 61 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 62 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32, void @empty, i32, i32, void @empty_24, i32, i32, void @empty_7, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_24"   --->   Operation 62 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 63 [1/2] (0.00ns)   --->   "%call_ln88 = call void @fc3_layer, i32 %gmem, i64 %fc2_out_read, i64 %prediction_read, i32 %fc3_biases, i32 %fc3_weights_0, i32 %fc3_weights_1, i32 %fc3_weights_2, void %call_ln85, void %call_ln85" [lenet_proj/lenet_top.cpp:88]   --->   Operation 63 'call' 'call_ln88' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_16 : Operation 64 [1/1] (0.00ns)   --->   "%ret_ln89 = ret" [lenet_proj/lenet_top.cpp:89]   --->   Operation 64 'ret' 'ret_ln89' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -155,7 +177,7 @@ Target clock period: 12.6ns, clock uncertainty: 3.4ns.
 
  <State 1>: 1ns
 The critical path consists of the following:
-	s_axi read on port 'fc1_out' (lenet_proj/lenet_top.cpp:32) [87]  (1 ns)
+	s_axi read on port 'prediction' (lenet_proj/lenet_top.cpp:32) [105]  (1 ns)
 
  <State 2>: 0ns
 The critical path consists of the following:
@@ -180,16 +202,29 @@ The critical path consists of the following:
 
  <State 9>: 9.2ns
 The critical path consists of the following:
-	'call' operation ('call_ln74', lenet_proj/lenet_top.cpp:74) to 'flatten_layer' [98]  (9.2 ns)
+	'call' operation ('call_ln79', lenet_proj/lenet_top.cpp:79) to 'flatten_layer' [118]  (9.2 ns)
 
  <State 10>: 0ns
 The critical path consists of the following:
 
  <State 11>: 9.2ns
 The critical path consists of the following:
-	'call' operation ('call_ln77', lenet_proj/lenet_top.cpp:77) to 'fc_layer<400, 120>' [99]  (9.2 ns)
+	'call' operation ('call_ln82', lenet_proj/lenet_top.cpp:82) to 'fc_layer<400, 120>' [119]  (9.2 ns)
 
  <State 12>: 0ns
+The critical path consists of the following:
+
+ <State 13>: 9.2ns
+The critical path consists of the following:
+	'call' operation ('call_ln85', lenet_proj/lenet_top.cpp:85) to 'fc_layer<120, 84>' [120]  (9.2 ns)
+
+ <State 14>: 0ns
+The critical path consists of the following:
+
+ <State 15>: 0ns
+The critical path consists of the following:
+
+ <State 16>: 0ns
 The critical path consists of the following:
 
 
@@ -213,6 +248,10 @@ N/A
 	State 10
 	State 11
 	State 12
+	State 13
+	State 14
+	State 15
+	State 16
 
 
 ============================================================

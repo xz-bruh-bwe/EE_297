@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="lenet_top_lenet_top,hls_ip_2020_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=12.600000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=9.198000,HLS_SYN_LAT=1618811,HLS_SYN_TPT=none,HLS_SYN_MEM=139,HLS_SYN_DSP=0,HLS_SYN_FF=13162,HLS_SYN_LUT=19032,HLS_VERSION=2020_1}" *)
+(* CORE_GENERATION_INFO="lenet_top_lenet_top,hls_ip_2020_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=12.600000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=9.602780,HLS_SYN_LAT=1672456,HLS_SYN_TPT=none,HLS_SYN_MEM=175,HLS_SYN_DSP=0,HLS_SYN_FF=26754,HLS_SYN_LUT=29083,HLS_VERSION=2020_1}" *)
 
 module lenet_top (
         ap_clk,
@@ -77,18 +77,22 @@ module lenet_top (
         interrupt
 );
 
-parameter    ap_ST_fsm_state1 = 12'd1;
-parameter    ap_ST_fsm_state2 = 12'd2;
-parameter    ap_ST_fsm_state3 = 12'd4;
-parameter    ap_ST_fsm_state4 = 12'd8;
-parameter    ap_ST_fsm_state5 = 12'd16;
-parameter    ap_ST_fsm_state6 = 12'd32;
-parameter    ap_ST_fsm_state7 = 12'd64;
-parameter    ap_ST_fsm_state8 = 12'd128;
-parameter    ap_ST_fsm_state9 = 12'd256;
-parameter    ap_ST_fsm_state10 = 12'd512;
-parameter    ap_ST_fsm_state11 = 12'd1024;
-parameter    ap_ST_fsm_state12 = 12'd2048;
+parameter    ap_ST_fsm_state1 = 16'd1;
+parameter    ap_ST_fsm_state2 = 16'd2;
+parameter    ap_ST_fsm_state3 = 16'd4;
+parameter    ap_ST_fsm_state4 = 16'd8;
+parameter    ap_ST_fsm_state5 = 16'd16;
+parameter    ap_ST_fsm_state6 = 16'd32;
+parameter    ap_ST_fsm_state7 = 16'd64;
+parameter    ap_ST_fsm_state8 = 16'd128;
+parameter    ap_ST_fsm_state9 = 16'd256;
+parameter    ap_ST_fsm_state10 = 16'd512;
+parameter    ap_ST_fsm_state11 = 16'd1024;
+parameter    ap_ST_fsm_state12 = 16'd2048;
+parameter    ap_ST_fsm_state13 = 16'd4096;
+parameter    ap_ST_fsm_state14 = 16'd8192;
+parameter    ap_ST_fsm_state15 = 16'd16384;
+parameter    ap_ST_fsm_state16 = 16'd32768;
 parameter    C_S_AXI_CONTROL_DATA_WIDTH = 32;
 parameter    C_S_AXI_CONTROL_ADDR_WIDTH = 7;
 parameter    C_S_AXI_DATA_WIDTH = 32;
@@ -180,7 +184,7 @@ output   interrupt;
 wire    ap_start;
 reg    ap_done;
 reg    ap_idle;
-(* fsm_encoding = "none" *) reg   [11:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [15:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 reg    ap_ready;
 wire   [63:0] image_r;
@@ -190,6 +194,8 @@ wire   [63:0] conv2_out;
 wire   [63:0] pool2_out;
 wire   [63:0] flat_out;
 wire   [63:0] fc1_out;
+wire   [63:0] fc2_out;
+wire   [63:0] prediction;
 reg    gmem_AWVALID;
 wire    gmem_AWREADY;
 reg   [63:0] gmem_AWADDR;
@@ -235,257 +241,339 @@ reg    gmem_BREADY;
 wire   [1:0] gmem_BRESP;
 wire   [0:0] gmem_BID;
 wire   [0:0] gmem_BUSER;
-reg   [63:0] fc1_out_read_reg_280;
-reg   [63:0] flat_out_read_reg_285;
-reg   [63:0] pool2_out_read_reg_291;
-reg   [63:0] conv2_out_read_reg_297;
-reg   [63:0] pool1_out_read_reg_303;
-reg   [63:0] conv1_out_read_reg_309;
-reg   [63:0] image_read_reg_315;
-wire    grp_conv2d_layer_fu_170_ap_start;
-wire    grp_conv2d_layer_fu_170_ap_done;
-wire    grp_conv2d_layer_fu_170_ap_idle;
-wire    grp_conv2d_layer_fu_170_ap_ready;
-wire    grp_conv2d_layer_fu_170_m_axi_gmem_AWVALID;
-wire   [63:0] grp_conv2d_layer_fu_170_m_axi_gmem_AWADDR;
-wire   [0:0] grp_conv2d_layer_fu_170_m_axi_gmem_AWID;
-wire   [31:0] grp_conv2d_layer_fu_170_m_axi_gmem_AWLEN;
-wire   [2:0] grp_conv2d_layer_fu_170_m_axi_gmem_AWSIZE;
-wire   [1:0] grp_conv2d_layer_fu_170_m_axi_gmem_AWBURST;
-wire   [1:0] grp_conv2d_layer_fu_170_m_axi_gmem_AWLOCK;
-wire   [3:0] grp_conv2d_layer_fu_170_m_axi_gmem_AWCACHE;
-wire   [2:0] grp_conv2d_layer_fu_170_m_axi_gmem_AWPROT;
-wire   [3:0] grp_conv2d_layer_fu_170_m_axi_gmem_AWQOS;
-wire   [3:0] grp_conv2d_layer_fu_170_m_axi_gmem_AWREGION;
-wire   [0:0] grp_conv2d_layer_fu_170_m_axi_gmem_AWUSER;
-wire    grp_conv2d_layer_fu_170_m_axi_gmem_WVALID;
-wire   [31:0] grp_conv2d_layer_fu_170_m_axi_gmem_WDATA;
-wire   [3:0] grp_conv2d_layer_fu_170_m_axi_gmem_WSTRB;
-wire    grp_conv2d_layer_fu_170_m_axi_gmem_WLAST;
-wire   [0:0] grp_conv2d_layer_fu_170_m_axi_gmem_WID;
-wire   [0:0] grp_conv2d_layer_fu_170_m_axi_gmem_WUSER;
-wire    grp_conv2d_layer_fu_170_m_axi_gmem_ARVALID;
-wire   [63:0] grp_conv2d_layer_fu_170_m_axi_gmem_ARADDR;
-wire   [0:0] grp_conv2d_layer_fu_170_m_axi_gmem_ARID;
-wire   [31:0] grp_conv2d_layer_fu_170_m_axi_gmem_ARLEN;
-wire   [2:0] grp_conv2d_layer_fu_170_m_axi_gmem_ARSIZE;
-wire   [1:0] grp_conv2d_layer_fu_170_m_axi_gmem_ARBURST;
-wire   [1:0] grp_conv2d_layer_fu_170_m_axi_gmem_ARLOCK;
-wire   [3:0] grp_conv2d_layer_fu_170_m_axi_gmem_ARCACHE;
-wire   [2:0] grp_conv2d_layer_fu_170_m_axi_gmem_ARPROT;
-wire   [3:0] grp_conv2d_layer_fu_170_m_axi_gmem_ARQOS;
-wire   [3:0] grp_conv2d_layer_fu_170_m_axi_gmem_ARREGION;
-wire   [0:0] grp_conv2d_layer_fu_170_m_axi_gmem_ARUSER;
-wire    grp_conv2d_layer_fu_170_m_axi_gmem_RREADY;
-wire    grp_conv2d_layer_fu_170_m_axi_gmem_BREADY;
-wire    grp_maxpool_layer_fu_232_ap_start;
-wire    grp_maxpool_layer_fu_232_ap_done;
-wire    grp_maxpool_layer_fu_232_ap_idle;
-wire    grp_maxpool_layer_fu_232_ap_ready;
-wire    grp_maxpool_layer_fu_232_m_axi_gmem_AWVALID;
-wire   [63:0] grp_maxpool_layer_fu_232_m_axi_gmem_AWADDR;
-wire   [0:0] grp_maxpool_layer_fu_232_m_axi_gmem_AWID;
-wire   [31:0] grp_maxpool_layer_fu_232_m_axi_gmem_AWLEN;
-wire   [2:0] grp_maxpool_layer_fu_232_m_axi_gmem_AWSIZE;
-wire   [1:0] grp_maxpool_layer_fu_232_m_axi_gmem_AWBURST;
-wire   [1:0] grp_maxpool_layer_fu_232_m_axi_gmem_AWLOCK;
-wire   [3:0] grp_maxpool_layer_fu_232_m_axi_gmem_AWCACHE;
-wire   [2:0] grp_maxpool_layer_fu_232_m_axi_gmem_AWPROT;
-wire   [3:0] grp_maxpool_layer_fu_232_m_axi_gmem_AWQOS;
-wire   [3:0] grp_maxpool_layer_fu_232_m_axi_gmem_AWREGION;
-wire   [0:0] grp_maxpool_layer_fu_232_m_axi_gmem_AWUSER;
-wire    grp_maxpool_layer_fu_232_m_axi_gmem_WVALID;
-wire   [31:0] grp_maxpool_layer_fu_232_m_axi_gmem_WDATA;
-wire   [3:0] grp_maxpool_layer_fu_232_m_axi_gmem_WSTRB;
-wire    grp_maxpool_layer_fu_232_m_axi_gmem_WLAST;
-wire   [0:0] grp_maxpool_layer_fu_232_m_axi_gmem_WID;
-wire   [0:0] grp_maxpool_layer_fu_232_m_axi_gmem_WUSER;
-wire    grp_maxpool_layer_fu_232_m_axi_gmem_ARVALID;
-wire   [63:0] grp_maxpool_layer_fu_232_m_axi_gmem_ARADDR;
-wire   [0:0] grp_maxpool_layer_fu_232_m_axi_gmem_ARID;
-wire   [31:0] grp_maxpool_layer_fu_232_m_axi_gmem_ARLEN;
-wire   [2:0] grp_maxpool_layer_fu_232_m_axi_gmem_ARSIZE;
-wire   [1:0] grp_maxpool_layer_fu_232_m_axi_gmem_ARBURST;
-wire   [1:0] grp_maxpool_layer_fu_232_m_axi_gmem_ARLOCK;
-wire   [3:0] grp_maxpool_layer_fu_232_m_axi_gmem_ARCACHE;
-wire   [2:0] grp_maxpool_layer_fu_232_m_axi_gmem_ARPROT;
-wire   [3:0] grp_maxpool_layer_fu_232_m_axi_gmem_ARQOS;
-wire   [3:0] grp_maxpool_layer_fu_232_m_axi_gmem_ARREGION;
-wire   [0:0] grp_maxpool_layer_fu_232_m_axi_gmem_ARUSER;
-wire    grp_maxpool_layer_fu_232_m_axi_gmem_RREADY;
-wire    grp_maxpool_layer_fu_232_m_axi_gmem_BREADY;
-wire    grp_maxpool2_layer_fu_240_ap_start;
-wire    grp_maxpool2_layer_fu_240_ap_done;
-wire    grp_maxpool2_layer_fu_240_ap_idle;
-wire    grp_maxpool2_layer_fu_240_ap_ready;
-wire    grp_maxpool2_layer_fu_240_m_axi_gmem_AWVALID;
-wire   [63:0] grp_maxpool2_layer_fu_240_m_axi_gmem_AWADDR;
-wire   [0:0] grp_maxpool2_layer_fu_240_m_axi_gmem_AWID;
-wire   [31:0] grp_maxpool2_layer_fu_240_m_axi_gmem_AWLEN;
-wire   [2:0] grp_maxpool2_layer_fu_240_m_axi_gmem_AWSIZE;
-wire   [1:0] grp_maxpool2_layer_fu_240_m_axi_gmem_AWBURST;
-wire   [1:0] grp_maxpool2_layer_fu_240_m_axi_gmem_AWLOCK;
-wire   [3:0] grp_maxpool2_layer_fu_240_m_axi_gmem_AWCACHE;
-wire   [2:0] grp_maxpool2_layer_fu_240_m_axi_gmem_AWPROT;
-wire   [3:0] grp_maxpool2_layer_fu_240_m_axi_gmem_AWQOS;
-wire   [3:0] grp_maxpool2_layer_fu_240_m_axi_gmem_AWREGION;
-wire   [0:0] grp_maxpool2_layer_fu_240_m_axi_gmem_AWUSER;
-wire    grp_maxpool2_layer_fu_240_m_axi_gmem_WVALID;
-wire   [31:0] grp_maxpool2_layer_fu_240_m_axi_gmem_WDATA;
-wire   [3:0] grp_maxpool2_layer_fu_240_m_axi_gmem_WSTRB;
-wire    grp_maxpool2_layer_fu_240_m_axi_gmem_WLAST;
-wire   [0:0] grp_maxpool2_layer_fu_240_m_axi_gmem_WID;
-wire   [0:0] grp_maxpool2_layer_fu_240_m_axi_gmem_WUSER;
-wire    grp_maxpool2_layer_fu_240_m_axi_gmem_ARVALID;
-wire   [63:0] grp_maxpool2_layer_fu_240_m_axi_gmem_ARADDR;
-wire   [0:0] grp_maxpool2_layer_fu_240_m_axi_gmem_ARID;
-wire   [31:0] grp_maxpool2_layer_fu_240_m_axi_gmem_ARLEN;
-wire   [2:0] grp_maxpool2_layer_fu_240_m_axi_gmem_ARSIZE;
-wire   [1:0] grp_maxpool2_layer_fu_240_m_axi_gmem_ARBURST;
-wire   [1:0] grp_maxpool2_layer_fu_240_m_axi_gmem_ARLOCK;
-wire   [3:0] grp_maxpool2_layer_fu_240_m_axi_gmem_ARCACHE;
-wire   [2:0] grp_maxpool2_layer_fu_240_m_axi_gmem_ARPROT;
-wire   [3:0] grp_maxpool2_layer_fu_240_m_axi_gmem_ARQOS;
-wire   [3:0] grp_maxpool2_layer_fu_240_m_axi_gmem_ARREGION;
-wire   [0:0] grp_maxpool2_layer_fu_240_m_axi_gmem_ARUSER;
-wire    grp_maxpool2_layer_fu_240_m_axi_gmem_RREADY;
-wire    grp_maxpool2_layer_fu_240_m_axi_gmem_BREADY;
-wire    grp_conv2d_6to16_layer_fu_248_ap_start;
-wire    grp_conv2d_6to16_layer_fu_248_ap_done;
-wire    grp_conv2d_6to16_layer_fu_248_ap_idle;
-wire    grp_conv2d_6to16_layer_fu_248_ap_ready;
-wire    grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWVALID;
-wire   [63:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWADDR;
-wire   [0:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWID;
-wire   [31:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWLEN;
-wire   [2:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWSIZE;
-wire   [1:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWBURST;
-wire   [1:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWLOCK;
-wire   [3:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWCACHE;
-wire   [2:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWPROT;
-wire   [3:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWQOS;
-wire   [3:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWREGION;
-wire   [0:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWUSER;
-wire    grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WVALID;
-wire   [31:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WDATA;
-wire   [3:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WSTRB;
-wire    grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WLAST;
-wire   [0:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WID;
-wire   [0:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WUSER;
-wire    grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARVALID;
-wire   [63:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARADDR;
-wire   [0:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARID;
-wire   [31:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARLEN;
-wire   [2:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARSIZE;
-wire   [1:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARBURST;
-wire   [1:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARLOCK;
-wire   [3:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARCACHE;
-wire   [2:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARPROT;
-wire   [3:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARQOS;
-wire   [3:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARREGION;
-wire   [0:0] grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARUSER;
-wire    grp_conv2d_6to16_layer_fu_248_m_axi_gmem_RREADY;
-wire    grp_conv2d_6to16_layer_fu_248_m_axi_gmem_BREADY;
-wire    grp_fc_layer_400_120_s_fu_260_ap_start;
-wire    grp_fc_layer_400_120_s_fu_260_ap_done;
-wire    grp_fc_layer_400_120_s_fu_260_ap_idle;
-wire    grp_fc_layer_400_120_s_fu_260_ap_ready;
-wire    grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWVALID;
-wire   [63:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWADDR;
-wire   [0:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWID;
-wire   [31:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWLEN;
-wire   [2:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWSIZE;
-wire   [1:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWBURST;
-wire   [1:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWLOCK;
-wire   [3:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWCACHE;
-wire   [2:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWPROT;
-wire   [3:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWQOS;
-wire   [3:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWREGION;
-wire   [0:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWUSER;
-wire    grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WVALID;
-wire   [31:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WDATA;
-wire   [3:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WSTRB;
-wire    grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WLAST;
-wire   [0:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WID;
-wire   [0:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WUSER;
-wire    grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARVALID;
-wire   [63:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARADDR;
-wire   [0:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARID;
-wire   [31:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARLEN;
-wire   [2:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARSIZE;
-wire   [1:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARBURST;
-wire   [1:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARLOCK;
-wire   [3:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARCACHE;
-wire   [2:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARPROT;
-wire   [3:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARQOS;
-wire   [3:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARREGION;
-wire   [0:0] grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARUSER;
-wire    grp_fc_layer_400_120_s_fu_260_m_axi_gmem_RREADY;
-wire    grp_fc_layer_400_120_s_fu_260_m_axi_gmem_BREADY;
-wire    grp_flatten_layer_fu_272_ap_start;
-wire    grp_flatten_layer_fu_272_ap_done;
-wire    grp_flatten_layer_fu_272_ap_idle;
-wire    grp_flatten_layer_fu_272_ap_ready;
-wire    grp_flatten_layer_fu_272_m_axi_gmem_AWVALID;
-wire   [63:0] grp_flatten_layer_fu_272_m_axi_gmem_AWADDR;
-wire   [0:0] grp_flatten_layer_fu_272_m_axi_gmem_AWID;
-wire   [31:0] grp_flatten_layer_fu_272_m_axi_gmem_AWLEN;
-wire   [2:0] grp_flatten_layer_fu_272_m_axi_gmem_AWSIZE;
-wire   [1:0] grp_flatten_layer_fu_272_m_axi_gmem_AWBURST;
-wire   [1:0] grp_flatten_layer_fu_272_m_axi_gmem_AWLOCK;
-wire   [3:0] grp_flatten_layer_fu_272_m_axi_gmem_AWCACHE;
-wire   [2:0] grp_flatten_layer_fu_272_m_axi_gmem_AWPROT;
-wire   [3:0] grp_flatten_layer_fu_272_m_axi_gmem_AWQOS;
-wire   [3:0] grp_flatten_layer_fu_272_m_axi_gmem_AWREGION;
-wire   [0:0] grp_flatten_layer_fu_272_m_axi_gmem_AWUSER;
-wire    grp_flatten_layer_fu_272_m_axi_gmem_WVALID;
-wire   [31:0] grp_flatten_layer_fu_272_m_axi_gmem_WDATA;
-wire   [3:0] grp_flatten_layer_fu_272_m_axi_gmem_WSTRB;
-wire    grp_flatten_layer_fu_272_m_axi_gmem_WLAST;
-wire   [0:0] grp_flatten_layer_fu_272_m_axi_gmem_WID;
-wire   [0:0] grp_flatten_layer_fu_272_m_axi_gmem_WUSER;
-wire    grp_flatten_layer_fu_272_m_axi_gmem_ARVALID;
-wire   [63:0] grp_flatten_layer_fu_272_m_axi_gmem_ARADDR;
-wire   [0:0] grp_flatten_layer_fu_272_m_axi_gmem_ARID;
-wire   [31:0] grp_flatten_layer_fu_272_m_axi_gmem_ARLEN;
-wire   [2:0] grp_flatten_layer_fu_272_m_axi_gmem_ARSIZE;
-wire   [1:0] grp_flatten_layer_fu_272_m_axi_gmem_ARBURST;
-wire   [1:0] grp_flatten_layer_fu_272_m_axi_gmem_ARLOCK;
-wire   [3:0] grp_flatten_layer_fu_272_m_axi_gmem_ARCACHE;
-wire   [2:0] grp_flatten_layer_fu_272_m_axi_gmem_ARPROT;
-wire   [3:0] grp_flatten_layer_fu_272_m_axi_gmem_ARQOS;
-wire   [3:0] grp_flatten_layer_fu_272_m_axi_gmem_ARREGION;
-wire   [0:0] grp_flatten_layer_fu_272_m_axi_gmem_ARUSER;
-wire    grp_flatten_layer_fu_272_m_axi_gmem_RREADY;
-wire    grp_flatten_layer_fu_272_m_axi_gmem_BREADY;
-reg    grp_conv2d_layer_fu_170_ap_start_reg;
+reg   [63:0] prediction_read_reg_344;
+reg   [63:0] fc2_out_read_reg_349;
+reg   [63:0] fc1_out_read_reg_355;
+reg   [63:0] flat_out_read_reg_361;
+reg   [63:0] pool2_out_read_reg_367;
+reg   [63:0] conv2_out_read_reg_373;
+reg   [63:0] pool1_out_read_reg_379;
+reg   [63:0] conv1_out_read_reg_385;
+reg   [63:0] image_read_reg_391;
+wire    grp_fc3_layer_fu_206_ap_start;
+wire    grp_fc3_layer_fu_206_ap_done;
+wire    grp_fc3_layer_fu_206_ap_idle;
+wire    grp_fc3_layer_fu_206_ap_ready;
+wire    grp_fc3_layer_fu_206_m_axi_gmem_AWVALID;
+wire   [63:0] grp_fc3_layer_fu_206_m_axi_gmem_AWADDR;
+wire   [0:0] grp_fc3_layer_fu_206_m_axi_gmem_AWID;
+wire   [31:0] grp_fc3_layer_fu_206_m_axi_gmem_AWLEN;
+wire   [2:0] grp_fc3_layer_fu_206_m_axi_gmem_AWSIZE;
+wire   [1:0] grp_fc3_layer_fu_206_m_axi_gmem_AWBURST;
+wire   [1:0] grp_fc3_layer_fu_206_m_axi_gmem_AWLOCK;
+wire   [3:0] grp_fc3_layer_fu_206_m_axi_gmem_AWCACHE;
+wire   [2:0] grp_fc3_layer_fu_206_m_axi_gmem_AWPROT;
+wire   [3:0] grp_fc3_layer_fu_206_m_axi_gmem_AWQOS;
+wire   [3:0] grp_fc3_layer_fu_206_m_axi_gmem_AWREGION;
+wire   [0:0] grp_fc3_layer_fu_206_m_axi_gmem_AWUSER;
+wire    grp_fc3_layer_fu_206_m_axi_gmem_WVALID;
+wire   [31:0] grp_fc3_layer_fu_206_m_axi_gmem_WDATA;
+wire   [3:0] grp_fc3_layer_fu_206_m_axi_gmem_WSTRB;
+wire    grp_fc3_layer_fu_206_m_axi_gmem_WLAST;
+wire   [0:0] grp_fc3_layer_fu_206_m_axi_gmem_WID;
+wire   [0:0] grp_fc3_layer_fu_206_m_axi_gmem_WUSER;
+wire    grp_fc3_layer_fu_206_m_axi_gmem_ARVALID;
+wire   [63:0] grp_fc3_layer_fu_206_m_axi_gmem_ARADDR;
+wire   [0:0] grp_fc3_layer_fu_206_m_axi_gmem_ARID;
+wire   [31:0] grp_fc3_layer_fu_206_m_axi_gmem_ARLEN;
+wire   [2:0] grp_fc3_layer_fu_206_m_axi_gmem_ARSIZE;
+wire   [1:0] grp_fc3_layer_fu_206_m_axi_gmem_ARBURST;
+wire   [1:0] grp_fc3_layer_fu_206_m_axi_gmem_ARLOCK;
+wire   [3:0] grp_fc3_layer_fu_206_m_axi_gmem_ARCACHE;
+wire   [2:0] grp_fc3_layer_fu_206_m_axi_gmem_ARPROT;
+wire   [3:0] grp_fc3_layer_fu_206_m_axi_gmem_ARQOS;
+wire   [3:0] grp_fc3_layer_fu_206_m_axi_gmem_ARREGION;
+wire   [0:0] grp_fc3_layer_fu_206_m_axi_gmem_ARUSER;
+wire    grp_fc3_layer_fu_206_m_axi_gmem_RREADY;
+wire    grp_fc3_layer_fu_206_m_axi_gmem_BREADY;
+wire    grp_conv2d_layer_fu_222_ap_start;
+wire    grp_conv2d_layer_fu_222_ap_done;
+wire    grp_conv2d_layer_fu_222_ap_idle;
+wire    grp_conv2d_layer_fu_222_ap_ready;
+wire    grp_conv2d_layer_fu_222_m_axi_gmem_AWVALID;
+wire   [63:0] grp_conv2d_layer_fu_222_m_axi_gmem_AWADDR;
+wire   [0:0] grp_conv2d_layer_fu_222_m_axi_gmem_AWID;
+wire   [31:0] grp_conv2d_layer_fu_222_m_axi_gmem_AWLEN;
+wire   [2:0] grp_conv2d_layer_fu_222_m_axi_gmem_AWSIZE;
+wire   [1:0] grp_conv2d_layer_fu_222_m_axi_gmem_AWBURST;
+wire   [1:0] grp_conv2d_layer_fu_222_m_axi_gmem_AWLOCK;
+wire   [3:0] grp_conv2d_layer_fu_222_m_axi_gmem_AWCACHE;
+wire   [2:0] grp_conv2d_layer_fu_222_m_axi_gmem_AWPROT;
+wire   [3:0] grp_conv2d_layer_fu_222_m_axi_gmem_AWQOS;
+wire   [3:0] grp_conv2d_layer_fu_222_m_axi_gmem_AWREGION;
+wire   [0:0] grp_conv2d_layer_fu_222_m_axi_gmem_AWUSER;
+wire    grp_conv2d_layer_fu_222_m_axi_gmem_WVALID;
+wire   [31:0] grp_conv2d_layer_fu_222_m_axi_gmem_WDATA;
+wire   [3:0] grp_conv2d_layer_fu_222_m_axi_gmem_WSTRB;
+wire    grp_conv2d_layer_fu_222_m_axi_gmem_WLAST;
+wire   [0:0] grp_conv2d_layer_fu_222_m_axi_gmem_WID;
+wire   [0:0] grp_conv2d_layer_fu_222_m_axi_gmem_WUSER;
+wire    grp_conv2d_layer_fu_222_m_axi_gmem_ARVALID;
+wire   [63:0] grp_conv2d_layer_fu_222_m_axi_gmem_ARADDR;
+wire   [0:0] grp_conv2d_layer_fu_222_m_axi_gmem_ARID;
+wire   [31:0] grp_conv2d_layer_fu_222_m_axi_gmem_ARLEN;
+wire   [2:0] grp_conv2d_layer_fu_222_m_axi_gmem_ARSIZE;
+wire   [1:0] grp_conv2d_layer_fu_222_m_axi_gmem_ARBURST;
+wire   [1:0] grp_conv2d_layer_fu_222_m_axi_gmem_ARLOCK;
+wire   [3:0] grp_conv2d_layer_fu_222_m_axi_gmem_ARCACHE;
+wire   [2:0] grp_conv2d_layer_fu_222_m_axi_gmem_ARPROT;
+wire   [3:0] grp_conv2d_layer_fu_222_m_axi_gmem_ARQOS;
+wire   [3:0] grp_conv2d_layer_fu_222_m_axi_gmem_ARREGION;
+wire   [0:0] grp_conv2d_layer_fu_222_m_axi_gmem_ARUSER;
+wire    grp_conv2d_layer_fu_222_m_axi_gmem_RREADY;
+wire    grp_conv2d_layer_fu_222_m_axi_gmem_BREADY;
+wire    grp_maxpool_layer_fu_284_ap_start;
+wire    grp_maxpool_layer_fu_284_ap_done;
+wire    grp_maxpool_layer_fu_284_ap_idle;
+wire    grp_maxpool_layer_fu_284_ap_ready;
+wire    grp_maxpool_layer_fu_284_m_axi_gmem_AWVALID;
+wire   [63:0] grp_maxpool_layer_fu_284_m_axi_gmem_AWADDR;
+wire   [0:0] grp_maxpool_layer_fu_284_m_axi_gmem_AWID;
+wire   [31:0] grp_maxpool_layer_fu_284_m_axi_gmem_AWLEN;
+wire   [2:0] grp_maxpool_layer_fu_284_m_axi_gmem_AWSIZE;
+wire   [1:0] grp_maxpool_layer_fu_284_m_axi_gmem_AWBURST;
+wire   [1:0] grp_maxpool_layer_fu_284_m_axi_gmem_AWLOCK;
+wire   [3:0] grp_maxpool_layer_fu_284_m_axi_gmem_AWCACHE;
+wire   [2:0] grp_maxpool_layer_fu_284_m_axi_gmem_AWPROT;
+wire   [3:0] grp_maxpool_layer_fu_284_m_axi_gmem_AWQOS;
+wire   [3:0] grp_maxpool_layer_fu_284_m_axi_gmem_AWREGION;
+wire   [0:0] grp_maxpool_layer_fu_284_m_axi_gmem_AWUSER;
+wire    grp_maxpool_layer_fu_284_m_axi_gmem_WVALID;
+wire   [31:0] grp_maxpool_layer_fu_284_m_axi_gmem_WDATA;
+wire   [3:0] grp_maxpool_layer_fu_284_m_axi_gmem_WSTRB;
+wire    grp_maxpool_layer_fu_284_m_axi_gmem_WLAST;
+wire   [0:0] grp_maxpool_layer_fu_284_m_axi_gmem_WID;
+wire   [0:0] grp_maxpool_layer_fu_284_m_axi_gmem_WUSER;
+wire    grp_maxpool_layer_fu_284_m_axi_gmem_ARVALID;
+wire   [63:0] grp_maxpool_layer_fu_284_m_axi_gmem_ARADDR;
+wire   [0:0] grp_maxpool_layer_fu_284_m_axi_gmem_ARID;
+wire   [31:0] grp_maxpool_layer_fu_284_m_axi_gmem_ARLEN;
+wire   [2:0] grp_maxpool_layer_fu_284_m_axi_gmem_ARSIZE;
+wire   [1:0] grp_maxpool_layer_fu_284_m_axi_gmem_ARBURST;
+wire   [1:0] grp_maxpool_layer_fu_284_m_axi_gmem_ARLOCK;
+wire   [3:0] grp_maxpool_layer_fu_284_m_axi_gmem_ARCACHE;
+wire   [2:0] grp_maxpool_layer_fu_284_m_axi_gmem_ARPROT;
+wire   [3:0] grp_maxpool_layer_fu_284_m_axi_gmem_ARQOS;
+wire   [3:0] grp_maxpool_layer_fu_284_m_axi_gmem_ARREGION;
+wire   [0:0] grp_maxpool_layer_fu_284_m_axi_gmem_ARUSER;
+wire    grp_maxpool_layer_fu_284_m_axi_gmem_RREADY;
+wire    grp_maxpool_layer_fu_284_m_axi_gmem_BREADY;
+wire    grp_maxpool2_layer_fu_292_ap_start;
+wire    grp_maxpool2_layer_fu_292_ap_done;
+wire    grp_maxpool2_layer_fu_292_ap_idle;
+wire    grp_maxpool2_layer_fu_292_ap_ready;
+wire    grp_maxpool2_layer_fu_292_m_axi_gmem_AWVALID;
+wire   [63:0] grp_maxpool2_layer_fu_292_m_axi_gmem_AWADDR;
+wire   [0:0] grp_maxpool2_layer_fu_292_m_axi_gmem_AWID;
+wire   [31:0] grp_maxpool2_layer_fu_292_m_axi_gmem_AWLEN;
+wire   [2:0] grp_maxpool2_layer_fu_292_m_axi_gmem_AWSIZE;
+wire   [1:0] grp_maxpool2_layer_fu_292_m_axi_gmem_AWBURST;
+wire   [1:0] grp_maxpool2_layer_fu_292_m_axi_gmem_AWLOCK;
+wire   [3:0] grp_maxpool2_layer_fu_292_m_axi_gmem_AWCACHE;
+wire   [2:0] grp_maxpool2_layer_fu_292_m_axi_gmem_AWPROT;
+wire   [3:0] grp_maxpool2_layer_fu_292_m_axi_gmem_AWQOS;
+wire   [3:0] grp_maxpool2_layer_fu_292_m_axi_gmem_AWREGION;
+wire   [0:0] grp_maxpool2_layer_fu_292_m_axi_gmem_AWUSER;
+wire    grp_maxpool2_layer_fu_292_m_axi_gmem_WVALID;
+wire   [31:0] grp_maxpool2_layer_fu_292_m_axi_gmem_WDATA;
+wire   [3:0] grp_maxpool2_layer_fu_292_m_axi_gmem_WSTRB;
+wire    grp_maxpool2_layer_fu_292_m_axi_gmem_WLAST;
+wire   [0:0] grp_maxpool2_layer_fu_292_m_axi_gmem_WID;
+wire   [0:0] grp_maxpool2_layer_fu_292_m_axi_gmem_WUSER;
+wire    grp_maxpool2_layer_fu_292_m_axi_gmem_ARVALID;
+wire   [63:0] grp_maxpool2_layer_fu_292_m_axi_gmem_ARADDR;
+wire   [0:0] grp_maxpool2_layer_fu_292_m_axi_gmem_ARID;
+wire   [31:0] grp_maxpool2_layer_fu_292_m_axi_gmem_ARLEN;
+wire   [2:0] grp_maxpool2_layer_fu_292_m_axi_gmem_ARSIZE;
+wire   [1:0] grp_maxpool2_layer_fu_292_m_axi_gmem_ARBURST;
+wire   [1:0] grp_maxpool2_layer_fu_292_m_axi_gmem_ARLOCK;
+wire   [3:0] grp_maxpool2_layer_fu_292_m_axi_gmem_ARCACHE;
+wire   [2:0] grp_maxpool2_layer_fu_292_m_axi_gmem_ARPROT;
+wire   [3:0] grp_maxpool2_layer_fu_292_m_axi_gmem_ARQOS;
+wire   [3:0] grp_maxpool2_layer_fu_292_m_axi_gmem_ARREGION;
+wire   [0:0] grp_maxpool2_layer_fu_292_m_axi_gmem_ARUSER;
+wire    grp_maxpool2_layer_fu_292_m_axi_gmem_RREADY;
+wire    grp_maxpool2_layer_fu_292_m_axi_gmem_BREADY;
+wire    grp_conv2d_6to16_layer_fu_300_ap_start;
+wire    grp_conv2d_6to16_layer_fu_300_ap_done;
+wire    grp_conv2d_6to16_layer_fu_300_ap_idle;
+wire    grp_conv2d_6to16_layer_fu_300_ap_ready;
+wire    grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWVALID;
+wire   [63:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWADDR;
+wire   [0:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWID;
+wire   [31:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWLEN;
+wire   [2:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWSIZE;
+wire   [1:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWBURST;
+wire   [1:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWLOCK;
+wire   [3:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWCACHE;
+wire   [2:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWPROT;
+wire   [3:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWQOS;
+wire   [3:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWREGION;
+wire   [0:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWUSER;
+wire    grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WVALID;
+wire   [31:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WDATA;
+wire   [3:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WSTRB;
+wire    grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WLAST;
+wire   [0:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WID;
+wire   [0:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WUSER;
+wire    grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARVALID;
+wire   [63:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARADDR;
+wire   [0:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARID;
+wire   [31:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARLEN;
+wire   [2:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARSIZE;
+wire   [1:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARBURST;
+wire   [1:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARLOCK;
+wire   [3:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARCACHE;
+wire   [2:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARPROT;
+wire   [3:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARQOS;
+wire   [3:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARREGION;
+wire   [0:0] grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARUSER;
+wire    grp_conv2d_6to16_layer_fu_300_m_axi_gmem_RREADY;
+wire    grp_conv2d_6to16_layer_fu_300_m_axi_gmem_BREADY;
+wire    grp_fc_layer_120_84_s_fu_312_ap_start;
+wire    grp_fc_layer_120_84_s_fu_312_ap_done;
+wire    grp_fc_layer_120_84_s_fu_312_ap_idle;
+wire    grp_fc_layer_120_84_s_fu_312_ap_ready;
+wire    grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWVALID;
+wire   [63:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWADDR;
+wire   [0:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWID;
+wire   [31:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWLEN;
+wire   [2:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWSIZE;
+wire   [1:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWBURST;
+wire   [1:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWLOCK;
+wire   [3:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWCACHE;
+wire   [2:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWPROT;
+wire   [3:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWQOS;
+wire   [3:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWREGION;
+wire   [0:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWUSER;
+wire    grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WVALID;
+wire   [31:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WDATA;
+wire   [3:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WSTRB;
+wire    grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WLAST;
+wire   [0:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WID;
+wire   [0:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WUSER;
+wire    grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARVALID;
+wire   [63:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARADDR;
+wire   [0:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARID;
+wire   [31:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARLEN;
+wire   [2:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARSIZE;
+wire   [1:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARBURST;
+wire   [1:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARLOCK;
+wire   [3:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARCACHE;
+wire   [2:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARPROT;
+wire   [3:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARQOS;
+wire   [3:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARREGION;
+wire   [0:0] grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARUSER;
+wire    grp_fc_layer_120_84_s_fu_312_m_axi_gmem_RREADY;
+wire    grp_fc_layer_120_84_s_fu_312_m_axi_gmem_BREADY;
+wire    grp_fc_layer_400_120_s_fu_324_ap_start;
+wire    grp_fc_layer_400_120_s_fu_324_ap_done;
+wire    grp_fc_layer_400_120_s_fu_324_ap_idle;
+wire    grp_fc_layer_400_120_s_fu_324_ap_ready;
+wire    grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWVALID;
+wire   [63:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWADDR;
+wire   [0:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWID;
+wire   [31:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWLEN;
+wire   [2:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWSIZE;
+wire   [1:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWBURST;
+wire   [1:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWLOCK;
+wire   [3:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWCACHE;
+wire   [2:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWPROT;
+wire   [3:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWQOS;
+wire   [3:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWREGION;
+wire   [0:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWUSER;
+wire    grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WVALID;
+wire   [31:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WDATA;
+wire   [3:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WSTRB;
+wire    grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WLAST;
+wire   [0:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WID;
+wire   [0:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WUSER;
+wire    grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARVALID;
+wire   [63:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARADDR;
+wire   [0:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARID;
+wire   [31:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARLEN;
+wire   [2:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARSIZE;
+wire   [1:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARBURST;
+wire   [1:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARLOCK;
+wire   [3:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARCACHE;
+wire   [2:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARPROT;
+wire   [3:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARQOS;
+wire   [3:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARREGION;
+wire   [0:0] grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARUSER;
+wire    grp_fc_layer_400_120_s_fu_324_m_axi_gmem_RREADY;
+wire    grp_fc_layer_400_120_s_fu_324_m_axi_gmem_BREADY;
+wire    grp_flatten_layer_fu_336_ap_start;
+wire    grp_flatten_layer_fu_336_ap_done;
+wire    grp_flatten_layer_fu_336_ap_idle;
+wire    grp_flatten_layer_fu_336_ap_ready;
+wire    grp_flatten_layer_fu_336_m_axi_gmem_AWVALID;
+wire   [63:0] grp_flatten_layer_fu_336_m_axi_gmem_AWADDR;
+wire   [0:0] grp_flatten_layer_fu_336_m_axi_gmem_AWID;
+wire   [31:0] grp_flatten_layer_fu_336_m_axi_gmem_AWLEN;
+wire   [2:0] grp_flatten_layer_fu_336_m_axi_gmem_AWSIZE;
+wire   [1:0] grp_flatten_layer_fu_336_m_axi_gmem_AWBURST;
+wire   [1:0] grp_flatten_layer_fu_336_m_axi_gmem_AWLOCK;
+wire   [3:0] grp_flatten_layer_fu_336_m_axi_gmem_AWCACHE;
+wire   [2:0] grp_flatten_layer_fu_336_m_axi_gmem_AWPROT;
+wire   [3:0] grp_flatten_layer_fu_336_m_axi_gmem_AWQOS;
+wire   [3:0] grp_flatten_layer_fu_336_m_axi_gmem_AWREGION;
+wire   [0:0] grp_flatten_layer_fu_336_m_axi_gmem_AWUSER;
+wire    grp_flatten_layer_fu_336_m_axi_gmem_WVALID;
+wire   [31:0] grp_flatten_layer_fu_336_m_axi_gmem_WDATA;
+wire   [3:0] grp_flatten_layer_fu_336_m_axi_gmem_WSTRB;
+wire    grp_flatten_layer_fu_336_m_axi_gmem_WLAST;
+wire   [0:0] grp_flatten_layer_fu_336_m_axi_gmem_WID;
+wire   [0:0] grp_flatten_layer_fu_336_m_axi_gmem_WUSER;
+wire    grp_flatten_layer_fu_336_m_axi_gmem_ARVALID;
+wire   [63:0] grp_flatten_layer_fu_336_m_axi_gmem_ARADDR;
+wire   [0:0] grp_flatten_layer_fu_336_m_axi_gmem_ARID;
+wire   [31:0] grp_flatten_layer_fu_336_m_axi_gmem_ARLEN;
+wire   [2:0] grp_flatten_layer_fu_336_m_axi_gmem_ARSIZE;
+wire   [1:0] grp_flatten_layer_fu_336_m_axi_gmem_ARBURST;
+wire   [1:0] grp_flatten_layer_fu_336_m_axi_gmem_ARLOCK;
+wire   [3:0] grp_flatten_layer_fu_336_m_axi_gmem_ARCACHE;
+wire   [2:0] grp_flatten_layer_fu_336_m_axi_gmem_ARPROT;
+wire   [3:0] grp_flatten_layer_fu_336_m_axi_gmem_ARQOS;
+wire   [3:0] grp_flatten_layer_fu_336_m_axi_gmem_ARREGION;
+wire   [0:0] grp_flatten_layer_fu_336_m_axi_gmem_ARUSER;
+wire    grp_flatten_layer_fu_336_m_axi_gmem_RREADY;
+wire    grp_flatten_layer_fu_336_m_axi_gmem_BREADY;
+reg    grp_fc3_layer_fu_206_ap_start_reg;
+wire    ap_CS_fsm_state15;
+wire    ap_CS_fsm_state16;
+reg    grp_conv2d_layer_fu_222_ap_start_reg;
 wire    ap_CS_fsm_state2;
-reg    grp_maxpool_layer_fu_232_ap_start_reg;
+reg    grp_maxpool_layer_fu_284_ap_start_reg;
 wire    ap_CS_fsm_state3;
 wire    ap_CS_fsm_state4;
-reg    grp_maxpool2_layer_fu_240_ap_start_reg;
+reg    grp_maxpool2_layer_fu_292_ap_start_reg;
 wire    ap_CS_fsm_state7;
 wire    ap_CS_fsm_state8;
-reg    grp_conv2d_6to16_layer_fu_248_ap_start_reg;
+reg    grp_conv2d_6to16_layer_fu_300_ap_start_reg;
 wire    ap_CS_fsm_state5;
 wire    ap_CS_fsm_state6;
-reg    grp_fc_layer_400_120_s_fu_260_ap_start_reg;
+reg    grp_fc_layer_120_84_s_fu_312_ap_start_reg;
+wire    ap_CS_fsm_state13;
+wire    ap_CS_fsm_state14;
+reg    grp_fc_layer_400_120_s_fu_324_ap_start_reg;
 wire    ap_CS_fsm_state11;
 wire    ap_CS_fsm_state12;
-reg    grp_flatten_layer_fu_272_ap_start_reg;
+reg    grp_flatten_layer_fu_336_ap_start_reg;
 wire    ap_CS_fsm_state9;
 wire    ap_CS_fsm_state10;
-reg   [11:0] ap_NS_fsm;
+reg   [15:0] ap_NS_fsm;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 12'd1;
-#0 grp_conv2d_layer_fu_170_ap_start_reg = 1'b0;
-#0 grp_maxpool_layer_fu_232_ap_start_reg = 1'b0;
-#0 grp_maxpool2_layer_fu_240_ap_start_reg = 1'b0;
-#0 grp_conv2d_6to16_layer_fu_248_ap_start_reg = 1'b0;
-#0 grp_fc_layer_400_120_s_fu_260_ap_start_reg = 1'b0;
-#0 grp_flatten_layer_fu_272_ap_start_reg = 1'b0;
+#0 ap_CS_fsm = 16'd1;
+#0 grp_fc3_layer_fu_206_ap_start_reg = 1'b0;
+#0 grp_conv2d_layer_fu_222_ap_start_reg = 1'b0;
+#0 grp_maxpool_layer_fu_284_ap_start_reg = 1'b0;
+#0 grp_maxpool2_layer_fu_292_ap_start_reg = 1'b0;
+#0 grp_conv2d_6to16_layer_fu_300_ap_start_reg = 1'b0;
+#0 grp_fc_layer_120_84_s_fu_312_ap_start_reg = 1'b0;
+#0 grp_fc_layer_400_120_s_fu_324_ap_start_reg = 1'b0;
+#0 grp_flatten_layer_fu_336_ap_start_reg = 1'b0;
 end
 
 lenet_top_control_s_axi #(
@@ -519,6 +607,8 @@ control_s_axi_U(
     .pool2_out(pool2_out),
     .flat_out(flat_out),
     .fc1_out(fc1_out),
+    .fc2_out(fc2_out),
+    .prediction(prediction),
     .ap_start(ap_start),
     .interrupt(interrupt),
     .ap_ready(ap_ready),
@@ -642,340 +732,452 @@ gmem_m_axi_U(
     .I_BUSER(gmem_BUSER)
 );
 
-lenet_top_conv2d_layer grp_conv2d_layer_fu_170(
+lenet_top_fc3_layer grp_fc3_layer_fu_206(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_conv2d_layer_fu_170_ap_start),
-    .ap_done(grp_conv2d_layer_fu_170_ap_done),
-    .ap_idle(grp_conv2d_layer_fu_170_ap_idle),
-    .ap_ready(grp_conv2d_layer_fu_170_ap_ready),
-    .m_axi_gmem_AWVALID(grp_conv2d_layer_fu_170_m_axi_gmem_AWVALID),
+    .ap_start(grp_fc3_layer_fu_206_ap_start),
+    .ap_done(grp_fc3_layer_fu_206_ap_done),
+    .ap_idle(grp_fc3_layer_fu_206_ap_idle),
+    .ap_ready(grp_fc3_layer_fu_206_ap_ready),
+    .m_axi_gmem_AWVALID(grp_fc3_layer_fu_206_m_axi_gmem_AWVALID),
     .m_axi_gmem_AWREADY(gmem_AWREADY),
-    .m_axi_gmem_AWADDR(grp_conv2d_layer_fu_170_m_axi_gmem_AWADDR),
-    .m_axi_gmem_AWID(grp_conv2d_layer_fu_170_m_axi_gmem_AWID),
-    .m_axi_gmem_AWLEN(grp_conv2d_layer_fu_170_m_axi_gmem_AWLEN),
-    .m_axi_gmem_AWSIZE(grp_conv2d_layer_fu_170_m_axi_gmem_AWSIZE),
-    .m_axi_gmem_AWBURST(grp_conv2d_layer_fu_170_m_axi_gmem_AWBURST),
-    .m_axi_gmem_AWLOCK(grp_conv2d_layer_fu_170_m_axi_gmem_AWLOCK),
-    .m_axi_gmem_AWCACHE(grp_conv2d_layer_fu_170_m_axi_gmem_AWCACHE),
-    .m_axi_gmem_AWPROT(grp_conv2d_layer_fu_170_m_axi_gmem_AWPROT),
-    .m_axi_gmem_AWQOS(grp_conv2d_layer_fu_170_m_axi_gmem_AWQOS),
-    .m_axi_gmem_AWREGION(grp_conv2d_layer_fu_170_m_axi_gmem_AWREGION),
-    .m_axi_gmem_AWUSER(grp_conv2d_layer_fu_170_m_axi_gmem_AWUSER),
-    .m_axi_gmem_WVALID(grp_conv2d_layer_fu_170_m_axi_gmem_WVALID),
+    .m_axi_gmem_AWADDR(grp_fc3_layer_fu_206_m_axi_gmem_AWADDR),
+    .m_axi_gmem_AWID(grp_fc3_layer_fu_206_m_axi_gmem_AWID),
+    .m_axi_gmem_AWLEN(grp_fc3_layer_fu_206_m_axi_gmem_AWLEN),
+    .m_axi_gmem_AWSIZE(grp_fc3_layer_fu_206_m_axi_gmem_AWSIZE),
+    .m_axi_gmem_AWBURST(grp_fc3_layer_fu_206_m_axi_gmem_AWBURST),
+    .m_axi_gmem_AWLOCK(grp_fc3_layer_fu_206_m_axi_gmem_AWLOCK),
+    .m_axi_gmem_AWCACHE(grp_fc3_layer_fu_206_m_axi_gmem_AWCACHE),
+    .m_axi_gmem_AWPROT(grp_fc3_layer_fu_206_m_axi_gmem_AWPROT),
+    .m_axi_gmem_AWQOS(grp_fc3_layer_fu_206_m_axi_gmem_AWQOS),
+    .m_axi_gmem_AWREGION(grp_fc3_layer_fu_206_m_axi_gmem_AWREGION),
+    .m_axi_gmem_AWUSER(grp_fc3_layer_fu_206_m_axi_gmem_AWUSER),
+    .m_axi_gmem_WVALID(grp_fc3_layer_fu_206_m_axi_gmem_WVALID),
     .m_axi_gmem_WREADY(gmem_WREADY),
-    .m_axi_gmem_WDATA(grp_conv2d_layer_fu_170_m_axi_gmem_WDATA),
-    .m_axi_gmem_WSTRB(grp_conv2d_layer_fu_170_m_axi_gmem_WSTRB),
-    .m_axi_gmem_WLAST(grp_conv2d_layer_fu_170_m_axi_gmem_WLAST),
-    .m_axi_gmem_WID(grp_conv2d_layer_fu_170_m_axi_gmem_WID),
-    .m_axi_gmem_WUSER(grp_conv2d_layer_fu_170_m_axi_gmem_WUSER),
-    .m_axi_gmem_ARVALID(grp_conv2d_layer_fu_170_m_axi_gmem_ARVALID),
+    .m_axi_gmem_WDATA(grp_fc3_layer_fu_206_m_axi_gmem_WDATA),
+    .m_axi_gmem_WSTRB(grp_fc3_layer_fu_206_m_axi_gmem_WSTRB),
+    .m_axi_gmem_WLAST(grp_fc3_layer_fu_206_m_axi_gmem_WLAST),
+    .m_axi_gmem_WID(grp_fc3_layer_fu_206_m_axi_gmem_WID),
+    .m_axi_gmem_WUSER(grp_fc3_layer_fu_206_m_axi_gmem_WUSER),
+    .m_axi_gmem_ARVALID(grp_fc3_layer_fu_206_m_axi_gmem_ARVALID),
     .m_axi_gmem_ARREADY(gmem_ARREADY),
-    .m_axi_gmem_ARADDR(grp_conv2d_layer_fu_170_m_axi_gmem_ARADDR),
-    .m_axi_gmem_ARID(grp_conv2d_layer_fu_170_m_axi_gmem_ARID),
-    .m_axi_gmem_ARLEN(grp_conv2d_layer_fu_170_m_axi_gmem_ARLEN),
-    .m_axi_gmem_ARSIZE(grp_conv2d_layer_fu_170_m_axi_gmem_ARSIZE),
-    .m_axi_gmem_ARBURST(grp_conv2d_layer_fu_170_m_axi_gmem_ARBURST),
-    .m_axi_gmem_ARLOCK(grp_conv2d_layer_fu_170_m_axi_gmem_ARLOCK),
-    .m_axi_gmem_ARCACHE(grp_conv2d_layer_fu_170_m_axi_gmem_ARCACHE),
-    .m_axi_gmem_ARPROT(grp_conv2d_layer_fu_170_m_axi_gmem_ARPROT),
-    .m_axi_gmem_ARQOS(grp_conv2d_layer_fu_170_m_axi_gmem_ARQOS),
-    .m_axi_gmem_ARREGION(grp_conv2d_layer_fu_170_m_axi_gmem_ARREGION),
-    .m_axi_gmem_ARUSER(grp_conv2d_layer_fu_170_m_axi_gmem_ARUSER),
+    .m_axi_gmem_ARADDR(grp_fc3_layer_fu_206_m_axi_gmem_ARADDR),
+    .m_axi_gmem_ARID(grp_fc3_layer_fu_206_m_axi_gmem_ARID),
+    .m_axi_gmem_ARLEN(grp_fc3_layer_fu_206_m_axi_gmem_ARLEN),
+    .m_axi_gmem_ARSIZE(grp_fc3_layer_fu_206_m_axi_gmem_ARSIZE),
+    .m_axi_gmem_ARBURST(grp_fc3_layer_fu_206_m_axi_gmem_ARBURST),
+    .m_axi_gmem_ARLOCK(grp_fc3_layer_fu_206_m_axi_gmem_ARLOCK),
+    .m_axi_gmem_ARCACHE(grp_fc3_layer_fu_206_m_axi_gmem_ARCACHE),
+    .m_axi_gmem_ARPROT(grp_fc3_layer_fu_206_m_axi_gmem_ARPROT),
+    .m_axi_gmem_ARQOS(grp_fc3_layer_fu_206_m_axi_gmem_ARQOS),
+    .m_axi_gmem_ARREGION(grp_fc3_layer_fu_206_m_axi_gmem_ARREGION),
+    .m_axi_gmem_ARUSER(grp_fc3_layer_fu_206_m_axi_gmem_ARUSER),
     .m_axi_gmem_RVALID(gmem_RVALID),
-    .m_axi_gmem_RREADY(grp_conv2d_layer_fu_170_m_axi_gmem_RREADY),
+    .m_axi_gmem_RREADY(grp_fc3_layer_fu_206_m_axi_gmem_RREADY),
     .m_axi_gmem_RDATA(gmem_RDATA),
     .m_axi_gmem_RLAST(gmem_RLAST),
     .m_axi_gmem_RID(gmem_RID),
     .m_axi_gmem_RUSER(gmem_RUSER),
     .m_axi_gmem_RRESP(gmem_RRESP),
     .m_axi_gmem_BVALID(gmem_BVALID),
-    .m_axi_gmem_BREADY(grp_conv2d_layer_fu_170_m_axi_gmem_BREADY),
+    .m_axi_gmem_BREADY(grp_fc3_layer_fu_206_m_axi_gmem_BREADY),
     .m_axi_gmem_BRESP(gmem_BRESP),
     .m_axi_gmem_BID(gmem_BID),
     .m_axi_gmem_BUSER(gmem_BUSER),
-    .input_r(image_read_reg_315),
-    .output_r(conv1_out_read_reg_309)
+    .fc3_input(fc2_out_read_reg_349),
+    .predicted_class(prediction_read_reg_344)
 );
 
-lenet_top_maxpool_layer grp_maxpool_layer_fu_232(
+lenet_top_conv2d_layer grp_conv2d_layer_fu_222(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_maxpool_layer_fu_232_ap_start),
-    .ap_done(grp_maxpool_layer_fu_232_ap_done),
-    .ap_idle(grp_maxpool_layer_fu_232_ap_idle),
-    .ap_ready(grp_maxpool_layer_fu_232_ap_ready),
-    .m_axi_gmem_AWVALID(grp_maxpool_layer_fu_232_m_axi_gmem_AWVALID),
+    .ap_start(grp_conv2d_layer_fu_222_ap_start),
+    .ap_done(grp_conv2d_layer_fu_222_ap_done),
+    .ap_idle(grp_conv2d_layer_fu_222_ap_idle),
+    .ap_ready(grp_conv2d_layer_fu_222_ap_ready),
+    .m_axi_gmem_AWVALID(grp_conv2d_layer_fu_222_m_axi_gmem_AWVALID),
     .m_axi_gmem_AWREADY(gmem_AWREADY),
-    .m_axi_gmem_AWADDR(grp_maxpool_layer_fu_232_m_axi_gmem_AWADDR),
-    .m_axi_gmem_AWID(grp_maxpool_layer_fu_232_m_axi_gmem_AWID),
-    .m_axi_gmem_AWLEN(grp_maxpool_layer_fu_232_m_axi_gmem_AWLEN),
-    .m_axi_gmem_AWSIZE(grp_maxpool_layer_fu_232_m_axi_gmem_AWSIZE),
-    .m_axi_gmem_AWBURST(grp_maxpool_layer_fu_232_m_axi_gmem_AWBURST),
-    .m_axi_gmem_AWLOCK(grp_maxpool_layer_fu_232_m_axi_gmem_AWLOCK),
-    .m_axi_gmem_AWCACHE(grp_maxpool_layer_fu_232_m_axi_gmem_AWCACHE),
-    .m_axi_gmem_AWPROT(grp_maxpool_layer_fu_232_m_axi_gmem_AWPROT),
-    .m_axi_gmem_AWQOS(grp_maxpool_layer_fu_232_m_axi_gmem_AWQOS),
-    .m_axi_gmem_AWREGION(grp_maxpool_layer_fu_232_m_axi_gmem_AWREGION),
-    .m_axi_gmem_AWUSER(grp_maxpool_layer_fu_232_m_axi_gmem_AWUSER),
-    .m_axi_gmem_WVALID(grp_maxpool_layer_fu_232_m_axi_gmem_WVALID),
+    .m_axi_gmem_AWADDR(grp_conv2d_layer_fu_222_m_axi_gmem_AWADDR),
+    .m_axi_gmem_AWID(grp_conv2d_layer_fu_222_m_axi_gmem_AWID),
+    .m_axi_gmem_AWLEN(grp_conv2d_layer_fu_222_m_axi_gmem_AWLEN),
+    .m_axi_gmem_AWSIZE(grp_conv2d_layer_fu_222_m_axi_gmem_AWSIZE),
+    .m_axi_gmem_AWBURST(grp_conv2d_layer_fu_222_m_axi_gmem_AWBURST),
+    .m_axi_gmem_AWLOCK(grp_conv2d_layer_fu_222_m_axi_gmem_AWLOCK),
+    .m_axi_gmem_AWCACHE(grp_conv2d_layer_fu_222_m_axi_gmem_AWCACHE),
+    .m_axi_gmem_AWPROT(grp_conv2d_layer_fu_222_m_axi_gmem_AWPROT),
+    .m_axi_gmem_AWQOS(grp_conv2d_layer_fu_222_m_axi_gmem_AWQOS),
+    .m_axi_gmem_AWREGION(grp_conv2d_layer_fu_222_m_axi_gmem_AWREGION),
+    .m_axi_gmem_AWUSER(grp_conv2d_layer_fu_222_m_axi_gmem_AWUSER),
+    .m_axi_gmem_WVALID(grp_conv2d_layer_fu_222_m_axi_gmem_WVALID),
     .m_axi_gmem_WREADY(gmem_WREADY),
-    .m_axi_gmem_WDATA(grp_maxpool_layer_fu_232_m_axi_gmem_WDATA),
-    .m_axi_gmem_WSTRB(grp_maxpool_layer_fu_232_m_axi_gmem_WSTRB),
-    .m_axi_gmem_WLAST(grp_maxpool_layer_fu_232_m_axi_gmem_WLAST),
-    .m_axi_gmem_WID(grp_maxpool_layer_fu_232_m_axi_gmem_WID),
-    .m_axi_gmem_WUSER(grp_maxpool_layer_fu_232_m_axi_gmem_WUSER),
-    .m_axi_gmem_ARVALID(grp_maxpool_layer_fu_232_m_axi_gmem_ARVALID),
+    .m_axi_gmem_WDATA(grp_conv2d_layer_fu_222_m_axi_gmem_WDATA),
+    .m_axi_gmem_WSTRB(grp_conv2d_layer_fu_222_m_axi_gmem_WSTRB),
+    .m_axi_gmem_WLAST(grp_conv2d_layer_fu_222_m_axi_gmem_WLAST),
+    .m_axi_gmem_WID(grp_conv2d_layer_fu_222_m_axi_gmem_WID),
+    .m_axi_gmem_WUSER(grp_conv2d_layer_fu_222_m_axi_gmem_WUSER),
+    .m_axi_gmem_ARVALID(grp_conv2d_layer_fu_222_m_axi_gmem_ARVALID),
     .m_axi_gmem_ARREADY(gmem_ARREADY),
-    .m_axi_gmem_ARADDR(grp_maxpool_layer_fu_232_m_axi_gmem_ARADDR),
-    .m_axi_gmem_ARID(grp_maxpool_layer_fu_232_m_axi_gmem_ARID),
-    .m_axi_gmem_ARLEN(grp_maxpool_layer_fu_232_m_axi_gmem_ARLEN),
-    .m_axi_gmem_ARSIZE(grp_maxpool_layer_fu_232_m_axi_gmem_ARSIZE),
-    .m_axi_gmem_ARBURST(grp_maxpool_layer_fu_232_m_axi_gmem_ARBURST),
-    .m_axi_gmem_ARLOCK(grp_maxpool_layer_fu_232_m_axi_gmem_ARLOCK),
-    .m_axi_gmem_ARCACHE(grp_maxpool_layer_fu_232_m_axi_gmem_ARCACHE),
-    .m_axi_gmem_ARPROT(grp_maxpool_layer_fu_232_m_axi_gmem_ARPROT),
-    .m_axi_gmem_ARQOS(grp_maxpool_layer_fu_232_m_axi_gmem_ARQOS),
-    .m_axi_gmem_ARREGION(grp_maxpool_layer_fu_232_m_axi_gmem_ARREGION),
-    .m_axi_gmem_ARUSER(grp_maxpool_layer_fu_232_m_axi_gmem_ARUSER),
+    .m_axi_gmem_ARADDR(grp_conv2d_layer_fu_222_m_axi_gmem_ARADDR),
+    .m_axi_gmem_ARID(grp_conv2d_layer_fu_222_m_axi_gmem_ARID),
+    .m_axi_gmem_ARLEN(grp_conv2d_layer_fu_222_m_axi_gmem_ARLEN),
+    .m_axi_gmem_ARSIZE(grp_conv2d_layer_fu_222_m_axi_gmem_ARSIZE),
+    .m_axi_gmem_ARBURST(grp_conv2d_layer_fu_222_m_axi_gmem_ARBURST),
+    .m_axi_gmem_ARLOCK(grp_conv2d_layer_fu_222_m_axi_gmem_ARLOCK),
+    .m_axi_gmem_ARCACHE(grp_conv2d_layer_fu_222_m_axi_gmem_ARCACHE),
+    .m_axi_gmem_ARPROT(grp_conv2d_layer_fu_222_m_axi_gmem_ARPROT),
+    .m_axi_gmem_ARQOS(grp_conv2d_layer_fu_222_m_axi_gmem_ARQOS),
+    .m_axi_gmem_ARREGION(grp_conv2d_layer_fu_222_m_axi_gmem_ARREGION),
+    .m_axi_gmem_ARUSER(grp_conv2d_layer_fu_222_m_axi_gmem_ARUSER),
     .m_axi_gmem_RVALID(gmem_RVALID),
-    .m_axi_gmem_RREADY(grp_maxpool_layer_fu_232_m_axi_gmem_RREADY),
+    .m_axi_gmem_RREADY(grp_conv2d_layer_fu_222_m_axi_gmem_RREADY),
     .m_axi_gmem_RDATA(gmem_RDATA),
     .m_axi_gmem_RLAST(gmem_RLAST),
     .m_axi_gmem_RID(gmem_RID),
     .m_axi_gmem_RUSER(gmem_RUSER),
     .m_axi_gmem_RRESP(gmem_RRESP),
     .m_axi_gmem_BVALID(gmem_BVALID),
-    .m_axi_gmem_BREADY(grp_maxpool_layer_fu_232_m_axi_gmem_BREADY),
+    .m_axi_gmem_BREADY(grp_conv2d_layer_fu_222_m_axi_gmem_BREADY),
     .m_axi_gmem_BRESP(gmem_BRESP),
     .m_axi_gmem_BID(gmem_BID),
     .m_axi_gmem_BUSER(gmem_BUSER),
-    .input_r(conv1_out_read_reg_309),
-    .output_r(pool1_out_read_reg_303)
+    .input_r(image_read_reg_391),
+    .output_r(conv1_out_read_reg_385)
 );
 
-lenet_top_maxpool2_layer grp_maxpool2_layer_fu_240(
+lenet_top_maxpool_layer grp_maxpool_layer_fu_284(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_maxpool2_layer_fu_240_ap_start),
-    .ap_done(grp_maxpool2_layer_fu_240_ap_done),
-    .ap_idle(grp_maxpool2_layer_fu_240_ap_idle),
-    .ap_ready(grp_maxpool2_layer_fu_240_ap_ready),
-    .m_axi_gmem_AWVALID(grp_maxpool2_layer_fu_240_m_axi_gmem_AWVALID),
+    .ap_start(grp_maxpool_layer_fu_284_ap_start),
+    .ap_done(grp_maxpool_layer_fu_284_ap_done),
+    .ap_idle(grp_maxpool_layer_fu_284_ap_idle),
+    .ap_ready(grp_maxpool_layer_fu_284_ap_ready),
+    .m_axi_gmem_AWVALID(grp_maxpool_layer_fu_284_m_axi_gmem_AWVALID),
     .m_axi_gmem_AWREADY(gmem_AWREADY),
-    .m_axi_gmem_AWADDR(grp_maxpool2_layer_fu_240_m_axi_gmem_AWADDR),
-    .m_axi_gmem_AWID(grp_maxpool2_layer_fu_240_m_axi_gmem_AWID),
-    .m_axi_gmem_AWLEN(grp_maxpool2_layer_fu_240_m_axi_gmem_AWLEN),
-    .m_axi_gmem_AWSIZE(grp_maxpool2_layer_fu_240_m_axi_gmem_AWSIZE),
-    .m_axi_gmem_AWBURST(grp_maxpool2_layer_fu_240_m_axi_gmem_AWBURST),
-    .m_axi_gmem_AWLOCK(grp_maxpool2_layer_fu_240_m_axi_gmem_AWLOCK),
-    .m_axi_gmem_AWCACHE(grp_maxpool2_layer_fu_240_m_axi_gmem_AWCACHE),
-    .m_axi_gmem_AWPROT(grp_maxpool2_layer_fu_240_m_axi_gmem_AWPROT),
-    .m_axi_gmem_AWQOS(grp_maxpool2_layer_fu_240_m_axi_gmem_AWQOS),
-    .m_axi_gmem_AWREGION(grp_maxpool2_layer_fu_240_m_axi_gmem_AWREGION),
-    .m_axi_gmem_AWUSER(grp_maxpool2_layer_fu_240_m_axi_gmem_AWUSER),
-    .m_axi_gmem_WVALID(grp_maxpool2_layer_fu_240_m_axi_gmem_WVALID),
+    .m_axi_gmem_AWADDR(grp_maxpool_layer_fu_284_m_axi_gmem_AWADDR),
+    .m_axi_gmem_AWID(grp_maxpool_layer_fu_284_m_axi_gmem_AWID),
+    .m_axi_gmem_AWLEN(grp_maxpool_layer_fu_284_m_axi_gmem_AWLEN),
+    .m_axi_gmem_AWSIZE(grp_maxpool_layer_fu_284_m_axi_gmem_AWSIZE),
+    .m_axi_gmem_AWBURST(grp_maxpool_layer_fu_284_m_axi_gmem_AWBURST),
+    .m_axi_gmem_AWLOCK(grp_maxpool_layer_fu_284_m_axi_gmem_AWLOCK),
+    .m_axi_gmem_AWCACHE(grp_maxpool_layer_fu_284_m_axi_gmem_AWCACHE),
+    .m_axi_gmem_AWPROT(grp_maxpool_layer_fu_284_m_axi_gmem_AWPROT),
+    .m_axi_gmem_AWQOS(grp_maxpool_layer_fu_284_m_axi_gmem_AWQOS),
+    .m_axi_gmem_AWREGION(grp_maxpool_layer_fu_284_m_axi_gmem_AWREGION),
+    .m_axi_gmem_AWUSER(grp_maxpool_layer_fu_284_m_axi_gmem_AWUSER),
+    .m_axi_gmem_WVALID(grp_maxpool_layer_fu_284_m_axi_gmem_WVALID),
     .m_axi_gmem_WREADY(gmem_WREADY),
-    .m_axi_gmem_WDATA(grp_maxpool2_layer_fu_240_m_axi_gmem_WDATA),
-    .m_axi_gmem_WSTRB(grp_maxpool2_layer_fu_240_m_axi_gmem_WSTRB),
-    .m_axi_gmem_WLAST(grp_maxpool2_layer_fu_240_m_axi_gmem_WLAST),
-    .m_axi_gmem_WID(grp_maxpool2_layer_fu_240_m_axi_gmem_WID),
-    .m_axi_gmem_WUSER(grp_maxpool2_layer_fu_240_m_axi_gmem_WUSER),
-    .m_axi_gmem_ARVALID(grp_maxpool2_layer_fu_240_m_axi_gmem_ARVALID),
+    .m_axi_gmem_WDATA(grp_maxpool_layer_fu_284_m_axi_gmem_WDATA),
+    .m_axi_gmem_WSTRB(grp_maxpool_layer_fu_284_m_axi_gmem_WSTRB),
+    .m_axi_gmem_WLAST(grp_maxpool_layer_fu_284_m_axi_gmem_WLAST),
+    .m_axi_gmem_WID(grp_maxpool_layer_fu_284_m_axi_gmem_WID),
+    .m_axi_gmem_WUSER(grp_maxpool_layer_fu_284_m_axi_gmem_WUSER),
+    .m_axi_gmem_ARVALID(grp_maxpool_layer_fu_284_m_axi_gmem_ARVALID),
     .m_axi_gmem_ARREADY(gmem_ARREADY),
-    .m_axi_gmem_ARADDR(grp_maxpool2_layer_fu_240_m_axi_gmem_ARADDR),
-    .m_axi_gmem_ARID(grp_maxpool2_layer_fu_240_m_axi_gmem_ARID),
-    .m_axi_gmem_ARLEN(grp_maxpool2_layer_fu_240_m_axi_gmem_ARLEN),
-    .m_axi_gmem_ARSIZE(grp_maxpool2_layer_fu_240_m_axi_gmem_ARSIZE),
-    .m_axi_gmem_ARBURST(grp_maxpool2_layer_fu_240_m_axi_gmem_ARBURST),
-    .m_axi_gmem_ARLOCK(grp_maxpool2_layer_fu_240_m_axi_gmem_ARLOCK),
-    .m_axi_gmem_ARCACHE(grp_maxpool2_layer_fu_240_m_axi_gmem_ARCACHE),
-    .m_axi_gmem_ARPROT(grp_maxpool2_layer_fu_240_m_axi_gmem_ARPROT),
-    .m_axi_gmem_ARQOS(grp_maxpool2_layer_fu_240_m_axi_gmem_ARQOS),
-    .m_axi_gmem_ARREGION(grp_maxpool2_layer_fu_240_m_axi_gmem_ARREGION),
-    .m_axi_gmem_ARUSER(grp_maxpool2_layer_fu_240_m_axi_gmem_ARUSER),
+    .m_axi_gmem_ARADDR(grp_maxpool_layer_fu_284_m_axi_gmem_ARADDR),
+    .m_axi_gmem_ARID(grp_maxpool_layer_fu_284_m_axi_gmem_ARID),
+    .m_axi_gmem_ARLEN(grp_maxpool_layer_fu_284_m_axi_gmem_ARLEN),
+    .m_axi_gmem_ARSIZE(grp_maxpool_layer_fu_284_m_axi_gmem_ARSIZE),
+    .m_axi_gmem_ARBURST(grp_maxpool_layer_fu_284_m_axi_gmem_ARBURST),
+    .m_axi_gmem_ARLOCK(grp_maxpool_layer_fu_284_m_axi_gmem_ARLOCK),
+    .m_axi_gmem_ARCACHE(grp_maxpool_layer_fu_284_m_axi_gmem_ARCACHE),
+    .m_axi_gmem_ARPROT(grp_maxpool_layer_fu_284_m_axi_gmem_ARPROT),
+    .m_axi_gmem_ARQOS(grp_maxpool_layer_fu_284_m_axi_gmem_ARQOS),
+    .m_axi_gmem_ARREGION(grp_maxpool_layer_fu_284_m_axi_gmem_ARREGION),
+    .m_axi_gmem_ARUSER(grp_maxpool_layer_fu_284_m_axi_gmem_ARUSER),
     .m_axi_gmem_RVALID(gmem_RVALID),
-    .m_axi_gmem_RREADY(grp_maxpool2_layer_fu_240_m_axi_gmem_RREADY),
+    .m_axi_gmem_RREADY(grp_maxpool_layer_fu_284_m_axi_gmem_RREADY),
     .m_axi_gmem_RDATA(gmem_RDATA),
     .m_axi_gmem_RLAST(gmem_RLAST),
     .m_axi_gmem_RID(gmem_RID),
     .m_axi_gmem_RUSER(gmem_RUSER),
     .m_axi_gmem_RRESP(gmem_RRESP),
     .m_axi_gmem_BVALID(gmem_BVALID),
-    .m_axi_gmem_BREADY(grp_maxpool2_layer_fu_240_m_axi_gmem_BREADY),
+    .m_axi_gmem_BREADY(grp_maxpool_layer_fu_284_m_axi_gmem_BREADY),
     .m_axi_gmem_BRESP(gmem_BRESP),
     .m_axi_gmem_BID(gmem_BID),
     .m_axi_gmem_BUSER(gmem_BUSER),
-    .input_r(conv2_out_read_reg_297),
-    .output_r(pool2_out_read_reg_291)
+    .input_r(conv1_out_read_reg_385),
+    .output_r(pool1_out_read_reg_379)
 );
 
-lenet_top_conv2d_6to16_layer grp_conv2d_6to16_layer_fu_248(
+lenet_top_maxpool2_layer grp_maxpool2_layer_fu_292(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_conv2d_6to16_layer_fu_248_ap_start),
-    .ap_done(grp_conv2d_6to16_layer_fu_248_ap_done),
-    .ap_idle(grp_conv2d_6to16_layer_fu_248_ap_idle),
-    .ap_ready(grp_conv2d_6to16_layer_fu_248_ap_ready),
-    .m_axi_gmem_AWVALID(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWVALID),
+    .ap_start(grp_maxpool2_layer_fu_292_ap_start),
+    .ap_done(grp_maxpool2_layer_fu_292_ap_done),
+    .ap_idle(grp_maxpool2_layer_fu_292_ap_idle),
+    .ap_ready(grp_maxpool2_layer_fu_292_ap_ready),
+    .m_axi_gmem_AWVALID(grp_maxpool2_layer_fu_292_m_axi_gmem_AWVALID),
     .m_axi_gmem_AWREADY(gmem_AWREADY),
-    .m_axi_gmem_AWADDR(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWADDR),
-    .m_axi_gmem_AWID(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWID),
-    .m_axi_gmem_AWLEN(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWLEN),
-    .m_axi_gmem_AWSIZE(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWSIZE),
-    .m_axi_gmem_AWBURST(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWBURST),
-    .m_axi_gmem_AWLOCK(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWLOCK),
-    .m_axi_gmem_AWCACHE(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWCACHE),
-    .m_axi_gmem_AWPROT(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWPROT),
-    .m_axi_gmem_AWQOS(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWQOS),
-    .m_axi_gmem_AWREGION(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWREGION),
-    .m_axi_gmem_AWUSER(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWUSER),
-    .m_axi_gmem_WVALID(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WVALID),
+    .m_axi_gmem_AWADDR(grp_maxpool2_layer_fu_292_m_axi_gmem_AWADDR),
+    .m_axi_gmem_AWID(grp_maxpool2_layer_fu_292_m_axi_gmem_AWID),
+    .m_axi_gmem_AWLEN(grp_maxpool2_layer_fu_292_m_axi_gmem_AWLEN),
+    .m_axi_gmem_AWSIZE(grp_maxpool2_layer_fu_292_m_axi_gmem_AWSIZE),
+    .m_axi_gmem_AWBURST(grp_maxpool2_layer_fu_292_m_axi_gmem_AWBURST),
+    .m_axi_gmem_AWLOCK(grp_maxpool2_layer_fu_292_m_axi_gmem_AWLOCK),
+    .m_axi_gmem_AWCACHE(grp_maxpool2_layer_fu_292_m_axi_gmem_AWCACHE),
+    .m_axi_gmem_AWPROT(grp_maxpool2_layer_fu_292_m_axi_gmem_AWPROT),
+    .m_axi_gmem_AWQOS(grp_maxpool2_layer_fu_292_m_axi_gmem_AWQOS),
+    .m_axi_gmem_AWREGION(grp_maxpool2_layer_fu_292_m_axi_gmem_AWREGION),
+    .m_axi_gmem_AWUSER(grp_maxpool2_layer_fu_292_m_axi_gmem_AWUSER),
+    .m_axi_gmem_WVALID(grp_maxpool2_layer_fu_292_m_axi_gmem_WVALID),
     .m_axi_gmem_WREADY(gmem_WREADY),
-    .m_axi_gmem_WDATA(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WDATA),
-    .m_axi_gmem_WSTRB(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WSTRB),
-    .m_axi_gmem_WLAST(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WLAST),
-    .m_axi_gmem_WID(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WID),
-    .m_axi_gmem_WUSER(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WUSER),
-    .m_axi_gmem_ARVALID(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARVALID),
+    .m_axi_gmem_WDATA(grp_maxpool2_layer_fu_292_m_axi_gmem_WDATA),
+    .m_axi_gmem_WSTRB(grp_maxpool2_layer_fu_292_m_axi_gmem_WSTRB),
+    .m_axi_gmem_WLAST(grp_maxpool2_layer_fu_292_m_axi_gmem_WLAST),
+    .m_axi_gmem_WID(grp_maxpool2_layer_fu_292_m_axi_gmem_WID),
+    .m_axi_gmem_WUSER(grp_maxpool2_layer_fu_292_m_axi_gmem_WUSER),
+    .m_axi_gmem_ARVALID(grp_maxpool2_layer_fu_292_m_axi_gmem_ARVALID),
     .m_axi_gmem_ARREADY(gmem_ARREADY),
-    .m_axi_gmem_ARADDR(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARADDR),
-    .m_axi_gmem_ARID(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARID),
-    .m_axi_gmem_ARLEN(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARLEN),
-    .m_axi_gmem_ARSIZE(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARSIZE),
-    .m_axi_gmem_ARBURST(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARBURST),
-    .m_axi_gmem_ARLOCK(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARLOCK),
-    .m_axi_gmem_ARCACHE(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARCACHE),
-    .m_axi_gmem_ARPROT(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARPROT),
-    .m_axi_gmem_ARQOS(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARQOS),
-    .m_axi_gmem_ARREGION(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARREGION),
-    .m_axi_gmem_ARUSER(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARUSER),
+    .m_axi_gmem_ARADDR(grp_maxpool2_layer_fu_292_m_axi_gmem_ARADDR),
+    .m_axi_gmem_ARID(grp_maxpool2_layer_fu_292_m_axi_gmem_ARID),
+    .m_axi_gmem_ARLEN(grp_maxpool2_layer_fu_292_m_axi_gmem_ARLEN),
+    .m_axi_gmem_ARSIZE(grp_maxpool2_layer_fu_292_m_axi_gmem_ARSIZE),
+    .m_axi_gmem_ARBURST(grp_maxpool2_layer_fu_292_m_axi_gmem_ARBURST),
+    .m_axi_gmem_ARLOCK(grp_maxpool2_layer_fu_292_m_axi_gmem_ARLOCK),
+    .m_axi_gmem_ARCACHE(grp_maxpool2_layer_fu_292_m_axi_gmem_ARCACHE),
+    .m_axi_gmem_ARPROT(grp_maxpool2_layer_fu_292_m_axi_gmem_ARPROT),
+    .m_axi_gmem_ARQOS(grp_maxpool2_layer_fu_292_m_axi_gmem_ARQOS),
+    .m_axi_gmem_ARREGION(grp_maxpool2_layer_fu_292_m_axi_gmem_ARREGION),
+    .m_axi_gmem_ARUSER(grp_maxpool2_layer_fu_292_m_axi_gmem_ARUSER),
     .m_axi_gmem_RVALID(gmem_RVALID),
-    .m_axi_gmem_RREADY(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_RREADY),
+    .m_axi_gmem_RREADY(grp_maxpool2_layer_fu_292_m_axi_gmem_RREADY),
     .m_axi_gmem_RDATA(gmem_RDATA),
     .m_axi_gmem_RLAST(gmem_RLAST),
     .m_axi_gmem_RID(gmem_RID),
     .m_axi_gmem_RUSER(gmem_RUSER),
     .m_axi_gmem_RRESP(gmem_RRESP),
     .m_axi_gmem_BVALID(gmem_BVALID),
-    .m_axi_gmem_BREADY(grp_conv2d_6to16_layer_fu_248_m_axi_gmem_BREADY),
+    .m_axi_gmem_BREADY(grp_maxpool2_layer_fu_292_m_axi_gmem_BREADY),
     .m_axi_gmem_BRESP(gmem_BRESP),
     .m_axi_gmem_BID(gmem_BID),
     .m_axi_gmem_BUSER(gmem_BUSER),
-    .input_r(pool1_out_read_reg_303),
-    .output_r(conv2_out_read_reg_297)
+    .input_r(conv2_out_read_reg_373),
+    .output_r(pool2_out_read_reg_367)
 );
 
-lenet_top_fc_layer_400_120_s grp_fc_layer_400_120_s_fu_260(
+lenet_top_conv2d_6to16_layer grp_conv2d_6to16_layer_fu_300(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_fc_layer_400_120_s_fu_260_ap_start),
-    .ap_done(grp_fc_layer_400_120_s_fu_260_ap_done),
-    .ap_idle(grp_fc_layer_400_120_s_fu_260_ap_idle),
-    .ap_ready(grp_fc_layer_400_120_s_fu_260_ap_ready),
-    .m_axi_gmem_AWVALID(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWVALID),
+    .ap_start(grp_conv2d_6to16_layer_fu_300_ap_start),
+    .ap_done(grp_conv2d_6to16_layer_fu_300_ap_done),
+    .ap_idle(grp_conv2d_6to16_layer_fu_300_ap_idle),
+    .ap_ready(grp_conv2d_6to16_layer_fu_300_ap_ready),
+    .m_axi_gmem_AWVALID(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWVALID),
     .m_axi_gmem_AWREADY(gmem_AWREADY),
-    .m_axi_gmem_AWADDR(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWADDR),
-    .m_axi_gmem_AWID(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWID),
-    .m_axi_gmem_AWLEN(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWLEN),
-    .m_axi_gmem_AWSIZE(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWSIZE),
-    .m_axi_gmem_AWBURST(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWBURST),
-    .m_axi_gmem_AWLOCK(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWLOCK),
-    .m_axi_gmem_AWCACHE(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWCACHE),
-    .m_axi_gmem_AWPROT(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWPROT),
-    .m_axi_gmem_AWQOS(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWQOS),
-    .m_axi_gmem_AWREGION(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWREGION),
-    .m_axi_gmem_AWUSER(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWUSER),
-    .m_axi_gmem_WVALID(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WVALID),
+    .m_axi_gmem_AWADDR(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWADDR),
+    .m_axi_gmem_AWID(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWID),
+    .m_axi_gmem_AWLEN(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWLEN),
+    .m_axi_gmem_AWSIZE(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWSIZE),
+    .m_axi_gmem_AWBURST(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWBURST),
+    .m_axi_gmem_AWLOCK(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWLOCK),
+    .m_axi_gmem_AWCACHE(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWCACHE),
+    .m_axi_gmem_AWPROT(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWPROT),
+    .m_axi_gmem_AWQOS(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWQOS),
+    .m_axi_gmem_AWREGION(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWREGION),
+    .m_axi_gmem_AWUSER(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWUSER),
+    .m_axi_gmem_WVALID(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WVALID),
     .m_axi_gmem_WREADY(gmem_WREADY),
-    .m_axi_gmem_WDATA(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WDATA),
-    .m_axi_gmem_WSTRB(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WSTRB),
-    .m_axi_gmem_WLAST(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WLAST),
-    .m_axi_gmem_WID(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WID),
-    .m_axi_gmem_WUSER(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WUSER),
-    .m_axi_gmem_ARVALID(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARVALID),
+    .m_axi_gmem_WDATA(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WDATA),
+    .m_axi_gmem_WSTRB(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WSTRB),
+    .m_axi_gmem_WLAST(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WLAST),
+    .m_axi_gmem_WID(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WID),
+    .m_axi_gmem_WUSER(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WUSER),
+    .m_axi_gmem_ARVALID(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARVALID),
     .m_axi_gmem_ARREADY(gmem_ARREADY),
-    .m_axi_gmem_ARADDR(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARADDR),
-    .m_axi_gmem_ARID(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARID),
-    .m_axi_gmem_ARLEN(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARLEN),
-    .m_axi_gmem_ARSIZE(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARSIZE),
-    .m_axi_gmem_ARBURST(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARBURST),
-    .m_axi_gmem_ARLOCK(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARLOCK),
-    .m_axi_gmem_ARCACHE(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARCACHE),
-    .m_axi_gmem_ARPROT(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARPROT),
-    .m_axi_gmem_ARQOS(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARQOS),
-    .m_axi_gmem_ARREGION(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARREGION),
-    .m_axi_gmem_ARUSER(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARUSER),
+    .m_axi_gmem_ARADDR(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARADDR),
+    .m_axi_gmem_ARID(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARID),
+    .m_axi_gmem_ARLEN(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARLEN),
+    .m_axi_gmem_ARSIZE(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARSIZE),
+    .m_axi_gmem_ARBURST(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARBURST),
+    .m_axi_gmem_ARLOCK(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARLOCK),
+    .m_axi_gmem_ARCACHE(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARCACHE),
+    .m_axi_gmem_ARPROT(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARPROT),
+    .m_axi_gmem_ARQOS(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARQOS),
+    .m_axi_gmem_ARREGION(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARREGION),
+    .m_axi_gmem_ARUSER(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARUSER),
     .m_axi_gmem_RVALID(gmem_RVALID),
-    .m_axi_gmem_RREADY(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_RREADY),
+    .m_axi_gmem_RREADY(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_RREADY),
     .m_axi_gmem_RDATA(gmem_RDATA),
     .m_axi_gmem_RLAST(gmem_RLAST),
     .m_axi_gmem_RID(gmem_RID),
     .m_axi_gmem_RUSER(gmem_RUSER),
     .m_axi_gmem_RRESP(gmem_RRESP),
     .m_axi_gmem_BVALID(gmem_BVALID),
-    .m_axi_gmem_BREADY(grp_fc_layer_400_120_s_fu_260_m_axi_gmem_BREADY),
+    .m_axi_gmem_BREADY(grp_conv2d_6to16_layer_fu_300_m_axi_gmem_BREADY),
     .m_axi_gmem_BRESP(gmem_BRESP),
     .m_axi_gmem_BID(gmem_BID),
     .m_axi_gmem_BUSER(gmem_BUSER),
-    .input_r(flat_out_read_reg_285),
-    .output_r(fc1_out_read_reg_280)
+    .input_r(pool1_out_read_reg_379),
+    .output_r(conv2_out_read_reg_373)
 );
 
-lenet_top_flatten_layer grp_flatten_layer_fu_272(
+lenet_top_fc_layer_120_84_s grp_fc_layer_120_84_s_fu_312(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_flatten_layer_fu_272_ap_start),
-    .ap_done(grp_flatten_layer_fu_272_ap_done),
-    .ap_idle(grp_flatten_layer_fu_272_ap_idle),
-    .ap_ready(grp_flatten_layer_fu_272_ap_ready),
-    .m_axi_gmem_AWVALID(grp_flatten_layer_fu_272_m_axi_gmem_AWVALID),
+    .ap_start(grp_fc_layer_120_84_s_fu_312_ap_start),
+    .ap_done(grp_fc_layer_120_84_s_fu_312_ap_done),
+    .ap_idle(grp_fc_layer_120_84_s_fu_312_ap_idle),
+    .ap_ready(grp_fc_layer_120_84_s_fu_312_ap_ready),
+    .m_axi_gmem_AWVALID(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWVALID),
     .m_axi_gmem_AWREADY(gmem_AWREADY),
-    .m_axi_gmem_AWADDR(grp_flatten_layer_fu_272_m_axi_gmem_AWADDR),
-    .m_axi_gmem_AWID(grp_flatten_layer_fu_272_m_axi_gmem_AWID),
-    .m_axi_gmem_AWLEN(grp_flatten_layer_fu_272_m_axi_gmem_AWLEN),
-    .m_axi_gmem_AWSIZE(grp_flatten_layer_fu_272_m_axi_gmem_AWSIZE),
-    .m_axi_gmem_AWBURST(grp_flatten_layer_fu_272_m_axi_gmem_AWBURST),
-    .m_axi_gmem_AWLOCK(grp_flatten_layer_fu_272_m_axi_gmem_AWLOCK),
-    .m_axi_gmem_AWCACHE(grp_flatten_layer_fu_272_m_axi_gmem_AWCACHE),
-    .m_axi_gmem_AWPROT(grp_flatten_layer_fu_272_m_axi_gmem_AWPROT),
-    .m_axi_gmem_AWQOS(grp_flatten_layer_fu_272_m_axi_gmem_AWQOS),
-    .m_axi_gmem_AWREGION(grp_flatten_layer_fu_272_m_axi_gmem_AWREGION),
-    .m_axi_gmem_AWUSER(grp_flatten_layer_fu_272_m_axi_gmem_AWUSER),
-    .m_axi_gmem_WVALID(grp_flatten_layer_fu_272_m_axi_gmem_WVALID),
+    .m_axi_gmem_AWADDR(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWADDR),
+    .m_axi_gmem_AWID(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWID),
+    .m_axi_gmem_AWLEN(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWLEN),
+    .m_axi_gmem_AWSIZE(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWSIZE),
+    .m_axi_gmem_AWBURST(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWBURST),
+    .m_axi_gmem_AWLOCK(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWLOCK),
+    .m_axi_gmem_AWCACHE(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWCACHE),
+    .m_axi_gmem_AWPROT(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWPROT),
+    .m_axi_gmem_AWQOS(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWQOS),
+    .m_axi_gmem_AWREGION(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWREGION),
+    .m_axi_gmem_AWUSER(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWUSER),
+    .m_axi_gmem_WVALID(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WVALID),
     .m_axi_gmem_WREADY(gmem_WREADY),
-    .m_axi_gmem_WDATA(grp_flatten_layer_fu_272_m_axi_gmem_WDATA),
-    .m_axi_gmem_WSTRB(grp_flatten_layer_fu_272_m_axi_gmem_WSTRB),
-    .m_axi_gmem_WLAST(grp_flatten_layer_fu_272_m_axi_gmem_WLAST),
-    .m_axi_gmem_WID(grp_flatten_layer_fu_272_m_axi_gmem_WID),
-    .m_axi_gmem_WUSER(grp_flatten_layer_fu_272_m_axi_gmem_WUSER),
-    .m_axi_gmem_ARVALID(grp_flatten_layer_fu_272_m_axi_gmem_ARVALID),
+    .m_axi_gmem_WDATA(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WDATA),
+    .m_axi_gmem_WSTRB(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WSTRB),
+    .m_axi_gmem_WLAST(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WLAST),
+    .m_axi_gmem_WID(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WID),
+    .m_axi_gmem_WUSER(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WUSER),
+    .m_axi_gmem_ARVALID(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARVALID),
     .m_axi_gmem_ARREADY(gmem_ARREADY),
-    .m_axi_gmem_ARADDR(grp_flatten_layer_fu_272_m_axi_gmem_ARADDR),
-    .m_axi_gmem_ARID(grp_flatten_layer_fu_272_m_axi_gmem_ARID),
-    .m_axi_gmem_ARLEN(grp_flatten_layer_fu_272_m_axi_gmem_ARLEN),
-    .m_axi_gmem_ARSIZE(grp_flatten_layer_fu_272_m_axi_gmem_ARSIZE),
-    .m_axi_gmem_ARBURST(grp_flatten_layer_fu_272_m_axi_gmem_ARBURST),
-    .m_axi_gmem_ARLOCK(grp_flatten_layer_fu_272_m_axi_gmem_ARLOCK),
-    .m_axi_gmem_ARCACHE(grp_flatten_layer_fu_272_m_axi_gmem_ARCACHE),
-    .m_axi_gmem_ARPROT(grp_flatten_layer_fu_272_m_axi_gmem_ARPROT),
-    .m_axi_gmem_ARQOS(grp_flatten_layer_fu_272_m_axi_gmem_ARQOS),
-    .m_axi_gmem_ARREGION(grp_flatten_layer_fu_272_m_axi_gmem_ARREGION),
-    .m_axi_gmem_ARUSER(grp_flatten_layer_fu_272_m_axi_gmem_ARUSER),
+    .m_axi_gmem_ARADDR(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARADDR),
+    .m_axi_gmem_ARID(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARID),
+    .m_axi_gmem_ARLEN(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARLEN),
+    .m_axi_gmem_ARSIZE(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARSIZE),
+    .m_axi_gmem_ARBURST(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARBURST),
+    .m_axi_gmem_ARLOCK(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARLOCK),
+    .m_axi_gmem_ARCACHE(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARCACHE),
+    .m_axi_gmem_ARPROT(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARPROT),
+    .m_axi_gmem_ARQOS(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARQOS),
+    .m_axi_gmem_ARREGION(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARREGION),
+    .m_axi_gmem_ARUSER(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARUSER),
     .m_axi_gmem_RVALID(gmem_RVALID),
-    .m_axi_gmem_RREADY(grp_flatten_layer_fu_272_m_axi_gmem_RREADY),
+    .m_axi_gmem_RREADY(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_RREADY),
     .m_axi_gmem_RDATA(gmem_RDATA),
     .m_axi_gmem_RLAST(gmem_RLAST),
     .m_axi_gmem_RID(gmem_RID),
     .m_axi_gmem_RUSER(gmem_RUSER),
     .m_axi_gmem_RRESP(gmem_RRESP),
     .m_axi_gmem_BVALID(gmem_BVALID),
-    .m_axi_gmem_BREADY(grp_flatten_layer_fu_272_m_axi_gmem_BREADY),
+    .m_axi_gmem_BREADY(grp_fc_layer_120_84_s_fu_312_m_axi_gmem_BREADY),
     .m_axi_gmem_BRESP(gmem_BRESP),
     .m_axi_gmem_BID(gmem_BID),
     .m_axi_gmem_BUSER(gmem_BUSER),
-    .input_r(pool2_out_read_reg_291),
-    .output_r(flat_out_read_reg_285)
+    .input_r(fc1_out_read_reg_355),
+    .output_r(fc2_out_read_reg_349)
+);
+
+lenet_top_fc_layer_400_120_s grp_fc_layer_400_120_s_fu_324(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_fc_layer_400_120_s_fu_324_ap_start),
+    .ap_done(grp_fc_layer_400_120_s_fu_324_ap_done),
+    .ap_idle(grp_fc_layer_400_120_s_fu_324_ap_idle),
+    .ap_ready(grp_fc_layer_400_120_s_fu_324_ap_ready),
+    .m_axi_gmem_AWVALID(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWVALID),
+    .m_axi_gmem_AWREADY(gmem_AWREADY),
+    .m_axi_gmem_AWADDR(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWADDR),
+    .m_axi_gmem_AWID(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWID),
+    .m_axi_gmem_AWLEN(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWLEN),
+    .m_axi_gmem_AWSIZE(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWSIZE),
+    .m_axi_gmem_AWBURST(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWBURST),
+    .m_axi_gmem_AWLOCK(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWLOCK),
+    .m_axi_gmem_AWCACHE(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWCACHE),
+    .m_axi_gmem_AWPROT(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWPROT),
+    .m_axi_gmem_AWQOS(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWQOS),
+    .m_axi_gmem_AWREGION(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWREGION),
+    .m_axi_gmem_AWUSER(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWUSER),
+    .m_axi_gmem_WVALID(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WVALID),
+    .m_axi_gmem_WREADY(gmem_WREADY),
+    .m_axi_gmem_WDATA(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WDATA),
+    .m_axi_gmem_WSTRB(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WSTRB),
+    .m_axi_gmem_WLAST(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WLAST),
+    .m_axi_gmem_WID(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WID),
+    .m_axi_gmem_WUSER(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WUSER),
+    .m_axi_gmem_ARVALID(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARVALID),
+    .m_axi_gmem_ARREADY(gmem_ARREADY),
+    .m_axi_gmem_ARADDR(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARADDR),
+    .m_axi_gmem_ARID(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARID),
+    .m_axi_gmem_ARLEN(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARLEN),
+    .m_axi_gmem_ARSIZE(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARSIZE),
+    .m_axi_gmem_ARBURST(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARBURST),
+    .m_axi_gmem_ARLOCK(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARLOCK),
+    .m_axi_gmem_ARCACHE(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARCACHE),
+    .m_axi_gmem_ARPROT(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARPROT),
+    .m_axi_gmem_ARQOS(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARQOS),
+    .m_axi_gmem_ARREGION(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARREGION),
+    .m_axi_gmem_ARUSER(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARUSER),
+    .m_axi_gmem_RVALID(gmem_RVALID),
+    .m_axi_gmem_RREADY(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_RREADY),
+    .m_axi_gmem_RDATA(gmem_RDATA),
+    .m_axi_gmem_RLAST(gmem_RLAST),
+    .m_axi_gmem_RID(gmem_RID),
+    .m_axi_gmem_RUSER(gmem_RUSER),
+    .m_axi_gmem_RRESP(gmem_RRESP),
+    .m_axi_gmem_BVALID(gmem_BVALID),
+    .m_axi_gmem_BREADY(grp_fc_layer_400_120_s_fu_324_m_axi_gmem_BREADY),
+    .m_axi_gmem_BRESP(gmem_BRESP),
+    .m_axi_gmem_BID(gmem_BID),
+    .m_axi_gmem_BUSER(gmem_BUSER),
+    .input_r(flat_out_read_reg_361),
+    .output_r(fc1_out_read_reg_355)
+);
+
+lenet_top_flatten_layer grp_flatten_layer_fu_336(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_flatten_layer_fu_336_ap_start),
+    .ap_done(grp_flatten_layer_fu_336_ap_done),
+    .ap_idle(grp_flatten_layer_fu_336_ap_idle),
+    .ap_ready(grp_flatten_layer_fu_336_ap_ready),
+    .m_axi_gmem_AWVALID(grp_flatten_layer_fu_336_m_axi_gmem_AWVALID),
+    .m_axi_gmem_AWREADY(gmem_AWREADY),
+    .m_axi_gmem_AWADDR(grp_flatten_layer_fu_336_m_axi_gmem_AWADDR),
+    .m_axi_gmem_AWID(grp_flatten_layer_fu_336_m_axi_gmem_AWID),
+    .m_axi_gmem_AWLEN(grp_flatten_layer_fu_336_m_axi_gmem_AWLEN),
+    .m_axi_gmem_AWSIZE(grp_flatten_layer_fu_336_m_axi_gmem_AWSIZE),
+    .m_axi_gmem_AWBURST(grp_flatten_layer_fu_336_m_axi_gmem_AWBURST),
+    .m_axi_gmem_AWLOCK(grp_flatten_layer_fu_336_m_axi_gmem_AWLOCK),
+    .m_axi_gmem_AWCACHE(grp_flatten_layer_fu_336_m_axi_gmem_AWCACHE),
+    .m_axi_gmem_AWPROT(grp_flatten_layer_fu_336_m_axi_gmem_AWPROT),
+    .m_axi_gmem_AWQOS(grp_flatten_layer_fu_336_m_axi_gmem_AWQOS),
+    .m_axi_gmem_AWREGION(grp_flatten_layer_fu_336_m_axi_gmem_AWREGION),
+    .m_axi_gmem_AWUSER(grp_flatten_layer_fu_336_m_axi_gmem_AWUSER),
+    .m_axi_gmem_WVALID(grp_flatten_layer_fu_336_m_axi_gmem_WVALID),
+    .m_axi_gmem_WREADY(gmem_WREADY),
+    .m_axi_gmem_WDATA(grp_flatten_layer_fu_336_m_axi_gmem_WDATA),
+    .m_axi_gmem_WSTRB(grp_flatten_layer_fu_336_m_axi_gmem_WSTRB),
+    .m_axi_gmem_WLAST(grp_flatten_layer_fu_336_m_axi_gmem_WLAST),
+    .m_axi_gmem_WID(grp_flatten_layer_fu_336_m_axi_gmem_WID),
+    .m_axi_gmem_WUSER(grp_flatten_layer_fu_336_m_axi_gmem_WUSER),
+    .m_axi_gmem_ARVALID(grp_flatten_layer_fu_336_m_axi_gmem_ARVALID),
+    .m_axi_gmem_ARREADY(gmem_ARREADY),
+    .m_axi_gmem_ARADDR(grp_flatten_layer_fu_336_m_axi_gmem_ARADDR),
+    .m_axi_gmem_ARID(grp_flatten_layer_fu_336_m_axi_gmem_ARID),
+    .m_axi_gmem_ARLEN(grp_flatten_layer_fu_336_m_axi_gmem_ARLEN),
+    .m_axi_gmem_ARSIZE(grp_flatten_layer_fu_336_m_axi_gmem_ARSIZE),
+    .m_axi_gmem_ARBURST(grp_flatten_layer_fu_336_m_axi_gmem_ARBURST),
+    .m_axi_gmem_ARLOCK(grp_flatten_layer_fu_336_m_axi_gmem_ARLOCK),
+    .m_axi_gmem_ARCACHE(grp_flatten_layer_fu_336_m_axi_gmem_ARCACHE),
+    .m_axi_gmem_ARPROT(grp_flatten_layer_fu_336_m_axi_gmem_ARPROT),
+    .m_axi_gmem_ARQOS(grp_flatten_layer_fu_336_m_axi_gmem_ARQOS),
+    .m_axi_gmem_ARREGION(grp_flatten_layer_fu_336_m_axi_gmem_ARREGION),
+    .m_axi_gmem_ARUSER(grp_flatten_layer_fu_336_m_axi_gmem_ARUSER),
+    .m_axi_gmem_RVALID(gmem_RVALID),
+    .m_axi_gmem_RREADY(grp_flatten_layer_fu_336_m_axi_gmem_RREADY),
+    .m_axi_gmem_RDATA(gmem_RDATA),
+    .m_axi_gmem_RLAST(gmem_RLAST),
+    .m_axi_gmem_RID(gmem_RID),
+    .m_axi_gmem_RUSER(gmem_RUSER),
+    .m_axi_gmem_RRESP(gmem_RRESP),
+    .m_axi_gmem_BVALID(gmem_BVALID),
+    .m_axi_gmem_BREADY(grp_flatten_layer_fu_336_m_axi_gmem_BREADY),
+    .m_axi_gmem_BRESP(gmem_BRESP),
+    .m_axi_gmem_BID(gmem_BID),
+    .m_axi_gmem_BUSER(gmem_BUSER),
+    .input_r(pool2_out_read_reg_367),
+    .output_r(flat_out_read_reg_361)
 );
 
 always @ (posedge ap_clk) begin
@@ -988,90 +1190,116 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_conv2d_6to16_layer_fu_248_ap_start_reg <= 1'b0;
+        grp_conv2d_6to16_layer_fu_300_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state5)) begin
-            grp_conv2d_6to16_layer_fu_248_ap_start_reg <= 1'b1;
-        end else if ((grp_conv2d_6to16_layer_fu_248_ap_ready == 1'b1)) begin
-            grp_conv2d_6to16_layer_fu_248_ap_start_reg <= 1'b0;
+            grp_conv2d_6to16_layer_fu_300_ap_start_reg <= 1'b1;
+        end else if ((grp_conv2d_6to16_layer_fu_300_ap_ready == 1'b1)) begin
+            grp_conv2d_6to16_layer_fu_300_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_conv2d_layer_fu_170_ap_start_reg <= 1'b0;
+        grp_conv2d_layer_fu_222_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_conv2d_layer_fu_170_ap_start_reg <= 1'b1;
-        end else if ((grp_conv2d_layer_fu_170_ap_ready == 1'b1)) begin
-            grp_conv2d_layer_fu_170_ap_start_reg <= 1'b0;
+        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            grp_conv2d_layer_fu_222_ap_start_reg <= 1'b1;
+        end else if ((grp_conv2d_layer_fu_222_ap_ready == 1'b1)) begin
+            grp_conv2d_layer_fu_222_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_fc_layer_400_120_s_fu_260_ap_start_reg <= 1'b0;
+        grp_fc3_layer_fu_206_ap_start_reg <= 1'b0;
+    end else begin
+        if ((1'b1 == ap_CS_fsm_state15)) begin
+            grp_fc3_layer_fu_206_ap_start_reg <= 1'b1;
+        end else if ((grp_fc3_layer_fu_206_ap_ready == 1'b1)) begin
+            grp_fc3_layer_fu_206_ap_start_reg <= 1'b0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_fc_layer_120_84_s_fu_312_ap_start_reg <= 1'b0;
+    end else begin
+        if ((1'b1 == ap_CS_fsm_state13)) begin
+            grp_fc_layer_120_84_s_fu_312_ap_start_reg <= 1'b1;
+        end else if ((grp_fc_layer_120_84_s_fu_312_ap_ready == 1'b1)) begin
+            grp_fc_layer_120_84_s_fu_312_ap_start_reg <= 1'b0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_fc_layer_400_120_s_fu_324_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state11)) begin
-            grp_fc_layer_400_120_s_fu_260_ap_start_reg <= 1'b1;
-        end else if ((grp_fc_layer_400_120_s_fu_260_ap_ready == 1'b1)) begin
-            grp_fc_layer_400_120_s_fu_260_ap_start_reg <= 1'b0;
+            grp_fc_layer_400_120_s_fu_324_ap_start_reg <= 1'b1;
+        end else if ((grp_fc_layer_400_120_s_fu_324_ap_ready == 1'b1)) begin
+            grp_fc_layer_400_120_s_fu_324_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_flatten_layer_fu_272_ap_start_reg <= 1'b0;
+        grp_flatten_layer_fu_336_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state9)) begin
-            grp_flatten_layer_fu_272_ap_start_reg <= 1'b1;
-        end else if ((grp_flatten_layer_fu_272_ap_ready == 1'b1)) begin
-            grp_flatten_layer_fu_272_ap_start_reg <= 1'b0;
+            grp_flatten_layer_fu_336_ap_start_reg <= 1'b1;
+        end else if ((grp_flatten_layer_fu_336_ap_ready == 1'b1)) begin
+            grp_flatten_layer_fu_336_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_maxpool2_layer_fu_240_ap_start_reg <= 1'b0;
+        grp_maxpool2_layer_fu_292_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state7)) begin
-            grp_maxpool2_layer_fu_240_ap_start_reg <= 1'b1;
-        end else if ((grp_maxpool2_layer_fu_240_ap_ready == 1'b1)) begin
-            grp_maxpool2_layer_fu_240_ap_start_reg <= 1'b0;
+            grp_maxpool2_layer_fu_292_ap_start_reg <= 1'b1;
+        end else if ((grp_maxpool2_layer_fu_292_ap_ready == 1'b1)) begin
+            grp_maxpool2_layer_fu_292_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_maxpool_layer_fu_232_ap_start_reg <= 1'b0;
+        grp_maxpool_layer_fu_284_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state3)) begin
-            grp_maxpool_layer_fu_232_ap_start_reg <= 1'b1;
-        end else if ((grp_maxpool_layer_fu_232_ap_ready == 1'b1)) begin
-            grp_maxpool_layer_fu_232_ap_start_reg <= 1'b0;
+            grp_maxpool_layer_fu_284_ap_start_reg <= 1'b1;
+        end else if ((grp_maxpool_layer_fu_284_ap_ready == 1'b1)) begin
+            grp_maxpool_layer_fu_284_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-        conv1_out_read_reg_309 <= conv1_out;
-        conv2_out_read_reg_297 <= conv2_out;
-        fc1_out_read_reg_280 <= fc1_out;
-        flat_out_read_reg_285 <= flat_out;
-        image_read_reg_315 <= image_r;
-        pool1_out_read_reg_303 <= pool1_out;
-        pool2_out_read_reg_291 <= pool2_out;
+    if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        conv1_out_read_reg_385 <= conv1_out;
+        conv2_out_read_reg_373 <= conv2_out;
+        fc1_out_read_reg_355 <= fc1_out;
+        fc2_out_read_reg_349 <= fc2_out;
+        flat_out_read_reg_361 <= flat_out;
+        image_read_reg_391 <= image_r;
+        pool1_out_read_reg_379 <= pool1_out;
+        pool2_out_read_reg_367 <= pool2_out;
+        prediction_read_reg_344 <= prediction;
     end
 end
 
 always @ (*) begin
-    if (((grp_fc_layer_400_120_s_fu_260_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state12))) begin
+    if (((grp_fc3_layer_fu_206_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state16))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -1079,7 +1307,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0))) begin
+    if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -1087,7 +1315,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((grp_fc_layer_400_120_s_fu_260_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state12))) begin
+    if (((grp_fc3_layer_fu_206_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state16))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -1096,17 +1324,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_ARADDR = grp_flatten_layer_fu_272_m_axi_gmem_ARADDR;
+        gmem_ARADDR = grp_flatten_layer_fu_336_m_axi_gmem_ARADDR;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_ARADDR = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARADDR;
+        gmem_ARADDR = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARADDR;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_ARADDR = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARADDR;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_ARADDR = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARADDR;
+        gmem_ARADDR = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARADDR;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_ARADDR = grp_maxpool2_layer_fu_240_m_axi_gmem_ARADDR;
+        gmem_ARADDR = grp_maxpool2_layer_fu_292_m_axi_gmem_ARADDR;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_ARADDR = grp_maxpool_layer_fu_232_m_axi_gmem_ARADDR;
+        gmem_ARADDR = grp_maxpool_layer_fu_284_m_axi_gmem_ARADDR;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_ARADDR = grp_conv2d_layer_fu_170_m_axi_gmem_ARADDR;
+        gmem_ARADDR = grp_conv2d_layer_fu_222_m_axi_gmem_ARADDR;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_ARADDR = grp_fc3_layer_fu_206_m_axi_gmem_ARADDR;
     end else begin
         gmem_ARADDR = 'bx;
     end
@@ -1114,17 +1346,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_ARBURST = grp_flatten_layer_fu_272_m_axi_gmem_ARBURST;
+        gmem_ARBURST = grp_flatten_layer_fu_336_m_axi_gmem_ARBURST;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_ARBURST = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARBURST;
+        gmem_ARBURST = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARBURST;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_ARBURST = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARBURST;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_ARBURST = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARBURST;
+        gmem_ARBURST = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARBURST;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_ARBURST = grp_maxpool2_layer_fu_240_m_axi_gmem_ARBURST;
+        gmem_ARBURST = grp_maxpool2_layer_fu_292_m_axi_gmem_ARBURST;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_ARBURST = grp_maxpool_layer_fu_232_m_axi_gmem_ARBURST;
+        gmem_ARBURST = grp_maxpool_layer_fu_284_m_axi_gmem_ARBURST;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_ARBURST = grp_conv2d_layer_fu_170_m_axi_gmem_ARBURST;
+        gmem_ARBURST = grp_conv2d_layer_fu_222_m_axi_gmem_ARBURST;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_ARBURST = grp_fc3_layer_fu_206_m_axi_gmem_ARBURST;
     end else begin
         gmem_ARBURST = 'bx;
     end
@@ -1132,17 +1368,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_ARCACHE = grp_flatten_layer_fu_272_m_axi_gmem_ARCACHE;
+        gmem_ARCACHE = grp_flatten_layer_fu_336_m_axi_gmem_ARCACHE;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_ARCACHE = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARCACHE;
+        gmem_ARCACHE = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARCACHE;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_ARCACHE = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARCACHE;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_ARCACHE = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARCACHE;
+        gmem_ARCACHE = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARCACHE;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_ARCACHE = grp_maxpool2_layer_fu_240_m_axi_gmem_ARCACHE;
+        gmem_ARCACHE = grp_maxpool2_layer_fu_292_m_axi_gmem_ARCACHE;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_ARCACHE = grp_maxpool_layer_fu_232_m_axi_gmem_ARCACHE;
+        gmem_ARCACHE = grp_maxpool_layer_fu_284_m_axi_gmem_ARCACHE;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_ARCACHE = grp_conv2d_layer_fu_170_m_axi_gmem_ARCACHE;
+        gmem_ARCACHE = grp_conv2d_layer_fu_222_m_axi_gmem_ARCACHE;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_ARCACHE = grp_fc3_layer_fu_206_m_axi_gmem_ARCACHE;
     end else begin
         gmem_ARCACHE = 'bx;
     end
@@ -1150,17 +1390,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_ARID = grp_flatten_layer_fu_272_m_axi_gmem_ARID;
+        gmem_ARID = grp_flatten_layer_fu_336_m_axi_gmem_ARID;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_ARID = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARID;
+        gmem_ARID = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARID;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_ARID = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARID;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_ARID = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARID;
+        gmem_ARID = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARID;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_ARID = grp_maxpool2_layer_fu_240_m_axi_gmem_ARID;
+        gmem_ARID = grp_maxpool2_layer_fu_292_m_axi_gmem_ARID;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_ARID = grp_maxpool_layer_fu_232_m_axi_gmem_ARID;
+        gmem_ARID = grp_maxpool_layer_fu_284_m_axi_gmem_ARID;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_ARID = grp_conv2d_layer_fu_170_m_axi_gmem_ARID;
+        gmem_ARID = grp_conv2d_layer_fu_222_m_axi_gmem_ARID;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_ARID = grp_fc3_layer_fu_206_m_axi_gmem_ARID;
     end else begin
         gmem_ARID = 'bx;
     end
@@ -1168,17 +1412,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_ARLEN = grp_flatten_layer_fu_272_m_axi_gmem_ARLEN;
+        gmem_ARLEN = grp_flatten_layer_fu_336_m_axi_gmem_ARLEN;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_ARLEN = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARLEN;
+        gmem_ARLEN = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARLEN;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_ARLEN = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARLEN;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_ARLEN = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARLEN;
+        gmem_ARLEN = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARLEN;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_ARLEN = grp_maxpool2_layer_fu_240_m_axi_gmem_ARLEN;
+        gmem_ARLEN = grp_maxpool2_layer_fu_292_m_axi_gmem_ARLEN;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_ARLEN = grp_maxpool_layer_fu_232_m_axi_gmem_ARLEN;
+        gmem_ARLEN = grp_maxpool_layer_fu_284_m_axi_gmem_ARLEN;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_ARLEN = grp_conv2d_layer_fu_170_m_axi_gmem_ARLEN;
+        gmem_ARLEN = grp_conv2d_layer_fu_222_m_axi_gmem_ARLEN;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_ARLEN = grp_fc3_layer_fu_206_m_axi_gmem_ARLEN;
     end else begin
         gmem_ARLEN = 'bx;
     end
@@ -1186,17 +1434,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_ARLOCK = grp_flatten_layer_fu_272_m_axi_gmem_ARLOCK;
+        gmem_ARLOCK = grp_flatten_layer_fu_336_m_axi_gmem_ARLOCK;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_ARLOCK = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARLOCK;
+        gmem_ARLOCK = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARLOCK;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_ARLOCK = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARLOCK;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_ARLOCK = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARLOCK;
+        gmem_ARLOCK = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARLOCK;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_ARLOCK = grp_maxpool2_layer_fu_240_m_axi_gmem_ARLOCK;
+        gmem_ARLOCK = grp_maxpool2_layer_fu_292_m_axi_gmem_ARLOCK;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_ARLOCK = grp_maxpool_layer_fu_232_m_axi_gmem_ARLOCK;
+        gmem_ARLOCK = grp_maxpool_layer_fu_284_m_axi_gmem_ARLOCK;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_ARLOCK = grp_conv2d_layer_fu_170_m_axi_gmem_ARLOCK;
+        gmem_ARLOCK = grp_conv2d_layer_fu_222_m_axi_gmem_ARLOCK;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_ARLOCK = grp_fc3_layer_fu_206_m_axi_gmem_ARLOCK;
     end else begin
         gmem_ARLOCK = 'bx;
     end
@@ -1204,17 +1456,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_ARPROT = grp_flatten_layer_fu_272_m_axi_gmem_ARPROT;
+        gmem_ARPROT = grp_flatten_layer_fu_336_m_axi_gmem_ARPROT;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_ARPROT = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARPROT;
+        gmem_ARPROT = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARPROT;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_ARPROT = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARPROT;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_ARPROT = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARPROT;
+        gmem_ARPROT = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARPROT;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_ARPROT = grp_maxpool2_layer_fu_240_m_axi_gmem_ARPROT;
+        gmem_ARPROT = grp_maxpool2_layer_fu_292_m_axi_gmem_ARPROT;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_ARPROT = grp_maxpool_layer_fu_232_m_axi_gmem_ARPROT;
+        gmem_ARPROT = grp_maxpool_layer_fu_284_m_axi_gmem_ARPROT;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_ARPROT = grp_conv2d_layer_fu_170_m_axi_gmem_ARPROT;
+        gmem_ARPROT = grp_conv2d_layer_fu_222_m_axi_gmem_ARPROT;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_ARPROT = grp_fc3_layer_fu_206_m_axi_gmem_ARPROT;
     end else begin
         gmem_ARPROT = 'bx;
     end
@@ -1222,17 +1478,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_ARQOS = grp_flatten_layer_fu_272_m_axi_gmem_ARQOS;
+        gmem_ARQOS = grp_flatten_layer_fu_336_m_axi_gmem_ARQOS;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_ARQOS = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARQOS;
+        gmem_ARQOS = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARQOS;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_ARQOS = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARQOS;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_ARQOS = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARQOS;
+        gmem_ARQOS = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARQOS;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_ARQOS = grp_maxpool2_layer_fu_240_m_axi_gmem_ARQOS;
+        gmem_ARQOS = grp_maxpool2_layer_fu_292_m_axi_gmem_ARQOS;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_ARQOS = grp_maxpool_layer_fu_232_m_axi_gmem_ARQOS;
+        gmem_ARQOS = grp_maxpool_layer_fu_284_m_axi_gmem_ARQOS;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_ARQOS = grp_conv2d_layer_fu_170_m_axi_gmem_ARQOS;
+        gmem_ARQOS = grp_conv2d_layer_fu_222_m_axi_gmem_ARQOS;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_ARQOS = grp_fc3_layer_fu_206_m_axi_gmem_ARQOS;
     end else begin
         gmem_ARQOS = 'bx;
     end
@@ -1240,17 +1500,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_ARREGION = grp_flatten_layer_fu_272_m_axi_gmem_ARREGION;
+        gmem_ARREGION = grp_flatten_layer_fu_336_m_axi_gmem_ARREGION;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_ARREGION = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARREGION;
+        gmem_ARREGION = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARREGION;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_ARREGION = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARREGION;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_ARREGION = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARREGION;
+        gmem_ARREGION = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARREGION;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_ARREGION = grp_maxpool2_layer_fu_240_m_axi_gmem_ARREGION;
+        gmem_ARREGION = grp_maxpool2_layer_fu_292_m_axi_gmem_ARREGION;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_ARREGION = grp_maxpool_layer_fu_232_m_axi_gmem_ARREGION;
+        gmem_ARREGION = grp_maxpool_layer_fu_284_m_axi_gmem_ARREGION;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_ARREGION = grp_conv2d_layer_fu_170_m_axi_gmem_ARREGION;
+        gmem_ARREGION = grp_conv2d_layer_fu_222_m_axi_gmem_ARREGION;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_ARREGION = grp_fc3_layer_fu_206_m_axi_gmem_ARREGION;
     end else begin
         gmem_ARREGION = 'bx;
     end
@@ -1258,17 +1522,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_ARSIZE = grp_flatten_layer_fu_272_m_axi_gmem_ARSIZE;
+        gmem_ARSIZE = grp_flatten_layer_fu_336_m_axi_gmem_ARSIZE;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_ARSIZE = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARSIZE;
+        gmem_ARSIZE = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARSIZE;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_ARSIZE = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARSIZE;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_ARSIZE = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARSIZE;
+        gmem_ARSIZE = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARSIZE;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_ARSIZE = grp_maxpool2_layer_fu_240_m_axi_gmem_ARSIZE;
+        gmem_ARSIZE = grp_maxpool2_layer_fu_292_m_axi_gmem_ARSIZE;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_ARSIZE = grp_maxpool_layer_fu_232_m_axi_gmem_ARSIZE;
+        gmem_ARSIZE = grp_maxpool_layer_fu_284_m_axi_gmem_ARSIZE;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_ARSIZE = grp_conv2d_layer_fu_170_m_axi_gmem_ARSIZE;
+        gmem_ARSIZE = grp_conv2d_layer_fu_222_m_axi_gmem_ARSIZE;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_ARSIZE = grp_fc3_layer_fu_206_m_axi_gmem_ARSIZE;
     end else begin
         gmem_ARSIZE = 'bx;
     end
@@ -1276,17 +1544,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_ARUSER = grp_flatten_layer_fu_272_m_axi_gmem_ARUSER;
+        gmem_ARUSER = grp_flatten_layer_fu_336_m_axi_gmem_ARUSER;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_ARUSER = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARUSER;
+        gmem_ARUSER = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARUSER;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_ARUSER = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARUSER;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_ARUSER = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARUSER;
+        gmem_ARUSER = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARUSER;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_ARUSER = grp_maxpool2_layer_fu_240_m_axi_gmem_ARUSER;
+        gmem_ARUSER = grp_maxpool2_layer_fu_292_m_axi_gmem_ARUSER;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_ARUSER = grp_maxpool_layer_fu_232_m_axi_gmem_ARUSER;
+        gmem_ARUSER = grp_maxpool_layer_fu_284_m_axi_gmem_ARUSER;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_ARUSER = grp_conv2d_layer_fu_170_m_axi_gmem_ARUSER;
+        gmem_ARUSER = grp_conv2d_layer_fu_222_m_axi_gmem_ARUSER;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_ARUSER = grp_fc3_layer_fu_206_m_axi_gmem_ARUSER;
     end else begin
         gmem_ARUSER = 'bx;
     end
@@ -1294,17 +1566,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_ARVALID = grp_flatten_layer_fu_272_m_axi_gmem_ARVALID;
+        gmem_ARVALID = grp_flatten_layer_fu_336_m_axi_gmem_ARVALID;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_ARVALID = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_ARVALID;
+        gmem_ARVALID = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_ARVALID;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_ARVALID = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_ARVALID;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_ARVALID = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_ARVALID;
+        gmem_ARVALID = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_ARVALID;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_ARVALID = grp_maxpool2_layer_fu_240_m_axi_gmem_ARVALID;
+        gmem_ARVALID = grp_maxpool2_layer_fu_292_m_axi_gmem_ARVALID;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_ARVALID = grp_maxpool_layer_fu_232_m_axi_gmem_ARVALID;
+        gmem_ARVALID = grp_maxpool_layer_fu_284_m_axi_gmem_ARVALID;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_ARVALID = grp_conv2d_layer_fu_170_m_axi_gmem_ARVALID;
+        gmem_ARVALID = grp_conv2d_layer_fu_222_m_axi_gmem_ARVALID;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_ARVALID = grp_fc3_layer_fu_206_m_axi_gmem_ARVALID;
     end else begin
         gmem_ARVALID = 1'b0;
     end
@@ -1312,17 +1588,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_AWADDR = grp_flatten_layer_fu_272_m_axi_gmem_AWADDR;
+        gmem_AWADDR = grp_flatten_layer_fu_336_m_axi_gmem_AWADDR;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_AWADDR = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWADDR;
+        gmem_AWADDR = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWADDR;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_AWADDR = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWADDR;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_AWADDR = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWADDR;
+        gmem_AWADDR = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWADDR;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_AWADDR = grp_maxpool2_layer_fu_240_m_axi_gmem_AWADDR;
+        gmem_AWADDR = grp_maxpool2_layer_fu_292_m_axi_gmem_AWADDR;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_AWADDR = grp_maxpool_layer_fu_232_m_axi_gmem_AWADDR;
+        gmem_AWADDR = grp_maxpool_layer_fu_284_m_axi_gmem_AWADDR;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_AWADDR = grp_conv2d_layer_fu_170_m_axi_gmem_AWADDR;
+        gmem_AWADDR = grp_conv2d_layer_fu_222_m_axi_gmem_AWADDR;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_AWADDR = grp_fc3_layer_fu_206_m_axi_gmem_AWADDR;
     end else begin
         gmem_AWADDR = 'bx;
     end
@@ -1330,17 +1610,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_AWBURST = grp_flatten_layer_fu_272_m_axi_gmem_AWBURST;
+        gmem_AWBURST = grp_flatten_layer_fu_336_m_axi_gmem_AWBURST;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_AWBURST = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWBURST;
+        gmem_AWBURST = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWBURST;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_AWBURST = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWBURST;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_AWBURST = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWBURST;
+        gmem_AWBURST = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWBURST;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_AWBURST = grp_maxpool2_layer_fu_240_m_axi_gmem_AWBURST;
+        gmem_AWBURST = grp_maxpool2_layer_fu_292_m_axi_gmem_AWBURST;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_AWBURST = grp_maxpool_layer_fu_232_m_axi_gmem_AWBURST;
+        gmem_AWBURST = grp_maxpool_layer_fu_284_m_axi_gmem_AWBURST;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_AWBURST = grp_conv2d_layer_fu_170_m_axi_gmem_AWBURST;
+        gmem_AWBURST = grp_conv2d_layer_fu_222_m_axi_gmem_AWBURST;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_AWBURST = grp_fc3_layer_fu_206_m_axi_gmem_AWBURST;
     end else begin
         gmem_AWBURST = 'bx;
     end
@@ -1348,17 +1632,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_AWCACHE = grp_flatten_layer_fu_272_m_axi_gmem_AWCACHE;
+        gmem_AWCACHE = grp_flatten_layer_fu_336_m_axi_gmem_AWCACHE;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_AWCACHE = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWCACHE;
+        gmem_AWCACHE = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWCACHE;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_AWCACHE = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWCACHE;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_AWCACHE = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWCACHE;
+        gmem_AWCACHE = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWCACHE;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_AWCACHE = grp_maxpool2_layer_fu_240_m_axi_gmem_AWCACHE;
+        gmem_AWCACHE = grp_maxpool2_layer_fu_292_m_axi_gmem_AWCACHE;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_AWCACHE = grp_maxpool_layer_fu_232_m_axi_gmem_AWCACHE;
+        gmem_AWCACHE = grp_maxpool_layer_fu_284_m_axi_gmem_AWCACHE;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_AWCACHE = grp_conv2d_layer_fu_170_m_axi_gmem_AWCACHE;
+        gmem_AWCACHE = grp_conv2d_layer_fu_222_m_axi_gmem_AWCACHE;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_AWCACHE = grp_fc3_layer_fu_206_m_axi_gmem_AWCACHE;
     end else begin
         gmem_AWCACHE = 'bx;
     end
@@ -1366,17 +1654,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_AWID = grp_flatten_layer_fu_272_m_axi_gmem_AWID;
+        gmem_AWID = grp_flatten_layer_fu_336_m_axi_gmem_AWID;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_AWID = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWID;
+        gmem_AWID = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWID;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_AWID = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWID;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_AWID = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWID;
+        gmem_AWID = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWID;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_AWID = grp_maxpool2_layer_fu_240_m_axi_gmem_AWID;
+        gmem_AWID = grp_maxpool2_layer_fu_292_m_axi_gmem_AWID;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_AWID = grp_maxpool_layer_fu_232_m_axi_gmem_AWID;
+        gmem_AWID = grp_maxpool_layer_fu_284_m_axi_gmem_AWID;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_AWID = grp_conv2d_layer_fu_170_m_axi_gmem_AWID;
+        gmem_AWID = grp_conv2d_layer_fu_222_m_axi_gmem_AWID;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_AWID = grp_fc3_layer_fu_206_m_axi_gmem_AWID;
     end else begin
         gmem_AWID = 'bx;
     end
@@ -1384,17 +1676,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_AWLEN = grp_flatten_layer_fu_272_m_axi_gmem_AWLEN;
+        gmem_AWLEN = grp_flatten_layer_fu_336_m_axi_gmem_AWLEN;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_AWLEN = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWLEN;
+        gmem_AWLEN = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWLEN;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_AWLEN = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWLEN;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_AWLEN = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWLEN;
+        gmem_AWLEN = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWLEN;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_AWLEN = grp_maxpool2_layer_fu_240_m_axi_gmem_AWLEN;
+        gmem_AWLEN = grp_maxpool2_layer_fu_292_m_axi_gmem_AWLEN;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_AWLEN = grp_maxpool_layer_fu_232_m_axi_gmem_AWLEN;
+        gmem_AWLEN = grp_maxpool_layer_fu_284_m_axi_gmem_AWLEN;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_AWLEN = grp_conv2d_layer_fu_170_m_axi_gmem_AWLEN;
+        gmem_AWLEN = grp_conv2d_layer_fu_222_m_axi_gmem_AWLEN;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_AWLEN = grp_fc3_layer_fu_206_m_axi_gmem_AWLEN;
     end else begin
         gmem_AWLEN = 'bx;
     end
@@ -1402,17 +1698,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_AWLOCK = grp_flatten_layer_fu_272_m_axi_gmem_AWLOCK;
+        gmem_AWLOCK = grp_flatten_layer_fu_336_m_axi_gmem_AWLOCK;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_AWLOCK = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWLOCK;
+        gmem_AWLOCK = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWLOCK;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_AWLOCK = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWLOCK;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_AWLOCK = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWLOCK;
+        gmem_AWLOCK = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWLOCK;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_AWLOCK = grp_maxpool2_layer_fu_240_m_axi_gmem_AWLOCK;
+        gmem_AWLOCK = grp_maxpool2_layer_fu_292_m_axi_gmem_AWLOCK;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_AWLOCK = grp_maxpool_layer_fu_232_m_axi_gmem_AWLOCK;
+        gmem_AWLOCK = grp_maxpool_layer_fu_284_m_axi_gmem_AWLOCK;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_AWLOCK = grp_conv2d_layer_fu_170_m_axi_gmem_AWLOCK;
+        gmem_AWLOCK = grp_conv2d_layer_fu_222_m_axi_gmem_AWLOCK;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_AWLOCK = grp_fc3_layer_fu_206_m_axi_gmem_AWLOCK;
     end else begin
         gmem_AWLOCK = 'bx;
     end
@@ -1420,17 +1720,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_AWPROT = grp_flatten_layer_fu_272_m_axi_gmem_AWPROT;
+        gmem_AWPROT = grp_flatten_layer_fu_336_m_axi_gmem_AWPROT;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_AWPROT = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWPROT;
+        gmem_AWPROT = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWPROT;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_AWPROT = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWPROT;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_AWPROT = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWPROT;
+        gmem_AWPROT = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWPROT;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_AWPROT = grp_maxpool2_layer_fu_240_m_axi_gmem_AWPROT;
+        gmem_AWPROT = grp_maxpool2_layer_fu_292_m_axi_gmem_AWPROT;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_AWPROT = grp_maxpool_layer_fu_232_m_axi_gmem_AWPROT;
+        gmem_AWPROT = grp_maxpool_layer_fu_284_m_axi_gmem_AWPROT;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_AWPROT = grp_conv2d_layer_fu_170_m_axi_gmem_AWPROT;
+        gmem_AWPROT = grp_conv2d_layer_fu_222_m_axi_gmem_AWPROT;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_AWPROT = grp_fc3_layer_fu_206_m_axi_gmem_AWPROT;
     end else begin
         gmem_AWPROT = 'bx;
     end
@@ -1438,17 +1742,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_AWQOS = grp_flatten_layer_fu_272_m_axi_gmem_AWQOS;
+        gmem_AWQOS = grp_flatten_layer_fu_336_m_axi_gmem_AWQOS;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_AWQOS = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWQOS;
+        gmem_AWQOS = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWQOS;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_AWQOS = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWQOS;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_AWQOS = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWQOS;
+        gmem_AWQOS = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWQOS;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_AWQOS = grp_maxpool2_layer_fu_240_m_axi_gmem_AWQOS;
+        gmem_AWQOS = grp_maxpool2_layer_fu_292_m_axi_gmem_AWQOS;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_AWQOS = grp_maxpool_layer_fu_232_m_axi_gmem_AWQOS;
+        gmem_AWQOS = grp_maxpool_layer_fu_284_m_axi_gmem_AWQOS;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_AWQOS = grp_conv2d_layer_fu_170_m_axi_gmem_AWQOS;
+        gmem_AWQOS = grp_conv2d_layer_fu_222_m_axi_gmem_AWQOS;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_AWQOS = grp_fc3_layer_fu_206_m_axi_gmem_AWQOS;
     end else begin
         gmem_AWQOS = 'bx;
     end
@@ -1456,17 +1764,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_AWREGION = grp_flatten_layer_fu_272_m_axi_gmem_AWREGION;
+        gmem_AWREGION = grp_flatten_layer_fu_336_m_axi_gmem_AWREGION;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_AWREGION = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWREGION;
+        gmem_AWREGION = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWREGION;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_AWREGION = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWREGION;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_AWREGION = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWREGION;
+        gmem_AWREGION = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWREGION;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_AWREGION = grp_maxpool2_layer_fu_240_m_axi_gmem_AWREGION;
+        gmem_AWREGION = grp_maxpool2_layer_fu_292_m_axi_gmem_AWREGION;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_AWREGION = grp_maxpool_layer_fu_232_m_axi_gmem_AWREGION;
+        gmem_AWREGION = grp_maxpool_layer_fu_284_m_axi_gmem_AWREGION;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_AWREGION = grp_conv2d_layer_fu_170_m_axi_gmem_AWREGION;
+        gmem_AWREGION = grp_conv2d_layer_fu_222_m_axi_gmem_AWREGION;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_AWREGION = grp_fc3_layer_fu_206_m_axi_gmem_AWREGION;
     end else begin
         gmem_AWREGION = 'bx;
     end
@@ -1474,17 +1786,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_AWSIZE = grp_flatten_layer_fu_272_m_axi_gmem_AWSIZE;
+        gmem_AWSIZE = grp_flatten_layer_fu_336_m_axi_gmem_AWSIZE;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_AWSIZE = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWSIZE;
+        gmem_AWSIZE = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWSIZE;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_AWSIZE = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWSIZE;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_AWSIZE = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWSIZE;
+        gmem_AWSIZE = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWSIZE;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_AWSIZE = grp_maxpool2_layer_fu_240_m_axi_gmem_AWSIZE;
+        gmem_AWSIZE = grp_maxpool2_layer_fu_292_m_axi_gmem_AWSIZE;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_AWSIZE = grp_maxpool_layer_fu_232_m_axi_gmem_AWSIZE;
+        gmem_AWSIZE = grp_maxpool_layer_fu_284_m_axi_gmem_AWSIZE;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_AWSIZE = grp_conv2d_layer_fu_170_m_axi_gmem_AWSIZE;
+        gmem_AWSIZE = grp_conv2d_layer_fu_222_m_axi_gmem_AWSIZE;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_AWSIZE = grp_fc3_layer_fu_206_m_axi_gmem_AWSIZE;
     end else begin
         gmem_AWSIZE = 'bx;
     end
@@ -1492,17 +1808,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_AWUSER = grp_flatten_layer_fu_272_m_axi_gmem_AWUSER;
+        gmem_AWUSER = grp_flatten_layer_fu_336_m_axi_gmem_AWUSER;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_AWUSER = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWUSER;
+        gmem_AWUSER = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWUSER;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_AWUSER = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWUSER;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_AWUSER = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWUSER;
+        gmem_AWUSER = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWUSER;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_AWUSER = grp_maxpool2_layer_fu_240_m_axi_gmem_AWUSER;
+        gmem_AWUSER = grp_maxpool2_layer_fu_292_m_axi_gmem_AWUSER;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_AWUSER = grp_maxpool_layer_fu_232_m_axi_gmem_AWUSER;
+        gmem_AWUSER = grp_maxpool_layer_fu_284_m_axi_gmem_AWUSER;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_AWUSER = grp_conv2d_layer_fu_170_m_axi_gmem_AWUSER;
+        gmem_AWUSER = grp_conv2d_layer_fu_222_m_axi_gmem_AWUSER;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_AWUSER = grp_fc3_layer_fu_206_m_axi_gmem_AWUSER;
     end else begin
         gmem_AWUSER = 'bx;
     end
@@ -1510,17 +1830,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_AWVALID = grp_flatten_layer_fu_272_m_axi_gmem_AWVALID;
+        gmem_AWVALID = grp_flatten_layer_fu_336_m_axi_gmem_AWVALID;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_AWVALID = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_AWVALID;
+        gmem_AWVALID = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_AWVALID;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_AWVALID = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_AWVALID;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_AWVALID = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_AWVALID;
+        gmem_AWVALID = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_AWVALID;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_AWVALID = grp_maxpool2_layer_fu_240_m_axi_gmem_AWVALID;
+        gmem_AWVALID = grp_maxpool2_layer_fu_292_m_axi_gmem_AWVALID;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_AWVALID = grp_maxpool_layer_fu_232_m_axi_gmem_AWVALID;
+        gmem_AWVALID = grp_maxpool_layer_fu_284_m_axi_gmem_AWVALID;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_AWVALID = grp_conv2d_layer_fu_170_m_axi_gmem_AWVALID;
+        gmem_AWVALID = grp_conv2d_layer_fu_222_m_axi_gmem_AWVALID;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_AWVALID = grp_fc3_layer_fu_206_m_axi_gmem_AWVALID;
     end else begin
         gmem_AWVALID = 1'b0;
     end
@@ -1528,17 +1852,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_BREADY = grp_flatten_layer_fu_272_m_axi_gmem_BREADY;
+        gmem_BREADY = grp_flatten_layer_fu_336_m_axi_gmem_BREADY;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_BREADY = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_BREADY;
+        gmem_BREADY = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_BREADY;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_BREADY = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_BREADY;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_BREADY = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_BREADY;
+        gmem_BREADY = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_BREADY;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_BREADY = grp_maxpool2_layer_fu_240_m_axi_gmem_BREADY;
+        gmem_BREADY = grp_maxpool2_layer_fu_292_m_axi_gmem_BREADY;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_BREADY = grp_maxpool_layer_fu_232_m_axi_gmem_BREADY;
+        gmem_BREADY = grp_maxpool_layer_fu_284_m_axi_gmem_BREADY;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_BREADY = grp_conv2d_layer_fu_170_m_axi_gmem_BREADY;
+        gmem_BREADY = grp_conv2d_layer_fu_222_m_axi_gmem_BREADY;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_BREADY = grp_fc3_layer_fu_206_m_axi_gmem_BREADY;
     end else begin
         gmem_BREADY = 1'b0;
     end
@@ -1546,17 +1874,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_RREADY = grp_flatten_layer_fu_272_m_axi_gmem_RREADY;
+        gmem_RREADY = grp_flatten_layer_fu_336_m_axi_gmem_RREADY;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_RREADY = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_RREADY;
+        gmem_RREADY = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_RREADY;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_RREADY = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_RREADY;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_RREADY = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_RREADY;
+        gmem_RREADY = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_RREADY;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_RREADY = grp_maxpool2_layer_fu_240_m_axi_gmem_RREADY;
+        gmem_RREADY = grp_maxpool2_layer_fu_292_m_axi_gmem_RREADY;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_RREADY = grp_maxpool_layer_fu_232_m_axi_gmem_RREADY;
+        gmem_RREADY = grp_maxpool_layer_fu_284_m_axi_gmem_RREADY;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_RREADY = grp_conv2d_layer_fu_170_m_axi_gmem_RREADY;
+        gmem_RREADY = grp_conv2d_layer_fu_222_m_axi_gmem_RREADY;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_RREADY = grp_fc3_layer_fu_206_m_axi_gmem_RREADY;
     end else begin
         gmem_RREADY = 1'b0;
     end
@@ -1564,17 +1896,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_WDATA = grp_flatten_layer_fu_272_m_axi_gmem_WDATA;
+        gmem_WDATA = grp_flatten_layer_fu_336_m_axi_gmem_WDATA;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_WDATA = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WDATA;
+        gmem_WDATA = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WDATA;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_WDATA = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WDATA;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_WDATA = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WDATA;
+        gmem_WDATA = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WDATA;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_WDATA = grp_maxpool2_layer_fu_240_m_axi_gmem_WDATA;
+        gmem_WDATA = grp_maxpool2_layer_fu_292_m_axi_gmem_WDATA;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_WDATA = grp_maxpool_layer_fu_232_m_axi_gmem_WDATA;
+        gmem_WDATA = grp_maxpool_layer_fu_284_m_axi_gmem_WDATA;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_WDATA = grp_conv2d_layer_fu_170_m_axi_gmem_WDATA;
+        gmem_WDATA = grp_conv2d_layer_fu_222_m_axi_gmem_WDATA;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_WDATA = grp_fc3_layer_fu_206_m_axi_gmem_WDATA;
     end else begin
         gmem_WDATA = 'bx;
     end
@@ -1582,17 +1918,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_WID = grp_flatten_layer_fu_272_m_axi_gmem_WID;
+        gmem_WID = grp_flatten_layer_fu_336_m_axi_gmem_WID;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_WID = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WID;
+        gmem_WID = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WID;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_WID = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WID;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_WID = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WID;
+        gmem_WID = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WID;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_WID = grp_maxpool2_layer_fu_240_m_axi_gmem_WID;
+        gmem_WID = grp_maxpool2_layer_fu_292_m_axi_gmem_WID;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_WID = grp_maxpool_layer_fu_232_m_axi_gmem_WID;
+        gmem_WID = grp_maxpool_layer_fu_284_m_axi_gmem_WID;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_WID = grp_conv2d_layer_fu_170_m_axi_gmem_WID;
+        gmem_WID = grp_conv2d_layer_fu_222_m_axi_gmem_WID;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_WID = grp_fc3_layer_fu_206_m_axi_gmem_WID;
     end else begin
         gmem_WID = 'bx;
     end
@@ -1600,17 +1940,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_WLAST = grp_flatten_layer_fu_272_m_axi_gmem_WLAST;
+        gmem_WLAST = grp_flatten_layer_fu_336_m_axi_gmem_WLAST;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_WLAST = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WLAST;
+        gmem_WLAST = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WLAST;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_WLAST = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WLAST;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_WLAST = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WLAST;
+        gmem_WLAST = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WLAST;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_WLAST = grp_maxpool2_layer_fu_240_m_axi_gmem_WLAST;
+        gmem_WLAST = grp_maxpool2_layer_fu_292_m_axi_gmem_WLAST;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_WLAST = grp_maxpool_layer_fu_232_m_axi_gmem_WLAST;
+        gmem_WLAST = grp_maxpool_layer_fu_284_m_axi_gmem_WLAST;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_WLAST = grp_conv2d_layer_fu_170_m_axi_gmem_WLAST;
+        gmem_WLAST = grp_conv2d_layer_fu_222_m_axi_gmem_WLAST;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_WLAST = grp_fc3_layer_fu_206_m_axi_gmem_WLAST;
     end else begin
         gmem_WLAST = 'bx;
     end
@@ -1618,17 +1962,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_WSTRB = grp_flatten_layer_fu_272_m_axi_gmem_WSTRB;
+        gmem_WSTRB = grp_flatten_layer_fu_336_m_axi_gmem_WSTRB;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_WSTRB = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WSTRB;
+        gmem_WSTRB = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WSTRB;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_WSTRB = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WSTRB;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_WSTRB = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WSTRB;
+        gmem_WSTRB = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WSTRB;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_WSTRB = grp_maxpool2_layer_fu_240_m_axi_gmem_WSTRB;
+        gmem_WSTRB = grp_maxpool2_layer_fu_292_m_axi_gmem_WSTRB;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_WSTRB = grp_maxpool_layer_fu_232_m_axi_gmem_WSTRB;
+        gmem_WSTRB = grp_maxpool_layer_fu_284_m_axi_gmem_WSTRB;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_WSTRB = grp_conv2d_layer_fu_170_m_axi_gmem_WSTRB;
+        gmem_WSTRB = grp_conv2d_layer_fu_222_m_axi_gmem_WSTRB;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_WSTRB = grp_fc3_layer_fu_206_m_axi_gmem_WSTRB;
     end else begin
         gmem_WSTRB = 'bx;
     end
@@ -1636,17 +1984,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_WUSER = grp_flatten_layer_fu_272_m_axi_gmem_WUSER;
+        gmem_WUSER = grp_flatten_layer_fu_336_m_axi_gmem_WUSER;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_WUSER = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WUSER;
+        gmem_WUSER = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WUSER;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_WUSER = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WUSER;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_WUSER = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WUSER;
+        gmem_WUSER = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WUSER;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_WUSER = grp_maxpool2_layer_fu_240_m_axi_gmem_WUSER;
+        gmem_WUSER = grp_maxpool2_layer_fu_292_m_axi_gmem_WUSER;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_WUSER = grp_maxpool_layer_fu_232_m_axi_gmem_WUSER;
+        gmem_WUSER = grp_maxpool_layer_fu_284_m_axi_gmem_WUSER;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_WUSER = grp_conv2d_layer_fu_170_m_axi_gmem_WUSER;
+        gmem_WUSER = grp_conv2d_layer_fu_222_m_axi_gmem_WUSER;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_WUSER = grp_fc3_layer_fu_206_m_axi_gmem_WUSER;
     end else begin
         gmem_WUSER = 'bx;
     end
@@ -1654,17 +2006,21 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
-        gmem_WVALID = grp_flatten_layer_fu_272_m_axi_gmem_WVALID;
+        gmem_WVALID = grp_flatten_layer_fu_336_m_axi_gmem_WVALID;
     end else if (((1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11))) begin
-        gmem_WVALID = grp_fc_layer_400_120_s_fu_260_m_axi_gmem_WVALID;
+        gmem_WVALID = grp_fc_layer_400_120_s_fu_324_m_axi_gmem_WVALID;
+    end else if (((1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13))) begin
+        gmem_WVALID = grp_fc_layer_120_84_s_fu_312_m_axi_gmem_WVALID;
     end else if (((1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5))) begin
-        gmem_WVALID = grp_conv2d_6to16_layer_fu_248_m_axi_gmem_WVALID;
+        gmem_WVALID = grp_conv2d_6to16_layer_fu_300_m_axi_gmem_WVALID;
     end else if (((1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7))) begin
-        gmem_WVALID = grp_maxpool2_layer_fu_240_m_axi_gmem_WVALID;
+        gmem_WVALID = grp_maxpool2_layer_fu_292_m_axi_gmem_WVALID;
     end else if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3))) begin
-        gmem_WVALID = grp_maxpool_layer_fu_232_m_axi_gmem_WVALID;
+        gmem_WVALID = grp_maxpool_layer_fu_284_m_axi_gmem_WVALID;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state1))) begin
-        gmem_WVALID = grp_conv2d_layer_fu_170_m_axi_gmem_WVALID;
+        gmem_WVALID = grp_conv2d_layer_fu_222_m_axi_gmem_WVALID;
+    end else if (((1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15))) begin
+        gmem_WVALID = grp_fc3_layer_fu_206_m_axi_gmem_WVALID;
     end else begin
         gmem_WVALID = 1'b0;
     end
@@ -1673,14 +2029,14 @@ end
 always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_state1 : begin
-            if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
+            if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((grp_conv2d_layer_fu_170_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
+            if (((grp_conv2d_layer_fu_222_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_state3;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state2;
@@ -1690,7 +2046,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state4;
         end
         ap_ST_fsm_state4 : begin
-            if (((grp_maxpool_layer_fu_232_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state4))) begin
+            if (((grp_maxpool_layer_fu_284_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state4))) begin
                 ap_NS_fsm = ap_ST_fsm_state5;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state4;
@@ -1700,7 +2056,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state6;
         end
         ap_ST_fsm_state6 : begin
-            if (((grp_conv2d_6to16_layer_fu_248_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+            if (((grp_conv2d_6to16_layer_fu_300_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
                 ap_NS_fsm = ap_ST_fsm_state7;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state6;
@@ -1710,7 +2066,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state8;
         end
         ap_ST_fsm_state8 : begin
-            if (((grp_maxpool2_layer_fu_240_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
+            if (((grp_maxpool2_layer_fu_292_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
                 ap_NS_fsm = ap_ST_fsm_state9;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state8;
@@ -1720,7 +2076,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state10;
         end
         ap_ST_fsm_state10 : begin
-            if (((grp_flatten_layer_fu_272_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state10))) begin
+            if (((grp_flatten_layer_fu_336_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state10))) begin
                 ap_NS_fsm = ap_ST_fsm_state11;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state10;
@@ -1730,10 +2086,30 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state12;
         end
         ap_ST_fsm_state12 : begin
-            if (((grp_fc_layer_400_120_s_fu_260_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state12))) begin
-                ap_NS_fsm = ap_ST_fsm_state1;
+            if (((grp_fc_layer_400_120_s_fu_324_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state12))) begin
+                ap_NS_fsm = ap_ST_fsm_state13;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state12;
+            end
+        end
+        ap_ST_fsm_state13 : begin
+            ap_NS_fsm = ap_ST_fsm_state14;
+        end
+        ap_ST_fsm_state14 : begin
+            if (((grp_fc_layer_120_84_s_fu_312_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state14))) begin
+                ap_NS_fsm = ap_ST_fsm_state15;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state14;
+            end
+        end
+        ap_ST_fsm_state15 : begin
+            ap_NS_fsm = ap_ST_fsm_state16;
+        end
+        ap_ST_fsm_state16 : begin
+            if (((grp_fc3_layer_fu_206_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state16))) begin
+                ap_NS_fsm = ap_ST_fsm_state1;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state16;
             end
         end
         default : begin
@@ -1749,6 +2125,14 @@ assign ap_CS_fsm_state10 = ap_CS_fsm[32'd9];
 assign ap_CS_fsm_state11 = ap_CS_fsm[32'd10];
 
 assign ap_CS_fsm_state12 = ap_CS_fsm[32'd11];
+
+assign ap_CS_fsm_state13 = ap_CS_fsm[32'd12];
+
+assign ap_CS_fsm_state14 = ap_CS_fsm[32'd13];
+
+assign ap_CS_fsm_state15 = ap_CS_fsm[32'd14];
+
+assign ap_CS_fsm_state16 = ap_CS_fsm[32'd15];
 
 assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
 
@@ -1770,16 +2154,20 @@ always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign grp_conv2d_6to16_layer_fu_248_ap_start = grp_conv2d_6to16_layer_fu_248_ap_start_reg;
+assign grp_conv2d_6to16_layer_fu_300_ap_start = grp_conv2d_6to16_layer_fu_300_ap_start_reg;
 
-assign grp_conv2d_layer_fu_170_ap_start = grp_conv2d_layer_fu_170_ap_start_reg;
+assign grp_conv2d_layer_fu_222_ap_start = grp_conv2d_layer_fu_222_ap_start_reg;
 
-assign grp_fc_layer_400_120_s_fu_260_ap_start = grp_fc_layer_400_120_s_fu_260_ap_start_reg;
+assign grp_fc3_layer_fu_206_ap_start = grp_fc3_layer_fu_206_ap_start_reg;
 
-assign grp_flatten_layer_fu_272_ap_start = grp_flatten_layer_fu_272_ap_start_reg;
+assign grp_fc_layer_120_84_s_fu_312_ap_start = grp_fc_layer_120_84_s_fu_312_ap_start_reg;
 
-assign grp_maxpool2_layer_fu_240_ap_start = grp_maxpool2_layer_fu_240_ap_start_reg;
+assign grp_fc_layer_400_120_s_fu_324_ap_start = grp_fc_layer_400_120_s_fu_324_ap_start_reg;
 
-assign grp_maxpool_layer_fu_232_ap_start = grp_maxpool_layer_fu_232_ap_start_reg;
+assign grp_flatten_layer_fu_336_ap_start = grp_flatten_layer_fu_336_ap_start_reg;
+
+assign grp_maxpool2_layer_fu_292_ap_start = grp_maxpool2_layer_fu_292_ap_start_reg;
+
+assign grp_maxpool_layer_fu_284_ap_start = grp_maxpool_layer_fu_284_ap_start_reg;
 
 endmodule //lenet_top

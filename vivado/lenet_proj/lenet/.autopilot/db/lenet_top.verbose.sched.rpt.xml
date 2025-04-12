@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'lenet_top'" level="0">
-<item name = "Date">Mon Apr  7 00:42:53 2025
+<item name = "Date">Mon Apr  7 23:44:55 2025
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">lenet_proj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">12.60 ns, 9.198 ns, 3.40 ns</column>
+<column name="ap_clk">12.60 ns, 9.603 ns, 3.40 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1618811, 1618811, 20.397 ms, 20.397 ms, 1618812, 1618812, none</column>
+<column name="">1672456, 1672456, 21.073 ms, 21.073 ms, 1672457, 1672457, none</column>
 </table>
 </item>
 <item name = "Detail">

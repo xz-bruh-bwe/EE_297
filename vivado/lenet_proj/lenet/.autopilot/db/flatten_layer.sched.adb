@@ -559,7 +559,7 @@
 					<Obj>
 						<type>0</type>
 						<id>14</id>
-						<name>empty_37</name>
+						<name>empty_43</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>138</lineNumber>
@@ -1002,7 +1002,7 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>empty_39</name>
+						<name>empty_45</name>
 						<fileName>lenet_proj/lenet_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado</fileDirectory>
 						<lineNumber>146</lineNumber>

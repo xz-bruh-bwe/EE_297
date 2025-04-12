@@ -38,6 +38,13 @@ lenet_top_conv2d_6to16_layer_conv2_weights
 lenet_top_conv2d_6to16_layer_conv2_biases
 lenet_top_fc_layer_400_120_s_fc1_biases
 lenet_top_fc_layer_400_120_s_fc1_weights
+lenet_top_fc_layer_120_84_s_fc2_biases
+lenet_top_fc_layer_120_84_s_fc2_weights
+lenet_top_fc3_layer_fc3_biases
+lenet_top_fc3_layer_fc3_weights_0
+lenet_top_fc3_layer_fc3_weights_1
+lenet_top_fc3_layer_fc3_weights_2
+lenet_top_fc3_layer_logits
 lenet_top_control_s_axi
 lenet_top_gmem_m_axi
 conv2d_layer
@@ -46,4 +53,6 @@ conv2d_6to16_layer
 maxpool2_layer
 flatten_layer
 fc_layer_400_120_s
+fc_layer_120_84_s
+fc3_layer
 lenet_top

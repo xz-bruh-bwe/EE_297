@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'maxpool_layer'
 ================================================================
-* Date:           Mon Apr  7 00:42:50 2025
+* Date:           Mon Apr  7 23:44:39 2025
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        lenet_proj
@@ -113,7 +113,7 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 1.76>
-ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty, i32, i32, void @empty_21, i32, i32, void @empty_21, void @empty_21, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_21"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty_5, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_24"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%output_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %output_r" [lenet_proj/lenet_support.cpp:50]   --->   Operation 32 'read' 'output_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%input_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %input_r" [lenet_proj/lenet_support.cpp:50]   --->   Operation 33 'read' 'input_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 34 [1/1] (1.76ns)   --->   "%br_ln55 = br void %bb" [lenet_proj/lenet_support.cpp:55]   --->   Operation 34 'br' 'br_ln55' <Predicate = true> <Delay = 1.76>
@@ -380,10 +380,10 @@ ST_28 : Operation 240 [2/5] (9.19ns)   --->   "%gmem_addr_4_resp = writeresp i1 
 
 State 29 <SV = 28> <Delay = 9.19>
 ST_29 : Operation 241 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_55_1_VITIS_LOOP_56_2_VITIS_LOOP_57_3_str"   --->   Operation 241 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln55)> <Delay = 0.00>
-ST_29 : Operation 242 [1/1] (0.00ns)   --->   "%empty_35 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64, i64, i64"   --->   Operation 242 'speclooptripcount' 'empty_35' <Predicate = (!icmp_ln55)> <Delay = 0.00>
+ST_29 : Operation 242 [1/1] (0.00ns)   --->   "%empty_41 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64, i64, i64"   --->   Operation 242 'speclooptripcount' 'empty_41' <Predicate = (!icmp_ln55)> <Delay = 0.00>
 ST_29 : Operation 243 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_56_2_VITIS_LOOP_57_3_str"   --->   Operation 243 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln55)> <Delay = 0.00>
-ST_29 : Operation 244 [1/1] (0.00ns)   --->   "%specpipeline_ln57 = specpipeline void @_ssdm_op_SpecPipeline, i32, i32, i32, i32, void @empty_21" [lenet_proj/lenet_support.cpp:57]   --->   Operation 244 'specpipeline' 'specpipeline_ln57' <Predicate = (!icmp_ln55)> <Delay = 0.00>
-ST_29 : Operation 245 [1/1] (0.00ns)   --->   "%specloopname_ln57 = specloopname void @_ssdm_op_SpecLoopName, void @empty_18" [lenet_proj/lenet_support.cpp:57]   --->   Operation 245 'specloopname' 'specloopname_ln57' <Predicate = (!icmp_ln55)> <Delay = 0.00>
+ST_29 : Operation 244 [1/1] (0.00ns)   --->   "%specpipeline_ln57 = specpipeline void @_ssdm_op_SpecPipeline, i32, i32, i32, i32, void @empty_24" [lenet_proj/lenet_support.cpp:57]   --->   Operation 244 'specpipeline' 'specpipeline_ln57' <Predicate = (!icmp_ln55)> <Delay = 0.00>
+ST_29 : Operation 245 [1/1] (0.00ns)   --->   "%specloopname_ln57 = specloopname void @_ssdm_op_SpecLoopName, void @empty_20" [lenet_proj/lenet_support.cpp:57]   --->   Operation 245 'specloopname' 'specloopname_ln57' <Predicate = (!icmp_ln55)> <Delay = 0.00>
 ST_29 : Operation 246 [1/5] (9.19ns)   --->   "%gmem_addr_4_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P, i32 %gmem_addr_4, void %write_ln68" [lenet_proj/lenet_support.cpp:68]   --->   Operation 246 'writeresp' 'gmem_addr_4_resp' <Predicate = (!icmp_ln55)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_29 : Operation 247 [1/1] (0.00ns)   --->   "%br_ln0 = br void %bb"   --->   Operation 247 'br' 'br_ln0' <Predicate = (!icmp_ln55)> <Delay = 0.00>
 
@@ -579,7 +579,7 @@ gmem_addr_4_req   (writereq         ) [ 0000000000000000000000000000000]
 bitcast_ln68      (bitcast          ) [ 0000000000000000000000000000000]
 write_ln68        (write            ) [ 0000000000000000000000000000000]
 specloopname_ln0  (specloopname     ) [ 0000000000000000000000000000000]
-empty_35          (speclooptripcount) [ 0000000000000000000000000000000]
+empty_41          (speclooptripcount) [ 0000000000000000000000000000000]
 specloopname_ln0  (specloopname     ) [ 0000000000000000000000000000000]
 specpipeline_ln57 (specpipeline     ) [ 0000000000000000000000000000000]
 specloopname_ln57 (specloopname     ) [ 0000000000000000000000000000000]
@@ -632,7 +632,7 @@ ret_ln72          (ret              ) [ 0000000000000000000000000000000]
 <pin id="9" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty"/></StgValue>
+<StgValue><ssdm name="empty_5"/></StgValue>
 </bind>
 </comp>
 
@@ -650,7 +650,7 @@ ret_ln72          (ret              ) [ 0000000000000000000000000000000]
 <pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_21"/></StgValue>
+<StgValue><ssdm name="empty_24"/></StgValue>
 </bind>
 </comp>
 
@@ -1091,7 +1091,7 @@ ret_ln72          (ret              ) [ 0000000000000000000000000000000]
 <pin id="111" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_18"/></StgValue>
+<StgValue><ssdm name="empty_20"/></StgValue>
 </bind>
 </comp>
 

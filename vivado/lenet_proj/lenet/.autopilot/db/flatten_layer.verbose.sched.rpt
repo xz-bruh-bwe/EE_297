@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'flatten_layer'
 ================================================================
-* Date:           Mon Apr  7 00:42:52 2025
+* Date:           Mon Apr  7 23:44:41 2025
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        lenet_proj
@@ -120,13 +120,13 @@ State 6 <SV = 5> <Delay = 9.19>
 ST_6 : Operation 25 [2/7] (9.19ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i32" [lenet_proj/lenet_support.cpp:138]   --->   Operation 25 'readreq' 'empty' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 7 <SV = 6> <Delay = 9.19>
-ST_7 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty, i32, i32, void @empty_21, i32, i32, void @empty_21, void @empty_21, void @empty_21, i32, i32, i32, i32, void @empty_21, void @empty_21"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty_5, i32, i32, void @empty_24, i32, i32, void @empty_24, void @empty_24, void @empty_24, i32, i32, i32, i32, void @empty_24, void @empty_24"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_7 : Operation 27 [1/1] (0.00ns)   --->   "%output_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %output_r" [lenet_proj/lenet_support.cpp:132]   --->   Operation 27 'read' 'output_read' <Predicate = true> <Delay = 0.00>
 ST_7 : Operation 28 [1/7] (9.19ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i32" [lenet_proj/lenet_support.cpp:138]   --->   Operation 28 'readreq' 'empty' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_7 : Operation 29 [1/1] (0.00ns)   --->   "%trunc_ln138_1 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %output_read, i32, i32" [lenet_proj/lenet_support.cpp:138]   --->   Operation 29 'partselect' 'trunc_ln138_1' <Predicate = true> <Delay = 0.00>
 ST_7 : Operation 30 [1/1] (0.00ns)   --->   "%sext_ln138_1 = sext i62 %trunc_ln138_1" [lenet_proj/lenet_support.cpp:138]   --->   Operation 30 'sext' 'sext_ln138_1' <Predicate = true> <Delay = 0.00>
 ST_7 : Operation 31 [1/1] (0.00ns)   --->   "%gmem_addr_9 = getelementptr i32 %gmem, i64 %sext_ln138_1" [lenet_proj/lenet_support.cpp:138]   --->   Operation 31 'getelementptr' 'gmem_addr_9' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 32 [1/1] (9.19ns)   --->   "%empty_37 = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i32, i32 %gmem_addr_9, i32" [lenet_proj/lenet_support.cpp:138]   --->   Operation 32 'writereq' 'empty_37' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 32 [1/1] (9.19ns)   --->   "%empty_43 = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i32, i32 %gmem_addr_9, i32" [lenet_proj/lenet_support.cpp:138]   --->   Operation 32 'writereq' 'empty_43' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_7 : Operation 33 [1/1] (1.76ns)   --->   "%br_ln138 = br void %bb" [lenet_proj/lenet_support.cpp:138]   --->   Operation 33 'br' 'br_ln138' <Predicate = true> <Delay = 1.76>
 
 State 8 <SV = 7> <Delay = 1.82>
@@ -141,28 +141,28 @@ ST_9 : Operation 39 [1/1] (9.19ns)   --->   "%gmem_addr_read = read i32 @_ssdm_o
 
 State 10 <SV = 9> <Delay = 9.19>
 ST_10 : Operation 40 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_138_1_VITIS_LOOP_139_2_VITIS_LOOP_140_3_str"   --->   Operation 40 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln138)> <Delay = 0.00>
-ST_10 : Operation 41 [1/1] (0.00ns)   --->   "%empty_38 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64, i64, i64"   --->   Operation 41 'speclooptripcount' 'empty_38' <Predicate = (!icmp_ln138)> <Delay = 0.00>
+ST_10 : Operation 41 [1/1] (0.00ns)   --->   "%empty_44 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64, i64, i64"   --->   Operation 41 'speclooptripcount' 'empty_44' <Predicate = (!icmp_ln138)> <Delay = 0.00>
 ST_10 : Operation 42 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32, i32, i32, i32, void @p_str"   --->   Operation 42 'specpipeline' 'specpipeline_ln0' <Predicate = (!icmp_ln138)> <Delay = 0.00>
 ST_10 : Operation 43 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_139_2_VITIS_LOOP_140_3_str"   --->   Operation 43 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln138)> <Delay = 0.00>
 ST_10 : Operation 44 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32, i32, i32, i32, void @p_str"   --->   Operation 44 'specpipeline' 'specpipeline_ln0' <Predicate = (!icmp_ln138)> <Delay = 0.00>
 ST_10 : Operation 45 [1/1] (0.00ns)   --->   "%specloopname_ln140 = specloopname void @_ssdm_op_SpecLoopName, void @empty_1" [lenet_proj/lenet_support.cpp:140]   --->   Operation 45 'specloopname' 'specloopname_ln140' <Predicate = (!icmp_ln138)> <Delay = 0.00>
-ST_10 : Operation 46 [1/1] (9.19ns)   --->   "%write_ln142 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_addr_9, i32 %gmem_addr_read, i4, i1 %empty, i1 %empty_37" [lenet_proj/lenet_support.cpp:142]   --->   Operation 46 'write' 'write_ln142' <Predicate = (!icmp_ln138)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 46 [1/1] (9.19ns)   --->   "%write_ln142 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_addr_9, i32 %gmem_addr_read, i4, i1 %empty, i1 %empty_43" [lenet_proj/lenet_support.cpp:142]   --->   Operation 46 'write' 'write_ln142' <Predicate = (!icmp_ln138)> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_10 : Operation 47 [1/1] (0.00ns)   --->   "%br_ln0 = br void %bb"   --->   Operation 47 'br' 'br_ln0' <Predicate = (!icmp_ln138)> <Delay = 0.00>
 
 State 11 <SV = 8> <Delay = 9.19>
-ST_11 : Operation 48 [5/5] (9.19ns)   --->   "%empty_39 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_9" [lenet_proj/lenet_support.cpp:146]   --->   Operation 48 'writeresp' 'empty_39' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 48 [5/5] (9.19ns)   --->   "%empty_45 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_9" [lenet_proj/lenet_support.cpp:146]   --->   Operation 48 'writeresp' 'empty_45' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 12 <SV = 9> <Delay = 9.19>
-ST_12 : Operation 49 [4/5] (9.19ns)   --->   "%empty_39 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_9" [lenet_proj/lenet_support.cpp:146]   --->   Operation 49 'writeresp' 'empty_39' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 49 [4/5] (9.19ns)   --->   "%empty_45 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_9" [lenet_proj/lenet_support.cpp:146]   --->   Operation 49 'writeresp' 'empty_45' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 13 <SV = 10> <Delay = 9.19>
-ST_13 : Operation 50 [3/5] (9.19ns)   --->   "%empty_39 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_9" [lenet_proj/lenet_support.cpp:146]   --->   Operation 50 'writeresp' 'empty_39' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 50 [3/5] (9.19ns)   --->   "%empty_45 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_9" [lenet_proj/lenet_support.cpp:146]   --->   Operation 50 'writeresp' 'empty_45' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 14 <SV = 11> <Delay = 9.19>
-ST_14 : Operation 51 [2/5] (9.19ns)   --->   "%empty_39 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_9" [lenet_proj/lenet_support.cpp:146]   --->   Operation 51 'writeresp' 'empty_39' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 51 [2/5] (9.19ns)   --->   "%empty_45 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_9" [lenet_proj/lenet_support.cpp:146]   --->   Operation 51 'writeresp' 'empty_45' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 15 <SV = 12> <Delay = 9.19>
-ST_15 : Operation 52 [1/5] (9.19ns)   --->   "%empty_39 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_9" [lenet_proj/lenet_support.cpp:146]   --->   Operation 52 'writeresp' 'empty_39' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 52 [1/5] (9.19ns)   --->   "%empty_45 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_9" [lenet_proj/lenet_support.cpp:146]   --->   Operation 52 'writeresp' 'empty_45' <Predicate = true> <Delay = 9.19> <CoreInst = "m_axi">   --->   Core 55 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_15 : Operation 53 [1/1] (0.00ns)   --->   "%ret_ln146 = ret" [lenet_proj/lenet_support.cpp:146]   --->   Operation 53 'ret' 'ret_ln146' <Predicate = true> <Delay = 0.00>
 
 

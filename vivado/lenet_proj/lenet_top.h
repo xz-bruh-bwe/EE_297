@@ -3,6 +3,8 @@
 
 #include "ap_fixed.h"
 
+
+
 //typedef ap_fixed<32, 16> data_t;
 typedef float data_t;
 
@@ -20,6 +22,12 @@ typedef float data_t;
 #define FC3_IN  84
 #define FC3_OUT 10
 
+
+#include <hls_math.h>
+
+#define FC3_IN_SIZE 84
+#define FC3_OUT_SIZE 10
+
 // Function declarations
 void lenet_top(
     data_t image[IMG_HEIGHT][IMG_WIDTH],
@@ -27,7 +35,10 @@ void lenet_top(
     data_t pool1_out[IMG_HEIGHT / 2][IMG_WIDTH / 2][OUT_CHANNELS],
     data_t conv2_out[10][10][16],
     data_t pool2_out[5][5][16],
-    data_t flat_out[400]);  // Add this
+    data_t flat_out[FC1_IN],
+    data_t fc1_out[FC2_IN],  // Add this
+    data_t fc2_out[FC2_IN], 
+    int* prediction);  // Add this
 
 void conv2d_layer(data_t input[IMG_HEIGHT][IMG_WIDTH],
     data_t output[IMG_HEIGHT][IMG_WIDTH][OUT_CHANNELS],
@@ -63,6 +74,7 @@ void flatten_layer(
         data_t biases[OUT_SIZE])
     {
     #pragma HLS INLINE off
+    #pragma HLS RESOURCE variable=weights core=RAM_1P_LUTRAM 
     
         for (int i = 0; i < OUT_SIZE; i++) {
     #pragma HLS PIPELINE II
@@ -74,5 +86,15 @@ void flatten_layer(
             output[i] = (sum > 0.0f) ? sum : 0.0f;  // ReLU
         }
     }
+
+
+
+// Function prototype
+void fc3_layer(
+    data_t fc3_input[FC3_IN_SIZE],
+    data_t fc3_weights[FC3_IN_SIZE][FC3_OUT_SIZE], 
+    data_t fc3_bias[FC3_OUT_SIZE],
+    int* predicted_class);
+
 
 #endif

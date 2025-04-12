@@ -20,7 +20,7 @@
 
 // Include support files
 #include "lenet_top.h"
-//#include "lenet_support.cpp"
+
 
 // Types
 //typedef ap_fixed<32, 16> data_t;
@@ -35,7 +35,9 @@ void lenet_top(
     data_t conv2_out[10][10][16], 
     data_t pool2_out[5][5][16],
     data_t flat_out[400],
-    data_t fc1_out[120])  {// (New output for conv)
+    data_t fc1_out[120],
+    data_t fc2_out[84], 
+    int* prediction)  {// (New output for conv)
 
 #pragma HLS INTERFACE m_axi port=image offset=slave bundle=gmem
 
@@ -45,6 +47,8 @@ void lenet_top(
 #pragma HLS INTERFACE m_axi port=pool2_out offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi port=flat_out offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi port=fc1_out offset=slave bundle=gmem
+#pragma HLS INTERFACE m_axi port=fc2_out offset=slave bundle=gmem
+#pragma HLS INTERFACE m_axi port=prediction offset=slave bundle=gmem // new output
 
 #pragma HLS INTERFACE s_axilite port=image bundle=control
 #pragma HLS INTERFACE s_axilite port=conv1_out bundle=control
@@ -53,9 +57,10 @@ void lenet_top(
 #pragma HLS INTERFACE s_axilite port=pool2_out bundle=control
 #pragma HLS INTERFACE s_axilite port=flat_out bundle=control
 #pragma HLS INTERFACE s_axilite port=fc1_out bundle=control
+#pragma HLS INTERFACE s_axilite port=fc2_out bundle=control
+#pragma HLS INTERFACE s_axilite port=prediction bundle=control // new output
 
 #pragma HLS INTERFACE s_axilite port=return bundle=control
-
 
 
     // Call the first Conv2D layer
@@ -75,8 +80,10 @@ void lenet_top(
 
     // Call the 6th Layer
     fc_layer<400, 120>(flat_out, fc1_out, fc1_weights, fc1_biases);
+    
+    // Call the 7th Layer
+    fc_layer<120, 84>(fc1_out, fc2_out, fc2_weights, fc2_biases);
 
-
-
-
+    // Call the final 8th layer (FC3 with argmax)
+    fc3_layer(fc2_out, fc3_weights, fc3_biases, prediction);
 }

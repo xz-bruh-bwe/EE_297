@@ -206,6 +206,44 @@ u64 XLenet_top_Get_fc1_out(XLenet_top *InstancePtr) {
     return Data;
 }
 
+void XLenet_top_Set_fc2_out(XLenet_top *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XLenet_top_WriteReg(InstancePtr->Control_BaseAddress, XLENET_TOP_CONTROL_ADDR_FC2_OUT_DATA, (u32)(Data));
+    XLenet_top_WriteReg(InstancePtr->Control_BaseAddress, XLENET_TOP_CONTROL_ADDR_FC2_OUT_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XLenet_top_Get_fc2_out(XLenet_top *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XLenet_top_ReadReg(InstancePtr->Control_BaseAddress, XLENET_TOP_CONTROL_ADDR_FC2_OUT_DATA);
+    Data += (u64)XLenet_top_ReadReg(InstancePtr->Control_BaseAddress, XLENET_TOP_CONTROL_ADDR_FC2_OUT_DATA + 4) << 32;
+    return Data;
+}
+
+void XLenet_top_Set_prediction(XLenet_top *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XLenet_top_WriteReg(InstancePtr->Control_BaseAddress, XLENET_TOP_CONTROL_ADDR_PREDICTION_DATA, (u32)(Data));
+    XLenet_top_WriteReg(InstancePtr->Control_BaseAddress, XLENET_TOP_CONTROL_ADDR_PREDICTION_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XLenet_top_Get_prediction(XLenet_top *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XLenet_top_ReadReg(InstancePtr->Control_BaseAddress, XLENET_TOP_CONTROL_ADDR_PREDICTION_DATA);
+    Data += (u64)XLenet_top_ReadReg(InstancePtr->Control_BaseAddress, XLENET_TOP_CONTROL_ADDR_PREDICTION_DATA + 4) << 32;
+    return Data;
+}
+
 void XLenet_top_InterruptGlobalEnable(XLenet_top *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
