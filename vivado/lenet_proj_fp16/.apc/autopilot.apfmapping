@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="sup16.cpp" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj_fp16\sup16.cpp"/>
+    <originFiles name="tb16.cpp" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj_fp16\tb16.cpp"/>
+    <originFiles name="top16.cpp" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj_fp16\top16.cpp"/>
+    <originFiles name="top16.h" path="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj_fp16\top16.h"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>
