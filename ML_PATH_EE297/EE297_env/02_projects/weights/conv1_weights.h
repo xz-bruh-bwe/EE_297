@@ -1,4 +1,4 @@
-#include "C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h"
+#include "C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lenet_proj\lenet_top.h"
 
 data_t conv1_weights[5][5][1][6] = {
   {

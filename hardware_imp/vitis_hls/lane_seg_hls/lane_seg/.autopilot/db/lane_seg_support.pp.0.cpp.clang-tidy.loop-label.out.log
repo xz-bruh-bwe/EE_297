@@ -1,0 +1,773 @@
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:6699:7: warning: Added loop label VITIS_LOOP_1213_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1213_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:6699:7: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:7673:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:7673:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:7687:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:7687:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:7701:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:7701:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:9300:7: warning: Added loop label VITIS_LOOP_1247_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1247_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:9300:7: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13436:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K0 type=ROM_1P impl=LUTRAM
+                                                                       ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13437:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K1 type=ROM_1P impl=LUTRAM
+                                                                       ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13438:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K2 type=ROM_1P impl=LUTRAM
+                                                                       ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13439:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K3 type=ROM_1P impl=LUTRAM
+                                                                       ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13440:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K4 type=ROM_1P impl=LUTRAM
+                                                                       ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13470:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K0 type=ROM_1P impl=LUTRAM
+                                                                   ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13471:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K1 type=ROM_1P impl=LUTRAM
+                                                                   ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13472:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K2 type=ROM_1P impl=LUTRAM
+                                                                   ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13473:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K3 type=ROM_1P impl=LUTRAM
+                                                                   ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13474:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K4 type=ROM_1P impl=LUTRAM
+                                                                   ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13475:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K0 type=ROM_1P impl=LUTRAM
+                                                                   ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13476:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K1 type=ROM_1P impl=LUTRAM
+                                                                   ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13477:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K2 type=ROM_1P impl=LUTRAM
+                                                                   ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13478:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K3 type=ROM_1P impl=LUTRAM
+                                                                   ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13479:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K4 type=ROM_1P impl=LUTRAM
+                                                                   ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13529:71: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_cos_K0 type=ROM_1P impl=LUTRAM
+                                                                      ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13530:71: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_cos_K1 type=ROM_1P impl=LUTRAM
+                                                                      ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13531:71: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_cos_K2 type=ROM_1P impl=LUTRAM
+                                                                      ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13558:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::cos_K0 type=ROM_1P impl=LUTRAM
+                                                                  ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13559:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::cos_K1 type=ROM_1P impl=LUTRAM
+                                                                  ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13560:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::cos_K2 type=ROM_1P impl=LUTRAM
+                                                                  ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13561:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_K0 type=ROM_1P impl=LUTRAM
+                                                                  ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13562:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_K1 type=ROM_1P impl=LUTRAM
+                                                                  ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13563:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_K2 type=ROM_1P impl=LUTRAM
+                                                                  ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13599:73: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=first_order_fixed_16::sin_cos_K0 type=ROM_1P impl=LUTRAM
+                                                                        ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13600:73: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=first_order_fixed_16::sin_cos_K1 type=ROM_1P impl=LUTRAM
+                                                                        ^
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13874:5: warning: Added loop label VITIS_LOOP_87_1:   [xilinx-label-all-loops]
+    for (int n=0; n<Nmax; n++){
+    ^~~
+    VITIS_LOOP_87_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13874:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13920:5: warning: Added loop label VITIS_LOOP_143_1:   [xilinx-label-all-loops]
+    for (int n=0; n<Nmax; n++){
+    ^~~
+    VITIS_LOOP_143_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:13920:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14083:9: warning: Added loop label VITIS_LOOP_315_1:   [xilinx-label-all-loops]
+        for(int i=0;i<W-1;i++){
+        ^~~
+        VITIS_LOOP_315_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14083:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14235:9: warning: Added loop label VITIS_LOOP_475_1:   [xilinx-label-all-loops]
+        for(int i=0;i<W-1;i++){
+        ^~~
+        VITIS_LOOP_475_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14235:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14415:5: warning: Added loop label VITIS_LOOP_655_1:   [xilinx-label-all-loops]
+    for(int i=0;i<W+1;i++){
+    ^~~
+    VITIS_LOOP_655_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14415:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14419:5: warning: Added loop label VITIS_LOOP_659_2:   [xilinx-label-all-loops]
+    for(int i=0;i<W+1;i++){
+    ^~~
+    VITIS_LOOP_659_2: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14419:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14529:5: warning: Added loop label VITIS_LOOP_769_1:   [xilinx-label-all-loops]
+    for (int n=0; n<Nmax; n++){
+    ^~~
+    VITIS_LOOP_769_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14529:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14619:7: warning: Added loop label VITIS_LOOP_866_1:   [xilinx-label-all-loops]
+      for(int i=0;i<W-1;i++){
+      ^~~
+      VITIS_LOOP_866_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14619:7: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14638:7: warning: Added loop label VITIS_LOOP_885_2:   [xilinx-label-all-loops]
+      for(int i=0;i<W-1;i++){
+      ^~~
+      VITIS_LOOP_885_2: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14638:7: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14928:5: warning: Added loop label VITIS_LOOP_1199_1:   [xilinx-label-all-loops]
+    for(int i=0; i<Nmax; i++) {
+    ^~~
+    VITIS_LOOP_1199_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:14928:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15011:5: warning: Added loop label VITIS_LOOP_1282_1:   [xilinx-label-all-loops]
+    for(int i=0; i<Nmax; i++) {
+    ^~~
+    VITIS_LOOP_1282_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15011:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15417:13: warning: Added loop label VITIS_LOOP_94_1:   [xilinx-label-all-loops]
+            for (int j = 3; j >= I_+1; j--) {
+            ^~~
+            VITIS_LOOP_94_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15417:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15423:17: warning: Added loop label VITIS_LOOP_100_2:   [xilinx-label-all-loops]
+                for (int j = 3; j >= I_+1; j--){
+                ^~~
+                VITIS_LOOP_100_2: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15423:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15427:17: warning: Added loop label VITIS_LOOP_104_3:   [xilinx-label-all-loops]
+                for (int j = I_; j >= 0; j--){
+                ^~~
+                VITIS_LOOP_104_3: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15427:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15475:13: warning: Added loop label VITIS_LOOP_171_4:   [xilinx-label-all-loops]
+            for (int j = 9; j >= I_+4; j--) {
+            ^~~
+            VITIS_LOOP_171_4: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15475:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15481:17: warning: Added loop label VITIS_LOOP_177_5:   [xilinx-label-all-loops]
+                for (int j = 9; j >= I_+4; j--){
+                ^~~
+                VITIS_LOOP_177_5: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15481:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15485:17: warning: Added loop label VITIS_LOOP_181_6:   [xilinx-label-all-loops]
+                for (int j = I_+3; j >= 0; j--){
+                ^~~
+                VITIS_LOOP_181_6: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15485:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15500:9: warning: Added loop label VITIS_LOOP_196_7:   [xilinx-label-all-loops]
+        for (int j = 14; j < 22; j++){
+        ^~~
+        VITIS_LOOP_196_7: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15500:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15508:17: warning: Added loop label VITIS_LOOP_204_8:   [xilinx-label-all-loops]
+                for (int j = 0; j < 22; j++){
+                ^~~
+                VITIS_LOOP_204_8: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15508:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15573:13: warning: Added loop label VITIS_LOOP_269_9:   [xilinx-label-all-loops]
+            for (int j = 21; j >= I_+10; j--) {
+            ^~~
+            VITIS_LOOP_269_9: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15573:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15579:17: warning: Added loop label VITIS_LOOP_275_10:   [xilinx-label-all-loops]
+                for (int j = 21; j >= I_+10; j--) {
+                ^~~
+                VITIS_LOOP_275_10: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15579:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15583:17: warning: Added loop label VITIS_LOOP_279_11:   [xilinx-label-all-loops]
+                for (int j = I_+9; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_279_11: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15583:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15598:9: warning: Added loop label VITIS_LOOP_294_12:   [xilinx-label-all-loops]
+        for (int j = 27; j < 46; j++){
+        ^~~
+        VITIS_LOOP_294_12: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15598:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15606:17: warning: Added loop label VITIS_LOOP_302_13:   [xilinx-label-all-loops]
+                for (int j = 0; j < 46; j++) {
+                ^~~
+                VITIS_LOOP_302_13: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15606:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15835:13: warning: Added loop label VITIS_LOOP_531_14:   [xilinx-label-all-loops]
+            for (int j = 45; j >= I_+22; j--) {
+            ^~~
+            VITIS_LOOP_531_14: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15835:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15841:17: warning: Added loop label VITIS_LOOP_537_15:   [xilinx-label-all-loops]
+                for (int j = 45; j >= I_+22; j--){
+                ^~~
+                VITIS_LOOP_537_15: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15841:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15845:17: warning: Added loop label VITIS_LOOP_541_16:   [xilinx-label-all-loops]
+                for (int j = I_+21; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_541_16: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15845:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15855:9: warning: Added loop label VITIS_LOOP_551_17:   [xilinx-label-all-loops]
+        for (int j = 32-F_; j < 32+I_; j++){
+        ^~~
+        VITIS_LOOP_551_17: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15855:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15859:9: warning: Added loop label VITIS_LOOP_555_18:   [xilinx-label-all-loops]
+        for (int j = 32+I_; j <= 64; j++){
+        ^~~
+        VITIS_LOOP_555_18: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15859:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15869:9: warning: Added loop label VITIS_LOOP_565_19:   [xilinx-label-all-loops]
+        for (int j = 37; j < 64; j++) {
+        ^~~
+        VITIS_LOOP_565_19: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15869:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15877:17: warning: Added loop label VITIS_LOOP_573_20:   [xilinx-label-all-loops]
+                for (int j = 0; j < 64; j++){
+                ^~~
+                VITIS_LOOP_573_20: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:15877:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16238:13: warning: Added loop label VITIS_LOOP_934_21:   [xilinx-label-all-loops]
+            for (int j = 63; j >= I_+31; j--) {
+            ^~~
+            VITIS_LOOP_934_21: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16238:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16244:17: warning: Added loop label VITIS_LOOP_940_22:   [xilinx-label-all-loops]
+                for (int j = 63; j >= I_+31; j--) {
+                ^~~
+                VITIS_LOOP_940_22: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16244:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16248:17: warning: Added loop label VITIS_LOOP_944_23:   [xilinx-label-all-loops]
+                for (int j = I_+30; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_944_23: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16248:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16364:13: warning: Added loop label VITIS_LOOP_1060_1:   [xilinx-label-all-loops]
+            for (int j = 4; j >= I_+1; j--) {
+            ^~~
+            VITIS_LOOP_1060_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16364:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16370:17: warning: Added loop label VITIS_LOOP_1066_2:   [xilinx-label-all-loops]
+                for (int j = 4; j >= I_+1; j--) {
+                ^~~
+                VITIS_LOOP_1066_2: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16370:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16374:17: warning: Added loop label VITIS_LOOP_1070_3:   [xilinx-label-all-loops]
+                for (int j = I_; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_1070_3: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16374:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16461:13: warning: Added loop label VITIS_LOOP_1157_4:   [xilinx-label-all-loops]
+            for (int j = 10; j >= I_+4; j--) {
+            ^~~
+            VITIS_LOOP_1157_4: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16461:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16467:17: warning: Added loop label VITIS_LOOP_1163_5:   [xilinx-label-all-loops]
+                for (int j = 10; j >= I_+4; j--) {
+                ^~~
+                VITIS_LOOP_1163_5: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16467:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16471:17: warning: Added loop label VITIS_LOOP_1167_6:   [xilinx-label-all-loops]
+                for (int j = I_+3; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_1167_6: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16471:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16490:9: warning: Added loop label VITIS_LOOP_1186_7:   [xilinx-label-all-loops]
+        for (int j = wf+3; j < w-1; j++) {
+        ^~~
+        VITIS_LOOP_1186_7: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16490:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16497:17: warning: Added loop label VITIS_LOOP_1193_8:   [xilinx-label-all-loops]
+                for (int j = 0; j < 22; j++) {
+                ^~~
+                VITIS_LOOP_1193_8: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16497:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16613:13: warning: Added loop label VITIS_LOOP_1309_9:   [xilinx-label-all-loops]
+            for (int j = 22; j >= I_+10; j--) {
+            ^~~
+            VITIS_LOOP_1309_9: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16613:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16619:17: warning: Added loop label VITIS_LOOP_1315_10:   [xilinx-label-all-loops]
+                for (int j = 22; j >= I_+10; j--){
+                ^~~
+                VITIS_LOOP_1315_10: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16619:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16623:17: warning: Added loop label VITIS_LOOP_1319_11:   [xilinx-label-all-loops]
+                for (int j = I_+9; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_1319_11: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16623:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16643:9: warning: Added loop label VITIS_LOOP_1339_12:   [xilinx-label-all-loops]
+        for (int j = wf+4; j < w-1; j++){
+        ^~~
+        VITIS_LOOP_1339_12: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16643:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16650:17: warning: Added loop label VITIS_LOOP_1346_13:   [xilinx-label-all-loops]
+                for (int j = 0; j < 46; j++) {
+                ^~~
+                VITIS_LOOP_1346_13: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16650:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16912:13: warning: Added loop label VITIS_LOOP_1608_14:   [xilinx-label-all-loops]
+            for (int j = 46; j >= I_+22; j--) {
+            ^~~
+            VITIS_LOOP_1608_14: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16912:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16918:17: warning: Added loop label VITIS_LOOP_1614_15:   [xilinx-label-all-loops]
+                for (int j = 46; j >= I_+22; j--) {
+                ^~~
+                VITIS_LOOP_1614_15: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16918:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16922:17: warning: Added loop label VITIS_LOOP_1618_16:   [xilinx-label-all-loops]
+                for (int j = I_+21; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_1618_16: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16922:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16946:9: warning: Added loop label VITIS_LOOP_1642_17:   [xilinx-label-all-loops]
+        for (int j = wf+5; j < w-1; j++){
+        ^~~
+        VITIS_LOOP_1642_17: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16946:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16953:17: warning: Added loop label VITIS_LOOP_1649_18:   [xilinx-label-all-loops]
+                for (int j = 0; j < 64; j++) {
+                ^~~
+                VITIS_LOOP_1649_18: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:16953:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17383:13: warning: Added loop label VITIS_LOOP_2079_19:   [xilinx-label-all-loops]
+            for (int j = 64; j >= I_+31; j--) {
+            ^~~
+            VITIS_LOOP_2079_19: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17383:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17389:17: warning: Added loop label VITIS_LOOP_2085_20:   [xilinx-label-all-loops]
+                for (int j = 64; j >= I_+31; j--) {
+                ^~~
+                VITIS_LOOP_2085_20: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17389:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17393:17: warning: Added loop label VITIS_LOOP_2089_21:   [xilinx-label-all-loops]
+                for (int j = I_+30; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_2089_21: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17393:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17523:13: warning: Added loop label VITIS_LOOP_2219_1:   [xilinx-label-all-loops]
+            for(int j=3; j>=I+1; j--) {
+            ^~~
+            VITIS_LOOP_2219_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17523:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17530:17: warning: Added loop label VITIS_LOOP_2226_2:   [xilinx-label-all-loops]
+                for(int j=3; j>=I+1; j--) {
+                ^~~
+                VITIS_LOOP_2226_2: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17530:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17534:17: warning: Added loop label VITIS_LOOP_2230_3:   [xilinx-label-all-loops]
+                for(int j=I; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2230_3: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17534:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17581:13: warning: Added loop label VITIS_LOOP_2277_4:   [xilinx-label-all-loops]
+            for(int j=7; j>=3+I; j--) {
+            ^~~
+            VITIS_LOOP_2277_4: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17581:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17588:17: warning: Added loop label VITIS_LOOP_2284_5:   [xilinx-label-all-loops]
+                for(int j=7; j>=3+I; j--) {
+                ^~~
+                VITIS_LOOP_2284_5: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17588:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17592:17: warning: Added loop label VITIS_LOOP_2288_6:   [xilinx-label-all-loops]
+                for(int j=I+2; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2288_6: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17592:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17610:9: warning: Added loop label VITIS_LOOP_2306_7:   [xilinx-label-all-loops]
+        for(int j=11; j<16; j++) {
+        ^~~
+        VITIS_LOOP_2306_7: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17610:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17665:13: warning: Added loop label VITIS_LOOP_2361_8:   [xilinx-label-all-loops]
+            for(int j=15; j>=7+I; j--) {
+            ^~~
+            VITIS_LOOP_2361_8: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17665:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17672:17: warning: Added loop label VITIS_LOOP_2368_9:   [xilinx-label-all-loops]
+                for(int j=15; j>=7+I; j--) {
+                ^~~
+                VITIS_LOOP_2368_9: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17672:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17676:17: warning: Added loop label VITIS_LOOP_2372_10:   [xilinx-label-all-loops]
+                for(int j=6+I; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2372_10: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17676:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17694:9: warning: Added loop label VITIS_LOOP_2390_11:   [xilinx-label-all-loops]
+        for(int j=20; j<32; j++) {
+        ^~~
+        VITIS_LOOP_2390_11: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17694:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17783:13: warning: Added loop label VITIS_LOOP_2479_12:   [xilinx-label-all-loops]
+            for(int j=31; j>=I+15; j--) {
+            ^~~
+            VITIS_LOOP_2479_12: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17783:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17790:17: warning: Added loop label VITIS_LOOP_2486_13:   [xilinx-label-all-loops]
+                for(int j=31; j>=I+15; j--) {
+                ^~~
+                VITIS_LOOP_2486_13: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17790:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17794:17: warning: Added loop label VITIS_LOOP_2490_14:   [xilinx-label-all-loops]
+                for(int j=I+14; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2490_14: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17794:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17804:9: warning: Added loop label VITIS_LOOP_2500_15:   [xilinx-label-all-loops]
+        for(int j=32-F; j<32+I; j++) {
+        ^~~
+        VITIS_LOOP_2500_15: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17804:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17808:9: warning: Added loop label VITIS_LOOP_2504_16:   [xilinx-label-all-loops]
+        for(int j=32+I; j<=64; j++) {
+        ^~~
+        VITIS_LOOP_2504_16: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17808:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17819:9: warning: Added loop label VITIS_LOOP_2515_17:   [xilinx-label-all-loops]
+        for(int j=37; j<64; j++) {
+        ^~~
+        VITIS_LOOP_2515_17: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17819:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17827:17: warning: Added loop label VITIS_LOOP_2523_18:   [xilinx-label-all-loops]
+                for(int j=0; j<64; j++) {
+                ^~~
+                VITIS_LOOP_2523_18: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:17827:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18152:13: warning: Added loop label VITIS_LOOP_2848_19:   [xilinx-label-all-loops]
+            for(int j=63; j>=I+31; j--) {
+            ^~~
+            VITIS_LOOP_2848_19: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18152:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18159:17: warning: Added loop label VITIS_LOOP_2855_20:   [xilinx-label-all-loops]
+                for(int j=63; j>=I+31; j--) {
+                ^~~
+                VITIS_LOOP_2855_20: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18159:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18163:17: warning: Added loop label VITIS_LOOP_2859_21:   [xilinx-label-all-loops]
+                for(int j=I+30; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2859_21: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18163:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18251:4: warning: Added loop label VITIS_LOOP_2947_1:   [xilinx-label-all-loops]
+   for(int j = 5; j>=I_+2; j--) {
+   ^~~
+   VITIS_LOOP_2947_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18251:4: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18258:5: warning: Added loop label VITIS_LOOP_2954_2:   [xilinx-label-all-loops]
+    for(int j = 5; j>=I_+2; j--) {
+    ^~~
+    VITIS_LOOP_2954_2: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18258:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18262:5: warning: Added loop label VITIS_LOOP_2958_3:   [xilinx-label-all-loops]
+    for(int j = I_+1; j>=0; j--) {
+    ^~~
+    VITIS_LOOP_2958_3: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18262:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18277:3: warning: Added loop label VITIS_LOOP_2973_4:   [xilinx-label-all-loops]
+  for(int j = 11; j >=7; j--) {
+  ^~~
+  VITIS_LOOP_2973_4: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18277:3: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18309:4: warning: Added loop label VITIS_LOOP_3005_5:   [xilinx-label-all-loops]
+   for(int j = 11; j >= I_+5; j--) {
+   ^~~
+   VITIS_LOOP_3005_5: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18309:4: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18316:5: warning: Added loop label VITIS_LOOP_3012_6:   [xilinx-label-all-loops]
+    for(int j = 11; j>= I_+5; j--) {
+    ^~~
+    VITIS_LOOP_3012_6: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18316:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18320:5: warning: Added loop label VITIS_LOOP_3016_7:   [xilinx-label-all-loops]
+    for(int j = I_+4; j>=0; j--) {
+    ^~~
+    VITIS_LOOP_3016_7: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18320:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18335:3: warning: Added loop label VITIS_LOOP_3031_8:   [xilinx-label-all-loops]
+  for(int j = 25; j>=15; j--) {
+  ^~~
+  VITIS_LOOP_3031_8: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18335:3: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18385:4: warning: Added loop label VITIS_LOOP_3081_9:   [xilinx-label-all-loops]
+   for(int j = 25; j>= I_+12; j--) {
+   ^~~
+   VITIS_LOOP_3081_9: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18385:4: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18392:5: warning: Added loop label VITIS_LOOP_3088_10:   [xilinx-label-all-loops]
+    for(int j = 25; j>=I_+12; j--) {
+    ^~~
+    VITIS_LOOP_3088_10: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18392:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18396:5: warning: Added loop label VITIS_LOOP_3092_11:   [xilinx-label-all-loops]
+    for(int j = I_+11; j>=0; j--) {
+    ^~~
+    VITIS_LOOP_3092_11: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18396:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18411:3: warning: Added loop label VITIS_LOOP_3107_12:   [xilinx-label-all-loops]
+  for(int j = 51; j >= 29; j--) {
+  ^~~
+  VITIS_LOOP_3107_12: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18411:3: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18548:4: warning: Added loop label VITIS_LOOP_3244_13:   [xilinx-label-all-loops]
+   for(int j = 51; j >= 25 + I_; j--) {
+   ^~~
+   VITIS_LOOP_3244_13: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18548:4: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18555:5: warning: Added loop label VITIS_LOOP_3251_14:   [xilinx-label-all-loops]
+    for(int j = 51; j>=25 + I_; j--) {
+    ^~~
+    VITIS_LOOP_3251_14: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18555:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18559:5: warning: Added loop label VITIS_LOOP_3255_15:   [xilinx-label-all-loops]
+    for(int j = 24 + I_; j >= 0; j--) {
+    ^~~
+    VITIS_LOOP_3255_15: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18559:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18574:3: warning: Added loop label VITIS_LOOP_3270_16:   [xilinx-label-all-loops]
+  for(int j = 63; j >= 36; j--) {
+  ^~~
+  VITIS_LOOP_3270_16: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18574:3: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18734:4: warning: Added loop label VITIS_LOOP_3430_17:   [xilinx-label-all-loops]
+   for(int j = 63; j >= 31 + I_; j--) {
+   ^~~
+   VITIS_LOOP_3430_17: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18734:4: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18741:5: warning: Added loop label VITIS_LOOP_3437_18:   [xilinx-label-all-loops]
+    for(int j = 63; j >= 31 + I_; j--) {
+    ^~~
+    VITIS_LOOP_3437_18: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18741:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18745:5: warning: Added loop label VITIS_LOOP_3441_19:   [xilinx-label-all-loops]
+    for(int j = 30 + I_; j >= 0; j--) {
+    ^~~
+    VITIS_LOOP_3441_19: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:18745:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:19460:13: warning: Added loop label VITIS_LOOP_729_1:   [xilinx-label-all-loops]
+            for (b_exp = I_-1; b_exp >= -F_; b_exp--) {
+            ^~~
+            VITIS_LOOP_729_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:19460:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:19678:13: warning: Added loop label VITIS_LOOP_947_1:   [xilinx-label-all-loops]
+            for (b_exp = I_-1; b_exp >= -F_; b_exp--) {
+            ^~~
+            VITIS_LOOP_947_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:19678:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:20095:13: warning: Added loop label VITIS_LOOP_1371_1:   [xilinx-label-all-loops]
+            for (b_exp = I_-1; b_exp >= -F_; b_exp--) {
+            ^~~
+            VITIS_LOOP_1371_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:20095:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:20409:9: warning: Added loop label VITIS_LOOP_266_1:   [xilinx-label-all-loops]
+        for ( int pos = msbr-1; pos >= 0; pos-- ) {
+        ^~~
+        VITIS_LOOP_266_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:20409:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:20437:9: warning: Added loop label VITIS_LOOP_294_2:   [xilinx-label-all-loops]
+        for ( int pos = -1; pos >= -F_-1; pos-- ) {
+        ^~~
+        VITIS_LOOP_294_2: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:20437:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21132:13: warning: Added loop label VITIS_LOOP_74_1:   [xilinx-label-all-loops]
+            for (int j = 0; j < W_-1; j++){
+            ^~~
+            VITIS_LOOP_74_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21132:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21185:5: warning: Added loop label VITIS_LOOP_135_2:   [xilinx-label-all-loops]
+    for (int j = F_l+F_+I_m-1; j < F_l+W_+5; j++){
+    ^~~
+    VITIS_LOOP_135_2: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21185:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21199:13: warning: Added loop label VITIS_LOOP_149_3:   [xilinx-label-all-loops]
+            for (int j = WO_m-1; j >= W_-1; j--) {
+            ^~~
+            VITIS_LOOP_149_3: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21199:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21229:13: warning: Added loop label VITIS_LOOP_179_4:   [xilinx-label-all-loops]
+            for (int j = W_-2; j >= 0; j--){
+            ^~~
+            VITIS_LOOP_179_4: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21229:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21314:12: warning: Added loop label VITIS_LOOP_307_1:   [xilinx-label-all-loops]
+           for(int i = wf_log+we_log-2; i > WI_e - 2; --i) {
+           ^~~
+           VITIS_LOOP_307_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21314:12: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21334:16: warning: Added loop label VITIS_LOOP_327_2:   [xilinx-label-all-loops]
+               for (int j = WO_e-1; j >= W_-1; j--) {
+               ^~~
+               VITIS_LOOP_327_2: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21334:16: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21348:20: warning: Added loop label VITIS_LOOP_341_3:   [xilinx-label-all-loops]
+                   for(int i = 0; i < W_-1; ++i) {
+                   ^~~
+                   VITIS_LOOP_341_3: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21348:20: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21441:12: warning: Added loop label VITIS_LOOP_459_1:   [xilinx-label-all-loops]
+           for (int j =WO_d-1; j >= W_-1; j--) {
+           ^~~
+           VITIS_LOOP_459_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21441:12: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21455:15: warning: Added loop label VITIS_LOOP_473_2:   [xilinx-label-all-loops]
+              for(int i = 0; i < W_-1; ++i) {
+              ^~~
+              VITIS_LOOP_473_2: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21455:15: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21568:13: warning: Added loop label VITIS_LOOP_59_1:   [xilinx-label-all-loops]
+            for (int i = 0; i < W_-1; i++){
+            ^~~
+            VITIS_LOOP_59_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21568:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21692:13: warning: Added loop label VITIS_LOOP_209_1:   [xilinx-label-all-loops]
+            for (int i = 0; i < W_-1; i++){
+            ^~~
+            VITIS_LOOP_209_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21692:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21747:13: warning: Added loop label VITIS_LOOP_274_1:   [xilinx-label-all-loops]
+            for (int i = 0; i < W_-1; i++){
+            ^~~
+            VITIS_LOOP_274_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:21747:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22252:2: warning: Added loop label VITIS_LOOP_42_1:   [xilinx-label-all-loops]
+ for (int i=0; i<W_;i++)
+ ^~~
+ VITIS_LOOP_42_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22252:2: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22263:2: warning: Added loop label VITIS_LOOP_53_1:   [xilinx-label-all-loops]
+ for (int i=0; i<W_;i++)
+ ^~~
+ VITIS_LOOP_53_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22263:2: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22274:2: warning: Added loop label VITIS_LOOP_64_1:   [xilinx-label-all-loops]
+ for (int i=0; i<I_;i++)
+ ^~~
+ VITIS_LOOP_64_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22274:2: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22285:2: warning: Added loop label VITIS_LOOP_75_1:   [xilinx-label-all-loops]
+ for (int i=0; i<I_;i++)
+ ^~~
+ VITIS_LOOP_75_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22285:2: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22296:2: warning: Added loop label VITIS_LOOP_86_1:   [xilinx-label-all-loops]
+ for (int i=0; i<W_;i++)
+ ^~~
+ VITIS_LOOP_86_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22296:2: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22307:2: warning: Added loop label VITIS_LOOP_97_1:   [xilinx-label-all-loops]
+ for (int i=0; i<W_;i++)
+ ^~~
+ VITIS_LOOP_97_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22307:2: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22318:2: warning: Added loop label VITIS_LOOP_108_1:   [xilinx-label-all-loops]
+ for (int i=0; i<I_;i++)
+ ^~~
+ VITIS_LOOP_108_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22318:2: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22329:2: warning: Added loop label VITIS_LOOP_119_1:   [xilinx-label-all-loops]
+ for (int i=0; i<I_;i++)
+ ^~~
+ VITIS_LOOP_119_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:22329:2: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:24630:12: warning: Added loop label VITIS_LOOP_23_1:   [xilinx-label-all-loops]
+           for(int i = 0; i < W_-1; ++i) {
+           ^~~
+           VITIS_LOOP_23_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:24630:12: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:24694:7: warning: Added loop label VITIS_LOOP_66_1:   [xilinx-label-all-loops]
+      for(int pos = msbr - 1 ; pos >= -F-1; pos--) {
+      ^~~
+      VITIS_LOOP_66_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:24694:7: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:24811:9: warning: Added loop label VITIS_LOOP_75_1:   [xilinx-label-all-loops]
+        for(int pos = msbr - 1; pos >= 0; pos--) {
+        ^~~
+        VITIS_LOOP_75_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:24811:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:24836:5: warning: Added loop label VITIS_LOOP_107_2:   [xilinx-label-all-loops]
+    for(int pos = -1; pos >= -F-1; pos--) {
+    ^~~
+    VITIS_LOOP_107_2: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:24836:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:24906:8: warning: Added loop label VITIS_LOOP_195_3:   [xilinx-label-all-loops]
+       for(int i = 0; i < W - 1; ++i) {
+       ^~~
+       VITIS_LOOP_195_3: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:24906:8: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27169:5: warning: Added loop label VITIS_LOOP_35_1:   [xilinx-label-all-loops]
+    for (int y = 0; y < 224; y++) {
+    ^~~
+    VITIS_LOOP_35_1: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27169:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27170:9: warning: Added loop label VITIS_LOOP_36_2:   [xilinx-label-all-loops]
+        for (int x = 0; x < 224; x++) {
+        ^~~
+        VITIS_LOOP_36_2: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27170:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27171:13: warning: Added loop label VITIS_LOOP_37_3:   [xilinx-label-all-loops]
+            for (int c = 0; c < 3; c++) {
+            ^~~
+            VITIS_LOOP_37_3: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27171:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27182:5: warning: Added loop label VITIS_LOOP_48_4:   [xilinx-label-all-loops]
+    for (int oh = 0; oh < ((224 + 2 * 1 - 3) / 2 + 1); oh++) {
+    ^~~
+    VITIS_LOOP_48_4: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27182:5: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27183:9: warning: Added loop label VITIS_LOOP_49_5:   [xilinx-label-all-loops]
+        for (int ow = 0; ow < ((224 + 2 * 1 - 3) / 2 + 1); ow++) {
+        ^~~
+        VITIS_LOOP_49_5: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27183:9: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27188:13: warning: Added loop label VITIS_LOOP_54_6:   [xilinx-label-all-loops]
+            for (int oc = 0; oc < 32; oc++) {
+            ^~~
+            VITIS_LOOP_54_6: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27188:13: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27192:17: warning: Added loop label VITIS_LOOP_58_7:   [xilinx-label-all-loops]
+                for (int ky = 0; ky < 3; ky++) {
+                ^~~
+                VITIS_LOOP_58_7: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27192:17: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27193:21: warning: Added loop label VITIS_LOOP_59_8:   [xilinx-label-all-loops]
+                    for (int kx = 0; kx < 3; kx++) {
+                    ^~~
+                    VITIS_LOOP_59_8: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27193:21: note: FIX-IT applied suggested code changes
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27194:25: warning: Added loop label VITIS_LOOP_60_9:   [xilinx-label-all-loops]
+                        for (int ic = 0; ic < 3; ic++) {
+                        ^~~
+                        VITIS_LOOP_60_9: 
+C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp:27194:25: note: FIX-IT applied suggested code changes

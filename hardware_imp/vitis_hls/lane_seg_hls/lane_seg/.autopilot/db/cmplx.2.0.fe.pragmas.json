@@ -1,0 +1,44 @@
+{
+  "0": {
+    "basicblocks": 3,
+    "calls": "1",
+    "file": "lane_seg_top.cpp",
+    "fileloc": 22,
+    "instructions": 23,
+    "loads": {
+      "T": 1
+    },
+    "name": "lane_seg_top",
+    "stores": {
+      "T": 3
+    },
+    "total_instructions": 42144
+  },
+  "1": {
+    "basicblocks": 19956,
+    "calls": "2 2",
+    "file": "lane_seg_support.cpp",
+    "fileloc": 17,
+    "instructions": 42103,
+    "loads": {
+      "L": 865
+    },
+    "name": "encoder0_c1",
+    "stores": {
+      "L": 35
+    },
+    "total_instructions": 42121
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "stdio.h",
+    "fileloc": 345,
+    "instructions": 9,
+    "loads": {
+      "L": 1
+    },
+    "name": "printf",
+    "total_instructions": 9
+  }
+}

@@ -1,0 +1,227 @@
+
+
+================================================================
+== Vitis HLS Report for 'encoder0_c1_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3'
+================================================================
+* Date:           Mon Sep  8 23:44:57 2025
+
+* Version:        2023.1 (Build 3854077 on May  4 2023)
+* Project:        lane_seg_hls
+* Solution:       lane_seg (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu7ev-ffvc1156-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  15.00 ns|  10.950 ns|     4.05 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   150532|   150532|  2.258 ms|  2.258 ms|  150532|  150532|       no|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------------------------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |                                                   |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip  |          |
+        |                     Loop Name                     |   min   |   max   |  Latency |  achieved |   target  |  Count | Pipelined|
+        +---------------------------------------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |- VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3  |   150530|   150530|         4|          1|          1|  150528|       yes|
+        +---------------------------------------------------+---------+---------+----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 5
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 5, States = { 1 2 3 4 5 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.42>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%c = alloca i32 1"   --->   Operation 7 'alloca' 'c' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%x = alloca i32 1"   --->   Operation 8 'alloca' 'x' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 9 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%y = alloca i32 1"   --->   Operation 10 'alloca' 'y' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%indvar_flatten14 = alloca i32 1"   --->   Operation 11 'alloca' 'indvar_flatten14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%sext_ln35_read = read i63 @_ssdm_op_Read.ap_auto.i63, i63 %sext_ln35"   --->   Operation 12 'read' 'sext_ln35_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%sext_ln35_cast = sext i63 %sext_ln35_read"   --->   Operation 13 'sext' 'sext_ln35_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gmem_in, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 150528, void @empty_1, void @empty_2, void @empty_0, i32 16, i32 16, i32 16, i32 16, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.42ns)   --->   "%store_ln0 = store i18 0, i18 %indvar_flatten14"   --->   Operation 15 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 16 [1/1] (0.42ns)   --->   "%store_ln0 = store i8 0, i8 %y"   --->   Operation 16 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 17 [1/1] (0.42ns)   --->   "%store_ln0 = store i10 0, i10 %indvar_flatten"   --->   Operation 17 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 18 [1/1] (0.42ns)   --->   "%store_ln0 = store i8 0, i8 %x"   --->   Operation 18 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 19 [1/1] (0.42ns)   --->   "%store_ln0 = store i2 0, i2 %c"   --->   Operation 19 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->   Operation 20 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.17>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%indvar_flatten14_load = load i18 %indvar_flatten14" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 21 'load' 'indvar_flatten14_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.87ns)   --->   "%icmp_ln35 = icmp_eq  i18 %indvar_flatten14_load, i18 150528" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 22 'icmp' 'icmp_ln35' <Predicate = true> <Delay = 0.87> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (0.87ns)   --->   "%add_ln35 = add i18 %indvar_flatten14_load, i18 1" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 23 'add' 'add_ln35' <Predicate = true> <Delay = 0.87> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln35 = br i1 %icmp_ln35, void %for.inc58, void %if.end57.i.i.exitStub" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 24 'br' 'br_ln35' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i10 %indvar_flatten" [lane_seg_hls/lane_seg_support.cpp:36]   --->   Operation 25 'load' 'indvar_flatten_load' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%y_load = load i8 %y"   --->   Operation 26 'load' 'y_load' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.78ns)   --->   "%icmp_ln36 = icmp_eq  i10 %indvar_flatten_load, i10 672" [lane_seg_hls/lane_seg_support.cpp:36]   --->   Operation 27 'icmp' 'icmp_ln36' <Predicate = (!icmp_ln35)> <Delay = 0.78> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.76ns)   --->   "%indvars_iv_next11537_mid1 = add i8 %y_load, i8 2"   --->   Operation 28 'add' 'indvars_iv_next11537_mid1' <Predicate = (!icmp_ln35)> <Delay = 0.76> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.76> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 29 [1/1] (0.76ns)   --->   "%indvars_iv_next11537250 = add i8 %y_load, i8 1"   --->   Operation 29 'add' 'indvars_iv_next11537250' <Predicate = (!icmp_ln35)> <Delay = 0.76> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.76> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 30 [1/1] (0.39ns)   --->   "%select_ln35_1 = select i1 %icmp_ln36, i8 %indvars_iv_next11537_mid1, i8 %indvars_iv_next11537250" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 30 'select' 'select_ln35_1' <Predicate = (!icmp_ln35)> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%zext_ln38 = zext i8 %select_ln35_1" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 31 'zext' 'zext_ln38' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_2 : Operation 32 [3/3] (0.99ns) (grouped into DSP with root node add_ln38)   --->   "%mul_ln38 = mul i16 %zext_ln38, i16 226" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 32 'mul' 'mul_ln38' <Predicate = (!icmp_ln35)> <Delay = 0.99> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : '<invalid operator> ' 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 33 [1/1] (0.39ns)   --->   "%select_ln35_3 = select i1 %icmp_ln36, i8 %indvars_iv_next11537250, i8 %y_load" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 33 'select' 'select_ln35_3' <Predicate = (!icmp_ln35)> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.78ns)   --->   "%add_ln36 = add i10 %indvar_flatten_load, i10 1" [lane_seg_hls/lane_seg_support.cpp:36]   --->   Operation 34 'add' 'add_ln36' <Predicate = (!icmp_ln35)> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.40ns)   --->   "%select_ln36_3 = select i1 %icmp_ln36, i10 1, i10 %add_ln36" [lane_seg_hls/lane_seg_support.cpp:36]   --->   Operation 35 'select' 'select_ln36_3' <Predicate = (!icmp_ln35)> <Delay = 0.40> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.40> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (0.42ns)   --->   "%store_ln37 = store i18 %add_ln35, i18 %indvar_flatten14" [lane_seg_hls/lane_seg_support.cpp:37]   --->   Operation 36 'store' 'store_ln37' <Predicate = (!icmp_ln35)> <Delay = 0.42>
+ST_2 : Operation 37 [1/1] (0.42ns)   --->   "%store_ln37 = store i8 %select_ln35_3, i8 %y" [lane_seg_hls/lane_seg_support.cpp:37]   --->   Operation 37 'store' 'store_ln37' <Predicate = (!icmp_ln35)> <Delay = 0.42>
+ST_2 : Operation 38 [1/1] (0.42ns)   --->   "%store_ln37 = store i10 %select_ln36_3, i10 %indvar_flatten" [lane_seg_hls/lane_seg_support.cpp:37]   --->   Operation 38 'store' 'store_ln37' <Predicate = (!icmp_ln35)> <Delay = 0.42>
+
+State 3 <SV = 2> <Delay = 0.99>
+ST_3 : Operation 39 [2/3] (0.99ns) (grouped into DSP with root node add_ln38)   --->   "%mul_ln38 = mul i16 %zext_ln38, i16 226" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 39 'mul' 'mul_ln38' <Predicate = (!icmp_ln35)> <Delay = 0.99> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : '<invalid operator> ' 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 4 <SV = 3> <Delay = 10.9>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "%x_1 = load i8 %x"   --->   Operation 40 'load' 'x_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%gmem_in_addr = getelementptr i16 %gmem_in, i64 %sext_ln35_cast" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 41 'getelementptr' 'gmem_in_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.76ns)   --->   "%indvars_iv_next11534 = add i8 %x_1, i8 1"   --->   Operation 42 'add' 'indvars_iv_next11534' <Predicate = (!icmp_ln36)> <Delay = 0.76> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.76> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 43 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%c_load = load i2 %c" [lane_seg_hls/lane_seg_support.cpp:37]   --->   Operation 44 'load' 'c_load' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (0.39ns)   --->   "%select_ln35 = select i1 %icmp_ln36, i8 0, i8 %x_1" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 45 'select' 'select_ln35' <Predicate = (!icmp_ln35)> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 46 [1/3] (0.00ns) (grouped into DSP with root node add_ln38)   --->   "%mul_ln38 = mul i16 %zext_ln38, i16 226" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 46 'mul' 'mul_ln38' <Predicate = (!icmp_ln35)> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : '<invalid operator> ' 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 47 [1/1] (0.00ns) (grouped into LUT with out node select_ln36_1)   --->   "%select_ln35_2 = select i1 %icmp_ln36, i8 1, i8 %indvars_iv_next11534" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 47 'select' 'select_ln35_2' <Predicate = (!icmp_ln35)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 48 [1/1] (0.00ns) (grouped into LUT with out node and_ln35)   --->   "%xor_ln35 = xor i1 %icmp_ln36, i1 1" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 48 'xor' 'xor_ln35' <Predicate = (!icmp_ln35)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 49 [1/1] (0.54ns)   --->   "%icmp_ln37 = icmp_eq  i2 %c_load, i2 3" [lane_seg_hls/lane_seg_support.cpp:37]   --->   Operation 49 'icmp' 'icmp_ln37' <Predicate = (!icmp_ln35)> <Delay = 0.54> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 50 [1/1] (0.28ns) (out node of the LUT)   --->   "%and_ln35 = and i1 %icmp_ln37, i1 %xor_ln35" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 50 'and' 'and_ln35' <Predicate = (!icmp_ln35)> <Delay = 0.28> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 51 [1/1] (0.76ns)   --->   "%indvars_iv_next11534_dup = add i8 %select_ln35, i8 1" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 51 'add' 'indvars_iv_next11534_dup' <Predicate = (!icmp_ln35)> <Delay = 0.76> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.76> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 52 [1/1] (0.00ns) (grouped into LUT with out node select_ln36)   --->   "%or_ln36 = or i1 %and_ln35, i1 %icmp_ln36" [lane_seg_hls/lane_seg_support.cpp:36]   --->   Operation 52 'or' 'or_ln36' <Predicate = (!icmp_ln35)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 53 [1/1] (0.28ns) (out node of the LUT)   --->   "%select_ln36 = select i1 %or_ln36, i2 0, i2 %c_load" [lane_seg_hls/lane_seg_support.cpp:36]   --->   Operation 53 'select' 'select_ln36' <Predicate = (!icmp_ln35)> <Delay = 0.28> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 54 [1/1] (0.76ns)   --->   "%indvars_iv_next11534_mid1 = add i8 %select_ln35, i8 2" [lane_seg_hls/lane_seg_support.cpp:35]   --->   Operation 54 'add' 'indvars_iv_next11534_mid1' <Predicate = (!icmp_ln35)> <Delay = 0.76> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.76> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 55 [1/1] (0.39ns) (out node of the LUT)   --->   "%select_ln36_1 = select i1 %and_ln35, i8 %indvars_iv_next11534_mid1, i8 %select_ln35_2" [lane_seg_hls/lane_seg_support.cpp:36]   --->   Operation 55 'select' 'select_ln36_1' <Predicate = (!icmp_ln35)> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 56 [1/1] (0.00ns)   --->   "%zext_ln38_1 = zext i8 %select_ln36_1" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 56 'zext' 'zext_ln38_1' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_4 : Operation 57 [2/2] (0.64ns) (root node of the DSP)   --->   "%add_ln38 = add i16 %mul_ln38, i16 %zext_ln38_1" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 57 'add' 'add_ln38' <Predicate = (!icmp_ln35)> <Delay = 0.64> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : '<invalid operator> ' 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 58 [1/1] (0.39ns)   --->   "%select_ln36_2 = select i1 %and_ln35, i8 %indvars_iv_next11534_dup, i8 %select_ln35" [lane_seg_hls/lane_seg_support.cpp:36]   --->   Operation 58 'select' 'select_ln36_2' <Predicate = (!icmp_ln35)> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 59 [1/1] (10.9ns)   --->   "%gmem_in_addr_read = read i16 @_ssdm_op_Read.m_axi.p1i16, i16 %gmem_in_addr" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 59 'read' 'gmem_in_addr_read' <Predicate = (!icmp_ln35)> <Delay = 10.9> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 60 [1/1] (0.54ns)   --->   "%add_ln37 = add i2 %select_ln36, i2 1" [lane_seg_hls/lane_seg_support.cpp:37]   --->   Operation 60 'add' 'add_ln37' <Predicate = (!icmp_ln35)> <Delay = 0.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 61 [1/1] (0.42ns)   --->   "%store_ln37 = store i8 %select_ln36_2, i8 %x" [lane_seg_hls/lane_seg_support.cpp:37]   --->   Operation 61 'store' 'store_ln37' <Predicate = (!icmp_ln35)> <Delay = 0.42>
+ST_4 : Operation 62 [1/1] (0.42ns)   --->   "%store_ln37 = store i2 %add_ln37, i2 %c" [lane_seg_hls/lane_seg_support.cpp:37]   --->   Operation 62 'store' 'store_ln37' <Predicate = (!icmp_ln35)> <Delay = 0.42>
+ST_4 : Operation 79 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 79 'ret' 'ret_ln0' <Predicate = (icmp_ln35)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 2.57>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3_str"   --->   Operation 63 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 150528, i64 150528, i64 150528"   --->   Operation 64 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 65 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 66 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_36_2_VITIS_LOOP_37_3_str"   --->   Operation 66 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 67 [1/2] (0.64ns) (root node of the DSP)   --->   "%add_ln38 = add i16 %mul_ln38, i16 %zext_ln38_1" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 67 'add' 'add_ln38' <Predicate = true> <Delay = 0.64> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : '<invalid operator> ' 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 68 [1/1] (0.00ns)   --->   "%zext_ln38_2 = zext i16 %add_ln38" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 68 'zext' 'zext_ln38_2' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "%p_shl = bitconcatenate i18 @_ssdm_op_BitConcatenate.i18.i16.i2, i16 %add_ln38, i2 0" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 69 'bitconcatenate' 'p_shl' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 70 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln38 = sub i18 %p_shl, i18 %zext_ln38_2" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 70 'sub' 'sub_ln38' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.34> <IPBlock> <Opcode : '<invalid operator> ' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 71 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 72 [1/1] (0.00ns)   --->   "%zext_ln38_3 = zext i2 %select_ln36" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 72 'zext' 'zext_ln38_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 73 [1/1] (0.69ns) (root node of TernaryAdder)   --->   "%add_ln38_1 = add i18 %sub_ln38, i18 %zext_ln38_3" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 73 'add' 'add_ln38_1' <Predicate = true> <Delay = 0.69> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.34> <IPBlock> <Opcode : '<invalid operator> ' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 74 [1/1] (0.00ns)   --->   "%zext_ln38_4 = zext i18 %add_ln38_1" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 74 'zext' 'zext_ln38_4' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 75 [1/1] (0.00ns)   --->   "%padded_addr = getelementptr i16 %padded, i64 0, i64 %zext_ln38_4" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 75 'getelementptr' 'padded_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 76 [1/1] (0.00ns)   --->   "%specloopname_ln37 = specloopname void @_ssdm_op_SpecLoopName, void @empty_15" [lane_seg_hls/lane_seg_support.cpp:37]   --->   Operation 76 'specloopname' 'specloopname_ln37' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 77 [1/1] (1.23ns)   --->   "%store_ln38 = store i16 %gmem_in_addr_read, i18 %padded_addr" [lane_seg_hls/lane_seg_support.cpp:38]   --->   Operation 77 'store' 'store_ln38' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_1WnR">   --->   Core 84 'RAM_1WnR' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 17> <Width = 16> <Depth = 153228> <RAM>
+ST_5 : Operation 78 [1/1] (0.00ns)   --->   "%br_ln37 = br void %for.inc" [lane_seg_hls/lane_seg_support.cpp:37]   --->   Operation 78 'br' 'br_ln37' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 15.000ns, clock uncertainty: 4.050ns.
+
+ <State 1>: 0.427ns
+The critical path consists of the following:
+	'alloca' operation ('indvar_flatten14') [8]  (0.000 ns)
+	'store' operation ('store_ln0') of constant 0 on local variable 'indvar_flatten14' [12]  (0.427 ns)
+
+ <State 2>: 2.176ns
+The critical path consists of the following:
+	'load' operation ('indvar_flatten_load', lane_seg_hls/lane_seg_support.cpp:36) on local variable 'indvar_flatten' [29]  (0.000 ns)
+	'icmp' operation ('icmp_ln36', lane_seg_hls/lane_seg_support.cpp:36) [33]  (0.787 ns)
+	'select' operation ('select_ln35_1', lane_seg_hls/lane_seg_support.cpp:35) [37]  (0.393 ns)
+	'mul' operation of DSP[53] ('mul_ln38', lane_seg_hls/lane_seg_support.cpp:38) [39]  (0.996 ns)
+
+ <State 3>: 0.996ns
+The critical path consists of the following:
+	'mul' operation of DSP[53] ('mul_ln38', lane_seg_hls/lane_seg_support.cpp:38) [39]  (0.996 ns)
+
+ <State 4>: 10.950ns
+The critical path consists of the following:
+	'getelementptr' operation ('gmem_in_addr', lane_seg_hls/lane_seg_support.cpp:35) [21]  (0.000 ns)
+	bus read operation ('gmem_in_addr_read', lane_seg_hls/lane_seg_support.cpp:38) on port 'gmem_in' (lane_seg_hls/lane_seg_support.cpp:38) [64]  (10.950 ns)
+
+ <State 5>: 2.575ns
+The critical path consists of the following:
+	'add' operation of DSP[53] ('add_ln38', lane_seg_hls/lane_seg_support.cpp:38) [53]  (0.645 ns)
+	'sub' operation ('sub_ln38', lane_seg_hls/lane_seg_support.cpp:38) [56]  (0.000 ns)
+	'add' operation ('add_ln38_1', lane_seg_hls/lane_seg_support.cpp:38) [60]  (0.693 ns)
+	'getelementptr' operation ('padded_addr', lane_seg_hls/lane_seg_support.cpp:38) [62]  (0.000 ns)
+	'store' operation ('store_ln38', lane_seg_hls/lane_seg_support.cpp:38) of variable 'gmem_in_addr_read', lane_seg_hls/lane_seg_support.cpp:38 on array 'padded' [65]  (1.237 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

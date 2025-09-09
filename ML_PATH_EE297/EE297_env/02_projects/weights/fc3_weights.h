@@ -1,4 +1,4 @@
-#include "C:\Users\Baron\Desktop\EE_297_Repo\EE_297\vivado\lenet_proj\lenet_top.h"
+#include "C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lenet_proj\lenet_top.h"
 
 float fc3_weights[84][10] = {
   {-0.1965, 0.4216, -0.0370, -0.5001, -0.3745, 0.3713, -0.0345, -0.0581, 0.0288, -0.1336},

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1757400386795">
+  <ports id="1" name="gmem_in" type="PortType" coreId="1031040613" bitwidth="16" iftype="IfTypeFifo">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="2" name="gmem_out" type="PortType" coreId="2927409264" bitwidth="16" direction="DirOut" iftype="IfTypeFifo">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="3" name="image_r" type="PortType" coreId="2927409264" bitwidth="64">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="4" name="out0" type="PortType" coreId="2927409264" bitwidth="64">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="5" name="ctrl" type="PortType" originalName="ctrl" coreId="2927409264" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="6" name="status" type="PortType" originalName="status" coreId="352" bitwidth="32" direction="DirInOut">
+    <dataInputObjs>write</dataInputObjs>
+    <dataInputObjs>read</dataInputObjs>
+    <dataInputObjs>write</dataInputObjs>
+    <dataOutputObjs>write</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>write</dataOutputObjs>
+  </ports>
+  <ports id="7" name="magic" type="PortType" originalName="magic" coreId="2927736480" bitwidth="32" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <edges id="45" source_obj="//@ports.4" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="48" source_obj="//@ports.3" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="50" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="53" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@ports.6"/>
+  <edges id="58" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="61" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="62" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="63" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="65" source_obj="//@ports.5" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="68" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="71" source_obj="//@ports.0" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="72" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="73" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@ports.1"/>
+  <edges id="74" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="77" source_obj="//@ports.5" sink_obj="//@blocks.2/@node_objs.1"/>
+  <edges id="78" source_obj="//@blocks.2/@node_objs.1" sink_obj="//@blocks.2/@node_objs.2"/>
+  <edges id="81" source_obj="//@ports.5" sink_obj="//@blocks.2/@node_objs.3"/>
+  <edges id="82" source_obj="//@blocks.2/@node_objs.2" sink_obj="//@blocks.2/@node_objs.3"/>
+  <edges id="364" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="365" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.2"/>
+  <edges id="366" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2"/>
+  <edges id="367" edge_type="VirtEdge" source_obj="//@blocks.2/@node_objs.1" sink_obj="//@blocks.2/@node_objs.3"/>
+  <edges id="368" edge_type="VirtEdge" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.2/@node_objs.1"/>
+  <edges id="369" edge_type="VirtEdge" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.2/@node_objs.3"/>
+  <edges id="-65" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@ports.5"/>
+  <edges id="-77" source_obj="//@blocks.2/@node_objs.1" sink_obj="//@ports.5"/>
+  <edges id="-81" source_obj="//@blocks.2/@node_objs.3" sink_obj="//@ports.5"/>
+  <blocks id="33" name="entry" type="BlockType">
+    <controlOutputObjs>if.then</controlOutputObjs>
+    <controlOutputObjs>if.end</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="ctrl_read" lineNumber="22" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." coreName="s_axilite" implIndex="s_axilite" control="no" opType="adapter" coreId="122" contextFuncName="lane_seg_top" bitwidth="32" opcode="read" m_display="0" m_delay="1.0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="22" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+      <dataInputObjs>ctrl</dataInputObjs>
+      <dataOutputObjs>bitselect</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="out0_read" lineNumber="22" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." coreName="s_axilite" implIndex="s_axilite" control="no" opType="adapter" coreId="122" contextFuncName="lane_seg_top" bitwidth="64" opcode="read" m_display="0" m_delay="1.0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="22" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+      <dataInputObjs>out0</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="image_r_read" lineNumber="22" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." coreName="s_axilite" implIndex="s_axilite" control="no" opType="adapter" coreId="122" contextFuncName="lane_seg_top" bitwidth="64" opcode="read" m_display="0" m_delay="1.0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="22" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+      <dataInputObjs>image_r</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="magic_write_ln46" lineNumber="46" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." coreName="s_axilite" implIndex="s_axilite" control="no" opType="adapter" coreId="122" contextFuncName="lane_seg_top" opcode="write" m_display="0" m_delay="1.0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="46" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+      <dataOutputObjs>magic</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="tmp" lineNumber="48" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." rtlName="tmp_fu_126_p3" coreId="4294967295" contextFuncName="lane_seg_top" bitwidth="1" opcode="bitselect" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="48" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="br_ln48" lineNumber="48" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="lane_seg_top" opcode="br" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="48" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+      <dataInputObjs>bitselect</dataInputObjs>
+      <controlInputObjs>if.end</controlInputObjs>
+      <controlInputObjs>if.then</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="lane_seg_hls/lane_seg_top.cpp">
+      <validLinenumbers>22</validLinenumbers>
+      <validLinenumbers>46</validLinenumbers>
+      <validLinenumbers>48</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="36" name="if.then" type="BlockType">
+    <controlInputObjs>entry</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>if.end</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="status_write_ln49" lineNumber="49" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." coreName="s_axilite" implIndex="s_axilite" control="no" opType="adapter" coreId="122" contextFuncName="lane_seg_top" opcode="write" m_display="0" m_delay="1.0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="49" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+      <dataInputObjs>status</dataInputObjs>
+      <dataOutputObjs>status</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="br_ln49" lineNumber="49" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." coreId="2838752112" contextFuncName="lane_seg_top" opcode="br" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="49" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+      <controlInputObjs>if.end</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="lane_seg_hls/lane_seg_top.cpp">
+      <validLinenumbers>49</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="42" name="if.end" type="BlockType">
+    <controlInputObjs>entry</controlInputObjs>
+    <controlInputObjs>if.then</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="_ln52" lineNumber="52" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." rtlName="grp_encoder0_c1_fu_116" coreId="4294967295" contextFuncName="lane_seg_top" opcode="call" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="10.9" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="52" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+      <dataInputObjs>gmem_in</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>gmem_out</dataOutputObjs>
+      <constName>encoder0_c1</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="38" name="status_read" lineNumber="55" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." coreName="s_axilite" implIndex="s_axilite" control="no" opType="adapter" coreId="122" contextFuncName="lane_seg_top" bitwidth="32" opcode="read" nodeLabel="1.0" m_display="0" m_delay="1.0" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="55" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+      <dataInputObjs>status</dataInputObjs>
+      <dataOutputObjs>or</dataOutputObjs>
+      <dataOutputObjs>status</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="or_ln55" lineNumber="55" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." rtlName="or_ln55_fu_134_p2" coreId="4294967295" contextFuncName="lane_seg_top" bitwidth="32" opcode="or" nodeLabel="1.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="55" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="40" name="status_write_ln55" lineNumber="55" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." coreName="s_axilite" implIndex="s_axilite" control="no" opType="adapter" coreId="122" contextFuncName="lane_seg_top" opcode="write" nodeLabel="1.0" m_display="0" m_delay="1.0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="55" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+      <dataInputObjs>status</dataInputObjs>
+      <dataInputObjs>or</dataInputObjs>
+      <dataOutputObjs>status</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="_ln56" lineNumber="56" fileName="lane_seg_hls/lane_seg_top.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="lane_seg_top" opcode="ret" nodeLabel="2.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_top.cpp" linenumber="56" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="lane_seg_top"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="lane_seg_hls/lane_seg_top.cpp">
+      <validLinenumbers>52</validLinenumbers>
+      <validLinenumbers>55</validLinenumbers>
+      <validLinenumbers>56</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <regnodes realName="image_r_read_reg_146">
+    <nodeIds>10</nodeIds>
+  </regnodes>
+  <regnodes realName="out0_read_reg_141">
+    <nodeIds>9</nodeIds>
+  </regnodes>
+  <expressionNodes realName="tmp_fu_126">
+    <nodeIds>31</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln55_fu_134">
+    <nodeIds>39</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_encoder0_c1_fu_116">
+    <nodeIds>37</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="grp_write_fu_102">
+    <nodeIds>34</nodeIds>
+    <nodeIds>40</nodeIds>
+  </ioNodes>
+  <ioNodes realName="ctrl_read_read_fu_76">
+    <nodeIds>8</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln46_write_fu_94">
+    <nodeIds>30</nodeIds>
+  </ioNodes>
+  <ioNodes realName="status_read_read_fu_110">
+    <nodeIds>38</nodeIds>
+  </ioNodes>
+  <ioNodes realName="out0_read_read_fu_82">
+    <nodeIds>9</nodeIds>
+  </ioNodes>
+  <ioNodes realName="image_r_read_read_fu_88">
+    <nodeIds>10</nodeIds>
+  </ioNodes>
+  <ioPorts name="ctrl">
+    <contents name="read">
+      <nodeIds>8</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="gmem_in">
+    <contents name="call">
+      <nodeIds>37</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="gmem_out">
+    <contents name="call">
+      <nodeIds>37</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="image_r">
+    <contents name="read">
+      <nodeIds>10</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="magic">
+    <contents name="write">
+      <nodeIds>30</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out0">
+    <contents name="read">
+      <nodeIds>9</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="status">
+    <contents name="read">
+      <nodeIds>38</nodeIds>
+    </contents>
+    <contents name="write">
+      <nodeIds>34</nodeIds>
+      <nodeIds>40</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="37" stage="2" latency="2"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="37" stage="1" latency="2"/>
+      <operations id="41" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="lane_seg_top" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="551974" mMaxLatency="551974">
+      <basicBlocks>33</basicBlocks>
+      <basicBlocks>36</basicBlocks>
+      <basicBlocks>42</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

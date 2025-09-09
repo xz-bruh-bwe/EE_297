@@ -1,0 +1,9 @@
+Do this (GUI)
+
+Validate Design (Tools → Validate). Fix any errors.
+
+Generate Output Products for the BD.
+
+Create HDL Wrapper → Let Vivado manage and auto-update.
+
+Run Synthesis → Run Implementation → Generate Bitstream.

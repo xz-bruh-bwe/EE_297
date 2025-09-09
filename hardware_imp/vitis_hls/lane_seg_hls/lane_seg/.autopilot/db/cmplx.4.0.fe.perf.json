@@ -1,0 +1,32 @@
+{
+  "0": {
+    "basicblocks": 3,
+    "calls": "1",
+    "file": "lane_seg_top.cpp",
+    "fileloc": 22,
+    "instructions": 30,
+    "loads": {
+      "T": 1
+    },
+    "name": "lane_seg_top",
+    "stores": {
+      "T": 3
+    },
+    "total_instructions": 8737
+  },
+  "1": {
+    "basicblocks": 16,
+    "calls": "",
+    "file": "lane_seg_support.cpp",
+    "fileloc": 17,
+    "instructions": 8707,
+    "loads": {
+      "L": 27
+    },
+    "name": "encoder0_c1",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 8707
+  }
+}

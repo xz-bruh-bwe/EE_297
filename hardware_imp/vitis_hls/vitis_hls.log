@@ -1,0 +1,88 @@
+NOTE: Using modified tcl85t.dll from https://gitenterprise.xilinx.com/ACT/vitis_hls_tcl
+INFO: [HLS 200-10] Running 'Z:/Xilinx/Vitis_HLS/2023.1/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'Baron' on host 'desktop-d2nna1u' (Windows NT_amd64 version 6.2) on Tue Sep 09 01:11:40 -0700 2025
+INFO: [HLS 200-10] In directory 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls'
+Sourcing Tcl script 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim.tcl'
+INFO: [HLS 200-1510] Running: source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim.tcl
+INFO: [HLS 200-1510] Running: open_project lane_seg_hls 
+INFO: [HLS 200-10] Opening project 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls'.
+INFO: [HLS 200-1510] Running: set_top lane_seg_top 
+INFO: [HLS 200-1510] Running: add_files lane_seg_hls/lane_seg_support.cpp 
+INFO: [HLS 200-10] Adding design file 'lane_seg_hls/lane_seg_support.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files lane_seg_hls/lane_seg_top.cpp 
+INFO: [HLS 200-10] Adding design file 'lane_seg_hls/lane_seg_top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files lane_seg_hls/lane_seg_top.h 
+INFO: [HLS 200-10] Adding design file 'lane_seg_hls/lane_seg_top.h' to the project
+INFO: [HLS 200-1510] Running: add_files -tb lane_seg_hls/lane_seg_tb.cpp -cflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'lane_seg_hls/lane_seg_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution lane_seg -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../lane_seg_tb.cpp in debug mode
+csim.mk:78: recipe for target 'obj/lane_seg_tb.o' failed
+In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:149:0,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_fpo.h:143,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_half.h:25,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/ap_private.h:52,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/ap_common.h:666,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/ap_fixed.h:9,
+                 from ../../../lane_seg_tb.cpp:1:
+Z:/Xilinx/Vitis_HLS/2023.1/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_fpo.h:143:0,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_half.h:25,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/ap_private.h:52,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/ap_common.h:666,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/ap_fixed.h:9,
+                 from ../../../lane_seg_tb.cpp:1:
+Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:141:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+../../../lane_seg_tb.cpp:7:0: warning: "IMG_HEIGHT" redefined
+ #define IMG_HEIGHT     224
+ 
+In file included from ../../../lane_seg_tb.cpp:2:0:
+../../../lane_seg_top.h:28:0: note: this is the location of the previous definition
+ #define IMG_HEIGHT  IN_H
+ 
+../../../lane_seg_tb.cpp:8:0: warning: "IMG_WIDTH" redefined
+ #define IMG_WIDTH      224
+ 
+In file included from ../../../lane_seg_tb.cpp:2:0:
+../../../lane_seg_top.h:29:0: note: this is the location of the previous definition
+ #define IMG_WIDTH   IN_W
+ 
+../../../lane_seg_tb.cpp: In function 'int main()':
+../../../lane_seg_tb.cpp:70:50: error: cannot convert 'float (*)[224][3]' to 'data_t (*)[224][3] {aka ap_fixed<16, 4> (*)[224][3]}' for argument '1' to 'void lane_seg_top(data_t (*)[224][3], data_t (*)[112][32], unsigned int, unsigned int&, unsigned int&)'
+     lane_seg_top(image, out0, ctrl, status, magic);
+                                                  ^
+make: *** [obj/lane_seg_tb.o] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.638 seconds; current allocated memory: 0.336 MB.
+4
+    while executing
+"source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim.tcl"
+    invoked from within
+"hls::main C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"
+INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 1 seconds. Total elapsed time: 12.184 seconds; peak allocated memory: 1.044 GB.
