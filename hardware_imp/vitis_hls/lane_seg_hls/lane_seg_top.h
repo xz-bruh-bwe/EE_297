@@ -36,7 +36,7 @@ typedef ap_fixed<16, 4> data_t;
 // ───── HLS Entry Point ─────
 // Only image input + output + AXI-lite control and status registers
 void lane_seg_top(
-    data_t image[IN_H][IN_W][IN_C],            // Input RGB image
+    float image[IN_H][IN_W][IN_C],            // Input RGB image
     data_t out0[OUT_H][OUT_W][OUT_C],          // Output of conv0 + bn + relu6
     unsigned int ctrl,                         // AXI-lite control (optional)
     unsigned int& status,                      // AXI-lite status
@@ -46,7 +46,7 @@ void lane_seg_top(
 // ───── Encoder Stage 0: First Conv Block ─────
 // Convolution + Bias + ReLU6
 void encoder0_c1(
-    data_t input[IN_H][IN_W][IN_C],
+    float input[IN_H][IN_W][IN_C],
     data_t output[OUT_H][OUT_W][OUT_C],
     data_t weights[K][K][IN_C][OUT_C],
     data_t biases[OUT_C]

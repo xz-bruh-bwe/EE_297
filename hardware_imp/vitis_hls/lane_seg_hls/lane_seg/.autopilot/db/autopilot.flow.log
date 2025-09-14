@@ -2136,3 +2136,2000 @@ Command   csim_design done; error code: 2; 5.638 sec.
 INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.638 seconds; current allocated memory: 0.336 MB.
 Command ap_source done; error code: 1; 11.553 sec.
 Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:18:00 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 5.227 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.112 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.258 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.573 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.748 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.12 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.27 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:18:43 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.833 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.126 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.038 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.175 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.122 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.262 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:30:41 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.953 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.131 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.153 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.27 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.117 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.245 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:31:17 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.833 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.132 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.049 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.171 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.119 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.257 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:31:28 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.84 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.104 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.141 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.054 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.172 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.118 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.25 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:39:23 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.929 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.129 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.127 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.251 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.12 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.246 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 5.661 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.661 seconds; current allocated memory: 0.355 MB.
+Command ap_source done; error code: 1; 11.225 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:40:19 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.869 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.128 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.066 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.184 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.119 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.246 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 5.287 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 11.926 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 11.926 seconds; current allocated memory: 0.367 MB.
+Command ap_source done; 17.422 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:42:29 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.773 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.126 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 4.971 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.092 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.119 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.248 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 5.258 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 11.465 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 11.465 seconds; current allocated memory: 0.453 MB.
+Command ap_source done; 16.867 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:44:41 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.776 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.103 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.139 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 4.99 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.109 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.116 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.25 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 5.262 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 11.561 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 11.561 seconds; current allocated memory: 0.277 MB.
+Command ap_source done; 16.975 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:46:13 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.93 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.129 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.131 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.258 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.12 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.251 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 5.291 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 11.553 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 11.554 seconds; current allocated memory: 0.422 MB.
+Command ap_source done; 17.136 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:51:15 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 5.661 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.137 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.183 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.933 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 6.133 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.121 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.266 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 6.144 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 15.329 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 15.334 seconds; current allocated memory: 0.000 MB.
+Command ap_source done; 21.792 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:53:05 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.91 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.137 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.121 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.241 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.118 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.247 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; error code: 1; 6.535 sec.
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:54:26 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.922 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.127 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.124 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.256 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.117 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.25 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; error code: 1; 0.865 sec.
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sat Sep 13 23:54:54 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.812 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.129 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.012 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.129 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.121 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.254 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 5.808 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 7.316 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 7.316 seconds; current allocated memory: 0.289 MB.
+Command ap_source done; 12.751 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 00:52:00 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.789 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.128 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 4.995 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.116 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.123 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.259 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 00:57:03 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.754 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.129 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 4.955 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.075 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.121 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.256 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 00:58:10 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.77 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.104 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.139 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 4.991 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.112 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.12 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.266 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 5.395 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 5.395 seconds; current allocated memory: 0.379 MB.
+Command ap_source done; error code: 1; 10.828 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 01:00:04 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.934 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.113 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.147 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.158 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.305 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.123 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.271 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 5.39 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.39 seconds; current allocated memory: 0.367 MB.
+Command ap_source done; error code: 1; 11.024 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 01:01:11 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 4.948 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.102 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.134 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.156 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.275 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.122 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.278 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.319 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 13.146 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 13.146 seconds; current allocated memory: 0.430 MB.
+Command ap_source done; 18.754 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 01:22:44 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 6.255 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.103 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.141 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 6.48 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 6.6 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.121 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.257 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.429 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 20.059 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 20.059 seconds; current allocated memory: 0.316 MB.
+Command ap_source done; 26.977 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 01:25:36 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 5.144 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.134 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.368 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.497 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command       ap_source done; 0.105 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.138 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.287 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; error code: 1; 0.29 sec.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 6.939 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 6.939 seconds; current allocated memory: 0.375 MB.
+Command ap_source done; error code: 1; 12.794 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 01:27:07 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 5.063 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.123 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.155 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.291 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.414 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.119 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.255 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.541 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 7.211 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 7.211 seconds; current allocated memory: 0.273 MB.
+Command ap_source done; 12.938 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 01:28:11 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 5.181 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.128 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.388 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.512 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.122 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.272 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 19.965 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 19.965 seconds; current allocated memory: 0.449 MB.
+Command ap_source done; error code: 1; 25.815 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 01:30:22 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 5.34 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.129 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Command       ap_part_info done; 0.118 sec.
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.593 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.736 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.119 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.257 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 16.845 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 37.072 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 37.072 seconds; current allocated memory: 0.371 MB.
+Command ap_source done; 43.131 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 01:32:17 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 5.058 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.111 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.146 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.288 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.434 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.123 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.274 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 7.485 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 7.485 seconds; current allocated memory: 0.316 MB.
+Command ap_source done; error code: 1; 13.266 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 01:40:25 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 6.062 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.114 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.163 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 6.31 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 6.433 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.135 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.29 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 7.102 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 7.102 seconds; current allocated memory: 0.383 MB.
+Command ap_source done; error code: 1; 13.883 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 01:41:11 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 5.384 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.107 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.144 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.609 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.757 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.126 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.281 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 7.228 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 7.228 seconds; current allocated memory: 0.305 MB.
+Command ap_source done; error code: 1; 13.329 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg opened at Sun Sep 14 01:43:42 -0700 2025
+Execute     ap_set_clock -name default -period 15 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 15ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: Z:/Xilinx/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: Z:/Xilinx/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 6.051 sec.
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.133 sec.
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.179 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 6.325 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 6.461 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source Z:/Xilinx/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.128 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.28 sec.
+Execute   create_clock -period 15 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
+Execute   source ./lane_seg_hls/lane_seg/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+Execute     set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Command     ap_part_info done; 0.112 sec.
+Execute     source run_sim.tcl 

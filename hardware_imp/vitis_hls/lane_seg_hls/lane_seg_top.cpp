@@ -20,7 +20,7 @@
 //   Supports AXI4 and AXI4-Lite interfaces for integration.
 // ──────────────────────────────────────────────
 void lane_seg_top(
-    data_t image[IN_H][IN_W][IN_C],
+    float image[IN_H][IN_W][IN_C],
     data_t out0[OUT_H][OUT_W][OUT_C],
     unsigned int ctrl,
     unsigned int& status,

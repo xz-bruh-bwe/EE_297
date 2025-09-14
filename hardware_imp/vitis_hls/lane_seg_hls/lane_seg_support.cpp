@@ -1,5 +1,10 @@
 #include <cstdio> // Required for printf
 
+#include <windows.h> // For Sleep() on Windows
+
+
+
+
 // ──────────────────────────────────────────────
 // Project Headers
 #include "lane_seg_top.h"
@@ -15,7 +20,7 @@
 // Output:
 //   - output:  output feature map [OUT_H][OUT_W][OUT_CH]
 void encoder0_c1(
-    data_t input[IMG_HEIGHT][IMG_WIDTH][IN_CH],
+    float input[IMG_HEIGHT][IMG_WIDTH][IN_CH],
     data_t output[OUT_H][OUT_W][OUT_CH],
     data_t weights[K][K][IN_CH][OUT_CH],
     data_t biases[OUT_CH]
@@ -29,13 +34,14 @@ void encoder0_c1(
     #pragma HLS ARRAY_PARTITION variable=biases complete dim=1
 
     // â”€â”€â”€â”€â”€ Local Padded Buffer â”€â”€â”€â”€â”€
-    data_t padded[IMG_HEIGHT + 2 * PAD][IMG_WIDTH + 2 * PAD][IN_CH] = {0};
+    float padded[IMG_HEIGHT + 2 * PAD][IMG_WIDTH + 2 * PAD][IN_CH] = {0};
 
     // â”€â”€â”€â”€â”€ Padding â”€â”€â”€â”€â”€
     for (int y = 0; y < IMG_HEIGHT; y++) {
         for (int x = 0; x < IMG_WIDTH; x++) {
             for (int c = 0; c < IN_CH; c++) {
                 padded[y + PAD][x + PAD][c] = input[y][x][c];
+                //printf("TESTBENCH DEBUG: padded[0][0][0] = %f\n", (float)padded[y][x][c]);
             }
         }
     }
@@ -53,18 +59,18 @@ void encoder0_c1(
 
             for (int oc = 0; oc < OUT_CH; oc++) {
                 data_t sum = biases[oc];
-               printf("DEBUG: sum init at [%d][%d][%d] = %f\n", oh, ow, oc, (float)sum);
+
 
                 for (int ky = 0; ky < K; ky++) {
                     for (int kx = 0; kx < K; kx++) {
                         for (int ic = 0; ic < IN_CH; ic++) {
-                        	data_t a = padded[iy + ky][ix + kx][ic];
+                        	data_t a = (data_t)padded[iy + ky][ix + kx][ic];
                         	data_t b = weights[ky][kx][ic][oc];
                         	data_t p = a * b;
                         	sum += p;
                         	printf("DEBUG: a=%f * b=%f => %f | sum=%f\n",
                         			(float)a, (float)b, (float)p, (float)sum);
-                        	//sum += padded[iy + ky][ix + kx][ic] * weights[ky][kx][ic][oc];
+                        	//sum += (data_t)padded[iy + ky][ix + kx][ic] * weights[ky][kx][ic][oc];
 
                         }
                     }

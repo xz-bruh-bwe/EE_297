@@ -39,7 +39,7 @@ void save_encoder0_output(data_t out[OUT_HEIGHT][OUT_WIDTH][OUT_CHANNELS], const
 // Main Testbench
 int main() {
     // Input / Output Buffers
-    data_t image[IMG_HEIGHT][IMG_WIDTH][IMG_CHANNELS] = {0};
+    float image[IMG_HEIGHT][IMG_WIDTH][IMG_CHANNELS] = {0};
     data_t out0[OUT_HEIGHT][OUT_WIDTH][OUT_CHANNELS] = {0};
 
     // AXI-Lite Debug Signals
