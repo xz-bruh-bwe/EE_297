@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'lane_seg_top'" level="0">
-<item name = "Date">Fri Sep 19 13:55:44 2025
+<item name = "Date">Sat Sep 20 00:34:29 2025
 </item>
 <item name = "Version">2023.1 (Build 3854077 on May  4 2023)</item>
 <item name = "Project">lane_seg_hls</item>
@@ -24,14 +24,15 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">705218, 705218, 10.578 ms, 10.578 ms, 705219, 705219, no</column>
+<column name="">642660, 642660, 9.640 ms, 9.640 ms, 642661, 642661, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_encoder0_c1_fu_116">encoder0_c1, 705216, 705216, 10.578 ms, 10.578 ms, 705216, 705216, no</column>
+<column name="grp_encoder0_c1_fu_758">encoder0_c1, 316403, 316403, 4.746 ms, 4.746 ms, 316403, 316403, no</column>
+<column name="grp_enc1_ir0_fu_1341">enc1_ir0, 326253, 326253, 4.894 ms, 4.894 ms, 326253, 326253, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

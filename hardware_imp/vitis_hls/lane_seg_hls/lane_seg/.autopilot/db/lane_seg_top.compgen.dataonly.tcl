@@ -10,7 +10,7 @@ image_r {
 	offset 16
 	offset_end 27
 }
-out0 { 
+out1_ir0 { 
 	dir I
 	width 64
 	depth 1

@@ -92,8 +92,8 @@ void XLane_seg_top_DisableAutoRestart(XLane_seg_top *InstancePtr);
 
 void XLane_seg_top_Set_image_r(XLane_seg_top *InstancePtr, u64 Data);
 u64 XLane_seg_top_Get_image_r(XLane_seg_top *InstancePtr);
-void XLane_seg_top_Set_out0(XLane_seg_top *InstancePtr, u64 Data);
-u64 XLane_seg_top_Get_out0(XLane_seg_top *InstancePtr);
+void XLane_seg_top_Set_out1_ir0(XLane_seg_top *InstancePtr, u64 Data);
+u64 XLane_seg_top_Get_out1_ir0(XLane_seg_top *InstancePtr);
 void XLane_seg_top_Set_ctrl(XLane_seg_top *InstancePtr, u32 Data);
 u32 XLane_seg_top_Get_ctrl(XLane_seg_top *InstancePtr);
 void XLane_seg_top_Set_status_i(XLane_seg_top *InstancePtr, u32 Data);

@@ -54,7 +54,7 @@ void save_encoder1_ir0_output(data_t out[OUT1_IR0_HEIGHT][OUT1_IR0_WIDTH][OUT1_I
     for (int c = 0; c < OUT1_IR0_CHANNELS; c++) {
         for (int i = 0; i < OUT1_IR0_HEIGHT; i++) {
             for (int j = 0; j < OUT1_IR0_WIDTH; j++) {
-                fprintf(f, "%.6f ", (half)out[i][j][c]);
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
             }
             fprintf(f, "\n");
         }
@@ -72,8 +72,8 @@ void save_encoder1_ir0_output(data_t out[OUT1_IR0_HEIGHT][OUT1_IR0_WIDTH][OUT1_I
 int main() {
     // Input / Output Buffers
     float image[IMG_HEIGHT][IMG_WIDTH][IMG_CHANNELS] = {0};
-    data_t out0[OUT_HEIGHT][OUT_WIDTH][OUT_CHANNELS] = {0};
-    //data_t out1_ir0[OUT1_IR0_HEIGHT][OUT1_IR0_WIDTH][OUT1_IR0_CHANNELS] = {0};
+    //data_t out0[OUT_HEIGHT][OUT_WIDTH][OUT_CHANNELS] = {0};
+    data_t out1_ir0[OUT1_IR0_HEIGHT][OUT1_IR0_WIDTH][OUT1_IR0_CHANNELS] = {0};
 
     // AXI-Lite Debug Signals
     unsigned int ctrl = 0;
@@ -100,7 +100,7 @@ int main() {
     printf("Loaded input image.\n");
 
     // === 2. Run HLS top function ===
-    lane_seg_top(image, out0, ctrl, status, magic);
+    lane_seg_top(image, out1_ir0, ctrl, status, magic);
 
 
     // === 3. Debug Outputs ===
@@ -108,8 +108,8 @@ int main() {
     printf("status = 0x%08X\n", status);
 
     // === 4. Save output to file ===
-    save_encoder0_output(out0, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/encoder0_out.txt");
-    //save_encoder1_ir0_output(out1_ir0, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc0_ir0_out.txt");
+    //save_encoder0_output(out0, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/encoder0_out.txt");
+    save_encoder1_ir0_output(out1_ir0, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc0_ir0_out.txt");
 
 
 

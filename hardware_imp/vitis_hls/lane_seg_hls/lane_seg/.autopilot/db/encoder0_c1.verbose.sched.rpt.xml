@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'encoder0_c1'" level="0">
-<item name = "Date">Fri Sep 19 13:55:39 2025
+<item name = "Date">Sat Sep 20 00:28:41 2025
 </item>
 <item name = "Version">2023.1 (Build 3854077 on May  4 2023)</item>
 <item name = "Project">lane_seg_hls</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">705216, 705216, 10.578 ms, 10.578 ms, 705216, 705216, no</column>
+<column name="">316403, 316403, 4.746 ms, 4.746 ms, 316403, 316403, no</column>
 </table>
 </item>
 <item name = "Detail">

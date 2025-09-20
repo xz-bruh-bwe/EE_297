@@ -27129,12 +27129,14 @@ namespace hls {
 
 
 
-typedef ap_fixed<16, 4> data_t;
-# 54 "lane_seg_hls/lane_seg_top.h"
+
+
+typedef half data_t;
+# 55 "lane_seg_hls/lane_seg_top.h"
 void lane_seg_top(
     float image[224][224][3],
-    data_t out0[((224 + 2 * 1 - 3) / 2 + 1)][((224 + 2 * 1 - 3) / 2 + 1)][32],
 
+ data_t out1_ir0[((224 + 2 * 1 - 3) / 2 + 1)][((224 + 2 * 1 - 3) / 2 + 1)][16],
 
 
     unsigned int ctrl,
@@ -27192,8 +27194,8 @@ void encoder0_c1(
     }
 
 
-
-
+        printf("DEBUG: bias[0] = %f\n", (float)biases[0]);
+        printf("DEBUG: weights[0][0][0][0] = %f\n", (float)weights[0][0][0][0]);
 
 
     VITIS_LOOP_50_4: for (int oh = 0; oh < ((224 + 2 * 1 - 3) / 2 + 1); oh++) {

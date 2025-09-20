@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'encoder0_c1_Pipeline_1'" level="0">
-<item name = "Date">Fri Sep 19 13:54:54 2025
+<item name = "Date">Sat Sep 20 00:26:08 2025
 </item>
 <item name = "Version">2023.1 (Build 3854077 on May  4 2023)</item>
 <item name = "Project">lane_seg_hls</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">15.00 ns, 2.110 ns, 4.05 ns</column>
+<column name="ap_clk">15.00 ns, 4.078 ns, 4.05 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">153230, 153230, 2.298 ms, 2.298 ms, 153230, 153230, no</column>
+<column name="">153240, 153240, 2.299 ms, 2.299 ms, 153240, 153240, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">153228, 153228, 1, 1, 1, 153228, yes</column>
+<column name="- Loop 1">153238, 153238, 12, 1, 1, 153228, yes</column>
 </table>
 </item>
 </section>
