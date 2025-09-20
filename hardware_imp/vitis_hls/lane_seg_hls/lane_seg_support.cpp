@@ -292,3 +292,100 @@ void enc2_ir1(
     }
 }
 
+// ──────────────────────────────────────────────
+// Function: enc3_ir2  (InvertedResidual3)
+// Expansion 1x1 (24→144) + ReLU6
+// Depthwise 3x3 stride=1 (groups=144) + ReLU6
+// Projection 1x1 (144→24), no activation
+// BN already folded into weights/biases
+// ──────────────────────────────────────────────
+void enc3_ir2(
+    data_t input[OUT2_IR1_H][OUT2_IR1_W][OUT2_IR1_C],            // [56][56][24]
+    data_t output[OUT3_IR2_H][OUT3_IR2_W][OUT3_IR2_C],           // [56][56][24]
+
+    data_t exp_weights[1][1][OUT2_IR1_C][OUT3_IR2_EXP_C],        // expansion: (1x1x24x144)
+    data_t exp_biases[OUT3_IR2_EXP_C],                           // expansion biases (144)
+
+    data_t dw_weights[3][3][1][OUT3_IR2_EXP_C],                  // depthwise: (3x3x1x144)
+    data_t dw_biases[OUT3_IR2_EXP_C],                            // depthwise biases (144)
+
+    data_t pw_weights[1][1][OUT3_IR2_EXP_C][OUT3_IR2_C],         // projection: (1x1x144x24)
+    data_t pw_biases[OUT3_IR2_C]                                 // projection biases (24)
+) {
+#pragma HLS INLINE off
+
+    // ───── Array Partitioning (very relaxed for faster synthesis) ─────
+    // Keep arrays mostly intact so HLS maps them to BRAM; minimal banking.
+    #pragma HLS ARRAY_PARTITION variable=exp_weights block factor=1 dim=3
+    #pragma HLS ARRAY_PARTITION variable=exp_biases  block factor=1 dim=1
+
+    #pragma HLS ARRAY_PARTITION variable=dw_weights  block factor=1 dim=1
+    #pragma HLS ARRAY_PARTITION variable=dw_weights  block factor=1 dim=2
+    #pragma HLS ARRAY_PARTITION variable=dw_biases   block factor=1 dim=1
+
+    #pragma HLS ARRAY_PARTITION variable=pw_weights  block factor=1 dim=3
+    #pragma HLS ARRAY_PARTITION variable=pw_biases   block factor=1 dim=1
+
+    // ───── Local buffers ─────
+    static data_t exp_out[OUT3_IR2_H][OUT3_IR2_W][OUT3_IR2_EXP_C]; // after expansion + ReLU6 (56x56x144)
+    static data_t dw_out [OUT3_IR2_H][OUT3_IR2_W][OUT3_IR2_EXP_C]; // after depthwise + ReLU6 (56x56x144)
+
+    // ──────────────────────────────
+    // Expansion conv 1x1 (24→144) + ReLU6
+    // ──────────────────────────────
+    for (int y = 0; y < OUT3_IR2_H; y++) {
+        for (int x = 0; x < OUT3_IR2_W; x++) {
+            // #pragma HLS PIPELINE off   // keep relaxed
+            for (int oc = 0; oc < OUT3_IR2_EXP_C; oc++) {
+                data_t sum = exp_biases[oc];
+                for (int ic = 0; ic < OUT2_IR1_C; ic++) {
+                    sum += input[y][x][ic] * exp_weights[0][0][ic][oc];
+                }
+                // ReLU6
+                if (sum < 0) sum = 0;
+                else if (sum > (data_t)6) sum = (data_t)6;
+                exp_out[y][x][oc] = sum;
+            }
+        }
+    }
+
+    // ──────────────────────────────
+    // Depthwise conv 3x3 stride=1 + ReLU6
+    // ──────────────────────────────
+    for (int oy = 0; oy < OUT3_IR2_H; oy++) {
+        for (int ox = 0; ox < OUT3_IR2_W; ox++) {
+            for (int c = 0; c < OUT3_IR2_EXP_C; c++) {
+                data_t sum = dw_biases[c];
+                for (int ky = 0; ky < 3; ky++) {
+                    for (int kx = 0; kx < 3; kx++) {
+                        int iy = oy + ky - 1;  // PAD=1
+                        int ix = ox + kx - 1;
+                        if (iy >= 0 && iy < OUT3_IR2_H && ix >= 0 && ix < OUT3_IR2_W) {
+                            sum += exp_out[iy][ix][c] * dw_weights[ky][kx][0][c];
+                        }
+                    }
+                }
+                // ReLU6
+                if (sum < 0) sum = 0;
+                else if (sum > (data_t)6) sum = (data_t)6;
+                dw_out[oy][ox][c] = sum;
+            }
+        }
+    }
+
+    // ──────────────────────────────
+    // Projection conv 1x1 (144→24), no activation
+    // ──────────────────────────────
+    for (int y = 0; y < OUT3_IR2_H; y++) {
+        for (int x = 0; x < OUT3_IR2_W; x++) {
+            for (int oc = 0; oc < OUT3_IR2_C; oc++) {
+                data_t sum = pw_biases[oc];
+                for (int ic = 0; ic < OUT3_IR2_EXP_C; ic++) {
+                    sum += dw_out[y][x][ic] * pw_weights[0][0][ic][oc];
+                }
+                output[y][x][oc] = sum; // no ReLU6
+            }
+        }
+    }
+}
+
