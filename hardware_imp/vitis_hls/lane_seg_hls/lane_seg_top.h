@@ -30,14 +30,25 @@ typedef half data_t;  // Change as needed
 #define OUT0_W   OUT_W
 #define OUT0_C   OUT_C
 
-
 // ──────────────────────────────────────────────
-// Shapes for First InvertedResidual (enc0_ir0)
+// Shapes for First InvertedResidual0 (enc0_ir0)
 // Input:  112x112x32
 // Output: 112x112x16
 #define OUT1_IR0_H   OUT_H
 #define OUT1_IR0_W   OUT_W
 #define OUT1_IR0_C   16
+
+// ──────────────────────────────────────────────
+// Shapes for Second InvertedResidual1 (enc2_ir1)
+// Input:  112x112x16
+// Expansion: 16 → 96
+// Depthwise: stride=2, so output H/W = 56
+// Projection: 96 → 24
+#define OUT2_IR1_H     (OUT1_IR0_H / 2)   // 56
+#define OUT2_IR1_W     (OUT1_IR0_W / 2)   // 56
+#define OUT2_IR1_C     24
+#define OUT2_IR1_EXP_C 96
+
 
 
 // ──────────────────────────────────────────────
@@ -55,7 +66,8 @@ typedef half data_t;  // Change as needed
 void lane_seg_top(
     float image[IN_H][IN_W][IN_C],            // Input RGB image
     //data_t out0[OUT_H][OUT_W][OUT_C],          // Output of conv0 + bn + relu6
-	data_t out1_ir0[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C], // Output of enc0_ir0
+	//data_t out1_ir0[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C], // Output of enc0_ir0
+	data_t out2_ir1[OUT2_IR1_H][OUT2_IR1_W][OUT2_IR1_C],    // Output of enc1_ir1
 
 
     unsigned int ctrl,                         // AXI-lite control (optional)
@@ -83,5 +95,23 @@ void enc1_ir0(
     data_t pw_weights[1][1][OUT_C][OUT1_IR0_C],          // pointwise: (1x1x32x16)
     data_t pw_biases[OUT1_IR0_C]                         // pointwise biases (16)
 );
+
+// ───── Encoder Stage 2: Second InvertedResidual (enc2_ir1) ─────
+// Expansion 1x1 (16→96) → Depthwise 3x3 stride=2 → Projection 1x1 (96→24)
+void enc2_ir1(
+    data_t input[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C],              // 112x112x16
+    data_t output[OUT2_IR1_H][OUT2_IR1_W][OUT2_IR1_C],             // 56x56x24
+
+    data_t exp_weights[1][1][OUT1_IR0_C][OUT2_IR1_EXP_C],          // 1x1: 16→96
+    data_t exp_biases[OUT2_IR1_EXP_C],                             // 96
+    data_t dw_weights[3][3][1][OUT2_IR1_EXP_C],                    // 3x3: 96
+    data_t dw_biases[OUT2_IR1_EXP_C],                              // 96
+    data_t pw_weights[1][1][OUT2_IR1_EXP_C][OUT2_IR1_C],           // 1x1: 96→24
+    data_t pw_biases[OUT2_IR1_C]                                   // 24
+);
+
+
+
+
 
 #endif  // LANE_SEG_TOP_H
