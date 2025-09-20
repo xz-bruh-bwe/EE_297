@@ -1,4 +1,13 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../lane_seg_support.cpp in debug mode
+   Compiling ../../../lane_seg_top.cpp in debug mode
    Generating csim.exe
+TESTBENCH DEBUG: image[0][0][0] = -1.501413
+Loaded input image.
+DEBUG: bias[0] = -0.022644
+DEBUG: weights[0][0][0][0] = 0.006653
+magic  = 0x1EAF0002
+status = 0x00000001
+Output written to: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/encoder0_out.txt
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

@@ -34,10 +34,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1651864359</coreId>
+						<coreId>1953391988</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>4</if_type>
@@ -70,7 +70,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1031040613</coreId>
+						<coreId>661742962</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -106,7 +106,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1902473829</coreId>
+						<coreId>1953391988</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>16</bitwidth>
@@ -142,7 +142,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1031040613</coreId>
+						<coreId>1902473829</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -157,7 +157,7 @@
 			</item>
 		</ports>
 		<nodes class_id="8" tracking_level="0" version="0">
-			<count>17</count>
+			<count>16</count>
 			<item_version>0</item_version>
 			<item class_id="9" tracking_level="1" version="0" object_id="_5">
 				<Value>
@@ -182,7 +182,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -190,8 +190,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
+					<item>25</item>
 					<item>26</item>
-					<item>27</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
@@ -199,7 +199,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>10</m_topoIndex>
+				<m_topoIndex>9</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_6">
@@ -225,7 +225,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>1088141656</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -233,8 +233,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
+					<item>27</item>
 					<item>28</item>
-					<item>29</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
@@ -253,7 +253,7 @@
 						<name>padded</name>
 						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>32</lineNumber>
+						<lineNumber>33</lineNumber>
 						<contextFuncName>encoder0_c1</contextFuncName>
 						<contextNormFuncName>encoder0_c1</contextNormFuncName>
 						<inlineStackInfo>
@@ -269,7 +269,7 @@
 											<first>lane_seg_hls/lane_seg_support.cpp</first>
 											<second>encoder0_c1</second>
 										</first>
-										<second>32</second>
+										<second>33</second>
 									</item>
 								</second>
 							</item>
@@ -282,15 +282,15 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>32</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>31</item>
+					<item>30</item>
 				</oprand_edges>
 				<opcode>alloca</opcode>
 				<m_Display>0</m_Display>
@@ -306,29 +306,15 @@
 					<Obj>
 						<type>0</type>
 						<id>10</id>
-						<name>padded_addr</name>
-						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
-						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>32</lineNumber>
-						<contextFuncName>encoder0_c1</contextFuncName>
-						<contextNormFuncName>encoder0_c1</contextNormFuncName>
+						<name>_ln0</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
 						<inlineStackInfo>
-							<count>1</count>
+							<count>0</count>
 							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>lane_seg_hls/lane_seg_support.cpp</first>
-											<second>encoder0_c1</second>
-										</first>
-										<second>32</second>
-									</item>
-								</second>
-							</item>
 						</inlineStackInfo>
 						<originalName></originalName>
 						<rtlName></rtlName>
@@ -338,19 +324,18 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>18</bitwidth>
+					<bitwidth>0</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>3</count>
+					<count>2</count>
 					<item_version>0</item_version>
 					<item>32</item>
-					<item>34</item>
-					<item>35</item>
+					<item>33</item>
 				</oprand_edges>
-				<opcode>getelementptr</opcode>
+				<opcode>call</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
@@ -364,10 +349,10 @@
 					<Obj>
 						<type>0</type>
 						<id>11</id>
-						<name>padded_addr_write_ln32</name>
+						<name>trunc_ln</name>
 						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>32</lineNumber>
+						<lineNumber>36</lineNumber>
 						<contextFuncName>encoder0_c1</contextFuncName>
 						<contextNormFuncName>encoder0_c1</contextNormFuncName>
 						<inlineStackInfo>
@@ -383,7 +368,7 @@
 											<first>lane_seg_hls/lane_seg_support.cpp</first>
 											<second>encoder0_c1</second>
 										</first>
-										<second>32</second>
+										<second>36</second>
 									</item>
 								</second>
 							</item>
@@ -396,23 +381,25 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>0</bitwidth>
+					<bitwidth>62</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>2</count>
+					<count>4</count>
 					<item_version>0</item_version>
-					<item>37</item>
+					<item>35</item>
+					<item>36</item>
 					<item>38</item>
+					<item>40</item>
 				</oprand_edges>
-				<opcode>store</opcode>
+				<opcode>partselect</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.00</m_delay>
 				<m_topoIndex>4</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -421,10 +408,10 @@
 					<Obj>
 						<type>0</type>
 						<id>12</id>
-						<name>trunc_ln</name>
+						<name>sext_ln36</name>
 						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>35</lineNumber>
+						<lineNumber>36</lineNumber>
 						<contextFuncName>encoder0_c1</contextFuncName>
 						<contextNormFuncName>encoder0_c1</contextNormFuncName>
 						<inlineStackInfo>
@@ -440,7 +427,7 @@
 											<first>lane_seg_hls/lane_seg_support.cpp</first>
 											<second>encoder0_c1</second>
 										</first>
-										<second>35</second>
+										<second>36</second>
 									</item>
 								</second>
 							</item>
@@ -453,20 +440,17 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>63</bitwidth>
+					<bitwidth>64</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>4</count>
+					<count>1</count>
 					<item_version>0</item_version>
-					<item>40</item>
 					<item>41</item>
-					<item>43</item>
-					<item>45</item>
 				</oprand_edges>
-				<opcode>partselect</opcode>
+				<opcode>sext</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
@@ -480,10 +464,10 @@
 					<Obj>
 						<type>0</type>
 						<id>13</id>
-						<name>sext_ln35</name>
+						<name>gmem_in_addr</name>
 						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>35</lineNumber>
+						<lineNumber>36</lineNumber>
 						<contextFuncName>encoder0_c1</contextFuncName>
 						<contextNormFuncName>encoder0_c1</contextNormFuncName>
 						<inlineStackInfo>
@@ -499,7 +483,7 @@
 											<first>lane_seg_hls/lane_seg_support.cpp</first>
 											<second>encoder0_c1</second>
 										</first>
-										<second>35</second>
+										<second>36</second>
 									</item>
 								</second>
 							</item>
@@ -512,17 +496,18 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>1999413671</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>64</bitwidth>
+					<bitwidth>32</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>1</count>
+					<count>2</count>
 					<item_version>0</item_version>
-					<item>46</item>
+					<item>42</item>
+					<item>43</item>
 				</oprand_edges>
-				<opcode>sext</opcode>
+				<opcode>getelementptr</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
@@ -536,10 +521,10 @@
 					<Obj>
 						<type>0</type>
 						<id>14</id>
-						<name>gmem_in_addr</name>
+						<name>empty</name>
 						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>35</lineNumber>
+						<lineNumber>36</lineNumber>
 						<contextFuncName>encoder0_c1</contextFuncName>
 						<contextNormFuncName>encoder0_c1</contextNormFuncName>
 						<inlineStackInfo>
@@ -555,7 +540,7 @@
 											<first>lane_seg_hls/lane_seg_support.cpp</first>
 											<second>encoder0_c1</second>
 										</first>
-										<second>35</second>
+										<second>36</second>
 									</item>
 								</second>
 							</item>
@@ -568,23 +553,24 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>1</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>2</count>
+					<count>3</count>
 					<item_version>0</item_version>
-					<item>47</item>
+					<item>45</item>
+					<item>46</item>
 					<item>48</item>
 				</oprand_edges>
-				<opcode>getelementptr</opcode>
+				<opcode>readreq</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
+				<m_delay>10.9</m_delay>
 				<m_topoIndex>7</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -593,10 +579,10 @@
 					<Obj>
 						<type>0</type>
 						<id>15</id>
-						<name>empty</name>
+						<name>_ln36</name>
 						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>35</lineNumber>
+						<lineNumber>36</lineNumber>
 						<contextFuncName>encoder0_c1</contextFuncName>
 						<contextNormFuncName>encoder0_c1</contextNormFuncName>
 						<inlineStackInfo>
@@ -612,7 +598,7 @@
 											<first>lane_seg_hls/lane_seg_support.cpp</first>
 											<second>encoder0_c1</second>
 										</first>
-										<second>35</second>
+										<second>36</second>
 									</item>
 								</second>
 							</item>
@@ -625,24 +611,28 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>1</bitwidth>
+					<bitwidth>0</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>3</count>
+					<count>7</count>
 					<item_version>0</item_version>
 					<item>50</item>
 					<item>51</item>
+					<item>52</item>
 					<item>53</item>
+					<item>124</item>
+					<item>127</item>
+					<item>128</item>
 				</oprand_edges>
-				<opcode>readreq</opcode>
+				<opcode>call</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>10.9</m_delay>
+				<m_delay>0.00</m_delay>
 				<m_topoIndex>8</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -651,71 +641,10 @@
 					<Obj>
 						<type>0</type>
 						<id>16</id>
-						<name>_ln35</name>
-						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
-						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>35</lineNumber>
-						<contextFuncName>encoder0_c1</contextFuncName>
-						<contextNormFuncName>encoder0_c1</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>lane_seg_hls/lane_seg_support.cpp</first>
-											<second>encoder0_c1</second>
-										</first>
-										<second>35</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>6</count>
-					<item_version>0</item_version>
-					<item>55</item>
-					<item>56</item>
-					<item>57</item>
-					<item>58</item>
-					<item>127</item>
-					<item>130</item>
-				</oprand_edges>
-				<opcode>call</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>9</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_15">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>17</id>
 						<name>trunc_ln1</name>
 						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>48</lineNumber>
+						<lineNumber>50</lineNumber>
 						<contextFuncName>encoder0_c1</contextFuncName>
 						<contextNormFuncName>encoder0_c1</contextNormFuncName>
 						<inlineStackInfo>
@@ -731,7 +660,7 @@
 											<first>lane_seg_hls/lane_seg_support.cpp</first>
 											<second>encoder0_c1</second>
 										</first>
-										<second>48</second>
+										<second>50</second>
 									</item>
 								</second>
 							</item>
@@ -744,7 +673,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>547110912</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>63</bitwidth>
@@ -752,12 +681,68 @@
 				<oprand_edges>
 					<count>4</count>
 					<item_version>0</item_version>
+					<item>55</item>
+					<item>56</item>
+					<item>58</item>
 					<item>59</item>
-					<item>60</item>
-					<item>61</item>
-					<item>62</item>
 				</oprand_edges>
 				<opcode>partselect</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>10</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_15">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>17</id>
+						<name>sext_ln50</name>
+						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
+						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
+						<lineNumber>50</lineNumber>
+						<contextFuncName>encoder0_c1</contextFuncName>
+						<contextNormFuncName>encoder0_c1</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>lane_seg_hls/lane_seg_support.cpp</first>
+											<second>encoder0_c1</second>
+										</first>
+										<second>50</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>908796560</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>64</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>60</item>
+				</oprand_edges>
+				<opcode>sext</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
@@ -771,10 +756,10 @@
 					<Obj>
 						<type>0</type>
 						<id>18</id>
-						<name>sext_ln48</name>
+						<name>gmem_out_addr</name>
 						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>48</lineNumber>
+						<lineNumber>50</lineNumber>
 						<contextFuncName>encoder0_c1</contextFuncName>
 						<contextNormFuncName>encoder0_c1</contextNormFuncName>
 						<inlineStackInfo>
@@ -790,7 +775,7 @@
 											<first>lane_seg_hls/lane_seg_support.cpp</first>
 											<second>encoder0_c1</second>
 										</first>
-										<second>48</second>
+										<second>50</second>
 									</item>
 								</second>
 							</item>
@@ -803,17 +788,18 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>64</bitwidth>
+					<bitwidth>16</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>1</count>
+					<count>2</count>
 					<item_version>0</item_version>
-					<item>63</item>
+					<item>61</item>
+					<item>62</item>
 				</oprand_edges>
-				<opcode>sext</opcode>
+				<opcode>getelementptr</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
@@ -827,10 +813,10 @@
 					<Obj>
 						<type>0</type>
 						<id>19</id>
-						<name>gmem_out_addr</name>
+						<name>empty_51</name>
 						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>48</lineNumber>
+						<lineNumber>50</lineNumber>
 						<contextFuncName>encoder0_c1</contextFuncName>
 						<contextNormFuncName>encoder0_c1</contextNormFuncName>
 						<inlineStackInfo>
@@ -846,7 +832,7 @@
 											<first>lane_seg_hls/lane_seg_support.cpp</first>
 											<second>encoder0_c1</second>
 										</first>
-										<second>48</second>
+										<second>50</second>
 									</item>
 								</second>
 							</item>
@@ -859,23 +845,24 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>1088144432</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>1</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>2</count>
+					<count>3</count>
 					<item_version>0</item_version>
 					<item>64</item>
 					<item>65</item>
+					<item>67</item>
 				</oprand_edges>
-				<opcode>getelementptr</opcode>
+				<opcode>writereq</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
+				<m_delay>10.9</m_delay>
 				<m_topoIndex>13</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -884,10 +871,10 @@
 					<Obj>
 						<type>0</type>
 						<id>20</id>
-						<name>empty_48</name>
+						<name>_ln50</name>
 						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>48</lineNumber>
+						<lineNumber>50</lineNumber>
 						<contextFuncName>encoder0_c1</contextFuncName>
 						<contextNormFuncName>encoder0_c1</contextNormFuncName>
 						<inlineStackInfo>
@@ -903,7 +890,7 @@
 											<first>lane_seg_hls/lane_seg_support.cpp</first>
 											<second>encoder0_c1</second>
 										</first>
-										<second>48</second>
+										<second>50</second>
 									</item>
 								</second>
 							</item>
@@ -916,24 +903,28 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>1</bitwidth>
+					<bitwidth>0</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>3</count>
+					<count>7</count>
 					<item_version>0</item_version>
-					<item>67</item>
-					<item>68</item>
+					<item>69</item>
 					<item>70</item>
+					<item>71</item>
+					<item>72</item>
+					<item>123</item>
+					<item>126</item>
+					<item>129</item>
 				</oprand_edges>
-				<opcode>writereq</opcode>
+				<opcode>call</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>10.9</m_delay>
+				<m_delay>0.00</m_delay>
 				<m_topoIndex>14</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -942,10 +933,10 @@
 					<Obj>
 						<type>0</type>
 						<id>21</id>
-						<name>_ln48</name>
+						<name>empty_52</name>
 						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>48</lineNumber>
+						<lineNumber>87</lineNumber>
 						<contextFuncName>encoder0_c1</contextFuncName>
 						<contextNormFuncName>encoder0_c1</contextNormFuncName>
 						<inlineStackInfo>
@@ -961,7 +952,7 @@
 											<first>lane_seg_hls/lane_seg_support.cpp</first>
 											<second>encoder0_c1</second>
 										</first>
-										<second>48</second>
+										<second>87</second>
 									</item>
 								</second>
 							</item>
@@ -974,28 +965,24 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>0</bitwidth>
+					<bitwidth>1</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>7</count>
+					<count>3</count>
 					<item_version>0</item_version>
-					<item>72</item>
-					<item>73</item>
 					<item>74</item>
 					<item>75</item>
-					<item>126</item>
-					<item>129</item>
-					<item>131</item>
+					<item>125</item>
 				</oprand_edges>
-				<opcode>call</opcode>
+				<opcode>writeresp</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
+				<m_delay>10.9</m_delay>
 				<m_topoIndex>15</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -1004,10 +991,10 @@
 					<Obj>
 						<type>0</type>
 						<id>22</id>
-						<name>empty_49</name>
+						<name>_ln87</name>
 						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>84</lineNumber>
+						<lineNumber>87</lineNumber>
 						<contextFuncName>encoder0_c1</contextFuncName>
 						<contextNormFuncName>encoder0_c1</contextNormFuncName>
 						<inlineStackInfo>
@@ -1023,7 +1010,7 @@
 											<first>lane_seg_hls/lane_seg_support.cpp</first>
 											<second>encoder0_c1</second>
 										</first>
-										<second>84</second>
+										<second>87</second>
 									</item>
 								</second>
 							</item>
@@ -1036,65 +1023,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>77</item>
-					<item>78</item>
-					<item>128</item>
-				</oprand_edges>
-				<opcode>writeresp</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>10.9</m_delay>
-				<m_topoIndex>16</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_21">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>23</id>
-						<name>_ln84</name>
-						<fileName>lane_seg_hls/lane_seg_support.cpp</fileName>
-						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>84</lineNumber>
-						<contextFuncName>encoder0_c1</contextFuncName>
-						<contextNormFuncName>encoder0_c1</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>lane_seg_hls/lane_seg_support.cpp</first>
-											<second>encoder0_c1</second>
-										</first>
-										<second>84</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>547110912</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1109,18 +1038,18 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>17</m_topoIndex>
+				<m_topoIndex>16</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 		</nodes>
 		<consts class_id="15" tracking_level="0" version="0">
 			<count>9</count>
 			<item_version>0</item_version>
-			<item class_id="16" tracking_level="1" version="0" object_id="_22">
+			<item class_id="16" tracking_level="1" version="0" object_id="_21">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>30</id>
+						<id>29</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -1146,12 +1075,43 @@
 				</Value>
 				<const_type>0</const_type>
 				<content>1</content>
+			</item>
+			<item class_id_reference="16" object_id="_22">
+				<Value>
+					<Obj>
+						<type>2</type>
+						<id>31</id>
+						<name>encoder0_c1_Pipeline_1</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>1902473829</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<const_type>6</const_type>
+				<content>&lt;constant:encoder0_c1_Pipeline_1&gt;</content>
 			</item>
 			<item class_id_reference="16" object_id="_23">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>33</id>
+						<id>37</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -1170,81 +1130,19 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1902473829</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>64</bitwidth>
-				</Value>
-				<const_type>0</const_type>
-				<content>0</content>
-			</item>
-			<item class_id_reference="16" object_id="_24">
-				<Value>
-					<Obj>
-						<type>2</type>
-						<id>36</id>
-						<name>empty</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1902473829</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>16</bitwidth>
-				</Value>
-				<const_type>0</const_type>
-				<content>0</content>
-			</item>
-			<item class_id_reference="16" object_id="_25">
-				<Value>
-					<Obj>
-						<type>2</type>
-						<id>42</id>
-						<name>empty</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1902473829</coreId>
+						<coreId>1078119168</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<const_type>0</const_type>
-				<content>1</content>
+				<content>2</content>
 			</item>
-			<item class_id_reference="16" object_id="_26">
+			<item class_id_reference="16" object_id="_24">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>44</id>
+						<id>39</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -1263,7 +1161,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1651864359</coreId>
+						<coreId>1090640064</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1271,11 +1169,11 @@
 				<const_type>0</const_type>
 				<content>63</content>
 			</item>
-			<item class_id_reference="16" object_id="_27">
+			<item class_id_reference="16" object_id="_25">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>52</id>
+						<id>47</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -1294,7 +1192,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1031040613</coreId>
+						<coreId>1173692944</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1302,12 +1200,12 @@
 				<const_type>0</const_type>
 				<content>150528</content>
 			</item>
-			<item class_id_reference="16" object_id="_28">
+			<item class_id_reference="16" object_id="_26">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>54</id>
-						<name>encoder0_c1_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3</name>
+						<id>49</id>
+						<name>encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1325,19 +1223,19 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1902473829</coreId>
+						<coreId>1090640064</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:encoder0_c1_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3&gt;</content>
+				<content>&lt;constant:encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3&gt;</content>
 			</item>
-			<item class_id_reference="16" object_id="_29">
+			<item class_id_reference="16" object_id="_27">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>69</id>
+						<id>57</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -1356,20 +1254,20 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1902473829</coreId>
+						<coreId>1173695840</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<const_type>0</const_type>
-				<content>401408</content>
+				<content>1</content>
 			</item>
-			<item class_id_reference="16" object_id="_30">
+			<item class_id_reference="16" object_id="_28">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>71</id>
-						<name>encoder0_c1_Pipeline_VITIS_LOOP_48_4_VITIS_LOOP_49_5</name>
+						<id>66</id>
+						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1387,22 +1285,53 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>656418673</coreId>
+						<coreId>1173717200</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<const_type>0</const_type>
+				<content>401408</content>
+			</item>
+			<item class_id_reference="16" object_id="_29">
+				<Value>
+					<Obj>
+						<type>2</type>
+						<id>68</id>
+						<name>encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>1090640064</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:encoder0_c1_Pipeline_VITIS_LOOP_48_4_VITIS_LOOP_49_5&gt;</content>
+				<content>&lt;constant:encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5&gt;</content>
 			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">
 			<count>1</count>
 			<item_version>0</item_version>
-			<item class_id="18" tracking_level="1" version="0" object_id="_31">
+			<item class_id="18" tracking_level="1" version="0" object_id="_30">
 				<Obj>
 					<type>3</type>
-					<id>24</id>
+					<id>23</id>
 					<name>encoder0_c1</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
@@ -1421,11 +1350,11 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>2</coreId>
+					<coreId>1931943975</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
-					<count>17</count>
+					<count>16</count>
 					<item_version>0</item_version>
 					<item>7</item>
 					<item>8</item>
@@ -1443,284 +1372,269 @@
 					<item>20</item>
 					<item>21</item>
 					<item>22</item>
-					<item>23</item>
 				</node_objs>
 			</item>
 		</blocks>
 		<edges class_id="19" tracking_level="0" version="0">
-			<count>39</count>
+			<count>37</count>
 			<item_version>0</item_version>
-			<item class_id="20" tracking_level="1" version="0" object_id="_32">
-				<id>27</id>
+			<item class_id="20" tracking_level="1" version="0" object_id="_31">
+				<id>26</id>
 				<edge_type>1</edge_type>
 				<source_obj>4</source_obj>
 				<sink_obj>7</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_33">
-				<id>29</id>
+			<item class_id_reference="20" object_id="_32">
+				<id>28</id>
 				<edge_type>1</edge_type>
 				<source_obj>2</source_obj>
 				<sink_obj>8</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_34">
-				<id>31</id>
+			<item class_id_reference="20" object_id="_33">
+				<id>30</id>
 				<edge_type>1</edge_type>
-				<source_obj>30</source_obj>
+				<source_obj>29</source_obj>
 				<sink_obj>9</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_35">
+			<item class_id_reference="20" object_id="_34">
 				<id>32</id>
+				<edge_type>1</edge_type>
+				<source_obj>31</source_obj>
+				<sink_obj>10</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_35">
+				<id>33</id>
 				<edge_type>1</edge_type>
 				<source_obj>9</source_obj>
 				<sink_obj>10</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_36">
-				<id>34</id>
+				<id>36</id>
 				<edge_type>1</edge_type>
-				<source_obj>33</source_obj>
-				<sink_obj>10</sink_obj>
+				<source_obj>8</source_obj>
+				<sink_obj>11</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_37">
-				<id>35</id>
+				<id>38</id>
 				<edge_type>1</edge_type>
-				<source_obj>33</source_obj>
-				<sink_obj>10</sink_obj>
+				<source_obj>37</source_obj>
+				<sink_obj>11</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_38">
-				<id>37</id>
+				<id>40</id>
 				<edge_type>1</edge_type>
-				<source_obj>36</source_obj>
+				<source_obj>39</source_obj>
 				<sink_obj>11</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_39">
-				<id>38</id>
+				<id>41</id>
 				<edge_type>1</edge_type>
-				<source_obj>10</source_obj>
-				<sink_obj>11</sink_obj>
+				<source_obj>11</source_obj>
+				<sink_obj>12</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_40">
-				<id>41</id>
+				<id>42</id>
 				<edge_type>1</edge_type>
-				<source_obj>8</source_obj>
-				<sink_obj>12</sink_obj>
+				<source_obj>1</source_obj>
+				<sink_obj>13</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_41">
 				<id>43</id>
 				<edge_type>1</edge_type>
-				<source_obj>42</source_obj>
-				<sink_obj>12</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_42">
-				<id>45</id>
-				<edge_type>1</edge_type>
-				<source_obj>44</source_obj>
-				<sink_obj>12</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_43">
-				<id>46</id>
-				<edge_type>1</edge_type>
 				<source_obj>12</source_obj>
 				<sink_obj>13</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_44">
-				<id>47</id>
-				<edge_type>1</edge_type>
-				<source_obj>1</source_obj>
-				<sink_obj>14</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_45">
-				<id>48</id>
+			<item class_id_reference="20" object_id="_42">
+				<id>46</id>
 				<edge_type>1</edge_type>
 				<source_obj>13</source_obj>
 				<sink_obj>14</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_46">
+			<item class_id_reference="20" object_id="_43">
+				<id>48</id>
+				<edge_type>1</edge_type>
+				<source_obj>47</source_obj>
+				<sink_obj>14</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_44">
+				<id>50</id>
+				<edge_type>1</edge_type>
+				<source_obj>49</source_obj>
+				<sink_obj>15</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_45">
 				<id>51</id>
 				<edge_type>1</edge_type>
-				<source_obj>14</source_obj>
+				<source_obj>1</source_obj>
+				<sink_obj>15</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_46">
+				<id>52</id>
+				<edge_type>1</edge_type>
+				<source_obj>11</source_obj>
 				<sink_obj>15</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_47">
 				<id>53</id>
 				<edge_type>1</edge_type>
-				<source_obj>52</source_obj>
+				<source_obj>9</source_obj>
 				<sink_obj>15</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_48">
-				<id>55</id>
+				<id>56</id>
 				<edge_type>1</edge_type>
-				<source_obj>54</source_obj>
+				<source_obj>7</source_obj>
 				<sink_obj>16</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_49">
-				<id>56</id>
+				<id>58</id>
 				<edge_type>1</edge_type>
-				<source_obj>1</source_obj>
+				<source_obj>57</source_obj>
 				<sink_obj>16</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_50">
-				<id>57</id>
+				<id>59</id>
 				<edge_type>1</edge_type>
-				<source_obj>12</source_obj>
+				<source_obj>39</source_obj>
 				<sink_obj>16</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_51">
-				<id>58</id>
+				<id>60</id>
 				<edge_type>1</edge_type>
-				<source_obj>9</source_obj>
-				<sink_obj>16</sink_obj>
+				<source_obj>16</source_obj>
+				<sink_obj>17</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_52">
-				<id>60</id>
+				<id>61</id>
 				<edge_type>1</edge_type>
-				<source_obj>7</source_obj>
-				<sink_obj>17</sink_obj>
+				<source_obj>3</source_obj>
+				<sink_obj>18</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_53">
-				<id>61</id>
-				<edge_type>1</edge_type>
-				<source_obj>42</source_obj>
-				<sink_obj>17</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_54">
 				<id>62</id>
-				<edge_type>1</edge_type>
-				<source_obj>44</source_obj>
-				<sink_obj>17</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_55">
-				<id>63</id>
 				<edge_type>1</edge_type>
 				<source_obj>17</source_obj>
 				<sink_obj>18</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_56">
-				<id>64</id>
-				<edge_type>1</edge_type>
-				<source_obj>3</source_obj>
-				<sink_obj>19</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_57">
+			<item class_id_reference="20" object_id="_54">
 				<id>65</id>
 				<edge_type>1</edge_type>
 				<source_obj>18</source_obj>
 				<sink_obj>19</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_58">
-				<id>68</id>
+			<item class_id_reference="20" object_id="_55">
+				<id>67</id>
 				<edge_type>1</edge_type>
-				<source_obj>19</source_obj>
+				<source_obj>66</source_obj>
+				<sink_obj>19</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_56">
+				<id>69</id>
+				<edge_type>1</edge_type>
+				<source_obj>68</source_obj>
+				<sink_obj>20</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_57">
+				<id>70</id>
+				<edge_type>1</edge_type>
+				<source_obj>3</source_obj>
+				<sink_obj>20</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_58">
+				<id>71</id>
+				<edge_type>1</edge_type>
+				<source_obj>16</source_obj>
 				<sink_obj>20</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_59">
-				<id>70</id>
+				<id>72</id>
 				<edge_type>1</edge_type>
-				<source_obj>69</source_obj>
+				<source_obj>9</source_obj>
 				<sink_obj>20</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_60">
-				<id>72</id>
+				<id>75</id>
 				<edge_type>1</edge_type>
-				<source_obj>71</source_obj>
+				<source_obj>18</source_obj>
 				<sink_obj>21</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_61">
-				<id>73</id>
-				<edge_type>1</edge_type>
-				<source_obj>3</source_obj>
-				<sink_obj>21</sink_obj>
+				<id>123</id>
+				<edge_type>4</edge_type>
+				<source_obj>15</source_obj>
+				<sink_obj>20</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_62">
-				<id>74</id>
-				<edge_type>1</edge_type>
-				<source_obj>17</source_obj>
-				<sink_obj>21</sink_obj>
+				<id>124</id>
+				<edge_type>4</edge_type>
+				<source_obj>10</source_obj>
+				<sink_obj>15</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_63">
-				<id>75</id>
-				<edge_type>1</edge_type>
-				<source_obj>9</source_obj>
-				<sink_obj>21</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_64">
-				<id>78</id>
-				<edge_type>1</edge_type>
-				<source_obj>19</source_obj>
-				<sink_obj>22</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_65">
-				<id>126</id>
-				<edge_type>4</edge_type>
-				<source_obj>16</source_obj>
-				<sink_obj>21</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_66">
-				<id>127</id>
-				<edge_type>4</edge_type>
-				<source_obj>11</source_obj>
-				<sink_obj>16</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_67">
-				<id>128</id>
-				<edge_type>4</edge_type>
-				<source_obj>21</source_obj>
-				<sink_obj>22</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_68">
-				<id>129</id>
+				<id>125</id>
 				<edge_type>4</edge_type>
 				<source_obj>20</source_obj>
 				<sink_obj>21</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_69">
-				<id>130</id>
+			<item class_id_reference="20" object_id="_64">
+				<id>126</id>
 				<edge_type>4</edge_type>
-				<source_obj>15</source_obj>
-				<sink_obj>16</sink_obj>
+				<source_obj>19</source_obj>
+				<sink_obj>20</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_70">
-				<id>131</id>
+			<item class_id_reference="20" object_id="_65">
+				<id>127</id>
 				<edge_type>4</edge_type>
-				<source_obj>16</source_obj>
-				<sink_obj>21</sink_obj>
+				<source_obj>14</source_obj>
+				<sink_obj>15</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_66">
+				<id>128</id>
+				<edge_type>4</edge_type>
+				<source_obj>10</source_obj>
+				<sink_obj>15</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_67">
+				<id>129</id>
+				<edge_type>4</edge_type>
+				<source_obj>15</source_obj>
+				<sink_obj>20</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 		</edges>
@@ -1728,7 +1642,7 @@
 	<cdfg_regions class_id="21" tracking_level="0" version="0">
 		<count>1</count>
 		<item_version>0</item_version>
-		<item class_id="22" tracking_level="1" version="0" object_id="_71">
+		<item class_id="22" tracking_level="1" version="0" object_id="_68">
 			<mId>1</mId>
 			<mTag>encoder0_c1</mTag>
 			<mNormTag>encoder0_c1</mNormTag>
@@ -1740,14 +1654,14 @@
 			<basic_blocks>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>24</item>
+				<item>23</item>
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>551972</mMinLatency>
-			<mMaxLatency>551972</mMaxLatency>
+			<mMinLatency>705216</mMinLatency>
+			<mMaxLatency>705216</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -1755,7 +1669,7 @@
 	<fsm class_id="-1"></fsm>
 	<res class_id="-1"></res>
 	<node_label_latency class_id="26" tracking_level="0" version="0">
-		<count>17</count>
+		<count>16</count>
 		<item_version>0</item_version>
 		<item class_id="27" tracking_level="0" version="0">
 			<first>7</first>
@@ -1782,7 +1696,7 @@
 			<first>10</first>
 			<second>
 				<first>0</first>
-				<second>0</second>
+				<second>1</second>
 			</second>
 		</item>
 		<item>
@@ -1810,21 +1724,21 @@
 			<first>14</first>
 			<second>
 				<first>0</first>
-				<second>0</second>
+				<second>7</second>
 			</second>
 		</item>
 		<item>
 			<first>15</first>
 			<second>
-				<first>0</first>
-				<second>7</second>
+				<first>8</first>
+				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>16</first>
 			<second>
-				<first>8</first>
-				<second>1</second>
+				<first>9</first>
+				<second>0</second>
 			</second>
 		</item>
 		<item>
@@ -1851,26 +1765,19 @@
 		<item>
 			<first>20</first>
 			<second>
-				<first>9</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>21</first>
-			<second>
 				<first>10</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
-			<first>22</first>
+			<first>21</first>
 			<second>
 				<first>12</first>
 				<second>4</second>
 			</second>
 		</item>
 		<item>
-			<first>23</first>
+			<first>22</first>
 			<second>
 				<first>16</first>
 				<second>0</second>
@@ -1881,7 +1788,7 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item class_id="30" tracking_level="0" version="0">
-			<first>24</first>
+			<first>23</first>
 			<second class_id="31" tracking_level="0" version="0">
 				<first>0</first>
 				<second>16</second>

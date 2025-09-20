@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'lane_seg_top'" level="0">
-<item name = "Date">Mon Sep  8 23:45:38 2025
+<item name = "Date">Fri Sep 19 13:55:43 2025
 </item>
 <item name = "Version">2023.1 (Build 3854077 on May  4 2023)</item>
 <item name = "Project">lane_seg_hls</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">551974, 551974, 8.280 ms, 8.280 ms, 551975, 551975, no</column>
+<column name="">705218, 705218, 10.578 ms, 10.578 ms, 705219, 705219, no</column>
 </table>
 </item>
 <item name = "Detail">

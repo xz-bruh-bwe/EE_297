@@ -16,7 +16,7 @@ module lane_seg_top_encoder0_c1_padded_RAM_1WNR_AUTO_1R1W (
     
     reset, clk);
 
-parameter DataWidth = 16;
+parameter DataWidth = 32;
 parameter AddressWidth = 18;
 parameter AddressRange = 153228;
 

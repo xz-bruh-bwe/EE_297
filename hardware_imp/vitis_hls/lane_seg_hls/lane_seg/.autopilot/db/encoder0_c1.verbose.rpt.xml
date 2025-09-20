@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'encoder0_c1'" level="0">
-<item name = "Date">Mon Sep  8 23:46:15 2025
+<item name = "Date">Fri Sep 19 13:56:24 2025
 </item>
 <item name = "Version">2023.1 (Build 3854077 on May  4 2023)</item>
 <item name = "Project">lane_seg_hls</item>
@@ -24,15 +24,16 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">551972, 551972, 8.280 ms, 8.280 ms, 551972, 551972, no</column>
+<column name="">705216, 705216, 10.578 ms, 10.578 ms, 705216, 705216, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3_fu_100">encoder0_c1_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3, 150532, 150532, 2.258 ms, 2.258 ms, 150532, 150532, no</column>
-<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_48_4_VITIS_LOOP_49_5_fu_108">encoder0_c1_Pipeline_VITIS_LOOP_48_4_VITIS_LOOP_49_5, 401424, 401424, 6.021 ms, 6.021 ms, 401424, 401424, no</column>
+<column name="grp_encoder0_c1_Pipeline_1_fu_87">encoder0_c1_Pipeline_1, 153230, 153230, 2.298 ms, 2.298 ms, 153230, 153230, no</column>
+<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3_fu_93">encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3, 150532, 150532, 2.258 ms, 2.258 ms, 150532, 150532, no</column>
+<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5_fu_101">encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5, 401438, 401438, 6.022 ms, 6.022 ms, 401438, 401438, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -51,20 +52,21 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, -, -, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, 641, 13177, 36047, -</column>
-<column name="Memory">144, -, 0, 0, 0</column>
+<column name="Instance">-, 638, 19789, 52950, -</column>
+<column name="Memory">274, -, 0, 0, 0</column>
 <column name="Multiplexer">-, -, -, 471, -</column>
 <column name="Register">-, -, 145, -, -</column>
 <specialColumn name="Available">624, 1728, 460800, 230400, 96</specialColumn>
-<specialColumn name="Utilization (%)">23, 37, 2, 15, 0</specialColumn>
+<specialColumn name="Utilization (%)">43, 36, 4, 23, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3_fu_100">encoder0_c1_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3, 0, 1, 76, 366, 0</column>
-<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_48_4_VITIS_LOOP_49_5_fu_108">encoder0_c1_Pipeline_VITIS_LOOP_48_4_VITIS_LOOP_49_5, 0, 640, 13101, 35681, 0</column>
+<column name="grp_encoder0_c1_Pipeline_1_fu_87">encoder0_c1_Pipeline_1, 0, 0, 20, 77, 0</column>
+<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3_fu_93">encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3, 0, 1, 92, 366, 0</column>
+<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5_fu_101">encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5, 0, 637, 19677, 52507, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -73,7 +75,7 @@
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="padded_U">encoder0_c1_padded_RAM_1WNR_AUTO_1R1W, 144, 0, 0, 0, 153228, 16, 1, 2451648</column>
+<column name="padded_U">encoder0_c1_padded_RAM_1WNR_AUTO_1R1W, 274, 0, 0, 0, 153228, 32, 1, 4903296</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
@@ -120,17 +122,18 @@
 <column name="padded_address0">20, 4, 18, 72</column>
 <column name="padded_ce0">20, 4, 1, 4</column>
 <column name="padded_ce1">9, 2, 1, 2</column>
-<column name="padded_d0">14, 3, 16, 48</column>
+<column name="padded_d0">14, 3, 32, 96</column>
 <column name="padded_we0">14, 3, 1, 3</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">17, 0, 17, 0</column>
-<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3_fu_100_ap_start_reg">1, 0, 1, 0</column>
-<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_48_4_VITIS_LOOP_49_5_fu_108_ap_start_reg">1, 0, 1, 0</column>
-<column name="trunc_ln1_reg_168">63, 0, 63, 0</column>
-<column name="trunc_ln_reg_158">63, 0, 63, 0</column>
+<column name="grp_encoder0_c1_Pipeline_1_fu_87_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3_fu_93_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5_fu_101_ap_start_reg">1, 0, 1, 0</column>
+<column name="trunc_ln1_reg_161">63, 0, 63, 0</column>
+<column name="trunc_ln_reg_151">62, 0, 62, 0</column>
 </table>
 </item>
 </section>
@@ -161,8 +164,8 @@
 <column name="m_axi_gmem_in_AWUSER">out, 1, m_axi, gmem_in, pointer</column>
 <column name="m_axi_gmem_in_WVALID">out, 1, m_axi, gmem_in, pointer</column>
 <column name="m_axi_gmem_in_WREADY">in, 1, m_axi, gmem_in, pointer</column>
-<column name="m_axi_gmem_in_WDATA">out, 16, m_axi, gmem_in, pointer</column>
-<column name="m_axi_gmem_in_WSTRB">out, 2, m_axi, gmem_in, pointer</column>
+<column name="m_axi_gmem_in_WDATA">out, 32, m_axi, gmem_in, pointer</column>
+<column name="m_axi_gmem_in_WSTRB">out, 4, m_axi, gmem_in, pointer</column>
 <column name="m_axi_gmem_in_WLAST">out, 1, m_axi, gmem_in, pointer</column>
 <column name="m_axi_gmem_in_WID">out, 1, m_axi, gmem_in, pointer</column>
 <column name="m_axi_gmem_in_WUSER">out, 1, m_axi, gmem_in, pointer</column>
@@ -181,10 +184,10 @@
 <column name="m_axi_gmem_in_ARUSER">out, 1, m_axi, gmem_in, pointer</column>
 <column name="m_axi_gmem_in_RVALID">in, 1, m_axi, gmem_in, pointer</column>
 <column name="m_axi_gmem_in_RREADY">out, 1, m_axi, gmem_in, pointer</column>
-<column name="m_axi_gmem_in_RDATA">in, 16, m_axi, gmem_in, pointer</column>
+<column name="m_axi_gmem_in_RDATA">in, 32, m_axi, gmem_in, pointer</column>
 <column name="m_axi_gmem_in_RLAST">in, 1, m_axi, gmem_in, pointer</column>
 <column name="m_axi_gmem_in_RID">in, 1, m_axi, gmem_in, pointer</column>
-<column name="m_axi_gmem_in_RFIFONUM">in, 10, m_axi, gmem_in, pointer</column>
+<column name="m_axi_gmem_in_RFIFONUM">in, 9, m_axi, gmem_in, pointer</column>
 <column name="m_axi_gmem_in_RUSER">in, 1, m_axi, gmem_in, pointer</column>
 <column name="m_axi_gmem_in_RRESP">in, 2, m_axi, gmem_in, pointer</column>
 <column name="m_axi_gmem_in_BVALID">in, 1, m_axi, gmem_in, pointer</column>

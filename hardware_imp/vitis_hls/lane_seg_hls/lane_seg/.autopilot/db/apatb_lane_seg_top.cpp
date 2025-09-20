@@ -1216,8 +1216,8 @@ void apatb_lane_seg_top_hw(void* __xlx_apatb_param_image_r, void* __xlx_apatb_pa
 #else
   static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port5 {
 #endif
-    .width = 16,
-    .asize = 2,
+    .width = 32,
+    .asize = 4,
     .hbm = false,
     .name = { "gmem_in" },
 #ifdef POST_CHECK
@@ -1231,7 +1231,7 @@ void apatb_lane_seg_top_hw(void* __xlx_apatb_param_image_r, void* __xlx_apatb_pa
 #endif
   };
   port5.param = { __xlx_apatb_param_image_r };
-  port5.nbytes = { 301056 };
+  port5.nbytes = { 602112 };
   port5.offset = {  };
   port5.hasWrite = { false };
 

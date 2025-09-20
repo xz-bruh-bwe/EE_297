@@ -34,10 +34,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1031040613</coreId>
+						<coreId>1100783808</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>4</if_type>
@@ -70,7 +70,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2927409264</coreId>
+						<coreId>1078105088</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>16</bitwidth>
@@ -98,7 +98,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>image</originalName>
 						<rtlName></rtlName>
 						<control></control>
 						<opType></opType>
@@ -106,7 +106,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2927409264</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -142,7 +142,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2927409264</coreId>
+						<coreId>1173696656</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -178,7 +178,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2927409264</coreId>
+						<coreId>1173719936</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -214,7 +214,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>352</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -250,7 +250,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2927736480</coreId>
+						<coreId>1090640064</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -275,7 +275,7 @@
 						<name>ctrl_read</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>22</lineNumber>
+						<lineNumber>29</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -291,7 +291,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>22</second>
+										<second>29</second>
 									</item>
 								</second>
 							</item>
@@ -332,7 +332,7 @@
 						<name>out0_read</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>22</lineNumber>
+						<lineNumber>29</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -348,7 +348,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>22</second>
+										<second>29</second>
 									</item>
 								</second>
 							</item>
@@ -389,7 +389,7 @@
 						<name>image_r_read</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>22</lineNumber>
+						<lineNumber>29</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -405,7 +405,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>22</second>
+										<second>29</second>
 									</item>
 								</second>
 							</item>
@@ -443,10 +443,10 @@
 					<Obj>
 						<type>0</type>
 						<id>30</id>
-						<name>magic_write_ln46</name>
+						<name>magic_write_ln62</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>46</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -462,7 +462,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>46</second>
+										<second>62</second>
 									</item>
 								</second>
 							</item>
@@ -504,7 +504,7 @@
 						<name>tmp</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>48</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -520,7 +520,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>48</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -533,7 +533,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -559,10 +559,10 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>br_ln48</name>
+						<name>br_ln64</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>48</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -578,7 +578,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>48</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -591,7 +591,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -617,10 +617,10 @@
 					<Obj>
 						<type>0</type>
 						<id>34</id>
-						<name>status_write_ln49</name>
+						<name>status_write_ln65</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>49</lineNumber>
+						<lineNumber>65</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -636,7 +636,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>49</second>
+										<second>65</second>
 									</item>
 								</second>
 							</item>
@@ -675,10 +675,10 @@
 					<Obj>
 						<type>0</type>
 						<id>35</id>
-						<name>br_ln49</name>
+						<name>br_ln65</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>49</lineNumber>
+						<lineNumber>65</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -694,7 +694,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>49</second>
+										<second>65</second>
 									</item>
 								</second>
 							</item>
@@ -707,7 +707,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2838752112</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -731,10 +731,10 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>_ln52</name>
+						<name>_ln72</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>52</lineNumber>
+						<lineNumber>72</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -750,7 +750,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>52</second>
+										<second>72</second>
 									</item>
 								</second>
 							</item>
@@ -763,7 +763,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -794,7 +794,7 @@
 						<name>status_read</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>74</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -810,7 +810,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>55</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -849,10 +849,10 @@
 					<Obj>
 						<type>0</type>
 						<id>39</id>
-						<name>or_ln55</name>
+						<name>or_ln74</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>74</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -868,7 +868,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>55</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -881,7 +881,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -906,10 +906,10 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>status_write_ln55</name>
+						<name>status_write_ln74</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>74</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -925,7 +925,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>55</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -966,10 +966,10 @@
 					<Obj>
 						<type>0</type>
 						<id>41</id>
-						<name>_ln56</name>
+						<name>_ln79</name>
 						<fileName>lane_seg_hls/lane_seg_top.cpp</fileName>
 						<fileDirectory>C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls</fileDirectory>
-						<lineNumber>56</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>lane_seg_top</contextFuncName>
 						<contextNormFuncName>lane_seg_top</contextNormFuncName>
 						<inlineStackInfo>
@@ -985,7 +985,7 @@
 											<first>lane_seg_hls/lane_seg_top.cpp</first>
 											<second>lane_seg_top</second>
 										</first>
-										<second>56</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -998,7 +998,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1043,7 +1043,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2927743248</coreId>
+						<coreId>1173696896</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1074,7 +1074,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2927409264</coreId>
+						<coreId>1173714032</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1105,7 +1105,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2927749056</coreId>
+						<coreId>1090640064</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1136,7 +1136,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2927409264</coreId>
+						<coreId>1173698448</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1170,7 +1170,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>2</coreId>
+					<coreId>1651864359</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -1206,7 +1206,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>2</coreId>
+					<coreId>1651864359</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -1238,7 +1238,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>2</coreId>
+					<coreId>1970480928</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -1483,8 +1483,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>551974</mMinLatency>
-			<mMaxLatency>551974</mMaxLatency>
+			<mMinLatency>705218</mMinLatency>
+			<mMaxLatency>705218</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -1922,7 +1922,7 @@
 		<count>2</count>
 		<item_version>0</item_version>
 		<item class_id="46" tracking_level="0" version="0">
-			<first>or_ln55_fu_134</first>
+			<first>or_ln74_fu_134</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -1996,7 +1996,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln46_write_fu_94</first>
+			<first>write_ln62_write_fu_94</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

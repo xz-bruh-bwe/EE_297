@@ -11,7 +11,7 @@ use ieee.std_logic_unsigned.all;
 entity lane_seg_top_encoder0_c1_padded_RAM_1WNR_AUTO_1R1W is 
     generic(
         MEM_TYPE        : string    := "auto"; 
-        DataWidth       : integer   := 16; 
+        DataWidth       : integer   := 32; 
         AddressWidth    : integer   := 18;
         AddressRange    : integer   := 153228
     ); 

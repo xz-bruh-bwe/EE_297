@@ -1,22 +1,28 @@
 {
     "1": {
-        "name": "encoder0_c1",
+        "name": "encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5",
         "file": "lane_seg_support.cpp",
-        "fileloc": "17",
-        "instructions": "19",
-        "total_instructions": "5323",
-        "calls": "2 3",
-        "basicblocks": "1",
+        "fileloc": "0",
+        "instructions": "6395",
+        "total_instructions": "6395",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "30"
+        },
         "stores": {
+            "L": "6"
+        },
+        "loops": {
             "L": "1"
         }
     },
     "2": {
-        "name": "encoder0_c1_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3",
+        "name": "encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3",
         "file": "lane_seg_support.cpp",
         "fileloc": "0",
-        "instructions": "70",
-        "total_instructions": "70",
+        "instructions": "71",
+        "total_instructions": "71",
         "calls": "",
         "basicblocks": "4",
         "loads": {
@@ -30,18 +36,18 @@
         }
     },
     "3": {
-        "name": "encoder0_c1_Pipeline_VITIS_LOOP_48_4_VITIS_LOOP_49_5",
+        "name": "encoder0_c1_Pipeline_1",
         "file": "lane_seg_support.cpp",
         "fileloc": "0",
-        "instructions": "5234",
-        "total_instructions": "5234",
+        "instructions": "15",
+        "total_instructions": "15",
         "calls": "",
         "basicblocks": "4",
         "loads": {
-            "L": "30"
+            "L": "1"
         },
         "stores": {
-            "L": "6"
+            "L": "3"
         },
         "loops": {
             "L": "1"
@@ -50,10 +56,19 @@
     "0": {
         "name": "lane_seg_top",
         "file": "lane_seg_top.cpp",
-        "fileloc": "22",
+        "fileloc": "29",
         "instructions": "32",
-        "total_instructions": "5355",
-        "calls": "1",
+        "total_instructions": "6531",
+        "calls": "4",
         "basicblocks": "3"
+    },
+    "4": {
+        "name": "encoder0_c1",
+        "file": "lane_seg_support.cpp",
+        "fileloc": "18",
+        "instructions": "18",
+        "total_instructions": "6499",
+        "calls": "3 2 1",
+        "basicblocks": "1"
     }
 }

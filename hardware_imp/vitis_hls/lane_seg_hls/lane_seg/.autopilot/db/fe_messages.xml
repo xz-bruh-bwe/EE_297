@@ -602,23 +602,47 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Z:/Xilinx/Vitis_HLS/2023.1/common/technology/autopilot/etc/hls_hypot_apfixed.h:196:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="hypot_fixed" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:23:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:24:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="encoder0_c1" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:26:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:27:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="encoder0_c1" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:27:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:28:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="encoder0_c1" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights complete dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:28:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:29:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="encoder0_c1" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights complete dim=3" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:29:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:30:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="encoder0_c1" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=biases complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:50:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:52:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="encoder0_c1" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:104:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="enc1_ir0" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:108:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="enc1_ir0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=dw_weights cyclic factor=3 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:109:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="enc1_ir0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=dw_weights cyclic factor=3 dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:111:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="enc1_ir0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=dw_biases complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:117:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="enc1_ir0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=pw_weights cyclic factor=16 dim=3" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:118:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="enc1_ir0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=pw_biases complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:127:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="enc1_ir0" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=10" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_support.cpp:163:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="enc1_ir0" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=10" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Z:/Xilinx/Vitis_HLS/2023.1/common/technology/autopilot\utils/x_hls_utils.h:250:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="reg" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
@@ -1229,53 +1253,53 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/directives.tcl:7:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="lane_seg_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=lane_seg_top" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:33:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:44:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="lane_seg_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=image offset=slave bundle=gmem_in depth=(224 * 224 * 3)" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:34:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:45:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="lane_seg_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=out0 offset=slave bundle=gmem_out depth=(((224 + 2 * 1 - 3) / 2 + 1) * ((224 + 2 * 1 - 3) / 2 + 1) * 32)" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:38:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:51:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="lane_seg_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=image bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:39:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:52:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="lane_seg_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=out0 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:40:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:56:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="lane_seg_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=ctrl bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:41:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:57:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="lane_seg_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=status bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:42:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:58:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="lane_seg_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=magic bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:43:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="lane_seg_hls/lane_seg_top.cpp:59:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="lane_seg_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:54:30" msg_body="Loop 'VITIS_LOOP_54_6' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_54_6"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:56:30" msg_body="Loop 'VITIS_LOOP_56_6' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_56_6"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:58:34" msg_body="Loop 'VITIS_LOOP_58_7' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_58_7"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:60:34" msg_body="Loop 'VITIS_LOOP_60_7' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_60_7"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:59:38" msg_body="Loop 'VITIS_LOOP_59_8' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_59_8"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:61:38" msg_body="Loop 'VITIS_LOOP_61_8' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_61_8"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:60:42" msg_body="Loop 'VITIS_LOOP_60_9' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_60_9"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:62:42" msg_body="Loop 'VITIS_LOOP_62_9' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_62_9"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:22:0" msg_body="Unrolling loop 'VITIS_LOOP_54_6' (lane_seg_hls/lane_seg_support.cpp:54:30) in function 'encoder0_c1' completely with a factor of 32">
-        <args Factor="32" LoopLoc="lane_seg_hls/lane_seg_support.cpp:54:30" LoopName="VITIS_LOOP_54_6"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:23:0" msg_body="Unrolling loop 'VITIS_LOOP_56_6' (lane_seg_hls/lane_seg_support.cpp:56:30) in function 'encoder0_c1' completely with a factor of 32">
+        <args Factor="32" LoopLoc="lane_seg_hls/lane_seg_support.cpp:56:30" LoopName="VITIS_LOOP_56_6"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:22:0" msg_body="Unrolling loop 'VITIS_LOOP_58_7' (lane_seg_hls/lane_seg_support.cpp:58:34) in function 'encoder0_c1' completely with a factor of 3">
-        <args Factor="3" LoopLoc="lane_seg_hls/lane_seg_support.cpp:58:34" LoopName="VITIS_LOOP_58_7"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:23:0" msg_body="Unrolling loop 'VITIS_LOOP_60_7' (lane_seg_hls/lane_seg_support.cpp:60:34) in function 'encoder0_c1' completely with a factor of 3">
+        <args Factor="3" LoopLoc="lane_seg_hls/lane_seg_support.cpp:60:34" LoopName="VITIS_LOOP_60_7"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:22:0" msg_body="Unrolling loop 'VITIS_LOOP_59_8' (lane_seg_hls/lane_seg_support.cpp:59:38) in function 'encoder0_c1' completely with a factor of 3">
-        <args Factor="3" LoopLoc="lane_seg_hls/lane_seg_support.cpp:59:38" LoopName="VITIS_LOOP_59_8"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:23:0" msg_body="Unrolling loop 'VITIS_LOOP_61_8' (lane_seg_hls/lane_seg_support.cpp:61:38) in function 'encoder0_c1' completely with a factor of 3">
+        <args Factor="3" LoopLoc="lane_seg_hls/lane_seg_support.cpp:61:38" LoopName="VITIS_LOOP_61_8"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:22:0" msg_body="Unrolling loop 'VITIS_LOOP_60_9' (lane_seg_hls/lane_seg_support.cpp:60:42) in function 'encoder0_c1' completely with a factor of 3">
-        <args Factor="3" LoopLoc="lane_seg_hls/lane_seg_support.cpp:60:42" LoopName="VITIS_LOOP_60_9"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="lane_seg_hls/lane_seg_support.cpp:23:0" msg_body="Unrolling loop 'VITIS_LOOP_62_9' (lane_seg_hls/lane_seg_support.cpp:62:42) in function 'encoder0_c1' completely with a factor of 3">
+        <args Factor="3" LoopLoc="lane_seg_hls/lane_seg_support.cpp:62:42" LoopName="VITIS_LOOP_62_9"/>
     </msg>
     <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\01_main\03_lanes_code\weights\encoder_conv0_b.h:7:0" msg_body="Applying array_partition to 'conv0_b': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="conv0_b"/>

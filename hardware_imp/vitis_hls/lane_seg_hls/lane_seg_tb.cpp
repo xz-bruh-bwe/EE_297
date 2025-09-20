@@ -13,6 +13,12 @@
 #define OUT_CHANNELS   32
 
 // ──────────────────────────────────────────────
+//Inverted Residual 0
+#define OUT1_IR0_HEIGHT   112
+#define OUT1_IR0_WIDTH    112
+#define OUT1_IR0_CHANNELS 16
+
+// ──────────────────────────────────────────────
 // Save encoder0 output feature maps to file
 void save_encoder0_output(data_t out[OUT_HEIGHT][OUT_WIDTH][OUT_CHANNELS], const char* filename) {
     FILE* f = fopen(filename, "w");
@@ -36,11 +42,38 @@ void save_encoder0_output(data_t out[OUT_HEIGHT][OUT_WIDTH][OUT_CHANNELS], const
 }
 
 // ──────────────────────────────────────────────
+// Save enc1_ir0 output feature maps to file
+void save_encoder1_ir0_output(data_t out[OUT1_IR0_HEIGHT][OUT1_IR0_WIDTH][OUT1_IR0_CHANNELS],
+                              const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT1_IR0_CHANNELS; c++) {
+        for (int i = 0; i < OUT1_IR0_HEIGHT; i++) {
+            for (int j = 0; j < OUT1_IR0_WIDTH; j++) {
+                fprintf(f, "%.6f ", (half)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");  // Blank line between channels
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
+
+
+// ──────────────────────────────────────────────
 // Main Testbench
 int main() {
     // Input / Output Buffers
     float image[IMG_HEIGHT][IMG_WIDTH][IMG_CHANNELS] = {0};
     data_t out0[OUT_HEIGHT][OUT_WIDTH][OUT_CHANNELS] = {0};
+    //data_t out1_ir0[OUT1_IR0_HEIGHT][OUT1_IR0_WIDTH][OUT1_IR0_CHANNELS] = {0};
 
     // AXI-Lite Debug Signals
     unsigned int ctrl = 0;
@@ -69,12 +102,16 @@ int main() {
     // === 2. Run HLS top function ===
     lane_seg_top(image, out0, ctrl, status, magic);
 
+
     // === 3. Debug Outputs ===
     printf("magic  = 0x%08X\n", magic);
     printf("status = 0x%08X\n", status);
 
     // === 4. Save output to file ===
     save_encoder0_output(out0, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/encoder0_out.txt");
+    //save_encoder1_ir0_output(out1_ir0, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc0_ir0_out.txt");
+
+
 
     return 0;
 }

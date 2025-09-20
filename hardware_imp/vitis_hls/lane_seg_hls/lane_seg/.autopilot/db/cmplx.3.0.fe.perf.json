@@ -3,7 +3,7 @@
     "basicblocks": 3,
     "calls": "1",
     "file": "lane_seg_top.cpp",
-    "fileloc": 22,
+    "fileloc": 29,
     "instructions": 48,
     "loads": {
       "T": 1
@@ -12,14 +12,14 @@
     "stores": {
       "T": 3
     },
-    "total_instructions": 8806
+    "total_instructions": 34130
   },
   "1": {
-    "basicblocks": 11,
+    "basicblocks": 5137,
     "calls": "",
     "file": "lane_seg_support.cpp",
-    "fileloc": 17,
-    "instructions": 8758,
+    "fileloc": 18,
+    "instructions": 34082,
     "loads": {
       "L": 27
     },
@@ -27,6 +27,6 @@
     "stores": {
       "L": 2
     },
-    "total_instructions": 8758
+    "total_instructions": 34082
   }
 }

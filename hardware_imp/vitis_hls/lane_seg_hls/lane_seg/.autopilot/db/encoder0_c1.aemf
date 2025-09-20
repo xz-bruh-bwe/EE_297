@@ -1,146 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1757400379749">
-  <ports id="1" name="gmem_in" type="PortType" coreId="1651864359" bitwidth="16" iftype="IfTypeFifo">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1758315389337">
+  <ports id="1" name="gmem_in" type="PortType" coreId="1953391988" bitwidth="32" iftype="IfTypeFifo">
     <dataOutputObjs>getelementptr</dataOutputObjs>
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="2" name="input_r" type="PortType" coreId="1031040613" bitwidth="64">
+  <ports id="2" name="input_r" type="PortType" coreId="661742962" bitwidth="64">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="gmem_out" type="PortType" coreId="1902473829" bitwidth="16" direction="DirOut" iftype="IfTypeFifo">
+  <ports id="3" name="gmem_out" type="PortType" coreId="1953391988" bitwidth="16" direction="DirOut" iftype="IfTypeFifo">
     <dataInputObjs>getelementptr</dataInputObjs>
     <dataInputObjs>call</dataInputObjs>
   </ports>
-  <ports id="4" name="output_r" type="PortType" coreId="1031040613" bitwidth="64">
+  <ports id="4" name="output_r" type="PortType" coreId="1902473829" bitwidth="64">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <edges id="27" source_obj="//@ports.3" sink_obj="//@blocks.0/@node_objs.0"/>
-  <edges id="29" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.1"/>
-  <edges id="32" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.3"/>
-  <edges id="38" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.4"/>
-  <edges id="41" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.5"/>
-  <edges id="46" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.6"/>
-  <edges id="47" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.7"/>
-  <edges id="48" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.7"/>
-  <edges id="51" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.8"/>
-  <edges id="56" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.9"/>
-  <edges id="57" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.9"/>
-  <edges id="58" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.9"/>
-  <edges id="60" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.10"/>
-  <edges id="63" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.11"/>
-  <edges id="64" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@ports.2"/>
+  <edges id="26" source_obj="//@ports.3" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="28" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="33" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="36" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="41" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="42" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="43" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="46" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="51" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="52" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="53" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="56" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="60" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.10"/>
+  <edges id="61" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@ports.2"/>
+  <edges id="62" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.11"/>
   <edges id="65" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@blocks.0/@node_objs.12"/>
-  <edges id="68" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@blocks.0/@node_objs.13"/>
-  <edges id="73" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@ports.2"/>
-  <edges id="74" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.14"/>
-  <edges id="75" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.14"/>
-  <edges id="78" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@blocks.0/@node_objs.15"/>
-  <edges id="126" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.14"/>
-  <edges id="127" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.9"/>
-  <edges id="128" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.15"/>
-  <edges id="129" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@blocks.0/@node_objs.14"/>
-  <edges id="130" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.9"/>
-  <edges id="131" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.14"/>
-  <blocks id="24" name="encoder0_c1" type="BlockType">
-    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="output_read" coreId="4294967295" bitwidth="64" opcode="read" nodeLabel="9.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+  <edges id="70" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@ports.2"/>
+  <edges id="71" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.13"/>
+  <edges id="72" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.13"/>
+  <edges id="75" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@blocks.0/@node_objs.14"/>
+  <edges id="123" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.13"/>
+  <edges id="124" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="125" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@blocks.0/@node_objs.14"/>
+  <edges id="126" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@blocks.0/@node_objs.13"/>
+  <edges id="127" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="128" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="129" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.13"/>
+  <blocks id="23" name="encoder0_c1" type="BlockType">
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="output_read" coreId="0" bitwidth="64" opcode="read" nodeLabel="9.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
       <dataInputObjs>output_r</dataInputObjs>
       <dataOutputObjs>partselect</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="input_read" coreId="4294967295" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="input_read" coreId="1088141656" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
       <dataInputObjs>input_r</dataInputObjs>
       <dataOutputObjs>partselect</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="padded" lineNumber="32" originalName="padded" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="padded_U" coreName="RAM_1WnR" implIndex="auto" control="no" opType="rom_np" coreId="84" contextFuncName="encoder0_c1" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="32" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
-      <dataOutputObjs>getelementptr</dataOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="padded" lineNumber="33" originalName="padded" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="padded_U" coreName="RAM_1WnR" implIndex="auto" control="no" opType="rom_np" coreId="84" contextFuncName="encoder0_c1" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="33" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+      <dataOutputObjs>call</dataOutputObjs>
       <dataOutputObjs>call</dataOutputObjs>
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="padded_addr" lineNumber="32" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="encoder0_c1" bitwidth="18" opcode="getelementptr" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="32" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="_ln0" rtlName="grp_encoder0_c1_Pipeline_1_fu_87" coreId="4294967292" opcode="call" nodeLatency="1" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
-      <dataOutputObjs>store</dataOutputObjs>
-      <constName>empty</constName>
+      <constName>encoder0_c1_Pipeline_1</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="padded_addr_write_ln32" lineNumber="32" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreName="RAM_1WnR" implIndex="auto" control="no" opType="ram_1wnr" coreId="84" contextFuncName="encoder0_c1" opcode="store" m_display="0" m_delay="1.23" m_topoIndex="4" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="32" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
-      <dataInputObjs>getelementptr</dataInputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="trunc_ln" lineNumber="35" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="trunc_ln_reg_158" coreId="4294967295" contextFuncName="encoder0_c1" bitwidth="63" opcode="partselect" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="35" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="trunc_ln" lineNumber="36" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="trunc_ln_reg_151" coreId="4294967292" contextFuncName="encoder0_c1" bitwidth="62" opcode="partselect" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="36" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>sext</dataOutputObjs>
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="sext_ln35" lineNumber="35" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="sext_ln35_fu_126_p1" coreId="4294967295" contextFuncName="encoder0_c1" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="35" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="sext_ln36" lineNumber="36" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="sext_ln36_fu_119_p1" coreId="4294967292" contextFuncName="encoder0_c1" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="36" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="gmem_in_addr" lineNumber="35" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="encoder0_c1" bitwidth="16" opcode="getelementptr" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="35" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="gmem_in_addr" lineNumber="36" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreId="1999413671" contextFuncName="encoder0_c1" bitwidth="32" opcode="getelementptr" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="36" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
       <dataInputObjs>gmem_in</dataInputObjs>
       <dataInputObjs>sext</dataInputObjs>
       <dataOutputObjs>readreq</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="empty" lineNumber="35" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreName="m_axi" implIndex="m_axi" control="no" opType="adapter" coreId="121" contextFuncName="encoder0_c1" bitwidth="1" opcode="readreq" nodeLatency="7" m_display="0" m_delay="10.9" m_topoIndex="8" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="35" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="empty" lineNumber="36" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreName="m_axi" implIndex="m_axi" control="no" opType="adapter" coreId="121" contextFuncName="encoder0_c1" bitwidth="1" opcode="readreq" nodeLatency="7" m_display="0" m_delay="10.9" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="36" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
       <dataInputObjs>getelementptr</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="_ln35" lineNumber="35" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="grp_encoder0_c1_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3_fu_100" coreId="4294967295" contextFuncName="encoder0_c1" opcode="call" nodeLabel="8.0" nodeLatency="1" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="35" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="_ln36" lineNumber="36" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="grp_encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3_fu_93" coreId="4294967292" contextFuncName="encoder0_c1" opcode="call" nodeLabel="8.0" nodeLatency="1" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="36" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
       <dataInputObjs>gmem_in</dataInputObjs>
       <dataInputObjs>partselect</dataInputObjs>
       <dataInputObjs>alloca</dataInputObjs>
-      <constName>encoder0_c1_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3</constName>
+      <constName>encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="trunc_ln1" lineNumber="48" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="trunc_ln1_reg_168" coreId="4294967295" contextFuncName="encoder0_c1" bitwidth="63" opcode="partselect" nodeLabel="9.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="48" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="trunc_ln1" lineNumber="50" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="trunc_ln1_reg_161" coreId="547110912" contextFuncName="encoder0_c1" bitwidth="63" opcode="partselect" nodeLabel="9.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="50" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>sext</dataOutputObjs>
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="sext_ln48" lineNumber="48" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="sext_ln48_fu_147_p1" coreId="4294967295" contextFuncName="encoder0_c1" bitwidth="64" opcode="sext" nodeLabel="9.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="48" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="sext_ln50" lineNumber="50" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="sext_ln50_fu_140_p1" coreId="908796560" contextFuncName="encoder0_c1" bitwidth="64" opcode="sext" nodeLabel="9.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="50" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="gmem_out_addr" lineNumber="48" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="encoder0_c1" bitwidth="16" opcode="getelementptr" nodeLabel="9.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="48" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="gmem_out_addr" lineNumber="50" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreId="4294967292" contextFuncName="encoder0_c1" bitwidth="16" opcode="getelementptr" nodeLabel="9.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="50" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
       <dataInputObjs>sext</dataInputObjs>
       <dataOutputObjs>gmem_out</dataOutputObjs>
       <dataOutputObjs>writereq</dataOutputObjs>
       <dataOutputObjs>writeresp</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="empty_48" lineNumber="48" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreName="m_axi" implIndex="m_axi" control="no" opType="adapter" coreId="121" contextFuncName="encoder0_c1" bitwidth="1" opcode="writereq" nodeLabel="9.0" m_display="0" m_delay="10.9" m_topoIndex="14" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="48" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="empty_51" lineNumber="50" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreName="m_axi" implIndex="m_axi" control="no" opType="adapter" coreId="121" contextFuncName="encoder0_c1" bitwidth="1" opcode="writereq" nodeLabel="9.0" m_display="0" m_delay="10.9" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="50" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
       <dataInputObjs>getelementptr</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="_ln48" lineNumber="48" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="grp_encoder0_c1_Pipeline_VITIS_LOOP_48_4_VITIS_LOOP_49_5_fu_108" coreId="4294967295" contextFuncName="encoder0_c1" opcode="call" nodeLabel="10.0" nodeLatency="1" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="48" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="_ln50" lineNumber="50" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." rtlName="grp_encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5_fu_101" coreId="4294967292" contextFuncName="encoder0_c1" opcode="call" nodeLabel="10.0" nodeLatency="1" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="50" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
       <dataInputObjs>partselect</dataInputObjs>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>gmem_out</dataOutputObjs>
-      <constName>encoder0_c1_Pipeline_VITIS_LOOP_48_4_VITIS_LOOP_49_5</constName>
+      <constName>encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="empty_49" lineNumber="84" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreName="m_axi" implIndex="m_axi" control="no" opType="adapter" coreId="121" contextFuncName="encoder0_c1" bitwidth="1" opcode="writeresp" nodeLabel="12.0" nodeLatency="4" m_display="0" m_delay="10.9" m_topoIndex="16" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="84" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="empty_52" lineNumber="87" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreName="m_axi" implIndex="m_axi" control="no" opType="adapter" coreId="121" contextFuncName="encoder0_c1" bitwidth="1" opcode="writeresp" nodeLabel="12.0" nodeLatency="4" m_display="0" m_delay="10.9" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="87" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
       <dataInputObjs>getelementptr</dataInputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="_ln84" lineNumber="84" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="encoder0_c1" opcode="ret" nodeLabel="16.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="84" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="_ln87" lineNumber="87" fileName="lane_seg_hls/lane_seg_support.cpp" fileDirectory="../." coreId="547110912" contextFuncName="encoder0_c1" opcode="ret" nodeLabel="16.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="lane_seg_hls/lane_seg_support.cpp" linenumber="87" fileDirectory="C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls" functionName="encoder0_c1"/>
     </node_objs>
     <fileValidLineNumbers fileName="lane_seg_hls/lane_seg_support.cpp">
-      <validLinenumbers>32</validLinenumbers>
-      <validLinenumbers>35</validLinenumbers>
-      <validLinenumbers>48</validLinenumbers>
-      <validLinenumbers>84</validLinenumbers>
+      <validLinenumbers>33</validLinenumbers>
+      <validLinenumbers>36</validLinenumbers>
+      <validLinenumbers>50</validLinenumbers>
+      <validLinenumbers>87</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
   <ScheduleInfo time="0"/>
@@ -160,85 +153,78 @@
   <ScheduleInfo time="14"/>
   <ScheduleInfo time="15"/>
   <ScheduleInfo time="16"/>
-  <regnodes realName="gmem_in_addr_reg_163">
-    <nodeIds>14</nodeIds>
+  <regnodes realName="gmem_out_addr_reg_166">
+    <nodeIds>18</nodeIds>
   </regnodes>
-  <regnodes realName="trunc_ln1_reg_168">
-    <nodeIds>17</nodeIds>
+  <regnodes realName="trunc_ln_reg_151">
+    <nodeIds>11</nodeIds>
   </regnodes>
-  <regnodes realName="gmem_out_addr_reg_173">
-    <nodeIds>19</nodeIds>
+  <regnodes realName="trunc_ln1_reg_161">
+    <nodeIds>16</nodeIds>
   </regnodes>
-  <regnodes realName="trunc_ln_reg_158">
-    <nodeIds>12</nodeIds>
-  </regnodes>
-  <expressionNodes realName="sext_ln35_fu_126">
+  <regnodes realName="gmem_in_addr_reg_156">
     <nodeIds>13</nodeIds>
+  </regnodes>
+  <expressionNodes realName="trunc_ln1_fu_130">
+    <nodeIds>16</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="gmem_out_addr_fu_151">
-    <nodeIds>19</nodeIds>
+  <expressionNodes realName="trunc_ln_fu_109">
+    <nodeIds>11</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="padded_addr_gep_fu_85">
-    <nodeIds>10</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="trunc_ln_fu_116">
-    <nodeIds>12</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="padded_alloca_fu_54">
+  <expressionNodes realName="padded_alloca_fu_56">
     <nodeIds>9</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="trunc_ln1_fu_137">
-    <nodeIds>17</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="sext_ln48_fu_147">
+  <expressionNodes realName="gmem_out_addr_fu_144">
     <nodeIds>18</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="gmem_in_addr_fu_130">
-    <nodeIds>14</nodeIds>
+  <expressionNodes realName="gmem_in_addr_fu_123">
+    <nodeIds>13</nodeIds>
   </expressionNodes>
-  <moduleNodes realName="grp_encoder0_c1_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_VITIS_LOOP_37_3_fu_100">
-    <nodeIds>16</nodeIds>
+  <expressionNodes realName="sext_ln36_fu_119">
+    <nodeIds>12</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sext_ln50_fu_140">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3_fu_93">
+    <nodeIds>15</nodeIds>
   </moduleNodes>
-  <moduleNodes realName="grp_encoder0_c1_Pipeline_VITIS_LOOP_48_4_VITIS_LOOP_49_5_fu_108">
-    <nodeIds>21</nodeIds>
+  <moduleNodes realName="grp_encoder0_c1_Pipeline_1_fu_87">
+    <nodeIds>10</nodeIds>
   </moduleNodes>
-  <ioNodes realName="output_read_read_fu_71">
+  <moduleNodes realName="grp_encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5_fu_101">
+    <nodeIds>20</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="output_read_read_fu_73">
     <nodeIds>7</nodeIds>
   </ioNodes>
-  <ioNodes realName="grp_writeresp_fu_77">
-    <nodeIds>20</nodeIds>
-    <nodeIds>22</nodeIds>
+  <ioNodes realName="grp_writeresp_fu_79">
+    <nodeIds>19</nodeIds>
+    <nodeIds>21</nodeIds>
   </ioNodes>
-  <ioNodes realName="input_read_read_fu_58">
+  <ioNodes realName="grp_readreq_fu_66">
+    <nodeIds>14</nodeIds>
+  </ioNodes>
+  <ioNodes realName="input_read_read_fu_60">
     <nodeIds>8</nodeIds>
   </ioNodes>
-  <ioNodes realName="grp_readreq_fu_64">
-    <nodeIds>15</nodeIds>
-  </ioNodes>
-  <memoryPorts dataString="padded">
-    <nodeIds>11</nodeIds>
-  </memoryPorts>
-  <memoryPorts dataString="padded" portID="100">
-    <nodeIds>16</nodeIds>
-    <nodeIds>21</nodeIds>
-  </memoryPorts>
   <ioPorts name="gmem_in">
     <contents name="call">
-      <nodeIds>16</nodeIds>
+      <nodeIds>15</nodeIds>
     </contents>
     <contents name="readreq">
-      <nodeIds>15</nodeIds>
+      <nodeIds>14</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="gmem_out">
     <contents name="call">
-      <nodeIds>21</nodeIds>
-    </contents>
-    <contents name="writereq">
       <nodeIds>20</nodeIds>
     </contents>
+    <contents name="writereq">
+      <nodeIds>19</nodeIds>
+    </contents>
     <contents name="writeresp">
-      <nodeIds>22</nodeIds>
+      <nodeIds>21</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="input_r">
@@ -255,68 +241,68 @@
     <states id="1">
       <operations id="8" stage="1" latency="1"/>
       <operations id="9" stage="1" latency="1"/>
-      <operations id="10" stage="1" latency="1"/>
+      <operations id="10" stage="2" latency="2"/>
       <operations id="11" stage="1" latency="1"/>
       <operations id="12" stage="1" latency="1"/>
       <operations id="13" stage="1" latency="1"/>
-      <operations id="14" stage="1" latency="1"/>
-      <operations id="15" stage="8" latency="8"/>
+      <operations id="14" stage="8" latency="8"/>
     </states>
     <states id="2">
-      <operations id="15" stage="7" latency="8"/>
+      <operations id="10" stage="1" latency="2"/>
+      <operations id="14" stage="7" latency="8"/>
     </states>
     <states id="3">
-      <operations id="15" stage="6" latency="8"/>
+      <operations id="14" stage="6" latency="8"/>
     </states>
     <states id="4">
-      <operations id="15" stage="5" latency="8"/>
+      <operations id="14" stage="5" latency="8"/>
     </states>
     <states id="5">
-      <operations id="15" stage="4" latency="8"/>
+      <operations id="14" stage="4" latency="8"/>
     </states>
     <states id="6">
-      <operations id="15" stage="3" latency="8"/>
+      <operations id="14" stage="3" latency="8"/>
     </states>
     <states id="7">
-      <operations id="15" stage="2" latency="8"/>
+      <operations id="14" stage="2" latency="8"/>
     </states>
     <states id="8">
-      <operations id="15" stage="1" latency="8"/>
+      <operations id="14" stage="1" latency="8"/>
     </states>
     <states id="9">
-      <operations id="16" stage="2" latency="2"/>
+      <operations id="15" stage="2" latency="2"/>
     </states>
     <states id="10">
       <operations id="7" stage="1" latency="1"/>
-      <operations id="16" stage="1" latency="2"/>
+      <operations id="15" stage="1" latency="2"/>
+      <operations id="16" stage="1" latency="1"/>
       <operations id="17" stage="1" latency="1"/>
       <operations id="18" stage="1" latency="1"/>
       <operations id="19" stage="1" latency="1"/>
-      <operations id="20" stage="1" latency="1"/>
     </states>
     <states id="11">
-      <operations id="21" stage="2" latency="2"/>
+      <operations id="20" stage="2" latency="2"/>
     </states>
     <states id="12">
-      <operations id="21" stage="1" latency="2"/>
+      <operations id="20" stage="1" latency="2"/>
     </states>
     <states id="13">
-      <operations id="22" stage="5" latency="5"/>
+      <operations id="21" stage="5" latency="5"/>
     </states>
     <states id="14">
-      <operations id="22" stage="4" latency="5"/>
+      <operations id="21" stage="4" latency="5"/>
     </states>
     <states id="15">
-      <operations id="22" stage="3" latency="5"/>
+      <operations id="21" stage="3" latency="5"/>
     </states>
     <states id="16">
-      <operations id="22" stage="2" latency="5"/>
+      <operations id="21" stage="2" latency="5"/>
     </states>
     <states id="17">
       <operations id="5" stage="1" latency="1"/>
       <operations id="6" stage="1" latency="1"/>
-      <operations id="22" stage="1" latency="5"/>
-      <operations id="23" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="5"/>
+      <operations id="22" stage="1" latency="1"/>
     </states>
     <transitions inState="1" outState="2">
       <condition id="-1"/>
@@ -368,8 +354,8 @@
     </transitions>
   </fsm>
   <CFGRegionsRoot>
-    <cfgRegions mId="1" mTag="encoder0_c1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="551972" mMaxLatency="551972">
-      <basicBlocks>24</basicBlocks>
+    <cfgRegions mId="1" mTag="encoder0_c1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="705216" mMaxLatency="705216">
+      <basicBlocks>23</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
   </CFGRegionsRoot>

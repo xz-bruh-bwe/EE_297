@@ -76,10 +76,10 @@ entry:2 %image_r_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %image_r
 
 <Node id="11" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-entry:3 %spectopmodule_ln22 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_13
+entry:3 %spectopmodule_ln29 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_13
 
 ]]></Node>
-<StgValue><ssdm name="spectopmodule_ln22"/></StgValue>
+<StgValue><ssdm name="spectopmodule_ln29"/></StgValue>
 </operation>
 
 <operation id="8" st_id="1" stage="1" lat="1">
@@ -89,9 +89,9 @@ entry:3 %spectopmodule_ln22 = spectopmodule void @_ssdm_op_SpecTopModule, void @
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="12" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
+<Node id="12" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-entry:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gmem_in, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 150528, void @empty_1, void @empty_2, void @empty_0, i32 16, i32 16, i32 16, i32 16, void @empty_0, void @empty_0, i32 4294967295, i32 0
+entry:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_in, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 150528, void @empty_1, void @empty_2, void @empty_0, i32 16, i32 16, i32 16, i32 16, void @empty_0, void @empty_0, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -104,9 +104,9 @@ entry:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gm
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="13" bw="0" op_0_bw="0" op_1_bw="16">
+<Node id="13" bw="0" op_0_bw="0" op_1_bw="32">
 <![CDATA[
-entry:5 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i16 %gmem_in
+entry:5 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem_in
 
 ]]></Node>
 <StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
@@ -361,10 +361,10 @@ entry:21 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0,
 
 <Node id="30" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-entry:22 %write_ln46 = write void @_ssdm_op_Write.s_axilite.i32P0A, i32 %magic, i32 514785282
+entry:22 %write_ln62 = write void @_ssdm_op_Write.s_axilite.i32P0A, i32 %magic, i32 514785282
 
 ]]></Node>
-<StgValue><ssdm name="write_ln46"/></StgValue>
+<StgValue><ssdm name="write_ln62"/></StgValue>
 </operation>
 
 <operation id="27" st_id="1" stage="1" lat="1">
@@ -391,10 +391,10 @@ entry:23 %tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i32.i32, i32 %ctrl_read, i32
 
 <Node id="32" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-entry:24 %br_ln48 = br i1 %tmp, void %if.end, void %if.then
+entry:24 %br_ln64 = br i1 %tmp, void %if.end, void %if.then
 
 ]]></Node>
-<StgValue><ssdm name="br_ln48"/></StgValue>
+<StgValue><ssdm name="br_ln64"/></StgValue>
 </operation>
 
 <operation id="29" st_id="1" stage="1" lat="1">
@@ -407,10 +407,10 @@ entry:24 %br_ln48 = br i1 %tmp, void %if.end, void %if.then
 
 <Node id="34" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-if.then:0 %write_ln49 = write void @_ssdm_op_Write.s_axilite.i32P0A, i32 %status, i32 0
+if.then:0 %write_ln65 = write void @_ssdm_op_Write.s_axilite.i32P0A, i32 %status, i32 0
 
 ]]></Node>
-<StgValue><ssdm name="write_ln49"/></StgValue>
+<StgValue><ssdm name="write_ln65"/></StgValue>
 </operation>
 
 <operation id="30" st_id="1" stage="1" lat="1">
@@ -423,10 +423,10 @@ if.then:0 %write_ln49 = write void @_ssdm_op_Write.s_axilite.i32P0A, i32 %status
 
 <Node id="35" bw="0" op_0_bw="0">
 <![CDATA[
-if.then:1 %br_ln49 = br void %if.end
+if.then:1 %br_ln65 = br void %if.end
 
 ]]></Node>
-<StgValue><ssdm name="br_ln49"/></StgValue>
+<StgValue><ssdm name="br_ln65"/></StgValue>
 </operation>
 </state>
 
@@ -439,12 +439,12 @@ if.then:1 %br_ln49 = br void %if.end
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="37" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="64" op_3_bw="16" op_4_bw="64">
+<Node id="37" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="64" op_3_bw="16" op_4_bw="64">
 <![CDATA[
-if.end:0 %call_ln52 = call void @encoder0_c1, i16 %gmem_in, i64 %image_r_read, i16 %gmem_out, i64 %out0_read
+if.end:0 %call_ln72 = call void @encoder0_c1, i32 %gmem_in, i64 %image_r_read, i16 %gmem_out, i64 %out0_read
 
 ]]></Node>
-<StgValue><ssdm name="call_ln52"/></StgValue>
+<StgValue><ssdm name="call_ln72"/></StgValue>
 </operation>
 
 <operation id="32" st_id="2" stage="1" lat="1">
@@ -471,10 +471,10 @@ if.end:1 %status_read = read i32 @_ssdm_op_Read.s_axilite.i32P0A, i32 %status
 
 <Node id="39" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-if.end:2 %or_ln55 = or i32 %status_read, i32 1
+if.end:2 %or_ln74 = or i32 %status_read, i32 1
 
 ]]></Node>
-<StgValue><ssdm name="or_ln55"/></StgValue>
+<StgValue><ssdm name="or_ln74"/></StgValue>
 </operation>
 
 <operation id="34" st_id="2" stage="1" lat="1">
@@ -486,10 +486,10 @@ if.end:2 %or_ln55 = or i32 %status_read, i32 1
 
 <Node id="40" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="0" op_4_bw="0">
 <![CDATA[
-if.end:3 %write_ln55 = write void @_ssdm_op_Write.s_axilite.i32P0A, i32 %status, i32 %or_ln55
+if.end:3 %write_ln74 = write void @_ssdm_op_Write.s_axilite.i32P0A, i32 %status, i32 %or_ln74
 
 ]]></Node>
-<StgValue><ssdm name="write_ln55"/></StgValue>
+<StgValue><ssdm name="write_ln74"/></StgValue>
 </operation>
 </state>
 
@@ -502,12 +502,12 @@ if.end:3 %write_ln55 = write void @_ssdm_op_Write.s_axilite.i32P0A, i32 %status,
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="37" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="64" op_3_bw="16" op_4_bw="64">
+<Node id="37" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="64" op_3_bw="16" op_4_bw="64">
 <![CDATA[
-if.end:0 %call_ln52 = call void @encoder0_c1, i16 %gmem_in, i64 %image_r_read, i16 %gmem_out, i64 %out0_read
+if.end:0 %call_ln72 = call void @encoder0_c1, i32 %gmem_in, i64 %image_r_read, i16 %gmem_out, i64 %out0_read
 
 ]]></Node>
-<StgValue><ssdm name="call_ln52"/></StgValue>
+<StgValue><ssdm name="call_ln72"/></StgValue>
 </operation>
 
 <operation id="36" st_id="3" stage="1" lat="1">
@@ -519,10 +519,10 @@ if.end:0 %call_ln52 = call void @encoder0_c1, i16 %gmem_in, i64 %image_r_read, i
 
 <Node id="41" bw="0">
 <![CDATA[
-if.end:4 %ret_ln56 = ret
+if.end:4 %ret_ln79 = ret
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln56"/></StgValue>
+<StgValue><ssdm name="ret_ln79"/></StgValue>
 </operation>
 </state>
 </state_list>
@@ -566,9 +566,9 @@ if.end:4 %ret_ln56 = ret
 </dataflow>
 <dataflow id="54" from="image_r" to="image_r_read" fromId="42" toId="6">
 </dataflow>
-<dataflow id="56" from="_ssdm_op_SpecTopModule" to="spectopmodule_ln22" fromId="55" toId="7">
+<dataflow id="56" from="_ssdm_op_SpecTopModule" to="spectopmodule_ln29" fromId="55" toId="7">
 </dataflow>
-<dataflow id="58" from="empty_13" to="spectopmodule_ln22" fromId="57" toId="7">
+<dataflow id="58" from="empty_13" to="spectopmodule_ln29" fromId="57" toId="7">
 </dataflow>
 <dataflow id="60" from="_ssdm_op_SpecInterface" to="specinterface_ln0" fromId="59" toId="8">
 </dataflow>
@@ -1084,11 +1084,11 @@ if.end:4 %ret_ln56 = ret
 </dataflow>
 <dataflow id="336" from="StgValue_64" to="specinterface_ln0" fromId="64" toId="25">
 </dataflow>
-<dataflow id="338" from="_ssdm_op_Write.s_axilite.i32P0A" to="write_ln46" fromId="337" toId="26">
+<dataflow id="338" from="_ssdm_op_Write.s_axilite.i32P0A" to="write_ln62" fromId="337" toId="26">
 </dataflow>
-<dataflow id="339" from="magic" to="write_ln46" fromId="46" toId="26">
+<dataflow id="339" from="magic" to="write_ln62" fromId="46" toId="26">
 </dataflow>
-<dataflow id="341" from="StgValue_340" to="write_ln46" fromId="340" toId="26">
+<dataflow id="341" from="StgValue_340" to="write_ln62" fromId="340" toId="26">
 </dataflow>
 <dataflow id="343" from="_ssdm_op_BitSelect.i1.i32.i32" to="tmp" fromId="342" toId="27">
 </dataflow>
@@ -1096,47 +1096,47 @@ if.end:4 %ret_ln56 = ret
 </dataflow>
 <dataflow id="346" from="StgValue_345" to="tmp" fromId="345" toId="27">
 </dataflow>
-<dataflow id="347" from="tmp" to="br_ln48" fromId="27" toId="28">
+<dataflow id="347" from="tmp" to="br_ln64" fromId="27" toId="28">
 </dataflow>
-<dataflow id="348" from="_ssdm_op_Write.s_axilite.i32P0A" to="write_ln49" fromId="337" toId="29">
+<dataflow id="348" from="_ssdm_op_Write.s_axilite.i32P0A" to="write_ln65" fromId="337" toId="29">
 </dataflow>
-<dataflow id="349" from="status" to="write_ln49" fromId="45" toId="29">
+<dataflow id="349" from="status" to="write_ln65" fromId="45" toId="29">
 </dataflow>
-<dataflow id="350" from="StgValue_64" to="write_ln49" fromId="64" toId="29">
+<dataflow id="350" from="StgValue_64" to="write_ln65" fromId="64" toId="29">
 </dataflow>
-<dataflow id="352" from="encoder0_c1" to="call_ln52" fromId="351" toId="31">
+<dataflow id="352" from="encoder0_c1" to="call_ln72" fromId="351" toId="31">
 </dataflow>
-<dataflow id="353" from="gmem_in" to="call_ln52" fromId="40" toId="31">
+<dataflow id="353" from="gmem_in" to="call_ln72" fromId="40" toId="31">
 </dataflow>
-<dataflow id="354" from="image_r_read" to="call_ln52" fromId="6" toId="31">
+<dataflow id="354" from="image_r_read" to="call_ln72" fromId="6" toId="31">
 </dataflow>
-<dataflow id="355" from="gmem_out" to="call_ln52" fromId="41" toId="31">
+<dataflow id="355" from="gmem_out" to="call_ln72" fromId="41" toId="31">
 </dataflow>
-<dataflow id="356" from="out0_read" to="call_ln52" fromId="5" toId="31">
+<dataflow id="356" from="out0_read" to="call_ln72" fromId="5" toId="31">
 </dataflow>
 <dataflow id="358" from="_ssdm_op_Read.s_axilite.i32P0A" to="status_read" fromId="357" toId="32">
 </dataflow>
 <dataflow id="359" from="status" to="status_read" fromId="45" toId="32">
 </dataflow>
-<dataflow id="360" from="status_read" to="or_ln55" fromId="32" toId="33">
+<dataflow id="360" from="status_read" to="or_ln74" fromId="32" toId="33">
 </dataflow>
-<dataflow id="361" from="StgValue_345" to="or_ln55" fromId="345" toId="33">
+<dataflow id="361" from="StgValue_345" to="or_ln74" fromId="345" toId="33">
 </dataflow>
-<dataflow id="362" from="_ssdm_op_Write.s_axilite.i32P0A" to="write_ln55" fromId="337" toId="34">
+<dataflow id="362" from="_ssdm_op_Write.s_axilite.i32P0A" to="write_ln74" fromId="337" toId="34">
 </dataflow>
-<dataflow id="363" from="status" to="write_ln55" fromId="45" toId="34">
+<dataflow id="363" from="status" to="write_ln74" fromId="45" toId="34">
 </dataflow>
-<dataflow id="364" from="or_ln55" to="write_ln55" fromId="33" toId="34">
+<dataflow id="364" from="or_ln74" to="write_ln74" fromId="33" toId="34">
 </dataflow>
-<dataflow id="365" from="encoder0_c1" to="call_ln52" fromId="351" toId="35">
+<dataflow id="365" from="encoder0_c1" to="call_ln72" fromId="351" toId="35">
 </dataflow>
-<dataflow id="366" from="gmem_in" to="call_ln52" fromId="40" toId="35">
+<dataflow id="366" from="gmem_in" to="call_ln72" fromId="40" toId="35">
 </dataflow>
-<dataflow id="367" from="image_r_read" to="call_ln52" fromId="6" toId="35">
+<dataflow id="367" from="image_r_read" to="call_ln72" fromId="6" toId="35">
 </dataflow>
-<dataflow id="368" from="gmem_out" to="call_ln52" fromId="41" toId="35">
+<dataflow id="368" from="gmem_out" to="call_ln72" fromId="41" toId="35">
 </dataflow>
-<dataflow id="369" from="out0_read" to="call_ln52" fromId="5" toId="35">
+<dataflow id="369" from="out0_read" to="call_ln72" fromId="5" toId="35">
 </dataflow>
 <dataflow id="370" from="tmp" to="StgValue_1" fromId="27" toId="1">
 </dataflow>

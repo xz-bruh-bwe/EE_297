@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="lane_seg_top_lane_seg_top,hls_ip_2023_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu7ev-ffvc1156-2-e,HLS_INPUT_CLOCK=15.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=10.950000,HLS_SYN_LAT=551974,HLS_SYN_TPT=none,HLS_SYN_MEM=148,HLS_SYN_DSP=0,HLS_SYN_FF=15492,HLS_SYN_LUT=38763,HLS_VERSION=2023_1}" *)
+(* CORE_GENERATION_INFO="lane_seg_top_lane_seg_top,hls_ip_2023_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu7ev-ffvc1156-2-e,HLS_INPUT_CLOCK=15.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=10.950000,HLS_SYN_LAT=705218,HLS_SYN_TPT=none,HLS_SYN_MEM=280,HLS_SYN_DSP=0,HLS_SYN_FF=22079,HLS_SYN_LUT=55569,HLS_VERSION=2023_1}" *)
 
 module lane_seg_top (
         ap_clk,
@@ -301,8 +301,8 @@ wire   [3:0] grp_encoder0_c1_fu_116_m_axi_gmem_in_AWQOS;
 wire   [3:0] grp_encoder0_c1_fu_116_m_axi_gmem_in_AWREGION;
 wire   [0:0] grp_encoder0_c1_fu_116_m_axi_gmem_in_AWUSER;
 wire    grp_encoder0_c1_fu_116_m_axi_gmem_in_WVALID;
-wire   [15:0] grp_encoder0_c1_fu_116_m_axi_gmem_in_WDATA;
-wire   [1:0] grp_encoder0_c1_fu_116_m_axi_gmem_in_WSTRB;
+wire   [31:0] grp_encoder0_c1_fu_116_m_axi_gmem_in_WDATA;
+wire   [3:0] grp_encoder0_c1_fu_116_m_axi_gmem_in_WSTRB;
 wire    grp_encoder0_c1_fu_116_m_axi_gmem_in_WLAST;
 wire   [0:0] grp_encoder0_c1_fu_116_m_axi_gmem_in_WID;
 wire   [0:0] grp_encoder0_c1_fu_116_m_axi_gmem_in_WUSER;
@@ -358,8 +358,8 @@ reg    gmem_in_ARVALID;
 wire    gmem_in_ARREADY;
 wire    gmem_in_RVALID;
 reg    gmem_in_RREADY;
-wire   [15:0] gmem_in_RDATA;
-wire   [9:0] gmem_in_RFIFONUM;
+wire   [31:0] gmem_in_RDATA;
+wire   [8:0] gmem_in_RFIFONUM;
 wire    gmem_in_BVALID;
 reg    gmem_out_AWVALID;
 wire    gmem_out_AWREADY;
@@ -375,7 +375,7 @@ reg    grp_encoder0_c1_fu_116_ap_start_reg;
 wire    ap_CS_fsm_state2;
 wire    ap_CS_fsm_state3;
 wire   [0:0] tmp_fu_126_p3;
-wire   [31:0] or_ln55_fu_134_p2;
+wire   [31:0] or_ln74_fu_134_p2;
 reg   [2:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 wire    ap_ST_fsm_state2_blk;
@@ -546,8 +546,8 @@ lane_seg_top_gmem_in_m_axi #(
     .C_USER_VALUE( C_M_AXI_GMEM_IN_USER_VALUE ),
     .C_PROT_VALUE( C_M_AXI_GMEM_IN_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_GMEM_IN_CACHE_VALUE ),
-    .USER_RFIFONUM_WIDTH( 10 ),
-    .USER_DW( 16 ),
+    .USER_RFIFONUM_WIDTH( 9 ),
+    .USER_DW( 32 ),
     .USER_AW( 64 ),
     .NUM_READ_OUTSTANDING( 16 ),
     .NUM_WRITE_OUTSTANDING( 16 ))
@@ -614,8 +614,8 @@ gmem_in_m_axi_U(
     .I_AWLEN(32'd0),
     .I_WVALID(1'b0),
     .I_WREADY(gmem_in_WREADY),
-    .I_WDATA(16'd0),
-    .I_WSTRB(2'd0),
+    .I_WDATA(32'd0),
+    .I_WSTRB(4'd0),
     .I_BVALID(gmem_in_BVALID),
     .I_BREADY(1'b0)
 );
@@ -829,7 +829,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        status_o = or_ln55_fu_134_p2;
+        status_o = or_ln74_fu_134_p2;
     end else if (((tmp_fu_126_p3 == 1'd1) & (1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
         status_o = 32'd0;
     end else begin
@@ -882,7 +882,7 @@ end
 
 assign grp_encoder0_c1_fu_116_ap_start = grp_encoder0_c1_fu_116_ap_start_reg;
 
-assign or_ln55_fu_134_p2 = (status_i | 32'd1);
+assign or_ln74_fu_134_p2 = (status_i | 32'd1);
 
 assign tmp_fu_126_p3 = ctrl[32'd1];
 

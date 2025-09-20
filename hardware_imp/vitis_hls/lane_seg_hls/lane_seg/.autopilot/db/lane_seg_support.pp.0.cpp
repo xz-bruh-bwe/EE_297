@@ -1131,6 +1131,7 @@ namespace std
 
 
 
+
 # 1 "lane_seg_hls/lane_seg_top.h" 1
 
 
@@ -27129,10 +27130,13 @@ namespace hls {
 
 
 typedef ap_fixed<16, 4> data_t;
-# 38 "lane_seg_hls/lane_seg_top.h"
+# 54 "lane_seg_hls/lane_seg_top.h"
 void lane_seg_top(
-    data_t image[224][224][3],
+    float image[224][224][3],
     data_t out0[((224 + 2 * 1 - 3) / 2 + 1)][((224 + 2 * 1 - 3) / 2 + 1)][32],
+
+
+
     unsigned int ctrl,
     unsigned int& status,
     unsigned int& magic
@@ -27141,15 +27145,27 @@ void lane_seg_top(
 
 
 void encoder0_c1(
-    data_t input[224][224][3],
+    float input[224][224][3],
     data_t output[((224 + 2 * 1 - 3) / 2 + 1)][((224 + 2 * 1 - 3) / 2 + 1)][32],
     data_t weights[3][3][3][32],
     data_t biases[32]
 );
-# 6 "lane_seg_hls/lane_seg_support.cpp" 2
-# 17 "lane_seg_hls/lane_seg_support.cpp"
+
+
+
+
+void enc1_ir0(
+    data_t input[((224 + 2 * 1 - 3) / 2 + 1)][((224 + 2 * 1 - 3) / 2 + 1)][32],
+    data_t output[((224 + 2 * 1 - 3) / 2 + 1)][((224 + 2 * 1 - 3) / 2 + 1)][16],
+    data_t dw_weights[3][3][1][32],
+    data_t dw_biases[32],
+    data_t pw_weights[1][1][32][16],
+    data_t pw_biases[16]
+);
+# 7 "lane_seg_hls/lane_seg_support.cpp" 2
+# 18 "lane_seg_hls/lane_seg_support.cpp"
 void encoder0_c1(
-    data_t input[224][224][3],
+    float input[224][224][3],
     data_t output[((224 + 2 * 1 - 3) / 2 + 1)][((224 + 2 * 1 - 3) / 2 + 1)][32],
     data_t weights[3][3][3][32],
     data_t biases[32]
@@ -27163,36 +27179,37 @@ void encoder0_c1(
 #pragma HLS ARRAY_PARTITION variable=biases complete dim=1
 
 
- data_t padded[224 + 2 * 1][224 + 2 * 1][3] = {0};
+ float padded[224 + 2 * 1][224 + 2 * 1][3] = {0};
 
 
-    VITIS_LOOP_35_1: for (int y = 0; y < 224; y++) {
-        VITIS_LOOP_36_2: for (int x = 0; x < 224; x++) {
-            VITIS_LOOP_37_3: for (int c = 0; c < 3; c++) {
+    VITIS_LOOP_36_1: for (int y = 0; y < 224; y++) {
+        VITIS_LOOP_37_2: for (int x = 0; x < 224; x++) {
+            VITIS_LOOP_38_3: for (int c = 0; c < 3; c++) {
                 padded[y + 1][x + 1][c] = input[y][x][c];
+
             }
         }
     }
 
 
-        printf("DEBUG: bias[0] = %f\n", (float)biases[0]);
-        printf("DEBUG: weights[0][0][0][0] = %f\n", (float)weights[0][0][0][0]);
 
 
-    VITIS_LOOP_48_4: for (int oh = 0; oh < ((224 + 2 * 1 - 3) / 2 + 1); oh++) {
-        VITIS_LOOP_49_5: for (int ow = 0; ow < ((224 + 2 * 1 - 3) / 2 + 1); ow++) {
+
+
+    VITIS_LOOP_50_4: for (int oh = 0; oh < ((224 + 2 * 1 - 3) / 2 + 1); oh++) {
+        VITIS_LOOP_51_5: for (int ow = 0; ow < ((224 + 2 * 1 - 3) / 2 + 1); ow++) {
 #pragma HLS PIPELINE II=1
  int iy = oh * 2;
             int ix = ow * 2;
 
-            VITIS_LOOP_54_6: for (int oc = 0; oc < 32; oc++) {
+            VITIS_LOOP_56_6: for (int oc = 0; oc < 32; oc++) {
                 data_t sum = biases[oc];
 
 
-                VITIS_LOOP_58_7: for (int ky = 0; ky < 3; ky++) {
-                    VITIS_LOOP_59_8: for (int kx = 0; kx < 3; kx++) {
-                        VITIS_LOOP_60_9: for (int ic = 0; ic < 3; ic++) {
-                         data_t a = padded[iy + ky][ix + kx][ic];
+                VITIS_LOOP_60_7: for (int ky = 0; ky < 3; ky++) {
+                    VITIS_LOOP_61_8: for (int kx = 0; kx < 3; kx++) {
+                        VITIS_LOOP_62_9: for (int ic = 0; ic < 3; ic++) {
+                         data_t a = (data_t)padded[iy + ky][ix + kx][ic];
                          data_t b = weights[ky][kx][ic][oc];
                          data_t p = a * b;
                          sum += p;
@@ -27212,6 +27229,102 @@ void encoder0_c1(
 
                 output[oh][ow][oc] = sum;
 
+
+            }
+        }
+    }
+}
+# 96 "lane_seg_hls/lane_seg_support.cpp"
+void enc1_ir0(
+    data_t input[((224 + 2 * 1 - 3) / 2 + 1)][((224 + 2 * 1 - 3) / 2 + 1)][32],
+    data_t output[((224 + 2 * 1 - 3) / 2 + 1)][((224 + 2 * 1 - 3) / 2 + 1)][16],
+    data_t dw_weights[3][3][1][32],
+    data_t dw_biases[32],
+    data_t pw_weights[1][1][32][16],
+    data_t pw_biases[16]
+) {
+#pragma HLS INLINE off
+
+
+
+#pragma HLS ARRAY_PARTITION variable=dw_weights cyclic factor=3 dim=1
+#pragma HLS ARRAY_PARTITION variable=dw_weights cyclic factor=3 dim=2
+
+#pragma HLS ARRAY_PARTITION variable=dw_biases complete dim=1
+
+
+
+
+
+#pragma HLS ARRAY_PARTITION variable=pw_weights cyclic factor=16 dim=3
+#pragma HLS ARRAY_PARTITION variable=pw_biases complete dim=1
+
+
+
+ static data_t dw_out[((224 + 2 * 1 - 3) / 2 + 1)][((224 + 2 * 1 - 3) / 2 + 1)][32];
+
+
+    VITIS_LOOP_125_1: for (int oh = 0; oh < ((224 + 2 * 1 - 3) / 2 + 1); oh++) {
+        VITIS_LOOP_126_2: for (int ow = 0; ow < ((224 + 2 * 1 - 3) / 2 + 1); ow++) {
+#pragma HLS PIPELINE II=10
+ VITIS_LOOP_128_3: for (int c = 0; c < 32; c++) {
+                data_t sum = dw_biases[c];
+                if (oh == 0 && ow == 0 && c == 0) {
+                    printf("DEBUG DW: bias[%d] = %f\n", c, (float)dw_biases[c]);
+                }
+                VITIS_LOOP_133_4: for (int ky = 0; ky < 3; ky++) {
+                    VITIS_LOOP_134_5: for (int kx = 0; kx < 3; kx++) {
+                        int iy = oh + ky - 1;
+                        int ix = ow + kx - 1;
+                        if (iy >= 0 && iy < ((224 + 2 * 1 - 3) / 2 + 1) && ix >= 0 && ix < ((224 + 2 * 1 - 3) / 2 + 1)) {
+                            data_t a = input[iy][ix][c];
+                            data_t b = dw_weights[ky][kx][0][c];
+                            sum += a * b;
+                            if (oh == 0 && ow == 0 && c == 0) {
+                                data_t p = a * b;
+                                printf("DW DEBUG: a=%f * b=%f => p=%f | sum=%f\n",
+                                       (float)a, (float)b, (float)p, (float)sum);
+                            }
+                        }
+                    }
+                }
+                if (sum < 0) sum = 0;
+                else if (sum > 6) sum = 6;
+                dw_out[oh][ow][c] = sum;
+                if (oh == 0 && ow == 0 && c == 0) {
+                    printf("DW DEBUG: output[%d][%d][%d] after ReLU6 = %f\n",
+                           oh, ow, c, (float)sum);
+                }
+            }
+        }
+    }
+
+
+    VITIS_LOOP_161_6: for (int oh = 0; oh < ((224 + 2 * 1 - 3) / 2 + 1); oh++) {
+        VITIS_LOOP_162_7: for (int ow = 0; ow < ((224 + 2 * 1 - 3) / 2 + 1); ow++) {
+#pragma HLS PIPELINE II=10
+ VITIS_LOOP_164_8: for (int oc = 0; oc < 16; oc++) {
+                data_t sum = pw_biases[oc];
+
+                if (oh == 0 && ow == 0 && oc == 0) {
+                    printf("PW DEBUG: bias[%d] = %f\n", oc, (float)pw_biases[oc]);
+                }
+
+                VITIS_LOOP_171_9: for (int ic = 0; ic < 32; ic++) {
+                    data_t a = dw_out[oh][ow][ic];
+                    data_t b = pw_weights[0][0][ic][oc];
+                    sum += a * b;
+                    if (oh == 0 && ow == 0 && oc == 0 && ic < 3) {
+                        data_t p = a * b;
+                        printf("PW DEBUG: ic=%d, a=%f, b=%f, p=%f, sum=%f\n",
+                               ic, (float)a, (float)b, (float)p, (float)sum);
+                    }
+                }
+                output[oh][ow][oc] = sum;
+                if (oh == 0 && ow == 0 && oc == 0) {
+                    printf("PW DEBUG: output[%d][%d][%d] final = %f\n",
+                           oh, ow, oc, (float)sum);
+                }
             }
         }
     }

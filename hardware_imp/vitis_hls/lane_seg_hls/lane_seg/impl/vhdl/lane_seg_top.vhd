@@ -151,7 +151,7 @@ end;
 architecture behav of lane_seg_top is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "lane_seg_top_lane_seg_top,hls_ip_2023_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu7ev-ffvc1156-2-e,HLS_INPUT_CLOCK=15.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=10.950000,HLS_SYN_LAT=551974,HLS_SYN_TPT=none,HLS_SYN_MEM=148,HLS_SYN_DSP=0,HLS_SYN_FF=15492,HLS_SYN_LUT=38763,HLS_VERSION=2023_1}";
+    "lane_seg_top_lane_seg_top,hls_ip_2023_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu7ev-ffvc1156-2-e,HLS_INPUT_CLOCK=15.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=10.950000,HLS_SYN_LAT=705218,HLS_SYN_TPT=none,HLS_SYN_MEM=280,HLS_SYN_DSP=0,HLS_SYN_FF=22079,HLS_SYN_LUT=55569,HLS_VERSION=2023_1}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (2 downto 0) := "001";
@@ -170,6 +170,7 @@ architecture behav of lane_seg_top is
     constant ap_const_lv16_0 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000000";
     constant ap_const_lv10_0 : STD_LOGIC_VECTOR (9 downto 0) := "0000000000";
     constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
 
     signal ap_rst_n_inv : STD_LOGIC;
     signal ap_start : STD_LOGIC;
@@ -207,8 +208,8 @@ architecture behav of lane_seg_top is
     signal grp_encoder0_c1_fu_116_m_axi_gmem_in_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
     signal grp_encoder0_c1_fu_116_m_axi_gmem_in_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_encoder0_c1_fu_116_m_axi_gmem_in_WVALID : STD_LOGIC;
-    signal grp_encoder0_c1_fu_116_m_axi_gmem_in_WDATA : STD_LOGIC_VECTOR (15 downto 0);
-    signal grp_encoder0_c1_fu_116_m_axi_gmem_in_WSTRB : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_encoder0_c1_fu_116_m_axi_gmem_in_WDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_encoder0_c1_fu_116_m_axi_gmem_in_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
     signal grp_encoder0_c1_fu_116_m_axi_gmem_in_WLAST : STD_LOGIC;
     signal grp_encoder0_c1_fu_116_m_axi_gmem_in_WID : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_encoder0_c1_fu_116_m_axi_gmem_in_WUSER : STD_LOGIC_VECTOR (0 downto 0);
@@ -264,8 +265,8 @@ architecture behav of lane_seg_top is
     signal gmem_in_ARREADY : STD_LOGIC;
     signal gmem_in_RVALID : STD_LOGIC;
     signal gmem_in_RREADY : STD_LOGIC;
-    signal gmem_in_RDATA : STD_LOGIC_VECTOR (15 downto 0);
-    signal gmem_in_RFIFONUM : STD_LOGIC_VECTOR (9 downto 0);
+    signal gmem_in_RDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal gmem_in_RFIFONUM : STD_LOGIC_VECTOR (8 downto 0);
     signal gmem_in_BVALID : STD_LOGIC;
     signal gmem_out_AWVALID : STD_LOGIC;
     signal gmem_out_AWREADY : STD_LOGIC;
@@ -283,7 +284,7 @@ architecture behav of lane_seg_top is
     signal ap_CS_fsm_state3 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
     signal tmp_fu_126_p3 : STD_LOGIC_VECTOR (0 downto 0);
-    signal or_ln55_fu_134_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal or_ln74_fu_134_p2 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (2 downto 0);
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
     signal ap_ST_fsm_state2_blk : STD_LOGIC;
@@ -313,8 +314,8 @@ architecture behav of lane_seg_top is
         m_axi_gmem_in_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem_in_WVALID : OUT STD_LOGIC;
         m_axi_gmem_in_WREADY : IN STD_LOGIC;
-        m_axi_gmem_in_WDATA : OUT STD_LOGIC_VECTOR (15 downto 0);
-        m_axi_gmem_in_WSTRB : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_in_WDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem_in_WSTRB : OUT STD_LOGIC_VECTOR (3 downto 0);
         m_axi_gmem_in_WLAST : OUT STD_LOGIC;
         m_axi_gmem_in_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem_in_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -333,10 +334,10 @@ architecture behav of lane_seg_top is
         m_axi_gmem_in_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem_in_RVALID : IN STD_LOGIC;
         m_axi_gmem_in_RREADY : OUT STD_LOGIC;
-        m_axi_gmem_in_RDATA : IN STD_LOGIC_VECTOR (15 downto 0);
+        m_axi_gmem_in_RDATA : IN STD_LOGIC_VECTOR (31 downto 0);
         m_axi_gmem_in_RLAST : IN STD_LOGIC;
         m_axi_gmem_in_RID : IN STD_LOGIC_VECTOR (0 downto 0);
-        m_axi_gmem_in_RFIFONUM : IN STD_LOGIC_VECTOR (9 downto 0);
+        m_axi_gmem_in_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
         m_axi_gmem_in_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem_in_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem_in_BVALID : IN STD_LOGIC;
@@ -513,16 +514,16 @@ architecture behav of lane_seg_top is
         I_ARLEN : IN STD_LOGIC_VECTOR (31 downto 0);
         I_RVALID : OUT STD_LOGIC;
         I_RREADY : IN STD_LOGIC;
-        I_RDATA : OUT STD_LOGIC_VECTOR (15 downto 0);
-        I_RFIFONUM : OUT STD_LOGIC_VECTOR (9 downto 0);
+        I_RDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
+        I_RFIFONUM : OUT STD_LOGIC_VECTOR (8 downto 0);
         I_AWVALID : IN STD_LOGIC;
         I_AWREADY : OUT STD_LOGIC;
         I_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
         I_AWLEN : IN STD_LOGIC_VECTOR (31 downto 0);
         I_WVALID : IN STD_LOGIC;
         I_WREADY : OUT STD_LOGIC;
-        I_WDATA : IN STD_LOGIC_VECTOR (15 downto 0);
-        I_WSTRB : IN STD_LOGIC_VECTOR (1 downto 0);
+        I_WDATA : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_WSTRB : IN STD_LOGIC_VECTOR (3 downto 0);
         I_BVALID : OUT STD_LOGIC;
         I_BREADY : IN STD_LOGIC );
     end component;
@@ -781,8 +782,8 @@ begin
         C_USER_VALUE => C_M_AXI_GMEM_IN_USER_VALUE,
         C_PROT_VALUE => C_M_AXI_GMEM_IN_PROT_VALUE,
         C_CACHE_VALUE => C_M_AXI_GMEM_IN_CACHE_VALUE,
-        USER_RFIFONUM_WIDTH => 10,
-        USER_DW => 16,
+        USER_RFIFONUM_WIDTH => 9,
+        USER_DW => 32,
         USER_AW => 64,
         NUM_READ_OUTSTANDING => 16,
         NUM_WRITE_OUTSTANDING => 16)
@@ -849,8 +850,8 @@ begin
         I_AWLEN => ap_const_lv32_0,
         I_WVALID => ap_const_logic_0,
         I_WREADY => gmem_in_WREADY,
-        I_WDATA => ap_const_lv16_0,
-        I_WSTRB => ap_const_lv2_0,
+        I_WDATA => ap_const_lv32_0,
+        I_WSTRB => ap_const_lv4_0,
         I_BVALID => gmem_in_BVALID,
         I_BREADY => ap_const_logic_0);
 
@@ -1127,12 +1128,12 @@ begin
         end if; 
     end process;
 
-    or_ln55_fu_134_p2 <= (status_i or ap_const_lv32_1);
+    or_ln74_fu_134_p2 <= (status_i or ap_const_lv32_1);
 
-    status_o_assign_proc : process(ap_start, ap_CS_fsm_state1, ap_CS_fsm_state2, tmp_fu_126_p3, or_ln55_fu_134_p2)
+    status_o_assign_proc : process(ap_start, ap_CS_fsm_state1, ap_CS_fsm_state2, tmp_fu_126_p3, or_ln74_fu_134_p2)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-            status_o <= or_ln55_fu_134_p2;
+            status_o <= or_ln74_fu_134_p2;
         elsif (((tmp_fu_126_p3 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start = ap_const_logic_1))) then 
             status_o <= ap_const_lv32_0;
         else 
