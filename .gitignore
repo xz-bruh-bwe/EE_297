@@ -4,7 +4,7 @@ ML_PATH_EE297/EE297_env/Lib/site_packages/
 ML_PATH_EE297/EE297_env/checkpoint
 
 # Vitis HLS build artifacts
-./hardware_imp/vitis_hls/lane_seg_hls/lane_seg/syn/
-./hardware_imp/vitis_hls/lane_seg_hls/lane_seg/impl/
-./hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim/
-./hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/
+hardware_imp/vitis_hls/lane_seg_hls/lane_seg/syn
+hardware_imp/vitis_hls/lane_seg_hls/lane_seg/impl
+hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim
+hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/

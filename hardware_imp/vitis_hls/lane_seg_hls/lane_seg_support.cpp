@@ -49,7 +49,7 @@ void encoder0_c1(
     //  Convolution + ReLU6
     for (int oh = 0; oh < OUT_H; oh++) {
         for (int ow = 0; ow < OUT_W; ow++) {
-#pragma HLS PIPELINE II=1
+#pragma HLS PIPELINE II=10
             int iy = oh * STRIDE;
             int ix = ow * STRIDE;
 
@@ -127,9 +127,11 @@ void enc1_ir0(
 #pragma HLS PIPELINE II=10 // // CPU user time: 48 seconds
             for (int c = 0; c < OUT_C; c++) {
                 data_t sum = dw_biases[c];
-                if (oh == 0 && ow == 0 && c == 0) {
-                    printf("DEBUG DW: bias[%d] = %f\n", c, (float)dw_biases[c]);
-                }
+
+                //if (oh == 0 && ow == 0 && c == 0) {
+                    //printf("DEBUG DW: bias[%d] = %f\n", c, (float)dw_biases[c]);
+                //}
+
                 for (int ky = 0; ky < 3; ky++) {
                     for (int kx = 0; kx < 3; kx++) {
                         int iy = oh + ky - 1; // PAD=1
@@ -138,21 +140,23 @@ void enc1_ir0(
                             data_t a = input[iy][ix][c];        // same channel
                             data_t b = dw_weights[ky][kx][0][c]; // depthwise
                             sum += a * b;
-                            if (oh == 0 && ow == 0 && c == 0) {
-                                data_t p = a * b;
-                                printf("DW DEBUG: a=%f * b=%f => p=%f | sum=%f\n",
-                                       (float)a, (float)b, (float)p, (float)sum);
-                            }
+
+                            //if (oh == 0 && ow == 0 && c == 0) {
+                                //data_t p = a * b;
+                                //printf("DW DEBUG: a=%f * b=%f => p=%f | sum=%f\n",
+                                       //(float)a, (float)b, (float)p, (float)sum);
+                            //}
                         }
                     }
                 }
                 if (sum < 0) sum = 0;
                 else if (sum > 6) sum = 6;  // ReLU6
                 dw_out[oh][ow][c] = sum;
-                if (oh == 0 && ow == 0 && c == 0) {
-                    printf("DW DEBUG: output[%d][%d][%d] after ReLU6 = %f\n",
-                           oh, ow, c, (float)sum);
-                }
+
+                //if (oh == 0 && ow == 0 && c == 0) {
+                    //printf("DW DEBUG: output[%d][%d][%d] after ReLU6 = %f\n",
+                           //oh, ow, c, (float)sum);
+                //}
             }
         }
     }
@@ -164,25 +168,125 @@ void enc1_ir0(
             for (int oc = 0; oc < OUT1_IR0_C; oc++) {
                 data_t sum = pw_biases[oc];
 
-                if (oh == 0 && ow == 0 && oc == 0) {
-                    printf("PW DEBUG: bias[%d] = %f\n", oc, (float)pw_biases[oc]);
-                }
+                //if (oh == 0 && ow == 0 && oc == 0) {
+                    //printf("PW DEBUG: bias[%d] = %f\n", oc, (float)pw_biases[oc]);
+                //}
 
                 for (int ic = 0; ic < OUT_C; ic++) {
                     data_t a = dw_out[oh][ow][ic];
                     data_t b = pw_weights[0][0][ic][oc];
                     sum += a * b;
-                    if (oh == 0 && ow == 0 && oc == 0 && ic < 3) {
-                        data_t p = a * b;
-                        printf("PW DEBUG: ic=%d, a=%f, b=%f, p=%f, sum=%f\n",
-                               ic, (float)a, (float)b, (float)p, (float)sum);
-                    }
+
+                    //if (oh == 0 && ow == 0 && oc == 0 && ic < 3) {
+                        //data_t p = a * b;
+                        //printf("PW DEBUG: ic=%d, a=%f, b=%f, p=%f, sum=%f\n",
+                               //ic, (float)a, (float)b, (float)p, (float)sum);
+                    //}
                 }
                 output[oh][ow][oc] = sum; // no ReLU6 here
-                if (oh == 0 && ow == 0 && oc == 0) {
-                    printf("PW DEBUG: output[%d][%d][%d] final = %f\n",
-                           oh, ow, oc, (float)sum);
+
+                //if (oh == 0 && ow == 0 && oc == 0) {
+                    //printf("PW DEBUG: output[%d][%d][%d] final = %f\n",
+                           //oh, ow, oc, (float)sum);
+                //}
+            }
+        }
+    }
+}
+
+// ──────────────────────────────────────────────
+// Function: enc2_ir1  (InvertedResidual1)
+// Expansion 1x1 (16→96) + ReLU6
+// Depthwise 3x3 stride=2 (groups=96) + ReLU6
+// Projection 1x1 (96→24), no activation
+// BN already folded into weights/biases
+// ──────────────────────────────────────────────
+void enc2_ir1(
+    data_t input[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C],          // [112][112][16]
+    data_t output[OUT2_IR1_H][OUT2_IR1_W][OUT2_IR1_C],         // [56][56][24]
+    data_t exp_weights[1][1][OUT1_IR0_C][OUT2_IR1_EXP_C],      // expansion: (1x1x16x96)
+    data_t exp_biases[OUT2_IR1_EXP_C],                         // expansion biases (96)
+    data_t dw_weights[3][3][1][OUT2_IR1_EXP_C],                // depthwise: (3x3x1x96)
+    data_t dw_biases[OUT2_IR1_EXP_C],                          // depthwise biases (96)
+    data_t pw_weights[1][1][OUT2_IR1_EXP_C][OUT2_IR1_C],       // projection: (1x1x96x24)
+    data_t pw_biases[OUT2_IR1_C]                               // projection biases (24)
+) {
+#pragma HLS INLINE off
+
+    // ───── Array Partitioning (relaxed) ─────
+	// Expansion weights/biases
+	#pragma HLS ARRAY_PARTITION variable=exp_weights block factor=1 dim=3
+	#pragma HLS ARRAY_PARTITION variable=exp_biases block factor=1 dim=1
+
+	// Depthwise weights/biases
+	#pragma HLS ARRAY_PARTITION variable=dw_weights block factor=1 dim=1
+	#pragma HLS ARRAY_PARTITION variable=dw_weights block factor=1 dim=2
+	#pragma HLS ARRAY_PARTITION variable=dw_biases block factor=1 dim=1
+
+	// Projection weights/biases
+	#pragma HLS ARRAY_PARTITION variable=pw_weights block factor=1 dim=3
+	#pragma HLS ARRAY_PARTITION variable=pw_biases block factor=1 dim=1
+
+    // ───── Local buffers ─────
+    static data_t exp_out[OUT1_IR0_H][OUT1_IR0_W][OUT2_IR1_EXP_C];  // after expansion + ReLU6
+    static data_t dw_out[OUT2_IR1_H][OUT2_IR1_W][OUT2_IR1_EXP_C];   // after depthwise + ReLU6
+
+    // ──────────────────────────────
+    // Expansion conv 1x1 (16→96) + ReLU6
+    // ──────────────────────────────
+    for (int y = 0; y < OUT1_IR0_H; y++) {
+        for (int x = 0; x < OUT1_IR0_W; x++) {
+        //#pragma HLS PIPELINE II=10
+            for (int oc = 0; oc < OUT2_IR1_EXP_C; oc++) {
+                data_t sum = exp_biases[oc];
+                for (int ic = 0; ic < OUT1_IR0_C; ic++) {
+                    sum += input[y][x][ic] * exp_weights[0][0][ic][oc];
                 }
+                if (sum < 0) sum = 0;
+                else if (sum > 6) sum = 6;  // ReLU6
+                exp_out[y][x][oc] = sum;
+            }
+        }
+    }
+
+    // ──────────────────────────────
+    // Depthwise conv 3x3 stride=2 + ReLU6
+    // ──────────────────────────────
+    for (int oy = 0; oy < OUT2_IR1_H; oy++) {
+        for (int ox = 0; ox < OUT2_IR1_W; ox++) {
+
+            int iy0 = oy * 2;  // stride=2
+            int ix0 = ox * 2;
+            for (int c = 0; c < OUT2_IR1_EXP_C; c++) {
+                data_t sum = dw_biases[c];
+                for (int ky = 0; ky < 3; ky++) {
+                    for (int kx = 0; kx < 3; kx++) {
+                        int iy = iy0 + ky - 1;  // PAD=1
+                        int ix = ix0 + kx - 1;
+                        if (iy >= 0 && iy < OUT1_IR0_H && ix >= 0 && ix < OUT1_IR0_W) {
+                            sum += exp_out[iy][ix][c] * dw_weights[ky][kx][0][c];
+                        }
+                    }
+                }
+                if (sum < 0) sum = 0;
+                else if (sum > 6) sum = 6;  // ReLU6
+                dw_out[oy][ox][c] = sum;
+            }
+        }
+    }
+
+    // ──────────────────────────────
+    // Projection conv 1x1 (96→24), no activation
+    // ──────────────────────────────
+    for (int y = 0; y < OUT2_IR1_H; y++) {
+        for (int x = 0; x < OUT2_IR1_W; x++) {
+
+            for (int oc = 0; oc < OUT2_IR1_C; oc++) {
+                data_t sum = pw_biases[oc];
+                for (int ic = 0; ic < OUT2_IR1_EXP_C; ic++) {
+                    sum += dw_out[y][x][ic] * pw_weights[0][0][ic][oc];
+                }
+                output[y][x][oc] = sum;  // no ReLU6
             }
         }
     }
