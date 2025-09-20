@@ -49,6 +49,16 @@ typedef half data_t;  // Change as needed
 #define OUT2_IR1_C     24
 #define OUT2_IR1_EXP_C 96
 
+// ──────────────────────────────────────────────
+// Shapes for Third InvertedResidual2 (enc3_ir2)
+// Input:  56x56x24
+// Expansion: 24 → 144
+// Depthwise: stride=1, output H/W = 56
+// Projection: 144 → 24
+#define OUT3_IR2_H     OUT2_IR1_H         // 56
+#define OUT3_IR2_W     OUT2_IR1_W         // 56
+#define OUT3_IR2_C     24
+#define OUT3_IR2_EXP_C 144
 
 
 // ──────────────────────────────────────────────
@@ -111,6 +121,18 @@ void enc2_ir1(
 );
 
 
+// ───── Encoder Stage 3: Third InvertedResidual (enc3_ir2) ─────
+void enc3_ir2(
+    data_t input[OUT2_IR1_H][OUT2_IR1_W][OUT2_IR1_C],              // 56x56x24
+    data_t output[OUT3_IR2_H][OUT3_IR2_W][OUT3_IR2_C],             // 56x56x24
+
+    data_t exp_weights[1][1][OUT2_IR1_C][OUT3_IR2_EXP_C],          // 1x1: 24→144
+    data_t exp_biases[OUT3_IR2_EXP_C],                             // 144
+    data_t dw_weights[3][3][1][OUT3_IR2_EXP_C],                    // 3x3: 144
+    data_t dw_biases[OUT3_IR2_EXP_C],                              // 144
+    data_t pw_weights[1][1][OUT3_IR2_EXP_C][OUT3_IR2_C],           // 1x1: 144→24
+    data_t pw_biases[OUT3_IR2_C]                                   // 24
+);
 
 
 
