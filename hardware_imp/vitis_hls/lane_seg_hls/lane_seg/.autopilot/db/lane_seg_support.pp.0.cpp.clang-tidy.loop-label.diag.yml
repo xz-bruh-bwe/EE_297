@@ -1307,7 +1307,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1693665
+        Offset:          1693657
         Length:          0
         ReplacementText: 'VITIS_LOOP_36_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1316,7 +1316,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1693705
+        Offset:          1693697
         Length:          0
         ReplacementText: 'VITIS_LOOP_37_2: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1325,7 +1325,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1693749
+        Offset:          1693741
         Length:          0
         ReplacementText: 'VITIS_LOOP_38_3: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1334,7 +1334,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1693878
+        Offset:          1694008
         Length:          0
         ReplacementText: 'VITIS_LOOP_50_4: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1343,7 +1343,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1693945
+        Offset:          1694075
         Length:          0
         ReplacementText: 'VITIS_LOOP_51_5: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1352,7 +1352,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1694090
+        Offset:          1694220
         Length:          0
         ReplacementText: 'VITIS_LOOP_56_6: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1361,7 +1361,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1694183
+        Offset:          1694313
         Length:          0
         ReplacementText: 'VITIS_LOOP_60_7: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1370,7 +1370,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1694236
+        Offset:          1694366
         Length:          0
         ReplacementText: 'VITIS_LOOP_61_8: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1379,7 +1379,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1694293
+        Offset:          1694423
         Length:          0
         ReplacementText: 'VITIS_LOOP_62_9: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1388,7 +1388,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1695615
+        Offset:          1695745
         Length:          0
         ReplacementText: 'VITIS_LOOP_125_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1397,7 +1397,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1695682
+        Offset:          1695812
         Length:          0
         ReplacementText: 'VITIS_LOOP_126_2: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1406,7 +1406,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1695769
+        Offset:          1695899
         Length:          0
         ReplacementText: 'VITIS_LOOP_128_3: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1415,7 +1415,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1696010
+        Offset:          1696140
         Length:          0
         ReplacementText: 'VITIS_LOOP_133_4: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1424,7 +1424,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1696063
+        Offset:          1696193
         Length:          0
         ReplacementText: 'VITIS_LOOP_134_5: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1433,7 +1433,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1697206
+        Offset:          1697336
         Length:          0
         ReplacementText: 'VITIS_LOOP_161_6: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1442,7 +1442,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1697273
+        Offset:          1697403
         Length:          0
         ReplacementText: 'VITIS_LOOP_162_7: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1451,7 +1451,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1697360
+        Offset:          1697490
         Length:          0
         ReplacementText: 'VITIS_LOOP_164_8: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1460,7 +1460,7 @@ Diagnostics:
     FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg_support.cpp'
     Replacements:    
       - FilePath:        'C:\Users\Baron\Desktop\EE_297_Repo\EE_297\hardware_imp\vitis_hls\lane_seg_hls\lane_seg\.autopilot\db\lane_seg_support.pp.0.cpp'
-        Offset:          1697610
+        Offset:          1697740
         Length:          0
         ReplacementText: 'VITIS_LOOP_171_9: '
 ...

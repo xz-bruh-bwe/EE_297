@@ -1,5 +1,202 @@
 # This script segment is generated automatically by AutoPilot
 
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name lane_seg_top_hmul_16ns_16ns_16_2_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {hmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler lane_seg_top_p_ZZ12lane_seg_topPA224_A3_fPA112_A16_DhjRjS5_E9out0_enc0_0_0_0_RAM_AUTO_1R1W BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler lane_seg_top_gmem_in_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
 }
@@ -27,7 +224,7 @@ image_r {
 	offset 16
 	offset_end 27
 }
-out0 { 
+out1_ir0 { 
 	dir I
 	width 64
 	depth 1
@@ -81,7 +278,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 680 \
+			id 4795 \
 			corename lane_seg_top_control_axilite \
 			name lane_seg_top_control_s_axi \
 			ports {$port_control} \

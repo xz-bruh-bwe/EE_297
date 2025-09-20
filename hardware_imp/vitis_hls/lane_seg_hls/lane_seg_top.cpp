@@ -28,8 +28,8 @@
 // ──────────────────────────────────────────────
 void lane_seg_top(
     float image[IN_H][IN_W][IN_C],
-    data_t out0[OUT_H][OUT_W][OUT_C],
-	//data_t out1_ir0[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C],  // <-- output after encoder1_ir
+    //data_t out0[OUT_H][OUT_W][OUT_C],
+	data_t out1_ir0[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C],  // <-- output after encoder1_ir
 
 
 	// Proc Ctrl Signals
@@ -42,15 +42,15 @@ void lane_seg_top(
     // No AXI4 ports in C simulation
 #else
     #pragma HLS INTERFACE m_axi port=image offset=slave bundle=gmem_in depth=(IN_H * IN_W * IN_C)
-    #pragma HLS INTERFACE m_axi port=out0  offset=slave bundle=gmem_out depth=(OUT_H * OUT_W * OUT_C)
-	//#pragma HLS INTERFACE m_axi port=out1_ir0  offset=slave bundle=gmem_out depth=(OUT1_IR0_H * OUT1_IR0_W * OUT1_IR0_C)
+    //#pragma HLS INTERFACE m_axi port=out0  offset=slave bundle=gmem_out depth=(OUT_H * OUT_W * OUT_C)
+	#pragma HLS INTERFACE m_axi port=out1_ir0  offset=slave bundle=gmem_out depth=(OUT1_IR0_H * OUT1_IR0_W * OUT1_IR0_C)
 
 #endif
 
     // ───── AXI-Lite Interfaces ─────
     #pragma HLS INTERFACE s_axilite port=image   bundle=control
-    #pragma HLS INTERFACE s_axilite port=out0    bundle=control
-	//#pragma HLS INTERFACE s_axilite port=out1_ir0    bundle=control
+    //#pragma HLS INTERFACE s_axilite port=out0    bundle=control
+	#pragma HLS INTERFACE s_axilite port=out1_ir0    bundle=control
 
 	// ────────────────────────────────────────────────────────
 	#pragma HLS INTERFACE s_axilite port=ctrl    bundle=control
@@ -67,13 +67,13 @@ void lane_seg_top(
 
 
     // ───── Call Encoder Stage 0 ─────
-    //static data_t out0_enc0[OUT0_H][OUT0_W][OUT0_C]; <- Layer two
+    static data_t out0_enc0[OUT0_H][OUT0_W][OUT0_C]; //<- Stage0 output -> Stage1 input
 
-    encoder0_c1(image, out0, conv0_w, conv0_b);
+    encoder0_c1(image, out0_enc0, conv0_w, conv0_b);
     // ───── Update Status Bit: Stage 0 Done ─────
     status |= (1u << 0);  // STAGE0_DONE
 
     // ───── Stage 1: First InvertedResidual ─────
-    //enc1_ir0(out0_enc0, out1_ir0, enc1_dw_w, enc1_dw_b, enc1_pw_w, enc1_pw_b);
+    enc1_ir0(out0_enc0, out1_ir0, enc1_dw_w, enc1_dw_b, enc1_pw_w, enc1_pw_b);
 
 }

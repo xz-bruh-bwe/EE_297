@@ -22,10 +22,10 @@
 // 0x14 : Data signal of image_r
 //        bit 31~0 - image_r[63:32] (Read/Write)
 // 0x18 : reserved
-// 0x1c : Data signal of out0
-//        bit 31~0 - out0[31:0] (Read/Write)
-// 0x20 : Data signal of out0
-//        bit 31~0 - out0[63:32] (Read/Write)
+// 0x1c : Data signal of out1_ir0
+//        bit 31~0 - out1_ir0[31:0] (Read/Write)
+// 0x20 : Data signal of out1_ir0
+//        bit 31~0 - out1_ir0[63:32] (Read/Write)
 // 0x24 : reserved
 // 0x28 : Data signal of ctrl
 //        bit 31~0 - ctrl[31:0] (Read/Write)
@@ -51,8 +51,8 @@
 #define CONTROL_ADDR_ISR           0x0c
 #define CONTROL_ADDR_IMAGE_R_DATA  0x10
 #define CONTROL_BITS_IMAGE_R_DATA  64
-#define CONTROL_ADDR_OUT0_DATA     0x1c
-#define CONTROL_BITS_OUT0_DATA     64
+#define CONTROL_ADDR_OUT1_IR0_DATA 0x1c
+#define CONTROL_BITS_OUT1_IR0_DATA 64
 #define CONTROL_ADDR_CTRL_DATA     0x28
 #define CONTROL_BITS_CTRL_DATA     32
 #define CONTROL_ADDR_STATUS_I_DATA 0x30

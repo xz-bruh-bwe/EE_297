@@ -33,7 +33,7 @@ module lane_seg_top_control_s_axi
     input  wire                          RREADY,
     output wire                          interrupt,
     output wire [63:0]                   image_r,
-    output wire [63:0]                   out0,
+    output wire [63:0]                   out1_ir0,
     output wire [31:0]                   ctrl,
     output wire [31:0]                   status_i,
     input  wire [31:0]                   status_o,
@@ -70,10 +70,10 @@ module lane_seg_top_control_s_axi
 // 0x14 : Data signal of image_r
 //        bit 31~0 - image_r[63:32] (Read/Write)
 // 0x18 : reserved
-// 0x1c : Data signal of out0
-//        bit 31~0 - out0[31:0] (Read/Write)
-// 0x20 : Data signal of out0
-//        bit 31~0 - out0[63:32] (Read/Write)
+// 0x1c : Data signal of out1_ir0
+//        bit 31~0 - out1_ir0[31:0] (Read/Write)
+// 0x20 : Data signal of out1_ir0
+//        bit 31~0 - out1_ir0[63:32] (Read/Write)
 // 0x24 : reserved
 // 0x28 : Data signal of ctrl
 //        bit 31~0 - ctrl[31:0] (Read/Write)
@@ -102,9 +102,9 @@ localparam
     ADDR_IMAGE_R_DATA_0  = 7'h10,
     ADDR_IMAGE_R_DATA_1  = 7'h14,
     ADDR_IMAGE_R_CTRL    = 7'h18,
-    ADDR_OUT0_DATA_0     = 7'h1c,
-    ADDR_OUT0_DATA_1     = 7'h20,
-    ADDR_OUT0_CTRL       = 7'h24,
+    ADDR_OUT1_IR0_DATA_0 = 7'h1c,
+    ADDR_OUT1_IR0_DATA_1 = 7'h20,
+    ADDR_OUT1_IR0_CTRL   = 7'h24,
     ADDR_CTRL_DATA_0     = 7'h28,
     ADDR_CTRL_CTRL       = 7'h2c,
     ADDR_STATUS_I_DATA_0 = 7'h30,
@@ -150,7 +150,7 @@ localparam
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
     reg  [63:0]                   int_image_r = 'b0;
-    reg  [63:0]                   int_out0 = 'b0;
+    reg  [63:0]                   int_out1_ir0 = 'b0;
     reg  [31:0]                   int_ctrl = 'b0;
     reg  [31:0]                   int_status_i = 'b0;
     reg                           int_status_o_ap_vld;
@@ -272,11 +272,11 @@ always @(posedge ACLK) begin
                 ADDR_IMAGE_R_DATA_1: begin
                     rdata <= int_image_r[63:32];
                 end
-                ADDR_OUT0_DATA_0: begin
-                    rdata <= int_out0[31:0];
+                ADDR_OUT1_IR0_DATA_0: begin
+                    rdata <= int_out1_ir0[31:0];
                 end
-                ADDR_OUT0_DATA_1: begin
-                    rdata <= int_out0[63:32];
+                ADDR_OUT1_IR0_DATA_1: begin
+                    rdata <= int_out1_ir0[63:32];
                 end
                 ADDR_CTRL_DATA_0: begin
                     rdata <= int_ctrl[31:0];
@@ -309,7 +309,7 @@ assign task_ap_done      = (ap_done && !auto_restart_status) || auto_restart_don
 assign task_ap_ready     = ap_ready && !int_auto_restart;
 assign auto_restart_done = auto_restart_status && (ap_idle && !int_ap_idle);
 assign image_r           = int_image_r;
-assign out0              = int_out0;
+assign out1_ir0          = int_out1_ir0;
 assign ctrl              = int_ctrl;
 assign status_i          = int_status_i;
 // int_interrupt
@@ -464,23 +464,23 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_out0[31:0]
+// int_out1_ir0[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_out0[31:0] <= 0;
+        int_out1_ir0[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUT0_DATA_0)
-            int_out0[31:0] <= (WDATA[31:0] & wmask) | (int_out0[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_OUT1_IR0_DATA_0)
+            int_out1_ir0[31:0] <= (WDATA[31:0] & wmask) | (int_out1_ir0[31:0] & ~wmask);
     end
 end
 
-// int_out0[63:32]
+// int_out1_ir0[63:32]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_out0[63:32] <= 0;
+        int_out1_ir0[63:32] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUT0_DATA_1)
-            int_out0[63:32] <= (WDATA[31:0] & wmask) | (int_out0[63:32] & ~wmask);
+        if (w_hs && waddr == ADDR_OUT1_IR0_DATA_1)
+            int_out1_ir0[63:32] <= (WDATA[31:0] & wmask) | (int_out1_ir0[63:32] & ~wmask);
     end
 end
 

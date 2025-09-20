@@ -1,10 +1,10 @@
 {
   "0": {
     "basicblocks": 3,
-    "calls": "1",
+    "calls": "2 1",
     "file": "lane_seg_top.cpp",
     "fileloc": 29,
-    "instructions": 48,
+    "instructions": 958,
     "loads": {
       "T": 1
     },
@@ -12,21 +12,37 @@
     "stores": {
       "T": 3
     },
-    "total_instructions": 34130
+    "total_instructions": 14136
   },
   "1": {
-    "basicblocks": 5137,
+    "basicblocks": 521,
+    "calls": "",
+    "file": "lane_seg_support.cpp",
+    "fileloc": 96,
+    "instructions": 9058,
+    "loads": {
+      "G": 2624
+    },
+    "name": "enc1_ir0",
+    "stores": {
+      "G": 32
+    },
+    "total_instructions": 9058
+  },
+  "2": {
+    "basicblocks": 133,
     "calls": "",
     "file": "lane_seg_support.cpp",
     "fileloc": 18,
-    "instructions": 34082,
+    "instructions": 4120,
     "loads": {
-      "L": 27
+      "L": 243
     },
     "name": "encoder0_c1",
     "stores": {
-      "L": 2
+      "G": 288,
+      "L": 54
     },
-    "total_instructions": 34082
+    "total_instructions": 4120
   }
 }

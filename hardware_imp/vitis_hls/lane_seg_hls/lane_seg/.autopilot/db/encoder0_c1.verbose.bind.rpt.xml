@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'encoder0_c1'" level="0">
-<item name = "Date">Fri Sep 19 13:55:40 2025
+<item name = "Date">Sat Sep 20 00:28:42 2025
 </item>
 <item name = "Version">2023.1 (Build 3854077 on May  4 2023)</item>
 <item name = "Project">lane_seg_hls</item>
@@ -24,16 +24,16 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">705216, 705216, 10.578 ms, 10.578 ms, 705216, 705216, no</column>
+<column name="">316403, 316403, 4.746 ms, 4.746 ms, 316403, 316403, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_encoder0_c1_Pipeline_1_fu_87">encoder0_c1_Pipeline_1, 153230, 153230, 2.298 ms, 2.298 ms, 153230, 153230, no</column>
-<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3_fu_93">encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3, 150532, 150532, 2.258 ms, 2.258 ms, 150532, 150532, no</column>
-<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5_fu_101">encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5, 401438, 401438, 6.022 ms, 6.022 ms, 401438, 401438, no</column>
+<column name="grp_encoder0_c1_Pipeline_1_fu_737">encoder0_c1_Pipeline_1, 153240, 153240, 2.299 ms, 2.299 ms, 153240, 153240, no</column>
+<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3_fu_795">encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3, 150541, 150541, 2.258 ms, 2.258 ms, 150541, 150541, no</column>
+<column name="grp_encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5_fu_829">encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5, 12611, 12611, 0.189 ms, 0.189 ms, 12611, 12611, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

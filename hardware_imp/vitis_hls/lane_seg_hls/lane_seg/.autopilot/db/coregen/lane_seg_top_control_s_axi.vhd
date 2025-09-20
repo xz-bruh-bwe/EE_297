@@ -36,7 +36,7 @@ port (
     RREADY                :in   STD_LOGIC;
     interrupt             :out  STD_LOGIC;
     image_r               :out  STD_LOGIC_VECTOR(63 downto 0);
-    out0                  :out  STD_LOGIC_VECTOR(63 downto 0);
+    out1_ir0              :out  STD_LOGIC_VECTOR(63 downto 0);
     ctrl                  :out  STD_LOGIC_VECTOR(31 downto 0);
     status_i              :out  STD_LOGIC_VECTOR(31 downto 0);
     status_o              :in   STD_LOGIC_VECTOR(31 downto 0);
@@ -75,10 +75,10 @@ end entity lane_seg_top_control_s_axi;
 -- 0x14 : Data signal of image_r
 --        bit 31~0 - image_r[63:32] (Read/Write)
 -- 0x18 : reserved
--- 0x1c : Data signal of out0
---        bit 31~0 - out0[31:0] (Read/Write)
--- 0x20 : Data signal of out0
---        bit 31~0 - out0[63:32] (Read/Write)
+-- 0x1c : Data signal of out1_ir0
+--        bit 31~0 - out1_ir0[31:0] (Read/Write)
+-- 0x20 : Data signal of out1_ir0
+--        bit 31~0 - out1_ir0[63:32] (Read/Write)
 -- 0x24 : reserved
 -- 0x28 : Data signal of ctrl
 --        bit 31~0 - ctrl[31:0] (Read/Write)
@@ -110,9 +110,9 @@ architecture behave of lane_seg_top_control_s_axi is
     constant ADDR_IMAGE_R_DATA_0  : INTEGER := 16#10#;
     constant ADDR_IMAGE_R_DATA_1  : INTEGER := 16#14#;
     constant ADDR_IMAGE_R_CTRL    : INTEGER := 16#18#;
-    constant ADDR_OUT0_DATA_0     : INTEGER := 16#1c#;
-    constant ADDR_OUT0_DATA_1     : INTEGER := 16#20#;
-    constant ADDR_OUT0_CTRL       : INTEGER := 16#24#;
+    constant ADDR_OUT1_IR0_DATA_0 : INTEGER := 16#1c#;
+    constant ADDR_OUT1_IR0_DATA_1 : INTEGER := 16#20#;
+    constant ADDR_OUT1_IR0_CTRL   : INTEGER := 16#24#;
     constant ADDR_CTRL_DATA_0     : INTEGER := 16#28#;
     constant ADDR_CTRL_CTRL       : INTEGER := 16#2c#;
     constant ADDR_STATUS_I_DATA_0 : INTEGER := 16#30#;
@@ -150,7 +150,7 @@ architecture behave of lane_seg_top_control_s_axi is
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_image_r         : UNSIGNED(63 downto 0) := (others => '0');
-    signal int_out0            : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_out1_ir0        : UNSIGNED(63 downto 0) := (others => '0');
     signal int_ctrl            : UNSIGNED(31 downto 0) := (others => '0');
     signal int_status_i        : UNSIGNED(31 downto 0) := (others => '0');
     signal int_status_o_ap_vld : STD_LOGIC;
@@ -289,10 +289,10 @@ begin
                         rdata_data <= RESIZE(int_image_r(31 downto 0), 32);
                     when ADDR_IMAGE_R_DATA_1 =>
                         rdata_data <= RESIZE(int_image_r(63 downto 32), 32);
-                    when ADDR_OUT0_DATA_0 =>
-                        rdata_data <= RESIZE(int_out0(31 downto 0), 32);
-                    when ADDR_OUT0_DATA_1 =>
-                        rdata_data <= RESIZE(int_out0(63 downto 32), 32);
+                    when ADDR_OUT1_IR0_DATA_0 =>
+                        rdata_data <= RESIZE(int_out1_ir0(31 downto 0), 32);
+                    when ADDR_OUT1_IR0_DATA_1 =>
+                        rdata_data <= RESIZE(int_out1_ir0(63 downto 32), 32);
                     when ADDR_CTRL_DATA_0 =>
                         rdata_data <= RESIZE(int_ctrl(31 downto 0), 32);
                     when ADDR_STATUS_I_DATA_0 =>
@@ -320,7 +320,7 @@ begin
     task_ap_ready        <= ap_ready and not int_auto_restart;
     auto_restart_done    <= auto_restart_status and (ap_idle and not int_ap_idle);
     image_r              <= STD_LOGIC_VECTOR(int_image_r);
-    out0                 <= STD_LOGIC_VECTOR(int_out0);
+    out1_ir0             <= STD_LOGIC_VECTOR(int_out1_ir0);
     ctrl                 <= STD_LOGIC_VECTOR(int_ctrl);
     status_i             <= STD_LOGIC_VECTOR(int_status_i);
 
@@ -520,8 +520,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_OUT0_DATA_0) then
-                    int_out0(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_out0(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_OUT1_IR0_DATA_0) then
+                    int_out1_ir0(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_out1_ir0(31 downto 0));
                 end if;
             end if;
         end if;
@@ -531,8 +531,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_OUT0_DATA_1) then
-                    int_out0(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_out0(63 downto 32));
+                if (w_hs = '1' and waddr = ADDR_OUT1_IR0_DATA_1) then
+                    int_out1_ir0(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_out1_ir0(63 downto 32));
                 end if;
             end if;
         end if;

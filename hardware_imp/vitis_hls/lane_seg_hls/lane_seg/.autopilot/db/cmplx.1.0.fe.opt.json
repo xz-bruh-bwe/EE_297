@@ -1,10 +1,10 @@
 {
   "0": {
     "basicblocks": 3,
-    "calls": "3",
+    "calls": "1 2",
     "file": "lane_seg_top.cpp",
     "fileloc": 29,
-    "instructions": 19,
+    "instructions": 20,
     "loads": {
       "T": 1
     },
@@ -12,48 +12,50 @@
     "stores": {
       "T": 3
     },
-    "total_instructions": 1358
+    "total_instructions": 539
   },
   "1": {
-    "basicblocks": 1,
-    "calls": "4 2",
-    "file": "lane_seg_top.pp.0.cpp",
-    "fileloc": 0,
-    "instructions": 3,
-    "name": "",
-    "total_instructions": 365573
-  },
-  "2": {
-    "basicblocks": 1,
-    "calls": "",
-    "file": "encoder_conv0_b.h",
-    "fileloc": 7,
-    "instructions": 33,
-    "name": "__cxx_global_var_init.1",
-    "total_instructions": 13057
-  },
-  "3": {
     "basicblocks": 60,
-    "calls": "",
+    "calls": "3 3",
     "file": "lane_seg_support.cpp",
     "fileloc": 18,
-    "instructions": 201,
+    "instructions": 167,
     "loads": {
-      "L": 7
+      "L": 6
     },
     "name": "encoder0_c1",
     "stores": {
-      "L": 6
+      "L": 2
     },
-    "total_instructions": 1339
+    "total_instructions": 193
   },
-  "4": {
+  "2": {
+    "basicblocks": 90,
+    "calls": "3 3 3 3 3 3",
+    "file": "lane_seg_support.cpp",
+    "fileloc": 96,
+    "instructions": 248,
+    "loads": {
+      "G": 1,
+      "L": 7
+    },
+    "name": "enc1_ir0",
+    "stores": {
+      "G": 1,
+      "L": 1
+    },
+    "total_instructions": 326
+  },
+  "3": {
     "basicblocks": 1,
     "calls": "",
-    "file": "encoder_conv0_w.h",
-    "fileloc": 7,
-    "instructions": 865,
-    "name": "__cxx_global_var_init",
-    "total_instructions": 352513
+    "file": "stdio.h",
+    "fileloc": 345,
+    "instructions": 13,
+    "loads": {
+      "L": 1
+    },
+    "name": "printf",
+    "total_instructions": 13
   }
 }

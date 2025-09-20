@@ -54,8 +54,8 @@ typedef half data_t;  // Change as needed
 // Only image input + output + AXI-lite control and status registers
 void lane_seg_top(
     float image[IN_H][IN_W][IN_C],            // Input RGB image
-    data_t out0[OUT_H][OUT_W][OUT_C],          // Output of conv0 + bn + relu6
-	//data_t out1_ir0[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C], // Output of enc0_ir0
+    //data_t out0[OUT_H][OUT_W][OUT_C],          // Output of conv0 + bn + relu6
+	data_t out1_ir0[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C], // Output of enc0_ir0
 
 
     unsigned int ctrl,                         // AXI-lite control (optional)

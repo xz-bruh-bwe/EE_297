@@ -20,8 +20,8 @@ using namespace std;
 // wrapc file define:
 #define AUTOTB_TVIN_image_r "../tv/cdatafile/c.lane_seg_top.autotvin_image_r.dat"
 #define AUTOTB_TVOUT_image_r "../tv/cdatafile/c.lane_seg_top.autotvout_image_r.dat"
-#define AUTOTB_TVIN_out0 "../tv/cdatafile/c.lane_seg_top.autotvin_out0.dat"
-#define AUTOTB_TVOUT_out0 "../tv/cdatafile/c.lane_seg_top.autotvout_out0.dat"
+#define AUTOTB_TVIN_out1_ir0 "../tv/cdatafile/c.lane_seg_top.autotvin_out1_ir0.dat"
+#define AUTOTB_TVOUT_out1_ir0 "../tv/cdatafile/c.lane_seg_top.autotvout_out1_ir0.dat"
 #define AUTOTB_TVIN_ctrl "../tv/cdatafile/c.lane_seg_top.autotvin_ctrl.dat"
 #define AUTOTB_TVOUT_ctrl "../tv/cdatafile/c.lane_seg_top.autotvout_ctrl.dat"
 #define AUTOTB_TVIN_status "../tv/cdatafile/c.lane_seg_top.autotvin_status.dat"
@@ -1150,7 +1150,7 @@ extern "C"
 void lane_seg_top_hw_stub_wrapper(void*, void*, hls::sim::Byte<4>, void*, void*);
 
 extern "C"
-void apatb_lane_seg_top_hw(void* __xlx_apatb_param_image_r, void* __xlx_apatb_param_out0, hls::sim::Byte<4> __xlx_apatb_param_ctrl, void* __xlx_apatb_param_status, void* __xlx_apatb_param_magic)
+void apatb_lane_seg_top_hw(void* __xlx_apatb_param_image_r, void* __xlx_apatb_param_out1_ir0, hls::sim::Byte<4> __xlx_apatb_param_ctrl, void* __xlx_apatb_param_status, void* __xlx_apatb_param_magic)
 {
   hls::sim::Byte<4> __xlx_offset_byte_param_image_r;
   static hls::sim::Register port0 {
@@ -1164,17 +1164,17 @@ void apatb_lane_seg_top_hw(void* __xlx_apatb_param_image_r, void* __xlx_apatb_pa
   };
   port0.param = &__xlx_offset_byte_param_image_r;
 
-  hls::sim::Byte<4> __xlx_offset_byte_param_out0;
+  hls::sim::Byte<4> __xlx_offset_byte_param_out1_ir0;
   static hls::sim::Register port1 {
-    .name = "out0",
+    .name = "out1_ir0",
     .width = 32,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_out0),
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_out1_ir0),
 #endif
   };
-  port1.param = &__xlx_offset_byte_param_out0;
+  port1.param = &__xlx_offset_byte_param_out1_ir0;
 
   static hls::sim::Register port2 {
     .name = "ctrl",
@@ -1263,8 +1263,8 @@ void apatb_lane_seg_top_hw(void* __xlx_apatb_param_image_r, void* __xlx_apatb_pa
 #endif
 #endif
   };
-  port6.param = { __xlx_apatb_param_out0 };
-  port6.nbytes = { 802816 };
+  port6.param = { __xlx_apatb_param_out1_ir0 };
+  port6.nbytes = { 401408 };
   port6.offset = {  };
   port6.hasWrite = { true };
 
@@ -1292,7 +1292,7 @@ void apatb_lane_seg_top_hw(void* __xlx_apatb_param_image_r, void* __xlx_apatb_pa
     port5.doTCL(tcl);
     port6.doTCL(tcl);
     CodeState = CALL_C_DUT;
-    lane_seg_top_hw_stub_wrapper(__xlx_apatb_param_image_r, __xlx_apatb_param_out0, __xlx_apatb_param_ctrl, __xlx_apatb_param_status, __xlx_apatb_param_magic);
+    lane_seg_top_hw_stub_wrapper(__xlx_apatb_param_image_r, __xlx_apatb_param_out1_ir0, __xlx_apatb_param_ctrl, __xlx_apatb_param_status, __xlx_apatb_param_magic);
     CodeState = DUMP_OUTPUTS;
     dump(port3, port3.owriter, tcl.AESL_transaction);
     dump(port4, port4.owriter, tcl.AESL_transaction);

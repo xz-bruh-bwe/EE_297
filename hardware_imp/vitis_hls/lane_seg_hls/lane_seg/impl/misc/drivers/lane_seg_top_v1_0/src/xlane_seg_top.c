@@ -95,22 +95,22 @@ u64 XLane_seg_top_Get_image_r(XLane_seg_top *InstancePtr) {
     return Data;
 }
 
-void XLane_seg_top_Set_out0(XLane_seg_top *InstancePtr, u64 Data) {
+void XLane_seg_top_Set_out1_ir0(XLane_seg_top *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XLane_seg_top_WriteReg(InstancePtr->Control_BaseAddress, XLANE_SEG_TOP_CONTROL_ADDR_OUT0_DATA, (u32)(Data));
-    XLane_seg_top_WriteReg(InstancePtr->Control_BaseAddress, XLANE_SEG_TOP_CONTROL_ADDR_OUT0_DATA + 4, (u32)(Data >> 32));
+    XLane_seg_top_WriteReg(InstancePtr->Control_BaseAddress, XLANE_SEG_TOP_CONTROL_ADDR_OUT1_IR0_DATA, (u32)(Data));
+    XLane_seg_top_WriteReg(InstancePtr->Control_BaseAddress, XLANE_SEG_TOP_CONTROL_ADDR_OUT1_IR0_DATA + 4, (u32)(Data >> 32));
 }
 
-u64 XLane_seg_top_Get_out0(XLane_seg_top *InstancePtr) {
+u64 XLane_seg_top_Get_out1_ir0(XLane_seg_top *InstancePtr) {
     u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XLane_seg_top_ReadReg(InstancePtr->Control_BaseAddress, XLANE_SEG_TOP_CONTROL_ADDR_OUT0_DATA);
-    Data += (u64)XLane_seg_top_ReadReg(InstancePtr->Control_BaseAddress, XLANE_SEG_TOP_CONTROL_ADDR_OUT0_DATA + 4) << 32;
+    Data = XLane_seg_top_ReadReg(InstancePtr->Control_BaseAddress, XLANE_SEG_TOP_CONTROL_ADDR_OUT1_IR0_DATA);
+    Data += (u64)XLane_seg_top_ReadReg(InstancePtr->Control_BaseAddress, XLANE_SEG_TOP_CONTROL_ADDR_OUT1_IR0_DATA + 4) << 32;
     return Data;
 }
 

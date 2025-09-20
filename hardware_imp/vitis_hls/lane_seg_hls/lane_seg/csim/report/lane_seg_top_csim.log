@@ -1,13 +1,26 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../lane_seg_tb.cpp in debug mode
+   Compiling ../../../lane_seg_support.cpp in debug mode
    Compiling ../../../lane_seg_top.cpp in debug mode
    Generating csim.exe
 TESTBENCH DEBUG: image[0][0][0] = -1.501413
 Loaded input image.
 DEBUG: bias[0] = -0.022644
 DEBUG: weights[0][0][0][0] = 0.006653
+DEBUG DW: bias[0] = -0.014267
+DW DEBUG: a=0.189087 * b=0.028503 => p=0.005390 | sum=-0.008881
+DW DEBUG: a=0.154663 * b=0.760254 => p=0.117554 | sum=0.108643
+DW DEBUG: a=0.227051 * b=-0.062988 => p=-0.014305 | sum=0.094360
+DW DEBUG: a=0.179932 * b=0.057465 => p=0.010338 | sum=0.104675
+DW DEBUG: output[0][0][0] after ReLU6 = 0.104675
+PW DEBUG: bias[0] = -2.091797
+PW DEBUG: ic=0, a=0.104675, b=-0.010017, p=-0.001049, sum=-2.093750
+PW DEBUG: ic=1, a=1.597656, b=0.081299, p=0.129883, sum=-1.963867
+PW DEBUG: ic=2, a=2.707031, b=-0.066345, p=-0.179565, sum=-2.142578
+PW DEBUG: output[0][0][0] final = -1.792969
 magic  = 0x1EAF0002
 status = 0x00000001
-Output written to: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/encoder0_out.txt
+Output written to: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc0_ir0_out.txt
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

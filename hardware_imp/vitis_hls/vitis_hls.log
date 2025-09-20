@@ -1,9 +1,9 @@
 NOTE: Using modified tcl85t.dll from https://gitenterprise.xilinx.com/ACT/vitis_hls_tcl
 INFO: [HLS 200-10] Running 'Z:/Xilinx/Vitis_HLS/2023.1/bin/unwrapped/win64.o/vitis_hls.exe'
-INFO: [HLS 200-10] For user 'Baron' on host 'desktop-d2nna1u' (Windows NT_amd64 version 6.2) on Fri Sep 19 21:09:55 -0700 2025
+INFO: [HLS 200-10] For user 'Baron' on host 'desktop-d2nna1u' (Windows NT_amd64 version 6.2) on Sat Sep 20 00:22:08 -0700 2025
 INFO: [HLS 200-10] In directory 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls'
-Sourcing Tcl script 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim.tcl'
-INFO: [HLS 200-1510] Running: source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim.tcl
+Sourcing Tcl script 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csynth.tcl'
+INFO: [HLS 200-1510] Running: source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csynth.tcl
 INFO: [HLS 200-1510] Running: open_project lane_seg_hls 
 INFO: [HLS 200-10] Opening project 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls'.
 INFO: [HLS 200-1510] Running: set_top lane_seg_top 
@@ -25,39 +25,396 @@ INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e
 INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
 INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
 INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
-INFO: [HLS 200-1510] Running: csim_design -quiet 
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-INFO: [HLS 200-2036] Building debug C Simulation binaries
-   Compiling ../../../lane_seg_top.cpp in debug mode
-   Generating csim.exe
-In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:149:0,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_fpo.h:143,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_half.h:25,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_math.h:41,
-                 from ../../../lane_seg_top.h:4,
-                 from ../../../lane_seg_top.cpp:6:
-Z:/Xilinx/Vitis_HLS/2023.1/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_fpo.h:143:0,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_half.h:25,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_math.h:41,
-                 from ../../../lane_seg_top.h:4,
-                 from ../../../lane_seg_top.cpp:6:
-Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:141:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
-TESTBENCH DEBUG: image[0][0][0] = -1.501413
-Loaded input image.
-DEBUG: bias[0] = -0.022644
-DEBUG: weights[0][0][0][0] = 0.006653
-magic  = 0x1EAF0002
-status = 0x00000001
-Output written to: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/encoder0_out.txt
-INFO: [SIM 211-1] CSim done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 14.905 seconds; current allocated memory: 4.336 MB.
-INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 2 seconds. Total elapsed time: 22.379 seconds; peak allocated memory: 940.977 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.168 seconds; current allocated memory: 1.044 GB.
+INFO: [HLS 200-10] Analyzing design file 'lane_seg_hls/lane_seg_support.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'lane_seg_hls/lane_seg_top.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 56.659 seconds; current allocated memory: 1.053 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_164_8' is marked as complete unroll implied by the pipeline pragma (lane_seg_hls/lane_seg_support.cpp:164:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_171_9' is marked as complete unroll implied by the pipeline pragma (lane_seg_hls/lane_seg_support.cpp:171:35)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_128_3' is marked as complete unroll implied by the pipeline pragma (lane_seg_hls/lane_seg_support.cpp:128:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_133_4' is marked as complete unroll implied by the pipeline pragma (lane_seg_hls/lane_seg_support.cpp:133:35)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_134_5' is marked as complete unroll implied by the pipeline pragma (lane_seg_hls/lane_seg_support.cpp:134:39)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_56_6' is marked as complete unroll implied by the pipeline pragma (lane_seg_hls/lane_seg_support.cpp:56:30)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_60_7' is marked as complete unroll implied by the pipeline pragma (lane_seg_hls/lane_seg_support.cpp:60:34)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_61_8' is marked as complete unroll implied by the pipeline pragma (lane_seg_hls/lane_seg_support.cpp:61:38)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_62_9' is marked as complete unroll implied by the pipeline pragma (lane_seg_hls/lane_seg_support.cpp:62:42)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_164_8' (lane_seg_hls/lane_seg_support.cpp:164:20) in function 'enc1_ir0' completely with a factor of 16 (lane_seg_hls/lane_seg_support.cpp:103:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_171_9' (lane_seg_hls/lane_seg_support.cpp:171:35) in function 'enc1_ir0' completely with a factor of 32 (lane_seg_hls/lane_seg_support.cpp:103:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_128_3' (lane_seg_hls/lane_seg_support.cpp:128:20) in function 'enc1_ir0' completely with a factor of 32 (lane_seg_hls/lane_seg_support.cpp:103:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_133_4' (lane_seg_hls/lane_seg_support.cpp:133:35) in function 'enc1_ir0' completely with a factor of 3 (lane_seg_hls/lane_seg_support.cpp:103:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_134_5' (lane_seg_hls/lane_seg_support.cpp:134:39) in function 'enc1_ir0' completely with a factor of 3 (lane_seg_hls/lane_seg_support.cpp:103:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_56_6' (lane_seg_hls/lane_seg_support.cpp:56:30) in function 'encoder0_c1' completely with a factor of 32 (lane_seg_hls/lane_seg_support.cpp:23:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_60_7' (lane_seg_hls/lane_seg_support.cpp:60:34) in function 'encoder0_c1' completely with a factor of 3 (lane_seg_hls/lane_seg_support.cpp:23:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_61_8' (lane_seg_hls/lane_seg_support.cpp:61:38) in function 'encoder0_c1' completely with a factor of 3 (lane_seg_hls/lane_seg_support.cpp:23:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_62_9' (lane_seg_hls/lane_seg_support.cpp:62:42) in function 'encoder0_c1' completely with a factor of 3 (lane_seg_hls/lane_seg_support.cpp:23:0)
+INFO: [HLS 214-248] Applying array_partition to 'enc1_pw_b': Complete partitioning on dimension 1. (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\01_main\03_lanes_code\weights\enc1_pw_b.h:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'enc1_pw_w': Cyclic partitioning with factor 16 on dimension 3. (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\01_main\03_lanes_code\weights\enc1_pw_w.h:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'enc1_dw_b': Complete partitioning on dimension 1. (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\01_main\03_lanes_code\weights\enc1_dw_b.h:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'enc1_dw_w': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\01_main\03_lanes_code\weights\enc1_dw_w.h:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'conv0_b': Complete partitioning on dimension 1. (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\01_main\03_lanes_code\weights\encoder_conv0_b.h:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'conv0_w': Complete partitioning on dimension 1. Complete partitioning on dimension 2. Complete partitioning on dimension 3. (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\01_main\03_lanes_code\weights\encoder_conv0_w.h:7:0)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=3 dim=1' for array 'lane_seg_top(float (*) [224][3], half (*) [112][16], unsigned int, unsigned int&, unsigned int&)::out0_enc0' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:127:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=3' for array 'lane_seg_top(float (*) [224][3], half (*) [112][16], unsigned int, unsigned int&, unsigned int&)::out0_enc0' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:127:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=3 dim=2' for array 'lane_seg_top(float (*) [224][3], half (*) [112][16], unsigned int, unsigned int&, unsigned int&)::out0_enc0' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:127:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=2 dim=3' for array 'enc1_ir0(half (*) [112][32], half (*) [112][16], half (*) [3][1][32], half*, half (*) [1][32][16], half*)::dw_out' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:127:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=3 dim=1' for array 'padded' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:52:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=3' for array 'padded' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:52:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=3 dim=2' for array 'padded' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:52:9)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ8enc1_ir0PA112_A32_DhPA112_A16_DhPA3_A1_S_PDhPA1_A32_S2_S8_E6dw_out': Cyclic partitioning with factor 2 on dimension 3. (lane_seg_hls/lane_seg_support.cpp:122:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ12lane_seg_topPA224_A3_fPA112_A16_DhjRjS5_E9out0_enc0': Cyclic partitioning with factor 3 on dimension 1. Cyclic partitioning with factor 3 on dimension 2. Complete partitioning on dimension 3. (lane_seg_hls/lane_seg_top.cpp:70:0)
+INFO: [HLS 214-248] Applying array_partition to 'padded': Cyclic partitioning with factor 3 on dimension 1. Cyclic partitioning with factor 3 on dimension 2. Complete partitioning on dimension 3. (lane_seg_hls/lane_seg_support.cpp:33:8)
+INFO: [HLS 214-115] Multiple burst reads of length 150528 and bit width 32 in loop 'VITIS_LOOP_36_1'(lane_seg_hls/lane_seg_support.cpp:36:22) has been inferred on bundle 'gmem_in'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (lane_seg_hls/lane_seg_support.cpp:36:22)
+INFO: [HLS 214-115] Multiple burst writes of length 200704 and bit width 16 in loop 'VITIS_LOOP_161_6'(lane_seg_hls/lane_seg_support.cpp:161:23) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (lane_seg_hls/lane_seg_support.cpp:161:23)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 25.079 seconds; current allocated memory: 1.058 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.006 seconds; current allocated memory: 1.058 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 21 seconds. CPU system time: 0 seconds. Elapsed time: 20.937 seconds; current allocated memory: 1.158 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 13 seconds. CPU system time: 0 seconds. Elapsed time: 13.149 seconds; current allocated memory: 1.161 GB.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'encoder0_c1' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_38_3' (lane_seg_hls/lane_seg_support.cpp:38) in function 'encoder0_c1' automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc1_ir0(half (*) [112][32], half (*) [112][16], half (*) [3][1][32], half*, half (*) [1][32][16], half*)dw_out.1' in dimension 3 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc1_ir0(half (*) [112][32], half (*) [112][16], half (*) [3][1][32], half*, half (*) [1][32][16], half*)dw_out' in dimension 3 automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (lane_seg_hls/lane_seg_support.cpp:127:9) to (lane_seg_hls/lane_seg_support.cpp:126:27) in function 'enc1_ir0'... converting 513 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 55 seconds. CPU system time: 0 seconds. Elapsed time: 55.799 seconds; current allocated memory: 1.206 GB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_37_2' (lane_seg_hls/lane_seg_support.cpp:37:26) in function 'encoder0_c1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_36_1' (lane_seg_hls/lane_seg_support.cpp:36:22) in function 'encoder0_c1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_50_4' (lane_seg_hls/lane_seg_support.cpp:50:22) in function 'encoder0_c1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_125_1' (lane_seg_hls/lane_seg_support.cpp:125:23) in function 'enc1_ir0'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_161_6' (lane_seg_hls/lane_seg_support.cpp:161:23) in function 'enc1_ir0'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 61 seconds. CPU system time: 1 seconds. Elapsed time: 60.355 seconds; current allocated memory: 1.330 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'lane_seg_top' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'encoder0_c1_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=empty_37) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_26'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_24'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_25'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_20'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_18'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_19'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_23'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_21'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_22'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_8'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_6'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_7'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_2'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_1'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_5'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_3'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_4'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_17'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_15'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_16'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_11'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_9'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_10'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_14'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_12'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_13'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 13, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.627 seconds; current allocated memory: 1.333 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.266 seconds; current allocated memory: 1.334 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln36_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_2'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_1'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_8'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_6'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_7'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_5'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_3'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_4'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_20'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_18'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_19'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_26'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_24'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_25'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_23'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_21'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_22'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_11'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_9'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_10'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_17'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_15'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_16'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_14'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_12'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_13'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 13, loop 'VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.841 seconds; current allocated memory: 1.335 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.284 seconds; current allocated memory: 1.335 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln50_4) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_26'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_23'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_20'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_17'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_14'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_11'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_8'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_5'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_2'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_25'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_22'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_19'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_16'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_13'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_10'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_7'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_4'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_1'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_24'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_21'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_18'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_15'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_12'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_9'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_6'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded_3'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'padded'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_50_4_VITIS_LOOP_51_5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 67, loop 'VITIS_LOOP_50_4_VITIS_LOOP_51_5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 146 seconds. CPU system time: 0 seconds. Elapsed time: 147.194 seconds; current allocated memory: 1.347 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 2.736 seconds; current allocated memory: 1.347 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'encoder0_c1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.619 seconds; current allocated memory: 1.347 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.36 seconds; current allocated memory: 1.347 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'enc1_ir0_Pipeline_VITIS_LOOP_125_1_VITIS_LOOP_126_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_125_1_VITIS_LOOP_126_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 10, Final II = 10, Depth = 41, loop 'VITIS_LOOP_125_1_VITIS_LOOP_126_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 217 seconds. CPU system time: 0 seconds. Elapsed time: 217.736 seconds; current allocated memory: 1.391 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 13 seconds. CPU system time: 0 seconds. Elapsed time: 12.841 seconds; current allocated memory: 1.391 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_161_6_VITIS_LOOP_162_7'.
+WARNING: [HLS 200-880] The II Violation in module 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7' (loop 'VITIS_LOOP_161_6_VITIS_LOOP_162_7'): Unable to enforce a carried dependence constraint (II = 10, distance = 1, offset = 1) between bus write operation ('gmem_out_addr_write_ln164', lane_seg_hls/lane_seg_support.cpp:164) on port 'gmem_out' (lane_seg_hls/lane_seg_support.cpp:164) and bus write operation ('gmem_out_addr_write_ln164', lane_seg_hls/lane_seg_support.cpp:164) on port 'gmem_out' (lane_seg_hls/lane_seg_support.cpp:164).
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7' (loop 'VITIS_LOOP_161_6_VITIS_LOOP_162_7'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus write operation ('gmem_out_addr_write_ln164', lane_seg_hls/lane_seg_support.cpp:164) on port 'gmem_out' (lane_seg_hls/lane_seg_support.cpp:164) and bus write operation ('gmem_out_addr_write_ln164', lane_seg_hls/lane_seg_support.cpp:164) on port 'gmem_out' (lane_seg_hls/lane_seg_support.cpp:164).
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7' (loop 'VITIS_LOOP_161_6_VITIS_LOOP_162_7'): Unable to enforce a carried dependence constraint (II = 12, distance = 1, offset = 1) between bus write operation ('gmem_out_addr_write_ln164', lane_seg_hls/lane_seg_support.cpp:164) on port 'gmem_out' (lane_seg_hls/lane_seg_support.cpp:164) and bus write operation ('gmem_out_addr_write_ln164', lane_seg_hls/lane_seg_support.cpp:164) on port 'gmem_out' (lane_seg_hls/lane_seg_support.cpp:164).
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7' (loop 'VITIS_LOOP_161_6_VITIS_LOOP_162_7'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus write operation ('gmem_out_addr_write_ln164', lane_seg_hls/lane_seg_support.cpp:164) on port 'gmem_out' (lane_seg_hls/lane_seg_support.cpp:164) and bus write operation ('gmem_out_addr_write_ln164', lane_seg_hls/lane_seg_support.cpp:164) on port 'gmem_out' (lane_seg_hls/lane_seg_support.cpp:164).
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7' (loop 'VITIS_LOOP_161_6_VITIS_LOOP_162_7'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus write operation ('gmem_out_addr_write_ln164', lane_seg_hls/lane_seg_support.cpp:164) on port 'gmem_out' (lane_seg_hls/lane_seg_support.cpp:164) and bus write operation ('gmem_out_addr_write_ln164', lane_seg_hls/lane_seg_support.cpp:164) on port 'gmem_out' (lane_seg_hls/lane_seg_support.cpp:164).
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7' (loop 'VITIS_LOOP_161_6_VITIS_LOOP_162_7'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus write operation ('gmem_out_addr_write_ln164', lane_seg_hls/lane_seg_support.cpp:164) on port 'gmem_out' (lane_seg_hls/lane_seg_support.cpp:164) and bus write operation ('gmem_out_addr_write_ln164', lane_seg_hls/lane_seg_support.cpp:164) on port 'gmem_out' (lane_seg_hls/lane_seg_support.cpp:164).
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 10, Final II = 16, Depth = 83, loop 'VITIS_LOOP_161_6_VITIS_LOOP_162_7'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 111 seconds. CPU system time: 1 seconds. Elapsed time: 111.709 seconds; current allocated memory: 1.391 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.738 seconds; current allocated memory: 1.391 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'enc1_ir0' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.766 seconds; current allocated memory: 1.391 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.516 seconds; current allocated memory: 1.391 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lane_seg_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.01 seconds; current allocated memory: 1.391 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.741 seconds; current allocated memory: 1.391 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'encoder0_c1_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'encoder0_c1_Pipeline_1' pipeline 'Loop 1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7ns_7ns_7ns_13_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10ns_12ns_21_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_8ns_3ns_2_12_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'encoder0_c1_Pipeline_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.47 seconds; current allocated memory: 1.391 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3' pipeline 'VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARUSER' to 0.
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7ns_7ns_7ns_13_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_10ns_17_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_8ns_3ns_2_12_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.691 seconds; current allocated memory: 1.391 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5' pipeline 'VITIS_LOOP_50_4_VITIS_LOOP_51_5' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5' is 88665 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 864 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hcmp_16ns_16ns_1_1_no_dsp_1': 64 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 864 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_6ns_6ns_6ns_11_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_8ns_13_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_9ns_15_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_10ns_17_1_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_3_2_32_1_1': 108 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sptohp_32ns_16_1_no_dsp_1': 27 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_7ns_3ns_2_11_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.929 seconds; current allocated memory: 1.435 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'encoder0_c1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'encoder0_c1' is 9010 from HDL expression: (1'b1 == ap_CS_fsm_state12)
+INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 32 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'encoder0_c1'.
+INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_encoder0_c1_padded_RAM_1WNR_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 11 seconds. CPU system time: 8 seconds. Elapsed time: 18.975 seconds; current allocated memory: 1.514 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'enc1_ir0_Pipeline_VITIS_LOOP_125_1_VITIS_LOOP_126_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'enc1_ir0_Pipeline_VITIS_LOOP_125_1_VITIS_LOOP_126_2' pipeline 'VITIS_LOOP_125_1_VITIS_LOOP_126_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'enc1_ir0_Pipeline_VITIS_LOOP_125_1_VITIS_LOOP_126_2' is 9216 from HDL expression: ((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (cmp28_21856_mid2_reg_54915 == 1'd1) & (1'b1 == ap_CS_fsm_pp0_stage0))
+INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 29 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hcmp_16ns_16ns_1_1_no_dsp_1': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 29 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_11s_7ns_11_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_66ns_129_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6ns_7ns_11_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_9ns_15_1_1': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_3_2_16_1_1': 1152 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_7ns_3ns_2_11_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'enc1_ir0_Pipeline_VITIS_LOOP_125_1_VITIS_LOOP_126_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 3.989 seconds; current allocated memory: 1.583 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7' pipeline 'VITIS_LOOP_161_6_VITIS_LOOP_162_7' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7/m_axi_gmem_out_BREADY' to 0.
+INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 32 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'enc1_ir0_Pipeline_VITIS_LOOP_161_6_VITIS_LOOP_162_7'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 10 seconds. CPU system time: 19 seconds. Elapsed time: 28.233 seconds; current allocated memory: 1.734 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'enc1_ir0' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'enc1_ir0' is 9402 from HDL expression: (1'b1 == ap_CS_fsm_state2)
+INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 32 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'enc1_ir0'.
+INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_enc1_ir0_enc1_ir0_half_112_32_half_112_16_half_3_1_32_half_hal_31_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4 seconds. CPU system time: 2 seconds. Elapsed time: 7.736 seconds; current allocated memory: 1.743 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lane_seg_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/gmem_in' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/gmem_out' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/image_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/out1_ir0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/ctrl' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/status' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/magic' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'lane_seg_top' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'image_r', 'out1_ir0', 'ctrl', 'status', 'magic' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-104] Estimated max fanout for 'lane_seg_top' is 5856, found 2 HDL expressions with this fanout: (1'b1 == ap_CS_fsm_state5), (1'b1 == ap_CS_fsm_state3)
+INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 32 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lane_seg_top'.
+INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_p_ZZ12lane_seg_topPA224_A3_fPA112_A16_DhjRjS5_E9out0_enc0_0_0_0_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 2.533 seconds; current allocated memory: 1.771 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 9 seconds. CPU system time: 0 seconds. Elapsed time: 9.722 seconds; current allocated memory: 1.813 GB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 5 seconds. CPU system time: 1 seconds. Elapsed time: 6.402 seconds; current allocated memory: 1.850 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for lane_seg_top.
+INFO: [VLOG 209-307] Generating Verilog RTL for lane_seg_top.
+INFO: [HLS 200-789] **** Estimated Fmax: 91.32 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 705 seconds. CPU system time: 33 seconds. Elapsed time: 818.089 seconds; current allocated memory: 824.891 MB.
+INFO: [HLS 200-112] Total CPU user time: 711 seconds. Total CPU system time: 34 seconds. Total elapsed time: 824.729 seconds; peak allocated memory: 1.850 GB.
