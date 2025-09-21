@@ -60,6 +60,17 @@ typedef half data_t;  // Change as needed
 #define OUT3_IR2_C     24
 #define OUT3_IR2_EXP_C 144
 
+// ──────────────────────────────────────────────
+// Shapes for Fourth InvertedResidual3 (enc4_ir3)
+// Input:  56x56x24
+// Expansion: 24 → 144
+// Depthwise: stride=2, so output H/W = 28
+// Projection: 144 → 32
+#define OUT4_IR3_H     (OUT3_IR2_H / 2)   // 28
+#define OUT4_IR3_W     (OUT3_IR2_W / 2)   // 28
+#define OUT4_IR3_C     32
+#define OUT4_IR3_EXP_C 144
+
 
 // ──────────────────────────────────────────────
 // Legacy Alias Macros (for backward compatibility, optional)
@@ -76,8 +87,10 @@ typedef half data_t;  // Change as needed
 void lane_seg_top(
     float image[IN_H][IN_W][IN_C],            // Input RGB image
     //data_t out0[OUT_H][OUT_W][OUT_C],          // Output of conv0 + bn + relu6
-	//data_t out1_ir0[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C], // Output of enc0_ir0
-	data_t out2_ir1[OUT2_IR1_H][OUT2_IR1_W][OUT2_IR1_C],    // Output of enc1_ir1
+	//data_t out1_ir0[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C],  // <-- output after encoder1_ir0
+	//data_t out2_ir1[OUT2_IR1_H][OUT2_IR1_W][OUT2_IR1_C],  // <-- output after encoder2_ir1
+	//data_t out3_ir2[OUT3_IR2_H][OUT3_IR2_W][OUT3_IR2_C],  // <-- output after encoder3_ir2
+	data_t out4_ir3[OUT4_IR3_H][OUT4_IR3_W][OUT4_IR3_C],  	// <-- output after encoder4_ir3
 
 
     unsigned int ctrl,                         // AXI-lite control (optional)
@@ -134,6 +147,19 @@ void enc3_ir2(
     data_t pw_biases[OUT3_IR2_C]                                   // 24
 );
 
+
+// ───── Encoder Stage 4: Fourth InvertedResidual (enc4_ir3) ─────
+void enc4_ir3(
+    data_t input[OUT3_IR2_H][OUT3_IR2_W][OUT3_IR2_C],              // 56x56x24
+    data_t output[OUT4_IR3_H][OUT4_IR3_W][OUT4_IR3_C],             // 28x28x32
+
+    data_t exp_weights[1][1][OUT3_IR2_C][OUT4_IR3_EXP_C],          // 1x1: 24→144
+    data_t exp_biases[OUT4_IR3_EXP_C],                             // 144
+    data_t dw_weights[3][3][1][OUT4_IR3_EXP_C],                    // 3x3: 144
+    data_t dw_biases[OUT4_IR3_EXP_C],                              // 144
+    data_t pw_weights[1][1][OUT4_IR3_EXP_C][OUT4_IR3_C],           // 1x1: 144→32
+    data_t pw_biases[OUT4_IR3_C]                                   // 32
+);
 
 
 #endif  // LANE_SEG_TOP_H

@@ -1,6 +1,6 @@
 NOTE: Using modified tcl85t.dll from https://gitenterprise.xilinx.com/ACT/vitis_hls_tcl
 INFO: [HLS 200-10] Running 'Z:/Xilinx/Vitis_HLS/2023.1/bin/unwrapped/win64.o/vitis_hls.exe'
-INFO: [HLS 200-10] For user 'Baron' on host 'desktop-d2nna1u' (Windows NT_amd64 version 6.2) on Sat Sep 20 15:14:12 -0700 2025
+INFO: [HLS 200-10] For user 'Baron' on host 'desktop-d2nna1u' (Windows NT_amd64 version 6.2) on Sat Sep 20 17:05:56 -0700 2025
 INFO: [HLS 200-10] In directory 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls'
 Sourcing Tcl script 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csynth.tcl'
 INFO: [HLS 200-1510] Running: source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csynth.tcl
@@ -26,10 +26,10 @@ INFO: [HLS 200-1510] Running: create_clock -period 20 -name default
 INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
 INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.158 seconds; current allocated memory: 1.039 GB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.178 seconds; current allocated memory: 1.044 GB.
 INFO: [HLS 200-10] Analyzing design file 'lane_seg_hls/lane_seg_support.cpp' ... 
 INFO: [HLS 200-10] Analyzing design file 'lane_seg_hls/lane_seg_top.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 58.262 seconds; current allocated memory: 1.049 GB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 57.682 seconds; current allocated memory: 1.052 GB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
 INFO: [HLS 214-291] Loop 'VITIS_LOOP_168_8' is marked as complete unroll implied by the pipeline pragma (lane_seg_hls/lane_seg_support.cpp:168:20)
 INFO: [HLS 214-291] Loop 'VITIS_LOOP_175_9' is marked as complete unroll implied by the pipeline pragma (lane_seg_hls/lane_seg_support.cpp:175:35)
@@ -55,39 +55,65 @@ INFO: [HLS 214-248] Applying array_partition to 'enc1_dw_b': Complete partitioni
 INFO: [HLS 214-248] Applying array_partition to 'enc1_dw_w': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\01_main\03_lanes_code\weights\enc1_dw_w.h:7:0)
 INFO: [HLS 214-248] Applying array_partition to 'conv0_b': Complete partitioning on dimension 1. (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\01_main\03_lanes_code\weights\encoder_conv0_b.h:7:0)
 INFO: [HLS 214-248] Applying array_partition to 'conv0_w': Complete partitioning on dimension 1. Complete partitioning on dimension 2. Complete partitioning on dimension 3. (C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\01_main\03_lanes_code\weights\encoder_conv0_w.h:7:0)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=3 dim=1' for array 'lane_seg_top(float (*) [224][3], half (*) [56][24], unsigned int, unsigned int&, unsigned int&)::out0_enc0' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:127:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=4 dim=3' for array 'lane_seg_top(float (*) [224][3], half (*) [56][24], unsigned int, unsigned int&, unsigned int&)::out0_enc0' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:127:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=3 dim=2' for array 'lane_seg_top(float (*) [224][3], half (*) [56][24], unsigned int, unsigned int&, unsigned int&)::out0_enc0' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:127:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=2 dim=3' for array 'enc1_ir0(half (*) [112][32], half (*) [112][16], half (*) [3][1][32], half*, half (*) [1][32][16], half*)::dw_out' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:127:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=3 dim=1' for array 'lane_seg_top(float (*) [224][3], half (*) [28][32], unsigned int, unsigned int&, unsigned int&)::out0_enc0' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:127:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=4 dim=3' for array 'lane_seg_top(float (*) [224][3], half (*) [28][32], unsigned int, unsigned int&, unsigned int&)::out0_enc0' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:127:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=3 dim=2' for array 'lane_seg_top(float (*) [224][3], half (*) [28][32], unsigned int, unsigned int&, unsigned int&)::out0_enc0' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:127:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=2 dim=3' for array 'enc1_ir0(half (*) [112][32], half (*) [112][16], half (*) [3][1][32], half*, half (*) [1][32][16], half*)::dw_out' due to pipeline pragma (lane_seg_hls/lane_seg_support.cpp:167:9)
 INFO: [HLS 214-248] Applying array_partition to '_ZZ8enc1_ir0PA112_A32_DhPA112_A16_DhPA3_A1_S_PDhPA1_A32_S2_S8_E6dw_out': Cyclic partitioning with factor 2 on dimension 3. (lane_seg_hls/lane_seg_support.cpp:122:0)
-INFO: [HLS 214-248] Applying array_partition to '_ZZ12lane_seg_topPA224_A3_fPA56_A24_DhjRjS5_E9out0_enc0': Cyclic partitioning with factor 3 on dimension 1. Cyclic partitioning with factor 3 on dimension 2. Cyclic partitioning with factor 4 on dimension 3. (lane_seg_hls/lane_seg_top.cpp:94:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ12lane_seg_topPA224_A3_fPA28_A32_DhjRjS5_E9out0_enc0': Cyclic partitioning with factor 3 on dimension 1. Cyclic partitioning with factor 3 on dimension 2. Cyclic partitioning with factor 4 on dimension 3. (lane_seg_hls/lane_seg_top.cpp:106:0)
 INFO: [HLS 214-115] Multiple burst reads of length 150528 and bit width 32 in loop 'VITIS_LOOP_36_1'(lane_seg_hls/lane_seg_support.cpp:36:22) has been inferred on bundle 'gmem_in'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (lane_seg_hls/lane_seg_support.cpp:36:22)
-INFO: [HLS 214-115] Multiple burst writes of length 75264 and bit width 16 in loop 'VITIS_LOOP_379_10'(lane_seg_hls/lane_seg_support.cpp:379:24) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (lane_seg_hls/lane_seg_support.cpp:379:24)
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 25.565 seconds; current allocated memory: 1.054 GB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.006 seconds; current allocated memory: 1.054 GB.
+INFO: [HLS 214-115] Multiple burst writes of length 25088 and bit width 16 in loop 'VITIS_LOOP_478_10'(lane_seg_hls/lane_seg_support.cpp:478:24) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (lane_seg_hls/lane_seg_support.cpp:478:24)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 26.186 seconds; current allocated memory: 1.058 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.007 seconds; current allocated memory: 1.058 GB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 13 seconds. CPU system time: 0 seconds. Elapsed time: 12.997 seconds; current allocated memory: 1.110 GB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 13 seconds. CPU system time: 0 seconds. Elapsed time: 13.289 seconds; current allocated memory: 1.115 GB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 5 seconds. CPU system time: 0 seconds. Elapsed time: 4.632 seconds; current allocated memory: 1.123 GB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 4.464 seconds; current allocated memory: 1.129 GB.
 INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'encoder0_c1' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_38_3' (lane_seg_hls/lane_seg_support.cpp:38) in function 'encoder0_c1' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_339_3' (lane_seg_hls/lane_seg_support.cpp:339) in function 'enc3_ir2' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_357_7' (lane_seg_hls/lane_seg_support.cpp:357) in function 'enc3_ir2' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_383_13' (lane_seg_hls/lane_seg_support.cpp:383) in function 'enc3_ir2' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_438_3' (lane_seg_hls/lane_seg_support.cpp:438) in function 'enc4_ir3' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_456_7' (lane_seg_hls/lane_seg_support.cpp:456) in function 'enc4_ir3' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_482_13' (lane_seg_hls/lane_seg_support.cpp:482) in function 'enc4_ir3' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_340_3' (lane_seg_hls/lane_seg_support.cpp:340) in function 'enc3_ir2' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_359_7' (lane_seg_hls/lane_seg_support.cpp:359) in function 'enc3_ir2' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_386_13' (lane_seg_hls/lane_seg_support.cpp:386) in function 'enc3_ir2' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_240_3' (lane_seg_hls/lane_seg_support.cpp:240) in function 'enc2_ir1' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_260_7' (lane_seg_hls/lane_seg_support.cpp:260) in function 'enc2_ir1' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_286_13' (lane_seg_hls/lane_seg_support.cpp:286) in function 'enc2_ir1' automatically.
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_339_3' (lane_seg_hls/lane_seg_support.cpp:339) in function 'enc3_ir2' for pipelining.
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_357_7' (lane_seg_hls/lane_seg_support.cpp:357) in function 'enc3_ir2' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_438_3' (lane_seg_hls/lane_seg_support.cpp:438) in function 'enc4_ir3' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_456_7' (lane_seg_hls/lane_seg_support.cpp:456) in function 'enc4_ir3' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_340_3' (lane_seg_hls/lane_seg_support.cpp:340) in function 'enc3_ir2' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_359_7' (lane_seg_hls/lane_seg_support.cpp:359) in function 'enc3_ir2' for pipelining.
 INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_240_3' (lane_seg_hls/lane_seg_support.cpp:240) in function 'enc2_ir1' for pipelining.
 INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_260_7' (lane_seg_hls/lane_seg_support.cpp:260) in function 'enc2_ir1' for pipelining.
-INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_341_4' (lane_seg_hls/lane_seg_support.cpp:341) in function 'enc3_ir2' completely with a factor of 24.
-INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_359_8' (lane_seg_hls/lane_seg_support.cpp:359) in function 'enc3_ir2' completely with a factor of 3.
-INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_360_9' (lane_seg_hls/lane_seg_support.cpp:360) in function 'enc3_ir2' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_440_4' (lane_seg_hls/lane_seg_support.cpp:440) in function 'enc4_ir3' completely with a factor of 24.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_458_8' (lane_seg_hls/lane_seg_support.cpp:458) in function 'enc4_ir3' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_459_9' (lane_seg_hls/lane_seg_support.cpp:459) in function 'enc4_ir3' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_342_4' (lane_seg_hls/lane_seg_support.cpp:342) in function 'enc3_ir2' completely with a factor of 24.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_361_8' (lane_seg_hls/lane_seg_support.cpp:361) in function 'enc3_ir2' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_362_9' (lane_seg_hls/lane_seg_support.cpp:362) in function 'enc3_ir2' completely with a factor of 3.
 INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_242_4' (lane_seg_hls/lane_seg_support.cpp:242) in function 'enc2_ir1' completely with a factor of 16.
 INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_262_8' (lane_seg_hls/lane_seg_support.cpp:262) in function 'enc2_ir1' completely with a factor of 3.
 INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_263_9' (lane_seg_hls/lane_seg_support.cpp:263) in function 'enc2_ir1' completely with a factor of 3.
 INFO: [XFORM 203-102] Partitioning array 'out1_ir0' in dimension 3 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_pw_w' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_pw_w.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_exp_w' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_exp_w.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_exp_w.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w.0.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w.0.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w.1.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w.1.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w.1.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w.2.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w.2.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'enc4_ir3_dw_w.2.2' in dimension 1 automatically.
 INFO: [XFORM 203-102] Partitioning array 'enc3_ir2_pw_w' in dimension 1 automatically.
 INFO: [XFORM 203-102] Partitioning array 'enc3_ir2_pw_w.0' in dimension 1 automatically.
 INFO: [XFORM 203-102] Partitioning array 'enc3_ir2_exp_w' in dimension 1 automatically.
@@ -126,21 +152,30 @@ INFO: [XFORM 203-102] Partitioning array 'enc2_ir1_dw_w.2.1' in dimension 1 auto
 INFO: [XFORM 203-102] Partitioning array 'enc2_ir1_dw_w.2.2' in dimension 1 automatically.
 INFO: [XFORM 203-102] Partitioning array 'enc1_ir0(half (*) [112][32], half (*) [112][16], half (*) [3][1][32], half*, half (*) [1][32][16], half*)dw_out.1' in dimension 3 automatically.
 INFO: [XFORM 203-102] Partitioning array 'enc1_ir0(half (*) [112][32], half (*) [112][16], half (*) [3][1][32], half*, half (*) [1][32][16], half*)dw_out' in dimension 3 automatically.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (lane_seg_hls/lane_seg_support.cpp:357:40) to (lane_seg_hls/lane_seg_support.cpp:357:31) in function 'enc3_ir2'... converting 17 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (lane_seg_hls/lane_seg_support.cpp:456:40) to (lane_seg_hls/lane_seg_support.cpp:456:31) in function 'enc4_ir3'... converting 15 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (lane_seg_hls/lane_seg_support.cpp:359:40) to (lane_seg_hls/lane_seg_support.cpp:359:31) in function 'enc3_ir2'... converting 17 basic blocks.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (lane_seg_hls/lane_seg_support.cpp:260:40) to (lane_seg_hls/lane_seg_support.cpp:260:31) in function 'enc2_ir1'... converting 15 basic blocks.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (lane_seg_hls/lane_seg_support.cpp:127:9) to (lane_seg_hls/lane_seg_support.cpp:126:27) in function 'enc1_ir0'... converting 513 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 64 seconds. CPU system time: 1 seconds. Elapsed time: 65.603 seconds; current allocated memory: 1.192 GB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 66 seconds. CPU system time: 1 seconds. Elapsed time: 66.487 seconds; current allocated memory: 1.197 GB.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_37_2' (lane_seg_hls/lane_seg_support.cpp:37:26) in function 'encoder0_c1'.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_36_1' (lane_seg_hls/lane_seg_support.cpp:36:22) in function 'encoder0_c1'.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_50_4' (lane_seg_hls/lane_seg_support.cpp:50:22) in function 'encoder0_c1'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_337_2' (lane_seg_hls/lane_seg_support.cpp:337:27) in function 'enc3_ir2'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_336_1' (lane_seg_hls/lane_seg_support.cpp:336:23) in function 'enc3_ir2'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_356_6' (lane_seg_hls/lane_seg_support.cpp:356:27) in function 'enc3_ir2'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_355_5' (lane_seg_hls/lane_seg_support.cpp:355:23) in function 'enc3_ir2'.
-WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_381_12' (lane_seg_hls/lane_seg_support.cpp:381:32) in function 'enc3_ir2' the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_437_2' (lane_seg_hls/lane_seg_support.cpp:437:27) in function 'enc4_ir3'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_436_1' (lane_seg_hls/lane_seg_support.cpp:436:23) in function 'enc4_ir3'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_455_6' (lane_seg_hls/lane_seg_support.cpp:455:27) in function 'enc4_ir3'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_454_5' (lane_seg_hls/lane_seg_support.cpp:454:23) in function 'enc4_ir3'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_480_12' (lane_seg_hls/lane_seg_support.cpp:480:32) in function 'enc4_ir3' the outer loop is not a perfect loop.
 Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-960.html
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_380_11' (lane_seg_hls/lane_seg_support.cpp:380:28) in function 'enc3_ir2'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_379_10' (lane_seg_hls/lane_seg_support.cpp:379:24) in function 'enc3_ir2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_479_11' (lane_seg_hls/lane_seg_support.cpp:479:28) in function 'enc4_ir3'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_478_10' (lane_seg_hls/lane_seg_support.cpp:478:24) in function 'enc4_ir3'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_338_2' (lane_seg_hls/lane_seg_support.cpp:338:27) in function 'enc3_ir2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_336_1' (lane_seg_hls/lane_seg_support.cpp:336:23) in function 'enc3_ir2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_358_6' (lane_seg_hls/lane_seg_support.cpp:358:27) in function 'enc3_ir2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_356_5' (lane_seg_hls/lane_seg_support.cpp:356:23) in function 'enc3_ir2'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_384_12' (lane_seg_hls/lane_seg_support.cpp:384:32) in function 'enc3_ir2' the outer loop is not a perfect loop.
+Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-960.html
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_383_11' (lane_seg_hls/lane_seg_support.cpp:383:28) in function 'enc3_ir2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_381_10' (lane_seg_hls/lane_seg_support.cpp:381:24) in function 'enc3_ir2'.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_238_2' (lane_seg_hls/lane_seg_support.cpp:238:27) in function 'enc2_ir1'.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_237_1' (lane_seg_hls/lane_seg_support.cpp:237:23) in function 'enc2_ir1'.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_256_6' (lane_seg_hls/lane_seg_support.cpp:256:27) in function 'enc2_ir1'.
@@ -151,7 +186,7 @@ INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_282_11' (lane_seg_hls/l
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_281_10' (lane_seg_hls/lane_seg_support.cpp:281:24) in function 'enc2_ir1'.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_125_1' (lane_seg_hls/lane_seg_support.cpp:125:23) in function 'enc1_ir0'.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_165_6' (lane_seg_hls/lane_seg_support.cpp:165:23) in function 'enc1_ir0'.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 17 seconds. CPU system time: 0 seconds. Elapsed time: 16.733 seconds; current allocated memory: 1.328 GB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 16 seconds. CPU system time: 0 seconds. Elapsed time: 17.39 seconds; current allocated memory: 1.371 GB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'lane_seg_top' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -162,13 +197,13 @@ INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for
 INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.937 seconds; current allocated memory: 1.335 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.973 seconds; current allocated memory: 1.378 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.145 seconds; current allocated memory: 1.336 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.114 seconds; current allocated memory: 1.380 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -178,13 +213,13 @@ INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 5, loop 'VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.357 seconds; current allocated memory: 1.336 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.263 seconds; current allocated memory: 1.380 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.153 seconds; current allocated memory: 1.336 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.149 seconds; current allocated memory: 1.380 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -194,25 +229,25 @@ INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_50_4_VITIS_LOOP_51_5'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 10, Final II = 10, Depth = 41, loop 'VITIS_LOOP_50_4_VITIS_LOOP_51_5'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 145 seconds. CPU system time: 0 seconds. Elapsed time: 145.009 seconds; current allocated memory: 1.362 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 144 seconds. CPU system time: 0 seconds. Elapsed time: 144.425 seconds; current allocated memory: 1.407 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.879 seconds; current allocated memory: 1.362 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.854 seconds; current allocated memory: 1.407 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'encoder0_c1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.221 seconds; current allocated memory: 1.362 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.219 seconds; current allocated memory: 1.407 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.313 seconds; current allocated memory: 1.362 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.313 seconds; current allocated memory: 1.407 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'enc1_ir0_Pipeline_VITIS_LOOP_125_1_VITIS_LOOP_126_2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -220,13 +255,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_125_1_VITIS_LOOP_126_2'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 10, Final II = 10, Depth = 34, loop 'VITIS_LOOP_125_1_VITIS_LOOP_126_2'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 293 seconds. CPU system time: 0 seconds. Elapsed time: 293.46 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 292 seconds. CPU system time: 0 seconds. Elapsed time: 292.509 seconds; current allocated memory: 1.480 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 6 seconds. CPU system time: 0 seconds. Elapsed time: 6.063 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 6 seconds. CPU system time: 0 seconds. Elapsed time: 6.137 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'enc1_ir0_Pipeline_VITIS_LOOP_165_6_VITIS_LOOP_166_7' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -234,25 +269,25 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_165_6_VITIS_LOOP_166_7'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 10, Final II = 10, Depth = 41, loop 'VITIS_LOOP_165_6_VITIS_LOOP_166_7'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 107 seconds. CPU system time: 0 seconds. Elapsed time: 107.136 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 107 seconds. CPU system time: 1 seconds. Elapsed time: 107.234 seconds; current allocated memory: 1.480 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.103 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.105 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'enc1_ir0' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.642 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.646 seconds; current allocated memory: 1.480 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.287 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.291 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'enc2_ir1_Pipeline_VITIS_LOOP_237_1_VITIS_LOOP_238_2_VITIS_LOOP_240_3' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -260,35 +295,35 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_237_1_VITIS_LOOP_238_2_VITIS_LOOP_240_3'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 20, loop 'VITIS_LOOP_237_1_VITIS_LOOP_238_2_VITIS_LOOP_240_3'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 58 seconds. CPU system time: 0 seconds. Elapsed time: 58.752 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 60 seconds. CPU system time: 0 seconds. Elapsed time: 60.557 seconds; current allocated memory: 1.480 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.365 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.384 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7'.
-WARNING: [HLS 200-885] The II Violation in module 'enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7' (loop 'VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7'): Unable to schedule 'load' operation ('exp_out_1_load_1', lane_seg_hls/lane_seg_support.cpp:267) on array 'exp_out_1' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'exp_out_1'.
+WARNING: [HLS 200-885] The II Violation in module 'enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7' (loop 'VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7'): Unable to schedule 'load' operation ('exp_out_2_load_1', lane_seg_hls/lane_seg_support.cpp:267) on array 'exp_out_2' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'exp_out_2'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
-WARNING: [HLS 200-885] The II Violation in module 'enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7' (loop 'VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7'): Unable to schedule 'load' operation ('exp_out_1_load_3', lane_seg_hls/lane_seg_support.cpp:267) on array 'exp_out_1' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'exp_out_1'.
+WARNING: [HLS 200-885] The II Violation in module 'enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7' (loop 'VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7'): Unable to schedule 'load' operation ('exp_out_2_load_3', lane_seg_hls/lane_seg_support.cpp:267) on array 'exp_out_2' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'exp_out_2'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
-WARNING: [HLS 200-885] The II Violation in module 'enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7' (loop 'VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7'): Unable to schedule 'load' operation ('exp_out_1_load_5', lane_seg_hls/lane_seg_support.cpp:267) on array 'exp_out_1' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'exp_out_1'.
+WARNING: [HLS 200-885] The II Violation in module 'enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7' (loop 'VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7'): Unable to schedule 'load' operation ('exp_out_2_load_5', lane_seg_hls/lane_seg_support.cpp:267) on array 'exp_out_2' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'exp_out_2'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
-WARNING: [HLS 200-885] The II Violation in module 'enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7' (loop 'VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7'): Unable to schedule 'load' operation ('exp_out_1_load_7', lane_seg_hls/lane_seg_support.cpp:267) on array 'exp_out_1' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'exp_out_1'.
+WARNING: [HLS 200-885] The II Violation in module 'enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7' (loop 'VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7'): Unable to schedule 'load' operation ('exp_out_2_load_7', lane_seg_hls/lane_seg_support.cpp:267) on array 'exp_out_2' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'exp_out_2'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 14, loop 'VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 57 seconds. CPU system time: 0 seconds. Elapsed time: 57.728 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 59 seconds. CPU system time: 0 seconds. Elapsed time: 59.839 seconds; current allocated memory: 1.480 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.328 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.429 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'enc2_ir1_Pipeline_VITIS_LOOP_286_13' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -296,114 +331,186 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_286_13'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 4, loop 'VITIS_LOOP_286_13'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 56 seconds. CPU system time: 0 seconds. Elapsed time: 56.43 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 59 seconds. CPU system time: 0 seconds. Elapsed time: 59.36 seconds; current allocated memory: 1.480 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.139 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.149 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'enc2_ir1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.271 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.289 seconds; current allocated memory: 1.480 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.224 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.228 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3' 
+INFO: [HLS 200-42] -- Implementing module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3'.
-WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3' (loop 'VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3'): Unable to schedule 'load' operation ('out2_ir1_load_1', lane_seg_hls/lane_seg_support.cpp:337) on array 'out2_ir1' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'out2_ir1'.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3'.
+WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3' (loop 'VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3'): Unable to schedule 'load' operation ('out2_ir1_load_1', lane_seg_hls/lane_seg_support.cpp:338) on array 'out2_ir1' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'out2_ir1'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
-WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3' (loop 'VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3'): Unable to schedule 'load' operation ('out2_ir1_load_3', lane_seg_hls/lane_seg_support.cpp:337) on array 'out2_ir1' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'out2_ir1'.
+WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3' (loop 'VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3'): Unable to schedule 'load' operation ('out2_ir1_load_3', lane_seg_hls/lane_seg_support.cpp:338) on array 'out2_ir1' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'out2_ir1'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
-WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3' (loop 'VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3'): Unable to schedule 'load' operation ('out2_ir1_load_5', lane_seg_hls/lane_seg_support.cpp:337) on array 'out2_ir1' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'out2_ir1'.
+WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3' (loop 'VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3'): Unable to schedule 'load' operation ('out2_ir1_load_5', lane_seg_hls/lane_seg_support.cpp:338) on array 'out2_ir1' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'out2_ir1'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
-WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3' (loop 'VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3'): Unable to schedule 'load' operation ('out2_ir1_load_7', lane_seg_hls/lane_seg_support.cpp:337) on array 'out2_ir1' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'out2_ir1'.
+WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3' (loop 'VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3'): Unable to schedule 'load' operation ('out2_ir1_load_7', lane_seg_hls/lane_seg_support.cpp:338) on array 'out2_ir1' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'out2_ir1'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
-WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3' (loop 'VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3'): Unable to schedule 'load' operation ('out2_ir1_load_21', lane_seg_hls/lane_seg_support.cpp:337) on array 'out2_ir1' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'out2_ir1'.
+WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3' (loop 'VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3'): Unable to schedule 'load' operation ('out2_ir1_load_21', lane_seg_hls/lane_seg_support.cpp:338) on array 'out2_ir1' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'out2_ir1'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 12, Depth = 29, loop 'VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3'
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 12, Depth = 29, loop 'VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 60 seconds. CPU system time: 0 seconds. Elapsed time: 59.586 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 62 seconds. CPU system time: 0 seconds. Elapsed time: 62.276 seconds; current allocated memory: 1.480 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.595 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.623 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7' 
+INFO: [HLS 200-42] -- Implementing module 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7'.
-WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7' (loop 'VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7'): Unable to schedule 'load' operation ('exp_out_load_1', lane_seg_hls/lane_seg_support.cpp:364) on array 'exp_out' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'exp_out'.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7'.
+WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7' (loop 'VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7'): Unable to schedule 'load' operation ('exp_out_1_load_1', lane_seg_hls/lane_seg_support.cpp:366) on array 'exp_out_1' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'exp_out_1'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
-WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7' (loop 'VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7'): Unable to schedule 'load' operation ('exp_out_load_3', lane_seg_hls/lane_seg_support.cpp:364) on array 'exp_out' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'exp_out'.
+WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7' (loop 'VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7'): Unable to schedule 'load' operation ('exp_out_1_load_3', lane_seg_hls/lane_seg_support.cpp:366) on array 'exp_out_1' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'exp_out_1'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
-WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7' (loop 'VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7'): Unable to schedule 'load' operation ('exp_out_load_5', lane_seg_hls/lane_seg_support.cpp:364) on array 'exp_out' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'exp_out'.
+WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7' (loop 'VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7'): Unable to schedule 'load' operation ('exp_out_1_load_5', lane_seg_hls/lane_seg_support.cpp:366) on array 'exp_out_1' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'exp_out_1'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
-WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7' (loop 'VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7'): Unable to schedule 'load' operation ('exp_out_load_7', lane_seg_hls/lane_seg_support.cpp:364) on array 'exp_out' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'exp_out'.
+WARNING: [HLS 200-885] The II Violation in module 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7' (loop 'VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7'): Unable to schedule 'load' operation ('exp_out_1_load_7', lane_seg_hls/lane_seg_support.cpp:366) on array 'exp_out_1' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'exp_out_1'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 14, loop 'VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7'
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 14, loop 'VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 58 seconds. CPU system time: 0 seconds. Elapsed time: 57.791 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 60 seconds. CPU system time: 0 seconds. Elapsed time: 60.206 seconds; current allocated memory: 1.480 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.336 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.354 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'enc3_ir2_Pipeline_VITIS_LOOP_383_13' 
+INFO: [HLS 200-42] -- Implementing module 'enc3_ir2_Pipeline_VITIS_LOOP_386_13' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_383_13'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 5, loop 'VITIS_LOOP_383_13'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_386_13'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 4, loop 'VITIS_LOOP_386_13'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 57 seconds. CPU system time: 0 seconds. Elapsed time: 56.371 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 58 seconds. CPU system time: 0 seconds. Elapsed time: 59.074 seconds; current allocated memory: 1.480 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.155 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.148 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'enc3_ir2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.293 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.278 seconds; current allocated memory: 1.480 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.273 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.222 seconds; current allocated memory: 1.480 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3'.
+WARNING: [HLS 200-885] The II Violation in module 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3' (loop 'VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3'): Unable to schedule 'load' operation ('out3_ir2_load_1', lane_seg_hls/lane_seg_support.cpp:437) on array 'out3_ir2' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'out3_ir2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3' (loop 'VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3'): Unable to schedule 'load' operation ('out3_ir2_load_3', lane_seg_hls/lane_seg_support.cpp:437) on array 'out3_ir2' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'out3_ir2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3' (loop 'VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3'): Unable to schedule 'load' operation ('out3_ir2_load_5', lane_seg_hls/lane_seg_support.cpp:437) on array 'out3_ir2' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'out3_ir2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3' (loop 'VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3'): Unable to schedule 'load' operation ('out3_ir2_load_7', lane_seg_hls/lane_seg_support.cpp:437) on array 'out3_ir2' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'out3_ir2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3' (loop 'VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3'): Unable to schedule 'load' operation ('out3_ir2_load_21', lane_seg_hls/lane_seg_support.cpp:437) on array 'out3_ir2' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'out3_ir2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 12, Depth = 29, loop 'VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 62 seconds. CPU system time: 0 seconds. Elapsed time: 62.31 seconds; current allocated memory: 1.480 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.641 seconds; current allocated memory: 1.480 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7'.
+WARNING: [HLS 200-885] The II Violation in module 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7' (loop 'VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7'): Unable to schedule 'load' operation ('exp_out_load_1', lane_seg_hls/lane_seg_support.cpp:463) on array 'exp_out' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'exp_out'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7' (loop 'VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7'): Unable to schedule 'load' operation ('exp_out_load_3', lane_seg_hls/lane_seg_support.cpp:463) on array 'exp_out' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'exp_out'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7' (loop 'VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7'): Unable to schedule 'load' operation ('exp_out_load_5', lane_seg_hls/lane_seg_support.cpp:463) on array 'exp_out' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'exp_out'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7' (loop 'VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7'): Unable to schedule 'load' operation ('exp_out_load_7', lane_seg_hls/lane_seg_support.cpp:463) on array 'exp_out' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'exp_out'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 14, loop 'VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 59 seconds. CPU system time: 0 seconds. Elapsed time: 59.85 seconds; current allocated memory: 1.480 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.364 seconds; current allocated memory: 1.480 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'enc4_ir3_Pipeline_VITIS_LOOP_482_13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_482_13'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 5, loop 'VITIS_LOOP_482_13'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 58 seconds. CPU system time: 0 seconds. Elapsed time: 58.392 seconds; current allocated memory: 1.480 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.161 seconds; current allocated memory: 1.480 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'enc4_ir3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.297 seconds; current allocated memory: 1.480 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.29 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'lane_seg_top' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.268 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.297 seconds; current allocated memory: 1.480 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.798 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.781 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'encoder0_c1_Pipeline_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'encoder0_c1_Pipeline_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.126 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.273 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -422,7 +529,7 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_L
 WARNING: [RTGEN 206-101] Setting dangling out port 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3/m_axi_gmem_in_ARUSER' to 0.
 INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8ns_8ns_8ns_16_4_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'encoder0_c1_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_VITIS_LOOP_38_3'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.404 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.472 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -436,7 +543,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_8ns_9ns_16_1_1': 3 instance(s)
 INFO: [RTGEN 206-100] Generating core module 'sptohp_32ns_16_1_no_dsp_1': 3 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'urem_7ns_3ns_2_11_1': 2 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'encoder0_c1_Pipeline_VITIS_LOOP_50_4_VITIS_LOOP_51_5'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.438 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.532 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'encoder0_c1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -444,7 +551,7 @@ INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 5
 INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 52 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'encoder0_c1'.
 INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_encoder0_c1_padded_RAM_1WNR_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4 seconds. CPU system time: 7 seconds. Elapsed time: 10.508 seconds; current allocated memory: 1.434 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4 seconds. CPU system time: 6 seconds. Elapsed time: 10.874 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'enc1_ir0_Pipeline_VITIS_LOOP_125_1_VITIS_LOOP_126_2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -459,7 +566,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_7ns_9ns_15_1_1': 5 instance(s)
 INFO: [RTGEN 206-100] Generating core module 'mux_3_2_16_1_1': 288 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'urem_7ns_3ns_2_11_1': 2 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'enc1_ir0_Pipeline_VITIS_LOOP_125_1_VITIS_LOOP_126_2'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 4.362 seconds; current allocated memory: 1.435 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 5 seconds. CPU system time: 0 seconds. Elapsed time: 4.704 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'enc1_ir0_Pipeline_VITIS_LOOP_165_6_VITIS_LOOP_166_7' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -467,7 +574,7 @@ INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'enc1_ir0_Pipeline
 INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 52 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 52 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'enc1_ir0_Pipeline_VITIS_LOOP_165_6_VITIS_LOOP_166_7'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 12 seconds. CPU system time: 19 seconds. Elapsed time: 31.68 seconds; current allocated memory: 1.440 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 14 seconds. CPU system time: 21 seconds. Elapsed time: 34.265 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'enc1_ir0' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -475,7 +582,7 @@ INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 5
 INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 52 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'enc1_ir0'.
 INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_enc1_ir0_enc1_ir0_half_112_32_half_112_16_half_3_1_32_half_hal_31_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 3 seconds. Elapsed time: 5.548 seconds; current allocated memory: 1.440 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 4 seconds. Elapsed time: 7.687 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'enc2_ir1_Pipeline_VITIS_LOOP_237_1_VITIS_LOOP_238_2_VITIS_LOOP_240_3' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -518,7 +625,7 @@ INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc2_ir1_Pipeline_VITIS_L
 INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc2_ir1_Pipeline_VITIS_LOOP_237_1_VITIS_LOOP_238_2_VITIS_LOOP_240_3_enc2_ir1pcA' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc2_ir1_Pipeline_VITIS_LOOP_237_1_VITIS_LOOP_238_2_VITIS_LOOP_240_3_enc2_ir1qcK' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc2_ir1_Pipeline_VITIS_LOOP_237_1_VITIS_LOOP_238_2_VITIS_LOOP_240_3_enc2_ir1rcU' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.97 seconds; current allocated memory: 1.440 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.896 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -547,7 +654,7 @@ INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc2_ir1_Pipeline_VITIS_L
 INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7_enc2_ir1zec' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7_enc2_ir1Aem' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc2_ir1_Pipeline_VITIS_LOOP_255_5_VITIS_LOOP_256_6_VITIS_LOOP_260_7_enc2_ir1Bew' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.457 seconds; current allocated memory: 1.440 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.964 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'enc2_ir1_Pipeline_VITIS_LOOP_286_13' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -556,138 +663,246 @@ INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 1
 INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'enc2_ir1_Pipeline_VITIS_LOOP_286_13'.
 INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc2_ir1_Pipeline_VITIS_LOOP_286_13_enc2_ir1_pw_w_0_0_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.411 seconds; current allocated memory: 1.440 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.622 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'enc2_ir1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 16 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 16 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'enc2_ir1'.
-INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_enc2_ir1_exp_out_1_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_enc2_ir1_dw_out_1_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_enc2_ir1_exp_out_2_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_enc2_ir1_dw_out_2_RAM_AUTO_1R1W' using auto RAMs.
 INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc2_ir1_enc2_ir1_pw_b_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.974 seconds; current allocated memory: 1.440 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.203 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3' 
+INFO: [HLS 200-10] -- Generating RTL for module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_b_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2CeG' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2DeQ' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_1_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Ee0' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_2_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Ffa' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_3_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Gfk' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_4_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Hfu' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_5_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2IfE' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_6_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2JfO' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_7_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2KfY' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_8_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Lf8' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_9_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Mgi' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_10_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Ngs' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_11_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2OgC' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_12_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2PgM' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_13_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2QgW' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_14_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Rg6' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_15_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Shg' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_16_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Thq' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_17_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2UhA' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_18_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2VhK' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_19_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2WhU' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_20_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Xh4' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_21_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Yie' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_22_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Zio' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2_exp_w_0_0_23_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir20iy' due to the length limit 80
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3' pipeline 'VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3' pipeline type 'loop pipeline'
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_b_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2CeG' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2DeQ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_1_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Ee0' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_2_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Ffa' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_3_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Gfk' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_4_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Hfu' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_5_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2IfE' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_6_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2JfO' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_7_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2KfY' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_8_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Lf8' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_9_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Mgi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_10_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Ngs' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_11_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2OgC' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_12_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2PgM' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_13_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2QgW' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_14_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Rg6' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_15_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Shg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_16_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Thq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_17_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2UhA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_18_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2VhK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_19_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2WhU' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_20_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Xh4' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_21_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Yie' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_22_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Zio' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2_exp_w_0_0_23_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir20iy' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3' pipeline 'VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 2 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'hcmp_16ns_16ns_1_1_no_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 2 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_6ns_12ns_17_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3'.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2CeG' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2DeQ' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Ee0' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Ffa' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Gfk' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Hfu' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2IfE' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2JfO' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2KfY' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Lf8' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Mgi' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Ngs' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2OgC' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2PgM' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2QgW' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Rg6' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Shg' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Thq' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2UhA' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2VhK' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2WhU' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Xh4' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Yie' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir2Zio' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_337_2_VITIS_LOOP_339_3_enc3_ir20iy' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.918 seconds; current allocated memory: 1.440 GB.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3'.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2CeG' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2DeQ' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Ee0' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Ffa' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Gfk' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Hfu' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2IfE' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2JfO' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2KfY' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Lf8' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Mgi' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Ngs' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2OgC' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2PgM' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2QgW' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Rg6' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Shg' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Thq' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2UhA' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2VhK' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2WhU' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Xh4' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Yie' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir2Zio' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_336_1_VITIS_LOOP_338_2_VITIS_LOOP_340_3_enc3_ir20iy' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.254 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7' 
+INFO: [HLS 200-10] -- Generating RTL for module 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir2_dw_b_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir21iI' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir2_dw_w_0_0_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir22iS' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir2_dw_w_0_1_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir23i2' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir2_dw_w_0_2_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir24jc' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir2_dw_w_1_0_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir25jm' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir2_dw_w_1_1_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir26jw' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir2_dw_w_1_2_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir27jG' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir2_dw_w_2_0_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir28jQ' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir2_dw_w_2_1_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir29j0' due to the length limit 80
-INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir2_dw_w_2_2_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir2bak' due to the length limit 80
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7' pipeline 'VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7' pipeline type 'loop pipeline'
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir2_dw_b_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir21iI' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir2_dw_w_0_0_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir22iS' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir2_dw_w_0_1_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir23i2' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir2_dw_w_0_2_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir24jc' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir2_dw_w_1_0_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir25jm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir2_dw_w_1_1_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir26jw' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir2_dw_w_1_2_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir27jG' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir2_dw_w_2_0_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir28jQ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir2_dw_w_2_1_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir29j0' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir2_dw_w_2_2_0_ROM_AUTO_1R' to 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir2bak' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7' pipeline 'VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 2 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'hcmp_16ns_16ns_1_1_no_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 2 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7'.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir21iI' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir22iS' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir23i2' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir24jc' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir25jm' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir26jw' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir27jG' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir28jQ' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir29j0' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_355_5_VITIS_LOOP_356_6_VITIS_LOOP_357_7_enc3_ir2bak' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.509 seconds; current allocated memory: 1.440 GB.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7'.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir21iI' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir22iS' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir23i2' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir24jc' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir25jm' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir26jw' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir27jG' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir28jQ' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir29j0' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_356_5_VITIS_LOOP_358_6_VITIS_LOOP_359_7_enc3_ir2bak' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.671 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'enc3_ir2_Pipeline_VITIS_LOOP_383_13' 
+INFO: [HLS 200-10] -- Generating RTL for module 'enc3_ir2_Pipeline_VITIS_LOOP_386_13' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'enc3_ir2_Pipeline_VITIS_LOOP_383_13' pipeline 'VITIS_LOOP_383_13' pipeline type 'loop pipeline'
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_AWVALID' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_AWADDR' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_AWID' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_AWLEN' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_AWSIZE' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_AWBURST' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_AWLOCK' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_AWCACHE' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_AWPROT' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_AWQOS' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_AWREGION' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_AWUSER' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'enc3_ir2_Pipeline_VITIS_LOOP_383_13/m_axi_gmem_out_BREADY' to 0.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'enc3_ir2_Pipeline_VITIS_LOOP_386_13' pipeline 'VITIS_LOOP_386_13' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'enc3_ir2_Pipeline_VITIS_LOOP_383_13'.
-INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_383_13_enc3_ir2_pw_w_0_0_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.697 seconds; current allocated memory: 1.440 GB.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'enc3_ir2_Pipeline_VITIS_LOOP_386_13'.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_Pipeline_VITIS_LOOP_386_13_enc3_ir2_pw_w_0_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 1.398 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'enc3_ir2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 2 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 2 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'enc3_ir2'.
-INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_enc3_ir2_exp_out_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_enc3_ir2_dw_out_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_enc3_ir2_exp_out_1_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_enc3_ir2_dw_out_1_RAM_AUTO_1R1W' using auto RAMs.
 INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc3_ir2_enc3_ir2_pw_b_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.879 seconds; current allocated memory: 1.440 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.814 seconds; current allocated memory: 1.480 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_b_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bbk' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_0_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bck' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_1_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bdk' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_2_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bek' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_3_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bfk' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_4_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bgk' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_5_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bhl' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_6_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bil' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_7_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bjl' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_8_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bkl' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_9_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bll' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_10_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bml' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_11_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bnm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_12_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bom' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_13_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bpm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_14_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bqm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_15_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3brm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_16_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bsm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_17_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3btn' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_18_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bun' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_19_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bvn' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_20_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bwn' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_21_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bxn' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_22_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3byn' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3_exp_w_0_0_23_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bzo' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3' pipeline 'VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hcmp_16ns_16ns_1_1_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6ns_12ns_17_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3'.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bbk' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bck' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bdk' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bek' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bfk' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bgk' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bhl' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bil' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bjl' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bkl' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bll' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bml' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bnm' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bpm' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bqm' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3brm' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bsm' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3btn' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bun' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bvn' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bwn' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bxn' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3byn' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_436_1_VITIS_LOOP_437_2_VITIS_LOOP_438_3_enc4_ir3bzo' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.368 seconds; current allocated memory: 1.480 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3_dw_b_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bAo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3_dw_w_0_0_0_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bBo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3_dw_w_0_1_0_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bCo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3_dw_w_0_2_0_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bDo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3_dw_w_1_0_0_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bEo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3_dw_w_1_1_0_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bFp' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3_dw_w_1_2_0_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bGp' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3_dw_w_2_0_0_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bHp' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3_dw_w_2_1_0_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bIp' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3_dw_w_2_2_0_ROM_AUTO_1R' to 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bJp' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7' pipeline 'VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hcmp_16ns_16ns_1_1_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7'.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bAo' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bBo' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bCo' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bDo' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bEo' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bFp' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bGp' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bHp' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bIp' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_454_5_VITIS_LOOP_455_6_VITIS_LOOP_456_7_enc4_ir3bJp' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 2.755 seconds; current allocated memory: 1.480 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'enc4_ir3_Pipeline_VITIS_LOOP_482_13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'enc4_ir3_Pipeline_VITIS_LOOP_482_13' pipeline 'VITIS_LOOP_482_13' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'enc4_ir3_Pipeline_VITIS_LOOP_482_13/m_axi_gmem_out_BREADY' to 0.
+INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'enc4_ir3_Pipeline_VITIS_LOOP_482_13'.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_Pipeline_VITIS_LOOP_482_13_enc4_ir3_pw_w_0_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.951 seconds; current allocated memory: 1.480 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'enc4_ir3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'enc4_ir3'.
+INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_enc4_ir3_exp_out_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_enc4_ir3_dw_out_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_enc4_ir3_enc4_ir3_pw_b_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.917 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'lane_seg_top' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -695,25 +910,25 @@ WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronou
 INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/gmem_in' to 'm_axi'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/gmem_out' to 'm_axi'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/image_r' to 's_axilite & ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/out3_ir2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/out4_ir3' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/ctrl' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/status' to 's_axilite & ap_ovld'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/magic' to 's_axilite & ap_vld'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'lane_seg_top' to 's_axilite & ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Bundling port 'image_r', 'out3_ir2', 'ctrl', 'status', 'magic' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Bundling port 'image_r', 'out4_ir3', 'ctrl', 'status', 'magic' and 'return' to AXI-Lite port control.
 INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_2_full_dsp_1': 52 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_2_max_dsp_1': 52 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'lane_seg_top'.
-INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_p_ZZ12lane_seg_topPA224_A3_fPA56_A24_DhjRjS5_E9out0_enc0_0_0_0_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_p_ZZ12lane_seg_topPA224_A3_fPA28_A32_DhjRjS5_E9out0_enc0_0_0_0_RAM_AUTO_1R1W' using auto RAMs.
 INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_out1_ir0_0_RAM_AUTO_1R1W' using auto RAMs.
 INFO: [RTMG 210-278] Implementing memory 'lane_seg_top_out2_ir1_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.683 seconds; current allocated memory: 1.440 GB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 7 seconds. CPU system time: 2 seconds. Elapsed time: 10.525 seconds; current allocated memory: 1.440 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.009 seconds; current allocated memory: 1.480 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 8 seconds. CPU system time: 2 seconds. Elapsed time: 12.931 seconds; current allocated memory: 1.480 GB.
 INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 6 seconds. CPU system time: 1 seconds. Elapsed time: 6.929 seconds; current allocated memory: 1.440 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 7 seconds. CPU system time: 1 seconds. Elapsed time: 8.797 seconds; current allocated memory: 1.480 GB.
 INFO: [VHDL 208-304] Generating VHDL RTL for lane_seg_top.
 INFO: [VLOG 209-307] Generating Verilog RTL for lane_seg_top.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 68.49 MHz
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1060 seconds. CPU system time: 37 seconds. Elapsed time: 1182.06 seconds; current allocated memory: 409.715 MB.
-INFO: [HLS 200-112] Total CPU user time: 1066 seconds. Total CPU system time: 38 seconds. Total elapsed time: 1188.99 seconds; peak allocated memory: 1.440 GB.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1267 seconds. CPU system time: 43 seconds. Elapsed time: 1400.1 seconds; current allocated memory: 446.785 MB.
+INFO: [HLS 200-112] Total CPU user time: 1273 seconds. Total CPU system time: 44 seconds. Total elapsed time: 1406.75 seconds; peak allocated memory: 1.480 GB.
