@@ -27,13 +27,21 @@
 #include "C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\01_main\03_lanes_code\weights\enc2_ir1_pw_w.h"
 #include "C:\Users\Baron\Desktop\EE_297_Repo\EE_297\ML_PATH_EE297\EE297_env\01_main\03_lanes_code\weights\enc2_ir1_pw_b.h"
 
-// enc2_ir2 (InvertedResidual3)
+// enc2_ir2 (InvertedResidual2)
 #include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc3_ir2_exp_w.h"
 #include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc3_ir2_exp_b.h"
 #include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc3_ir2_dw_w.h"
 #include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc3_ir2_dw_b.h"
 #include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc3_ir2_pw_w.h"
 #include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc3_ir2_pw_b.h"
+
+// enc4_ir3 (InvertedResidual3)
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc4_ir3_exp_w.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc4_ir3_exp_b.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc4_ir3_dw_w.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc4_ir3_dw_b.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc4_ir3_pw_w.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc4_ir3_pw_b.h"
 
 
 
@@ -49,7 +57,9 @@ void lane_seg_top(
     //data_t out0[OUT_H][OUT_W][OUT_C],
 	//data_t out1_ir0[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C],  // <-- output after encoder1_ir0
 	//data_t out2_ir1[OUT2_IR1_H][OUT2_IR1_W][OUT2_IR1_C],  // <-- output after encoder2_ir1
-	data_t out3_ir2[OUT3_IR2_H][OUT3_IR2_W][OUT3_IR2_C],  // <-- output after encoder3_ir2
+	//data_t out3_ir2[OUT3_IR2_H][OUT3_IR2_W][OUT3_IR2_C],  // <-- output after encoder3_ir2
+    data_t out4_ir3[OUT4_IR3_H][OUT4_IR3_W][OUT4_IR3_C],  	// <-- output after encoder4_ir3
+
 
 	// Proc Ctrl Signals
     unsigned int ctrl,
@@ -64,7 +74,8 @@ void lane_seg_top(
     //#pragma HLS INTERFACE m_axi port=out0  offset=slave bundle=gmem_out depth=(OUT_H * OUT_W * OUT_C)
 	//#pragma HLS INTERFACE m_axi port=out1_ir0  offset=slave bundle=gmem_out depth=(OUT1_IR0_H * OUT1_IR0_W * OUT1_IR0_C)
 	//#pragma HLS INTERFACE m_axi port=out2_ir1 offset=slave bundle=gmem_out depth=(OUT2_IR1_H * OUT2_IR1_W * OUT2_IR1_C)
-	#pragma HLS INTERFACE m_axi port=out3_ir2 offset=slave bundle=gmem_out depth=(OUT3_IR2_H * OUT3_IR2_W * OUT3_IR2_C)
+	//#pragma HLS INTERFACE m_axi port=out3_ir2 offset=slave bundle=gmem_out depth=(OUT3_IR2_H * OUT3_IR2_W * OUT3_IR2_C)
+	#pragma HLS INTERFACE m_axi port=out4_ir3 offset=slave bundle=gmem_out depth=(OUT4_IR3_H * OUT4_IR3_W * OUT4_IR3_C)
 
 
 #endif
@@ -74,7 +85,8 @@ void lane_seg_top(
     //#pragma HLS INTERFACE s_axilite port=out0    bundle=control
 	//#pragma HLS INTERFACE s_axilite port=out1_ir0    bundle=control
 	//#pragma HLS INTERFACE s_axilite port=out2_ir1    bundle=control
-	#pragma HLS INTERFACE s_axilite port=out3_ir2 bundle=control
+	//#pragma HLS INTERFACE s_axilite port=out3_ir2 	bundle=control
+	#pragma HLS INTERFACE s_axilite port=out4_ir3 bundle=control
 
 	// ────────────────────────────────────────────────────────
 	#pragma HLS INTERFACE s_axilite port=ctrl    bundle=control
@@ -115,12 +127,18 @@ void lane_seg_top(
     status |= (1u << 2);  // STAGE2_DONE
 
     // ───── Stage 3: enc3_ir2 (expand → dw → pw) ─────
-    	enc3_ir2(out2_ir1, out3_ir2,
+    static data_t out3_ir2[OUT3_IR2_H][OUT3_IR2_W][OUT3_IR2_C];
+    enc3_ir2(out2_ir1, out3_ir2,
                  enc3_ir2_exp_w, enc3_ir2_exp_b,
                  enc3_ir2_dw_w,  enc3_ir2_dw_b,
                  enc3_ir2_pw_w,  enc3_ir2_pw_b);
         status |= (1u << 3);
 
-
+   // ───── Stage 3: enc4_ir3 (expand → dw → pw) ─────
+   enc4_ir3(out3_ir2, out4_ir3,
+		   enc4_ir3_exp_w, enc4_ir3_exp_b,
+           enc4_ir3_dw_w,  enc4_ir3_dw_b,
+		   enc4_ir3_pw_w,  enc4_ir3_pw_b);
+     status |= (1u << 4);
 
 }
