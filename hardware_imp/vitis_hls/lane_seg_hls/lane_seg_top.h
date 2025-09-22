@@ -95,6 +95,17 @@ typedef half data_t;  // Change as needed
 
 
 // ──────────────────────────────────────────────
+// Shapes for Seventh InvertedResidual6 (enc7_ir6)
+// Input:  28x28x32
+// Expansion: 32 → 192
+// Depthwise: stride=2, so output H/W = 14
+// Projection: 192 → 64
+#define OUT7_IR6_H     (OUT6_IR5_H / 2)   // 14
+#define OUT7_IR6_W     (OUT6_IR5_W / 2)   // 14
+#define OUT7_IR6_C     64
+#define OUT7_IR6_EXP_C 192
+
+// ──────────────────────────────────────────────
 // Legacy Alias Macros (for backward compatibility, optional)
 #define IMG_HEIGHT  IN_H
 #define IMG_WIDTH   IN_W
@@ -114,7 +125,8 @@ void lane_seg_top(
 	//data_t out3_ir2[OUT3_IR2_H][OUT3_IR2_W][OUT3_IR2_C],  // <-- output after encoder3_ir2
 	//data_t out4_ir3[OUT4_IR3_H][OUT4_IR3_W][OUT4_IR3_C],  	// <-- output after encoder4_ir3
 	//data_t out5_ir4[OUT5_IR4_H][OUT5_IR4_W][OUT5_IR4_C],
-	data_t out6_ir5[OUT6_IR5_H][OUT6_IR5_W][OUT6_IR5_C],
+	//data_t out6_ir5[OUT6_IR5_H][OUT6_IR5_W][OUT6_IR5_C],
+	data_t out7_ir6[OUT7_IR6_H][OUT7_IR6_W][OUT7_IR6_C],
 
 
     unsigned int ctrl,                         // AXI-lite control (optional)
@@ -212,5 +224,18 @@ void enc6_ir5(
     data_t pw_biases[OUT6_IR5_C]                                   // 32
 );
 
+
+// ───── Encoder Stage 7: Seventh InvertedResidual (enc7_ir6) ─────
+void enc7_ir6(
+    data_t input[OUT6_IR5_H][OUT6_IR5_W][OUT6_IR5_C],              // 28x28x32
+    data_t output[OUT7_IR6_H][OUT7_IR6_W][OUT7_IR6_C],             // 14x14x64
+
+    data_t exp_weights[1][1][OUT6_IR5_C][OUT7_IR6_EXP_C],          // 1x1: 32→192
+    data_t exp_biases[OUT7_IR6_EXP_C],                             // 192
+    data_t dw_weights[3][3][1][OUT7_IR6_EXP_C],                    // 3x3: 192
+    data_t dw_biases[OUT7_IR6_EXP_C],                              // 192
+    data_t pw_weights[1][1][OUT7_IR6_EXP_C][OUT7_IR6_C],           // 1x1: 192→64
+    data_t pw_biases[OUT7_IR6_C]                                   // 64
+);
 
 #endif  // LANE_SEG_TOP_H

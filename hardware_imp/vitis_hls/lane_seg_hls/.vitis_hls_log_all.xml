@@ -3,6 +3,9 @@
   <errorLogs>
     <logs>
       <synLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-09-21T23:03:44.007-0700"/>
+      </csimLog>
     </logs>
   </errorLogs>
   <warningLogs>
@@ -46,6 +49,7 @@
         <logs message="WARNING: [HLS 200-885] The II Violation in module 'enc6_ir5_Pipeline_VITIS_LOOP_627_1_VITIS_LOOP_628_2_VITIS_LOOP_629_3' (loop 'VITIS_LOOP_627_1_VITIS_LOOP_628_2_VITIS_LOOP_629_3'): Unable to schedule 'load' operation ('out5_ir4_load_1', lane_seg_hls/lane_seg_support.cpp:628) on array 'out5_ir4' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'out5_ir4'.&#xD;&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html" projectName="lane_seg_hls" solutionName="lane_seg" date="2025-09-21T22:32:14.869-0700" type="Warning"/>
         <logs message="WARNING: [HLS 200-885] The II Violation in module 'enc5_ir4_Pipeline_VITIS_LOOP_550_5_VITIS_LOOP_551_6_VITIS_LOOP_552_7' (loop 'VITIS_LOOP_550_5_VITIS_LOOP_551_6_VITIS_LOOP_552_7'): Unable to schedule 'load' operation ('exp_out_1_load_7', lane_seg_hls/lane_seg_support.cpp:559) on array 'exp_out_1' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'exp_out_1'.&#xD;&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-885.html" projectName="lane_seg_hls" solutionName="lane_seg" date="2025-09-21T22:30:10.113-0700" type="Warning"/>
       </synLog>
+      <csimLog/>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>
