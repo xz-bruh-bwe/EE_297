@@ -106,6 +106,17 @@ typedef half data_t;  // Change as needed
 #define OUT7_IR6_EXP_C 192
 
 // ──────────────────────────────────────────────
+// Shapes for Eighth InvertedResidual (enc8_ir7)
+// Input:  14x14x64 (from out7_ir6)
+// Expansion: 64 → 384
+// Depthwise: stride=1 (same H/W)
+// Projection: 384 → 64
+#define OUT8_IR7_H     OUT7_IR6_H       // 14
+#define OUT8_IR7_W     OUT7_IR6_W       // 14
+#define OUT8_IR7_C     64
+#define OUT8_IR7_EXP_C 384
+
+// ──────────────────────────────────────────────
 // Legacy Alias Macros (for backward compatibility, optional)
 #define IMG_HEIGHT  IN_H
 #define IMG_WIDTH   IN_W
@@ -126,7 +137,8 @@ void lane_seg_top(
 	//data_t out4_ir3[OUT4_IR3_H][OUT4_IR3_W][OUT4_IR3_C],  	// <-- output after encoder4_ir3
 	//data_t out5_ir4[OUT5_IR4_H][OUT5_IR4_W][OUT5_IR4_C],
 	//data_t out6_ir5[OUT6_IR5_H][OUT6_IR5_W][OUT6_IR5_C],
-	data_t out7_ir6[OUT7_IR6_H][OUT7_IR6_W][OUT7_IR6_C],
+	//data_t out7_ir6[OUT7_IR6_H][OUT7_IR6_W][OUT7_IR6_C],
+	data_t out8_ir7[OUT8_IR7_H][OUT8_IR7_W][OUT8_IR7_C],
 
 
     unsigned int ctrl,                         // AXI-lite control (optional)
@@ -236,6 +248,19 @@ void enc7_ir6(
     data_t dw_biases[OUT7_IR6_EXP_C],                              // 192
     data_t pw_weights[1][1][OUT7_IR6_EXP_C][OUT7_IR6_C],           // 1x1: 192→64
     data_t pw_biases[OUT7_IR6_C]                                   // 64
+);
+
+// ───── Encoder Stage 8: Eighth InvertedResidual (enc8_ir7) ─────
+void enc8_ir7(
+    data_t input[OUT7_IR6_H][OUT7_IR6_W][OUT7_IR6_C],              // 14x14x64
+    data_t output[OUT8_IR7_H][OUT8_IR7_W][OUT8_IR7_C],             // 14x14x64
+
+    data_t exp_weights[1][1][OUT7_IR6_C][OUT8_IR7_EXP_C],          // 1x1: 64→384
+    data_t exp_biases[OUT8_IR7_EXP_C],                             // 384
+    data_t dw_weights[3][3][1][OUT8_IR7_EXP_C],                    // 3x3: 384
+    data_t dw_biases[OUT8_IR7_EXP_C],                              // 384
+    data_t pw_weights[1][1][OUT8_IR7_EXP_C][OUT8_IR7_C],           // 1x1: 384→64
+    data_t pw_biases[OUT8_IR7_C]                                   // 64
 );
 
 #endif  // LANE_SEG_TOP_H

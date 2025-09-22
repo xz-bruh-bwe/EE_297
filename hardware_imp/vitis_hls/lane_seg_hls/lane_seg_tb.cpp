@@ -54,6 +54,13 @@
 #define OUT7_IR6_WIDTH    14
 #define OUT7_IR6_CHANNELS 64
 
+
+// ──────────────────────────────────────────────
+// Inverted Residual 7 (enc8_ir7)
+#define OUT8_IR7_HEIGHT   14
+#define OUT8_IR7_WIDTH    14
+#define OUT8_IR7_CHANNELS 64
+
 // ──────────────────────────────────────────────
 // Save encoder0 output feature maps to file
 void save_encoder0_output(data_t out[OUT_HEIGHT][OUT_WIDTH][OUT_CHANNELS], const char* filename) {
@@ -246,6 +253,30 @@ void save_encoder7_ir6_output(data_t out[OUT7_IR6_HEIGHT][OUT7_IR6_WIDTH][OUT7_I
     printf("Output written to: %s\n", filename);
 }
 
+// ──────────────────────────────────────────────
+// Save enc8_ir7 output feature maps to file
+void save_encoder8_ir7_output(data_t out[OUT8_IR7_HEIGHT][OUT8_IR7_WIDTH][OUT8_IR7_CHANNELS],
+                              const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT8_IR7_CHANNELS; c++) {
+        for (int i = 0; i < OUT8_IR7_HEIGHT; i++) {
+            for (int j = 0; j < OUT8_IR7_WIDTH; j++) {
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
 
 // ──────────────────────────────────────────────
 // Main Testbench
@@ -259,7 +290,9 @@ int main() {
     //data_t out4_ir3[OUT4_IR3_HEIGHT][OUT4_IR3_WIDTH][OUT4_IR3_CHANNELS] = {0};
     //data_t out5_ir4[OUT5_IR4_HEIGHT][OUT5_IR4_WIDTH][OUT5_IR4_CHANNELS] = {0};
     //data_t out6_ir5[OUT6_IR5_HEIGHT][OUT6_IR5_WIDTH][OUT6_IR5_CHANNELS] = {0};
-    data_t out7_ir6[OUT7_IR6_HEIGHT][OUT7_IR6_WIDTH][OUT7_IR6_CHANNELS] = {0};
+    //data_t out7_ir6[OUT7_IR6_HEIGHT][OUT7_IR6_WIDTH][OUT7_IR6_CHANNELS] = {0};
+    data_t out8_ir7[OUT8_IR7_HEIGHT][OUT8_IR7_WIDTH][OUT8_IR7_CHANNELS] = {0};
+
 
 
 
@@ -288,7 +321,7 @@ int main() {
     printf("Loaded input image.\n");
 
     // === 2. Run HLS top function ===
-    lane_seg_top(image, out7_ir6, ctrl, status, magic);
+    lane_seg_top(image, out8_ir7, ctrl, status, magic);
 
 
     // === 3. Debug Outputs ===
@@ -303,7 +336,9 @@ int main() {
     //save_encoder4_ir3_output(out4_ir3, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc4_ir3_out.txt");
     //save_encoder5_ir4_output(out5_ir4, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc5_ir4_out.txt");
     //save_encoder6_ir5_output(out6_ir5, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc6_ir5_out.txt");
-    save_encoder7_ir6_output(out7_ir6, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc7_ir6_out.txt");
+    //save_encoder7_ir6_output(out7_ir6, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc7_ir6_out.txt");
+    save_encoder8_ir7_output(out8_ir7, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc8_ir7_out.txt");
+
 
 
     return 0;

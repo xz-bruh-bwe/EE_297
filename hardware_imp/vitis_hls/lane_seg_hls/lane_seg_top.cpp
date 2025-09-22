@@ -68,6 +68,14 @@
 #include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc7_ir6_pw_w.h"
 #include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc7_ir6_pw_b.h"
 
+// enc8_ir7 (InvertedResidual7)
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc8_ir7_exp_w.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc8_ir7_exp_b.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc8_ir7_dw_w.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc8_ir7_dw_b.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc8_ir7_pw_w.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc8_ir7_pw_b.h"
+
 
 // ──────────────────────────────────────────────
 // Top-Level HLS Function (Wrapper)
@@ -85,7 +93,9 @@ void lane_seg_top(
     //data_t out4_ir3[OUT4_IR3_H][OUT4_IR3_W][OUT4_IR3_C],  // <-- output after encoder4_ir3
 	//data_t out5_ir4[OUT5_IR4_H][OUT5_IR4_W][OUT5_IR4_C],  // <-- output after encoder5_ir4
 	//data_t out6_ir5[OUT6_IR5_H][OUT6_IR5_W][OUT6_IR5_C],  // <-- output after encoder6_ir5
-	data_t out7_ir6[OUT7_IR6_H][OUT7_IR6_W][OUT7_IR6_C],    // <-- output after encoder7_ir6
+	//data_t out7_ir6[OUT7_IR6_H][OUT7_IR6_W][OUT7_IR6_C],  // <-- output after encoder7_ir6
+	data_t out8_ir7[OUT8_IR7_H][OUT8_IR7_W][OUT8_IR7_C],  // <-- output after encoder8_ir7
+
 
 
 	// Proc Ctrl Signals
@@ -105,7 +115,8 @@ void lane_seg_top(
 	//#pragma HLS INTERFACE m_axi port=out4_ir3 offset=slave bundle=gmem_out depth=(OUT4_IR3_H * OUT4_IR3_W * OUT4_IR3_C)
 	//#pragma HLS INTERFACE m_axi port=out5_ir4 offset=slave bundle=gmem_out depth=(OUT5_IR4_H * OUT5_IR4_W * OUT5_IR4_C)
 	//#pragma HLS INTERFACE m_axi port=out6_ir5 offset=slave bundle=gmem_out depth=(OUT6_IR5_H * OUT6_IR5_W * OUT6_IR5_C)
-	#pragma HLS INTERFACE m_axi port=out7_ir6 offset=slave bundle=gmem_out depth=(OUT7_IR6_H * OUT7_IR6_W * OUT7_IR6_C)
+	//#pragma HLS INTERFACE m_axi port=out7_ir6 offset=slave bundle=gmem_out depth=(OUT7_IR6_H * OUT7_IR6_W * OUT7_IR6_C)
+	#pragma HLS INTERFACE m_axi port=out8_ir7 offset=slave bundle=gmem_out depth=(OUT8_IR7_H * OUT8_IR7_W * OUT8_IR7_C)
 
 #endif
 
@@ -118,7 +129,9 @@ void lane_seg_top(
 	//#pragma HLS INTERFACE s_axilite port=out4_ir3 	bundle=control
 	//#pragma HLS INTERFACE s_axilite port=out5_ir4 	bundle=control
 	//#pragma HLS INTERFACE s_axilite port=out6_ir5 bundle=control
-	#pragma HLS INTERFACE s_axilite port=out7_ir6 bundle=control
+	//#pragma HLS INTERFACE s_axilite port=out7_ir6 bundle=control
+	#pragma HLS INTERFACE s_axilite port=out8_ir7 bundle=control
+
 
 	// ────────────────────────────────────────────────────────
 	#pragma HLS INTERFACE s_axilite port=ctrl    bundle=control
@@ -191,11 +204,20 @@ void lane_seg_top(
          status |= (1u << 6);
 
     // ───── Stage 7: enc7_ir6 (expand → dw → pw) ─────
+    static data_t out7_ir6[OUT7_IR6_H][OUT7_IR6_W][OUT7_IR6_C];
          enc7_ir6(out6_ir5, out7_ir6,
                 enc7_ir6_exp_w, enc7_ir6_exp_b,
                 enc7_ir6_dw_w,  enc7_ir6_dw_b,
                 enc7_ir6_pw_w,  enc7_ir6_pw_b);
         status |= (1u << 7);
+
+   // ───── Stage 8: enc8_ir7 (expand → dw → pw) ─────
+
+        enc8_ir7(out7_ir6, out8_ir7,
+                     enc8_ir7_exp_w, enc8_ir7_exp_b,
+                     enc8_ir7_dw_w,  enc8_ir7_dw_b,
+                     enc8_ir7_pw_w,  enc8_ir7_pw_b);
+            status |= (1u << 8);
 
 
 
