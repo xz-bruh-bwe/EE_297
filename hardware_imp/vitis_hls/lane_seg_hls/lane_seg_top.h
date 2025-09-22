@@ -83,6 +83,18 @@ typedef half data_t;  // Change as needed
 #define OUT5_IR4_EXP_C 192
 
 // ──────────────────────────────────────────────
+// Shapes for Sixth InvertedResidual5 (enc6_ir5)
+// Input:  28x28x32
+// Expansion: 32 → 192
+// Depthwise: stride=1, output H/W = 28
+// Projection: 192 → 32
+#define OUT6_IR5_H     OUT5_IR4_H         // 28
+#define OUT6_IR5_W     OUT5_IR4_W         // 28
+#define OUT6_IR5_C     32
+#define OUT6_IR5_EXP_C 192
+
+
+// ──────────────────────────────────────────────
 // Legacy Alias Macros (for backward compatibility, optional)
 #define IMG_HEIGHT  IN_H
 #define IMG_WIDTH   IN_W
@@ -101,7 +113,8 @@ void lane_seg_top(
 	//data_t out2_ir1[OUT2_IR1_H][OUT2_IR1_W][OUT2_IR1_C],  // <-- output after encoder2_ir1
 	//data_t out3_ir2[OUT3_IR2_H][OUT3_IR2_W][OUT3_IR2_C],  // <-- output after encoder3_ir2
 	//data_t out4_ir3[OUT4_IR3_H][OUT4_IR3_W][OUT4_IR3_C],  	// <-- output after encoder4_ir3
-	data_t out5_ir4[OUT5_IR4_H][OUT5_IR4_W][OUT5_IR4_C],
+	//data_t out5_ir4[OUT5_IR4_H][OUT5_IR4_W][OUT5_IR4_C],
+	data_t out6_ir5[OUT6_IR5_H][OUT6_IR5_W][OUT6_IR5_C],
 
 
     unsigned int ctrl,                         // AXI-lite control (optional)
@@ -185,5 +198,19 @@ void enc5_ir4(
     data_t pw_weights[1][1][OUT5_IR4_EXP_C][OUT5_IR4_C],           // 1x1: 192→32
     data_t pw_biases[OUT5_IR4_C]                                   // 32
 );
+
+// ───── Encoder Stage 6: Sixth InvertedResidual (enc6_ir5) ─────
+void enc6_ir5(
+    data_t input[OUT5_IR4_H][OUT5_IR4_W][OUT5_IR4_C],              // 28x28x32
+    data_t output[OUT6_IR5_H][OUT6_IR5_W][OUT6_IR5_C],             // 28x28x32
+
+    data_t exp_weights[1][1][OUT5_IR4_C][OUT6_IR5_EXP_C],          // 1x1: 32→192
+    data_t exp_biases[OUT6_IR5_EXP_C],                             // 192
+    data_t dw_weights[3][3][1][OUT6_IR5_EXP_C],                    // 3x3: 192
+    data_t dw_biases[OUT6_IR5_EXP_C],                              // 192
+    data_t pw_weights[1][1][OUT6_IR5_EXP_C][OUT6_IR5_C],           // 1x1: 192→32
+    data_t pw_biases[OUT6_IR5_C]                                   // 32
+);
+
 
 #endif  // LANE_SEG_TOP_H
