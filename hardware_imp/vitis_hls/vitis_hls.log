@@ -1,6 +1,6 @@
 NOTE: Using modified tcl85t.dll from https://gitenterprise.xilinx.com/ACT/vitis_hls_tcl
 INFO: [HLS 200-10] Running 'Z:/Xilinx/Vitis_HLS/2023.1/bin/unwrapped/win64.o/vitis_hls.exe'
-INFO: [HLS 200-10] For user 'Baron' on host 'desktop-d2nna1u' (Windows NT_amd64 version 6.2) on Sun Sep 21 23:13:15 -0700 2025
+INFO: [HLS 200-10] For user 'Baron' on host 'desktop-d2nna1u' (Windows NT_amd64 version 6.2) on Sun Sep 21 23:54:36 -0700 2025
 INFO: [HLS 200-10] In directory 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls'
 Sourcing Tcl script 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim.tcl'
 INFO: [HLS 200-1510] Running: source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim.tcl
@@ -58,14 +58,14 @@ Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:141:0: no
  #define IMG_HEIGHT     224
  
 In file included from ../../../lane_seg_tb.cpp:2:0:
-../../../lane_seg_top.h:110:0: note: this is the location of the previous definition
+../../../lane_seg_top.h:121:0: note: this is the location of the previous definition
  #define IMG_HEIGHT  IN_H
  
 ../../../lane_seg_tb.cpp:8:0: warning: "IMG_WIDTH" redefined
  #define IMG_WIDTH      224
  
 In file included from ../../../lane_seg_tb.cpp:2:0:
-../../../lane_seg_top.h:111:0: note: this is the location of the previous definition
+../../../lane_seg_top.h:122:0: note: this is the location of the previous definition
  #define IMG_WIDTH   IN_W
  
 In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:149:0,
@@ -111,9 +111,9 @@ Loaded input image.
 DEBUG: bias[0] = -0.022598
 DEBUG: weights[0][0][0][0] = 0.006657
 magic  = 0x1EAF0002
-status = 0x000000FF
-Output written to: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc7_ir6_out.txt
+status = 0x000001FF
+Output written to: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc8_ir7_out.txt
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 93.981 seconds; current allocated memory: 0.469 MB.
-INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 2 seconds. Total elapsed time: 100.687 seconds; peak allocated memory: 1.044 GB.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 107.211 seconds; current allocated memory: 0.430 MB.
+INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 2 seconds. Total elapsed time: 113.834 seconds; peak allocated memory: 1.045 GB.
