@@ -870,6 +870,102 @@ void enc8_ir7(
     }
 }
 
+// ──────────────────────────────────────────────
+// Function: enc9_ir8  (InvertedResidual9)
+// Expansion 1x1 (64→384) + ReLU6
+// Depthwise 3x3 stride=1 (groups=384) + ReLU6
+// Projection 1x1 (384→64), no activation
+// BN already folded into weights/biases
+// ──────────────────────────────────────────────
+void enc9_ir8(
+    data_t input[OUT8_IR7_H][OUT8_IR7_W][OUT8_IR7_C],       // [14][14][64]
+    data_t output[OUT9_IR8_H][OUT9_IR8_W][OUT9_IR8_C],      // [14][14][64]
+
+    data_t exp_weights[1][1][OUT8_IR7_C][OUT9_IR8_EXP_C],   // (1x1x64x384)
+    data_t exp_biases[OUT9_IR8_EXP_C],                      // (384)
+
+    data_t dw_weights[3][3][1][OUT9_IR8_EXP_C],             // (3x3x1x384)
+    data_t dw_biases[OUT9_IR8_EXP_C],                       // (384)
+
+    data_t pw_weights[1][1][OUT9_IR8_EXP_C][OUT9_IR8_C],    // (1x1x384x64)
+    data_t pw_biases[OUT9_IR8_C]                            // (64)
+) {
+#pragma HLS INLINE off
+
+    // ───── Array Partitioning ─────
+    #pragma HLS ARRAY_PARTITION variable=exp_weights block factor=1 dim=3
+    #pragma HLS ARRAY_PARTITION variable=exp_biases  block factor=1 dim=1
+
+    #pragma HLS ARRAY_PARTITION variable=dw_weights  block factor=1 dim=1
+    #pragma HLS ARRAY_PARTITION variable=dw_weights  block factor=1 dim=2
+    #pragma HLS ARRAY_PARTITION variable=dw_biases   block factor=1 dim=1
+
+    #pragma HLS ARRAY_PARTITION variable=pw_weights  block factor=1 dim=3
+    #pragma HLS ARRAY_PARTITION variable=pw_biases   block factor=1 dim=1
+
+    // ───── Local buffers ─────
+    static data_t exp_out[OUT9_IR8_H][OUT9_IR8_W][OUT9_IR8_EXP_C];  // 14x14x384
+    static data_t dw_out [OUT9_IR8_H][OUT9_IR8_W][OUT9_IR8_EXP_C];  // 14x14x384
+
+    // ──────────────────────────────
+    // Expansion conv 1x1 (64→384) + ReLU6
+    // ──────────────────────────────
+    for (int y = 0; y < OUT8_IR7_H; y++) {
+        for (int x = 0; x < OUT8_IR7_W; x++) {
+            for (int oc = 0; oc < OUT9_IR8_EXP_C; oc++) {
+                data_t sum = exp_biases[oc];
+                for (int ic = 0; ic < OUT8_IR7_C; ic++) {
+                    sum += input[y][x][ic] * exp_weights[0][0][ic][oc];
+                }
+                // ReLU6
+                if (sum < 0) sum = 0;
+                else if (sum > (data_t)6) sum = (data_t)6;
+                exp_out[y][x][oc] = sum;
+            }
+        }
+    }
+
+    // ──────────────────────────────
+    // Depthwise conv 3x3 stride=1 + ReLU6
+    // ──────────────────────────────
+    for (int oy = 0; oy < OUT9_IR8_H; oy++) {
+        for (int ox = 0; ox < OUT9_IR8_W; ox++) {
+            for (int c = 0; c < OUT9_IR8_EXP_C; c++) {
+                data_t sum = dw_biases[c];
+                for (int ky = 0; ky < 3; ky++) {
+                    for (int kx = 0; kx < 3; kx++) {
+                        int iy = oy + ky - 1;  // stride=1, pad=1
+                        int ix = ox + kx - 1;
+                        if (iy >= 0 && iy < OUT9_IR8_H && ix >= 0 && ix < OUT9_IR8_W) {
+                            sum += exp_out[iy][ix][c] * dw_weights[ky][kx][0][c];
+                        }
+                    }
+                }
+                // ReLU6
+                if (sum < 0) sum = 0;
+                else if (sum > (data_t)6) sum = (data_t)6;
+                dw_out[oy][ox][c] = sum;
+            }
+        }
+    }
+
+    // ──────────────────────────────
+    // Projection conv 1x1 (384→64), no activation
+    // ──────────────────────────────
+    for (int y = 0; y < OUT9_IR8_H; y++) {
+        for (int x = 0; x < OUT9_IR8_W; x++) {
+            for (int oc = 0; oc < OUT9_IR8_C; oc++) {
+                data_t sum = pw_biases[oc];
+                for (int ic = 0; ic < OUT9_IR8_EXP_C; ic++) {
+                    sum += dw_out[y][x][ic] * pw_weights[0][0][ic][oc];
+                }
+                output[y][x][oc] = sum; // no ReLU6
+            }
+        }
+    }
+}
+
+
 
 
 
