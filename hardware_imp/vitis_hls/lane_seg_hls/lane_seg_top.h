@@ -140,6 +140,18 @@ typedef half data_t;  // Change as needed
 #define OUT10_IR9_EXP_C 384
 
 // ──────────────────────────────────────────────
+// Shapes for Eleventh InvertedResidual (enc11_ir10)
+// Input:  14x14x64 (from out10_ir9)
+// Expansion: 64 → 384
+// Depthwise: stride=1 (same H/W)
+// Projection: 384 → 96
+#define OUT11_IR10_H     OUT10_IR9_H       // 14
+#define OUT11_IR10_W     OUT10_IR9_W       // 14
+#define OUT11_IR10_C     96
+#define OUT11_IR10_EXP_C 384
+
+
+// ──────────────────────────────────────────────
 // Legacy Alias Macros (for backward compatibility, optional)
 #define IMG_HEIGHT  IN_H
 #define IMG_WIDTH   IN_W
@@ -163,7 +175,9 @@ void lane_seg_top(
 	//data_t out7_ir6[OUT7_IR6_H][OUT7_IR6_W][OUT7_IR6_C],
 	//data_t out8_ir7[OUT8_IR7_H][OUT8_IR7_W][OUT8_IR7_C],
     //data_t out9_ir8[OUT9_IR8_H][OUT9_IR8_W][OUT9_IR8_C],
-	data_t out10_ir9[OUT10_IR9_H][OUT10_IR9_W][OUT10_IR9_C],
+	//data_t out10_ir9[OUT10_IR9_H][OUT10_IR9_W][OUT10_IR9_C],
+	data_t out11_ir10[OUT11_IR10_H][OUT11_IR10_W][OUT11_IR10_C],
+
 
 
 
@@ -315,4 +329,17 @@ void enc10_ir9(
     data_t pw_biases[OUT10_IR9_C]                                  // 64
 );
 
+
+// ───── Encoder Stage 11: Eleventh InvertedResidual (enc11_ir10) ─────
+void enc11_ir10(
+    data_t input[OUT10_IR9_H][OUT10_IR9_W][OUT10_IR9_C],              // 14x14x64
+    data_t output[OUT11_IR10_H][OUT11_IR10_W][OUT11_IR10_C],         // 14x14x96
+
+    data_t exp_weights[1][1][OUT10_IR9_C][OUT11_IR10_EXP_C],         // 1x1: 64→384
+    data_t exp_biases[OUT11_IR10_EXP_C],                             // 384
+    data_t dw_weights[3][3][1][OUT11_IR10_EXP_C],                    // 3x3: 384
+    data_t dw_biases[OUT11_IR10_EXP_C],                              // 384
+    data_t pw_weights[1][1][OUT11_IR10_EXP_C][OUT11_IR10_C],         // 1x1: 384→96
+    data_t pw_biases[OUT11_IR10_C]                                   // 96
+);
 #endif  // LANE_SEG_TOP_H

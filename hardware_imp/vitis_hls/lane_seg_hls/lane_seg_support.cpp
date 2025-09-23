@@ -293,7 +293,7 @@ void enc2_ir1(
 }
 
 // ──────────────────────────────────────────────
-// Function: enc3_ir2  (InvertedResidual3)
+// Function: enc3_ir2  (InvertedResidual2)
 // Expansion 1x1 (24→144) + ReLU6
 // Depthwise 3x3 stride=1 (groups=144) + ReLU6
 // Projection 1x1 (144→24), no activation
@@ -394,7 +394,7 @@ void enc3_ir2(
 
 
 // ──────────────────────────────────────────────
-// Function: enc4_ir3  (InvertedResidual4)
+// Function: enc4_ir3  (InvertedResidual3)
 // Expansion 1x1 (24→144) + ReLU6
 // Depthwise 3x3 stride=2 (groups=144) + ReLU6
 // Projection 1x1 (144→32), no activation
@@ -490,7 +490,7 @@ void enc4_ir3(
 
 
 // ──────────────────────────────────────────────
-// Function: enc5_ir4  (InvertedResidual5)
+// Function: enc5_ir4  (InvertedResidual4)
 // Expansion 1x1 (32→192) + ReLU6
 // Depthwise 3x3 stride=1 (groups=192) + ReLU6
 // Projection 1x1 (192→32), no activation
@@ -586,7 +586,7 @@ void enc5_ir4(
 
 
 // ──────────────────────────────────────────────
-// Function: enc6_ir5  (InvertedResidual6)
+// Function: enc6_ir5  (InvertedResidual5)
 // Expansion 1x1 (32→192) + ReLU6
 // Depthwise 3x3 stride=1 (groups=192) + ReLU6
 // Projection 1x1 (192→32), no activation
@@ -680,8 +680,10 @@ void enc6_ir5(
     }
 }
 
+
+
 // ──────────────────────────────────────────────
-// Function: enc7_ir6  (InvertedResidual7)
+// Function: enc7_ir6  (InvertedResidual6)
 // Expansion 1x1 (32→192) + ReLU6
 // Depthwise 3x3 stride=2 (groups=192) + ReLU6
 // Projection 1x1 (192→64), no activation
@@ -776,7 +778,7 @@ void enc7_ir6(
 }
 
 // ──────────────────────────────────────────────
-// Function: enc8_ir7  (InvertedResidual8)
+// Function: enc8_ir7  (InvertedResidual7)
 // Expansion 1x1 (64→384) + ReLU6
 // Depthwise 3x3 stride=1 (groups=384) + ReLU6
 // Projection 1x1 (384→64), no activation
@@ -871,7 +873,7 @@ void enc8_ir7(
 }
 
 // ──────────────────────────────────────────────
-// Function: enc9_ir8  (InvertedResidual9)
+// Function: enc9_ir8  (InvertedResidual8)
 // Expansion 1x1 (64→384) + ReLU6
 // Depthwise 3x3 stride=1 (groups=384) + ReLU6
 // Projection 1x1 (384→64), no activation
@@ -966,7 +968,7 @@ void enc9_ir8(
 }
 
 // ──────────────────────────────────────────────
-// Function: enc10_ir9  (InvertedResidual10)
+// Function: enc10_ir9  (InvertedResidua9)
 // Expansion 1x1 (64→384) + ReLU6
 // Depthwise 3x3 stride=1 (groups=384) + ReLU6
 // Projection 1x1 (384→64), no activation
@@ -1060,6 +1062,100 @@ void enc10_ir9(
     }
 }
 
+// ──────────────────────────────────────────────
+// Function: enc11_ir10  (InvertedResidual11)
+// Expansion 1x1 (64→384) + ReLU6
+// Depthwise 3x3 stride=1 (groups=384) + ReLU6
+// Projection 1x1 (384→96), no activation
+// BN already folded into weights/biases
+// ──────────────────────────────────────────────
+void enc11_ir10(
+    data_t input[OUT10_IR9_H][OUT10_IR9_W][OUT10_IR9_C],        // [14][14][64]
+    data_t output[OUT11_IR10_H][OUT11_IR10_W][OUT11_IR10_C],    // [14][14][96]
+
+    data_t exp_weights[1][1][OUT10_IR9_C][OUT11_IR10_EXP_C],    // (1x1x64x384)
+    data_t exp_biases[OUT11_IR10_EXP_C],                        // (384)
+
+    data_t dw_weights[3][3][1][OUT11_IR10_EXP_C],               // (3x3x1x384)
+    data_t dw_biases[OUT11_IR10_EXP_C],                         // (384)
+
+    data_t pw_weights[1][1][OUT11_IR10_EXP_C][OUT11_IR10_C],    // (1x1x384x96)
+    data_t pw_biases[OUT11_IR10_C]                              // (96)
+) {
+#pragma HLS INLINE off
+
+    // ───── Array Partitioning ─────
+    #pragma HLS ARRAY_PARTITION variable=exp_weights block factor=1 dim=3
+    #pragma HLS ARRAY_PARTITION variable=exp_biases  block factor=1 dim=1
+
+    #pragma HLS ARRAY_PARTITION variable=dw_weights  block factor=1 dim=1
+    #pragma HLS ARRAY_PARTITION variable=dw_weights  block factor=1 dim=2
+    #pragma HLS ARRAY_PARTITION variable=dw_biases   block factor=1 dim=1
+
+    #pragma HLS ARRAY_PARTITION variable=pw_weights  block factor=1 dim=3
+    #pragma HLS ARRAY_PARTITION variable=pw_biases   block factor=1 dim=1
+
+    // ───── Local buffers ─────
+    static data_t exp_out[OUT11_IR10_H][OUT11_IR10_W][OUT11_IR10_EXP_C];  // 14x14x384
+    static data_t dw_out [OUT11_IR10_H][OUT11_IR10_W][OUT11_IR10_EXP_C];  // 14x14x384
+
+    // ──────────────────────────────
+    // Expansion conv 1x1 (64→384) + ReLU6
+    // ──────────────────────────────
+    for (int y = 0; y < OUT10_IR9_H; y++) {
+        for (int x = 0; x < OUT10_IR9_W; x++) {
+            for (int oc = 0; oc < OUT11_IR10_EXP_C; oc++) {
+                data_t sum = exp_biases[oc];
+                for (int ic = 0; ic < OUT10_IR9_C; ic++) {
+                    sum += input[y][x][ic] * exp_weights[0][0][ic][oc];
+                }
+                // ReLU6
+                if (sum < 0) sum = 0;
+                else if (sum > (data_t)6) sum = (data_t)6;
+                exp_out[y][x][oc] = sum;
+            }
+        }
+    }
+
+    // ──────────────────────────────
+    // Depthwise conv 3x3 stride=1 + ReLU6
+    // ──────────────────────────────
+    for (int oy = 0; oy < OUT11_IR10_H; oy++) {
+        for (int ox = 0; ox < OUT11_IR10_W; ox++) {
+            for (int c = 0; c < OUT11_IR10_EXP_C; c++) {
+                data_t sum = dw_biases[c];
+                for (int ky = 0; ky < 3; ky++) {
+                    for (int kx = 0; kx < 3; kx++) {
+                        int iy = oy + ky - 1;  // stride=1, pad=1
+                        int ix = ox + kx - 1;
+                        if (iy >= 0 && iy < OUT11_IR10_H && ix >= 0 && ix < OUT11_IR10_W) {
+                            sum += exp_out[iy][ix][c] * dw_weights[ky][kx][0][c];
+                        }
+                    }
+                }
+                // ReLU6
+                if (sum < 0) sum = 0;
+                else if (sum > (data_t)6) sum = (data_t)6;
+                dw_out[oy][ox][c] = sum;
+            }
+        }
+    }
+
+    // ──────────────────────────────
+    // Projection conv 1x1 (384→96), no activation
+    // ──────────────────────────────
+    for (int y = 0; y < OUT11_IR10_H; y++) {
+        for (int x = 0; x < OUT11_IR10_W; x++) {
+            for (int oc = 0; oc < OUT11_IR10_C; oc++) {
+                data_t sum = pw_biases[oc];
+                for (int ic = 0; ic < OUT11_IR10_EXP_C; ic++) {
+                    sum += dw_out[y][x][ic] * pw_weights[0][0][ic][oc];
+                }
+                output[y][x][oc] = sum;  // no ReLU6
+            }
+        }
+    }
+}
 
 
 
