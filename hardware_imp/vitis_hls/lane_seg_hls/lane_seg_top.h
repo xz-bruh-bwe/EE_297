@@ -129,6 +129,17 @@ typedef half data_t;  // Change as needed
 
 
 // ──────────────────────────────────────────────
+// Shapes for Tenth InvertedResidual (enc10_ir9)
+// Input:  14x14x64 (from out9_ir8)
+// Expansion: 64 → 384
+// Depthwise: stride=1 (same H/W)
+// Projection: 384 → 64
+#define OUT10_IR9_H     OUT9_IR8_H       // 14
+#define OUT10_IR9_W     OUT9_IR8_W       // 14
+#define OUT10_IR9_C     64
+#define OUT10_IR9_EXP_C 384
+
+// ──────────────────────────────────────────────
 // Legacy Alias Macros (for backward compatibility, optional)
 #define IMG_HEIGHT  IN_H
 #define IMG_WIDTH   IN_W
@@ -151,7 +162,8 @@ void lane_seg_top(
 	//data_t out6_ir5[OUT6_IR5_H][OUT6_IR5_W][OUT6_IR5_C],
 	//data_t out7_ir6[OUT7_IR6_H][OUT7_IR6_W][OUT7_IR6_C],
 	//data_t out8_ir7[OUT8_IR7_H][OUT8_IR7_W][OUT8_IR7_C],
-    data_t out9_ir8[OUT9_IR8_H][OUT9_IR8_W][OUT9_IR8_C],
+    //data_t out9_ir8[OUT9_IR8_H][OUT9_IR8_W][OUT9_IR8_C],
+	data_t out10_ir9[OUT10_IR9_H][OUT10_IR9_W][OUT10_IR9_C],
 
 
 
@@ -288,6 +300,19 @@ void enc9_ir8(
     data_t dw_biases[OUT9_IR8_EXP_C],                              // 384
     data_t pw_weights[1][1][OUT9_IR8_EXP_C][OUT9_IR8_C],           // 1x1: 384→64
     data_t pw_biases[OUT9_IR8_C]                                   // 64
+);
+
+// ───── Encoder Stage 10: Tenth InvertedResidual (enc10_ir9) ─────
+void enc10_ir9(
+    data_t input[OUT9_IR8_H][OUT9_IR8_W][OUT9_IR8_C],              // 14x14x64
+    data_t output[OUT10_IR9_H][OUT10_IR9_W][OUT10_IR9_C],          // 14x14x64
+
+    data_t exp_weights[1][1][OUT9_IR8_C][OUT10_IR9_EXP_C],         // 1x1: 64→384
+    data_t exp_biases[OUT10_IR9_EXP_C],                            // 384
+    data_t dw_weights[3][3][1][OUT10_IR9_EXP_C],                   // 3x3: 384
+    data_t dw_biases[OUT10_IR9_EXP_C],                             // 384
+    data_t pw_weights[1][1][OUT10_IR9_EXP_C][OUT10_IR9_C],         // 1x1: 384→64
+    data_t pw_biases[OUT10_IR9_C]                                  // 64
 );
 
 #endif  // LANE_SEG_TOP_H
