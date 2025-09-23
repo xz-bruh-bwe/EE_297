@@ -73,6 +73,12 @@
 #define OUT10_IR9_CHANNELS 64
 
 // ──────────────────────────────────────────────
+// Inverted Residual 10 (enc11_ir10)
+#define OUT11_IR10_HEIGHT   14
+#define OUT11_IR10_WIDTH    14
+#define OUT11_IR10_CHANNELS 96
+
+// ──────────────────────────────────────────────
 // Save encoder0 output feature maps to file
 void save_encoder0_output(data_t out[OUT_HEIGHT][OUT_WIDTH][OUT_CHANNELS], const char* filename) {
     FILE* f = fopen(filename, "w");
@@ -336,6 +342,29 @@ void save_encoder10_ir9_output(data_t out[OUT10_IR9_HEIGHT][OUT10_IR9_WIDTH][OUT
     printf("Output written to: %s\n", filename);
 }
 
+// ──────────────────────────────────────────────
+// Save enc11_ir10 output feature maps to file
+void save_encoder11_ir10_output(data_t out[OUT11_IR10_HEIGHT][OUT11_IR10_WIDTH][OUT11_IR10_CHANNELS],
+                                const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT11_IR10_CHANNELS; c++) {
+        for (int i = 0; i < OUT11_IR10_HEIGHT; i++) {
+            for (int j = 0; j < OUT11_IR10_WIDTH; j++) {
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
 
 
 // ──────────────────────────────────────────────
@@ -353,7 +382,8 @@ int main() {
     //data_t out7_ir6[OUT7_IR6_HEIGHT][OUT7_IR6_WIDTH][OUT7_IR6_CHANNELS] = {0};
     //data_t out8_ir7[OUT8_IR7_HEIGHT][OUT8_IR7_WIDTH][OUT8_IR7_CHANNELS] = {0};
     //data_t out9_ir8[OUT9_IR8_HEIGHT][OUT9_IR8_WIDTH][OUT9_IR8_CHANNELS] = {0};
-    data_t out10_ir9[OUT10_IR9_HEIGHT][OUT10_IR9_WIDTH][OUT10_IR9_CHANNELS] = {0};
+    //data_t out10_ir9[OUT10_IR9_HEIGHT][OUT10_IR9_WIDTH][OUT10_IR9_CHANNELS] = {0};
+    data_t out11_ir10[OUT11_IR10_HEIGHT][OUT11_IR10_WIDTH][OUT11_IR10_CHANNELS] = {0};
 
 
     // AXI-Lite Debug Signals
@@ -381,7 +411,7 @@ int main() {
     printf("Loaded input image.\n");
 
     // === 2. Run HLS top function ===
-    lane_seg_top(image, out10_ir9, ctrl, status, magic);
+    lane_seg_top(image, out11_ir10, ctrl, status, magic);
 
 
     // === 3. Debug Outputs ===
@@ -399,7 +429,8 @@ int main() {
     //save_encoder7_ir6_output(out7_ir6, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc7_ir6_out.txt");
     //save_encoder8_ir7_output(out8_ir7, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc8_ir7_out.txt");
     //save_encoder9_ir8_output(out9_ir8, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc9_ir8_out.txt");
-    save_encoder10_ir9_output(out10_ir9, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc10_ir9_out.txt");
+    //save_encoder10_ir9_output(out10_ir9, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc10_ir9_out.txt");
+    save_encoder11_ir10_output(out11_ir10, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc11_ir10_out.txt");
 
 
     return 0;
