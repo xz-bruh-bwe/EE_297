@@ -79,6 +79,25 @@
 #define OUT11_IR10_CHANNELS 96
 
 // ──────────────────────────────────────────────
+// Inverted Residual 11 (enc12_ir11)
+#define OUT12_IR11_HEIGHT   14
+#define OUT12_IR11_WIDTH    14
+#define OUT12_IR11_CHANNELS 96
+
+// ──────────────────────────────────────────────
+// Inverted Residual 12 (enc13_ir12)
+#define OUT13_IR12_HEIGHT   14
+#define OUT13_IR12_WIDTH    14
+#define OUT13_IR12_CHANNELS 96
+
+// ──────────────────────────────────────────────
+// Inverted Residual 13 (enc14_ir13)
+#define OUT14_IR13_HEIGHT   7
+#define OUT14_IR13_WIDTH    7
+#define OUT14_IR13_CHANNELS 160
+
+
+// ──────────────────────────────────────────────
 // Save encoder0 output feature maps to file
 void save_encoder0_output(data_t out[OUT_HEIGHT][OUT_WIDTH][OUT_CHANNELS], const char* filename) {
     FILE* f = fopen(filename, "w");
@@ -366,12 +385,84 @@ void save_encoder11_ir10_output(data_t out[OUT11_IR10_HEIGHT][OUT11_IR10_WIDTH][
     printf("Output written to: %s\n", filename);
 }
 
+// ──────────────────────────────────────────────
+// Save enc12_ir11 output feature maps to file
+void save_encoder12_ir11_output(data_t out[OUT12_IR11_HEIGHT][OUT12_IR11_WIDTH][OUT12_IR11_CHANNELS],
+                                const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT12_IR11_CHANNELS; c++) {
+        for (int i = 0; i < OUT12_IR11_HEIGHT; i++) {
+            for (int j = 0; j < OUT12_IR11_WIDTH; j++) {
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
+// ──────────────────────────────────────────────
+// Save enc13_ir12 output feature maps to file
+void save_encoder13_ir12_output(data_t out[OUT13_IR12_HEIGHT][OUT13_IR12_WIDTH][OUT13_IR12_CHANNELS],
+                                const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT13_IR12_CHANNELS; c++) {
+        for (int i = 0; i < OUT13_IR12_HEIGHT; i++) {
+            for (int j = 0; j < OUT13_IR12_WIDTH; j++) {
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
+// ──────────────────────────────────────────────
+// Save enc14_ir13 output feature maps to file
+void save_encoder14_ir13_output(data_t out[OUT14_IR13_HEIGHT][OUT14_IR13_WIDTH][OUT14_IR13_CHANNELS],
+                                const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT14_IR13_CHANNELS; c++) {
+        for (int i = 0; i < OUT14_IR13_HEIGHT; i++) {
+            for (int j = 0; j < OUT14_IR13_WIDTH; j++) {
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
 
 // ──────────────────────────────────────────────
 // Main Testbench
 int main() {
     // Input / Output Buffers
-    float image[IMG_HEIGHT][IMG_WIDTH][IMG_CHANNELS] = {0};
+    //float image[IMG_HEIGHT][IMG_WIDTH][IMG_CHANNELS] = {0};
     //data_t out0[OUT_HEIGHT][OUT_WIDTH][OUT_CHANNELS] = {0};
     //data_t out1_ir0[OUT1_IR0_HEIGHT][OUT1_IR0_WIDTH][OUT1_IR0_CHANNELS] = {0};
     //data_t out2_ir1[OUT2_IR1_HEIGHT][OUT2_IR1_WIDTH][OUT2_IR1_CHANNELS] = {0};
@@ -383,7 +474,11 @@ int main() {
     //data_t out8_ir7[OUT8_IR7_HEIGHT][OUT8_IR7_WIDTH][OUT8_IR7_CHANNELS] = {0};
     //data_t out9_ir8[OUT9_IR8_HEIGHT][OUT9_IR8_WIDTH][OUT9_IR8_CHANNELS] = {0};
     //data_t out10_ir9[OUT10_IR9_HEIGHT][OUT10_IR9_WIDTH][OUT10_IR9_CHANNELS] = {0};
-    data_t out11_ir10[OUT11_IR10_HEIGHT][OUT11_IR10_WIDTH][OUT11_IR10_CHANNELS] = {0};
+    //data_t out11_ir10[OUT11_IR10_HEIGHT][OUT11_IR10_WIDTH][OUT11_IR10_CHANNELS] = {0};
+    //data_t out12_ir11[OUT12_IR11_HEIGHT][OUT12_IR11_WIDTH][OUT12_IR11_CHANNELS] = {0};
+	float out13_ir12[OUT13_IR12_HEIGHT][OUT13_IR12_WIDTH][OUT13_IR12_CHANNELS] = {0}; // <- New Input
+    data_t out14_ir13[OUT14_IR13_HEIGHT][OUT14_IR13_WIDTH][OUT14_IR13_CHANNELS] = {0};
+
 
 
     // AXI-Lite Debug Signals
@@ -392,26 +487,51 @@ int main() {
     unsigned int magic = 0;
 
     // === 1. Load image from .txt ===
-    FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/test_imgs/img_rgb_224.txt", "r");
+    //FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/test_imgs/img_rgb_224.txt", "r");
+    //if (!fp) {
+    //    printf("Error: Could not open input image file.\n");
+    //    return 1;
+    //}
+    //
+    //for (int c = 0; c < IMG_CHANNELS; c++) {
+    //    for (int i = 0; i < IMG_HEIGHT; i++) {
+    //        for (int j = 0; j < IMG_WIDTH; j++) {
+    //            fscanf(fp, "%f", &image[i][j][c]);
+    //        }
+    //    }
+    //}
+    //printf("TESTBENCH DEBUG: image[0][0][0] = %f\n", image[0][0][0]);
+    //
+    //fclose(fp);
+    //printf("Loaded input image.\n");
+    // === // === // === // === // === // === // === // === // === // === // === // === // === // === // === // === // === // === // ===
+
+    // === 2. Load output out13_ir12 from .txt ===
+    FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc13_ir12_out.txt", "r");
     if (!fp) {
         printf("Error: Could not open input image file.\n");
         return 1;
     }
 
-    for (int c = 0; c < IMG_CHANNELS; c++) {
-        for (int i = 0; i < IMG_HEIGHT; i++) {
-            for (int j = 0; j < IMG_WIDTH; j++) {
-                fscanf(fp, "%f", &image[i][j][c]);
+    for (int c = 0; c < OUT13_IR12_CHANNELS; c++) {
+        for (int i = 0; i < OUT13_IR12_HEIGHT; i++) {
+            for (int j = 0; j < OUT13_IR12_WIDTH; j++) {
+                fscanf(fp, "%f", &out13_ir12[i][j][c]);
             }
         }
     }
-    printf("TESTBENCH DEBUG: image[0][0][0] = %f\n", image[0][0][0]);
+    printf("TESTBENCH DEBUG: out13_ir12[0][0][0] = %f\n", out13_ir12[0][0][0]);
 
     fclose(fp);
-    printf("Loaded input image.\n");
+    printf("Loaded input out13_ir12.\n");
+
+
 
     // === 2. Run HLS top function ===
-    lane_seg_top(image, out11_ir10, ctrl, status, magic);
+    //lane_seg_top(image, out14_ir13, ctrl, status, magic); <- Change back when finished.
+
+    lane_seg_top(out13_ir12, out14_ir13, ctrl, status, magic);
+
 
 
     // === 3. Debug Outputs ===
@@ -430,7 +550,10 @@ int main() {
     //save_encoder8_ir7_output(out8_ir7, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc8_ir7_out.txt");
     //save_encoder9_ir8_output(out9_ir8, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc9_ir8_out.txt");
     //save_encoder10_ir9_output(out10_ir9, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc10_ir9_out.txt");
-    save_encoder11_ir10_output(out11_ir10, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc11_ir10_out.txt");
+    //save_encoder11_ir10_output(out11_ir10, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc11_ir10_out.txt");
+    //save_encoder12_ir11_output(out12_ir11, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc12_ir11_out.txt");
+    //save_encoder13_ir12_output(out13_ir12, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc13_ir12_out.txt");
+    save_encoder14_ir13_output(out14_ir13, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc14_ir13_out.txt");
 
 
     return 0;

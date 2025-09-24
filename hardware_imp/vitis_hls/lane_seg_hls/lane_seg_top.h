@@ -152,11 +152,46 @@ typedef half data_t;  // Change as needed
 
 
 // ──────────────────────────────────────────────
+// Shapes for Twelfth InvertedResidual (enc12_ir11)
+// Input:  14x14x96 (from out11_ir10)
+// Expansion: 96 → 576
+// Depthwise: stride=1 (same H/W)
+// Projection: 576 → 96
+#define OUT12_IR11_H     OUT11_IR10_H       // 14
+#define OUT12_IR11_W     OUT11_IR10_W       // 14
+#define OUT12_IR11_C     96
+#define OUT12_IR11_EXP_C 576
+
+// ──────────────────────────────────────────────
+// Shapes for Thirteenth InvertedResidual (enc13_ir12)
+// Input:  14x14x96 (from out12_ir11)
+// Expansion: 96 → 576
+// Depthwise: stride=1 (same H/W)
+// Projection: 576 → 96
+#define OUT13_IR12_H     OUT12_IR11_H       // 14
+#define OUT13_IR12_W     OUT12_IR11_W       // 14
+#define OUT13_IR12_C     96
+#define OUT13_IR12_EXP_C 576
+
+// ──────────────────────────────────────────────
+// Shapes for Fourteenth InvertedResidual (enc14_ir13)
+// Input:  14x14x96 (from out13_ir12)
+// Expansion: 96 → 576
+// Depthwise: stride=2, so output H/W = 7
+// Projection: 576 → 160
+#define OUT14_IR13_H     (OUT13_IR12_H / 2)   // 7
+#define OUT14_IR13_W     (OUT13_IR12_W / 2)   // 7
+#define OUT14_IR13_C     160
+#define OUT14_IR13_EXP_C 576
+
+
+// ──────────────────────────────────────────────
 // Legacy Alias Macros (for backward compatibility, optional)
 #define IMG_HEIGHT  IN_H
 #define IMG_WIDTH   IN_W
 #define IN_CH       IN_C
 #define OUT_CH      OUT_C
+
 
 // ──────────────────────────────────────────────
 // Function Prototypes
@@ -164,7 +199,7 @@ typedef half data_t;  // Change as needed
 // ───── HLS Entry Point ─────
 // Only image input + output + AXI-lite control and status registers
 void lane_seg_top(
-    float image[IN_H][IN_W][IN_C],            // Input RGB image
+    //float image[IN_H][IN_W][IN_C],            // Input RGB image
     //data_t out0[OUT_H][OUT_W][OUT_C],          // Output of conv0 + bn + relu6
 	//data_t out1_ir0[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C],  // <-- output after encoder1_ir0
 	//data_t out2_ir1[OUT2_IR1_H][OUT2_IR1_W][OUT2_IR1_C],  // <-- output after encoder2_ir1
@@ -176,8 +211,10 @@ void lane_seg_top(
 	//data_t out8_ir7[OUT8_IR7_H][OUT8_IR7_W][OUT8_IR7_C],
     //data_t out9_ir8[OUT9_IR8_H][OUT9_IR8_W][OUT9_IR8_C],
 	//data_t out10_ir9[OUT10_IR9_H][OUT10_IR9_W][OUT10_IR9_C],
-	data_t out11_ir10[OUT11_IR10_H][OUT11_IR10_W][OUT11_IR10_C],
-
+	//data_t out11_ir10[OUT11_IR10_H][OUT11_IR10_W][OUT11_IR10_C],
+	//data_t out12_ir11[OUT12_IR11_H][OUT12_IR11_W][OUT12_IR11_C],
+	float out13_ir12[OUT13_IR12_H][OUT13_IR12_W][OUT13_IR12_C],
+	data_t out14_ir13[OUT14_IR13_H][OUT14_IR13_W][OUT14_IR13_C],
 
 
 
@@ -342,4 +379,45 @@ void enc11_ir10(
     data_t pw_weights[1][1][OUT11_IR10_EXP_C][OUT11_IR10_C],         // 1x1: 384→96
     data_t pw_biases[OUT11_IR10_C]                                   // 96
 );
+
+// ───── Encoder Stage 12: Twelfth InvertedResidual (enc12_ir11) ─────
+void enc12_ir11(
+    data_t input[OUT11_IR10_H][OUT11_IR10_W][OUT11_IR10_C],              // 14x14x96
+    data_t output[OUT12_IR11_H][OUT12_IR11_W][OUT12_IR11_C],            // 14x14x96
+
+    data_t exp_weights[1][1][OUT11_IR10_C][OUT12_IR11_EXP_C],           // 1x1: 96→576
+    data_t exp_biases[OUT12_IR11_EXP_C],                                // 576
+    data_t dw_weights[3][3][1][OUT12_IR11_EXP_C],                       // 3x3: 576
+    data_t dw_biases[OUT12_IR11_EXP_C],                                 // 576
+    data_t pw_weights[1][1][OUT12_IR11_EXP_C][OUT12_IR11_C],            // 1x1: 576→96
+    data_t pw_biases[OUT12_IR11_C]                                      // 96
+);
+
+// ───── Encoder Stage 13: Thirteenth InvertedResidual (enc13_ir12) ─────
+void enc13_ir12(
+    data_t input[OUT12_IR11_H][OUT12_IR11_W][OUT12_IR11_C],              // 14x14x96
+    data_t output[OUT13_IR12_H][OUT13_IR12_W][OUT13_IR12_C],            // 14x14x96
+
+    data_t exp_weights[1][1][OUT12_IR11_C][OUT13_IR12_EXP_C],           // 1x1: 96→576
+    data_t exp_biases[OUT13_IR12_EXP_C],                                // 576
+    data_t dw_weights[3][3][1][OUT13_IR12_EXP_C],                       // 3x3: 576
+    data_t dw_biases[OUT13_IR12_EXP_C],                                 // 576
+    data_t pw_weights[1][1][OUT13_IR12_EXP_C][OUT13_IR12_C],            // 1x1: 576→96
+    data_t pw_biases[OUT13_IR12_C]                                      // 96
+);
+
+// ───── Encoder Stage 14: Fourteenth InvertedResidual (enc14_ir13) ─────
+void enc14_ir13(
+	float input[OUT13_IR12_H][OUT13_IR12_W][OUT13_IR12_C],              // 14x14x96
+    data_t output[OUT14_IR13_H][OUT14_IR13_W][OUT14_IR13_C],             // 7x7x160
+
+    data_t exp_weights[1][1][OUT13_IR12_C][OUT14_IR13_EXP_C],            // 1x1: 96→576
+    data_t exp_biases[OUT14_IR13_EXP_C],                                 // 576
+    data_t dw_weights[3][3][1][OUT14_IR13_EXP_C],                        // 3x3: 576 (stride=2)
+    data_t dw_biases[OUT14_IR13_EXP_C],                                  // 576
+    data_t pw_weights[1][1][OUT14_IR13_EXP_C][OUT14_IR13_C],             // 1x1: 576→160
+    data_t pw_biases[OUT14_IR13_C]                                       // 160
+);
+
+
 #endif  // LANE_SEG_TOP_H

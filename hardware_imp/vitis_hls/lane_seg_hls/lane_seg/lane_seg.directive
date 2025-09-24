@@ -5,6 +5,11 @@
                 <option name="name" value="lane_seg_top"/>
             </pragma>
         </directive>
+        <directive functionName="lane_seg_top" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="lane_seg_top"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 
