@@ -1,0 +1,7 @@
+C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg_top.cpp: In function 'void lane_seg_top(float (*)[224][3], data_t (*)[7][160], unsigned int, unsigned int&, unsigned int&)':
+C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg_top.cpp:369:1: internal compiler error: Segmentation fault
+libbacktrace could not find executable to open
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <https://sourceforge.net/projects/msys2> for instructions.
+make: *** [obj/lane_seg_top.cpp_pre.cpp.tb.o] Error 1
