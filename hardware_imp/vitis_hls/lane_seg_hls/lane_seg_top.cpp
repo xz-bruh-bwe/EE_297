@@ -1,4 +1,4 @@
-#include "hls_stream.h"
+ #include "hls_stream.h"
 #include <math.h>
 
 // ──────────────────────────────────────────────
@@ -118,12 +118,36 @@
 //#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc13_ir12_pw_b.h"
 
 // enc14_ir13 (InvertedResidual14)
-#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc14_ir13_exp_w.h"
-#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc14_ir13_exp_b.h"
-#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc14_ir13_dw_w.h"
-#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc14_ir13_dw_b.h"
-#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc14_ir13_pw_w.h"
-#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc14_ir13_pw_b.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc14_ir13_exp_w.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc14_ir13_exp_b.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc14_ir13_dw_w.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc14_ir13_dw_b.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc14_ir13_pw_w.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc14_ir13_pw_b.h"
+
+// enc15_ir14 (InvertedResidual15)
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc15_ir14_exp_w.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc15_ir14_exp_b.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc15_ir14_dw_w.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc15_ir14_dw_b.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc15_ir14_pw_w.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc15_ir14_pw_b.h"
+
+// enc16_ir15 (InvertedResidual16)
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc16_ir15_exp_w.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc16_ir15_exp_b.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc16_ir15_dw_w.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc16_ir15_dw_b.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc16_ir15_pw_w.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc16_ir15_pw_b.h"
+
+// enc17_ir16 (InvertedResidual17)
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_exp_w.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_exp_b.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_dw_w.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_dw_b.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_pw_w.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_pw_b.h"
 
 
 
@@ -149,8 +173,12 @@ void lane_seg_top(
 	//data_t out10_ir9[OUT10_IR9_H][OUT10_IR9_W][OUT10_IR9_C],  // <-- output after encoder10_ir9
 	//data_t out11_ir10[OUT11_IR10_H][OUT11_IR10_W][OUT11_IR10_C],  // <-- output after encoder11_ir10
 	//data_t out12_ir11[OUT12_IR11_H][OUT12_IR11_W][OUT12_IR11_C],  // <-- output after encoder12_ir11
-	float out13_ir12[OUT13_IR12_H][OUT13_IR12_W][OUT13_IR12_C],  // <-- output after encoder13_ir1 <- Serves as input
-	data_t out14_ir13[OUT14_IR13_H][OUT14_IR13_W][OUT14_IR13_C],  // <-- output after encoder14_ir13
+	//float out13_ir12[OUT13_IR12_H][OUT13_IR12_W][OUT13_IR12_C],  // <-- output after encoder13_ir12
+
+	//data_t out14_ir13[OUT14_IR13_H][OUT14_IR13_W][OUT14_IR13_C],  // <-- output after encoder14_ir13
+	//data_t out15_ir14[OUT15_IR14_H][OUT15_IR14_W][OUT15_IR14_C],	// <- Serves as input
+	float out16_ir15[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],  // <-- output of enc16_ir15
+    data_t out17_ir16[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],  // <-- output of enc17_ir16
 
 
 
@@ -179,8 +207,11 @@ void lane_seg_top(
 	//#pragma HLS INTERFACE m_axi port=out11_ir10 offset=slave bundle=gmem_out depth=(OUT11_IR10_H * OUT11_IR10_W * OUT11_IR10_C)
 	//#pragma HLS INTERFACE m_axi port=out12_ir11 offset=slave bundle=gmem_out depth=(OUT12_IR11_H * OUT12_IR11_W * OUT12_IR11_C)
 
-	#pragma HLS INTERFACE m_axi port=out13_ir12 offset=slave bundle=gmem_in depth=(OUT13_IR12_H * OUT13_IR12_W * OUT13_IR12_C)
-	#pragma HLS INTERFACE m_axi port=out14_ir13 offset=slave bundle=gmem_out depth=(OUT14_IR13_H * OUT14_IR13_W * OUT14_IR13_C)
+	//#pragma HLS INTERFACE m_axi port=out13_ir12 offset=slave bundle=gmem_out depth=(OUT13_IR12_H * OUT13_IR12_W * OUT13_IR12_C)
+	//#pragma HLS INTERFACE m_axi port=out14_ir13 offset=slave bundle=gmem_out depth=(OUT14_IR13_H * OUT14_IR13_W * OUT14_IR13_C)
+	//#pragma HLS INTERFACE m_axi port=out15_ir14 offset=slave bundle=gmem_out depth=(OUT15_IR14_H * OUT15_IR14_W * OUT15_IR14_C)
+	#pragma HLS INTERFACE m_axi port=out16_ir15 offset=slave bundle=gmem_in depth=(OUT16_IR15_H * OUT16_IR15_W * OUT16_IR15_C)
+	#pragma HLS INTERFACE m_axi port=out17_ir16 offset=slave bundle=gmem_out depth=(OUT17_IR16_H * OUT17_IR16_W * OUT17_IR16_C)
 
 
 
@@ -202,8 +233,11 @@ void lane_seg_top(
 	//#pragma HLS INTERFACE s_axilite port=out10_ir9 bundle=control
 	//#pragma HLS INTERFACE s_axilite port=out11_ir10 bundle=control
 	//#pragma HLS INTERFACE s_axilite port=out12_ir11 bundle=control
-	#pragma HLS INTERFACE s_axilite port=out13_ir12 bundle=control
-	#pragma HLS INTERFACE s_axilite port=out14_ir13 bundle=control
+	//#pragma HLS INTERFACE s_axilite port=out13_ir12 bundle=control
+	//#pragma HLS INTERFACE s_axilite port=out14_ir13 bundle=control
+	//#pragma HLS INTERFACE s_axilite port=out15_ir14 bundle=control
+	#pragma HLS INTERFACE s_axilite port=out16_ir15 bundle=control
+	#pragma HLS INTERFACE s_axilite port=out17_ir16 bundle=control
 
 
 
@@ -334,13 +368,37 @@ void lane_seg_top(
 //                 enc13_ir12_dw_w,  enc13_ir12_dw_b,
 //                 enc13_ir12_pw_w,  enc13_ir12_pw_b);
 //      status |= (1u << 13);
-
-      // ───── Stage 14: enc14_ir13 (expand → dw (stride=2) → pw) ────
-      enc14_ir13(out13_ir12, out14_ir13,
-                 enc14_ir13_exp_w, enc14_ir13_exp_b,
-                 enc14_ir13_dw_w,  enc14_ir13_dw_b,
-                 enc14_ir13_pw_w,  enc14_ir13_pw_b);
-      status |= (1u << 14);
+//
+//      // ───── Stage 14: enc14_ir13 (expand → dw (stride=2) → pw) ────
+//    static data_t out14_ir13[OUT14_IR13_H][OUT14_IR13_W][OUT14_IR13_C];
+//      enc14_ir13(out13_ir12, out14_ir13,
+//                 enc14_ir13_exp_w, enc14_ir13_exp_b,
+//                 enc14_ir13_dw_w,  enc14_ir13_dw_b,
+//                 enc14_ir13_pw_w,  enc14_ir13_pw_b);
+//      status |= (1u << 14);
+//
+//      // ───── Stage 15: enc15_ir14 (expand → dw → pw) ─────
+//     static data_t out15_ir14[OUT15_IR14_H][OUT15_IR14_W][OUT15_IR14_C];
+//     enc15_ir14(out14_ir13, out15_ir14,
+//                 enc15_ir14_exp_w, enc15_ir14_exp_b,
+//                 enc15_ir14_dw_w,  enc15_ir14_dw_b,
+//                 enc15_ir14_pw_w,  enc15_ir14_pw_b);
+//      status |= (1u << 15);
+// 
+//       // ───── Stage 16: enc16_ir15 (expand → dw → pw) ─────
+//     	static data_t out16_ir15[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C];
+//     	enc16_ir15(out15_ir14, out16_ir15,
+//     	           enc16_ir15_exp_w, enc16_ir15_exp_b,
+//     	           enc16_ir15_dw_w,  enc16_ir15_dw_b,
+//     	           enc16_ir15_pw_w,  enc16_ir15_pw_b);
+//     	status |= (1u << 16);
+// 
+    // ───── Stage 17: enc17_ir16 (expand → dw → pw) ─────
+    	enc17_ir16(out16_ir15, out17_ir16,
+    			enc17_ir16_exp_w, enc17_ir16_exp_b,
+				enc17_ir16_dw_w,  enc17_ir16_dw_b,
+				enc17_ir16_pw_w,  enc17_ir16_pw_b);
+    	    status |= (1u << 17);
 
 
 }

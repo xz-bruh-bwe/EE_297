@@ -186,6 +186,40 @@ typedef half data_t;  // Change as needed
 
 
 // ──────────────────────────────────────────────
+// Shapes for Fifteenth InvertedResidual (enc15_ir14)
+// Input:  7x7x160 (from out14_ir13)
+// Expansion: 160 → 960
+// Depthwise: stride=1 (same H/W)
+// Projection: 960 → 160
+#define OUT15_IR14_H       OUT14_IR13_H        // 7
+#define OUT15_IR14_W       OUT14_IR13_W        // 7
+#define OUT15_IR14_C       160
+#define OUT15_IR14_EXP_C   960
+
+// ──────────────────────────────────────────────
+// Shapes for Sixteenth InvertedResidual (enc16_ir15)
+// Input:  7x7x160 (from out15_ir14)
+// Expansion: 160 → 960
+// Depthwise: stride=1 (same H/W)
+// Projection: 960 → 160
+#define OUT16_IR15_H       OUT15_IR14_H        // 7
+#define OUT16_IR15_W       OUT15_IR14_W        // 7
+#define OUT16_IR15_C       160
+#define OUT16_IR15_EXP_C   960
+
+// ──────────────────────────────────────────────
+// Shapes for Seventeenth InvertedResidual (enc17_ir16)
+// Input:  7x7x160 (from out16_ir15)
+// Expansion: 160 → 960
+// Depthwise: stride=1 (same H/W)
+// Projection: 960 → 320
+#define OUT17_IR16_H       OUT16_IR15_H        // 7
+#define OUT17_IR16_W       OUT16_IR15_W        // 7
+#define OUT17_IR16_C       320
+#define OUT17_IR16_EXP_C   960
+
+
+// ──────────────────────────────────────────────
 // Legacy Alias Macros (for backward compatibility, optional)
 #define IMG_HEIGHT  IN_H
 #define IMG_WIDTH   IN_W
@@ -213,8 +247,11 @@ void lane_seg_top(
 	//data_t out10_ir9[OUT10_IR9_H][OUT10_IR9_W][OUT10_IR9_C],
 	//data_t out11_ir10[OUT11_IR10_H][OUT11_IR10_W][OUT11_IR10_C],
 	//data_t out12_ir11[OUT12_IR11_H][OUT12_IR11_W][OUT12_IR11_C],
-	float out13_ir12[OUT13_IR12_H][OUT13_IR12_W][OUT13_IR12_C],
-	data_t out14_ir13[OUT14_IR13_H][OUT14_IR13_W][OUT14_IR13_C],
+	//data_t out13_ir12[OUT13_IR12_H][OUT13_IR12_W][OUT13_IR12_C],
+	//data_t out14_ir13[OUT14_IR13_H][OUT14_IR13_W][OUT14_IR13_C],
+	//data_t out15_ir14[OUT15_IR14_H][OUT15_IR14_W][OUT15_IR14_C],
+	float out16_ir15[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],
+	data_t out17_ir16[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],
 
 
 
@@ -408,7 +445,7 @@ void enc13_ir12(
 
 // ───── Encoder Stage 14: Fourteenth InvertedResidual (enc14_ir13) ─────
 void enc14_ir13(
-	float input[OUT13_IR12_H][OUT13_IR12_W][OUT13_IR12_C],              // 14x14x96
+	data_t input[OUT13_IR12_H][OUT13_IR12_W][OUT13_IR12_C],              // 14x14x96
     data_t output[OUT14_IR13_H][OUT14_IR13_W][OUT14_IR13_C],             // 7x7x160
 
     data_t exp_weights[1][1][OUT13_IR12_C][OUT14_IR13_EXP_C],            // 1x1: 96→576
@@ -418,6 +455,55 @@ void enc14_ir13(
     data_t pw_weights[1][1][OUT14_IR13_EXP_C][OUT14_IR13_C],             // 1x1: 576→160
     data_t pw_biases[OUT14_IR13_C]                                       // 160
 );
+
+
+// ───── Encoder Stage 15: Fifteenth InvertedResidual (enc15_ir14) ─────
+void enc15_ir14(
+    data_t input[OUT14_IR13_H][OUT14_IR13_W][OUT14_IR13_C],             // 7x7x160
+    data_t output[OUT15_IR14_H][OUT15_IR14_W][OUT15_IR14_C],            // 7x7x160
+
+    data_t exp_weights[1][1][OUT14_IR13_C][OUT15_IR14_EXP_C],           // 1x1: 160→960
+    data_t exp_biases[OUT15_IR14_EXP_C],                                // 960
+
+    data_t dw_weights[3][3][1][OUT15_IR14_EXP_C],                       // 3x3: 960 (depthwise)
+    data_t dw_biases[OUT15_IR14_EXP_C],                                 // 960
+
+    data_t pw_weights[1][1][OUT15_IR14_EXP_C][OUT15_IR14_C],            // 1x1: 960→160
+    data_t pw_biases[OUT15_IR14_C]                                      // 160
+);
+
+
+// ───── Encoder Stage 16: Sixteenth InvertedResidual (enc16_ir15) ─────
+void enc16_ir15(
+    data_t input[OUT15_IR14_H][OUT15_IR14_W][OUT15_IR14_C],             // 7x7x160
+    data_t output[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],            // 7x7x160
+
+    data_t exp_weights[1][1][OUT15_IR14_C][OUT16_IR15_EXP_C],           // 1x1: 160→960
+    data_t exp_biases[OUT16_IR15_EXP_C],                                // 960
+
+    data_t dw_weights[3][3][1][OUT16_IR15_EXP_C],                       // 3x3: 960 (depthwise, stride=1)
+    data_t dw_biases[OUT16_IR15_EXP_C],                                 // 960
+
+    data_t pw_weights[1][1][OUT16_IR15_EXP_C][OUT16_IR15_C],            // 1x1: 960→320
+    data_t pw_biases[OUT16_IR15_C]                                      // 320
+);
+
+// ───── Encoder Stage 17: Seventeenth InvertedResidual (enc17_ir16) ─────
+void enc17_ir16(
+    float input[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],             // 7x7x160
+    data_t output[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],            // 7x7x320
+
+    data_t exp_weights[1][1][OUT16_IR15_C][OUT17_IR16_EXP_C],           // 1x1: 160→960
+    data_t exp_biases[OUT17_IR16_EXP_C],                                // 960
+
+    data_t dw_weights[3][3][1][OUT17_IR16_EXP_C],                       // 3x3: 960 (depthwise, stride=1)
+    data_t dw_biases[OUT17_IR16_EXP_C],                                 // 960
+
+    data_t pw_weights[1][1][OUT17_IR16_EXP_C][OUT17_IR16_C],            // 1x1: 960→320
+    data_t pw_biases[OUT17_IR16_C]                                      // 320
+);
+
+
 
 
 #endif  // LANE_SEG_TOP_H
