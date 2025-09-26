@@ -971,7 +971,7 @@ void enc9_ir8(
 // Expansion 1x1 (64→384) + ReLU6
 // Depthwise 3x3 stride=1 (groups=384) + ReLU6
 // Projection 1x1 (384→64), no activation
-// BN already folded into weights/biases
+// BN already folded into weights/biasesd
 // ──────────────────────────────────────────────
 void enc10_ir9(
     data_t input[OUT9_IR8_H][OUT9_IR8_W][OUT9_IR8_C],       // [14][14][64]
@@ -1730,4 +1730,40 @@ void enc17_ir16(
 }
 
 
+// ──────────────────────────────────────────────
+// Function: enc18_cnv  (Conv2dNormActivation18)
+// Conv 1x1 (320→1280) + ReLU6
+// BN already folded into weights/biases
+// ──────────────────────────────────────────────
+void enc18_cnv(
+    float input[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],     // [7][7][320]
+    data_t output[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],       // [7][7][1280]
+
+    data_t conv_weights[1][1][OUT17_IR16_C][OUT18_CNV_C],       // (1x1x320x1280)
+    data_t conv_biases[OUT18_CNV_C]                             // (1280)
+) {
+#pragma HLS INLINE off
+
+    // ───── Array Partitioning ─────
+    #pragma HLS ARRAY_PARTITION variable=conv_weights block factor=1 dim=3
+    #pragma HLS ARRAY_PARTITION variable=conv_biases  block factor=1 dim=1
+
+    // ──────────────────────────────
+    // Conv 1x1 (320→1280) + ReLU6
+    // ──────────────────────────────
+    for (int y = 0; y < OUT18_CNV_H; y++) {
+        for (int x = 0; x < OUT18_CNV_W; x++) {
+            for (int oc = 0; oc < OUT18_CNV_C; oc++) {
+                data_t sum = conv_biases[oc];
+                for (int ic = 0; ic < OUT17_IR16_C; ic++) {
+                    sum += input[y][x][ic] * conv_weights[0][0][ic][oc];
+                }
+                // ReLU6
+                if (sum < 0) sum = 0;
+                else if (sum > (data_t)6) sum = (data_t)6;
+                output[y][x][oc] = sum;
+            }
+        }
+    }
+}
 

@@ -142,12 +142,16 @@
 //#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc16_ir15_pw_b.h"
 
 // enc17_ir16 (InvertedResidual17)
-#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_exp_w.h"
-#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_exp_b.h"
-#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_dw_w.h"
-#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_dw_b.h"
-#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_pw_w.h"
-#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_pw_b.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_exp_w.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_exp_b.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_dw_w.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_dw_b.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_pw_w.h"
+//#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc17_ir16_pw_b.h"
+
+// enc18_cnv (Conv2dNormActivation)
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc18_cnv_w.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\enc18_cnv_b.h"
 
 
 
@@ -177,9 +181,9 @@ void lane_seg_top(
 
 	//data_t out14_ir13[OUT14_IR13_H][OUT14_IR13_W][OUT14_IR13_C],  // <-- output after encoder14_ir13
 	//data_t out15_ir14[OUT15_IR14_H][OUT15_IR14_W][OUT15_IR14_C],	// <- Serves as input
-	float out16_ir15[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],  // <-- output of enc16_ir15
-    data_t out17_ir16[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],  // <-- output of enc17_ir16
-
+	//data_t out16_ir15[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],  // <-- output of enc16_ir15
+    float out17_ir16[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],  // <-- output of enc17_ir16
+	data_t out18_cnv[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],   // <-- stage 18 output
 
 
 
@@ -210,8 +214,9 @@ void lane_seg_top(
 	//#pragma HLS INTERFACE m_axi port=out13_ir12 offset=slave bundle=gmem_out depth=(OUT13_IR12_H * OUT13_IR12_W * OUT13_IR12_C)
 	//#pragma HLS INTERFACE m_axi port=out14_ir13 offset=slave bundle=gmem_out depth=(OUT14_IR13_H * OUT14_IR13_W * OUT14_IR13_C)
 	//#pragma HLS INTERFACE m_axi port=out15_ir14 offset=slave bundle=gmem_out depth=(OUT15_IR14_H * OUT15_IR14_W * OUT15_IR14_C)
-	#pragma HLS INTERFACE m_axi port=out16_ir15 offset=slave bundle=gmem_in depth=(OUT16_IR15_H * OUT16_IR15_W * OUT16_IR15_C)
-	#pragma HLS INTERFACE m_axi port=out17_ir16 offset=slave bundle=gmem_out depth=(OUT17_IR16_H * OUT17_IR16_W * OUT17_IR16_C)
+	//#pragma HLS INTERFACE m_axi port=out16_ir15 offset=slave bundle=gmem_out depth=(OUT16_IR15_H * OUT16_IR15_W * OUT16_IR15_C)
+	#pragma HLS INTERFACE m_axi port=out17_ir16 offset=slave bundle=gmem_in depth=(OUT17_IR16_H * OUT17_IR16_W * OUT17_IR16_C)
+	#pragma HLS INTERFACE m_axi port=out18_cnv  offset=slave bundle=gmem_out depth=(OUT18_CNV_H * OUT18_CNV_W * OUT18_CNV_C)
 
 
 
@@ -236,9 +241,9 @@ void lane_seg_top(
 	//#pragma HLS INTERFACE s_axilite port=out13_ir12 bundle=control
 	//#pragma HLS INTERFACE s_axilite port=out14_ir13 bundle=control
 	//#pragma HLS INTERFACE s_axilite port=out15_ir14 bundle=control
-	#pragma HLS INTERFACE s_axilite port=out16_ir15 bundle=control
+	//#pragma HLS INTERFACE s_axilite port=out16_ir15 bundle=control
 	#pragma HLS INTERFACE s_axilite port=out17_ir16 bundle=control
-
+	#pragma HLS INTERFACE s_axilite port=out18_cnv  bundle=control
 
 
 	// ────────────────────────────────────────────────────────
@@ -393,12 +398,20 @@ void lane_seg_top(
 //     	           enc16_ir15_pw_w,  enc16_ir15_pw_b);
 //     	status |= (1u << 16);
 // 
-    // ───── Stage 17: enc17_ir16 (expand → dw → pw) ─────
-    	enc17_ir16(out16_ir15, out17_ir16,
-    			enc17_ir16_exp_w, enc17_ir16_exp_b,
-				enc17_ir16_dw_w,  enc17_ir16_dw_b,
-				enc17_ir16_pw_w,  enc17_ir16_pw_b);
-    	    status |= (1u << 17);
+//    // ───── Stage 17: enc17_ir16 (expand → dw → pw) ─────
+//   static data_t out17_ir16[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C];
+//    	enc17_ir16(out16_ir15, out17_ir16,
+//   			enc17_ir16_exp_w, enc17_ir16_exp_b,
+//				enc17_ir16_dw_w,  enc17_ir16_dw_b,
+//			enc17_ir16_pw_w,  enc17_ir16_pw_b);
+//    	    status |= (1u << 17);
+//
+    // ───── Stage 18: enc18_cnv (1x1 conv → ReLU6) ─────
+    	    enc18_cnv(out17_ir16, out18_cnv,
+    	    		enc18_cnv_w, enc18_cnv_b);
+    	    status |= (1u << 18);
+
+
 
 
 }
