@@ -218,6 +218,15 @@ typedef half data_t;  // Change as needed
 #define OUT17_IR16_C       320
 #define OUT17_IR16_EXP_C   960
 
+// ──────────────────────────────────────────────
+// Shapes for Eighteenth Conv2dNormActivation (enc18_cnv)
+// Input:  7x7x320 (from out17_ir16)
+// Conv:   320 → 1280 (1x1 stride=1)
+// Output: 7x7x1280
+#define OUT18_CNV_H       OUT17_IR16_H        // 7
+#define OUT18_CNV_W       OUT17_IR16_W        // 7
+#define OUT18_CNV_C       1280
+
 
 // ──────────────────────────────────────────────
 // Legacy Alias Macros (for backward compatibility, optional)
@@ -250,8 +259,9 @@ void lane_seg_top(
 	//data_t out13_ir12[OUT13_IR12_H][OUT13_IR12_W][OUT13_IR12_C],
 	//data_t out14_ir13[OUT14_IR13_H][OUT14_IR13_W][OUT14_IR13_C],
 	//data_t out15_ir14[OUT15_IR14_H][OUT15_IR14_W][OUT15_IR14_C],
-	float out16_ir15[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],
-	data_t out17_ir16[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],
+	//data_t out16_ir15[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],
+	float out17_ir16[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],
+	data_t out18_cnv[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],   // <-- stage 18 output
 
 
 
@@ -490,7 +500,7 @@ void enc16_ir15(
 
 // ───── Encoder Stage 17: Seventeenth InvertedResidual (enc17_ir16) ─────
 void enc17_ir16(
-    float input[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],             // 7x7x160
+    data_t input[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],              // 7x7x160
     data_t output[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],            // 7x7x320
 
     data_t exp_weights[1][1][OUT16_IR15_C][OUT17_IR16_EXP_C],           // 1x1: 160→960
@@ -501,6 +511,15 @@ void enc17_ir16(
 
     data_t pw_weights[1][1][OUT17_IR16_EXP_C][OUT17_IR16_C],            // 1x1: 960→320
     data_t pw_biases[OUT17_IR16_C]                                      // 320
+);
+
+// ───── Encoder Stage 18: Conv2dNormActivation (enc18_cnv) ─────
+void enc18_cnv(
+    float input[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],              // 7x7x320
+    data_t output[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],               // 7x7x1280
+
+    data_t conv_weights[1][1][OUT17_IR16_C][OUT18_CNV_C],               // 1x1: 320→1280
+    data_t conv_biases[OUT18_CNV_C]                                     // 1280
 );
 
 
