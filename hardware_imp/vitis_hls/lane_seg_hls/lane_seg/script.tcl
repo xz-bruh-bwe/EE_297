@@ -17,5 +17,5 @@ config_cosim -tool xsim
 source "./lane_seg_hls/lane_seg/directives.tcl"
 csim_design
 csynth_design
-cosim_design
+cosim_design -tool xsim
 export_design -format ip_catalog
