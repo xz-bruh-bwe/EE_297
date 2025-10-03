@@ -42,6 +42,11 @@
 			<location>C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.tcls</location>
 		</link>
 		<link>
+			<name>source/lane_seg_decv1.cpp</name>
+			<type>1</type>
+			<location>C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg_decv1.cpp</location>
+		</link>
+		<link>
 			<name>source/lane_seg_support.cpp</name>
 			<type>1</type>
 			<location>C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg_support.cpp</location>

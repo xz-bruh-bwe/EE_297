@@ -3,12 +3,15 @@
 
 #include <hls_math.h>
 #include "ap_fixed.h"
+#include "hls_stream.h"
+
 
 // ──────────────────────────────────────────────
 // Data Type Configuration
 //typedef ap_fixed<16, 4> data_t;
 //typedef float data_t;  // Change as needed
 typedef half data_t;  // Change as needed
+//typedef ap_fixed<16, 6> data_t;
 
 // ──────────────────────────────────────────────
 // Layer Shape Definitions (MobileNetV2 First Layer)
@@ -227,6 +230,15 @@ typedef half data_t;  // Change as needed
 #define OUT18_CNV_W       OUT17_IR16_W        // 7
 #define OUT18_CNV_C       1280
 
+// ──────────────────────────────────────────────
+// Shapes for Decoder Stage 0 (dec0)
+// Input:  7x7x1280 (from out18_cnv)
+// ConvTranspose2d: 1280 → 256, kernel=2, stride=2
+// Output: 14x14x256
+#define OUT19_DEC0_H       (OUT18_CNV_H * 2)     // 14
+#define OUT19_DEC0_W       (OUT18_CNV_W * 2)     // 14
+#define OUT19_DEC0_C       256
+
 
 // ──────────────────────────────────────────────
 // Legacy Alias Macros (for backward compatibility, optional)
@@ -260,8 +272,16 @@ void lane_seg_top(
 	//data_t out14_ir13[OUT14_IR13_H][OUT14_IR13_W][OUT14_IR13_C],
 	//data_t out15_ir14[OUT15_IR14_H][OUT15_IR14_W][OUT15_IR14_C],
 	//data_t out16_ir15[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],
-	float out17_ir16[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],
-	data_t out18_cnv[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],   // <-- stage 18 output
+	//data_t out17_ir16[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],
+	float out18_cnv[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],   // <-- stage 18 output
+	//========================= DECODER V1 ==============================================================
+	data_t out19_dec0[OUT19_DEC0_H][OUT19_DEC0_W][OUT19_DEC0_C],
+
+	// streamed weights/biases
+	hls::stream<float>& dec0_w,
+	hls::stream<float>& dec0_b,
+
+
 
 
 
@@ -520,6 +540,18 @@ void enc18_cnv(
 
     data_t conv_weights[1][1][OUT17_IR16_C][OUT18_CNV_C],               // 1x1: 320→1280
     data_t conv_biases[OUT18_CNV_C]                                     // 1280
+);
+
+// ───── Decoder Stage 0: Transposed Conv (dec0_deconv) ─────
+void dec0(
+    float input[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],               // 7x7x1280
+    data_t output[OUT19_DEC0_H][OUT19_DEC0_W][OUT19_DEC0_C],           // 14x14x256
+
+    //data_t weights[2][2][OUT18_CNV_C][OUT19_DEC0_C],                   // 2x2 kernel: 1280→256
+    //data_t biases[OUT19_DEC0_C]                                        // 256
+
+	hls::stream<float>& dec0_w,
+	hls::stream<float>& dec0_b
 );
 
 

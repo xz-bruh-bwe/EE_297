@@ -1675,6 +1675,7 @@ void enc17_ir16(
     // Expansion conv 1x1 (160→960) + ReLU6
     // ──────────────────────────────
     for (int y = 0; y < OUT17_IR16_H; y++) {
+
         for (int x = 0; x < OUT17_IR16_W; x++) {
             for (int oc = 0; oc < OUT17_IR16_EXP_C; oc++) {
                 data_t sum = exp_biases[oc];
@@ -1766,4 +1767,5 @@ void enc18_cnv(
         }
     }
 }
+
 

@@ -1,12 +1,14 @@
 NOTE: Using modified tcl85t.dll from https://gitenterprise.xilinx.com/ACT/vitis_hls_tcl
 INFO: [HLS 200-10] Running 'Z:/Xilinx/Vitis_HLS/2023.1/bin/unwrapped/win64.o/vitis_hls.exe'
-INFO: [HLS 200-10] For user 'Baron' on host 'desktop-d2nna1u' (Windows NT_amd64 version 6.2) on Fri Sep 26 13:50:38 -0700 2025
+INFO: [HLS 200-10] For user 'Baron' on host 'desktop-d2nna1u' (Windows NT_amd64 version 6.2) on Thu Oct 02 21:56:15 -0700 2025
 INFO: [HLS 200-10] In directory 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls'
 Sourcing Tcl script 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim.tcl'
 INFO: [HLS 200-1510] Running: source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim.tcl
 INFO: [HLS 200-1510] Running: open_project lane_seg_hls 
 INFO: [HLS 200-10] Opening project 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls'.
 INFO: [HLS 200-1510] Running: set_top lane_seg_top 
+INFO: [HLS 200-1510] Running: add_files lane_seg_hls/lane_seg_decv1.cpp 
+INFO: [HLS 200-10] Adding design file 'lane_seg_hls/lane_seg_decv1.cpp' to the project
 INFO: [HLS 200-1510] Running: add_files lane_seg_hls/lane_seg_support.cpp 
 INFO: [HLS 200-10] Adding design file 'lane_seg_hls/lane_seg_support.cpp' to the project
 INFO: [HLS 200-1510] Running: add_files lane_seg_hls/lane_seg_top.cpp 
@@ -31,52 +33,15 @@ INFO: [HLS 200-1510] Running: csim_design -quiet
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
-   Compiling ../../../lane_seg_tb.cpp in debug mode
-   Compiling ../../../lane_seg_support.cpp in debug mode
-   Compiling ../../../lane_seg_top.cpp in debug mode
+   Compiling ../../../lane_seg_decv1.cpp in debug mode
    Generating csim.exe
 In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:149:0,
                  from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_fpo.h:143,
                  from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
                  from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_half.h:25,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/ap_private.h:52,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/ap_common.h:666,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/ap_fixed.h:9,
-                 from ../../../lane_seg_tb.cpp:1:
-Z:/Xilinx/Vitis_HLS/2023.1/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_fpo.h:143:0,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_half.h:25,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/ap_private.h:52,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/ap_common.h:666,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/ap_fixed.h:9,
-                 from ../../../lane_seg_tb.cpp:1:
-Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:141:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
-../../../lane_seg_tb.cpp:7:0: warning: "IMG_HEIGHT" redefined
- #define IMG_HEIGHT     224
- 
-In file included from ../../../lane_seg_tb.cpp:2:0:
-../../../lane_seg_top.h:233:0: note: this is the location of the previous definition
- #define IMG_HEIGHT  IN_H
- 
-../../../lane_seg_tb.cpp:8:0: warning: "IMG_WIDTH" redefined
- #define IMG_WIDTH      224
- 
-In file included from ../../../lane_seg_tb.cpp:2:0:
-../../../lane_seg_top.h:234:0: note: this is the location of the previous definition
- #define IMG_WIDTH   IN_W
- 
-In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:149:0,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_fpo.h:143,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_half.h:25,
                  from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_math.h:41,
                  from ../../../lane_seg_top.h:4,
-                 from ../../../lane_seg_support.cpp:6:
+                 from ../../../lane_seg_decv1.cpp:6:
 Z:/Xilinx/Vitis_HLS/2023.1/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
  #define __GMP_LIBGMP_DLL  0
  
@@ -85,35 +50,24 @@ In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_fpo.h:143:0,
                  from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_half.h:25,
                  from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_math.h:41,
                  from ../../../lane_seg_top.h:4,
-                 from ../../../lane_seg_support.cpp:6:
+                 from ../../../lane_seg_decv1.cpp:6:
 Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:141:0: note: this is the location of the previous definition
  #define __GMP_LIBGMP_DLL 1
  
-In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:149:0,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_fpo.h:143,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_half.h:25,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_math.h:41,
-                 from ../../../lane_seg_top.h:4,
-                 from ../../../lane_seg_top.cpp:6:
-Z:/Xilinx/Vitis_HLS/2023.1/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_fpo.h:143:0,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_half.h:25,
-                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_math.h:41,
-                 from ../../../lane_seg_top.h:4,
-                 from ../../../lane_seg_top.cpp:6:
-Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:141:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
-TESTBENCH DEBUG: out17_ir16[0][0][0] = 0.190918
-Loaded input out17_ir16.
+TESTBENCH DEBUG: out18_cnv[0][0][0] = 0.000000
+Loaded input out18_cnv.
+dec0_b[0] = 0.283964
+dec0_b[1] = -0.433291
+dec0_b[2] = 0.259648
+dec0_b[3] = -0.014970
+dec0_b[4] = -0.006745
+Streamed dec0 biases.
+Streamed dec0 weights (1310720 of 1310720).
 magic  = 0x1EAF0002
-status = 0x00040000
-Output written to: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc18_cnv_out.txt
+status = 0x00080000
+Output written to: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out19_dec0.txt
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 1310720
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 87.729 seconds; current allocated memory: 0.293 MB.
-INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 2 seconds. Total elapsed time: 100.338 seconds; peak allocated memory: 1.051 GB.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 42.287 seconds; current allocated memory: 0.336 MB.
+INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 1 seconds. Total elapsed time: 48.823 seconds; peak allocated memory: 1.044 GB.

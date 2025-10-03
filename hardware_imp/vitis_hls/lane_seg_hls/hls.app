@@ -6,6 +6,7 @@
     </Simulation>
     <files xmlns="">
         <file name="../lane_seg_tb.cpp" sc="0" tb="1" cflags="-Wno-unknown-pragmas" csimflags="" blackbox="false"/>
+        <file name="lane_seg_hls/lane_seg_decv1.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="lane_seg_hls/lane_seg_support.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="lane_seg_hls/lane_seg_top.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="lane_seg_hls/lane_seg_top.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
