@@ -1,5 +1,6 @@
 #include "ap_fixed.h"
 #include "lane_seg_top.h"
+#include "hls_stream.h"
 
 
 // ──────────────────────────────────────────────
@@ -119,6 +120,14 @@
 #define OUT18_CNV_HEIGHT    7
 #define OUT18_CNV_WIDTH     7
 #define OUT18_CNV_CHANNELS  1280
+
+// ──────────────────────────────────────────────
+// Decoder Stage 0 (dec0)
+// Input:  7x7x1280 (from enc18_cnv)
+// Output: 14x14x256
+#define OUT19_DEC0_HEIGHT   14
+#define OUT19_DEC0_WIDTH    14
+#define OUT19_DEC0_CHANNELS 256
 
 
 // ──────────────────────────────────────────────
@@ -577,6 +586,31 @@ void save_encoder18_cnv_output(data_t out[OUT18_CNV_HEIGHT][OUT18_CNV_WIDTH][OUT
     printf("Output written to: %s\n", filename);
 }
 
+// ──────────────────────────────────────────────
+// Save dec0 output feature maps to file
+void save_decoder0_output(data_t out[OUT19_DEC0_HEIGHT][OUT19_DEC0_WIDTH][OUT19_DEC0_CHANNELS],
+                          const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT19_DEC0_CHANNELS; c++) {
+        for (int i = 0; i < OUT19_DEC0_HEIGHT; i++) {
+            for (int j = 0; j < OUT19_DEC0_WIDTH; j++) {
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
+
 
 // ──────────────────────────────────────────────
 // Main Testbench
@@ -601,8 +635,13 @@ int main() {
     //data_t out14_ir13[OUT14_IR13_HEIGHT][OUT14_IR13_WIDTH][OUT14_IR13_CHANNELS] = {0};
 	//data_t out15_ir14[OUT15_IR14_HEIGHT][OUT15_IR14_WIDTH][OUT15_IR14_CHANNELS] = {0};
     //data_t out16_ir15[OUT16_IR15_HEIGHT][OUT16_IR15_WIDTH][OUT16_IR15_CHANNELS] = {0};
-    float out17_ir16[OUT17_IR16_HEIGHT][OUT17_IR16_WIDTH][OUT17_IR16_CHANNELS] = {0}; // <- New Input
-    data_t out18_cnv[OUT18_CNV_HEIGHT][OUT18_CNV_WIDTH][OUT18_CNV_CHANNELS]    = {0};
+    //data_t out17_ir16[OUT17_IR16_HEIGHT][OUT17_IR16_WIDTH][OUT17_IR16_CHANNELS] = {0};
+    float out18_cnv[OUT18_CNV_HEIGHT][OUT18_CNV_WIDTH][OUT18_CNV_CHANNELS]    = {0}; // <- New Input
+    data_t out19_dec0[OUT19_DEC0_HEIGHT][OUT19_DEC0_WIDTH][OUT19_DEC0_CHANNELS] = {0}; // output
+
+    // Streams for weights and biases
+    hls::stream<float> dec0_w; // comment out later
+    hls::stream<float> dec0_b; // comment out later
 
 
 
@@ -714,31 +753,92 @@ int main() {
     //
 
     // === 3. Load output out17_ir16 from .txt ===
-        FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc17_ir16_out.txt", "r");
+    //    FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc17_ir16_out.txt", "r");
+    //    if (!fp) {
+    //    	printf("Error: Could not open input image file.\n");
+    //    	return 1;
+    //    }
+    //
+    //    for (int c = 0; c < OUT18_CNV_CHANNELS; c++) {
+    //    	for (int i = 0; i < OUT18_CNV_HEIGHT; i++) {
+    //    		for (int j = 0; j < OUT18_CNV_WIDTH; j++) {
+    //    			fscanf(fp, "%f", &out17_ir16[i][j][c]);
+    //    		}
+    //    	}
+    //    }
+    //    printf("TESTBENCH DEBUG: out17_ir16[0][0][0] = %f\n", out17_ir16[0][0][0]);
+    //
+    //    fclose(fp);
+    //    printf("Loaded input out17_ir16.\n");
+    
+    // === 3. Load output out18_cnv from .txt ===
+        FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc18_cnv_out.txt", "r");
         if (!fp) {
         	printf("Error: Could not open input image file.\n");
         	return 1;
         }
-    
-        for (int c = 0; c < OUT18_CNV_CHANNELS; c++) {
+        for (int c = 0; c < OUT18_CNV_CHANNELS; c++) { //int c = 0; c < OUT19_DEC0_CHANNELS; c++
         	for (int i = 0; i < OUT18_CNV_HEIGHT; i++) {
         		for (int j = 0; j < OUT18_CNV_WIDTH; j++) {
-        			fscanf(fp, "%f", &out17_ir16[i][j][c]);
+        			fscanf(fp, "%f", &out18_cnv[i][j][c]);
         		}
         	}
         }
-        printf("TESTBENCH DEBUG: out17_ir16[0][0][0] = %f\n", out17_ir16[0][0][0]);
+        printf("TESTBENCH DEBUG: out18_cnv[0][0][0] = %f\n", out18_cnv[0][0][0]);
     
         fclose(fp);
-        printf("Loaded input out17_ir16.\n");
-    
-    
-    
+        printf("Loaded input out18_cnv.\n");
+
+
+        // === Load biases into stream ===
+        FILE* fb = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/weights/dec0_b.txt", "r");
+        if (!fb) { printf("Error: Could not open dec0_b.txt\n"); return 1; }
+
+        int print_limit = 5;
+        for (int oc = 0; oc < OUT19_DEC0_CHANNELS; oc++) {
+            float tmp;
+            if (fscanf(fb, "%f", &tmp) != 1) { printf("Error reading dec0_b at oc=%d\n", oc); return 2; }
+            dec0_b.write(tmp);
+            if (oc < print_limit) printf("dec0_b[%d] = %f\n", oc, tmp);  // (label fixed)
+        }
+        fclose(fb);
+        printf("Streamed dec0 biases.\n");
+
+        // === Load weights into stream ===
+        FILE* fw = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/weights/dec0_w.txt", "r");
+        if (!fw) { printf("Error: Could not open dec0_w.txt\n"); return 1; }
+
+        long long count = 0;
+        const long long expected = 2LL * 2LL * OUT18_CNV_CHANNELS * OUT19_DEC0_CHANNELS;
+
+        for (int ky = 0; ky < 2; ky++) {
+            for (int kx = 0; kx < 2; kx++) {
+                for (int ic = 0; ic < OUT18_CNV_CHANNELS; ic++) {
+                    for (int oc = 0; oc < OUT19_DEC0_CHANNELS; oc++) {
+                        float tmp;
+                        if (fscanf(fw, "%f", &tmp) != 1) {
+                            printf("Error reading dec0_w at (ky=%d,kx=%d,ic=%d,oc=%d) after %lld values\n",
+                                   ky, kx, ic, oc, count);
+                            fclose(fw);
+                            return 3;
+                        }
+                        dec0_w.write(tmp);
+                        count++;
+                    }
+                }
+            }
+        }
+        fclose(fw);
+        printf("Streamed dec0 weights (%lld of %lld).\n", count, expected);
+
+
 
     // === 3. Run HLS top function ===
     //lane_seg_top(image, out14_ir13, ctrl, status, magic); <- Change back when finished.
 
-    lane_seg_top(out17_ir16, out18_cnv, ctrl, status, magic);
+    //lane_seg_top(out18_cnv, out19_dec0, ctrl, status, magic);
+    lane_seg_top(out18_cnv, out19_dec0, dec0_w, dec0_b, ctrl, status, magic);
+
 
 
 
@@ -765,7 +865,9 @@ int main() {
     //save_encoder15_ir14_output(out15_ir14, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc15_ir14_out.txt");
     //save_encoder16_ir15_output(out16_ir15, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc16_ir15_out.txt");
     //save_encoder17_ir16_output(out17_ir16, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc17_ir16_out.txt");
-    save_encoder18_cnv_output(out18_cnv,   "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc18_cnv_out.txt");
+    //save_encoder18_cnv_output(out18_cnv,   "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc18_cnv_out.txt");
+    save_decoder0_output(out19_dec0, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out19_dec0.txt");
+
 
 
     return 0;

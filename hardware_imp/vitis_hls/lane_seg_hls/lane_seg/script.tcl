@@ -6,6 +6,7 @@
 ############################################################
 open_project lane_seg_hls
 set_top lane_seg_top
+add_files lane_seg_hls/lane_seg_decv1.cpp
 add_files lane_seg_hls/lane_seg_support.cpp
 add_files lane_seg_hls/lane_seg_top.cpp
 add_files lane_seg_hls/lane_seg_top.h
