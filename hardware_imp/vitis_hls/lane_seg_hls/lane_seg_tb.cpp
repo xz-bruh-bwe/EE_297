@@ -129,6 +129,80 @@
 #define OUT19_DEC0_WIDTH    14
 #define OUT19_DEC0_CHANNELS 256
 
+// ──────────────────────────────────────────────
+// Decoder Stage 1 (dec1)
+// Input:  14x14x256 (from dec0)
+// Conv2d: 256 → 256, kernel=3, stride=1, padding=1
+// Output: 14x14x256
+#define OUT20_DEC1_HEIGHT   OUT19_DEC0_HEIGHT
+#define OUT20_DEC1_WIDTH    OUT19_DEC0_WIDTH
+#define OUT20_DEC1_CHANNELS 256
+
+// ──────────────────────────────────────────────
+// Decoder Stage 2 (dec2)
+// Input:  14x14x256 (from dec1)
+// ConvTranspose2d: 256 → 128, kernel=2, stride=2
+// Output: 28x28x128
+#define OUT21_DEC2_HEIGHT   (OUT20_DEC1_HEIGHT * 2)
+#define OUT21_DEC2_WIDTH    (OUT20_DEC1_WIDTH * 2)
+#define OUT21_DEC2_CHANNELS 128
+
+
+// ──────────────────────────────────────────────
+// Decoder Stage 3 (dec3)
+// Input:  28x28x128 (from dec2)
+// Conv2d: 128 → 128, kernel=3, stride=1, padding=1
+// Output: 28x28x128
+#define OUT22_DEC3_HEIGHT   OUT21_DEC2_HEIGHT
+#define OUT22_DEC3_WIDTH    OUT21_DEC2_WIDTH
+#define OUT22_DEC3_CHANNELS 128
+
+// ──────────────────────────────────────────────
+// Decoder Stage 4 (dec4)
+// Input:  28x28x128 (from dec3)
+// ConvTranspose2d: 128 → 64, kernel=2, stride=2
+// Output: 56x56x64
+#define OUT23_DEC4_HEIGHT   (OUT22_DEC3_HEIGHT * 2)
+#define OUT23_DEC4_WIDTH    (OUT22_DEC3_WIDTH * 2)
+#define OUT23_DEC4_CHANNELS 64
+
+// ──────────────────────────────────────────────
+// Decoder Stage 5 (dec5)
+// Input:  56x56x64 (from dec4)
+// Conv2d: 64 → 64, kernel=3, stride=1, padding=1
+// Output: 56x56x64
+#define OUT24_DEC5_HEIGHT   OUT23_DEC4_HEIGHT
+#define OUT24_DEC5_WIDTH    OUT23_DEC4_WIDTH
+#define OUT24_DEC5_CHANNELS 64
+
+// ──────────────────────────────────────────────
+// Decoder Stage 6 (dec6)
+// Input:  56x56x64 (from dec5)
+// ConvTranspose2d: 64 → 32, kernel=2, stride=2
+// Output: 112x112x32
+#define OUT25_DEC6_HEIGHT   (OUT24_DEC5_HEIGHT * 2)
+#define OUT25_DEC6_WIDTH    (OUT24_DEC5_WIDTH * 2)
+#define OUT25_DEC6_CHANNELS 32
+
+// ──────────────────────────────────────────────
+// Decoder Stage 7 (dec7)
+// Input:  112x112x32 (from dec6)
+// Conv2d: 32 → 32, kernel=3, stride=1, padding=1
+// Output: 112x112x32
+#define OUT26_DEC7_HEIGHT   OUT25_DEC6_HEIGHT
+#define OUT26_DEC7_WIDTH    OUT25_DEC6_WIDTH
+#define OUT26_DEC7_CHANNELS 32
+
+// ──────────────────────────────────────────────
+// Decoder Stage 8 (dec8)
+// Input:  112x112x32 (from dec7)
+// Conv2d: 32 → 1, kernel=1, stride=1, padding=0
+// Output: 112x112x1
+#define OUT27_DEC8_HEIGHT   OUT26_DEC7_HEIGHT
+#define OUT27_DEC8_WIDTH    OUT26_DEC7_WIDTH
+#define OUT27_DEC8_CHANNELS 1
+
+
 
 // ──────────────────────────────────────────────
 // Save encoder0 output feature maps to file
@@ -610,6 +684,199 @@ void save_decoder0_output(data_t out[OUT19_DEC0_HEIGHT][OUT19_DEC0_WIDTH][OUT19_
     printf("Output written to: %s\n", filename);
 }
 
+// ──────────────────────────────────────────────
+// Save dec1 output feature maps to file
+void save_decoder1_output(data_t out[OUT20_DEC1_HEIGHT][OUT20_DEC1_WIDTH][OUT20_DEC1_CHANNELS],
+                          const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT20_DEC1_CHANNELS; c++) {
+        for (int i = 0; i < OUT20_DEC1_HEIGHT; i++) {
+            for (int j = 0; j < OUT20_DEC1_WIDTH; j++) {
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
+// ──────────────────────────────────────────────
+// Save dec2 output feature maps to file
+void save_decoder2_output(data_t out[OUT21_DEC2_HEIGHT][OUT21_DEC2_WIDTH][OUT21_DEC2_CHANNELS],
+                          const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT21_DEC2_CHANNELS; c++) {
+        for (int i = 0; i < OUT21_DEC2_HEIGHT; i++) {
+            for (int j = 0; j < OUT21_DEC2_WIDTH; j++) {
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
+// ──────────────────────────────────────────────
+// Save dec3 output feature maps to file
+void save_decoder3_output(data_t out[OUT22_DEC3_HEIGHT][OUT22_DEC3_WIDTH][OUT22_DEC3_CHANNELS],
+                          const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT22_DEC3_CHANNELS; c++) {
+        for (int i = 0; i < OUT22_DEC3_HEIGHT; i++) {
+            for (int j = 0; j < OUT22_DEC3_WIDTH; j++) {
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
+// ──────────────────────────────────────────────
+// Save dec4 output feature maps to file
+void save_decoder4_output(data_t out[OUT23_DEC4_HEIGHT][OUT23_DEC4_WIDTH][OUT23_DEC4_CHANNELS],
+                          const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT23_DEC4_CHANNELS; c++) {
+        for (int i = 0; i < OUT23_DEC4_HEIGHT; i++) {
+            for (int j = 0; j < OUT23_DEC4_WIDTH; j++) {
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
+// ──────────────────────────────────────────────
+// Save dec5 output feature maps to file
+void save_decoder5_output(data_t out[OUT24_DEC5_HEIGHT][OUT24_DEC5_WIDTH][OUT24_DEC5_CHANNELS],
+                          const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT24_DEC5_CHANNELS; c++) {
+        for (int i = 0; i < OUT24_DEC5_HEIGHT; i++) {
+            for (int j = 0; j < OUT24_DEC5_WIDTH; j++) {
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
+// ──────────────────────────────────────────────
+// Save dec6 output feature maps to file
+void save_decoder6_output(data_t out[OUT25_DEC6_HEIGHT][OUT25_DEC6_WIDTH][OUT25_DEC6_CHANNELS],
+                          const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT25_DEC6_CHANNELS; c++) {
+        for (int i = 0; i < OUT25_DEC6_HEIGHT; i++) {
+            for (int j = 0; j < OUT25_DEC6_WIDTH; j++) {
+                fprintf(f, "%.4f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
+// ──────────────────────────────────────────────
+// Save dec7 output feature maps to file
+void save_decoder7_output(data_t out[OUT26_DEC7_HEIGHT][OUT26_DEC7_WIDTH][OUT26_DEC7_CHANNELS],
+                          const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT26_DEC7_CHANNELS; c++) {
+        for (int i = 0; i < OUT26_DEC7_HEIGHT; i++) {
+            for (int j = 0; j < OUT26_DEC7_WIDTH; j++) {
+                fprintf(f, "%.6f ", (half)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
+// ──────────────────────────────────────────────
+// Save dec8 output feature maps to file
+void save_decoder8_output(data_t out[OUT27_DEC8_HEIGHT][OUT27_DEC8_WIDTH][OUT27_DEC8_CHANNELS],
+                          const char* filename) {
+    FILE* f = fopen(filename, "w");
+    if (!f) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return;
+    }
+
+    for (int c = 0; c < OUT27_DEC8_CHANNELS; c++) {
+        for (int i = 0; i < OUT27_DEC8_HEIGHT; i++) {
+            for (int j = 0; j < OUT27_DEC8_WIDTH; j++) {
+                fprintf(f, "%.6f ", (float)out[i][j][c]);
+            }
+            fprintf(f, "\n");
+        }
+        fprintf(f, "\n");
+    }
+
+    fclose(f);
+    printf("Output written to: %s\n", filename);
+}
+
+
 
 
 // ──────────────────────────────────────────────
@@ -636,12 +903,17 @@ int main() {
 	//data_t out15_ir14[OUT15_IR14_HEIGHT][OUT15_IR14_WIDTH][OUT15_IR14_CHANNELS] = {0};
     //data_t out16_ir15[OUT16_IR15_HEIGHT][OUT16_IR15_WIDTH][OUT16_IR15_CHANNELS] = {0};
     //data_t out17_ir16[OUT17_IR16_HEIGHT][OUT17_IR16_WIDTH][OUT17_IR16_CHANNELS] = {0};
-    float out18_cnv[OUT18_CNV_HEIGHT][OUT18_CNV_WIDTH][OUT18_CNV_CHANNELS]    = {0}; // <- New Input
-    data_t out19_dec0[OUT19_DEC0_HEIGHT][OUT19_DEC0_WIDTH][OUT19_DEC0_CHANNELS] = {0}; // output
+    //data_t out18_cnv[OUT18_CNV_HEIGHT][OUT18_CNV_WIDTH][OUT18_CNV_CHANNELS]     = {0};
 
-    // Streams for weights and biases
-    hls::stream<float> dec0_w; // comment out later
-    hls::stream<float> dec0_b; // comment out later
+	//data_t out19_dec0[OUT19_DEC0_HEIGHT][OUT19_DEC0_WIDTH][OUT19_DEC0_CHANNELS] = {0}; //
+	//data_t out20_dec1[OUT20_DEC1_HEIGHT][OUT20_DEC1_WIDTH][OUT20_DEC1_CHANNELS] = {0}; //
+	//data_t out21_dec2[OUT21_DEC2_HEIGHT][OUT21_DEC2_WIDTH][OUT21_DEC2_CHANNELS] = {0}; //
+	//data_t out22_dec3[OUT22_DEC3_HEIGHT][OUT22_DEC3_WIDTH][OUT22_DEC3_CHANNELS] = {0};
+	//data_t out23_dec4[OUT23_DEC4_HEIGHT][OUT23_DEC4_WIDTH][OUT23_DEC4_CHANNELS] = {0};
+	//data_t  out24_dec5[OUT24_DEC5_HEIGHT][OUT24_DEC5_WIDTH][OUT24_DEC5_CHANNELS] = {0};
+	//data_t out25_dec6[OUT25_DEC6_HEIGHT][OUT25_DEC6_WIDTH][OUT25_DEC6_CHANNELS] = {0};
+    float out26_dec7[OUT26_DEC7_HEIGHT][OUT26_DEC7_WIDTH][OUT26_DEC7_CHANNELS] = {0};
+    data_t out27_dec8[OUT27_DEC8_HEIGHT][OUT27_DEC8_WIDTH][OUT27_DEC8_CHANNELS] = {0};
 
 
 
@@ -772,74 +1044,167 @@ int main() {
     //    printf("Loaded input out17_ir16.\n");
     
     // === 3. Load output out18_cnv from .txt ===
-        FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc18_cnv_out.txt", "r");
-        if (!fp) {
-        	printf("Error: Could not open input image file.\n");
-        	return 1;
-        }
-        for (int c = 0; c < OUT18_CNV_CHANNELS; c++) { //int c = 0; c < OUT19_DEC0_CHANNELS; c++
-        	for (int i = 0; i < OUT18_CNV_HEIGHT; i++) {
-        		for (int j = 0; j < OUT18_CNV_WIDTH; j++) {
-        			fscanf(fp, "%f", &out18_cnv[i][j][c]);
-        		}
-        	}
-        }
-        printf("TESTBENCH DEBUG: out18_cnv[0][0][0] = %f\n", out18_cnv[0][0][0]);
+    //    FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc18_cnv_out.txt", "r");
+    //    if (!fp) {
+    //    	printf("Error: Could not open input image file.\n");
+    //    	return 1;
+    //    }
+    //    for (int c = 0; c < OUT18_CNV_CHANNELS; c++) { //int c = 0; c < OUT19_DEC0_CHANNELS; c++
+    //    	for (int i = 0; i < OUT18_CNV_HEIGHT; i++) {
+    //    		for (int j = 0; j < OUT18_CNV_WIDTH; j++) {
+    //    			fscanf(fp, "%f", &out18_cnv[i][j][c]);
+    //    		}
+    //    	}
+    //    }
+    //    printf("TESTBENCH DEBUG: out18_cnv[0][0][0] = %f\n", out18_cnv[0][0][0]);
+    //
+    //    fclose(fp);
+    //    printf("Loaded input out18_cnv.\n");
+
+    // === 3. Load output out19_dec0 from .txt ===
+    //FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out19_dec0.txt", "r");
+    //if (!fp) {
+    //    printf("Error: Could not open out19_dec0.txt\n");
+    //    return 1;
+    //}
+    //for (int c = 0; c < OUT19_DEC0_CHANNELS; c++) {
+    //    for (int i = 0; i < OUT19_DEC0_HEIGHT; i++) {
+    //        for (int j = 0; j < OUT19_DEC0_WIDTH; j++) {
+    //            fscanf(fp, "%f", &out19_dec0[i][j][c]);
+    //        }
+    //    }
+    //}
+    //printf("TESTBENCH DEBUG: out19_dec0[0][0][0] = %f\n", out19_dec0[0][0][0]);
+    //
+    //fclose(fp);
+    //printf("Loaded input out19_dec0.\n");
+
+    // === 3. Load output out20_dec1 from .txt ===
+    //FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/software_output/sw_decoder1_output.txt", "r");
+    //if (!fp) {
+    //    printf("Error: Could not open out20_dec1.txt\n");
+    //    return 1;
+    //}
+    //for (int c = 0; c < OUT20_DEC1_CHANNELS; c++) {
+    //    for (int i = 0; i < OUT20_DEC1_HEIGHT; i++) {
+    //        for (int j = 0; j < OUT20_DEC1_WIDTH; j++) {
+    //            fscanf(fp, "%f", &out20_dec1[i][j][c]);
+    //        }
+    //    }
+    //}
+    //printf("TESTBENCH DEBUG: out20_dec1[0][0][0] = %f\n", out20_dec1[0][0][0]);
+    //
+    //fclose(fp);
+    //printf("Loaded input out20_dec1.\n");
+
+    // === 3. Load output out21_dec2 from .txt ===
+    //FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out21_dec2.txt", "r");
+    //if (!fp) {
+    //    printf("Error: Could not open out21_dec2.txt\n");
+    //    return 1;
+    //}
+    //for (int c = 0; c < OUT21_DEC2_CHANNELS; c++) {
+    //    for (int i = 0; i < OUT21_DEC2_HEIGHT; i++) {
+    //        for (int j = 0; j < OUT21_DEC2_WIDTH; j++) {
+    //            fscanf(fp, "%f", &out21_dec2[i][j][c]);
+    //        }
+    //    }
+    //}
+    //printf("TESTBENCH DEBUG: out21_dec2[0][0][0] = %f\n", out21_dec2[0][0][0]);
+    //fclose(fp);
+    //printf("Loaded input out21_dec2.\n");
+
+    // === 3. Load output out22_dec3 from .txt ===
+    //FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out22_dec3.txt", "r");
+    //if (!fp) {
+    //    printf("Error: Could not open out22_dec3.txt\n");
+    //    return 1;
+    //}
+    //for (int c = 0; c < OUT22_DEC3_CHANNELS; c++) {
+    //    for (int i = 0; i < OUT22_DEC3_HEIGHT; i++) {
+    //        for (int j = 0; j < OUT22_DEC3_WIDTH; j++) {
+    //            fscanf(fp, "%f", &out22_dec3[i][j][c]);
+    //        }
+    //    }
+    //}
+    //printf("TESTBENCH DEBUG: out22_dec3[0][0][0] = %f\n", out22_dec3[0][0][0]);
+    //fclose(fp);
+    //printf("Loaded input out22_dec3.\n");
+
+    // === 3. Load output out23_dec4 from .txt ===
+    //FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out23_dec4.txt", "r");
+    //if (!fp) {
+    //    printf("Error: Could not open out23_dec4.txt\n");
+    //    return 1;
+    //}
+    //for (int c = 0; c < OUT23_DEC4_CHANNELS; c++) {
+    //    for (int i = 0; i < OUT23_DEC4_HEIGHT; i++) {
+    //        for (int j = 0; j < OUT23_DEC4_WIDTH; j++) {
+    //            fscanf(fp, "%f", &out23_dec4[i][j][c]);
+    //        }
+    //    }
+    //}
+    //printf("TESTBENCH DEBUG: out23_dec4[0][0][0] = %f\n", out23_dec4[0][0][0]);
+    //fclose(fp);
+    //printf("Loaded input out23_dec4.\n");
+
+    // === 3. Load output out24_dec5 from .txt ===
+    //FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out24_dec5.txt", "r");
+    //if (!fp) {
+    //    printf("Error: Could not open out24_dec5.txt\n");
+    //    return 1;
+    //}
+    //for (int c = 0; c < OUT24_DEC5_CHANNELS; c++) {
+    //    for (int i = 0; i < OUT24_DEC5_HEIGHT; i++) {
+    //        for (int j = 0; j < OUT24_DEC5_WIDTH; j++) {
+    //            fscanf(fp, "%f", &out24_dec5[i][j][c]);
+    //        }
+    //    }
+    //}
+    //printf("TESTBENCH DEBUG: out24_dec5[0][0][0] = %f\n", out24_dec5[0][0][0]);
+    //fclose(fp);
+    //printf("Loaded input out24_dec5.\n");
     
-        fclose(fp);
-        printf("Loaded input out18_cnv.\n");
+    // === 1. Load output out25_dec6 from .txt ===
+    //FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out25_dec6.txt", "r");
+    //if (!fp) {
+    //    printf("Error: Could not open out25_dec6.txt\n");
+    //    return 1;
+    //}
+    //for (int c = 0; c < OUT25_DEC6_CHANNELS; c++) {
+    //    for (int i = 0; i < OUT25_DEC6_HEIGHT; i++) {
+    //        for (int j = 0; j < OUT25_DEC6_WIDTH; j++) {
+    //            fscanf(fp, "%f", &out25_dec6[i][j][c]);
+    //        }
+    //    }
+    //}
+    //printf("TESTBENCH DEBUG: out25_dec6[0][0][0] = %f\n", out25_dec6[0][0][0]);
+    //fclose(fp);
+    //printf("Loaded input out25_dec6.\n");
 
+    // === 1. Load output out26_dec7 from .txt ===
+    FILE* fp = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/software_output/sw_decoder7_output.txt", "r");
+    if (!fp) {
+        printf("Error: Could not open out26_dec7.txt\n");
+        return 1;
+    }
 
-        // === Load biases into stream ===
-        FILE* fb = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/weights/dec0_b.txt", "r");
-        if (!fb) { printf("Error: Could not open dec0_b.txt\n"); return 1; }
-
-        int print_limit = 5;
-        for (int oc = 0; oc < OUT19_DEC0_CHANNELS; oc++) {
-            float tmp;
-            if (fscanf(fb, "%f", &tmp) != 1) { printf("Error reading dec0_b at oc=%d\n", oc); return 2; }
-            dec0_b.write(tmp);
-            if (oc < print_limit) printf("dec0_b[%d] = %f\n", oc, tmp);  // (label fixed)
-        }
-        fclose(fb);
-        printf("Streamed dec0 biases.\n");
-
-        // === Load weights into stream ===
-        FILE* fw = fopen("C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/weights/dec0_w.txt", "r");
-        if (!fw) { printf("Error: Could not open dec0_w.txt\n"); return 1; }
-
-        long long count = 0;
-        const long long expected = 2LL * 2LL * OUT18_CNV_CHANNELS * OUT19_DEC0_CHANNELS;
-
-        for (int ky = 0; ky < 2; ky++) {
-            for (int kx = 0; kx < 2; kx++) {
-                for (int ic = 0; ic < OUT18_CNV_CHANNELS; ic++) {
-                    for (int oc = 0; oc < OUT19_DEC0_CHANNELS; oc++) {
-                        float tmp;
-                        if (fscanf(fw, "%f", &tmp) != 1) {
-                            printf("Error reading dec0_w at (ky=%d,kx=%d,ic=%d,oc=%d) after %lld values\n",
-                                   ky, kx, ic, oc, count);
-                            fclose(fw);
-                            return 3;
-                        }
-                        dec0_w.write(tmp);
-                        count++;
-                    }
-                }
+    for (int c = 0; c < OUT26_DEC7_CHANNELS; c++) {
+        for (int i = 0; i < OUT26_DEC7_HEIGHT; i++) {
+            for (int j = 0; j < OUT26_DEC7_WIDTH; j++) {
+                fscanf(fp, "%f", &out26_dec7[i][j][c]);
             }
         }
-        fclose(fw);
-        printf("Streamed dec0 weights (%lld of %lld).\n", count, expected);
-
-
-
+    }
+    printf("TESTBENCH DEBUG: out26_dec7[0][0][0] = %f\n", out26_dec7[0][0][0]);
+    fclose(fp);
+    printf("Loaded input out26_dec7.\n");
+    
+    
     // === 3. Run HLS top function ===
     //lane_seg_top(image, out14_ir13, ctrl, status, magic); <- Change back when finished.
 
-    //lane_seg_top(out18_cnv, out19_dec0, ctrl, status, magic);
-    lane_seg_top(out18_cnv, out19_dec0, dec0_w, dec0_b, ctrl, status, magic);
-
-
+    lane_seg_top(out26_dec7, out27_dec8, ctrl, status, magic);
 
 
     // === 4. Debug Outputs ===
@@ -866,7 +1231,16 @@ int main() {
     //save_encoder16_ir15_output(out16_ir15, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc16_ir15_out.txt");
     //save_encoder17_ir16_output(out17_ir16, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc17_ir16_out.txt");
     //save_encoder18_cnv_output(out18_cnv,   "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc18_cnv_out.txt");
-    save_decoder0_output(out19_dec0, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out19_dec0.txt");
+    //save_decoder0_output(out19_dec0, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out19_dec0.txt");
+    //save_decoder1_output(out20_dec1, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out20_dec1.txt");
+    //save_decoder2_output(out21_dec2, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out21_dec2.txt");
+    //save_decoder3_output(out22_dec3, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out22_dec3.txt");
+    //save_decoder4_output(out23_dec4, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out23_dec4.txt");
+    //save_decoder5_output(out24_dec5, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out24_dec5.txt");
+    //save_decoder6_output(out25_dec6, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out25_dec6.txt");
+    //save_decoder7_output(out26_dec7, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out26_dec7.txt");
+    save_decoder8_output(out27_dec8, "C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/out27_dec8.txt");
+
 
 
 

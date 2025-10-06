@@ -23453,3 +23453,1221 @@ INFO: [HLS 200-2036] Building debug C Simulation binaries
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 42.287 seconds; current allocated memory: 0.336 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 7.881 seconds; current allocated memory: 0.289 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 51.12 seconds; current allocated memory: 0.371 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 32.037 seconds; current allocated memory: 0.410 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 28.321 seconds; current allocated memory: 0.387 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 27.972 seconds; current allocated memory: 0.320 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 33.677 seconds; current allocated memory: 0.320 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 34.016 seconds; current allocated memory: 0.316 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 34.664 seconds; current allocated memory: 0.277 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 1.042 GB.
+INFO: [HLS 200-10] Analyzing design file 'lane_seg_hls/lane_seg_decv1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'lane_seg_hls/lane_seg_support.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'lane_seg_hls/lane_seg_top.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 5 seconds. CPU system time: 0 seconds. Elapsed time: 127.659 seconds; current allocated memory: 1.058 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-115] Multiple burst writes of length 50176 and bit width 16 in loop 'VITIS_LOOP_92_1'(lane_seg_hls/lane_seg_decv1.cpp:92:19) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (lane_seg_hls/lane_seg_decv1.cpp:92:19)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 5.046 seconds; current allocated memory: 1.058 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.011 seconds; current allocated memory: 1.058 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.202 seconds; current allocated memory: 1.081 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.188 seconds; current allocated memory: 1.135 GB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_94_3' (lane_seg_hls/lane_seg_decv1.cpp:94) in function 'dec1' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_109_9' (lane_seg_hls/lane_seg_decv1.cpp:109) in function 'dec1' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_122_12' (lane_seg_hls/lane_seg_decv1.cpp:122) in function 'dec1' automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'dec1' (lane_seg_hls/lane_seg_decv1.cpp:92:47)...9 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.31 seconds; current allocated memory: 1.135 GB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_93_2' (lane_seg_hls/lane_seg_decv1.cpp:93:26) in function 'dec1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_92_1' (lane_seg_hls/lane_seg_decv1.cpp:92:19) in function 'dec1'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_105_8' (lane_seg_hls/lane_seg_decv1.cpp:105:39) in function 'dec1' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_104_7' (lane_seg_hls/lane_seg_decv1.cpp:104:35) in function 'dec1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_103_6' (lane_seg_hls/lane_seg_decv1.cpp:103:31) in function 'dec1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_102_5' (lane_seg_hls/lane_seg_decv1.cpp:102:27) in function 'dec1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_101_4' (lane_seg_hls/lane_seg_decv1.cpp:101:23) in function 'dec1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_121_11' (lane_seg_hls/lane_seg_decv1.cpp:121:28) in function 'dec1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_120_10' (lane_seg_hls/lane_seg_decv1.cpp:120:24) in function 'dec1'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.357 seconds; current allocated memory: 1.166 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'lane_seg_top' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 4, loop 'VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.467 seconds; current allocated memory: 1.170 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.175 seconds; current allocated memory: 1.171 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dec1_Pipeline_VITIS_LOOP_109_9' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_109_9'.
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_109_9' (loop 'VITIS_LOOP_109_9'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_2_resp', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110) and bus request operation ('gmem_out_load_1_req', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110).
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_109_9' (loop 'VITIS_LOOP_109_9'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_2_resp', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110) and bus request operation ('gmem_out_load_1_req', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110).
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_109_9' (loop 'VITIS_LOOP_109_9'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_2_resp', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110) and bus request operation ('gmem_out_load_1_req', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110).
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_109_9' (loop 'VITIS_LOOP_109_9'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_2_resp', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110) and bus request operation ('gmem_out_load_1_req', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110).
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_109_9' (loop 'VITIS_LOOP_109_9'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_2_resp', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110) and bus request operation ('gmem_out_load_1_req', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110).
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_109_9' (loop 'VITIS_LOOP_109_9'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_2_resp', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110) and bus request operation ('gmem_out_load_1_req', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110).
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_109_9' (loop 'VITIS_LOOP_109_9'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_2_resp', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110) and bus request operation ('gmem_out_load_1_req', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110).
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_109_9' (loop 'VITIS_LOOP_109_9'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_2_resp', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110) and bus request operation ('gmem_out_load_1_req', lane_seg_hls/lane_seg_decv1.cpp:110) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:110).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 19, Depth = 20, loop 'VITIS_LOOP_109_9'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.483 seconds; current allocated memory: 1.171 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.389 seconds; current allocated memory: 1.171 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dec1_Pipeline_VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12'.
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12' (loop 'VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_1_resp', lane_seg_hls/lane_seg_decv1.cpp:125) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:125) and bus request operation ('gmem_out_load_req', lane_seg_hls/lane_seg_decv1.cpp:123) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:123).
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12' (loop 'VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_1_resp', lane_seg_hls/lane_seg_decv1.cpp:125) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:125) and bus request operation ('gmem_out_load_req', lane_seg_hls/lane_seg_decv1.cpp:123) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:123).
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12' (loop 'VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_1_resp', lane_seg_hls/lane_seg_decv1.cpp:125) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:125) and bus request operation ('gmem_out_load_req', lane_seg_hls/lane_seg_decv1.cpp:123) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:123).
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12' (loop 'VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_1_resp', lane_seg_hls/lane_seg_decv1.cpp:125) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:125) and bus request operation ('gmem_out_load_req', lane_seg_hls/lane_seg_decv1.cpp:123) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:123).
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12' (loop 'VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_1_resp', lane_seg_hls/lane_seg_decv1.cpp:125) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:125) and bus request operation ('gmem_out_load_req', lane_seg_hls/lane_seg_decv1.cpp:123) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:123).
+WARNING: [HLS 200-880] The II Violation in module 'dec1_Pipeline_VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12' (loop 'VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_1_resp', lane_seg_hls/lane_seg_decv1.cpp:125) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:125) and bus request operation ('gmem_out_load_req', lane_seg_hls/lane_seg_decv1.cpp:123) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:123).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 18, loop 'VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.467 seconds; current allocated memory: 1.171 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.316 seconds; current allocated memory: 1.171 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dec1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.725 seconds; current allocated memory: 1.171 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.414 seconds; current allocated memory: 1.171 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lane_seg_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.206 seconds; current allocated memory: 1.171 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.128 seconds; current allocated memory: 1.171 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3_dec1_b_ROM_AUTO_1R' to 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3_dec1_b_ROM_AUTObkb' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3' pipeline 'VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3/m_axi_gmem_out_BREADY' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3'.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec1_Pipeline_VITIS_LOOP_92_1_VITIS_LOOP_93_2_VITIS_LOOP_94_3_dec1_b_ROM_AUTObkb' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.441 seconds; current allocated memory: 1.173 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dec1_Pipeline_VITIS_LOOP_109_9' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [HLS 200-2049] Adding the rewind optimization to the pipelined process 'VITIS_LOOP_109_9' with inout ports inside a dataflow region can result in the creation of loop-carried dependencies and errors. Use caution when adding the rewind optimization to such loops.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dec1_Pipeline_VITIS_LOOP_109_9' pipeline 'VITIS_LOOP_109_9' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_2_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hptosp_16ns_32_1_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sptohp_32ns_16_1_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dec1_Pipeline_VITIS_LOOP_109_9'.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec1_Pipeline_VITIS_LOOP_109_9_dec1_w_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.674 seconds; current allocated memory: 1.289 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dec1_Pipeline_VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [HLS 200-2049] Adding the rewind optimization to the pipelined process 'VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12' with inout ports inside a dataflow region can result in the creation of loop-carried dependencies and errors. Use caution when adding the rewind optimization to such loops.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dec1_Pipeline_VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12' pipeline 'VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'hcmp_16ns_16ns_1_1_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dec1_Pipeline_VITIS_LOOP_120_10_VITIS_LOOP_121_11_VITIS_LOOP_122_12'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.621 seconds; current allocated memory: 1.289 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dec1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dec1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.714 seconds; current allocated memory: 1.289 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lane_seg_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/gmem_in' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/gmem_out' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/out19_dec0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/out20_dec1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/ctrl' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/status' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/magic' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'lane_seg_top' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'out19_dec0', 'out20_dec1', 'ctrl', 'status', 'magic' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lane_seg_top'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.583 seconds; current allocated memory: 1.289 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.881 seconds; current allocated memory: 1.289 GB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 3 seconds. CPU system time: 1 seconds. Elapsed time: 4.571 seconds; current allocated memory: 1.289 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for lane_seg_top.
+INFO: [VLOG 209-307] Generating Verilog RTL for lane_seg_top.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 68.49 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 16 seconds. CPU system time: 3 seconds. Elapsed time: 149.404 seconds; current allocated memory: 253.016 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 40.4 seconds; current allocated memory: 0.266 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 20.533 seconds; current allocated memory: 0.363 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 20.704 seconds; current allocated memory: 0.395 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 7.613 seconds; current allocated memory: 0.277 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 41.173 seconds; current allocated memory: 0.375 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 110.622 seconds; current allocated memory: 0.391 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 41.655 seconds; current allocated memory: 0.000 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 144.373 seconds; current allocated memory: 0.457 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.182 seconds; current allocated memory: 1.039 GB.
+INFO: [HLS 200-10] Analyzing design file 'lane_seg_hls/lane_seg_decv1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'lane_seg_hls/lane_seg_support.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'lane_seg_hls/lane_seg_top.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 5 seconds. CPU system time: 1 seconds. Elapsed time: 96.077 seconds; current allocated memory: 1.053 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-115] Multiple burst writes of length 200704 and bit width 16 in loop 'VITIS_LOOP_327_1'(lane_seg_hls/lane_seg_decv1.cpp:327:20) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (lane_seg_hls/lane_seg_decv1.cpp:327:20)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.247 seconds; current allocated memory: 1.054 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.054 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.145 seconds; current allocated memory: 1.062 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.066 seconds; current allocated memory: 1.067 GB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_329_3' (lane_seg_hls/lane_seg_decv1.cpp:329) in function 'dec5' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_340_8' (lane_seg_hls/lane_seg_decv1.cpp:340) in function 'dec5' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_357_12' (lane_seg_hls/lane_seg_decv1.cpp:357) in function 'dec5' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_340_8' (lane_seg_hls/lane_seg_decv1.cpp:340) in function 'dec5' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_344_9' (lane_seg_hls/lane_seg_decv1.cpp:344) in function 'dec5' completely with a factor of 64.
+INFO: [XFORM 203-102] Partitioning array 'dec5_w' in dimension 4 automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'dec5' (lane_seg_hls/lane_seg_decv1.cpp:327:39)...6 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.328 seconds; current allocated memory: 1.091 GB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_328_2' (lane_seg_hls/lane_seg_decv1.cpp:328:27) in function 'dec5'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_327_1' (lane_seg_hls/lane_seg_decv1.cpp:327:20) in function 'dec5'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_339_7' (lane_seg_hls/lane_seg_decv1.cpp:339:35) in function 'dec5'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_338_6' (lane_seg_hls/lane_seg_decv1.cpp:338:31) in function 'dec5'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_337_5' (lane_seg_hls/lane_seg_decv1.cpp:337:27) in function 'dec5'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_336_4' (lane_seg_hls/lane_seg_decv1.cpp:336:23) in function 'dec5'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_356_11' (lane_seg_hls/lane_seg_decv1.cpp:356:28) in function 'dec5'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_355_10' (lane_seg_hls/lane_seg_decv1.cpp:355:24) in function 'dec5'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.839 seconds; current allocated memory: 1.142 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'lane_seg_top' ...
+WARNING: [SYN 201-103] Legalizing function name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 4, loop 'VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.556 seconds; current allocated memory: 1.146 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.169 seconds; current allocated memory: 1.147 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_8'.
+WARNING: [HLS 200-880] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s' (loop 'VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_8'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_2_resp', lane_seg_hls/lane_seg_decv1.cpp:345) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:345) and bus request operation ('gmem_out_load_1_req', lane_seg_hls/lane_seg_decv1.cpp:345) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:345).
+WARNING: [HLS 200-880] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s' (loop 'VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_8'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_2_resp', lane_seg_hls/lane_seg_decv1.cpp:345) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:345) and bus request operation ('gmem_out_load_1_req', lane_seg_hls/lane_seg_decv1.cpp:345) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:345).
+WARNING: [HLS 200-880] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s' (loop 'VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_8'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_2_resp', lane_seg_hls/lane_seg_decv1.cpp:345) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:345) and bus request operation ('gmem_out_load_1_req', lane_seg_hls/lane_seg_decv1.cpp:345) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:345).
+WARNING: [HLS 200-880] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s' (loop 'VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_8'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_2_resp', lane_seg_hls/lane_seg_decv1.cpp:345) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:345) and bus request operation ('gmem_out_load_1_req', lane_seg_hls/lane_seg_decv1.cpp:345) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:345).
+WARNING: [HLS 200-885] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s' (loop 'VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_8'): Unable to schedule bus request operation ('gmem_out_load_36_req', lane_seg_hls/lane_seg_decv1.cpp:345) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:345) due to limited memory ports (II = 35). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s' (loop 'VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_8'): Unable to schedule bus request operation ('gmem_out_load_52_req', lane_seg_hls/lane_seg_decv1.cpp:345) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:345) due to limited memory ports (II = 51). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s' (loop 'VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_8'): Unable to schedule bus request operation ('gmem_out_load_60_req', lane_seg_hls/lane_seg_decv1.cpp:345) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:345) due to limited memory ports (II = 59). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s' (loop 'VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_8'): Unable to schedule bus request operation ('gmem_out_load_64_req', lane_seg_hls/lane_seg_decv1.cpp:345) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:345) due to limited memory ports (II = 63). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 64, Depth = 2020, loop 'VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_8'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 26 seconds. CPU system time: 0 seconds. Elapsed time: 26.48 seconds; current allocated memory: 1.199 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 28 seconds. CPU system time: 0 seconds. Elapsed time: 27.812 seconds; current allocated memory: 1.209 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dec5_Pipeline_VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12'.
+WARNING: [HLS 200-880] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12' (loop 'VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_1_resp', lane_seg_hls/lane_seg_decv1.cpp:360) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:360) and bus request operation ('gmem_out_load_req', lane_seg_hls/lane_seg_decv1.cpp:358) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:358).
+WARNING: [HLS 200-880] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12' (loop 'VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_1_resp', lane_seg_hls/lane_seg_decv1.cpp:360) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:360) and bus request operation ('gmem_out_load_req', lane_seg_hls/lane_seg_decv1.cpp:358) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:358).
+WARNING: [HLS 200-880] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12' (loop 'VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_1_resp', lane_seg_hls/lane_seg_decv1.cpp:360) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:360) and bus request operation ('gmem_out_load_req', lane_seg_hls/lane_seg_decv1.cpp:358) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:358).
+WARNING: [HLS 200-880] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12' (loop 'VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_1_resp', lane_seg_hls/lane_seg_decv1.cpp:360) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:360) and bus request operation ('gmem_out_load_req', lane_seg_hls/lane_seg_decv1.cpp:358) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:358).
+WARNING: [HLS 200-880] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12' (loop 'VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_1_resp', lane_seg_hls/lane_seg_decv1.cpp:360) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:360) and bus request operation ('gmem_out_load_req', lane_seg_hls/lane_seg_decv1.cpp:358) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:358).
+WARNING: [HLS 200-880] The II Violation in module 'dec5_Pipeline_VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12' (loop 'VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_out_addr_1_resp', lane_seg_hls/lane_seg_decv1.cpp:360) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:360) and bus request operation ('gmem_out_load_req', lane_seg_hls/lane_seg_decv1.cpp:358) on port 'gmem_out' (lane_seg_hls/lane_seg_decv1.cpp:358).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 18, loop 'VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 4.128 seconds; current allocated memory: 1.209 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.384 seconds; current allocated memory: 1.209 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dec5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.298 seconds; current allocated memory: 1.209 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.292 seconds; current allocated memory: 1.209 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lane_seg_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.206 seconds; current allocated memory: 1.209 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 1.210 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3_dec5_b_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3_dec5_b_ROM_Abkb' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3' pipeline 'VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3/m_axi_gmem_out_BREADY' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3'.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_327_1_VITIS_LOOP_328_2_VITIS_LOOP_329_3_dec5_b_ROM_Abkb' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.543 seconds; current allocated memory: 1.211 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [HLS 200-2049] Adding the rewind optimization to the pipelined process 'VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_8' with inout ports inside a dataflow region can result in the creation of loop-carried dependencies and errors. Use caution when adding the rewind optimization to such loops.
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_0_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3cud' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_1_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3dEe' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_2_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3eOg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_3_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3fYi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_4_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3g8j' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_5_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3hbi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_6_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3ibs' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_7_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3jbC' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_8_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3kbM' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_9_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3lbW' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_10_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3mb6' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_11_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3ncg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_12_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3ocq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_13_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3pcA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_14_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3qcK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_15_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3rcU' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_16_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3sc4' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_17_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3tde' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_18_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3udo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_19_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3vdy' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_20_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3wdI' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_21_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3xdS' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_22_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3yd2' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_23_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3zec' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_24_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Aem' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_25_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Bew' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_26_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3CeG' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_27_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3DeQ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_28_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Ee0' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_29_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Ffa' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_30_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Gfk' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_31_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Hfu' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_32_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3IfE' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_33_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3JfO' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_34_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3KfY' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_35_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Lf8' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_36_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Mgi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_37_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Ngs' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_38_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3OgC' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_39_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3PgM' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_40_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3QgW' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_41_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Rg6' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_42_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Shg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_43_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Thq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_44_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3UhA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_45_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3VhK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_46_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3WhU' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_47_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Xh4' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_48_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Yie' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_49_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Zio' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_50_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_30iy' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_51_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_31iI' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_52_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_32iS' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_53_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_33i2' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_54_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_34jc' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_55_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_35jm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_56_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_36jw' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_57_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_37jG' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_58_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_38jQ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_59_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_39j0' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_60_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3bak' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_61_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3bbk' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_62_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3bck' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s_dec5_w_63_ROM_AUTO_1R' to 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3bdk' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s' pipeline 'VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_8' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_2_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hptosp_16ns_32_1_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sptohp_32ns_16_1_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_340_s'.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3cud' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3dEe' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3eOg' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3fYi' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3g8j' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3hbi' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3ibs' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3jbC' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3kbM' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3lbW' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3mb6' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3ncg' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3ocq' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3pcA' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3qcK' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3rcU' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3sc4' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3tde' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3udo' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3vdy' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3wdI' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3xdS' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3yd2' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3zec' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Aem' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Bew' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3CeG' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3DeQ' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Ee0' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Ffa' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Gfk' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Hfu' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3IfE' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3JfO' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3KfY' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Lf8' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Mgi' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Ngs' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3OgC' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3PgM' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3QgW' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Rg6' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Shg' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Thq' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3UhA' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3VhK' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3WhU' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Xh4' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Yie' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3Zio' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_30iy' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_31iI' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_32iS' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_33i2' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_34jc' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_35jm' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_36jw' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_37jG' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_38jQ' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_39j0' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3bak' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3bbk' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3bck' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lane_seg_top_dec5_Pipeline_VITIS_LOOP_336_4_VITIS_LOOP_338_6_VITIS_LOOP_339_7_VITIS_LOOP_3bdk' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 5.079 seconds; current allocated memory: 1.212 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dec5_Pipeline_VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [HLS 200-2049] Adding the rewind optimization to the pipelined process 'VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12' with inout ports inside a dataflow region can result in the creation of loop-carried dependencies and errors. Use caution when adding the rewind optimization to such loops.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dec5_Pipeline_VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12' pipeline 'VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'hcmp_16ns_16ns_1_1_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dec5_Pipeline_VITIS_LOOP_355_10_VITIS_LOOP_356_11_VITIS_LOOP_357_12'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 11 seconds. CPU system time: 3 seconds. Elapsed time: 13.89 seconds; current allocated memory: 1.233 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dec5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dec5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.625 seconds; current allocated memory: 1.233 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lane_seg_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/gmem_in' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/gmem_out' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/out23_dec4' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/out24_dec5' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/ctrl' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/status' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lane_seg_top/magic' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'lane_seg_top' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'out23_dec4', 'out24_dec5', 'ctrl', 'status', 'magic' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lane_seg_top'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.82 seconds; current allocated memory: 1.233 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 3 seconds. CPU system time: 1 seconds. Elapsed time: 6.283 seconds; current allocated memory: 1.237 GB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 3 seconds. CPU system time: 1 seconds. Elapsed time: 4.896 seconds; current allocated memory: 1.251 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for lane_seg_top.
+INFO: [VLOG 209-307] Generating Verilog RTL for lane_seg_top.
+INFO: [HLS 200-789] **** Estimated Fmax: 68.49 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 88 seconds. CPU system time: 7 seconds. Elapsed time: 195.76 seconds; current allocated memory: 216.617 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 38.493 seconds; current allocated memory: 0.430 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 5.828 seconds; current allocated memory: 0.270 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.65 seconds; current allocated memory: 0.305 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 24.165 seconds; current allocated memory: 0.336 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 7.127 seconds; current allocated memory: 0.379 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 38.416 seconds; current allocated memory: 0.055 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 22.223 seconds; current allocated memory: 0.273 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 21.176 seconds; current allocated memory: 0.180 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 6.016 seconds; current allocated memory: 0.270 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 22.568 seconds; current allocated memory: 0.363 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 7.712 seconds; current allocated memory: 0.379 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 7.081 seconds; current allocated memory: 0.102 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 6.494 seconds; current allocated memory: 0.293 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.1 (64-bit)
+Tool Version Limit: 2023.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -tool xsim 
+INFO: [HLS 200-1510] Running: source ./lane_seg_hls/lane_seg/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 25.793 seconds; current allocated memory: 0.402 MB.

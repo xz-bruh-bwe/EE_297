@@ -2,28 +2,20 @@
 <vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
   <errorLogs>
     <logs>
-      <synLog>
-        <logs message="ERROR: [HLS 207-3325] use of overloaded operator '*' is ambiguous (with operand types 'float' and 'data_t' (aka 'ap_fixed&lt;16, 6>')) (lane_seg_hls/lane_seg_support.cpp:1760:44)" projectName="lane_seg_hls" solutionName="lane_seg" date="2025-09-30T20:56:20.698-0700"/>
-        <logs message="ERROR: [HLS 207-3325] use of overloaded operator '*' is ambiguous (with operand types 'float' and 'data_t' (aka 'ap_fixed&lt;16, 6>')) (lane_seg_hls/lane_seg_support.cpp:1683:44)" projectName="lane_seg_hls" solutionName="lane_seg" date="2025-09-30T20:56:18.403-0700"/>
-        <logs message="ERROR: [HLS 207-3325] use of overloaded operator '*' is ambiguous (with operand types 'float' and 'data_t' (aka 'ap_fixed&lt;16, 6>')) (lane_seg_hls/lane_seg_support.cpp:1586:44)" projectName="lane_seg_hls" solutionName="lane_seg" date="2025-09-30T20:56:16.189-0700"/>
-      </synLog>
+      <synLog/>
       <simLog/>
       <mgLog/>
       <packageLog/>
       <csimLog>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-02T21:54:11.961-0700"/>
-        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-02T21:51:08.642-0700"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-02T21:40:05.737-0700"/>
-        <logs message="ERROR [HLS SIM]: an hls::stream is read while empty, which may result in RTL simulation hanging.&#xD;&#xA;If this is not expected, execute C simulation in debug mode in the GUI and examine the source code location of the blocked hls::stream::read() call to debug.&#xD;&#xA;If this is expected, add -DALLOW_EMPTY_HLS_STREAM_READS to -cflags to turn this error into a warning and allow empty hls::stream reads to return the default value for the data type.&#xD;&#xA;@E Simulation failed: Function 'main' returns nonzero value '3'." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-02T21:40:05.715-0700"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-02T00:32:02.264-0700"/>
-        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-02T00:14:53.595-0700"/>
-        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-01T23:52:59.783-0700"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-09-30T22:20:47.948-0700"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-09-30T22:15:51.069-0700"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-09-30T22:14:18.553-0700"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-09-30T22:12:21.758-0700"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-09-30T22:00:38.525-0700"/>
-        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-09-30T21:52:18.960-0700"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-05T20:59:34.747-0700"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-05T20:58:22.090-0700"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-05T20:20:07.160-0700"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-05T20:19:30.117-0700"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-05T20:18:35.381-0700"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-05T19:59:53.903-0700"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-05T19:56:33.944-0700"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-05T19:52:21.319-0700"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lane_seg_hls" solutionName="lane_seg" date="2025-10-05T19:43:35.090-0700"/>
       </csimLog>
     </logs>
   </errorLogs>

@@ -37,6 +37,11 @@
 			<location>C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/.apc/.tb</location>
 		</link>
 		<link>
+			<name>.reference/dec5_w.h</name>
+			<type>1</type>
+			<location>C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/weights/dec5_w.h</location>
+		</link>
+		<link>
 			<name>lane_seg/constraints</name>
 			<type>2</type>
 			<location>C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.tcls</location>

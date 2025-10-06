@@ -239,6 +239,77 @@ typedef half data_t;  // Change as needed
 #define OUT19_DEC0_W       (OUT18_CNV_W * 2)     // 14
 #define OUT19_DEC0_C       256
 
+// ──────────────────────────────────────────────
+// Shapes for Decoder Stage 1 (dec1)
+// Input:  14x14x256 (from out19_dec0)
+// Conv2d: 256 → 256, kernel=3, stride=1, padding=1
+// Output: 14x14x256
+#define OUT20_DEC1_H       OUT19_DEC0_H     // 14
+#define OUT20_DEC1_W       OUT19_DEC0_W     // 14
+#define OUT20_DEC1_C       256
+
+// ──────────────────────────────────────────────
+// Shapes for Decoder Stage 2 (dec2)
+// Input:  14x14x256 (from out20_dec1)
+// ConvTranspose2d: 256 → 128, kernel=2, stride=2
+// Output: 28x28x128
+#define OUT21_DEC2_H       (OUT20_DEC1_H * 2)   // 28
+#define OUT21_DEC2_W       (OUT20_DEC1_W * 2)   // 28
+#define OUT21_DEC2_C       128
+
+// ──────────────────────────────────────────────
+// Shapes for Decoder Stage 3 (dec3)
+// Input:  28x28x128 (from out21_dec2)
+// Conv2d: 128 → 128, kernel=3, stride=1, padding=1
+// Output: 28x28x128
+#define OUT22_DEC3_H       OUT21_DEC2_H     // 28
+#define OUT22_DEC3_W       OUT21_DEC2_W     // 28
+#define OUT22_DEC3_C       128
+
+// ──────────────────────────────────────────────
+// Shapes for Decoder Stage 4 (dec4)
+// Input:  28x28x128 (from out22_dec3)
+// ConvTranspose2d: 128 → 64, kernel=2, stride=2
+// Output: 56x56x64
+#define OUT23_DEC4_H       (OUT22_DEC3_H * 2)   // 56
+#define OUT23_DEC4_W       (OUT22_DEC3_W * 2)   // 56
+#define OUT23_DEC4_C       64
+
+// ──────────────────────────────────────────────
+// Shapes for Decoder Stage 5 (dec5)
+// Input:  56x56x64 (from out23_dec4)
+// Conv2d: 64 → 64, kernel=3, stride=1, padding=1
+// Output: 56x56x64
+#define OUT24_DEC5_H       OUT23_DEC4_H     // 56
+#define OUT24_DEC5_W       OUT23_DEC4_W     // 56
+#define OUT24_DEC5_C       64
+
+// ──────────────────────────────────────────────
+// Shapes for Decoder Stage 6 (dec6)
+// Input:  56x56x64 (from out24_dec5)
+// ConvTranspose2d: 64 → 32, kernel=2, stride=2
+// Output: 112x112x32
+#define OUT25_DEC6_H       (OUT24_DEC5_H * 2)   // 112
+#define OUT25_DEC6_W       (OUT24_DEC5_W * 2)   // 112
+#define OUT25_DEC6_C       32
+
+// ──────────────────────────────────────────────
+// Shapes for Decoder Stage 7 (dec7)
+// Input:  112x112x32 (from out25_dec6)
+// Conv2d: 32 → 32, kernel=3, stride=1, padding=1
+// Output: 112x112x32
+#define OUT26_DEC7_H       OUT25_DEC6_H     // 112
+#define OUT26_DEC7_W       OUT25_DEC6_W     // 112
+#define OUT26_DEC7_C       32
+
+// ──────────────────────────────────────────────
+// Shapes for Decoder Stage 8 (dec8)
+// Input:  112x112x32 (from out26_dec7)
+// Conv2d: 32 → 1, kernel=1, stride=1, padding=0
+// Output: 112x112x1
+#define OUT27_DEC8_H       OUT26_DEC7_H     // 112
+#define OUT27_DEC8_W       OUT26_DEC7_W     // 112
+#define OUT27_DEC8_C       1 // 1 Channel = 2 colors B/W
 
 // ──────────────────────────────────────────────
 // Legacy Alias Macros (for backward compatibility, optional)
@@ -254,7 +325,7 @@ typedef half data_t;  // Change as needed
 // ───── HLS Entry Point ─────
 // Only image input + output + AXI-lite control and status registers
 void lane_seg_top(
-    //float image[IN_H][IN_W][IN_C],            // Input RGB image
+    float image[IN_H][IN_W][IN_C],            // Input RGB image
     //data_t out0[OUT_H][OUT_W][OUT_C],          // Output of conv0 + bn + relu6
 	//data_t out1_ir0[OUT1_IR0_H][OUT1_IR0_W][OUT1_IR0_C],  // <-- output after encoder1_ir0
 	//data_t out2_ir1[OUT2_IR1_H][OUT2_IR1_W][OUT2_IR1_C],  // <-- output after encoder2_ir1
@@ -273,16 +344,19 @@ void lane_seg_top(
 	//data_t out15_ir14[OUT15_IR14_H][OUT15_IR14_W][OUT15_IR14_C],
 	//data_t out16_ir15[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],
 	//data_t out17_ir16[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],
-	float out18_cnv[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],   // <-- stage 18 output
+	//data_t out18_cnv[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],   // <-- stage 18 output
+
 	//========================= DECODER V1 ==============================================================
-	data_t out19_dec0[OUT19_DEC0_H][OUT19_DEC0_W][OUT19_DEC0_C],
+	//data_t out19_dec0[OUT19_DEC0_H][OUT19_DEC0_W][OUT19_DEC0_C],
 
-	// streamed weights/biases
-	hls::stream<float>& dec0_w,
-	hls::stream<float>& dec0_b,
-
-
-
+	//data_t out20_dec1[OUT20_DEC1_H][OUT20_DEC1_W][OUT20_DEC1_C],  // Dec1 output
+	//data_t out21_dec2[OUT21_DEC2_H][OUT21_DEC2_W][OUT21_DEC2_C],
+	//data_t out22_dec3[OUT22_DEC3_H][OUT22_DEC3_W][OUT22_DEC3_C],
+	//data_t out23_dec4[OUT23_DEC4_H][OUT23_DEC4_W][OUT23_DEC4_C],
+	//data_t out24_dec5[OUT24_DEC5_H][OUT24_DEC5_W][OUT24_DEC5_C],
+	//data_t out25_dec6[OUT25_DEC6_H][OUT25_DEC6_W][OUT25_DEC6_C],
+	//data_t out26_dec7[OUT26_DEC7_H][OUT26_DEC7_W][OUT26_DEC7_C],
+	data_t out27_dec8[OUT27_DEC8_H][OUT27_DEC8_W][OUT27_DEC8_C],
 
 
     unsigned int ctrl,                         // AXI-lite control (optional)
@@ -535,7 +609,7 @@ void enc17_ir16(
 
 // ───── Encoder Stage 18: Conv2dNormActivation (enc18_cnv) ─────
 void enc18_cnv(
-    float input[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],              // 7x7x320
+    data_t input[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],              // 7x7x320
     data_t output[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],               // 7x7x1280
 
     data_t conv_weights[1][1][OUT17_IR16_C][OUT18_CNV_C],               // 1x1: 320→1280
@@ -544,17 +618,87 @@ void enc18_cnv(
 
 // ───── Decoder Stage 0: Transposed Conv (dec0_deconv) ─────
 void dec0(
-    float input[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],               // 7x7x1280
+    data_t input[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],               // 7x7x1280
     data_t output[OUT19_DEC0_H][OUT19_DEC0_W][OUT19_DEC0_C],           // 14x14x256
 
-    //data_t weights[2][2][OUT18_CNV_C][OUT19_DEC0_C],                   // 2x2 kernel: 1280→256
-    //data_t biases[OUT19_DEC0_C]                                        // 256
+    data_t weights[2][2][OUT18_CNV_C][OUT19_DEC0_C],                   // 2x2 kernel: 1280→256
+    data_t biases[OUT19_DEC0_C]                                        // 256
 
-	hls::stream<float>& dec0_w,
-	hls::stream<float>& dec0_b
 );
 
 
+// ───── Decoder Stage 1: Conv2d (dec1) ─────
+void dec1(
+    data_t input[OUT19_DEC0_H][OUT19_DEC0_W][OUT19_DEC0_C],              // 14x14x256
+    data_t output[OUT20_DEC1_H][OUT20_DEC1_W][OUT20_DEC1_C],            // 14x14x256
+
+    data_t conv_weights[3][3][OUT19_DEC0_C][OUT20_DEC1_C],              // 3x3 kernel: 256→256
+    data_t conv_biases[OUT20_DEC1_C]                                    // 256
+);
+
+
+// ───── Decoder Stage 2: Transposed Conv (dec2) ─────
+void dec2(
+    data_t input[OUT20_DEC1_H][OUT20_DEC1_W][OUT20_DEC1_C],               // 14x14x256
+    data_t output[OUT21_DEC2_H][OUT21_DEC2_W][OUT21_DEC2_C],              // 28x28x128
+
+    data_t weights[2][2][OUT20_DEC1_C][OUT21_DEC2_C],                     // 2x2 kernel: 256→128
+    data_t biases[OUT21_DEC2_C]                                           // 128
+);
+
+// ───── Decoder Stage 3: Conv2d (dec3) ─────
+void dec3(
+    data_t input[OUT21_DEC2_H][OUT21_DEC2_W][OUT21_DEC2_C],              // 28x28x128
+    data_t output[OUT22_DEC3_H][OUT22_DEC3_W][OUT22_DEC3_C],             // 28x28x128
+
+    data_t conv_weights[3][3][OUT21_DEC2_C][OUT22_DEC3_C],               // 3x3 kernel: 128→128
+    data_t conv_biases[OUT22_DEC3_C]                                     // 128
+);
+
+// ───── Decoder Stage 4: Transposed Conv (dec4) ─────
+void dec4(
+    data_t input[OUT22_DEC3_H][OUT22_DEC3_W][OUT22_DEC3_C],              // 28x28x128
+    data_t output[OUT23_DEC4_H][OUT23_DEC4_W][OUT23_DEC4_C],             // 56x56x64
+
+    data_t weights[2][2][OUT22_DEC3_C][OUT23_DEC4_C],                    // 2x2 kernel: 128→64
+    data_t biases[OUT23_DEC4_C]                                          // 64
+);
+
+// ───── Decoder Stage 5: Conv2d (dec5) ─────
+void dec5(
+    data_t input[OUT23_DEC4_H][OUT23_DEC4_W][OUT23_DEC4_C],              // 56x56x64
+    data_t output[OUT24_DEC5_H][OUT24_DEC5_W][OUT24_DEC5_C],             // 56x56x64
+
+    data_t conv_weights[3][3][OUT23_DEC4_C][OUT24_DEC5_C],               // 3x3 kernel: 64→64
+    data_t conv_biases[OUT24_DEC5_C]                                     // 64
+);
+
+// ───── Decoder Stage 6: Transposed Conv (dec6) ─────
+void dec6(
+    data_t input[OUT24_DEC5_H][OUT24_DEC5_W][OUT24_DEC5_C],              // 56x56x64
+    data_t output[OUT25_DEC6_H][OUT25_DEC6_W][OUT25_DEC6_C],             // 112x112x32
+
+    data_t weights[2][2][OUT24_DEC5_C][OUT25_DEC6_C],                    // 2x2 kernel: 64→32
+    data_t biases[OUT25_DEC6_C]                                          // 32
+);
+
+// ───── Decoder Stage 7: Conv2d (dec7) ─────
+void dec7(
+    data_t input[OUT25_DEC6_H][OUT25_DEC6_W][OUT25_DEC6_C],              // 112x112x32
+    data_t output[OUT26_DEC7_H][OUT26_DEC7_W][OUT26_DEC7_C],            // 112x112x32
+
+    data_t conv_weights[3][3][OUT25_DEC6_C][OUT26_DEC7_C],              // 3x3 kernel: 32→32
+    data_t conv_biases[OUT26_DEC7_C]                                    // 32
+);
+
+// ───── Decoder Stage 8: Conv2d (dec8) ─────
+void dec8(
+    data_t input[OUT26_DEC7_H][OUT26_DEC7_W][OUT26_DEC7_C],             // 112x112x32
+    data_t output[OUT27_DEC8_H][OUT27_DEC8_W][OUT27_DEC8_C],            // 112x112x1
+
+    data_t conv_weights[1][1][OUT26_DEC7_C][OUT27_DEC8_C],              // 1x1 kernel: 32→1
+    data_t conv_biases[OUT27_DEC8_C]                                    // 1
+);
 
 
 #endif  // LANE_SEG_TOP_H
