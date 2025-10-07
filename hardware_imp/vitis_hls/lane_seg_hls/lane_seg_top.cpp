@@ -158,8 +158,8 @@
 #include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\dec0_b.h"
 
 // dec1 (Conv2d 3x3, 256→256)
-include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\dec1_w.h"
-include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\dec1_b.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\dec1_w.h"
+#include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\dec1_b.h"
 
 // dec2 (ConvTranspose2d 256→128)
 #include "C:\\Users\\Baron\\Desktop\\EE_297_Repo\\EE_297\\ML_PATH_EE297\\EE297_env\\01_main\\03_lanes_code\\weights\\dec2_w.h"
@@ -228,7 +228,7 @@ void lane_seg_top(
 	//data_t out23_dec4[OUT23_DEC4_H][OUT23_DEC4_W][OUT23_DEC4_C], // Dec4 output
 	//data_t out24_dec5[OUT24_DEC5_H][OUT24_DEC5_W][OUT24_DEC5_C], // Dec5 output
 	//data_t out25_dec6[OUT25_DEC6_H][OUT25_DEC6_W][OUT25_DEC6_C], // Dec6 output
-    data_t out26_dec7[OUT26_DEC7_H][OUT26_DEC7_W][OUT26_DEC7_C], // Dec7 output
+    //data_t out26_dec7[OUT26_DEC7_H][OUT26_DEC7_W][OUT26_DEC7_C], // Dec7 output
 	data_t out27_dec8[OUT27_DEC8_H][OUT27_DEC8_W][OUT27_DEC8_C], // Dec8 output
 
 	// Proc Ctrl Signals
@@ -487,10 +487,10 @@ void lane_seg_top(
 
     // ───── Stage 21: dec2 (ConvTranspose2d 256→128, stride=2) ─────
     static data_t out21_dec2[OUT21_DEC2_H][OUT21_DEC2_W][OUT21_DEC2_C];
-    dec2(out20_dec1, out21_dec2,
-         dec2_w, dec2_b);
+    	dec2(out20_dec1, out21_dec2,
+    		dec2_w, dec2_b); //Test
 
-   status |= (1u << 21);
+    	status |= (1u << 21);
 
     // ───── Stage 22: dec3 (Conv2d 3x3 stride=1 pad=1, 128→128) ─────
     static data_t out22_dec3[OUT22_DEC3_H][OUT22_DEC3_W][OUT22_DEC3_C];
@@ -499,20 +499,21 @@ void lane_seg_top(
 
     status |= (1u << 22);
     // ───── Stage 23: dec4 (ConvTranspose2d 128→64, stride=2) ─────
-    static data_t out23_dec4[OUT23_DEC4_H][OUT23_DEC4_W][OUT23_DEC4_C],
+    static data_t out23_dec4[OUT23_DEC4_H][OUT23_DEC4_W][OUT23_DEC4_C];
     dec4(out22_dec3, out23_dec4,
          dec4_w, dec4_b);
 
-    status |= (1u << 23);\
+    status |= (1u << 23);
+
     // ───── Stage 24: dec5 (Conv2d 3x3 stride=1 pad=1, 64→64) ─────
-    static data_t out24_dec5[OUT24_DEC5_H][OUT24_DEC5_W][OUT24_DEC5_C]
+    static data_t out24_dec5[OUT24_DEC5_H][OUT24_DEC5_W][OUT24_DEC5_C];
     dec5(out23_dec4, out24_dec5,
          dec5_w, dec5_b);
 
     status |= (1u << 24);
 
     // ───── Stage 25: dec6 (ConvTranspose2d 64→32, stride=2) ─────
-    static data_t out25_dec6[OUT25_DEC6_H][OUT25_DEC6_W][OUT25_DEC6_C],
+    static data_t out25_dec6[OUT25_DEC6_H][OUT25_DEC6_W][OUT25_DEC6_C];
     dec6(out24_dec5, out25_dec6,
          dec6_w, dec6_b);
 
@@ -529,7 +530,5 @@ void lane_seg_top(
          dec8_w, dec8_b);
 
     status |= (1u << 27);
-
-
 
 }

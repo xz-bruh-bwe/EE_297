@@ -12,7 +12,7 @@
 //BN already folded into weights/biases
 //â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 void dec0(
-    float input[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],          // [7][7][1280]
+    data_t input[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],          // [7][7][1280]
     data_t output[OUT19_DEC0_H][OUT19_DEC0_W][OUT19_DEC0_C],      // [14][14][256]
 
     data_t weights[2][2][OUT18_CNV_C][OUT19_DEC0_C],              // (2x2x1280x256)
@@ -76,7 +76,7 @@ void dec0(
 // BN already folded into weights/biases
 // ──────────────────────────────────────────────
 void dec1(
-    float input[OUT19_DEC0_H][OUT19_DEC0_W][OUT19_DEC0_C],        // [14][14][256]
+    data_t input[OUT19_DEC0_H][OUT19_DEC0_W][OUT19_DEC0_C],        // [14][14][256]
     data_t output[OUT20_DEC1_H][OUT20_DEC1_W][OUT20_DEC1_C],       // [14][14][256]
 
     data_t weights[3][3][OUT19_DEC0_C][OUT20_DEC1_C],              // (3x3x256x256)
@@ -134,7 +134,7 @@ void dec1(
 // BN already folded into weights/biases
 // ──────────────────────────────────────────────
 void dec2(
-    float input[OUT20_DEC1_H][OUT20_DEC1_W][OUT20_DEC1_C],        // [14][14][256]
+    data_t input[OUT20_DEC1_H][OUT20_DEC1_W][OUT20_DEC1_C],        // [14][14][256]
     data_t output[OUT21_DEC2_H][OUT21_DEC2_W][OUT21_DEC2_C],       // [28][28][128]
 
     data_t weights[2][2][OUT20_DEC1_C][OUT21_DEC2_C],              // (2x2x256x128)
@@ -193,7 +193,7 @@ void dec2(
 // BN already folded into weights/biases
 // ──────────────────────────────────────────────
 void dec3(
-    float input[OUT21_DEC2_H][OUT21_DEC2_W][OUT21_DEC2_C],        // [28][28][128]
+    data_t input[OUT21_DEC2_H][OUT21_DEC2_W][OUT21_DEC2_C],        // [28][28][128]
     data_t output[OUT22_DEC3_H][OUT22_DEC3_W][OUT22_DEC3_C],       // [28][28][128]
 
     data_t weights[3][3][OUT21_DEC2_C][OUT22_DEC3_C],              // (3x3x128x128)
@@ -252,7 +252,7 @@ void dec3(
 // BN already folded into weights/biases
 // ──────────────────────────────────────────────
 void dec4(
-    float input[OUT22_DEC3_H][OUT22_DEC3_W][OUT22_DEC3_C],        // [28][28][128]
+    data_t input[OUT22_DEC3_H][OUT22_DEC3_W][OUT22_DEC3_C],        // [28][28][128]
     data_t output[OUT23_DEC4_H][OUT23_DEC4_W][OUT23_DEC4_C],       // [56][56][64]
 
     data_t weights[2][2][OUT22_DEC3_C][OUT23_DEC4_C],              // (2x2x128x64)
@@ -311,7 +311,7 @@ void dec4(
 // BN already folded into weights/biases
 // ──────────────────────────────────────────────
 void dec5(
-    float input[OUT23_DEC4_H][OUT23_DEC4_W][OUT23_DEC4_C],        // [56][56][64]
+    data_t input[OUT23_DEC4_H][OUT23_DEC4_W][OUT23_DEC4_C],        // [56][56][64]
     data_t output[OUT24_DEC5_H][OUT24_DEC5_W][OUT24_DEC5_C],       // [56][56][64]
 
     data_t weights[3][3][OUT23_DEC4_C][OUT24_DEC5_C],              // (3x3x64x64)
@@ -369,7 +369,7 @@ void dec5(
 // BN already folded into weights/biases
 // ──────────────────────────────────────────────
 void dec6(
-    float input[OUT24_DEC5_H][OUT24_DEC5_W][OUT24_DEC5_C],        // [56][56][64]
+    data_t input[OUT24_DEC5_H][OUT24_DEC5_W][OUT24_DEC5_C],        // [56][56][64]
     data_t output[OUT25_DEC6_H][OUT25_DEC6_W][OUT25_DEC6_C],       // [112][112][32]
 
     data_t weights[2][2][OUT24_DEC5_C][OUT25_DEC6_C],              // (2x2x64x32)
@@ -428,7 +428,7 @@ void dec6(
 // BN already folded into weights/biases
 // ──────────────────────────────────────────────
 void dec7(
-    float input[OUT25_DEC6_H][OUT25_DEC6_W][OUT25_DEC6_C],        // [112][112][32]
+    data_t input[OUT25_DEC6_H][OUT25_DEC6_W][OUT25_DEC6_C],        // [112][112][32]
     data_t output[OUT26_DEC7_H][OUT26_DEC7_W][OUT26_DEC7_C],      // [112][112][32]
 
     data_t weights[3][3][OUT25_DEC6_C][OUT26_DEC7_C],              // (3x3x32x32)
@@ -487,7 +487,7 @@ void dec7(
 // No activation (final logits output)
 // ──────────────────────────────────────────────
 void dec8(
-    float input[OUT26_DEC7_H][OUT26_DEC7_W][OUT26_DEC7_C],        // [112][112][32]
+    data_t input[OUT26_DEC7_H][OUT26_DEC7_W][OUT26_DEC7_C],        // [112][112][32]
     data_t output[OUT27_DEC8_H][OUT27_DEC8_W][OUT27_DEC8_C],       // [112][112][1]
 
     data_t weights[1][1][OUT26_DEC7_C][OUT27_DEC8_C],               // (1x1x32x1)

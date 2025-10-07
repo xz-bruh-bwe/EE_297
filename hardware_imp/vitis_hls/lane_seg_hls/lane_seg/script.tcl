@@ -15,8 +15,9 @@ open_solution "lane_seg" -flow_target vivado
 set_part {xczu7ev-ffvc1156-2-e}
 create_clock -period 20 -name default
 config_cosim -tool xsim
+config_export -format ip_catalog -rtl verilog -vivado_clock 20
 source "./lane_seg_hls/lane_seg/directives.tcl"
 csim_design
 csynth_design
 cosim_design -tool xsim
-export_design -format ip_catalog
+export_design -flow impl -rtl verilog -format ip_catalog

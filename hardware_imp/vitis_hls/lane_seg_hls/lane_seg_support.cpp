@@ -1546,7 +1546,7 @@ void enc15_ir14(
 // BN already folded into weights/biases
 // ──────────────────────────────────────────────
 void enc16_ir15(
-    float input[OUT15_IR14_H][OUT15_IR14_W][OUT15_IR14_C],         // [7][7][160]
+    data_t input[OUT15_IR14_H][OUT15_IR14_W][OUT15_IR14_C],         // [7][7][160]
     data_t output[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],        // [7][7][160]
 
     data_t exp_weights[1][1][OUT15_IR14_C][OUT16_IR15_EXP_C],       // (1x1x160x960)
@@ -1642,7 +1642,7 @@ void enc16_ir15(
 // BN already folded into weights/biases
 // ──────────────────────────────────────────────
 void enc17_ir16(
-    float input[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],          // [7][7][160]
+    data_t input[OUT16_IR15_H][OUT16_IR15_W][OUT16_IR15_C],          // [7][7][160]
     data_t output[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],         // [7][7][320]
 
     data_t exp_weights[1][1][OUT16_IR15_C][OUT17_IR16_EXP_C],        // (1x1x160x960)
@@ -1737,7 +1737,7 @@ void enc17_ir16(
 // BN already folded into weights/biases
 // ──────────────────────────────────────────────
 void enc18_cnv(
-    float input[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],     // [7][7][320]
+    data_t input[OUT17_IR16_H][OUT17_IR16_W][OUT17_IR16_C],     // [7][7][320]
     data_t output[OUT18_CNV_H][OUT18_CNV_W][OUT18_CNV_C],       // [7][7][1280]
 
     data_t conv_weights[1][1][OUT17_IR16_C][OUT18_CNV_C],       // (1x1x320x1280)
