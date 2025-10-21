@@ -1,0 +1,15 @@
+conv2d_layer -> c1
+
+maxpool_layer -> m1 
+
+conv2d_6to16_layer -> c2
+
+maxpool2_layer-> m2
+
+flatten_layer -> f1
+
+fc_layer -> fc1
+
+fc_layer ->  fc2
+
+fc3_layer - fc3

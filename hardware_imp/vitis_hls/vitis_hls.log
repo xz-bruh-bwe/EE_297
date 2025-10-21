@@ -1,0 +1,67 @@
+NOTE: Using modified tcl85t.dll from https://gitenterprise.xilinx.com/ACT/vitis_hls_tcl
+INFO: [HLS 200-10] Running 'Z:/Xilinx/Vitis_HLS/2023.1/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'Baron' on host 'desktop-d2nna1u' (Windows NT_amd64 version 6.2) on Fri Oct 10 17:57:08 -0700 2025
+INFO: [HLS 200-10] In directory 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls'
+Sourcing Tcl script 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_stream/lane_seg_stream/csim.tcl'
+INFO: [HLS 200-1510] Running: source C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_stream/lane_seg_stream/csim.tcl
+INFO: [HLS 200-1510] Running: open_project lane_seg_stream 
+INFO: [HLS 200-10] Opening project 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_stream'.
+INFO: [HLS 200-1510] Running: set_top lane_seg_top 
+INFO: [HLS 200-1510] Running: add_files lane_seg_stream/lane_seg_support.cpp 
+INFO: [HLS 200-10] Adding design file 'lane_seg_stream/lane_seg_support.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files lane_seg_stream/lane_seg_top.cpp 
+INFO: [HLS 200-10] Adding design file 'lane_seg_stream/lane_seg_top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files lane_seg_stream/lane_seg_top.h 
+INFO: [HLS 200-10] Adding design file 'lane_seg_stream/lane_seg_top.h' to the project
+INFO: [HLS 200-1510] Running: add_files -tb lane_seg_stream/lane_seg_tb.cpp 
+INFO: [HLS 200-10] Adding test bench file 'lane_seg_stream/lane_seg_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution lane_seg_stream -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_stream/lane_seg_stream'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 12 -name default 
+INFO: [HLS 200-1510] Running: source ./lane_seg_stream/lane_seg_stream/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name lane_seg_top lane_seg_top 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../lane_seg_support.cpp in debug mode
+   Generating csim.exe
+In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:149:0,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_fpo.h:143,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_half.h:25,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_math.h:41,
+                 from ../../../lane_seg_top.h:4,
+                 from ../../../lane_seg_support.cpp:6:
+Z:/Xilinx/Vitis_HLS/2023.1/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_fpo.h:143:0,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_half.h:25,
+                 from Z:/Xilinx/Vitis_HLS/2023.1/include/hls_math.h:41,
+                 from ../../../lane_seg_top.h:4,
+                 from ../../../lane_seg_support.cpp:6:
+Z:/Xilinx/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:141:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+Loaded conv0 weights from: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/weights/encoder_conv0_w.txt
+Loaded conv0 biases from: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/weights/encoder_conv0_b.txt
+Loaded depthwise weights from: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/weights/enc1_dw_w.txt
+Loaded depthwise biases from: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/weights/enc1_dw_b.txt
+Loaded pointwise weights from: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/weights/enc1_pw_w.txt
+Loaded pointwise biases from: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/ML_PATH_EE297/EE297_env/01_main/03_lanes_code/weights/enc1_pw_b.txt
+Loaded interstage feature map successfully.
+magic  = 0x1EAF0002
+status = 0x00000003
+Output written to: C:/Users/Baron/Desktop/EE_297_Repo/EE_297/hardware_imp/vitis_hls/lane_seg_hls/hw_output/enc0_ir0_out.txt
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 401408
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 20.873 seconds; current allocated memory: 0.457 MB.
+INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 1 seconds. Total elapsed time: 27.187 seconds; peak allocated memory: 1.039 GB.

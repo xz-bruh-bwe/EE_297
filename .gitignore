@@ -1,0 +1,43 @@
+# created by virtualenv automatically
+ML_PATH_EE297/EE297_env/Lib/
+ML_PATH_EE297/EE297_env/Lib/site_packages/
+ML_PATH_EE297/EE297_env/checkpoint
+
+# Vitis HLS build artifacts
+hardware_imp/vitis_hls/lane_seg_hls/lane_seg/syn
+hardware_imp/vitis_hls/lane_seg_hls/lane_seg/impl
+hardware_imp/vitis_hls/lane_seg_hls/lane_seg/csim
+hardware_imp/vitis_hls/lane_seg_hls/lane_seg/.autopilot/
+
+# ============================================
+# Vivado Project: lenet_zcu
+# Target board: ZCU104
+# Location: hardware_imp/vivado/lenet_zcu
+# ============================================
+
+# ---------------------------
+# Vivado build-generated folders
+# ---------------------------
+# These are auto-created by Vivado during synthesis, implementation, or simulation
+hardware_imp/vivado/lenet_zcu/lenet_zcu.cache/
+hardware_imp/vivado/lenet_zcu/lenet_zcu.hw/
+hardware_imp/vivado/lenet_zcu/lenet_zcu.ip_user_files/
+hardware_imp/vivado/lenet_zcu/lenet_zcu.runs/
+hardware_imp/vivado/lenet_zcu/lenet_zcu.sim/
+hardware_imp/vivado/lenet_zcu/lenet_zcu.gen/
+hardware_imp/vivado/lenet_zcu/.Xil/
+
+
+hardware_imp/vivado/lane_seg_dpu/lane_seg_dpu.cache/
+hardware_imp/vivado/lane_seg_dpu/lane_seg_dpu.hw/
+hardware_imp/vivado/lane_seg_dpu/lane_seg_dpu.ip_user_files/
+hardware_imp/vivado/lane_seg_dpu/lane_seg_dpu.runs/
+hardware_imp/vivado/lane_seg_dpu/lane_seg_dpu.sim/
+hardware_imp/vivado/lane_seg_dpu/lane_seg_dpu.gen/
+hardware_imp/vivado/lane_seg_dpu/.Xil/
+
+hardware_imp/vivado/lane_seg_dpu/
+
+hardware_imp/vitis_hls/lane_seg_hls/
+
+hardware_imp/vitis_hls/lane_seg_stream/
